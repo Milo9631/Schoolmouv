@@ -1,0 +1,459 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programmation dynamique : Fiche de cours - Numérique et sciences informatiques | SchoolMouv</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Programmation dynamique : Fiche de cours - Numérique et sciences informatiques | SchoolMouv">
+<meta name="description" content="Révise le cours : Programmation dynamique de Numérique et sciences informatiques Terminale grâce à notre fiche de cours">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/programmation-dynamique/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/programmation-dynamique/fiche-de-cours","name":"Cours : Programmation dynamique"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Programmation dynamique</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Programmation dynamique</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>La programmation dynamique est une approche de résolution de problèmes qui consiste à décomposer un problème complexe en sous-problèmes plus simples et à faire en sorte de ne résoudre qu’une seule fois chaque sous-problème quand celui-ci se répète.</p>
+<p>Nous utiliserons tout au long de ce cours la suite de <a target="_blank" href="/personnages/fibonacci/scientifique">Fibonacci</a> comme fil conducteur pour l’étude de la programmation dynamique. Nous montrerons dans une première partie les limites de la récursivité simple. Dans une deuxième partie nous présenterons les principes généraux et les caractéristiques de la programmation dynamique, que nous mettrons en œuvre dans une troisième partie selon deux approches distinctes, appliquées aux nombres de Fibonacci.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Limites de la version récursivité simple</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Suite de Fibonacci</p></div></h3>
+<p>La suite de Fibonacci est à la fois un exemple classique de programmation récursive et une bonne illustration des limites de la récursivité.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La suite de Fibonacci est une suite de nombre entiers dans laquelle chaque terme est la somme des deux termes qui le précèdent, les deux premiers termes étant $0$ et $1$.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c19-img01.jpg" alt="suite de Fibonacci nature"> 
+<span>Les longueurs des côtés des carrés, en partant du plus petit vers le plus grand sont de 1, 1, 2, 3, 5, 8, 13. Ce sont les valeurs prises par les premiers termes de la suite de Fibonacci.
+ </span></p></div></div>
+</div>
+</div>
+<p>Autrement dit :</p>
+<ul>
+
+<li>$u(0) = 0$</li>
+
+<li>$u(1) = 1$</li>
+
+<li>et $u(n) = u(n-1) + u(n-2)$ pour tout $n &gt; 1$</li>
+</ul>
+<p>L’implémentation récursive de la définition mathématique est très naturelle.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Implémentation récursive</p></div></h3>
+<p>La définition mathématique de la suite de Fibonacci se transpose très littéralement en algorithme récursif.</p>
+<p><span class="calculator_button" markdown="1">def fibonacci(n):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if n == 0:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">elif n == 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return 1</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return fibonacci(n-1) + fibonacci(n-2)</span></p></div>
+<p>On obtient facilement la liste des premiers nombres.</p>
+<p><span class="calculator_button" markdown="1">for i in range(11):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(i, fibonacci(i))</span></p></div>
+<p>affiche ceci :</p>
+<p><span class="calculator_button" markdown="1">0 0</span><br>
+<span class="calculator_button" markdown="1">1 1</span><br>
+<span class="calculator_button" markdown="1">2 1</span><br>
+<span class="calculator_button" markdown="1">3 2</span><br>
+<span class="calculator_button" markdown="1">4 3</span><br>
+<span class="calculator_button" markdown="1">5 5</span><br>
+<span class="calculator_button" markdown="1">6 8</span><br>
+<span class="calculator_button" markdown="1">7 13</span><br>
+<span class="calculator_button" markdown="1">8 21</span><br>
+<span class="calculator_button" markdown="1">9 34</span><br>
+<span class="calculator_button" markdown="1">10 55</span></p>
+<p>Le calcul et l’affichage des nombres sont quasiment instantanés. Toutefois on constate que même pour des nombres relativement petits, le temps de calcul augmente très rapidement. On peut le constater avec le calcul des nombres de Fibonacci jusqu’à $n = 35$.</p>
+<p><span class="calculator_button" markdown="1">for i in range(1, 36):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(i, fibonacci(i))</span></p></div>
+<p><span class="calculator_button" markdown="1"># affiche progressivement les termes successifs de la suite jusqu'à 35 inclus.</span></p>
+<p>À partir de $n = 30$, le ralentissement de l’affichage devient perceptible.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Limites de la solution</p></div></h3>
+<p>S’il ne faut que quelques millisecondes pour calculer les trente premiers nombres de la suite, on observe ensuite un ralentissement de plus en plus marqué de l’affichage des résultats. </p>
+<p>Le calcul des 50 premiers nombres de la suite nous permet de constater à quel rythme les performances de notre algorithme se dégradent.</p>
+<p>Il faut environ :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">une seconde pour calculer le 33<sup>e</sup> terme de la suite ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">plus de dix secondes pour en calculer le 38<sup>e</sup> terme ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">plus de trente secondes pour en calculer le 40<sup>e</sup> terme ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">une minute et demie environ pour le 42<sup>e</sup> terme ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">dix minutes pour le 46<sup>e</sup> terme ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">plus d’une heure pour le 50<sup>e</sup> terme.</div>
+</li>
+</ul>
+<p>Au total, calculer les 50 premiers nombres de la suite nécessite environ trois heures de calcul avec un ordinateur moderne. Le graphique ci-après illustre le temps de calcul nécessaire.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c19-img02.png" alt="limite récursivité"> 
+<span>Nombre de secondes nécessaires au calcul des termes de la suite jusqu’à n = 50.
+ </span></p></div></div>
+<p>On constate que les temps de calcul des valeurs de la suite forment une courbe exponentielle.</p>
+<p>Les nombres eux-mêmes ne sont pourtant pas très grands. Ainsi <span class="calculator_button" markdown="1">fibonacci(50)</span> vaut seulement $12\ 586\ 269\ 025$, mais il faut plus d’une heure pour le déterminer. Essayons de comprendre ce qui peut ralentir à ce point un ordinateur.</p>
+<h3 range="d." markdown="1"><div markdown="1"><p>Analyse du problème</p></div></h3>
+<p>Intéressons-nous aux appels de fonction récursifs effectués. Un nombre de Fibonacci étant la somme des deux nombres qui le précèdent, son calcul fait référence à deux nombres qui doivent eux-mêmes être calculés ou retournés.</p>
+<p>Prenons le cas du calcul du nombre de Fibonacci pour $n = 6$. Le résultat est $8$. Mais combien d’appels de fonctions sont nécessaires pour le déterminer ?<br>
+Nous représentons ces appels sous forme d’arbre pour mieux les visualiser et les analyser.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c19-img03.png" alt="calcul fonction Fibonacci"> 
+<span>Arbre des appels de la fonction pour n = 6
+ </span></p></div></div>
+<p>Chaque appel impliquant deux calculs, on observe un doublement du nombre de nœuds à chaque nouveau niveau intermédiaire.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le nombre d’appels nécessaires pour calculer un nombre de Fibonacci relativement petit augmente très vite : la complexité de cet algorithme étant <b>exponentielle</b>, les limites de la machine sont vite atteintes, ainsi qu’on a pu le constater expérimentalement avec des nombres relativement petits.</p></div>
+</div>
+<p>En analysant cet arbre des appels, on remarque aussi qu’un même calcul est demandé à plusieurs reprises. Par exemple :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">
+<span class="calculator_button" markdown="1">fibonacci(4)</span> est appelé deux fois ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">
+<span class="calculator_button" markdown="1">fibonacci(3)</span> est appelé trois fois ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">
+<span class="calculator_button" markdown="1">fibonacci(2)</span> est appelé cinq fois.</div>
+</li>
+</ul>
+<p>Il est raisonnable de penser que les nombreux appels de fonction réitérés pour une même valeur ne constituent sans doute pas une solution optimale.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La <b>programmation dynamique</b> peut nous permettre de l’optimiser.</div>
+</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>Principes généraux de la programmation dynamique</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Origine et applications</p></div></h3>
+<p>La programmation dynamique trouve ses origines dans les années 1950. C’est une méthode d’optimisation mathématique et informatique imaginée par le mathématicien et informaticien américain Richard Ernest Bellman, qui travaillait alors pour RAND Corporation. À cette époque, « programmation » s’entend dans le sens « planification ».<br>
+Cette méthode propose une planification dynamique qui permet de résoudre de nombreuses problématiques d’optimisation. </p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La programmation dynamique a été appliquée dans de nombreux contextes autres que l’informatique, comme :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">l’ingénierie, notamment dans le domaine aérospatial ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l’économie, notamment pour la gestion des stocks ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la bio-informatique, notamment pour le séquençage de l’ADN.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>La programmation dynamique repose sur la décomposition d’un problème complexe en sous-problèmes plus simples, avec la particularité que certains de ces sous-problèmes se recoupent.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Programmation dynamique :</b></p>
+<p>La programmation dynamique est un paradigme qui consiste à décomposer un problème en sous-problèmes et à conserver les résultats obtenus pour pouvoir les réutiliser.</p>
+</div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La programmation dynamique fait en sorte d’éviter d’avoir à résoudre de manière répétitive un même sous-problème.</p></div>
+</div>
+<p>Ce caractère répétitif des sous-problèmes fait partie des caractéristiques justifiant la programmation dynamique.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Principales caractéristiques</p></div></h3>
+<p>La programmation dynamique repose sur deux caractéristiques complémentaires du problème à résoudre :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">la notion de sous-structure optimale ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">le chevauchement des sous-problèmes.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Un problème présente une sous-structure optimale si une solution optimale peut être obtenue à partir des solutions optimales de ses sous-problèmes.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Un problème présente des sous-problèmes récurrents s’il peut être divisé en sous-problèmes et que cette décomposition en sous-problèmes entraîne des chevauchements.</div>
+</li>
+</ul>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La décomposition du problème en sous-problèmes est également pratiquée dans le cadre de l’approche « diviser pour régner » qui fait l’objet d’un cours distinct.</p></div>
+</div>
+<p>La principale différence entre les deux approches réside dans l’indépendance ou non des sous-problèmes :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">dans le paradigme de programmation dynamique, les sous-problèmes ne sont pas indépendants, ils se chevauchent ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">dans le paradigme « diviser pour régner » les problèmes sont indépendants les uns des autres et ne se répètent pas.</div>
+</li>
+</ul>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>L’optimisation algorithmique par programmation dynamique n’est possible que si certains sous-problèmes se chevauchent.</li>
+
+
+
+<li>Si les sous-problèmes ne se répètent pas, il n’y a aucun intérêt à conserver leurs résultats intermédiaires puisqu'ils ne feront l'objet d'aucune réutilisation ultérieure.</li>
+</ul></div>
+</div>
+<h3 range="c." markdown="1"><div markdown="1"><p>Mise en œuvre</p></div></h3>
+<p>La mise en œuvre des principes de programmation dynamique peut s’effectuer de deux manières :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">
+<b>approche de haut en bas</b> (<em>top down</em> en anglais), également appelée <b>programmation dynamique descendante</b> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">
+<b>approche de bas en haut</b> (<em>bottom up</em> en anglais), également appelée <b>programmation dynamique ascendante</b>.</div>
+</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;">
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Approche de haut en bas</b></div>
+</li>
+</ul>
+<p>L’approche de haut en bas est une évolution naturelle de l’approche récursive dont on conserve la logique, avec la particularité qu’on conserve le résultat des calculs effectués pour éviter d’avoir à les exécuter à plusieurs reprises. Cette approche de programmation dynamique descendante est également appelée <b>mémoïsation</b> (parfois orthographiée « mémoïzation » en référence au terme anglais correspondant <em>"memoization"</em>). </p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans l’approche de haut en bas, on ne s’intéresse pas à l’ordre dans lequel les calculs ont lieu, on évite seulement de les répéter inutilement.</div>
+</li>
+</ul>
+</div>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;">
+<ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Approche de bas en haut</b></div>
+</li>
+</ul>
+<p>Dans l’approche de bas en haut, on détermine d’abord l’ordre dans lequel les sous-problèmes doivent être traités. On commence par résoudre le premier sous-problème trivial, puis on passe au suivant. On part des sous-problèmes simples et on évolue de manière ascendante pour résoudre le problème global en stockant les résultats intermédiaires. Cette approche de programmation dynamique ascendante est également appelée <b>tabulation</b>.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans les deux cas on effectue les mêmes calculs et on conserve les résultats intermédiaires. On utilise donc de l’espace mémoire pour nous permettre de réduire les temps de calculs et donc de gagner du temps.</div>
+</li>
+</ul>
+</div>
+<p>Nous allons maintenant appliquer ces deux approches de manière concrète aux calculs des nombres de Fibonacci.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Application à la suite de Fibonacci</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Approche de haut en bas appliquée à la suite de Fibonacci </p></div></h3>
+<p>Nous allons faire évoluer notre algorithme récursif initial pour disposer d’une structure de données nous permettant de stocker les calculs à mesure qu’ils sont effectués. Ainsi, lors d’un appel pour un calcul, on commencera par vérifier si la valeur a déjà été calculée :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">si c’est le cas, on pourra la retourner directement à partir de la structure de données, sans avoir à lancer de nouveaux calculs ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">si la valeur n’a pas encore été calculée, les appels correspondants seront lancés comme dans notre implémentation initiale, et on ajoutera le résultat obtenu à notre structure de données afin de pouvoir l’exploiter les fois suivantes.</div>
+</li>
+</ul>
+<p>Nous utilisons un <b>dictionnaire</b> pour stocker les résultats des calculs effectués.</p>
+<p><span class="calculator_button" markdown="1">memo = {}</span></p>
+<p><span class="calculator_button" markdown="1">def fibonacci(n):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if n in memo:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return memo[n]</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if n == 0:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">resultat = 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">elif n == 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">resultat = 1</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">resultat = fibonacci(n-1) + fibonacci(n-2)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">memo[n] = resultat</span><br>
+<span class="calculator_button" markdown="1">return resultat</span></p></div>
+<p>Lançons le calcul pour $n = 6$ :</p>
+<p><span class="calculator_button" markdown="1">print(fibonacci(6))</span><br>
+<span class="calculator_button" markdown="1"># affiche 8</span></p>
+<p>Observons maintenant le contenu du dictionnaire de données :</p>
+<p><span class="calculator_button" markdown="1">print(memo)</span><br>
+<span class="calculator_button" markdown="1"># affiche {1: 1, 0: 0, 2: 1, 3: 2, 4: 3, 5: 5, 6: 8}</span></p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le premier élément du dictionnaire est fib(1) et non fib(0) c’est pourquoi il est le premier terme à être calculé (première feuille en bas à gauche de l’arbre de récurrence).</p></div>
+</div>
+<p>Pour les petites valeurs de $n$, la différence n’est pas palpable, et les différences au niveau de l’algorithme peuvent paraitre minimes mais le gain de performance est très net : ainsi le calcul pour $n = 50$ qui nécessitait plus d’une heure dans notre implémentation récursive simple est désormais quasiment instantané.</p>
+<p><span class="calculator_button" markdown="1">print(fibonacci(50))</span><br>
+<span class="calculator_button" markdown="1"># affiche</span> (instantanément) <span class="calculator_button" markdown="1">la valeur 12586269025</span></p>
+<p>Consultons la taille du dictionnaire de données auquel nous avons eu recours :</p>
+<p><span class="calculator_button" markdown="1">print(len(memo))</span><br>
+<span class="calculator_button" markdown="1"># affiche 51</span></p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La version mémoïsée de notre algorithme nous permet de calculer rapidement les valeurs pour des nombres plus importants. En effet, toute valeur calculée étant stockée dans le dictionnaire, elle peut ensuite être aussitôt retournée sans nouveau calcul.</p></div>
+</div>
+<p>Nous pouvons désormais calculer des valeurs plus importantes :</p>
+<p><span class="calculator_button" markdown="1">print(fibonacci(100))</span><br>
+<span class="calculator_button" markdown="1"># affiche 354224848179261915075</span></p>
+<p><span class="calculator_button" markdown="1">print(fibonacci(1000))</span><br>
+<span class="calculator_button" markdown="1"># affiche 43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875</span></p>
+<p>Toutefois si on augmente les valeurs de $n$, on finit par atteindre une limite liée au nombre d’appels récursifs. </p>
+<p><span class="calculator_button" markdown="1">print(fibonacci(10000))</span><br>
+<span class="calculator_button" markdown="1"># affiche une erreur : RecursionError: maximum recursion depth exceeded in comparison</span></p>
+<p>Nous atteignons ici les limites du nombre d’appels récursifs permis par défaut par l’interpréteur Python. Cette limite, variable selon les configurations, est modifiable si nécessaire.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La mémoïsation nous a permis de calculer des valeurs qui auraient été impossibles à obtenir avec la version récursive simple de notre algorithme initial.</div>
+</li>
+</ul>
+<p>Nous avons ainsi réalisé une implémentation manuelle de la mémoïsation, mais cette fonctionnalité est disponible dans la bibliothèque standard de Python, avec le cache LRU de la bibliothèque <span class="calculator_button" markdown="1">functools</span>.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le sigle LRU signifie <em>Least Recently Used</em>, faisant référence aux valeurs les plus récemment utilisées.</p></div>
+</div>
+<p>On mobilise ce cache de la manière suivante :</p>
+<p><span class="calculator_button" markdown="1">from functools import lru_cache</span></p>
+<p>Une fois le cache LRU importé, on l’applique à une fonction à l’aide d’un décorateur. Le fonctionnement précis des décorateurs sort du cadre de ce cours mais leur emploi est très simple : on fait simplement précéder la définition de la fonction à décorer d’une ligne indiquant l’emploi du décorateur par le nom de ce dernier précédé d’un signe <span class="calculator_button" markdown="1">@</span>.</p>
+<p><span class="calculator_button" markdown="1">@lru_cache()</span><br>
+<span class="calculator_button" markdown="1">def fibocache(n):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if n == 0:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">elif n == 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return 1</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return fibocache(n-1) + fibocache(n-2)</span></p></div>
+<p>Notre fonction <span class="calculator_button" markdown="1">fibocache</span> dispose ainsi automatiquement d’un cache, sans avoir à déclarer ni à gérer la structure de données correspondante.</p>
+<p><span class="calculator_button" markdown="1">print(fibocache(50))</span><br>
+<span class="calculator_button" markdown="1"># affiche</span> (instantanément) <span class="calculator_button" markdown="1">la valeur 12586269025</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Par défaut le cache LRU a une taille maximale de 128 entrées, mais on peut augmenter cette taille en le précisant sous forme de paramètre optionnel du décorateur ; par exemple : <span class="calculator_button" markdown="1">@lru_cache(maxsize=1000)</span>.</p></div>
+</div>
+<p>Nous allons maintenant nous intéresser à l’autre manière possible de programmation dynamique, l’approche de bas en haut.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Approche de bas en haut appliquée à la suite de Fibonacci</p></div></h3>
+<p>Dans l’approche de bas en haut, on part des sous-problèmes simples et on évolue de manière ascendante pour résoudre le problème global en stockant les résultats intermédiaires. On effectue donc les mêmes calculs que dans l’approche de haut en bas, mais en prenant en compte l’ordre dans lequel ils sont effectués.</p>
+<p>Les valeurs supérieures sont calculées en séquence à partir des valeurs initiales préalablement définies ou calculées.</p>
+<p><span class="calculator_button" markdown="1">conteneur = {}</span><br>
+<span class="calculator_button" markdown="1">def fibomontant(n):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">conteneur[0] = 0</span><br>
+<span class="calculator_button" markdown="1">conteneur[1] = 1</span><br>
+<span class="calculator_button" markdown="1">for i in range(2, n+1):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">resultat = conteneur[i-1] + conteneur[i-2]</span><br>
+<span class="calculator_button" markdown="1">conteneur[i] = resultat</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return resultat</span></p></div>
+<p><span class="calculator_button" markdown="1">print(fibomontant(50))</span><br>
+<span class="calculator_button" markdown="1"># affiche</span> (instantanément) <span class="calculator_button" markdown="1">la valeur 12586269025</span></p>
+<p>Cet algorithme n’est plus récursif mais itératif. De plus son fonctionnement séquentiel nous permet de le simplifier davantage en se passant totalement du conteneur de données. En effet, il suffit de connaître les deux valeurs précédentes pour pouvoir calculer les suivantes.</p>
+<p>La version itérative de Fibonacci peut donc prendre la forme suivante :</p>
+<p><span class="calculator_button" markdown="1">def fibiteratif(n):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">a, b = 0, 1</span><br>
+<span class="calculator_button" markdown="1">for i in range(n):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">a, b = b, a + b</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return a</span></p></div>
+<p>Comme pour la version descendante, la version ascendante produit une amélioration très nette par rapport à notre algorithme récursif initial.</p>
+<p><span class="calculator_button" markdown="1">print(fibiteratif(50))</span><br>
+<span class="calculator_button" markdown="1"># affiche</span> (instantanément) <span class="calculator_button" markdown="1">la valeur 12586269025</span></p>
+<p>Cet algorithme présente en outre l’avantage de ne pas être limité par le nombre d’appels récursifs, puisqu’il n’en effectue aucun.</p>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous avons dans un premier temps illustré les limites de l’approche récursive avec le calcul des nombres composant la suite de Fibonacci : un ordinateur moderne montre vite ses limites pour des valeurs pourtant relativement faibles.<br>
+La constatation d’un nombre significatif de sous-problèmes se répétant nous a conduit à la présentation d’une approche de programmation dite dynamique, proposant une optimisation de ce type de problème. Nous avons caractérisé ce paradigme de programmation et précisé qu’il était possible de le mettre en œuvre selon deux approches distinctes, de haut en bas ou de bas en haut.<br>
+Nous avons pu constater le gain significatif de performance apporté par cette approche algorithmique sur les nombres de Fibonacci, par l’évitement des répétitions inutiles de mêmes traitements grâce au stockage de leurs résultats.<br>
+Ainsi, ce paradigme de programmation consomme plus de mémoire, au profit du processeur qu'il sollicite nettement moins.</p>
+</div>
+</div></div>
+<div id="poool-k8kxk-fp8ym" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5f2c161b5e6c630100f7efc4","type":"Cours","title":"Programmation dynamique","content":"[IN]\nIntroduction\u0026nbsp;:\n\nLa programmation dynamique est une approche de résolution de problèmes qui consiste à décomposer un problème complexe en sous-problèmes plus simples et à faire en sorte de ne résoudre qu’une seule fois chaque sous-problème quand celui-ci se répète.\n\nNous utiliserons tout au long de ce cours la suite de \u003ca target=\"_blank\" href=\"/personnages/fibonacci/scientifique\"\u003eFibonacci\u003c/a\u003e comme fil conducteur pour l’étude de la programmation dynamique. Nous montrerons dans une première partie les limites de la récursivité simple. Dans une deuxième partie nous présenterons les principes généraux et les caractéristiques de la programmation dynamique, que nous mettrons en œuvre dans une troisième partie selon deux approches distinctes, appliquées aux nombres de Fibonacci.\n[/IN]\n\n##Limites de la version récursivité simple/1\n\n###Suite de Fibonacci/a.\n\nLa suite de Fibonacci est à la fois un exemple classique de programmation récursive et une bonne illustration des limites de la récursivité.\n\n[RAP]\nLa suite de Fibonacci est une suite de nombre entiers dans laquelle chaque terme est la somme des deux termes qui le précèdent, les deux premiers termes étant $0$ et $1$.\n\n[IMG]((100))\n![suite de Fibonacci nature](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c19-img01.jpg) #Les longueurs des côtés des carrés, en partant du plus petit vers le plus grand sont de 1, 1, 2, 3, 5, 8, 13. Ce sont les valeurs prises par les premiers termes de la suite de Fibonacci.\n[/IMG]\n[/RAP]\n\nAutrement dit\u0026nbsp;:\n* $u(0) = 0$\n* $u(1) = 1$\n* et $u(n) = u(n-1) + u(n-2)$ pour tout $n \u003e 1$\n\nL’implémentation récursive de la définition mathématique est très naturelle.\n\n###Implémentation récursive/b.\n\nLa définition mathématique de la suite de Fibonacci se transpose très littéralement en algorithme récursif.\n\n[BUTC]def fibonacci(n):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if n == 0:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return 0[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]elif n == 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return 1[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return fibonacci(n-1) + fibonacci(n-2)[/BUTC]\u003e\u003e\n\nOn obtient facilement la liste des premiers nombres.\n\n[BUTC]for i in range(11):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(i, fibonacci(i))[/BUTC]\u003e\u003e\n\naffiche ceci :\n\n[BUTC]0 0[/BUTC]  \n[BUTC]1 1[/BUTC]  \n[BUTC]2 1[/BUTC]  \n[BUTC]3 2[/BUTC]  \n[BUTC]4 3[/BUTC]  \n[BUTC]5 5[/BUTC]  \n[BUTC]6 8[/BUTC]  \n[BUTC]7 13[/BUTC]  \n[BUTC]8 21[/BUTC]  \n[BUTC]9 34[/BUTC]  \n[BUTC]10 55[/BUTC]\n\nLe calcul et l’affichage des nombres sont quasiment instantanés. Toutefois on constate que même pour des nombres relativement petits, le temps de calcul augmente très rapidement. On peut le constater avec le calcul des nombres de Fibonacci jusqu’à $n = 35$.\n\n[BUTC]for i in range(1, 36):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(i, fibonacci(i))[/BUTC]\u003e\u003e\n[BUTC]# affiche progressivement les termes successifs de la suite jusqu'à 35 inclus.[/BUTC]\n\nÀ partir de $n = 30$, le ralentissement de l’affichage devient perceptible.\n\n###Limites de la solution/c.\n\nS’il ne faut que quelques millisecondes pour calculer les trente premiers nombres de la suite, on observe ensuite un ralentissement de plus en plus marqué de l’affichage des résultats. \n\nLe calcul des 50\u0026nbsp;premiers nombres de la suite nous permet de constater à quel rythme les performances de notre algorithme se dégradent.\n\nIl faut environ\u0026nbsp;:\n* une\u0026nbsp;seconde pour calculer le 33^^e^^\u0026nbsp;terme de la suite\u0026nbsp;;((liste2))\n* plus de dix\u0026nbsp;secondes pour en calculer le 38^^e^^\u0026nbsp;terme\u0026nbsp;;((liste2))\n* plus de trente\u0026nbsp;secondes pour en calculer le 40^^e^^\u0026nbsp;terme\u0026nbsp;;((liste2))\n* une\u0026nbsp;minute et demie environ pour le 42^^e^^\u0026nbsp;terme\u0026nbsp;;((liste2))\n* dix\u0026nbsp;minutes pour le 46^^e^^\u0026nbsp;terme\u0026nbsp;;((liste2))\n* plus d’une\u0026nbsp;heure pour le 50^^e^^\u0026nbsp;terme.((liste2))\n\nAu total, calculer les 50\u0026nbsp;premiers nombres de la suite nécessite environ trois\u0026nbsp;heures de calcul avec un ordinateur moderne. Le graphique ci-après illustre le temps de calcul nécessaire.\n\n[IMG]((100))\n![limite récursivité](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c19-img02.png) #Nombre de secondes nécessaires au calcul des termes de la suite jusqu’à n = 50.\n[/IMG]\n\nOn constate que les temps de calcul des valeurs de la suite forment une courbe exponentielle.\n\nLes nombres eux-mêmes ne sont pourtant pas très grands. Ainsi [BUTC]fibonacci(50)[/BUTC] vaut seulement $12\\ 586\\ 269\\ 025$, mais il faut plus d’une\u0026nbsp;heure pour le déterminer. Essayons de comprendre ce qui peut ralentir à ce point un ordinateur.\n\n###Analyse du problème/d.\n\nIntéressons-nous aux appels de fonction récursifs effectués. Un nombre de Fibonacci étant la somme des deux nombres qui le précèdent, son calcul fait référence à deux nombres qui doivent eux-mêmes être calculés ou retournés.\n\nPrenons le cas du calcul du nombre de Fibonacci pour $n = 6$. Le résultat est $8$. Mais combien d’appels de fonctions sont nécessaires pour le déterminer\u0026nbsp;?  \nNous représentons ces appels sous forme d’arbre pour mieux les visualiser et les analyser.\n\n[IMG]((100))\n![calcul fonction Fibonacci](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c19-img03.png) #Arbre des appels de la fonction pour n = 6\n[/IMG]\n\nChaque appel impliquant deux\u0026nbsp;calculs, on observe un doublement du nombre de nœuds à chaque nouveau niveau intermédiaire.\n\n[AST]\nLe nombre d’appels nécessaires pour calculer un nombre de Fibonacci relativement petit augmente très vite\u0026nbsp;: la complexité de cet algorithme étant **exponentielle**, les limites de la machine sont vite atteintes, ainsi qu’on a pu le constater expérimentalement avec des nombres relativement petits.\n[/AST]\n\nEn analysant cet arbre des appels, on remarque aussi qu’un même calcul est demandé à plusieurs reprises. Par exemple :\n* [BUTC]fibonacci(4)[/BUTC] est appelé deux fois\u0026nbsp;;((liste2))\n* [BUTC]fibonacci(3)[/BUTC] est appelé trois fois\u0026nbsp;;((liste2))\n* [BUTC]fibonacci(2)[/BUTC] est appelé cinq fois.((liste2))\n\nIl est raisonnable de penser que les nombreux appels de fonction réitérés pour une même valeur ne constituent sans doute pas une solution optimale.\n* La **programmation dynamique** peut nous permettre de l’optimiser.((fleche))\n\n##Principes généraux de la programmation dynamique/2\n\n###Origine et applications/a.\n\nLa programmation dynamique trouve ses origines dans les années\u0026nbsp;1950. C’est une méthode d’optimisation mathématique et informatique imaginée par le mathématicien et informaticien américain Richard Ernest Bellman, qui travaillait alors pour RAND\u0026nbsp;Corporation. À cette époque, «\u0026nbsp;programmation\u0026nbsp;» s’entend dans le sens «\u0026nbsp;planification\u0026nbsp;».  \nCette méthode propose une planification dynamique qui permet de résoudre de nombreuses problématiques d’optimisation. \n\n[EX]\nLa programmation dynamique a été appliquée dans de nombreux contextes autres que l’informatique, comme\u0026nbsp;:\n* l’ingénierie, notamment dans le domaine aérospatial\u0026nbsp;;((liste2))\n* l’économie, notamment pour la gestion des stocks\u0026nbsp;;((liste2))\n* la bio-informatique, notamment pour le séquençage de l’ADN.((liste2))\n[/EX]\n\nLa programmation dynamique repose sur la décomposition d’un problème complexe en sous-problèmes plus simples, avec la particularité que certains de ces sous-problèmes se recoupent.\n\n[DEF]\n**Programmation dynamique\u0026nbsp;:**\n\nLa programmation dynamique est un paradigme qui consiste à décomposer un problème en sous-problèmes et à conserver les résultats obtenus pour pouvoir les réutiliser.\n[/DEF]\n\n[RETENIR]\nLa programmation dynamique fait en sorte d’éviter d’avoir à résoudre de manière répétitive un même sous-problème.\n[/RETENIR]\n\nCe caractère répétitif des sous-problèmes fait partie des caractéristiques justifiant la programmation dynamique.\n\n###Principales caractéristiques/b.\n\nLa programmation dynamique repose sur deux caractéristiques complémentaires du problème à résoudre\u0026nbsp;:\n* la notion de sous-structure optimale\u0026nbsp;;((liste2))\n* le chevauchement des sous-problèmes.((liste2))\n* Un problème présente une sous-structure optimale si une solution optimale peut être obtenue à partir des solutions optimales de ses sous-problèmes.((fleche))\n* Un problème présente des sous-problèmes récurrents s’il peut être divisé en sous-problèmes et que cette décomposition en sous-problèmes entraîne des chevauchements.((fleche))\n\n[ATT]\nLa décomposition du problème en sous-problèmes est également pratiquée dans le cadre de l’approche «\u0026nbsp;diviser pour régner\u0026nbsp;» qui fait l’objet d’un cours distinct.\n[/ATT]\n\nLa principale différence entre les deux approches réside dans l’indépendance ou non des sous-problèmes\u0026nbsp;:\n* dans le paradigme de programmation dynamique, les sous-problèmes ne sont pas indépendants, ils se chevauchent\u0026nbsp;;((liste2))\n* dans le paradigme «\u0026nbsp;diviser pour régner\u0026nbsp;» les problèmes sont indépendants les uns des autres et ne se répètent pas.((liste2))\n\n[RETENIR]\n* L’optimisation algorithmique par programmation dynamique n’est possible que si certains sous-problèmes se chevauchent.\n* Si les sous-problèmes ne se répètent pas, il n’y a aucun intérêt à conserver leurs résultats intermédiaires puisqu'ils ne feront l'objet d'aucune réutilisation ultérieure.\n[/RETENIR]\n\n###Mise en œuvre/c.\n\nLa mise en œuvre des principes de programmation dynamique peut s’effectuer de deux manières\u0026nbsp;:\n* **approche de haut en bas** (__top\u0026nbsp;down__ en anglais), également appelée **programmation dynamique descendante**\u0026nbsp;;((liste2))\n* **approche de bas en haut** (__bottom\u0026nbsp;up__ en anglais), également appelée **programmation dynamique ascendante**.((liste2))\n\n\u003c\u003c((90,0,auto,0,auto))\n* **Approche de haut en bas**((bulle,1))\n\nL’approche de haut en bas est une évolution naturelle de l’approche récursive dont on conserve la logique, avec la particularité qu’on conserve le résultat des calculs effectués pour éviter d’avoir à les exécuter à plusieurs reprises. Cette approche de programmation dynamique descendante est également appelée **mémoïsation** (parfois orthographiée «\u0026nbsp;mémoïzation\u0026nbsp;» en référence au terme anglais correspondant __\"memoization\"__). \n* Dans l’approche de haut en bas, on ne s’intéresse pas à l’ordre dans lequel les calculs ont lieu, on évite seulement de les répéter inutilement.((fleche))\n\u003e\u003e\n\n\u003c\u003c((90,0,auto,0,auto))\n* **Approche de bas en haut**((bulle,2))\n\nDans l’approche de bas en haut, on détermine d’abord l’ordre dans lequel les sous-problèmes doivent être traités. On commence par résoudre le premier sous-problème trivial, puis on passe au suivant. On part des sous-problèmes simples et on évolue de manière ascendante pour résoudre le problème global en stockant les résultats intermédiaires. Cette approche de programmation dynamique ascendante est également appelée **tabulation**.\n* Dans les deux cas on effectue les mêmes calculs et on conserve les résultats intermédiaires. On utilise donc de l’espace mémoire pour nous permettre de réduire les temps de calculs et donc de gagner du temps.((fleche))\n\u003e\u003e\n\nNous allons maintenant appliquer ces deux approches de manière concrète aux calculs des nombres de Fibonacci.\n\n##Application à la suite de Fibonacci/3\n\n###Approche de haut en bas appliquée à la suite de Fibonacci /a.\n\nNous allons faire évoluer notre algorithme récursif initial pour disposer d’une structure de données nous permettant de stocker les calculs à mesure qu’ils sont effectués. Ainsi, lors d’un appel pour un calcul, on commencera par vérifier si la valeur a déjà été calculée\u0026nbsp;:\n* si c’est le cas, on pourra la retourner directement à partir de la structure de données, sans avoir à lancer de nouveaux calculs\u0026nbsp;;((liste2))\n* si la valeur n’a pas encore été calculée, les appels correspondants seront lancés comme dans notre implémentation initiale, et on ajoutera le résultat obtenu à notre structure de données afin de pouvoir l’exploiter les fois suivantes.((liste2))\n\nNous utilisons un **dictionnaire** pour stocker les résultats des calculs effectués.\n\n[BUTC]memo = {}[/BUTC]\n\n[BUTC]def fibonacci(n):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if n in memo:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return memo[n][/BUTC]\u003e\u003e\n    \n\u003c\u003c((auto,-22,0,0,50))[BUTC]if n == 0:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]resultat = 0[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]elif n == 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]resultat = 1[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]resultat = fibonacci(n-1) + fibonacci(n-2)[/BUTC]\u003e\u003e\n        \n\u003c\u003c((auto,-22,0,0,50))[BUTC]memo[n] = resultat[/BUTC]  \n[BUTC]return resultat[/BUTC]\u003e\u003e\n\nLançons le calcul pour $n = 6$ :\n\n[BUTC]print(fibonacci(6))[/BUTC]  \n[BUTC]# affiche 8[/BUTC]\n\nObservons maintenant le contenu du dictionnaire de données\u0026nbsp;:\n\n[BUTC]print(memo)[/BUTC]  \n[BUTC]# affiche {1: 1, 0: 0, 2: 1, 3: 2, 4: 3, 5: 5, 6: 8}[/BUTC]\n\n[ATT]\nLe premier élément du dictionnaire est fib(1) et non fib(0) c’est pourquoi il est le premier terme à être calculé (première feuille en bas à gauche de l’arbre de récurrence).\n[/ATT]\n\nPour les petites valeurs de $n$, la différence n’est pas palpable, et les différences au niveau de l’algorithme peuvent paraitre minimes mais le gain de performance est très net\u0026nbsp;: ainsi le calcul pour $n = 50$ qui nécessitait plus d’une heure dans notre implémentation récursive simple est désormais quasiment instantané.\n\n[BUTC]print(fibonacci(50))[/BUTC]  \n[BUTC]# affiche[/BUTC] (instantanément) [BUTC]la valeur 12586269025[/BUTC]\n\nConsultons la taille du dictionnaire de données auquel nous avons eu recours\u0026nbsp;:\n\n[BUTC]print(len(memo))[/BUTC]  \n[BUTC]# affiche 51[/BUTC]\n\n[RETENIR]\nLa version mémoïsée de notre algorithme nous permet de calculer rapidement les valeurs pour des nombres plus importants. En effet, toute valeur calculée étant stockée dans le dictionnaire, elle peut ensuite être aussitôt retournée sans nouveau calcul.\n[/RETENIR]\n\nNous pouvons désormais calculer des valeurs plus importantes\u0026nbsp;:\n\n[BUTC]print(fibonacci(100))[/BUTC]  \n[BUTC]# affiche 354224848179261915075[/BUTC]\n\n[BUTC]print(fibonacci(1000))[/BUTC]  \n[BUTC]# affiche 43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875[/BUTC]\n\nToutefois si on augmente les valeurs de $n$, on finit par atteindre une limite liée au nombre d’appels récursifs. \n\n[BUTC]print(fibonacci(10000))[/BUTC]  \n[BUTC]# affiche une erreur : RecursionError: maximum recursion depth exceeded in comparison[/BUTC]\n\nNous atteignons ici les limites du nombre d’appels récursifs permis par défaut par l’interpréteur Python. Cette limite, variable selon les configurations, est modifiable si nécessaire.\n* La mémoïsation nous a permis de calculer des valeurs qui auraient été impossibles à obtenir avec la version récursive simple de notre algorithme initial.((fleche))\n\nNous avons ainsi réalisé une implémentation manuelle de la mémoïsation, mais cette fonctionnalité est disponible dans la bibliothèque standard de Python, avec le cache\u0026nbsp;LRU de la bibliothèque [BUTC]functools[/BUTC].\n\n[RAP]\nLe sigle LRU signifie __Least Recently Used__, faisant référence aux valeurs les plus récemment utilisées.\n[/RAP]\n\nOn mobilise ce cache de la manière suivante\u0026nbsp;:\n\n[BUTC]from functools import lru_cache[/BUTC]\n\nUne fois le cache\u0026nbsp;LRU importé, on l’applique à une fonction à l’aide d’un décorateur. Le fonctionnement précis des décorateurs sort du cadre de ce cours mais leur emploi est très simple\u0026nbsp;: on fait simplement précéder la définition de la fonction à décorer d’une ligne indiquant l’emploi du décorateur par le nom de ce dernier précédé d’un signe [BUTC]@[/BUTC].\n\n[BUTC]@lru_cache()[/BUTC]  \n[BUTC]def fibocache(n):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if n == 0:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return 0[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]elif n == 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return 1[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return fibocache(n-1) + fibocache(n-2)[/BUTC]\u003e\u003e\n\nNotre fonction [BUTC]fibocache[/BUTC] dispose ainsi automatiquement d’un cache, sans avoir à déclarer ni à gérer la structure de données correspondante.\n\n[BUTC]print(fibocache(50))[/BUTC]  \n[BUTC]# affiche[/BUTC] (instantanément) [BUTC]la valeur 12586269025[/BUTC]\n\n[AST]\nPar défaut le cache\u0026nbsp;LRU a une taille maximale de 128\u0026nbsp;entrées, mais on peut augmenter cette taille en le précisant sous forme de paramètre optionnel du décorateur\u0026nbsp;; par exemple\u0026nbsp;: [BUTC]@lru_cache(maxsize=1000)[/BUTC].\n[/AST]\n\nNous allons maintenant nous intéresser à l’autre manière possible de programmation dynamique, l’approche de bas en haut.\n\n###Approche de bas en haut appliquée à la suite de Fibonacci/b.\n\nDans l’approche de bas en haut, on part des sous-problèmes simples et on évolue de manière ascendante pour résoudre le problème global en stockant les résultats intermédiaires. On effectue donc les mêmes calculs que dans l’approche de haut en bas, mais en prenant en compte l’ordre dans lequel ils sont effectués.\n\nLes valeurs supérieures sont calculées en séquence à partir des valeurs initiales préalablement définies ou calculées.\n\n[BUTC]conteneur = {}[/BUTC]  \n[BUTC]def fibomontant(n):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]conteneur[0] = 0[/BUTC]  \n[BUTC]conteneur[1] = 1[/BUTC]  \n[BUTC]for i in range(2, n+1):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]resultat = conteneur[i-1] + conteneur[i-2][/BUTC]  \n[BUTC]conteneur[i] = resultat[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return resultat[/BUTC]\u003e\u003e\n\n[BUTC]print(fibomontant(50))[/BUTC]  \n[BUTC]# affiche[/BUTC] (instantanément) [BUTC]la valeur 12586269025[/BUTC]\n\nCet algorithme n’est plus récursif mais itératif. De plus son fonctionnement séquentiel nous permet de le simplifier davantage en se passant totalement du conteneur de données. En effet, il suffit de connaître les deux valeurs précédentes pour pouvoir calculer les suivantes.\n\nLa version itérative de Fibonacci peut donc prendre la forme suivante\u0026nbsp;:\n\n[BUTC]def fibiteratif(n):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]a, b = 0, 1[/BUTC]  \n[BUTC]for i in range(n):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]a, b = b, a + b[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return a[/BUTC]\u003e\u003e\n\nComme pour la version descendante, la version ascendante produit une amélioration très nette par rapport à notre algorithme récursif initial.\n\n[BUTC]print(fibiteratif(50))[/BUTC]  \n[BUTC]# affiche[/BUTC] (instantanément) [BUTC]la valeur 12586269025[/BUTC]\n\nCet algorithme présente en outre l’avantage de ne pas être limité par le nombre d’appels récursifs, puisqu’il n’en effectue aucun.\n\n[C]\nConclusion\u0026nbsp;:\n\nNous avons dans un premier temps illustré les limites de l’approche récursive avec le calcul des nombres composant la suite de Fibonacci\u0026nbsp;: un ordinateur moderne montre vite ses limites pour des valeurs pourtant relativement faibles.  \nLa constatation d’un nombre significatif de sous-problèmes se répétant nous a conduit à la présentation d’une approche de programmation dite dynamique, proposant une optimisation de ce type de problème. Nous avons caractérisé ce paradigme de programmation et précisé qu’il était possible de le mettre en œuvre selon deux approches distinctes, de haut en bas ou de bas en haut.  \nNous avons pu constater le gain significatif de performance apporté par cette approche algorithmique sur les nombres de Fibonacci, par l’évitement des répétitions inutiles de mêmes traitements grâce au stockage de leurs résultats.  \nAinsi, ce paradigme de programmation consomme plus de mémoire, au profit du processeur qu'il sollicite nettement moins.\n[/C]\n\n","siblings":[{"resourceId":"5f2c161b5e6c630100f7efc4","type":"Cours","sort":null},{"resourceId":"5ece74b228e6370100445c8a","type":"Fiche de révision","sort":null},{"resourceId":"5f11a16f2fe66e010012b20c","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7e3128e637010043bf88","name":"Programmation dynamique"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7e3128e637010043bf88","label":"Cours : Programmation dynamique","link":"https://www.schoolmouv.fr/cours/programmation-dynamique/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"programmation-dynamique","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/programmation-dynamique/fiche-de-cours","title":"Programmation dynamique : Fiche de cours - Numérique et sciences informatiques | SchoolMouv","metaDescription":"Révise le cours : Programmation dynamique de Numérique et sciences informatiques Terminale grâce à notre fiche de cours","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"programmation-dynamique","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

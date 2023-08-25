@@ -1,0 +1,579 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Paradigmes de programmation : cours de Terminale - Numérique</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Paradigmes de programmation : cours de Terminale - Numérique">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Paradigmes de programmation (Terminale - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/paradigmes-de-programmation/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/paradigmes-de-programmation/fiche-de-cours","name":"Cours : Paradigmes de programmation"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Paradigmes de programmation</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Paradigmes de programmation</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Dans ce cours nous nous intéressons aux styles, ou paradigmes de programmation, qui sont différentes manières de penser les problèmes et d'écrire des programmes informatiques pour les résoudre. Certains langages imposent l'emploi d'un paradigme particulier, mais le langage Python offre une certaine souplesse, autorisant l'emploi de plusieurs d'entre eux. Nous pourrons donc employer chaque fois du code Python pour illustrer les différents paradigmes étudiés dans le cadre de ce cours.</p>
+<p>Nous étudierons trois paradigmes de programmation très répandus : le paradigme impératif, le paradigme fonctionnel et le paradigme objet, dont nous présenterons les principales caractéristiques pour les mettre ensuite en perspective.<br>
+Un même exemple de base servira à l’introduction de ces différents paradigmes : l'addition d'une liste de nombres. </p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Programmation impérative</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Définir la programmation impérative</p></div></h3>
+<p>Le <b>paradigme impératif</b> indique précisément <b>comment une tâche doit être menée à bien</b>. Il définit étape par étape la manière d'obtenir le résultat attendu. C'est le paradigme le plus répandu et le plus ancien. Il fait appel à la notion d'état que nous avons découverte avec les machines de Turing lors du cours précédent.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Programmation impérative :</b></p>
+<p>La programmation impérative est basée sur une séquence explicite d'instructions produisant des changements d'états.</p>
+</div>
+</div>
+<p>Découvrons la programmation impérative avec un exemple concret.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La liste de nombres utilisée en exemple sera toujours la même.
+<span class="calculator_button" markdown="1">nombres = [2, 9, 12, 3, 5, 11]</span></p></div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">En décomposant étape par étape, on définit de manière explicite la façon dont on calcule la somme des nombres de la liste.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">somme = 0</span><br>
+<span class="calculator_button" markdown="1">somme = somme + nombres[0]</span><br>
+<span class="calculator_button" markdown="1">somme = somme + nombres[1]</span><br>
+<span class="calculator_button" markdown="1">somme = somme + nombres[2]</span><br>
+<span class="calculator_button" markdown="1">somme = somme + nombres[3]</span><br>
+<span class="calculator_button" markdown="1">somme = somme + nombres[4]</span><br>
+<span class="calculator_button" markdown="1">somme = somme + nombres[5]</span>  </p>
+<p><span class="calculator_button" markdown="1">print(somme)</span><br>
+<span class="calculator_button" markdown="1"># affiche 42</span></p>
+</div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>En Python l'incrémentation d’une variable peut s'écrire avec la notation <span class="calculator_button" markdown="1">+=</span>.</p></div>
+</div>
+<p>Ainsi <span class="calculator_button" markdown="1">somme += nombre</span> est équivalent à <span class="calculator_button" markdown="1">somme = somme + nombre</span>.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Nous emploierons préférentiellement la notation <span class="calculator_button" markdown="1">+=</span> pour la suite de ce cours.</div>
+</li>
+</ul>
+<p>La valeur de la variable somme est modifiée à mesure que le programme s'exécute, pour contenir la somme totale à la fin de l'exécution. On pourrait facilement faire afficher les valeurs intermédiaires de la variable entre chaque somme avec une instruction <span class="calculator_button" markdown="1">print()</span>.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">Le code qui précède peut être réécrit à l'aide d'une <b>boucle</b>, à laquelle on ajoute une instruction <span class="calculator_button" markdown="1">print()</span> pour matérialiser les étapes du calcul.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">nombres = [2, 9, 12, 3, 5, 11]</span><br>
+<span class="calculator_button" markdown="1">somme = 0</span><br>
+<span class="calculator_button" markdown="1">for nombre in nombres:</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">somme += nombre</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(somme)</span></p></div>
+</div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le code qui précède produit l'affichage suivant :<br>
+<span class="calculator_button" markdown="1">2</span><br>
+<span class="calculator_button" markdown="1">11</span><br>
+<span class="calculator_button" markdown="1">23</span><br>
+<span class="calculator_button" markdown="1">26</span><br>
+<span class="calculator_button" markdown="1">31</span><br>
+<span class="calculator_button" markdown="1">42</span>  </p></div>
+</div>
+<p>Dans ces deux versions de code impératif, <b>le programme s'exécute de manière séquentielle</b> et on observe que la valeur de somme change à chaque étape. Notre code produit des <b>changements d'état</b>.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Les langages assembleurs sont naturellement basés sur le paradigme impératif. On trouve également C, C++, Java ou Python parmi les langages inspirés du paradigme impératif.</p></div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Paradigme de programmation procédural</p></div></h3>
+<p>Le paradigme de programmation procédurale est rattaché au style impératif. Il consiste à créer des <b>procédures</b> (ou routines) qu'il est possible d'appeler pour obtenir l'<b>exécution de courtes séquences d'instructions</b>. Ce découpage en procédures apporte de la modularité : cela facilite le réemploi de portions de code et améliore la maintenabilité des programmes.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Parmi les langages basés sur le paradigme procédural figurent C, C++, LISP, PHP et Python.</p></div>
+</div>
+<p>Voici une version procédurale de l'addition des éléments d'une liste :</p>
+<p><span class="calculator_button" markdown="1">def additionne(elements):</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">somme = 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">for element in elements:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">somme += element</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return somme</span></p></div>
+<p>La procédure est ensuite appelée chaque fois que nécessaire :</p>
+<p><span class="calculator_button" markdown="1">print(additionne(nombres))</span><br>
+<span class="calculator_button" markdown="1"># affiche 42</span></p>
+<p>La programmation impérative consiste en une succession d'étapes entraînant des modifications d'état.</p>
+<p>Voyons maintenant comment le même problème peut être traité avec une approche fonctionnelle.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Programmation fonctionnelle</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Généralités sur la programmation fonctionnelle</p></div></h3>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La programmation fonctionnelle se rapproche du traitement mathématique par équations mathématiques. Les entrées sont traitées pour <b>fournir un résultat en sortie</b>, sans conservation d'état interne ni mutation de données. </p></div>
+</div>
+<p>Certains langages purement fonctionnels interdisent de déroger à ces principes, mais le modèle multi-paradigmes de Python nous permet de le faire pour illustrer par un exemple une programmation qui ne respecte pas le paradigme fonctionnel.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><span class="calculator_button" markdown="1">a = 10</span></p>
+<p><span class="calculator_button" markdown="1">def somme_bancale(b):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">"""Additionne deux nombres,</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">l'un étant passé en argument (b)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">l'autre étant une variable globale (a)"""</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return a + b</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">print(somme_bancale(5))</span></p></div>
+<p><span class="calculator_button" markdown="1"># affiche 15</span></p>
+<p><span class="calculator_button" markdown="1">a = 12</span></p>
+<p><span class="calculator_button" markdown="1">print(somme_bancale(5))</span><br>
+<span class="calculator_button" markdown="1"># affiche 17</span></p>
+</div>
+</div>
+<p>Dans cet exemple, le résultat de la fonction ne dépend pas uniquement de la valeur passée en argument en entrée : il dépend aussi de l'état de la variable $a$ qui est extérieure à la fonction.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Cette fonction ne répond donc pas aux exigences du paradigme fonctionnel.</div>
+</li>
+</ul>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L'emploi de fonctions ne suffit pas à lui seul à rendre un programme conforme au paradigme fonctionnel.</p></div>
+</div>
+<p>Définissons maintenant une fonction conforme au paradigme fonctionnel :</p>
+<p><span class="calculator_button" markdown="1">def somme_correcte(a, b):</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">"""Additionne deux nombres</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">passés en arguments à la fonction."""</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return a + b</span></p></div>
+<p><span class="calculator_button" markdown="1">print(somme_correcte(10, 5))</span><br>
+<span class="calculator_button" markdown="1"># affiche 15</span></p>
+<p>Cette fonction respecte le paradigme fonctionnel inspiré des mathématiques et retourne toujours le même résultat pour les mêmes valeurs d'entrée. Aucun état interne n'est conservé et la fonction n'a occasionné aucune mutation : elle n'a pas modifié les données reçues en entrée.</p>
+<p>On observe que la création d'une variable globale portant le même nom qu'une des variables locales à la fonction n'a aucun effet sur le fonctionnement de cette dernière.</p>
+<p><span class="calculator_button" markdown="1">a = 37</span><br>
+<span class="calculator_button" markdown="1">print(somme_correcte(10, 5))</span><br>
+<span class="calculator_button" markdown="1"># affiche 15</span></p>
+<p>En programmation fonctionnelle, une fonction ne doit pas modifier d'éléments extérieurs à son environnement local. Dans le cas contraire elle produit ce qu'on appelle un <b>effet de bord</b>. Illustrons cela avec un exemple d'appel de fonction sur un objet mutable comme une liste.</p>
+<p><span class="calculator_button" markdown="1">def retire_dernier(enumeration):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">enumeration.pop()</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return enumeration</span></p></div>
+<p><span class="calculator_button" markdown="1">nombres = [2, 3, 9]</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">print(nombres)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1"># affiche [2, 3, 9]</span></p></div>
+<p><span class="calculator_button" markdown="1">print(retire_dernier(nombres))</span><br>
+<span class="calculator_button" markdown="1"># affiche [2, 3] </span></p>
+<p><span class="calculator_button" markdown="1">print(nombres)</span><br>
+<span class="calculator_button" markdown="1"># affiche [2, 3]</span></p>
+<p><span class="calculator_button" markdown="1">print(retire_dernier(nombres))</span><br>
+<span class="calculator_button" markdown="1"># affiche [2] </span></p>
+<p><span class="calculator_button" markdown="1">print(nombres)</span><br>
+<span class="calculator_button" markdown="1"># affiche [2]</span></p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La variable <span class="calculator_button" markdown="1">nombres</span>, extérieure à la fonction, est modifiée à chaque appel de fonction : c'est un effet de bord.</div>
+</li>
+</ul>
+<p>Pour l'éviter on redéfinit la fonction afin qu'elle effectue une <b>copie de la liste</b> et travaille uniquement sur cette copie. Ainsi la liste originale passée en argument n'est pas modifiée par la fonction.</p>
+<p><span class="calculator_button" markdown="1">def retire_dernier(enumeration):</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">nouvelle_enumeration = enumeration[:]</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return nouvelle_enumeration</span></p></div>
+<p><span class="calculator_button" markdown="1">nombres = [2, 3, 9]</span><br>
+<span class="calculator_button" markdown="1">print(nombres)</span></p>
+<p><span class="calculator_button" markdown="1">print(retire_dernier(nombres))</span><br>
+<span class="calculator_button" markdown="1">#affiche [2, 3, 9]</span></p>
+<p><span class="calculator_button" markdown="1">print(retire_dernier(nombres))</span><br>
+<span class="calculator_button" markdown="1">#affiche [2, 3, 9]</span></p>
+<p>La programmation fonctionnelle étant inspirée des fonctions mathématiques, plusieurs concepts ont été transposés en conservant leur nom. C'est le cas des expressions lambda.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Expression lambda</p></div></h3>
+<p>Les expressions lambda sont basées sur le lambda-calcul conceptualisé par Alonzo Church dans le cadre de ses recherches sur la calculabilité dans les années 1930, ainsi que nous l'avons vu dans le cours précédent sur les programmes et les données.</p>
+<p>Pour découvrir les expressions lambda, prenons comme base une liste de noms de villes dont nous pouvons aisément produire un affichage trié.</p>
+<p><span class="calculator_button" markdown="1">villes = ['Paris', 'Strasbourg', 'Toulouse', 'Lyon']</span><br>
+<span class="calculator_button" markdown="1">print(sorted(villes))</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Lyon', 'Paris', 'Strasbourg', 'Toulouse']</span></p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On rappelle que <span class="calculator_button" markdown="1">sorted()</span> retourne par défaut une copie de la liste triée en ordre croissant pour des nombres et par ordre lexicographique (alphabétique) pour des chaînes de caractères. La liste d'origine n'est pas modifiée.</p></div>
+</div>
+<p>Nous pouvons modifier le comportement par défaut de <span class="calculator_button" markdown="1">sorted()</span> et effectuer un tri avec un critère personnalisé. Nous précisons ce critère de tri avec le paramètre optionnel <span class="calculator_button" markdown="1">key</span>.</p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">Ainsi pour obtenir une version de notre liste triée en fonction de la longueur croissante du nom de chaque ville, nous faisons référence à la fonction <span class="calculator_button" markdown="1">len()</span>.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">print(sorted(villes, key=len))</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Lyon', 'Paris', 'Toulouse', 'Strasbourg']</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On notera que l'argument du paramètre <span class="calculator_button" markdown="1">key</span> est le nom de la fonction dépourvu de parenthèses.</p></div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">Nous pouvons également définir notre propre critère de tri : il suffit pour cela de créer une fonction qui l'exprime. Choisissons de trier la liste des villes en fonction de la dernière lettre de chaque mot.</div>
+</li>
+</ul>
+<p>Dans un premier temps, nous définissons de manière classique la fonction qui nous servira de critère de tri.</p>
+<p><span class="calculator_button" markdown="1">def derniere_lettre(chaine):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return chaine[-1]</span></p></div>
+<p>Effectuons maintenant un tri basé sur notre fonction nouvellement créée.</p>
+<p><span class="calculator_button" markdown="1">print(sorted(villes, key=derniere_lettre))</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Toulouse', 'Strasbourg', 'Lyon', 'Paris']</span></p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La liste est bien triée en fonction de la dernière lettre de chaque mot : « e », « g », « n » et « s ».</div>
+</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">Voyons maintenant une autre notation, appelée notation lambda, qui permet d'obtenir le même résultat avec une syntaxe différente : on nomme et on définit une fonction sur une seule ligne.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">derniere_lettre = lambda chaine: chaine[-1]</span></p>
+<p><span class="calculator_button" markdown="1">print(sorted(villes, key=derniere_lettre))</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Toulouse', 'Strasbourg', 'Lyon', 'Paris']</span></p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le résultat est identique.</div>
+</li>
+</ul>
+<p>Contrairement aux fonctions définies classiquement, les expressions lambda ne peuvent pas contenir d'instructions et se limitent à des expressions. Elles peuvent toutefois comporter plusieurs paramètres en entrée.</p>
+<p>Les expressions lambda permettent aussi de créer des <b>fonctions anonymes</b>, c'est-à-dire dépourvues de noms, destinées à être utilisées ponctuellement. L'exemple précédent peut ainsi être reformulé comme suit :</p>
+<p><span class="calculator_button" markdown="1">print(sorted(villes, key=lambda chaine: chaine[-1]))</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Toulouse', 'Strasbourg', 'Lyon', 'Paris']</span></p>
+<p>Aucun nom n'est assigné à la fonction, qui est définie à la suite de <span class="calculator_button" markdown="1">lambda</span> et aussitôt appliquée. Les fonctions anonymes sont en quelque sorte des fonctions « jetables ». Leur utilisation est tellement ponctuelle qu'il n'est même pas nécessaire de les nommer.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Transformation, filtrage et réduction</p></div></h3>
+<p>Voici trois fonctions complémentaires de traitement typiques de la programmation fonctionnelle : <span class="calculator_button" markdown="1">map()</span>, <span class="calculator_button" markdown="1">filter()</span> et <span class="calculator_button" markdown="1">reduce()</span>.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Elles permettent, <span class="underline">respectivement</span>, d'appliquer des transformations, filtres et réductions.</div>
+</li>
+</ul>
+<p>Ces fonctions prennent en premier argument une fonction qui sera appliquée à chacun des éléments individuels composant le second argument (ici notre liste de nombres). Examinons dans un premier temps le fonctionnement de <span class="calculator_button" markdown="1"> map()</span> en élevant au carré chacun des éléments de la liste de nombres.</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><span class="calculator_button" markdown="1"> map()</span></div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">nombres = [2, 9, 12, 3, 5, 11]</span><br>
+<span class="calculator_button" markdown="1">for element in map(lambda n: n** 2, nombres):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(element)</span></p></div>
+<p>Produit l'affichage suivant :<br>
+<span class="calculator_button" markdown="1">4</span><br>
+<span class="calculator_button" markdown="1">81</span><br>
+<span class="calculator_button" markdown="1">144</span><br>
+<span class="calculator_button" markdown="1">9</span><br>
+<span class="calculator_button" markdown="1">25</span><br>
+<span class="calculator_button" markdown="1">121</span></p>
+<p>Les valeurs itérées depuis la fonction <span class="calculator_button" markdown="1">map()</span> peuvent facilement servir à former une nouvelle liste.</p>
+<p><span class="calculator_button" markdown="1">print(list(map(lambda n: n** 2, nombres)))</span><br>
+<span class="calculator_button" markdown="1"># affiche [4, 81, 144, 9, 25, 121]</span></p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><span class="calculator_button" markdown="1"> filter()</span></div>
+</li>
+</ul>
+<p>De la même manière on peut aisément filtrer notre liste de nombre pour ne retenir que ceux supérieurs à dix.</p>
+<p><span class="calculator_button" markdown="1">print(list(filter(lambda n: n &gt; 10, nombres)))</span><br>
+<span class="calculator_button" markdown="1"># affiche [12, 11]</span></p>
+<p>Les fonctions <span class="calculator_button" markdown="1">map()</span> et <span class="calculator_button" markdown="1">filter()</span> existent dans de nombreux langages informatiques. Présentes en Python, elles peuvent la plupart du temps être avantageusement remplacées par des <b>compréhensions de listes</b>, également appelées <b>listes en intension</b>.</p>
+<p><span class="calculator_button" markdown="1"># nombres au carré</span><br>
+<span class="calculator_button" markdown="1">print([n** 2 for n in nombres])</span><br>
+<span class="calculator_button" markdown="1"># affiche [4, 81, 144, 9, 25, 121]</span></p>
+<p><span class="calculator_button" markdown="1"># nombres supérieurs à 10</span><br>
+<span class="calculator_button" markdown="1">print([n for n in nombres if n &gt; 10])</span><br>
+<span class="calculator_button" markdown="1"># affiche [12, 11]</span></p>
+<p>La bibliothèque standard de Python comporte le module de programmation fonctionnelle Functools, dédié aux fonctions de haut niveau, c'est-à-dire des fonctions pouvant agir sur des fonctions ou en retourner. On y trouve notamment la fonction <span class="calculator_button" markdown="1">reduce()</span>.</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text"><span class="calculator_button" markdown="1">reduce()</span></div>
+</li>
+</ul>
+<p>Dans l'exemple ci-dessous on utilise la fonction <span class="calculator_button" markdown="1">reduce()</span> combinée à une fonction anonyme (<span class="calculator_button" markdown="1">lambda</span>) pour effectuer la somme des éléments contenus dans la liste <span class="calculator_button" markdown="1">nombres</span>. </p>
+<p><span class="calculator_button" markdown="1">import functools</span><br>
+<span class="calculator_button" markdown="1">print(functools.reduce(lambda m, n : m + n, nombres))</span><br>
+<span class="calculator_button" markdown="1"># affiche 42</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Précisons qu'on aurait aussi pu utiliser la fonction native <span class="calculator_button" markdown="1">sum()</span>.
+<span class="calculator_button" markdown="1">print(sum(nombres))</span><br>
+<span class="calculator_button" markdown="1"># affiche 42</span></p></div>
+</div>
+<p>La programmation fonctionnelle s'articule autour de fonctions de traitement qui n'entraînent pas de mutation de données et ne conservent pas d'état.<br>
+Voyons maintenant comment le même problème peut être traité avec une approche objet.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Voici quelques langages orientés programmation fonctionnelle : Sccala, LISP, OCaml, Haskell, Python, C++, Ruby ou encore Java.</p></div>
+</div>
+<h2 range="3" markdown="1"><div markdown="1"><p>Programmation objet</p></div></h2>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le paradigme de <b>programmation orientée objet</b> s'articule autour du concept central d'objets. Ces objets définis en <b>classes</b> peuvent contenir à la fois des données et du code et interagir avec d'autres objets.</p></div>
+</div>
+<p>Dans ce paradigme :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">les données rattachés aux objets sont appelées <b>attributs</b> ou <b>propriétés</b> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les procédures ou fonctions rattachées aux objets sont appelées <b>méthodes</b>.</div>
+</li>
+</ul>
+<h3 range="a." markdown="1"><div markdown="1"><p>Définition d'une classe</p></div></h3>
+<p>La définition d'une classe prend la forme suivante :</p>
+<p><span class="calculator_button" markdown="1">class Enumerations:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, une_liste):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.liste = une_liste</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def additionne(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.somme = sum(self.liste)</span></p></div>
+<p>On définit comment les objets de la classe sont initialisés avec la méthode spéciale <span class="calculator_button" markdown="1">__init__()</span>. Cette méthode est appelée « constructeur » dans d'autres langages informatiques.<br>
+Le paramètre <span class="calculator_button" markdown="1">self</span> fait référence à l'<b>instance</b>, autrement dit à l'objet appartenant à la classe, lequel peut aussi posséder différents attributs. Selon les besoins, ces attributs peuvent être définis ou modifiés lors de l'initialisation ou bien ultérieurement.</p>
+<p>On définit ensuite des méthodes applicables à chacun des objets de la classe ainsi créée. Ces méthodes peuvent créer, accéder, modifier, ou supprimer des attributs de l'objet considéré.</p>
+<p>Dans le cas présent nous créons une méthode <span class="calculator_button" markdown="1">additionne()</span> qui prend comme argument <span class="calculator_button" markdown="1">self</span> et génère un attribut <span class="calculator_button" markdown="1">somme</span> spécifique à chaque objet.</p>
+<p>Une fois la classe créée, il est possible de créer des instances, c'est-à-dire des objets individuels appartenant à la classe « Enumerations » que nous venons de définir.<br>
+L'instanciation s'effectue de la manière que nous allons détailler en suivant.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Instanciation d'un objet</p></div></h3>
+<p>La création d'un objet s'effectue depuis la classe, en passant les arguments attendus au niveau de la méthode <span class="calculator_button" markdown="1">__init__()</span>.</p>
+<p><span class="calculator_button" markdown="1">mon_enumeration = Enumerations(nombres)</span></p>
+<p>Les méthodes sont ensuite accessibles au niveau de l'objet nouvellement créé.</p>
+<p><span class="calculator_button" markdown="1">mon_enumeration.additionne()</span><br>
+<span class="calculator_button" markdown="1">print(monenumeration.somme)</span><br>
+<span class="calculator_button" markdown="1"># affiche 42</span></p>
+<p>Le code du paradigme objet est très différent des paradigmes impératif et fonctionnel présentés précédemment, mais il produit bien le résultat attendu.</p>
+<p>Nous pouvons créer un second objet appartenant à cette même classe, avec une autre liste de nombres.</p>
+<p><span class="calculator_button" markdown="1">monautreenumeration = Enumerations([3, -4, 19, 2, 0])</span></p>
+<p>Cet objet possède lui aussi la méthode <span class="calculator_button" markdown="1">additionne()</span>, que nous pouvons appeler afin de générer l'attribut somme rattaché à cet objet (et différent de l'objet précédent).</p>
+<p><span class="calculator_button" markdown="1">monautreenumeration.additionne()</span><br>
+<span class="calculator_button" markdown="1">print(monautreenumeration.somme)</span><br>
+<span class="calculator_button" markdown="1"># affiche 20</span></p>
+<p>Les valeurs des attributs sont spécifiques à chaque instance ou objet de la classe. </p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Dans le paradigme objet, l'<b>instanciation</b> consiste à créer un objet appartenant à une classe donnée.<br>
+L'<b>encapsulation</b> désigne le regroupement des données et des procédures au sein de l'objet.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L'accès aux données s'effectue donc au travers des mécanismes d'interface proposés par l'objet.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>La programmation objet comporte deux autres notions essentielles : l'héritage et le polymorphisme.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Héritage et polymorphisme</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Héritage :</b></p>
+<p>L'héritage consiste à définir des sous-classes, ou classes-enfants, capables d'hériter des propriétés de la classe parente. </p>
+</div>
+</div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Polymorphisme :</b></p>
+<p>Le polymorphisme consiste à pouvoir adapter le comportement d'une méthode d'une classe à l'autre.</p>
+</div>
+</div>
+<p>Illustrons ces deux propriétés en créant des classes d'animaux, en commençant par une classe « Animal » adaptée à tous les animaux sans distinction.<br>
+Considérant que tous les animaux sont capables de pousser un cri, nous créons une méthode dédiée appelée <span class="calculator_button" markdown="1">crie()</span>. Le cri émis pourra cependant être différent d'un animal à l'autre : le cri du chat est le miaulement et le cri du chien l'aboiement. Un animal d'une espèce indéterminée pousse un cri indéterminé.</p>
+<p><span class="calculator_button" markdown="1">class Animal:</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, nom, age):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.nom = nom</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.age = age</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def crie(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return 'cri indéterminé'</span></p></div>
+<p><span class="calculator_button" markdown="1">animal1 = Animal('Finaud', 9)</span></p>
+<p><span class="calculator_button" markdown="1">print(animal1.nom)</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1"># affiche Finaud</span></p></div>
+<p><span class="calculator_button" markdown="1">print(animal1.crie())</span><br>
+<span class="calculator_button" markdown="1"># affiche cri indéterminé</span></p>
+<p>Si nous définissons une classe enfant, dérivée de la classe Animal, elle hérite automatiquement de ses méthodes et de ses propriétés.</p>
+<p><span class="calculator_button" markdown="1">class Chat(Animal):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">pass</span></p></div>
+<p>L'instruction <span class="calculator_button" markdown="1">pass</span> nous permet de définir notre classe sans méthodes ni attributs, afin de mettre en évidence le caractère automatique du mécanisme d'héritage.</p>
+<p><span class="calculator_button" markdown="1">chat1 = Chat('Félix', 7)</span></p>
+<p><span class="calculator_button" markdown="1">print(chat1.nom)</span><br>
+<span class="calculator_button" markdown="1"># affiche Félix</span></p>
+<p><span class="calculator_button" markdown="1">print(chat1.crie())</span><br>
+<span class="calculator_button" markdown="1"># affiche cri indéterminé</span></p>
+<p>On constate bien que la sous-classe « Chat » a hérité des caractéristiques de la classe parente « Animal » : nous pouvons créer des objets de classe « Chat » capables de pousser un cri (indéterminé) alors que rien n'a été défini au niveau de la classe « Chat ».</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Ce principe d'héritage nous offre la possibilité de redéfinir uniquement certaines caractéristiques en fonction des besoins, et de conserver toutes les autres.</p></div>
+</div>
+<p>Nous allons redéfinir la sous-classe « Chat » de manière plus utile, en lui attribuant également un surnom optionnel et en personnalisant la méthode <span class="calculator_button" markdown="1">crie()</span>.</p>
+<p><span class="calculator_button" markdown="1">class Chat(Animal):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, nom, age, surnom=None):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">Animal.__init__(self, nom, age)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.surnom = surnom</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def crie(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return 'Miaou'</span></p></div>
+<p>L'instanciation s'appuie sur celle de la classe parente mais ajoute la création de l'attribut <span class="calculator_button" markdown="1">surnom</span> spécifiquement pour les chats. Ayant indiqué une valeur <span class="calculator_button" markdown="1">None</span> par défaut, on peut créer un chat sans surnom, mais s'il en a un et qu'on le précise, il sera pris en compte.</p>
+<p><span class="calculator_button" markdown="1">chat1 = Chat('Gavroche', 4)</span><br>
+<span class="calculator_button" markdown="1">chat2 = Chat('Félix' , 5, 'Diesel')</span></p>
+<p><span class="calculator_button" markdown="1">print(chat1.nom)</span><br>
+<span class="calculator_button" markdown="1"># affiche Gavroche</span></p>
+<p><span class="calculator_button" markdown="1">print(chat2.nom)</span><br>
+<span class="calculator_button" markdown="1"># affiche Félix</span></p>
+<p><span class="calculator_button" markdown="1">print(chat1.surnom)</span><br>
+<span class="calculator_button" markdown="1"># affiche None</span></p>
+<p><span class="calculator_button" markdown="1">print(chat2.surnom)</span><br>
+<span class="calculator_button" markdown="1"># affiche Diesel</span></p>
+<p><span class="calculator_button" markdown="1">print(chat1.crie())</span><br>
+<span class="calculator_button" markdown="1"># affiche Miaou</span></p>
+<p><span class="calculator_button" markdown="1">print(chat2.crie())</span><br>
+<span class="calculator_button" markdown="1"># affiche Miaou</span></p>
+<p>Les objets partagent les méthodes, éventuellement héritées et éventuellement modifiées, tout en possédant des valeurs d'attributs distinctes.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Parmi les langages de programmation orientée objet, on compte C++, Javascript, Python, Java, Ruby ainsi que SmallTalk.</p></div>
+</div>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Dans ce cours nous avons présenté successivement trois styles majeurs de programmation informatique : le paradigme impératif, le paradigme fonctionnel et le paradigme objet, dont nous avons présenté les principales caractéristiques. Il existe d'autres paradigmes, parmi lesquels la programmation événementielle ou encore la programmation concurrente, qui ne sont pas étudiés dans le cadre de ce cours.<br>
+On pourrait se demander quel est le meilleur paradigme parmi tous ceux-ci ? Cette question fait souvent l'objet de débats animés et passionnés entre développeur·se·s, mais elle n'a pas de réponse unique car les paradigmes constituent autant de manières, parfois très différentes, d'apporter une solution à un problème donné. Nous l'avons montré avec un même exemple abordé selon trois paradigmes distincts.<br>
+Certains langages informatiques imposent le recours à un paradigme donné, tandis que d'autres (comme Python) en supportent plusieurs, et ces paradigmes peuvent même être panachés le cas échéant au sein d'un même programme. Les préférences stylistiques du·de la développeur·se et les pratiques en vigueur ont également une influence sur le choix d'un paradigme de programmation. </p>
+<p>On peut toutefois noter que la programmation orientée objet est assez fréquemment employée pour la réalisation d'interfaces graphiques ou de jeux, fortement liés à des changements d'état. Par ailleurs, on ne peut ignorer l'essor actuel que connaît le paradigme fonctionnel : celui-ci semble en effet mieux répondre que les autres aux contraintes de fiabilité et de performance, en particulier pour la mise en œuvre de l'exécution de portions de code en parallèle.<br>
+Enfin, le choix d'un paradigme de programmation influence celui du langage de programmation dont les critères suivants viennent compléter celui d'implémenter ou non le paradigme de son choix :</p>
+<ul>
+
+
+<li>Existence d'une grande communauté de développeur·se·s : partage de bibliothèques, d'expériences, etc.</li>
+
+
+<li>Facilité d'apprentissage</li>
+
+
+<li>Capacité à mettre en œuvre plusieurs paradigmes</li>
+
+
+<li>Langage compilé ou interprété</li>
+
+
+<li>Avec ou sans pointeur, selon qu’on privilégie l'optimisation dans le premier cas où la rapidité de développement et la fiabilité dans le second cas.</li>
+</ul>
+</div>
+</div></div>
+<div id="poool-bljz8-6uuar" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5ff6c8e4bc595a0100f4857a","type":"Cours","title":"Paradigmes de programmation","content":"[IN]\nIntroduction\u0026nbsp;:\n\nDans ce cours nous nous intéressons aux styles, ou paradigmes de programmation, qui sont différentes manières de penser les problèmes et d'écrire des programmes informatiques pour les résoudre. Certains langages imposent l'emploi d'un paradigme particulier, mais le langage Python offre une certaine souplesse, autorisant l'emploi de plusieurs d'entre eux. Nous pourrons donc employer chaque fois du code Python pour illustrer les différents paradigmes étudiés dans le cadre de ce cours.\n\nNous étudierons trois paradigmes de programmation très répandus\u0026nbsp;: le paradigme impératif, le paradigme fonctionnel et le paradigme objet, dont nous présenterons les principales caractéristiques pour les mettre ensuite en perspective.  \nUn même exemple de base servira à l’introduction de ces différents paradigmes\u0026nbsp;: l'addition d'une liste de nombres. \n[/IN]\n\n##Programmation impérative/1\n\n###Définir la programmation impérative/a.\n\nLe **paradigme impératif** indique précisément **comment une tâche doit être menée à bien**. Il définit étape par étape la manière d'obtenir le résultat attendu. C'est le paradigme le plus répandu et le plus ancien. Il fait appel à la notion d'état que nous avons découverte avec les machines de Turing lors du cours précédent.\n\n[DEF]\n**Programmation impérative\u0026nbsp;:**\n\nLa programmation impérative est basée sur une séquence explicite d'instructions produisant des changements d'états.\n[/DEF]\n\nDécouvrons la programmation impérative avec un exemple concret.\n\n[AST]\nLa liste de nombres utilisée en exemple sera toujours la même.\n[BUTC]nombres = [2, 9, 12, 3, 5, 11][/BUTC]\n[/AST]\n\n[EX]\n* En décomposant étape par étape, on définit de manière explicite la façon dont on calcule la somme des nombres de la liste.((bulle))\n\n[BUTC]somme = 0[/BUTC]  \n[BUTC]somme = somme + nombres[0][/BUTC]  \n[BUTC]somme = somme + nombres[1][/BUTC]  \n[BUTC]somme = somme + nombres[2][/BUTC]  \n[BUTC]somme = somme + nombres[3][/BUTC]  \n[BUTC]somme = somme + nombres[4][/BUTC]  \n[BUTC]somme = somme + nombres[5][/BUTC]  \n\n[BUTC]print(somme)[/BUTC]  \n[BUTC]# affiche 42[/BUTC]\n[/EX]\n\n[AST]\nEn Python l'incrémentation d’une variable peut s'écrire avec la notation [BUTC]+=[/BUTC].\n[/AST]\n\nAinsi [BUTC]somme += nombre[/BUTC] est équivalent à [BUTC]somme = somme + nombre[/BUTC].\n* Nous emploierons préférentiellement la notation [BUTC]+=[/BUTC] pour la suite de ce cours.((fleche))\n\nLa valeur de la variable somme est modifiée à mesure que le programme s'exécute, pour contenir la somme totale à la fin de l'exécution. On pourrait facilement faire afficher les valeurs intermédiaires de la variable entre chaque somme avec une instruction [BUTC]print()[/BUTC].\n\n[EX]\n* Le code qui précède peut être réécrit à l'aide d'une **boucle**, à laquelle on ajoute une instruction [BUTC]print()[/BUTC] pour matérialiser les étapes du calcul.((bulle))\n\n[BUTC]nombres = [2, 9, 12, 3, 5, 11][/BUTC]  \n[BUTC]somme = 0[/BUTC]  \n[BUTC]for nombre in nombres:[/BUTC]  \n\u003c\u003c((auto,0,0,0,50))[BUTC]somme += nombre[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,0,0,0,50))[BUTC]print(somme)[/BUTC]\u003e\u003e\n[/EX]\n[EX]\nLe code qui précède produit l'affichage suivant\u0026nbsp;:  \n[BUTC]2[/BUTC]  \n[BUTC]11[/BUTC]  \n[BUTC]23[/BUTC]  \n[BUTC]26[/BUTC]  \n[BUTC]31[/BUTC]  \n[BUTC]42[/BUTC]  \n[/EX]\n\nDans ces deux versions de code impératif, **le programme s'exécute de manière séquentielle** et on observe que la valeur de somme change à chaque étape. Notre code produit des **changements d'état**.\n\n[RETENIR]\nLes langages assembleurs sont naturellement basés sur le paradigme impératif. On trouve également C, C++, Java ou Python parmi les langages inspirés du paradigme impératif.\n[/RETENIR]\n\n###Paradigme de programmation procédural/b.\n\nLe paradigme de programmation procédurale est rattaché au style impératif. Il consiste à créer des **procédures** (ou routines) qu'il est possible d'appeler pour obtenir l'**exécution de courtes séquences d'instructions**. Ce découpage en procédures apporte de la modularité\u0026nbsp;: cela facilite le réemploi de portions de code et améliore la maintenabilité des programmes.\n\n[RETENIR]\nParmi les langages basés sur le paradigme procédural figurent C, C++, LISP, PHP et Python.\n[/RETENIR]\n\nVoici une version procédurale de l'addition des éléments d'une liste\u0026nbsp;:\n\n[BUTC]def additionne(elements):[/BUTC]  \n\u003c\u003c((auto,0,0,0,50))[BUTC]somme = 0[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,0,0,0,50))[BUTC]for element in elements:[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,-22,0,0,75))[BUTC]somme += element[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,0,0,0,50))[BUTC]return somme[/BUTC]\u003e\u003e\n\nLa procédure est ensuite appelée chaque fois que nécessaire\u0026nbsp;:\n\n[BUTC]print(additionne(nombres))[/BUTC]  \n[BUTC]# affiche 42[/BUTC]\n\nLa programmation impérative consiste en une succession d'étapes entraînant des modifications d'état.\n\nVoyons maintenant comment le même problème peut être traité avec une approche fonctionnelle.\n\n##Programmation fonctionnelle/2\n\n###Généralités sur la programmation fonctionnelle/a.\n\n[RAP]\nLa programmation fonctionnelle se rapproche du traitement mathématique par équations mathématiques. Les entrées sont traitées pour **fournir un résultat en sortie**, sans conservation d'état interne ni mutation de données. \n[/RAP]\n\nCertains langages purement fonctionnels interdisent de déroger à ces principes, mais le modèle multi-paradigmes de Python nous permet de le faire pour illustrer par un exemple une programmation qui ne respecte pas le paradigme fonctionnel.\n\n[EX]\n[BUTC]a = 10[/BUTC]\n\n[BUTC]def somme_bancale(b):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]\"\"\"Additionne deux nombres,[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,50))[BUTC]l'un étant passé en argument (b)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,50))[BUTC]l'autre étant une variable globale (a)\"\"\"[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,50))[BUTC]return a + b[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,22,0,0,0))[BUTC]print(somme_bancale(5))[/BUTC]\u003e\u003e\n[BUTC]# affiche 15[/BUTC]\n\n[BUTC]a = 12[/BUTC]\n\n[BUTC]print(somme_bancale(5))[/BUTC]  \n[BUTC]# affiche 17[/BUTC]\n[/EX]\n\nDans cet exemple, le résultat de la fonction ne dépend pas uniquement de la valeur passée en argument en entrée\u0026nbsp;: il dépend aussi de l'état de la variable $a$ qui est extérieure à la fonction.\n* Cette fonction ne répond donc pas aux exigences du paradigme fonctionnel.((fleche))\n\n[ATT]\nL'emploi de fonctions ne suffit pas à lui seul à rendre un programme conforme au paradigme fonctionnel.\n[/ATT]\n\nDéfinissons maintenant une fonction conforme au paradigme fonctionnel\u0026nbsp;:\n\n[BUTC]def somme_correcte(a, b):[/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]\"\"\"Additionne deux nombres[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]passés en arguments à la fonction.\"\"\"[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]return a + b[/BUTC]\u003e\u003e\n\n[BUTC]print(somme_correcte(10, 5))[/BUTC]  \n[BUTC]# affiche 15[/BUTC]\n\nCette fonction respecte le paradigme fonctionnel inspiré des mathématiques et retourne toujours le même résultat pour les mêmes valeurs d'entrée. Aucun état interne n'est conservé et la fonction n'a occasionné aucune mutation\u0026nbsp;: elle n'a pas modifié les données reçues en entrée.\n\nOn observe que la création d'une variable globale portant le même nom qu'une des variables locales à la fonction n'a aucun effet sur le fonctionnement de cette dernière.\n\n[BUTC]a = 37[/BUTC]  \n[BUTC]print(somme_correcte(10, 5))[/BUTC]  \n[BUTC]# affiche 15[/BUTC]\n\nEn programmation fonctionnelle, une fonction ne doit pas modifier d'éléments extérieurs à son environnement local. Dans le cas contraire elle produit ce qu'on appelle un **effet de bord**. Illustrons cela avec un exemple d'appel de fonction sur un objet mutable comme une liste.\n\n[BUTC]def retire_dernier(enumeration):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]enumeration.pop()[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return enumeration[/BUTC]\u003e\u003e\n\n[BUTC]nombres = [2, 3, 9][/BUTC]\n\u003c\u003c((auto,-22,0,0,0))[BUTC]print(nombres)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]# affiche [2, 3, 9][/BUTC]\u003e\u003e\n\n[BUTC]print(retire_dernier(nombres))[/BUTC]  \n[BUTC]# affiche [2, 3] [/BUTC]\n\n[BUTC]print(nombres)[/BUTC]  \n[BUTC]# affiche [2, 3][/BUTC]\n\n[BUTC]print(retire_dernier(nombres))[/BUTC]  \n[BUTC]# affiche [2] [/BUTC]\n\n[BUTC]print(nombres)[/BUTC]  \n[BUTC]# affiche [2][/BUTC]\n\n* La variable [BUTC]nombres[/BUTC], extérieure à la fonction, est modifiée à chaque appel de fonction\u0026nbsp;: c'est un effet de bord.((fleche))\n\nPour l'éviter on redéfinit la fonction afin qu'elle effectue une **copie de la liste** et travaille uniquement sur cette copie. Ainsi la liste originale passée en argument n'est pas modifiée par la fonction.\n\n[BUTC]def retire_dernier(enumeration):[/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]nouvelle_enumeration = enumeration[:][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return nouvelle_enumeration[/BUTC]\u003e\u003e\n\n[BUTC]nombres = [2, 3, 9][/BUTC]  \n[BUTC]print(nombres)[/BUTC]\n\n[BUTC]print(retire_dernier(nombres))[/BUTC]  \n[BUTC]#affiche [2, 3, 9][/BUTC]\n\n[BUTC]print(retire_dernier(nombres))[/BUTC]  \n[BUTC]#affiche [2, 3, 9][/BUTC]\n\nLa programmation fonctionnelle étant inspirée des fonctions mathématiques, plusieurs concepts ont été transposés en conservant leur nom. C'est le cas des expressions lambda.\n\n###Expression lambda/b.\n\nLes expressions lambda sont basées sur le lambda-calcul conceptualisé par Alonzo Church dans le cadre de ses recherches sur la calculabilité dans les années\u0026nbsp;1930, ainsi que nous l'avons vu dans le cours précédent sur les programmes et les données.\n\nPour découvrir les expressions lambda, prenons comme base une liste de noms de villes dont nous pouvons aisément produire un affichage trié.\n\n[BUTC]villes = ['Paris', 'Strasbourg', 'Toulouse', 'Lyon'][/BUTC]  \n[BUTC]print(sorted(villes))[/BUTC]  \n[BUTC]# affiche ['Lyon', 'Paris', 'Strasbourg', 'Toulouse'][/BUTC]\n\n[RAP]\nOn rappelle que [BUTC]sorted()[/BUTC] retourne par défaut une copie de la liste triée en ordre croissant pour des nombres et par ordre lexicographique (alphabétique) pour des chaînes de caractères. La liste d'origine n'est pas modifiée.\n[/RAP]\n\nNous pouvons modifier le comportement par défaut de [BUTC]sorted()[/BUTC] et effectuer un tri avec un critère personnalisé. Nous précisons ce critère de tri avec le paramètre optionnel [BUTC]key[/BUTC].\n\n* Ainsi pour obtenir une version de notre liste triée en fonction de la longueur croissante du nom de chaque ville, nous faisons référence à la fonction [BUTC]len()[/BUTC].((bulle))\n\n[BUTC]print(sorted(villes, key=len))[/BUTC]  \n[BUTC]# affiche ['Lyon', 'Paris', 'Toulouse', 'Strasbourg'][/BUTC]\n\n[AST]\nOn notera que l'argument du paramètre [BUTC]key[/BUTC] est le nom de la fonction dépourvu de parenthèses.\n[/AST]\n\n* Nous pouvons également définir notre propre critère de tri\u0026nbsp;: il suffit pour cela de créer une fonction qui l'exprime. Choisissons de trier la liste des villes en fonction de la dernière lettre de chaque mot.((bulle))\n\nDans un premier temps, nous définissons de manière classique la fonction qui nous servira de critère de tri.\n\n[BUTC]def derniere_lettre(chaine):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return chaine[-1][/BUTC]\u003e\u003e\n\nEffectuons maintenant un tri basé sur notre fonction nouvellement créée.\n\n[BUTC]print(sorted(villes, key=derniere_lettre))[/BUTC]  \n[BUTC]# affiche ['Toulouse', 'Strasbourg', 'Lyon', 'Paris'][/BUTC]\n* La liste est bien triée en fonction de la dernière lettre de chaque mot\u0026nbsp;: «\u0026nbsp;e\u0026nbsp;», «\u0026nbsp;g\u0026nbsp;», «\u0026nbsp;n\u0026nbsp;» et «\u0026nbsp;s\u0026nbsp;».((fleche))\n* Voyons maintenant une autre notation, appelée notation lambda, qui permet d'obtenir le même résultat avec une syntaxe différente\u0026nbsp;: on nomme et on définit une fonction sur une seule ligne.((bulle))\n\n[BUTC]derniere_lettre = lambda chaine: chaine[-1][/BUTC]\n\n[BUTC]print(sorted(villes, key=derniere_lettre))[/BUTC]  \n[BUTC]# affiche ['Toulouse', 'Strasbourg', 'Lyon', 'Paris'][/BUTC]\n\n* Le résultat est identique.((fleche))\n\nContrairement aux fonctions définies classiquement, les expressions lambda ne peuvent pas contenir d'instructions et se limitent à des expressions. Elles peuvent toutefois comporter plusieurs paramètres en entrée.\n\nLes expressions lambda permettent aussi de créer des **fonctions anonymes**, c'est-à-dire dépourvues de noms, destinées à être utilisées ponctuellement. L'exemple précédent peut ainsi être reformulé comme suit\u0026nbsp;:\n\n[BUTC]print(sorted(villes, key=lambda chaine: chaine[-1]))[/BUTC]  \n[BUTC]# affiche ['Toulouse', 'Strasbourg', 'Lyon', 'Paris'][/BUTC]\n\nAucun nom n'est assigné à la fonction, qui est définie à la suite de [BUTC]lambda[/BUTC] et aussitôt appliquée. Les fonctions anonymes sont en quelque sorte des fonctions «\u0026nbsp;jetables\u0026nbsp;». Leur utilisation est tellement ponctuelle qu'il n'est même pas nécessaire de les nommer.\n\n###Transformation, filtrage et réduction/c.\n\nVoici trois fonctions complémentaires de traitement typiques de la programmation fonctionnelle\u0026nbsp;: [BUTC]map()[/BUTC], [BUTC]filter()[/BUTC] et [BUTC]reduce()[/BUTC].\n* Elles permettent, --respectivement--, d'appliquer des transformations, filtres et réductions.((fleche))\n\nCes fonctions prennent en premier argument une fonction qui sera appliquée à chacun des éléments individuels composant le second argument (ici notre liste de nombres). Examinons dans un premier temps le fonctionnement de [BUTC] map()[/BUTC] en élevant au carré chacun des éléments de la liste de nombres.\n\n* [BUTC] map()[/BUTC]((bulle,1))\n\n[BUTC]nombres = [2, 9, 12, 3, 5, 11][/BUTC]  \n[BUTC]for element in map(lambda n: n** 2, nombres):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(element)[/BUTC]\u003e\u003e\n\nProduit l'affichage suivant :  \n[BUTC]4[/BUTC]  \n[BUTC]81[/BUTC]  \n[BUTC]144[/BUTC]  \n[BUTC]9[/BUTC]  \n[BUTC]25[/BUTC]  \n[BUTC]121[/BUTC]\n\nLes valeurs itérées depuis la fonction [BUTC]map()[/BUTC] peuvent facilement servir à former une nouvelle liste.\n\n[BUTC]print(list(map(lambda n: n** 2, nombres)))[/BUTC]  \n[BUTC]# affiche [4, 81, 144, 9, 25, 121][/BUTC]\n\n* [BUTC] filter()[/BUTC]((bulle,2))\n\nDe la même manière on peut aisément filtrer notre liste de nombre pour ne retenir que ceux supérieurs à dix.\n\n[BUTC]print(list(filter(lambda n: n \u003e 10, nombres)))[/BUTC]  \n[BUTC]# affiche [12, 11][/BUTC]\n\nLes fonctions [BUTC]map()[/BUTC] et [BUTC]filter()[/BUTC] existent dans de nombreux langages informatiques. Présentes en Python, elles peuvent la plupart du temps être avantageusement remplacées par des **compréhensions de listes**, également appelées **listes en intension**.\n\n[BUTC]# nombres au carré[/BUTC]  \n[BUTC]print([n** 2 for n in nombres])[/BUTC]  \n[BUTC]# affiche [4, 81, 144, 9, 25, 121][/BUTC]\n\n[BUTC]# nombres supérieurs à 10[/BUTC]  \n[BUTC]print([n for n in nombres if n \u003e 10])[/BUTC]  \n[BUTC]# affiche [12, 11][/BUTC]\n\nLa bibliothèque standard de Python comporte le module de programmation fonctionnelle Functools, dédié aux fonctions de haut niveau, c'est-à-dire des fonctions pouvant agir sur des fonctions ou en retourner. On y trouve notamment la fonction [BUTC]reduce()[/BUTC].\n\n* [BUTC]reduce()[/BUTC]((bulle,3))\n\nDans l'exemple ci-dessous on utilise la fonction [BUTC]reduce()[/BUTC] combinée à une fonction anonyme ([BUTC]lambda[/BUTC]) pour effectuer la somme des éléments contenus dans la liste [BUTC]nombres[/BUTC]. \n\n[BUTC]import functools[/BUTC]  \n[BUTC]print(functools.reduce(lambda m, n : m + n, nombres))[/BUTC]  \n[BUTC]# affiche 42[/BUTC]\n\n[AST]\nPrécisons qu'on aurait aussi pu utiliser la fonction native [BUTC]sum()[/BUTC].\n[BUTC]print(sum(nombres))[/BUTC]  \n[BUTC]# affiche 42[/BUTC]\n[/AST]\n\nLa programmation fonctionnelle s'articule autour de fonctions de traitement qui n'entraînent pas de mutation de données et ne conservent pas d'état.  \nVoyons maintenant comment le même problème peut être traité avec une approche objet.\n\n[RETENIR]\nVoici quelques langages orientés programmation fonctionnelle\u0026nbsp;: Sccala, LISP, OCaml, Haskell, Python, C++, Ruby ou encore Java.\n[/RETENIR]\n\n##Programmation objet/3\n\n[RETENIR]\nLe paradigme de **programmation orientée objet** s'articule autour du concept central d'objets. Ces objets définis en **classes** peuvent contenir à la fois des données et du code et interagir avec d'autres objets.\n[/RETENIR]\n\nDans ce paradigme\u0026nbsp;:\n* les données rattachés aux objets sont appelées **attributs** ou **propriétés**\u0026nbsp;;((liste2))\n* les procédures ou fonctions rattachées aux objets sont appelées **méthodes**.((liste2))\n\n###Définition d'une classe/a.\n\nLa définition d'une classe prend la forme suivante\u0026nbsp;:\n\n[BUTC]class Enumerations:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, une_liste):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.liste = une_liste[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def additionne(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.somme = sum(self.liste)[/BUTC]\u003e\u003e\n\nOn définit comment les objets de la classe sont initialisés avec la méthode spéciale [BUTC]\u0026#95;\u0026#95;init\u0026#95;\u0026#95;()[/BUTC]. Cette méthode est appelée «\u0026nbsp;constructeur\u0026nbsp;» dans d'autres langages informatiques.  \nLe paramètre [BUTC]self[/BUTC] fait référence à l'**instance**, autrement dit à l'objet appartenant à la classe, lequel peut aussi posséder différents attributs. Selon les besoins, ces attributs peuvent être définis ou modifiés lors de l'initialisation ou bien ultérieurement.\n\nOn définit ensuite des méthodes applicables à chacun des objets de la classe ainsi créée. Ces méthodes peuvent créer, accéder, modifier, ou supprimer des attributs de l'objet considéré.\n\nDans le cas présent nous créons une méthode [BUTC]additionne()[/BUTC] qui prend comme argument [BUTC]self[/BUTC] et génère un attribut [BUTC]somme[/BUTC] spécifique à chaque objet.\n\nUne fois la classe créée, il est possible de créer des instances, c'est-à-dire des objets individuels appartenant à la classe «\u0026nbsp;Enumerations\u0026nbsp;» que nous venons de définir.  \nL'instanciation s'effectue de la manière que nous allons détailler en suivant.\n\n###Instanciation d'un objet/b.\n\nLa création d'un objet s'effectue depuis la classe, en passant les arguments attendus au niveau de la méthode [BUTC]\u0026#95;\u0026#95;init\u0026#95;\u0026#95;()[/BUTC].\n\n[BUTC]mon_enumeration = Enumerations(nombres)[/BUTC]\n\nLes méthodes sont ensuite accessibles au niveau de l'objet nouvellement créé.\n\n[BUTC]mon_enumeration.additionne()[/BUTC]  \n[BUTC]print(monenumeration.somme)[/BUTC]  \n[BUTC]# affiche 42[/BUTC]\n\nLe code du paradigme objet est très différent des paradigmes impératif et fonctionnel présentés précédemment, mais il produit bien le résultat attendu.\n\nNous pouvons créer un second objet appartenant à cette même classe, avec une autre liste de nombres.\n\n[BUTC]monautreenumeration = Enumerations([3, -4, 19, 2, 0])[/BUTC]\n\nCet objet possède lui aussi la méthode [BUTC]additionne()[/BUTC], que nous pouvons appeler afin de générer l'attribut somme rattaché à cet objet (et différent de l'objet précédent).\n\n[BUTC]monautreenumeration.additionne()[/BUTC]  \n[BUTC]print(monautreenumeration.somme)[/BUTC]  \n[BUTC]# affiche 20[/BUTC]\n\nLes valeurs des attributs sont spécifiques à chaque instance ou objet de la classe. \n\n[RETENIR]\nDans le paradigme objet, l'**instanciation** consiste à créer un objet appartenant à une classe donnée.  \nL'**encapsulation** désigne le regroupement des données et des procédures au sein de l'objet.\n* L'accès aux données s'effectue donc au travers des mécanismes d'interface proposés par l'objet.((fleche))\n[/RETENIR]\n\nLa programmation objet comporte deux autres notions essentielles\u0026nbsp;: l'héritage et le polymorphisme.\n\n###Héritage et polymorphisme/c.\n\n[DEF]\n**Héritage\u0026nbsp;:**\n\nL'héritage consiste à définir des sous-classes, ou classes-enfants, capables d'hériter des propriétés de la classe parente. \n[/DEF]\n\n[DEF]\n**Polymorphisme\u0026nbsp;:**\n\nLe polymorphisme consiste à pouvoir adapter le comportement d'une méthode d'une classe à l'autre.\n[/DEF]\n\nIllustrons ces deux propriétés en créant des classes d'animaux, en commençant par une classe «\u0026nbsp;Animal\u0026nbsp;» adaptée à tous les animaux sans distinction.  \nConsidérant que tous les animaux sont capables de pousser un cri, nous créons une méthode dédiée appelée [BUTC]crie()[/BUTC]. Le cri émis pourra cependant être différent d'un animal à l'autre\u0026nbsp;: le cri du chat est le miaulement et le cri du chien l'aboiement. Un animal d'une espèce indéterminée pousse un cri indéterminé.\n\n[BUTC]class Animal:[/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, nom, age):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.nom = nom[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.age = age[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def crie(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return 'cri indéterminé'[/BUTC]\u003e\u003e\n\n[BUTC]animal1 = Animal('Finaud', 9)[/BUTC]\n\n[BUTC]print(animal1.nom)[/BUTC]\n\u003c\u003c((auto,-22,0,0,0))[BUTC]# affiche Finaud[/BUTC]\u003e\u003e\n\n[BUTC]print(animal1.crie())[/BUTC]  \n[BUTC]# affiche cri indéterminé[/BUTC]\n\nSi nous définissons une classe enfant, dérivée de la classe Animal, elle hérite automatiquement de ses méthodes et de ses propriétés.\n\n[BUTC]class Chat(Animal):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]pass[/BUTC]\u003e\u003e\n\nL'instruction [BUTC]pass[/BUTC] nous permet de définir notre classe sans méthodes ni attributs, afin de mettre en évidence le caractère automatique du mécanisme d'héritage.\n\n[BUTC]chat1 = Chat('Félix', 7)[/BUTC]\n\n[BUTC]print(chat1.nom)[/BUTC]  \n[BUTC]# affiche Félix[/BUTC]\n\n[BUTC]print(chat1.crie())[/BUTC]  \n[BUTC]# affiche cri indéterminé[/BUTC]\n\nOn constate bien que la sous-classe «\u0026nbsp;Chat\u0026nbsp;» a hérité des caractéristiques de la classe parente «\u0026nbsp;Animal\u0026nbsp;»\u0026nbsp;: nous pouvons créer des objets de classe «\u0026nbsp;Chat\u0026nbsp;» capables de pousser un cri (indéterminé) alors que rien n'a été défini au niveau de la classe «\u0026nbsp;Chat\u0026nbsp;».\n\n[RETENIR]\nCe principe d'héritage nous offre la possibilité de redéfinir uniquement certaines caractéristiques en fonction des besoins, et de conserver toutes les autres.\n[/RETENIR]\n\nNous allons redéfinir la sous-classe «\u0026nbsp;Chat\u0026nbsp;» de manière plus utile, en lui attribuant également un surnom optionnel et en personnalisant la méthode [BUTC]crie()[/BUTC].\n\n[BUTC]class Chat(Animal):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, nom, age, surnom=None):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]Animal.\u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, nom, age)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.surnom = surnom[/BUTC]\u003e\u003e\n\t\t\n\u003c\u003c((auto,0,0,0,50))[BUTC]def crie(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return 'Miaou'[/BUTC]\u003e\u003e\n\nL'instanciation s'appuie sur celle de la classe parente mais ajoute la création de l'attribut [BUTC]surnom[/BUTC] spécifiquement pour les chats. Ayant indiqué une valeur [BUTC]None[/BUTC] par défaut, on peut créer un chat sans surnom, mais s'il en a un et qu'on le précise, il sera pris en compte.\n\n[BUTC]chat1 = Chat('Gavroche', 4)[/BUTC]  \n[BUTC]chat2 = Chat('Félix' , 5, 'Diesel')[/BUTC]\n\n[BUTC]print(chat1.nom)[/BUTC]  \n[BUTC]# affiche Gavroche[/BUTC]\n\n[BUTC]print(chat2.nom)[/BUTC]  \n[BUTC]# affiche Félix[/BUTC]\n\n[BUTC]print(chat1.surnom)[/BUTC]  \n[BUTC]# affiche None[/BUTC]\n\n[BUTC]print(chat2.surnom)[/BUTC]  \n[BUTC]# affiche Diesel[/BUTC]\n\n[BUTC]print(chat1.crie())[/BUTC]  \n[BUTC]# affiche Miaou[/BUTC]\n\n[BUTC]print(chat2.crie())[/BUTC]  \n[BUTC]# affiche Miaou[/BUTC]\n\nLes objets partagent les méthodes, éventuellement héritées et éventuellement modifiées, tout en possédant des valeurs d'attributs distinctes.\n\n[RETENIR]\nParmi les langages de programmation orientée objet, on compte C++, Javascript, Python, Java, Ruby ainsi que SmallTalk.\n[/RETENIR]\n\n[C]\nConclusion\u0026nbsp;:\n\nDans ce cours nous avons présenté successivement trois styles majeurs de programmation informatique\u0026nbsp;: le paradigme impératif, le paradigme fonctionnel et le paradigme objet, dont nous avons présenté les principales caractéristiques. Il existe d'autres paradigmes, parmi lesquels la programmation événementielle ou encore la programmation concurrente, qui ne sont pas étudiés dans le cadre de ce cours.  \nOn pourrait se demander quel est le meilleur paradigme parmi tous ceux-ci\u0026nbsp;? Cette question fait souvent l'objet de débats animés et passionnés entre développeur·se·s, mais elle n'a pas de réponse unique car les paradigmes constituent autant de manières, parfois très différentes, d'apporter une solution à un problème donné. Nous l'avons montré avec un même exemple abordé selon trois paradigmes distincts.  \nCertains langages informatiques imposent le recours à un paradigme donné, tandis que d'autres (comme Python) en supportent plusieurs, et ces paradigmes peuvent même être panachés le cas échéant au sein d'un même programme. Les préférences stylistiques du·de la développeur·se et les pratiques en vigueur ont également une influence sur le choix d'un paradigme de programmation. \n\nOn peut toutefois noter que la programmation orientée objet est assez fréquemment employée pour la réalisation d'interfaces graphiques ou de jeux, fortement liés à des changements d'état. Par ailleurs, on ne peut ignorer l'essor actuel que connaît le paradigme fonctionnel\u0026nbsp;: celui-ci semble en effet mieux répondre que les autres aux contraintes de fiabilité et de performance, en particulier pour la mise en œuvre de l'exécution de portions de code en parallèle.  \nEnfin, le choix d'un paradigme de programmation influence celui du langage de programmation dont les critères suivants viennent compléter celui d'implémenter ou non le paradigme de son choix\u0026nbsp;:\n* Existence d'une grande communauté de développeur·se·s\u0026nbsp;: partage de bibliothèques, d'expériences, etc.\n* Facilité d'apprentissage\n* Capacité à mettre en œuvre plusieurs paradigmes\n* Langage compilé ou interprété\n* Avec ou sans pointeur, selon qu’on privilégie l'optimisation dans le premier cas où la rapidité de développement et la fiabilité dans le second cas.\n[/C]\n","siblings":[{"resourceId":"5ff6c8e4bc595a0100f4857a","type":"Cours","sort":null},{"resourceId":"5ff6c8a8bc595a0100f48577","type":"Fiche de révision","sort":null},{"resourceId":"5f3e923e2263e30100dfa7b9","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7de409e0a80100fdbbe6","name":"Paradigmes de programmation"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7de409e0a80100fdbbe6","label":"Cours : Paradigmes de programmation","link":"https://www.schoolmouv.fr/cours/paradigmes-de-programmation/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"paradigmes-de-programmation","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/paradigmes-de-programmation/fiche-de-cours","title":"Paradigmes de programmation : cours de Terminale - Numérique","metaDescription":"SchoolMouv ® te propose ce cours sur Paradigmes de programmation (Terminale - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"paradigmes-de-programmation","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Structure de base de données : cours de Tle - Numérique</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Structure de base de données : cours de Tle - Numérique">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Structure de base de données (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/structure-de-base-de-donnees/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/structure-de-base-de-donnees/fiche-de-cours","name":"Cours : Structure de base de données"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Structure de base de données</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Structure de base de données</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Nous savons modéliser une base de données et la traduire en un schéma relationnel exploitable par le système informatique qui aura la charge de sa mise en œuvre. Cependant, avant de concrétiser la création informatique de la structure de cette base de données, il est nécessaire de procéder à un contrôle. L'objectif de cette étape est de repérer d'éventuelles anomalies dans le schéma relationnel qui pourraient être à l'origine de redondances d'informations ou d'incohérences.</p>
+<p>Nous allons aborder dans ce cours la notion de dépendance fonctionnelle sur laquelle s'appuie le procédé de normalisation. Nous étudierons ensuite ce procédé, et verrons dans quelle mesure il sert à identifier des anomalies dans le schéma. Pour terminer, nous étudierons les contraintes d'intégrité qui nécessitent d'effectuer des choix sur le comportement de la base de données lors de certaines opérations de mises à jour dans ses tables.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Dépendance fonctionnelle</p></div></h2>
+<p>Intéressons-nous donc en premier lieu à la notion de dépendance fonctionnelle.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Dépendance fonctionnelle :</b></p>
+<p>Soient $A$ et $B$ deux ensembles d'attributs. On dit que $B$ dépend fonctionnellement de $A$, si, à chaque valeur prise par $A$ (c’est-à-dire chaque occurrence), ne correspond qu'une et une seule valeur de $B$. On note cette dépendance $A \rightarrow B$.</p>
+</div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On peut utiliser l'abrégé « DF » pour le terme « dépendance fonctionnelle ».</p></div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>À une immatriculation de véhicule ne correspond forcément qu'un modèle de voiture. Il existe donc une DF, entre les attributs « immatriculation » et « modèle ».<br>
+En revanche, lorsque l'on s'intéresse à un modèle de véhicule, on ne lui trouvera pas forcément une seule plaque d'immatriculation… Heureusement pour le constructeur automobile !</p></div>
+</div>
+<p>Il est possible de caractériser une DP.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">On observera si une dépendance fonctionnelle est <b>élémentaire</b> et si elle est <b>directe</b>.</div>
+</li>
+</ul>
+<h3 range="a." markdown="1"><div markdown="1"><p>Dépendance fonctionnelle élémentaire</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>DF élémentaire :</b></p>
+<p>Soient $A$ et $B$ deux ensembles d'attributs tels que $A \rightarrow B$. La dépendance $A \rightarrow B$ est élémentaire s'il n'existe pas un attribut $C$ contenu dans $A$ tel que $C \rightarrow B$.</p>
+</div>
+</div>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/image001.png" alt="MCD SGBD BDD"> 
+<span>MCD de la base de données du club de cuisine
+ </span></p></div></div>
+<p><b>Schéma relationnel de la base de données du club de cuisine :</b></p>
+<p><span class="calculator_button" markdown="1">Adherent(<em>idAdherent, nomAdherent, prenom, mail, adresse, passe, telephone</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idAdherent : clé primaire</span></p></div>
+<p><span class="calculator_button" markdown="1">Recette(<em>idRecette, nomRecette, niveau, duree, categorie, etapes</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idAdherent : clé étrangère en référence à idAdherent de Adherent</span></p></div>
+<p><span class="calculator_button" markdown="1">Ingredient(<em>idIngredient, nomIngredient</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé primaire</span></p></div>
+<p><span class="calculator_button" markdown="1">Utilise(<em>idRecette, idIngredient, quantite, unite, type</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette, idIngredient : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé étrangère en référence à idRecette dans recette</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé étrangère en référence à idIngredient dans ingredient</span></p></div>
+<p>Dans ce contexte de base de données, on a : </p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">$(idIngredient, idRecette) \rightarrow nomIngredient$ : à une valeur du couple $(idIngredient, idRecette)$ correspond une et une seule valeur de $nomIngredient$. Cependant, dans l'ensemble de ces deux attributs, à $idIngredient$ correspond également une seule valeur de $nomIngredient$.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La DF n'est donc <b>pas élémentaire</b>.</div>
+</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">$(idIngredient, idRecette) \rightarrow quantite$ : à une valeur du couple $(idIngredient, idRecette)$ correspond une unique valeur de quantité. En revanche, à une valeur de $idIngredient$ ne correspond pas une et une seule valeur de $quantite$ car la valeur de $quantite$ dépend de la recette dans laquelle l'ingrédient identifié par $idIngredient$ intervient. De la même manière, à une valeur de $idRecette$ ne correspond pas une et une seule valeur de $quantite$ car la valeur de $quantite$ dépend de l'ingrédient qui intervient dans la recette identifiée par $idRecette$.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La DF est donc ici <b>élémentaire</b>.</div>
+</li>
+</ul>
+<h3 range="b." markdown="1"><div markdown="1"><p>Dépendance fonctionnelle directe</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>DF directe :</b></p>
+<p>Soient $A$ et $B$ deux ensembles d'attributs tels que $A \rightarrow B$. La dépendance $A \rightarrow B$ est directe s'il n'existe pas un attribut $C$ tel que $A \rightarrow C$ et $C \rightarrow B$.</p>
+</div>
+</div>
+<p>En restant dans le contexte du club de cuisine :</p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">$idRecette \rightarrow nomAdherent$ : à une valeur de l'attribut $idRecette$ ne correspond qu'une et une seule valeur de $nomAdherent$. En revanche, cette correspondance s'établit grâce aux DF $idRecette \rightarrow idAdherent$ puis $idAdherent \rightarrow nomAdherent$.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Ainsi, la DF $idRecette \rightarrow nomAdherent$ n'est <b>pas directe</b>.</div>
+</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">$idRecette \rightarrow idAdherent$ : à une valeur de l'attribut $idRecette$ ne correspond qu'une et une seule valeur de $idAdherent$.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Ici, la DF est <b>directe</b>.</div>
+</li>
+</ul>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La dépendance fonctionnelle élémentaire est parfois abrégée en DFE.
+La dépendance fonctionnelle directe est parfois abrégée en DFD.</p></div>
+</div>
+<p>Maintenant que nous savons en quoi consiste une dépendance fonctionnelle et comment la caractériser (directe ou non, élémentaire ou non), entrons dans le vif du sujet : la normalisation.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>La normalisation</p></div></h2>
+<p>La normalisation permet de contrôler les relations du schéma relationnel issu du MCD afin d'éviter les redondances sources d'anomalies de mise à jour, de permettre des recherches selon des critères variés et d'optimiser le fonctionnement informatique de la future base de données. Cette démarche peut donc conduire à une modification du schéma relationnel initial.</p>
+<p>La normalisation impose cinq formes dites « normales », certaines pouvant présenter des variantes. Dans ce cours, nous nous focaliserons sur les trois premières formes normales qui sont suffisantes dans une grande majorité des cas.<br>
+Mais en quoi consistent ces formes normales ? Voyons plus en détail.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Première forme normale</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Première forme normale :</b></p>
+<p>Une relation est dite en première forme normale si, et seulement si, tout attribut qui la compose contient une valeur atomique. On la note 1FN.</p>
+</div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Une valeur atomique (ou mono-valuée) est une valeur qui n'est pas décomposable en plusieurs parties, qu'elles soient ou non de même nature.</p></div>
+</div>
+<ul>
+
+<li>Observons la relation <em>Recette</em> de la base de données du club de cuisine. Son attribut « etapes » est décomposable (étape 1, étape 2, …). Or, une étape est une action à laquelle est associée un rang qui permet de la positionner par rapport aux autres dans le but de les ordonner.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Notre relation <em>Recette</em> n'est donc pas conforme à la 1FN.</div>
+</li>
+</ul>
+<p>Si on ne la rend pas conforme, des difficultés vont se poser : comme toutes les recettes n'ont pas le même nombre d'étapes, on risque de sous-estimer ou surestimer la place à réserver dans la relation pour l'enregistrement des étapes dans un seul attribut.</p>
+<ul>
+
+<li>Étudions maintenant la relation <em>Adherent</em>. Son attribut « adresse » est décomposable (numéro, rue, complément, code postal et ville).</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Notre relation <em>Adherent</em> n'est donc pas conforme à la 1FN.</div>
+</li>
+</ul>
+<p>Si on ne la rend pas conforme, on ne sera pas en mesure, par exemple, de recenser facilement tous les adhérents d'une même commune.</p>
+<p>Il est peut-être parfois nécessaire de revoir le schéma relationnel de la base de données afin que ses relations se trouvent en 1FN.  </p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Relation <em>Recette</em></b></div>
+</li>
+</ul>
+<p>Pour modifier la relation <em>Recette</em>, il faut sortir l'attribut « etapes » de la relation <em>Recette</em> et créer une nouvelle relation comme suit :</p>
+<p><span class="calculator_button" markdown="1">Etape(<em>idRecette, rang, contenu</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette, rang : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé étrangère en référence à idRecette de Recette</span></p></div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Remarque :</b></p>
+<p>On ne peut pas prendre uniquement le rang pour identifier une étape de recette de cuisine : le rang 1 est par exemple affecté à la première étape de toutes les recettes. Il ne permet donc pas d'identifier à lui seul une et une seule étape d'une recette de cuisine donnée.</p>
+</div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Relation <em>Adherent</em></b></div>
+</li>
+</ul>
+<p>Pour modifier la relation <em>Adherent</em>, il faut décomposer l'attribut « adresse » en autant d'attributs que d'éléments qui le composent. La relation <em>Adherent</em> s'en voit donc ainsi modifiée :</p>
+<p><span class="calculator_button" markdown="1">Adherent(<em>idAdherent, nomAdherent, prenom, mail, numero, rue, complement, codePostal, ville, passe, telephone</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idAdherent : clé primaire</span></p></div>
+<p>On peut également répercuter ces modifications dans le MCD.</p>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/image003.png" alt="MCD SGBD BDD"> 
+<span>MCD de la base de données du club de cuisine et schéma relationnel corrigé après normalisation 1NF
+ </span></p></div></div>
+<p>Une fois les relations du schéma mises en forme 1NF, il est temps de vérifier que le nouveau schéma relationnel respecte la deuxième forme normale.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Deuxième forme normale</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Deuxième forme normale :</b></p>
+<p>Une relation est dite en deuxième forme normale si, et seulement si, elle est en première forme normale et si toutes les dépendances fonctionnelles entre la clé et les autres attributs sont élémentaires. On la note 2FN et on peut écrire : 1FN ⊂ 2FN.</p>
+</div>
+</div>
+<p>Si nous regardons la relation</p>
+<p><span class="calculator_button" markdown="1">Utilise(<em>idRecette, idIngredient, quantite, unite, type</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette, idIngredient : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé étrangère en référence à idRecette dans Recette</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé étrangère en référence à idIngredient dans Ingredient</span></p></div>
+<p>On a $idRecette, idIngredient \rightarrow type$, mais aussi $idIngredient \rightarrow type$. En effet, à un ingrédient identifié par « idIngredient » ne correspond qu'un et un seul type (viande, légume, condiment, boisson…).</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La relation <em>Utilise</em> ne respecte donc pas la 2FN.</div>
+</li>
+</ul>
+<p>Si on ne la rend pas conforme, il va se produire inévitablement une redondance : l'information disant qu’un ingrédient donné relève d'un certain type <b>se répètera</b> dans la table.</p>
+<p>Dans l’exemple ci-dessous, les informations stipulant respectivement que l'ingrédient 4 est un condiment et le 5 un légume se répètent.</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">quantite</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">unite</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">type</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>200</td>
+<td>grammes</td>
+<td>viande</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="background:#EAFAF1; ">4 </td>
+<td>2</td>
+<td>cuillère à café</td>
+<td style="background:#EAFAF1; ">condiment </td>
+</tr>
+<tr>
+<td>3</td>
+<td style="background:#F4ECF7; ">5 </td>
+<td>500</td>
+<td>grammes</td>
+<td style="background:#F4ECF7; ">légume </td>
+</tr>
+<tr>
+<td>1</td>
+<td style="background:#EAFAF1; ">4 </td>
+<td>1</td>
+<td>cuillère à soupe</td>
+<td style="background:#EAFAF1; ">condiment </td>
+</tr>
+<tr>
+<td>5</td>
+<td style="background:#F4ECF7; ">5 </td>
+<td>1</td>
+<td>kg</td>
+<td style="background:#F4ECF7; ">légume </td>
+</tr>
+<tr>
+<td>4</td>
+<td>10</td>
+<td>50</td>
+<td>mL</td>
+<td>condiment</td>
+</tr>
+</table></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Une redondance d'information doit être évitée afin de limiter l'impact des mises à jour dans la base ainsi que les risques d'incohérence qui en découlent.</p></div>
+</div>
+<p>Pour y remédier, sachant que l'on a identifié $idIngredient \rightarrow type$, il semble naturel de sortir « type » de la relation <em>Utilise</em> pour l'ajouter aux attributs de la relation <em>Ingredient</em>.<br>
+On obtient :</p>
+<p><span class="calculator_button" markdown="1">Utilise(<em>idRecette, idIngredient, quantite, unite</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette, idIngredient : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé étrangère en référence à idRecette dans Recette</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé étrangère en référence à idIngredient dans Ingredient</span></p></div>
+<p><span class="calculator_button" markdown="1">Ingredient(<em>idIngredient, nomIngredient, type</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé primaire</span></p></div>
+<p>Maintenant que les relations du schéma respectent la 2NF, il ne nous reste plus qu'à contrôler que nos relations respectent la troisième forme normale.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Troisième forme normale</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Troisième forme normale :</b></p>
+<p>Une relation est dite en troisième forme normale si, et seulement si, elle est en seconde forme normale et si tout attribut n'appartenant pas à la clé primaire n'est pas en dépendance fonctionnelle directe avec un attribut ou un ensemble d'attributs non-clé. On la note 3FN et on peut écrire : 1FN ⊂ 2FN ⊂ 3FN.</p>
+</div>
+</div>
+<p>En nous penchant sur la relation <em>Adherent</em>, on peut remarquer que $ville \rightarrow codePostal$. Or ni « ville », ni « codePostal » ne sont des attributs appartenant à la clé primaire de la relation <em>Adherent</em>.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Notre relation <em>Adherent</em> ne respecte donc pas la 3NF.</div>
+</li>
+</ul>
+<p>Si on ne la rend pas conforme, on se trouve encore une fois confronté à une redondance : les informations stipulant que le code postal de Guéret est 23000 et que le code postal de Brest est 29000 se répètent dans la table.</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">mail</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">numero</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">rue</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">complement</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">codePostal</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">ville</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">passe</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">telephone</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Dupont</td>
+<td>Jacques</td>
+<td>dup@orange.fr</td>
+<td>3</td>
+<td>rue blanche</td>
+<td>appt 11</td>
+<td style="background:#F8BBD0; ">23000 </td>
+<td style="background:#F8BBD0; ">Gueret </td>
+<td></td>
+<td>0612345678</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dampierre</td>
+<td>Gérard</td>
+<td>gege@free.fr</td>
+<td>7</td>
+<td>rue Dumont</td>
+<td></td>
+<td style="background:#B2EBF2; ">29000 </td>
+<td style="background:#B2EBF2; ">Brest </td>
+<td></td>
+<td>0711223344</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Forestier</td>
+<td>Denise</td>
+<td>dd@gmail.com</td>
+<td>9</td>
+<td>rue aux loups</td>
+<td>entrée B</td>
+<td>12000</td>
+<td>Rodez</td>
+<td></td>
+<td>0488665544</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Vielle</td>
+<td>Rose</td>
+<td>vr@sfr.fr</td>
+<td>1</td>
+<td>av. des prés</td>
+<td>hameau La Forge</td>
+<td>10000</td>
+<td>Troyes</td>
+<td></td>
+<td>0612121313</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Javert</td>
+<td>Jules</td>
+<td>jj@sfr.fr</td>
+<td>1</td>
+<td>boulevard Brune</td>
+<td>allée 2</td>
+<td style="background:#B2EBF2; ">29000 </td>
+<td style="background:#B2EBF2; ">Brest </td>
+<td></td>
+<td>0612121313</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Duval</td>
+<td>Isabelle</td>
+<td>isa@bbox.fr</td>
+<td>11bis</td>
+<td>impasse des hirondelles</td>
+<td></td>
+<td style="background:#F8BBD0; ">23000 </td>
+<td style="background:#F8BBD0; ">Gueret </td>
+<td></td>
+<td>0612345678</td>
+</tr>
+</table></div>
+<p>Afin de corriger cela, sachant que l'on a mis en évidence $ville \rightarrow codePostal$, il suffit de sortir « codePostal » de la relation <em>Adherent</em> et de créer une nouvelle relation <em>Ville</em>.<br>
+Ce qui donne :</p>
+<p><span class="calculator_button" markdown="1">Adherent(<em>idAdherent, nomAdherent, prenom, mail, numero, rue, complement, idVille, passe, telephone</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idAdherent : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idVille : clé étrangère en référence à idVille dans Ville</span></p></div>
+<p><span class="calculator_button" markdown="1">Ville(<em>idVille, nomVille, codePostal</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idVille : clé primaire</span></p></div>
+<p>On notera au passage la création d'un nouvel attribut « IdVille », que l'on définira comme numérique, préférant ainsi un attribut numérique à l'attribut alphabétique « nomVille » pour constituer une clé primaire.</p>
+<p>Nous avons donc normalisé notre schéma relationnel en veillant à ce que ses relations respectent la 3NF, donc la 2NF et par conséquent la 1NF.<br>
+Voici le MCD et le schéma relationnel final de notre exemple, maintenant normalisé.</p>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/image009.png" alt="MCD SGBD BDD"> 
+<span>MCD corrigé après normalisation 2NF et 3NF
+ </span></p></div></div>
+<p><span class="calculator_button" markdown="1">Utilise(<em>idRecette, idIngredient, quantite, unite</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette, idIngredient : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé étrangère en référence à idRecette dans Recette</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé étrangère en référence à idIngredient dans Ingredient</span></p></div>
+<p><span class="calculator_button" markdown="1">Ingredient(<em>idIngredient, nomIngredient, type</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé primaire</span></p></div>
+<p><span class="calculator_button" markdown="1">Adherent(<em>idAdherent, nomAdherent, prenom, mail, numero, rue, complement, idVille, passe, telephone</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idAdherent : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idVille : clé étrangère en référence à idVille dans Ville</span></p></div>
+<p><span class="calculator_button" markdown="1">Ville(<em>idVille, nomVille, codePostal</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idVille : clé primaire</span></p></div>
+<p><span class="calculator_button" markdown="1">Etape(<em>idRecette, rang, contenu</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette, rang : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé étrangère en référence à idRecette de Recette</span></p></div>
+<p><span class="calculator_button" markdown="1">Recette(<em>idRecette, nomRecette, niveau, duree, categorie, etapes</em>) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idAdherent : clé étrangère en référence à idAdherent de Adherent</span></p></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Lorsque les relations du schéma relationnel respectent la 3FN, on peut considérer que la structure de la base de données est prête à être créée informatiquement.</p></div>
+</div>
+<p>Dans cette étape, on transmet le schéma relationnel au système informatique (nommé Système de Gestion de Base de Données, soit SGBD) qui aura pour charge de créer la structure puis de gérer la future base de données. Lors de cette étape, il est nécessaire de préciser des règles de fonctionnement au SGBD. </p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Les contraintes d'intégrité</p></div></h2>
+<p>Les <b>contraintes d'intégrité</b> sont des règles que doivent respecter les attributs des relations afin de <b>garantir la cohérence des données dans la base</b>. Elles doivent être précisées au moment où l'on implémente le schéma relationnel dans le système informatique chargé de créer la structure de la base. On en compte trois principales :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">la contrainte de domaine ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la contrainte de relation ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la contrainte de référence.</div>
+</li>
+</ul>
+<p>Voyons en quoi chacune de ces contraintes consistent.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>La contrainte de domaine</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Contrainte de domaine :</b></p>
+<p>Lors de la création d'une table dans la base de données, il est nécessaire de préciser le domaine dans lequel chacun de ses attributs prend ses valeurs. C'est ce que l'on nomme une contrainte de domaine.</p>
+</div>
+</div>
+<p>Il est important notamment de pouvoir comparer les valeurs d'un même attribut prises par plusieurs occurrences. Une comparaison n'est possible que si l'attribut est toujours enregistré avec le même format (on ne peut en effet pas comparer un A et un nombre !)..</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Dans la relation « etape » de la base de données du club de cuisine, si le rang de l’étape 1 est enregistré sous la forme du nombre « 1 » et si le rang de l’étape 2 est enregistré sous la forme alphanumérique « N<sup>o</sup> 2 », il sera difficile de les comparer, et donc de les ordonner.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Nous avons d'ailleurs commencé à réfléchir à cette contrainte de domaine dans le cours précédent, lorsque nous avons introduit notre dictionnaire de données dans lequel le type des attributs était défini.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Une fois la contrainte de domaine définie pour chaque attribut, le SGBD interdit l'introduction de tuples dans une relation dont le type d'un des attributs ne serait pas conforme à celui qui lui aura été attribué par la contrainte de domaine.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>La contrainte de relation</p></div></h3>
+<p>Nous savons que toutes les relations du schéma relationnel doivent comporter une clé primaire, permettant d'identifier de manière unique les tuples qui y sont enregistrés.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Contrainte de relation :</b></p>
+<p>La contrainte de relation impose que la clé primaire formée par un ou plusieurs attributs d'une relation soit unique et non nulle. C'est ce que l'on appelle la contrainte de relation.</p>
+</div>
+</div>
+<p>C'est le respect de cette contrainte qui garantit l'identification sans ambiguïté d'un tuple dans une relation.</p>
+<p>Ainsi, lors de la création d'une relation dans une base, <b>il est nécessaire de préciser cette contrainte de relation au SGBD</b>. Dès lors que cette contrainte de relation est précisée pour une table, le SGBD interdira l'introduction d'un tuple dont la valeur de la clé primaire sera identique à celle d'un tuple déjà présent dans la base ou sera nulle.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>La contrainte de référence</p></div></h3>
+<p>Lorsque le schéma relationnel définit des relations faisant référence à des clés étrangères, cela soulève inévitablement une contrainte d'intégrité.<br>
+Ainsi, si l'on insère un tuple dans une table faisant appel à des clés étrangères, le SGBD doit contrôler l'existence de ces clés dans les relations d'où elles proviennent.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Dans la base de données du club de cuisine, considérons l’insertion d’un tuple dont les attributs « idIngredient » et « idRecette » sont respectivement $12$ et $27$. Le SGBD n'acceptera cette insertion qu'à condition que l'ingrédient dont l'attribut $idIngredient = 12$ existe dans la table « ingredient » et que la recette dont l’$idRecette = 27$ existe dans la table « recette ».</p></div>
+</div>
+<p>De plus, il est nécessaire d'indiquer au SGBD ce qu'il doit faire dans la cadre de la suppression d'un tuple dans une table dont la clé primaire est étrangère dans une autre table. Plusieurs options sont possibles :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">interdire la suppression ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">supprimer également les tuples concernés dans les autres tables ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">avertir l'utilisateur d'une incohérence ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">mettre les valeurs des attributs concernés à une valeur nulle dans les tuples concernés, si l'opération est possible (ce n'est pas le cas si la clé primaire du tuple supprimé au départ intervient en clé étrangère dans la clé primaire d'une autre table).</div>
+</li>
+</ul>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Intégrité référentielle :</b></p>
+<p>L’intégrité référentielle est une situation dans laquelle pour chaque tuple d'une table A qui fait référence à un tuple d'une table B, le tuple ainsi référencé existe réellement dans la table B.</p>
+</div>
+</div>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous sommes maintenant en mesure de mettre en œuvre une base de données en transmettant au SGBD un schéma relationnel préalablement élaboré ainsi que les contraintes d'intégrité qui l'accompagnent. Dans le cours qui suit, nous nous intéresserons de plus près aux missions des SGBD chargés de mettre en œuvre informatiquement les bases de données.</p>
+</div>
+</div></div>
+<div id="poool-hc5x5-883li" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e70fc8c09e0a80100fe05ce","type":"Cours","title":"Structure de base de données","content":"[IN]\nIntroduction\u0026nbsp;:\n\nNous savons modéliser une base de données et la traduire en un schéma relationnel exploitable par le système informatique qui aura la charge de sa mise en œuvre. Cependant, avant de concrétiser la création informatique de la structure de cette base de données, il est nécessaire de procéder à un contrôle. L'objectif de cette étape est de repérer d'éventuelles anomalies dans le schéma relationnel qui pourraient être à l'origine de redondances d'informations ou d'incohérences.\n\nNous allons aborder dans ce cours la notion de dépendance fonctionnelle sur laquelle s'appuie le procédé de normalisation. Nous étudierons ensuite ce procédé, et verrons dans quelle mesure il sert à identifier des anomalies dans le schéma. Pour terminer, nous étudierons les contraintes d'intégrité qui nécessitent d'effectuer des choix sur le comportement de la base de données lors de certaines opérations de mises à jour dans ses tables.\n[/IN]\n\n##Dépendance fonctionnelle/1\n\nIntéressons-nous donc en premier lieu à la notion de dépendance fonctionnelle.\n\n[DEF]\n**Dépendance fonctionnelle\u0026nbsp;:**\n\nSoient $A$ et $B$ deux ensembles d'attributs. On dit que $B$ dépend fonctionnellement de $A$, si, à chaque valeur prise par $A$ (c’est-à-dire chaque occurrence), ne correspond qu'une et une seule valeur de $B$. On note cette dépendance $A \\rightarrow B$.\n[/DEF]\n\n[AST]\nOn peut utiliser l'abrégé «\u0026nbsp;DF\u0026nbsp;» pour le terme «\u0026nbsp;dépendance fonctionnelle\u0026nbsp;».\n[/AST]\n\n[EX]\nÀ une immatriculation de véhicule ne correspond forcément qu'un modèle de voiture. Il existe donc une DF, entre les attributs «\u0026nbsp;immatriculation\u0026nbsp;» et «\u0026nbsp;modèle\u0026nbsp;».  \nEn revanche, lorsque l'on s'intéresse à un modèle de véhicule, on ne lui trouvera pas forcément une seule plaque d'immatriculation… Heureusement pour le constructeur automobile\u0026nbsp;!\n[/EX]\n\nIl est possible de caractériser une DP.\n* On observera si une dépendance fonctionnelle est **élémentaire** et si elle est **directe**.((fleche))\n\n###Dépendance fonctionnelle élémentaire/a.\n\n[DEF]\n**DF élémentaire\u0026nbsp;:**\n\nSoient $A$ et $B$ deux ensembles d'attributs tels que $A \\rightarrow B$. La dépendance $A \\rightarrow B$ est élémentaire s'il n'existe pas un attribut $C$ contenu dans $A$ tel que $C \\rightarrow B$.\n[/DEF]\n\n[IMG]((75))\n![MCD SGBD BDD](https://kronos-images.schoolmouv.fr/image001.png) #MCD de la base de données du club de cuisine\n[/IMG]\n\n**Schéma relationnel de la base de données du club de cuisine\u0026nbsp;:**\n\n[BUTC]Adherent(__idAdherent, nomAdherent, prenom, mail, adresse, passe, telephone__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idAdherent : clé primaire[/BUTC]\u003e\u003e\n\n[BUTC]Recette(__idRecette, nomRecette, niveau, duree, categorie, etapes__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idAdherent : clé étrangère en référence à idAdherent de Adherent[/BUTC]\u003e\u003e\n\n[BUTC]Ingredient(__idIngredient, nomIngredient__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé primaire[/BUTC]\u003e\u003e\n\n[BUTC]Utilise(__idRecette, idIngredient, quantite, unite, type__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette, idIngredient : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé étrangère en référence à idRecette dans recette[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé étrangère en référence à idIngredient dans ingredient[/BUTC]\u003e\u003e\n\nDans ce contexte de base de données, on a\u0026nbsp;: \n* $(idIngredient, idRecette) \\rightarrow nomIngredient$ : à une valeur du couple $(idIngredient, idRecette)$ correspond une et une seule valeur de $nomIngredient$. Cependant, dans l'ensemble de ces deux attributs, à $idIngredient$ correspond également une seule valeur de $nomIngredient$.((bulle))\n* La DF n'est donc **pas élémentaire**.((fleche))\n* $(idIngredient, idRecette) \\rightarrow quantite$ : à une valeur du couple $(idIngredient, idRecette)$ correspond une unique valeur de quantité. En revanche, à une valeur de $idIngredient$ ne correspond pas une et une seule valeur de $quantite$ car la valeur de $quantite$ dépend de la recette dans laquelle l'ingrédient identifié par $idIngredient$ intervient. De la même manière, à une valeur de $idRecette$ ne correspond pas une et une seule valeur de $quantite$ car la valeur de $quantite$ dépend de l'ingrédient qui intervient dans la recette identifiée par $idRecette$.((bulle))\n* La DF est donc ici **élémentaire**.((fleche))\n\n###Dépendance fonctionnelle directe/b.\n\n[DEF]\n**DF directe\u0026nbsp;:**\n\nSoient $A$ et $B$ deux ensembles d'attributs tels que $A \\rightarrow B$. La dépendance $A \\rightarrow B$ est directe s'il n'existe pas un attribut $C$ tel que $A \\rightarrow C$ et $C \\rightarrow B$.\n[/DEF]\n\nEn restant dans le contexte du club de cuisine\u0026nbsp;:\n* $idRecette \\rightarrow nomAdherent$ : à une valeur de l'attribut $idRecette$ ne correspond qu'une et une seule valeur de $nomAdherent$. En revanche, cette correspondance s'établit grâce aux DF $idRecette \\rightarrow idAdherent$ puis $idAdherent \\rightarrow nomAdherent$.((bulle))\n* Ainsi, la DF $idRecette \\rightarrow nomAdherent$ n'est **pas directe**.((fleche))\n* $idRecette \\rightarrow idAdherent$ : à une valeur de l'attribut $idRecette$ ne correspond qu'une et une seule valeur de $idAdherent$.((bulle))\n* Ici, la DF est **directe**.((fleche))\n\n[AST]\nLa dépendance fonctionnelle élémentaire est parfois abrégée en DFE.\nLa dépendance fonctionnelle directe est parfois abrégée en DFD.\n[/AST]\n\nMaintenant que nous savons en quoi consiste une dépendance fonctionnelle et comment la caractériser (directe ou non, élémentaire ou non), entrons dans le vif du sujet\u0026nbsp;: la normalisation.\n\n##La normalisation/2\n\nLa normalisation permet de contrôler les relations du schéma relationnel issu du MCD afin d'éviter les redondances sources d'anomalies de mise à jour, de permettre des recherches selon des critères variés et d'optimiser le fonctionnement informatique de la future base de données. Cette démarche peut donc conduire à une modification du schéma relationnel initial.\n\nLa normalisation impose cinq formes dites «\u0026nbsp;normales\u0026nbsp;», certaines pouvant présenter des variantes. Dans ce cours, nous nous focaliserons sur les trois premières formes normales qui sont suffisantes dans une grande majorité des cas.  \nMais en quoi consistent ces formes normales\u0026nbsp;? Voyons plus en détail.\n\n###Première forme normale/a.\n\n[DEF]\n**Première forme normale\u0026nbsp;:**\n\nUne relation est dite en première forme normale si, et seulement si, tout attribut qui la compose contient une valeur atomique. On la note\u0026nbsp;1FN.\n[/DEF]\n\n[RETENIR]\nUne valeur atomique (ou mono-valuée) est une valeur qui n'est pas décomposable en plusieurs parties, qu'elles soient ou non de même nature.\n[/RETENIR]\n\n* Observons la relation __Recette__ de la base de données du club de cuisine. Son attribut «\u0026nbsp;etapes\u0026nbsp;» est décomposable (étape 1, étape 2, ...). Or, une étape est une action à laquelle est associée un rang qui permet de la positionner par rapport aux autres dans le but de les ordonner.\n* Notre relation __Recette__ n'est donc pas conforme à la\u0026nbsp;1FN.((fleche))\n\nSi on ne la rend pas conforme, des difficultés vont se poser\u0026nbsp;: comme toutes les recettes n'ont pas le même nombre d'étapes, on risque de sous-estimer ou surestimer la place à réserver dans la relation pour l'enregistrement des étapes dans un seul attribut.\n\n* Étudions maintenant la relation __Adherent__. Son attribut «\u0026nbsp;adresse\u0026nbsp;» est décomposable (numéro, rue, complément, code postal et ville).\n* Notre relation __Adherent__ n'est donc pas conforme à la\u0026nbsp;1FN.((fleche))\n\nSi on ne la rend pas conforme, on ne sera pas en mesure, par exemple, de recenser facilement tous les adhérents d'une même commune.\n\nIl est peut-être parfois nécessaire de revoir le schéma relationnel de la base de données afin que ses relations se trouvent en\u0026nbsp;1FN.  \n* **Relation __Recette__**((bulle))\n\nPour modifier la relation __Recette__, il faut sortir l'attribut «\u0026nbsp;etapes\u0026nbsp;» de la relation __Recette__ et créer une nouvelle relation comme suit\u0026nbsp;:\n\n[BUTC]Etape(__idRecette, rang, contenu__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette, rang : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé étrangère en référence à idRecette de Recette[/BUTC]\u003e\u003e\n\n[AST]\n**Remarque\u0026nbsp;:**\n\nOn ne peut pas prendre uniquement le rang pour identifier une étape de recette de cuisine\u0026nbsp;: le rang\u0026nbsp;1 est par exemple affecté à la première étape de toutes les recettes. Il ne permet donc pas d'identifier à lui seul une et une seule étape d'une recette de cuisine donnée.\n[/AST]\n\n* **Relation __Adherent__**((bulle))\n\nPour modifier la relation __Adherent__, il faut décomposer l'attribut «\u0026nbsp;adresse\u0026nbsp;» en autant d'attributs que d'éléments qui le composent. La relation __Adherent__ s'en voit donc ainsi modifiée\u0026nbsp;:\n\n[BUTC]Adherent(__idAdherent, nomAdherent, prenom, mail, numero, rue, complement, codePostal, ville, passe, telephone__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idAdherent : clé primaire[/BUTC]\u003e\u003e\n\nOn peut également répercuter ces modifications dans le MCD.\n\n[IMG]((75))\n![MCD SGBD BDD](https://kronos-images.schoolmouv.fr/image003.png) #MCD de la base de données du club de cuisine et schéma relationnel corrigé après normalisation\u0026nbsp;1NF\n[/IMG]\n\nUne fois les relations du schéma mises en forme\u0026nbsp;1NF, il est temps de vérifier que le nouveau schéma relationnel respecte la deuxième forme normale.\n\n###Deuxième forme normale/b.\n\n[DEF]\n**Deuxième forme normale\u0026nbsp;:**\n\nUne relation est dite en deuxième forme normale si, et seulement si, elle est en première forme normale et si toutes les dépendances fonctionnelles entre la clé et les autres attributs sont élémentaires. On la note 2FN et on peut écrire\u0026nbsp;: 1FN\u0026nbsp;⊂\u0026nbsp;2FN.\n[/DEF]\n\nSi nous regardons la relation\n\n[BUTC]Utilise(__idRecette, idIngredient, quantite, unite, type__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette, idIngredient : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé étrangère en référence à idRecette dans Recette[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé étrangère en référence à idIngredient dans Ingredient[/BUTC]\u003e\u003e\n\nOn a $idRecette, idIngredient \\rightarrow type$, mais aussi $idIngredient \\rightarrow type$. En effet, à un ingrédient identifié par «\u0026nbsp;idIngredient\u0026nbsp;» ne correspond qu'un et un seul type (viande, légume, condiment, boisson…).\n* La relation __Utilise__ ne respecte donc pas la\u0026nbsp;2FN.((fleche))\n\nSi on ne la rend pas conforme, il va se produire inévitablement une redondance\u0026nbsp;: l'information disant qu’un ingrédient donné relève d'un certain type **se répètera** dans la table.\n\nDans l’exemple ci-dessous, les informations stipulant respectivement que l'ingrédient\u0026nbsp;4 est un condiment et le\u0026nbsp;5 un légume se répètent.\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]idIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]quantite[18]** ((0,0,0,#9AE)) |\n| **[18]unite[18]** ((0,0,0,#9AE)) |\n| **[18]type[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| 2 |\n| 200 |\n| grammes |\n| viande |\n[/LI]\n[LI]\n| 2 |\n| 4 ((0,0,0,#EAFAF1)) |\n| 2 |\n| cuillère à café |\n| condiment ((0,0,0,#EAFAF1)) |\n[/LI]\n[LI]\n| 3 |\n| 5 ((0,0,0,#F4ECF7)) |\n| 500 |\n| grammes |\n| légume ((0,0,0,#F4ECF7)) |\n[/LI]\n[LI]\n| 1 |\n| 4 ((0,0,0,#EAFAF1)) |\n| 1 |\n| cuillère à soupe |\n| condiment ((0,0,0,#EAFAF1)) |\n[/LI]\n[LI]\n| 5 |\n| 5 ((0,0,0,#F4ECF7)) |\n| 1 |\n| kg |\n| légume ((0,0,0,#F4ECF7)) |\n[/LI]\n[LI]\n| 4 |\n| 10 |\n| 50 |\n| mL |\n| condiment |\n[/LI]\n[/TAB]\n \n[RETENIR]\nUne redondance d'information doit être évitée afin de limiter l'impact des mises à jour dans la base ainsi que les risques d'incohérence qui en découlent.\n[/RETENIR]\n\nPour y remédier, sachant que l'on a identifié $idIngredient \\rightarrow type$, il semble naturel de sortir «\u0026nbsp;type\u0026nbsp;» de la relation __Utilise__ pour l'ajouter aux attributs de la relation __Ingredient__.  \nOn obtient\u0026nbsp;:\n\n[BUTC]Utilise(__idRecette, idIngredient, quantite, unite__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette, idIngredient : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé étrangère en référence à idRecette dans Recette[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé étrangère en référence à idIngredient dans Ingredient[/BUTC]\u003e\u003e\n\n[BUTC]Ingredient(__idIngredient, nomIngredient, type__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé primaire[/BUTC]\u003e\u003e\n\nMaintenant que les relations du schéma respectent la\u0026nbsp;2NF, il ne nous reste plus qu'à contrôler que nos relations respectent la troisième forme normale.\n\n###Troisième forme normale/c.\n\n[DEF]\n**Troisième forme normale\u0026nbsp;:**\n\nUne relation est dite en troisième forme normale si, et seulement si, elle est en seconde forme normale et si tout attribut n'appartenant pas à la clé primaire n'est pas en dépendance fonctionnelle directe avec un attribut ou un ensemble d'attributs non-clé. On la note\u0026nbsp;3FN et on peut écrire : 1FN\u0026nbsp;⊂\u0026nbsp;2FN\u0026nbsp;⊂\u0026nbsp;3FN.\n[/DEF]\n\nEn nous penchant sur la relation __Adherent__, on peut remarquer que $ville \\rightarrow codePostal$. Or ni «\u0026nbsp;ville\u0026nbsp;», ni «\u0026nbsp;codePostal\u0026nbsp;» ne sont des attributs appartenant à la clé primaire de la relation __Adherent__.\n* Notre relation __Adherent__ ne respecte donc pas la\u0026nbsp;3NF.((fleche))\n\nSi on ne la rend pas conforme, on se trouve encore une fois confronté à une redondance\u0026nbsp;: les informations stipulant que le code postal de Guéret est\u0026nbsp;23000 et que le code postal de Brest est\u0026nbsp;29000 se répètent dans la table.\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]mail[18]** ((0,0,0,#9AE)) |\n| **[18]numero[18]** ((0,0,0,#9AE)) |\n| **[18]rue[18]** ((0,0,0,#9AE)) |\n| **[18]complement[18]** ((0,0,0,#9AE)) |\n| **[18]codePostal[18]** ((0,0,0,#9AE)) |\n| **[18]ville[18]** ((0,0,0,#9AE)) |\n| **[18]passe[18]** ((0,0,0,#9AE)) |\n| **[18]telephone[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Dupont |\n| Jacques |\n| dup@orange.fr |\n| 3 |\n| rue blanche |\n| appt 11 |\n| 23000 ((0,0,0,#F8BBD0)) |\n| Gueret ((0,0,0,#F8BBD0)) |\n| /|\n| 0612345678 |\n[/LI]\n[LI]\n| 2 |\n| Dampierre |\n| Gérard |\n| gege@free.fr |\n| 7 |\n| rue Dumont |\n| /|\n| 29000 ((0,0,0,#B2EBF2)) |\n| Brest ((0,0,0,#B2EBF2)) |\n| /|\n| 0711223344 |\n[/LI]\n[LI]\n| 3 |\n| Forestier |\n| Denise |\n| dd@gmail.com |\n| 9  |\n| rue aux loups |\n| entrée B |\n| 12000 |\n| Rodez |\n| /|\n| 0488665544 |\n[/LI]\n[LI]\n| 4 |\n| Vielle |\n| Rose |\n| vr@sfr.fr |\n| 1 |\n| av. des prés |\n| hameau La Forge |\n| 10000 |\n| Troyes |\n| /|\n| 0612121313 |\n[/LI]\n[LI]\n| 5 |\n| Javert |\n| Jules |\n| jj@sfr.fr |\n| 1 |\n| boulevard Brune |\n| allée 2 |\n| 29000 ((0,0,0,#B2EBF2)) |\n| Brest ((0,0,0,#B2EBF2)) |\n| /|\n| 0612121313 |\n[/LI]\n[LI]\n| 1 |\n| Duval |\n| Isabelle |\n| isa@bbox.fr |\n| 11bis |\n| impasse des hirondelles |\n| /|\n| 23000 ((0,0,0,#F8BBD0)) |\n| Gueret ((0,0,0,#F8BBD0)) |\n| /|\n| 0612345678 |\n[/LI]\n[/TAB]\n\nAfin de corriger cela, sachant que l'on a mis en évidence $ville \\rightarrow codePostal$, il suffit de sortir «\u0026nbsp;codePostal\u0026nbsp;» de la relation __Adherent__ et de créer une nouvelle relation __Ville__.  \nCe qui donne\u0026nbsp;:\n\n[BUTC]Adherent(__idAdherent, nomAdherent, prenom, mail, numero, rue, complement, idVille, passe, telephone__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idAdherent : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idVille : clé étrangère en référence à idVille dans Ville[/BUTC]\u003e\u003e\n\n[BUTC]Ville(__idVille, nomVille, codePostal__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idVille : clé primaire[/BUTC]\u003e\u003e\n\nOn notera au passage la création d'un nouvel attribut «\u0026nbsp;IdVille\u0026nbsp;», que l'on définira comme numérique, préférant ainsi un attribut numérique à l'attribut alphabétique «\u0026nbsp;nomVille\u0026nbsp;» pour constituer une clé primaire.\n\nNous avons donc normalisé notre schéma relationnel en veillant à ce que ses relations respectent la\u0026nbsp;3NF, donc la\u0026nbsp;2NF et par conséquent la\u0026nbsp;1NF.  \nVoici le MCD et le schéma relationnel final de notre exemple, maintenant normalisé.\n\n[IMG]((75))\n![MCD SGBD BDD](https://kronos-images.schoolmouv.fr/image009.png) #MCD corrigé après normalisation\u0026nbsp;2NF et\u0026nbsp;3NF\n[/IMG]\n\n[BUTC]Utilise(__idRecette, idIngredient, quantite, unite__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette, idIngredient : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé étrangère en référence à idRecette dans Recette[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé étrangère en référence à idIngredient dans Ingredient[/BUTC]\u003e\u003e\n\n[BUTC]Ingredient(__idIngredient, nomIngredient, type__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé primaire[/BUTC]\u003e\u003e\n\n[BUTC]Adherent(__idAdherent, nomAdherent, prenom, mail, numero, rue, complement, idVille, passe, telephone__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idAdherent : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idVille : clé étrangère en référence à idVille dans Ville[/BUTC]\u003e\u003e\n\n[BUTC]Ville(__idVille, nomVille, codePostal__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idVille : clé primaire[/BUTC]\u003e\u003e\n\n[BUTC]Etape(__idRecette, rang, contenu__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette, rang : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé étrangère en référence à idRecette de Recette[/BUTC]\u003e\u003e\n\n[BUTC]Recette(__idRecette, nomRecette, niveau, duree, categorie, etapes__) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idAdherent : clé étrangère en référence à idAdherent de Adherent[/BUTC]\u003e\u003e\n\n[RETENIR]\nLorsque les relations du schéma relationnel respectent la\u0026nbsp;3FN, on peut considérer que la structure de la base de données est prête à être créée informatiquement.\n[/RETENIR]\n\nDans cette étape, on transmet le schéma relationnel au système informatique (nommé Système de Gestion de Base de Données, soit SGBD) qui aura pour charge de créer la structure puis de gérer la future base de données. Lors de cette étape, il est nécessaire de préciser des règles de fonctionnement au SGBD. \n\n##Les contraintes d'intégrité/3\n\nLes **contraintes d'intégrité** sont des règles que doivent respecter les attributs des relations afin de **garantir la cohérence des données dans la base**. Elles doivent être précisées au moment où l'on implémente le schéma relationnel dans le système informatique chargé de créer la structure de la base. On en compte trois principales :\n* la contrainte de domaine\u0026nbsp;;((liste2))\n* la contrainte de relation\u0026nbsp;;((liste2))\n* la contrainte de référence.((liste2))\n\nVoyons en quoi chacune de ces contraintes consistent.\n\n###La contrainte de domaine/a.\n\n[DEF]\n**Contrainte de domaine\u0026nbsp;:**\n\nLors de la création d'une table dans la base de données, il est nécessaire de préciser le domaine dans lequel chacun de ses attributs prend ses valeurs. C'est ce que l'on nomme une contrainte de domaine.\n[/DEF]\n\nIl est important notamment de pouvoir comparer les valeurs d'un même attribut prises par plusieurs occurrences. Une comparaison n'est possible que si l'attribut est toujours enregistré avec le même format (on ne peut en effet pas comparer un A et un nombre\u0026nbsp;!)..\n\n[EX]\nDans la relation «\u0026nbsp;etape\u0026nbsp;» de la base de données du club de cuisine, si le rang de l’étape\u0026nbsp;1 est enregistré sous la forme du nombre «\u0026nbsp;1\u0026nbsp;» et si le rang de l’étape\u0026nbsp;2 est enregistré sous la forme alphanumérique «\u0026nbsp;N^^o^^\u0026nbsp;2\u0026nbsp;», il sera difficile de les comparer, et donc de les ordonner.\n* Nous avons d'ailleurs commencé à réfléchir à cette contrainte de domaine dans le cours précédent, lorsque nous avons introduit notre dictionnaire de données dans lequel le type des attributs était défini.((fleche))\n[/EX]\n\nUne fois la contrainte de domaine définie pour chaque attribut, le SGBD interdit l'introduction de tuples dans une relation dont le type d'un des attributs ne serait pas conforme à celui qui lui aura été attribué par la contrainte de domaine.\n\n###La contrainte de relation/b.\n\nNous savons que toutes les relations du schéma relationnel doivent comporter une clé primaire, permettant d'identifier de manière unique les tuples qui y sont enregistrés.\n\n[DEF]\n**Contrainte de relation\u0026nbsp;:**\n\nLa contrainte de relation impose que la clé primaire formée par un ou plusieurs attributs d'une relation soit unique et non\u0026nbsp;nulle. C'est ce que l'on appelle la contrainte de relation.\n[/DEF]\n\nC'est le respect de cette contrainte qui garantit l'identification sans ambiguïté d'un tuple dans une relation.\n\nAinsi, lors de la création d'une relation dans une base, **il est nécessaire de préciser cette contrainte de relation au\u0026nbsp;SGBD**. Dès lors que cette contrainte de relation est précisée pour une table, le\u0026nbsp;SGBD interdira l'introduction d'un tuple dont la valeur de la clé primaire sera identique à celle d'un tuple déjà présent dans la base ou sera nulle.\n\n###La contrainte de référence/c.\n\nLorsque le schéma relationnel définit des relations faisant référence à des clés étrangères, cela soulève inévitablement une contrainte d'intégrité.  \nAinsi, si l'on insère un tuple dans une table faisant appel à des clés étrangères, le SGBD doit contrôler l'existence de ces clés dans les relations d'où elles proviennent.\n\n[EX]\nDans la base de données du club de cuisine, considérons l’insertion d’un tuple dont les attributs «\u0026nbsp;idIngredient\u0026nbsp;» et «\u0026nbsp;idRecette\u0026nbsp;» sont respectivement $12$ et $27$. Le SGBD n'acceptera cette insertion qu'à condition que l'ingrédient dont l'attribut $idIngredient = 12$ existe dans la table «\u0026nbsp;ingredient\u0026nbsp;» et que la recette dont l’$idRecette = 27$ existe dans la table «\u0026nbsp;recette\u0026nbsp;».\n[/EX]\n\nDe plus, il est nécessaire d'indiquer au SGBD ce qu'il doit faire dans la cadre de la suppression d'un tuple dans une table dont la clé primaire est étrangère dans une autre table. Plusieurs options sont possibles\u0026nbsp;:\n* interdire la suppression\u0026nbsp;;((liste2))\n* supprimer également les tuples concernés dans les autres tables\u0026nbsp;;((liste2))\n* avertir l'utilisateur d'une incohérence\u0026nbsp;;((liste2))\n* mettre les valeurs des attributs concernés à une valeur nulle dans les tuples concernés, si l'opération est possible (ce n'est pas le cas si la clé primaire du tuple supprimé au départ intervient en clé étrangère dans la clé primaire d'une autre table).((liste2))\n\n[DEF]\n**Intégrité référentielle\u0026nbsp;:**\n\nL’intégrité référentielle est une situation dans laquelle pour chaque tuple d'une table\u0026nbsp;A qui fait référence à un tuple d'une table\u0026nbsp;B, le tuple ainsi référencé existe réellement dans la table\u0026nbsp;B.\n[/DEF]\n\n[C]\nConclusion\u0026nbsp;:\n\nNous sommes maintenant en mesure de mettre en œuvre une base de données en transmettant au\u0026nbsp;SGBD un schéma relationnel préalablement élaboré ainsi que les contraintes d'intégrité qui l'accompagnent. Dans le cours qui suit, nous nous intéresserons de plus près aux missions des SGBD chargés de mettre en œuvre informatiquement les bases de données.\n[/C]\n","siblings":[{"resourceId":"5e70fc8c09e0a80100fe05ce","type":"Cours","sort":null},{"resourceId":"5e86fbcd28e6370100440c23","type":"Fiche de révision","sort":null},{"resourceId":"5e8711f728e6370100440c26","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d3109e0a80100fdbbda","name":"Structure de base de données"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d3109e0a80100fdbbda","label":"Cours : Structure de base de données","link":"https://www.schoolmouv.fr/cours/structure-de-base-de-donnees/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"structure-de-base-de-donnees","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/structure-de-base-de-donnees/fiche-de-cours","title":"Structure de base de données : cours de Tle - Numérique","metaDescription":"SchoolMouv ® te propose ce cours sur Structure de base de données (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"structure-de-base-de-donnees","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

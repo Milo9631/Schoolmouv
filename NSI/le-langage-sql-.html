@@ -1,0 +1,1629 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Le langage SQL  : cours de Tle, Numérique &amp; sciences informatiques</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Le langage SQL  : cours de Tle, Numérique &amp; sciences informatiques">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Le langage SQL (Terminale - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices…">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/le-langage-sql-/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/le-langage-sql-/fiche-de-cours","name":"Cours : Le langage SQL "}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Le langage SQL </h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Le langage SQL </p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Nous savons que, pour créer une base de données, il est d'abord nécessaire de la modéliser à l'aide d'un MCD, puis d'en déduire le modèle relationnel et, enfin, de procéder à une normalisation du schéma ainsi obtenu. Une fois ces étapes effectuées, il est enfin temps de concrétiser la base de données et de l'utiliser.</p>
+<p>Dans ce cours, nous allons découvrir un langage utilisé pour transmettre des ordres à un SGBD relationnel : SQL. Il se décompose selon trois grandes familles d'opérations : la gestion des tables et des vues, la manipulation des données en table et, pour terminer, l'interrogation et la recherche dans les tables.<br>
+Commençons par créer les relations de notre modèle relationnel, autrement dit, la structure de la base. Les tables qui en résulteront seront vides, mais prêtes à accueillir les futures données.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>La description des données</p></div></h2>
+<p>Le langage utilisé pour créer la structure d'une base de données est un LDD (Langage de description des données). SQL, en plus d'autres langages, est un LDD.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>SQL est le sigle de <em>Structured query language</em> qui signifie en français « Langage de requêtes structuré ».</p></div>
+</div>
+<p>Examinons les requêtes que nous pouvons adresser au SGBD pour créer la structure de notre base de données.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Création de la structure de la base de données</p></div></h3>
+<p>La structure de la base de données comporte l'ensemble de ses tables. Il est donc nécessaire de les créer une à une.<br>
+La création d'une table est une opération qu'il faut effectuer avec attention. C'est lors de cette étape que, en plus de ses colonnes, on définit les contraintes d'intégrité de domaine, de relation et de référence.</p>
+<p>La syntaxe employée est la suivante :</p>
+<p><span class="calculator_button" markdown="1">CREATE TABLE nomTable (</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">colonne1 <span class="underline">type de donnée</span>,</span><br>
+<span class="calculator_button" markdown="1">colonne2 <span class="underline">type de donnée</span>,</span><br>
+<span class="calculator_button" markdown="1">colonne3 <span class="underline">type de donnée</span>,</span><br>
+<span class="calculator_button" markdown="1">colonne4 <span class="underline">type de donnée</span>,</span><br>
+<span class="calculator_button" markdown="1">….</span><br>
+<span class="calculator_button" markdown="1">PRIMARY KEY (colonnex, colonney, …),</span><br>
+<span class="calculator_button" markdown="1">FOREIGN KEY (colonnea, colonneb,…) REFERENCES nomTableX (colonnei, colonnej…) ON DELETE <span class="underline">option</span></span><br>
+<span class="calculator_button" markdown="1">…);</span></p></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>Chaque instruction se termine obligatoirement par un « ; ».</li>
+
+
+
+<li>L'orthographe des termes écrits en lettre capitales uniquement doit être respectée. Ce sont des mots-clés composant la syntaxe.</li>
+
+
+
+<li>Les termes soulignés sont obligatoires.</li>
+
+
+
+<li>Les autres termes sont les noms qui sont affectés librement aux attributs et aux tables.</li>
+</ul></div>
+</div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Cette syntaxe n'est pas exhaustive, mais nous l'avons volontairement limitée aux notions que nous avons jugées les plus utiles pour ce cours.</p></div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Type de donnée</b></div>
+</li>
+</ul>
+<p>Le type de donnée constitue en lui-même une contrainte de domaine. Il précise la nature d'un attribut :</p>
+<ul>
+
+<li><b>Numérique</b></li>
+
+<li class="liste2">
+<div class="list_text">INT (codé sur $32\,\text{bits}$) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">SMALLINT (codé sur $16\,\text{bits}$) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">REAL (taille qui dépend du SGBD) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">FLOAT(n) (réel représenté sur $n\,\text{bit}$).</div>
+</li>
+
+<li><b>Caractère</b></li>
+
+<li class="liste2">
+<div class="list_text">CHAR(n) (chaîne de longueur n, codage ASCII $1\,\text{octet}$) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">VARCHAR(n) (chaîne de longueur maximale n, codage ASCII $1\,\text{octet}$) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">NCHAR(n) (chaîne de longueur n, codage UNICODE $2\,\text{octets}$) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">NVARCHAR(n) (chaîne de longueur maximale n, codage UNICODE $2\,\text{octets}$).</div>
+</li>
+
+<li><b>Binaire</b></li>
+
+<li class="liste2">
+<div class="list_text">BOOLEAN (booléen) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">BLOB (<em>Binary large object</em> qui permet de stocker tout type binaire tel que photo, document mis en forme…).</div>
+</li>
+
+<li><b>Date</b></li>
+
+<li class="liste2">
+<div class="list_text">DATE (date) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">TIME(n) (heure, n, optionnel, étant le nombre de décimales pour représenter une fraction de seconde).</div>
+</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Clé primaire</b></div>
+</li>
+</ul>
+<p>Le terme « PRIMARY KEY » désigne le ou les attributs qui constituent la clé primaire de la relation. C'est une contrainte de relation qui garantit l'unicité de la clé primaire.</p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Clé étrangère</b></div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le terme « FOREIGN KEY » désigne le ou les attributs qui constituent une clé étrangère dans la relation. C'est une contrainte de référence qui garantit une cohérence entre les données.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le terme « REFERENCE » sert à désigner la table et la ou les colonnes de cette table dont la clé étrangère est issue.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Enfin, le terme « ON DELETE » permet de préciser l'option choisie en cas de suppression de la clé étrangère dans la table d'où celle-ci provient.</div>
+</li>
+</ul>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Si nous reprenons le modèle relationnel de la base de données de notre club de cuisine (voir cours précédents du même chapitre), voici sa traduction en une commande SQL qui permet de créer les tables <em>ville</em> et <em>adherent</em> de notre base.</p>
+<div markdown="1" class="tab-g texte-centre"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">Schéma relationnel</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">Commande SQL</span></b> </td>
+</tr>
+<tr>
+<td>
+<span class="calculator_button" markdown="1">Ville(idVille, nomVille, codePostal) avec</span>
+<p></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">idVille : clé primaire</span></p></div>
+<p></p>
+</td>
+<td>
+<span class="calculator_button" markdown="1">CREATE TABLE ville(</span>
+<p></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">idVille INT NOT NULL AUTO_INCREMENT,</span><br>
+<span class="calculator_button" markdown="1">nomVille CHAR(50),</span><br>
+<span class="calculator_button" markdown="1">codePostal INT,</span></p></div>
+<p></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">PRIMARY KEY (idVille)</span><br>
+<span class="calculator_button" markdown="1">);</span></p></div>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<span class="calculator_button" markdown="1">Adherent(idAdherent, nomAdherent, prenom, mail, numero, rue, complement, idVille, passe, telephone) avec</span>
+<p></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">idAdherent : clé primaire</span><br>
+<span class="calculator_button" markdown="1">idVille : clé étrangère en référence à idVille de Ville</span></p></div>
+<p></p>
+</td>
+<td>
+<span class="calculator_button" markdown="1">CREATE TABLE adherent(</span>  
+<p></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">idAdherent INT NOT NULL AUTO_INCREMENT,</span><br>
+<span class="calculator_button" markdown="1">nomAdherent CHAR(50),</span><br>
+<span class="calculator_button" markdown="1">prenom CHAR(50),</span><br>
+<span class="calculator_button" markdown="1">mail CHAR(30),numero CHAR(10),</span><br>
+<span class="calculator_button" markdown="1">rue CHAR(50),</span><br>
+<span class="calculator_button" markdown="1">complement CHAR(50),</span><br>
+<span class="calculator_button" markdown="1">idVille INT,</span><br>
+<span class="calculator_button" markdown="1">passe CHAR(30),</span><br>
+<span class="calculator_button" markdown="1">telephone INT,</span></p></div>
+<p></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">PRIMARY KEY (idAdherent),</span><br>
+<span class="calculator_button" markdown="1">FOREIGN KEY (idVille) REFERENCES ville(idVille) ON DELETE NO ACTION</span><br>
+<span class="calculator_button" markdown="1">;</span></p></div>
+<p></p>
+</td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>On remarquera la consigne « AUTO_INCREMENT » qui laisse l'initiative au SGBD d'affecter une valeur numérique à la colonne <em>idAdherent</em>, s'incrémentant de $1$ en $1$ au fur et à mesure que l'on ajoute des lignes dans la table <em>adherent</em> (idem pour <em>idVille</em>).<br>
+On notera également la précision « NOT NULL » qui évite qu'une ligne soit insérée sans clé primaire (dans le cas contraire, il serait impossible de l'identifier !).<br>
+Enfin, on constate que l'on choisit de ne supprimer aucun enregistrement dans la table <em>ville</em> si sa colonne <em>idVille</em> figure comme clé étrangère dans une ligne de la table <em>adherent</em>.</p>
+<p>Nous avons ainsi créé les deux tables vides suivantes : </p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">codePostal</span></b> </td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table></div>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">mail</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">numero</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">rue</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">complement</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">passe</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">telephone</span></b> </td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table></div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Suppression d'une table</p></div></h3>
+<p>La syntaxe pour supprimer une table, et par conséquent son contenu, est la suivante : <span class="calculator_button" markdown="1">DROP TABLE <em>nomTable</em>;</span>.</p>
+<p>Il va de soi que si des contraintes d'intégrité référentielle ont été posées, dans les autres tables, sur des clés étrangères faisant appel à des colonnes issues de la table que l'on souhaite supprimer, l'opération ne sera pas possible.<br>
+Il est donc nécessaire de supprimer au préalable les tables ou les lignes dont les clés étrangères se réfèrent à une ligne de la table que l'on veut supprimer.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><span class="calculator_button" markdown="1">DROP TABLE ingredient;</span></p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-num-c10-img01.png" alt="langage SQL"> </p></div></div>
+<p><span class="calculator_button" markdown="1">DROP TABLE utilise;</span></p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-num-c10-img02.png" alt="langage SQL"> </p></div></div>
+<p><span class="calculator_button" markdown="1">DROP TABLE ingredient;</span>
+ </p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-num-c10-img03.png" alt="langage SQL"> </p></div></div>
+</div>
+</div>
+<p>Dans un premier temps, il n'a pas été possible de supprimer la table <em>ingredient</em> car une ou plusieurs de ses lignes était référencée via une clé étrangère (<em>idIngredient</em>) dans une autre table (la table <em>utilise</em>).<br>
+La suppression de la table <em>utilise</em>, qui, elle, n'est référencée dans aucune autre table, a été possible.<br>
+Cela a alors permis, par la suite, la suppression de la table <em>ingredient</em>.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Modification d'une table</p></div></h3>
+<p>La commande <span class="calculator_button" markdown="1">ALTER TABLE</span> permet de modifier la structure d'une table, que ce soit en ajoutant, supprimant ou modifiant ses colonnes.<br>
+Cette opération est plus délicate lorsque la table contient déjà des lignes. Il est par conséquent important d'agir prudemment avec cette commande.</p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Ajout d'une colonne à une table</b></div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">ALTER TABLE <em>nomTable</em></span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">ADD COLUMN <em>nouveauChamp</em> TYPEDONNEE;</span></p></div>
+<p>Notons que l'attribut <em>nouveauChamp</em> sera affecté avec une valeur « NULL » aux enregistrements déjà existants dans la table.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><span class="calculator_button" markdown="1">ALTER TABLE <em>recette</em></span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:25px;margin-left:0px;"><p><span class="calculator_button" markdown="1">ADD COLUMN <em>pays</em> CHAR(30);</span></p></div>
+<p>Avant ajout de la colonne <em>pays</em> :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>15</td>
+<td>sauce</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Omelette</td>
+<td>facile</td>
+<td>5</td>
+<td>plat</td>
+<td>6</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>20</td>
+<td>autre</td>
+<td>6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quatre-quarts</td>
+<td>facile</td>
+<td>10</td>
+<td>dessert</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>15</td>
+<td>accompagnement</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Poulet rôti</td>
+<td>facile</td>
+<td>15</td>
+<td>plat</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>20</td>
+<td>plat</td>
+<td>7</td>
+</tr>
+</table></div>
+<p>Après ajout de la colonne <em>pays</em> :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#F4511E; ">
+<b><span class="color18">pays</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>15</td>
+<td>sauce</td>
+<td>7</td>
+<td style="background:#FFE5B4; ">
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Omelette</td>
+<td>facile</td>
+<td>5</td>
+<td>plat</td>
+<td>6</td>
+<td style="background:#FFE5B4; ">
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>20</td>
+<td>autre</td>
+<td>6</td>
+<td style="background:#FFE5B4; ">
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quatre-quarts</td>
+<td>facile</td>
+<td>10</td>
+<td>dessert</td>
+<td>4</td>
+<td style="background:#FFE5B4; ">
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>15</td>
+<td>accompagnement</td>
+<td>2</td>
+<td style="background:#FFE5B4; ">
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Poulet rôti</td>
+<td>facile</td>
+<td>15</td>
+<td>plat</td>
+<td>2</td>
+<td style="background:#FFE5B4; ">
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>20</td>
+<td>plat</td>
+<td>7</td>
+<td style="background:#FFE5B4; ">
+</td>
+</tr>
+</table></div>
+</div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Suppression de la colonne d'une table</b></div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">ALTER TABLE <em>nomTable</em></span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">DROP COLUMN <em>nomChamp</em>;</span></p></div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><span class="calculator_button" markdown="1">ALTER TABLE <em>recette</em></span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:25px;margin-left:0px;"><p><span class="calculator_button" markdown="1">DROP COLUMN <em>duree</em>;</span></p></div>
+<p>Après suppression de la colonne <em>duree</em> :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">pays</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>sauce</td>
+<td>7</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Omelette</td>
+<td>facile</td>
+<td>sauce</td>
+<td>6</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>sauce</td>
+<td>6</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quatre-quarts</td>
+<td>facile</td>
+<td>sauce</td>
+<td>4</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>sauce</td>
+<td>2</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Poulet rôti</td>
+<td>facile</td>
+<td>sauce</td>
+<td>2</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>sauce</td>
+<td>7</td>
+<td>
+</td>
+</tr>
+</table></div>
+</div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Modification d'une colonne</b></div>
+</li>
+</ul>
+<p>Cette opération peut s'avérer délicate s'il s'agit, par exemple, de renommer le nom d'une colonne ou de changer son type. L'appel à une colonne supplémentaire s'avère alors nécessaire.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Supposons que l'on souhaite renommer la colonne <em>rue</em> de la table <em>adherent</em> pour l'appeler <em>voie</em> et que l'on souhaite augmenter sa taille à $100$ caractères maximum.<br>
+Il faudra alors procéder comme suit :</p>
+<p><span class="calculator_button" markdown="1">/* création d'une colonne portant le nom désiré et du type désiré */</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">ALTER TABLE adherent</span><br>
+<span class="calculator_button" markdown="1">ADD COLUMN voie VARCHAR(100); </span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">/* initialisation de la nouvelle colonne avec les valeurs de l'ancienne colonne */</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">UPDATE adherent</span><br>
+<span class="calculator_button" markdown="1">SET voie=rue;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">/* suppression de l'ancienne colonne */</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">ALTER TABLE adherent</span><br>
+<span class="calculator_button" markdown="1">DROP COLUMN rue;</span></p></div>
+</div>
+</div>
+<p>L'instruction <span class="calculator_button" markdown="1">UPDATE</span> qui figure dans cet exemple est étudiée plus en détail dans la suite de ce cours. Elle permet ici, pour chaque ligne existante dans la table <em>adherent</em>, de renseigner la valeur du nouveau champ <em>voie</em> avec la valeur du champ existant <em>rue</em>.</p>
+<p>Maintenant que nous sommes en mesure de créer la structure de base, nous allons pouvoir commencer à y enregistrer des données. Un Langage de manipulation des données (LMD) nous est nécessaire.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">SQL en est un.</div>
+</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>La manipulation des données</p></div></h2>
+<p>La manipulation des données consiste en leur insertion, modification et suppression dans les tables de la base. Regardons en détail les instructions qui nous permettent de faire réaliser ces opérations par le SGBD.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>L'insertion d'une ligne dans une table</p></div></h3>
+<p>Il s'agit d'enregistrer une nouvelle ligne dans une table. Les mécanismes suivants vont être sollicités :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">contrôle des contraintes d'intégrité lors de l'insertion (domaine, relation et référentielle) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">renseignement des champs avec la valeur « NULL » si aucune valeur n'est précisée et si « NULL » est autorisé pour ces champs.</div>
+</li>
+</ul>
+<p>La syntaxe est la suivante :</p>
+<p><span class="calculator_button" markdown="1">INSERT INTO nomTable</span><br>
+<span class="calculator_button" markdown="1">(champx, champY, ….)</span><br>
+<span class="calculator_button" markdown="1">VALUES (valeurChampX, valeurChampY,…);</span></p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Quelques précisions méritent notre attention :</p>
+<ul>
+
+
+
+<li>Les valeurs des colonnes doivent être renseignées dans le même ordre que celui de la liste des colonnes donnée juste avant.</li>
+
+
+
+<li>Si la liste des colonnes n'est pas donnée, alors le SGBD se base sur la liste des colonnes de la table, dans l'ordre où celles-ci ont été définies lors de sa création.</li>
+
+
+
+<li>Si certaines colonnes sont omises, elles prendront la valeur 'NULL'.</li>
+</ul>
+</div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Insérons un ingrédient dans la base de données du club de cuisine :</p>
+<p><span class="calculator_button" markdown="1">INSERT INTO ingredient</span><br>
+<span class="calculator_button" markdown="1"> (nomIngredient, type)</span><br>
+<span class="calculator_button" markdown="1">VALUES ("oeuf","viande")</span></p>
+</div>
+</div>
+<p>Nous n'avons pas précisé la valeur de la colonne <em>idIngredient</em> car le SGBD se charge lui-même de lui affecter une valeur numérique unique (option "AUTO_INCREMENT" spécifiée lors de la création de la table). Sachant qu'ici, c'est le premier ingrédient que nous insérons dans la table ingredient, la colonne idIngredient prendra la valeur 1.</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">type</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>oeuf</td>
+<td>viande</td>
+</tr>
+</table></div>
+<h3 range="b" markdown="1"><div markdown="1"><p>La suppression de la ligne d'une table</p></div></h3>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Comme lors de la suppression d'une table, la suppression d'une ligne est soumise au respect des contraintes d'intégrité.</p></div>
+</div>
+<p>L'instruction de suppression permet de supprimer une ou plusieurs lignes d'une table. Pour cela, les lignes concernées par l'opération doivent être désignées. Celles-ci sont identifiées avec une condition.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>C'est la clause <span class="calculator_button" markdown="1">WHERE</span> qui va nous le permettre.</p></div>
+</div>
+<p>Ainsi, la syntaxe de la commande SQL pour supprimer une ou plusieurs lignes d'une table est la suivante :</p>
+<p><span class="calculator_button" markdown="1">DELETE FROM nomTable</span><br>
+<span class="calculator_button" markdown="1">WHERE <span class="underline">condition</span>;</span></p>
+<p>La condition consiste en un ou plusieurs critères portant sur le contenu d'une ou plusieurs colonnes. Elle s'exprime à l'aide d'opérateurs de comparaison, comparaison que l'on peut combiner avec d'autres en utilisant des connecteurs logiques.</p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Opérateurs de comparaison</b></div>
+</li>
+</ul>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td>=</td>
+<td>Égal</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>Différent</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Inférieur strictement</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Supérieur strictement</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Inférieur ou égal</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Supérieur ou égal</td>
+</tr>
+<tr>
+<td>BETWEEN &lt;valeur1&gt; AND &lt;valeur2&gt;</td>
+<td>Appartient à un intervalle  
+(&lt;valeur2&gt; incluse)</td>
+</tr>
+<tr>
+<td>IN &lt;liste de valeurs&gt;</td>
+<td>Appartient à un ensemble de valeurs</td>
+</tr>
+<tr>
+<td>IS NULL</td>
+<td>Colonne non renseignée</td>
+</tr>
+<tr>
+<td>LIKE &lt;chaîne&gt;</td>
+<td>Recherche chaînes de caractères correspondant à un modèle</td>
+</tr>
+</table></div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Connecteurs logiques</b></div>
+</li>
+</ul>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td>&lt;condition1&gt; AND &lt;condition2&gt;</td>
+<td>Les $2$ conditions sont vraies simultanément</td>
+</tr>
+<tr>
+<td>&lt;condition1&gt; OR &lt;condition2&gt;</td>
+<td>Au moins une des $2$ conditions est vraie</td>
+</tr>
+<tr>
+<td>NOT &lt;condition&gt;</td>
+<td>Inverse la condition</td>
+</tr>
+</table></div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Supprimons l'ingrédient dont la colonne <em>nomIngredient</em> porte la valeur « rutabaga » dans la table <em>ingredient</em>&amp;nbp;:</p>
+<p><span class="calculator_button" markdown="1">DELETE FROM ingredient</span><br>
+<span class="calculator_button" markdown="1">WHERE nomIngredient = "rutabaga";</span></p>
+<p>Avant suppression :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">type</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>oeuf</td>
+<td>viande</td>
+</tr>
+<tr>
+<td>2</td>
+<td>moutarde</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>3</td>
+<td>vinaigre</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>4</td>
+<td>huile</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>5</td>
+<td>sel</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>6</td>
+<td>poivre</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>7</td>
+<td>gruyère râpé</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td>8</td>
+<td>huile d’olive</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>9</td>
+<td>farine</td>
+<td>épicerie</td>
+</tr>
+<tr>
+<td>10</td>
+<td>beurre</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td>11</td>
+<td>sucre</td>
+<td>épicerie</td>
+</tr>
+<tr>
+<td>12</td>
+<td>lait</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td>13</td>
+<td>carotte</td>
+<td>légume</td>
+</tr>
+<tr>
+<td>14</td>
+<td>crème fraîche</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td>15</td>
+<td>cumin</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>16</td>
+<td>muscade</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>17</td>
+<td>poulet</td>
+<td>viande</td>
+</tr>
+<tr>
+<td>18</td>
+<td>persil</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>19</td>
+<td>citron</td>
+<td>fruit</td>
+</tr>
+<tr>
+<td>20</td>
+<td>sole</td>
+<td>viande</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">21 </td>
+<td style="background:#F3E5F5; ">rutabaga </td>
+<td style="background:#F3E5F5; ">légume </td>
+</tr>
+<tr>
+<td>22</td>
+<td>levure</td>
+<td>épicerie</td>
+</tr>
+</table></div>
+<p>Après suppression de la ligne :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">type</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>oeuf</td>
+<td>viande</td>
+</tr>
+<tr>
+<td>2</td>
+<td>moutarde</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>3</td>
+<td>vinaigre</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>4</td>
+<td>huile</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>5</td>
+<td>sel</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>6</td>
+<td>poivre</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>7</td>
+<td>gruyère râpé</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td>8</td>
+<td>huile d’olive</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>9</td>
+<td>farine</td>
+<td>épicerie</td>
+</tr>
+<tr>
+<td>10</td>
+<td>beurre</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td>11</td>
+<td>sucre</td>
+<td>épicerie</td>
+</tr>
+<tr>
+<td>12</td>
+<td>lait</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td>13</td>
+<td>carotte</td>
+<td>légume</td>
+</tr>
+<tr>
+<td>14</td>
+<td>crème fraîche</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td>15</td>
+<td>cumin</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>16</td>
+<td>muscade</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>17</td>
+<td>poulet</td>
+<td>viande</td>
+</tr>
+<tr>
+<td>18</td>
+<td>persil</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td>19</td>
+<td>citron</td>
+<td>fruit</td>
+</tr>
+<tr>
+<td>20</td>
+<td>sole</td>
+<td>viande</td>
+</tr>
+<tr>
+<td>22</td>
+<td>levure</td>
+<td>épicerie</td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>Le SGBD n'a pas refusé d'exécuter la commande : l'ingrédient supprimé n'était référencé dans aucune autre table, ou, si c'était le cas, l'option a été choisie, dans les tables concernées (ici la table <em>utilise</em>), de supprimer les lignes dont la colonne clé étrangère correspond à l'ingrédient supprimé, ou de renseigner à « NULL » cette clé étrangère.</p>
+<p>Nous pouvons émettre une critique sur le critère de sélection : celui-ci porte sur la colonne <em>nomIngredient</em> qui ne constitue pas une clé primaire pour la table <em>ingredient</em>. Cela impose au SGBD de parcourir séquentiellement les lignes de la table jusqu'à trouver celle dont la colonne <em>nomIngredient</em> répond au critère.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pour être plus efficace et plus fiable, il aurait été préférable de repérer l'ingrédient de nom « rutabaga » par sa colonne <em>idIngredient</em> (en l'occurrence, la ligne 21) : le SGBD aurait atteint la ligne directement, grâce à l'index de la table. De plus, il aurait identifié à coup sûr et de manière unique l'ingrédient visé, ce qui est préférable.</p></div>
+</div>
+<h3 range="c." markdown="1"><div markdown="1"><p>La modification d'une ou plusieurs lignes d'une table</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Une opération de modification requiert que l'on précise :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">les colonnes concernées ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les nouvelles valeurs prises par ces colonnes ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les lignes concernées, via la clause <span class="calculator_button" markdown="1">WHERE</span>.</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Comme pour l'insertion ou la suppression d'une ligne dans une table, la modification d'une ligne doit respecter les contraintes d'intégrité spécifiées lors de la création de la structure de la base de données.</p></div>
+</div>
+<p>La syntaxe d'une modification est la suivante :</p>
+<p><span class="calculator_button" markdown="1">UPDATE nomTable</span><br>
+<span class="calculator_button" markdown="1">SET nomColonne1 = valeur 1, nomColonne2 = valeur2, …</span><br>
+<span class="calculator_button" markdown="1">WHERE <span class="underline">condition</span></span></p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Modifions le nom de la recette dont la colonne <em>nomRecette</em> contient « Omelette » et le niveau de difficulté actuellement évalué à « facile », sachant que son identifiant est 2.</p>
+<p><span class="calculator_button" markdown="1">UPDATE recette</span><br>
+<span class="calculator_button" markdown="1">SET nomRecette = "Omelette au fromage", niveau = "moyen"</span><br>
+<span class="calculator_button" markdown="1">WHERE idRecette = 2;</span></p>
+<p>Avant modification :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>15</td>
+<td>sauce</td>
+<td>7</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">2 </td>
+<td style="background:#F3E5F5; ">Omelette </td>
+<td style="background:#F3E5F5; ">facile </td>
+<td style="background:#F3E5F5; ">5 </td>
+<td style="background:#F3E5F5; ">plat </td>
+<td style="background:#F3E5F5; ">6 </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>20</td>
+<td>autre</td>
+<td>6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quatre-quarts</td>
+<td>facile</td>
+<td>10</td>
+<td>dessert</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>15</td>
+<td>accompagnement</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Poulet rôti</td>
+<td>facile</td>
+<td>15</td>
+<td>plat</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>20</td>
+<td>plat</td>
+<td>7</td>
+</tr>
+</table></div>
+<p>Après modification de la ligne :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>15</td>
+<td>sauce</td>
+<td>7</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">2 </td>
+<td style="background:#F3E5F5; ">Omelette au fromage </td>
+<td style="background:#F3E5F5; ">moyen </td>
+<td style="background:#F3E5F5; ">5 </td>
+<td style="background:#F3E5F5; ">plat </td>
+<td style="background:#F3E5F5; ">6 </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>20</td>
+<td>autre</td>
+<td>6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quatre-quarts</td>
+<td>facile</td>
+<td>10</td>
+<td>dessert</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>15</td>
+<td>accompagnement</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Poulet rôti</td>
+<td>facile</td>
+<td>15</td>
+<td>plat</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>20</td>
+<td>plat</td>
+<td>7</td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>Nous savons maintenant enregistrer, modifier et supprimer des données dans une base. L'objectif final de tout ce qui a été réalisé jusqu'ici est cependant de pouvoir <b>consulter ces données, selon des critères variés</b>. Nous allons donc aborder maintenant la manière d'<b>interroger la base</b>.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Interrogation des données</p></div></h2>
+<p>Pour interroger les données d'une base, on a recours à un LID (Langage d'interrogation des données).</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">SQL intègre un LID.</div>
+</li>
+</ul>
+<p>Lorsque l'on effectue une recherche dans une base de données, le résultat de celle-ci se présente lui-même sous forme d'une table, que l'on nommera par la suite « table résultat ».<br>
+Détaillons maintenant la syntaxe d'une instruction de recherche, autrement dénommée <b>requête</b>.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>La projection</p></div></h3>
+<p>La projection consiste à sélectionner la ou les colonnes que l'on souhaite voir apparaître dans la table résultat. C'est l'instruction <span class="calculator_button" markdown="1">SELECT</span> qui permet cela.</p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>La clause <span class="calculator_button" markdown="1">SELECT</span></b></div>
+</li>
+</ul>
+<p>La syntaxe d'une recherche est la suivante :</p>
+<p><span class="calculator_button" markdown="1">SELECT nomColonne1, nomColonne2, …</span><br>
+<span class="calculator_button" markdown="1">FROM nomTable;</span></p>
+<p>Si l'on souhaite que toutes les colonnes apparaissent dans la table résultat, il suffit alors d'employer la syntaxe suivante :</p>
+<p><span class="calculator_button" markdown="1">SELECT *</span><br>
+<span class="calculator_button" markdown="1">FROM nomTable;</span></p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>On souhaite obtenir la liste des recettes du club, présentée en trois colonnes : le nom de la recette, sa durée et son niveau de difficulté.</p>
+<p>Le schéma de la relation recette est le suivant :</p>
+<p><span class="calculator_button" markdown="1">recette(idRecette, nomRecette, niveau, duree, categorie, idAdherent) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">idRecette : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:20px;margin-left:75px;"><p><span class="calculator_button" markdown="1">idAdherent : clé étrangère en référence à idAdherent dans adherent</span></p></div>
+<p>La commande SQL sera donc la suivante :</p>
+<p><span class="calculator_button" markdown="1">SELECT nomRecette, duree, niveau</span><br>
+<span class="calculator_button" markdown="1">FROM recette; </span></p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+</tr>
+<tr>
+<td>Mayonnaise</td>
+<td>15</td>
+<td>difficile</td>
+</tr>
+<tr>
+<td>Omelette au fomage</td>
+<td>5</td>
+<td>moyen</td>
+</tr>
+<tr>
+<td>Pâte brisée</td>
+<td>20</td>
+<td>moyen</td>
+</tr>
+<tr>
+<td>Quatre-quarts</td>
+<td>10</td>
+<td>facile</td>
+</tr>
+<tr>
+<td>Purée de carottes</td>
+<td>15</td>
+<td>moyen</td>
+</tr>
+<tr>
+<td>Poulet rôti</td>
+<td>15</td>
+<td>facile</td>
+</tr>
+<tr>
+<td>Sole meunière</td>
+<td>20</td>
+<td>difficile</td>
+</tr>
+</table></div>
+</div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Valeurs distinctes d'une colonne</b></div>
+</li>
+</ul>
+<p>Si l'on souhaite connaître toutes les valeurs prises par une colonne dans une table, sans que celles-ci soient répétées autant de fois qu'elles s'y retrouvent, on le précise avec la clause <span class="calculator_button" markdown="1">DISTINCT</span>.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La table adhérent est ainsi constituée :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td>1</td>
+<td>DURAND</td>
+<td>Jacques</td>
+<td>j.durand@orange.fr</td>
+<td>16b</td>
+<td>rue brune</td>
+<td>1</td>
+<td>motdepass1</td>
+<td>0601020304</td>
+</tr>
+<tr>
+<td>2</td>
+<td>DUVAL</td>
+<td>Paul</td>
+<td>paul.d@sfr.fr</td>
+<td>135</td>
+<td>avenue rouge</td>
+<td>4</td>
+<td>motdepass2</td>
+<td>0704030201</td>
+</tr>
+<tr>
+<td>3</td>
+<td>DELORS</td>
+<td>Sophie</td>
+<td>sodelors@outlook.com</td>
+<td>22a</td>
+<td>bd vert</td>
+<td>3</td>
+<td>motdepass3</td>
+<td>0606060202</td>
+</tr>
+<tr>
+<td>4</td>
+<td>VERGER</td>
+<td>Jehan</td>
+<td>jverger@aol.com</td>
+<td>4ter</td>
+<td>impasse jaune</td>
+<td>5</td>
+<td>motdepass4</td>
+<td>0601020102</td>
+</tr>
+<tr>
+<td>5</td>
+<td>MONVILLE</td>
+<td>Fleur</td>
+<td>fleur1212@free.fr</td>
+<td>9</td>
+<td>sente aux loups</td>
+<td>2</td>
+<td>motdepass5</td>
+<td>0707020201</td>
+</tr>
+<tr>
+<td>6</td>
+<td>BRIARD</td>
+<td>Paul</td>
+<td>paul.briard27@hotmail.fr</td>
+<td>191</td>
+<td>rue violette</td>
+<td>4</td>
+<td>motdepass6</td>
+<td>0612345678</td>
+</tr>
+<tr>
+<td>7</td>
+<td>LÉGER</td>
+<td>Marguerite</td>
+<td>mag0506@perso.com</td>
+<td>17</td>
+<td>place noire</td>
+<td>3</td>
+<td>motdepass7</td>
+<td>0687654321</td>
+</tr>
+<tr>
+<td>8</td>
+<td>FLAMAND</td>
+<td>Lise</td>
+<td>flise@gmail.com</td>
+<td>329</td>
+<td>route bleue</td>
+<td>2</td>
+<td>motdepass8</td>
+<td>0632323232</td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>On souhaite connaître la liste des prénoms de tous les adhérents du club de cuisine. La commande SQL qui nous vient est :</p>
+<p><span class="calculator_button" markdown="1">SELECT prenom</span><br>
+<span class="calculator_button" markdown="1">FROM adherent;</span></p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td>Jacques</td>
+</tr>
+<tr>
+<td style="background:#FFE5B4; ">Paul </td>
+</tr>
+<tr>
+<td>Sophie</td>
+</tr>
+<tr>
+<td>Jehan</td>
+</tr>
+<tr>
+<td>Fleur</td>
+</tr>
+<tr>
+<td style="background:#FFE5B4; ">Paul </td>
+</tr>
+<tr>
+<td>Marguerite</td>
+</tr>
+<tr>
+<td>Lise</td>
+</tr>
+</table></div>
+<p>Mais si plusieurs adhérent·e·s portent le même prénom, par exemple deux adhérents s'appellent Paul, on retrouvera deux fois le prénom Paul dans la table résultat de la requête. Pour éviter cela, on affine notre commande avec la clause <span class="calculator_button" markdown="1">DISTINCT</span> :</p>
+<p><span class="calculator_button" markdown="1">SELECT DISTINCT prenom</span><br>
+<span class="calculator_button" markdown="1">FROM adherent;</span></p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td>Jacques</td>
+</tr>
+<tr>
+<td>Paul</td>
+</tr>
+<tr>
+<td>Sophie</td>
+</tr>
+<tr>
+<td>Jehan</td>
+</tr>
+<tr>
+<td>Fleur</td>
+</tr>
+<tr>
+<td>Marguerite</td>
+</tr>
+<tr>
+<td>Lise</td>
+</tr>
+</table></div>
+<h3 range="b." markdown="1"><div markdown="1"><p>La sélection</p></div></h3>
+<p>La sélection (ou restriction) est le recours à un ou plusieurs critères pour retenir certaines lignes dans la table résultat de la requête.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">C'est avec la clause <span class="calculator_button" markdown="1">WHERE</span> que l'on précise ces critères.</div>
+</li>
+</ul>
+<p>Nous avons déjà détaillé cette clause lorsque nous avons étudié les commandes de suppression et de modification de lignes. Ces commandes requièrent en effet de préciser sur quelles lignes elles portent, donc nécessitent la clause <span class="calculator_button" markdown="1">SELECT</span>. L'usage de <span class="calculator_button" markdown="1">SELECT</span> dans une requête d'interrogation ne diffère pas de celui dans les requêtes de suppression ou de mise à jour de lignes.</p>
+<p>Ainsi, si l'on souhaite effectuer une projection sur une sélection, la commande SQL prendra la forme<br>
+<span class="calculator_button" markdown="1">SELECT colonnex, colonney, …</span><br>
+<span class="calculator_button" markdown="1">FROM nomTable</span><br>
+<span class="calculator_button" markdown="1">WHERE <span class="underline">conditions</span></span></p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La commande SQL qui suit recueille la liste des recettes dont la durée n'excède pas $10$ minutes, constituée du nom de la recette, de sa durée et de sa catégorie :</p>
+<p><span class="calculator_button" markdown="1">SELECT nomRecette, duree, categorie</span><br>
+<span class="calculator_button" markdown="1">FROM recette</span><br>
+<span class="calculator_button" markdown="1">WHERE (duree &lt;= 10);</span></p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+</tr>
+<tr>
+<td>Omelette au fromage</td>
+<td>5</td>
+<td>plat</td>
+</tr>
+<tr>
+<td>Quatre-quarts</td>
+<td>10</td>
+<td>dessert</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous achevons ici ce cours relatif aux commandes SQL de base. Nous savons créer des tables, les modifier et les supprimer. Nous avons vu comment insérer, supprimer ou modifier des lignes dans une table. Et nous pouvons également effectuer des recherches dans celle-ci.<br>
+Nous ne savons pas encore effectuer des recherches faisant appel à plusieurs tables, ni des calculs ou des tris sur les résultats de nos recherches. C'est ce que nous aborderons dans le cours qui suit.</p>
+</div>
+</div></div>
+<div id="poool-digk8-gq9r5" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e74786f09e0a80100fe060f","type":"Cours","title":"Le langage SQL ","content":"[IN]\nIntroduction\u0026nbsp;:\n\nNous savons que, pour créer une base de données, il est d'abord nécessaire de la modéliser à l'aide d'un MCD, puis d'en déduire le modèle relationnel et, enfin, de procéder à une normalisation du schéma ainsi obtenu. Une fois ces étapes effectuées, il est enfin temps de concrétiser la base de données et de l'utiliser.\n\nDans ce cours, nous allons découvrir un langage utilisé pour transmettre des ordres à un SGBD relationnel\u0026nbsp;: SQL. Il se décompose selon trois grandes familles d'opérations\u0026nbsp;: la gestion des tables et des vues, la manipulation des données en table et, pour terminer, l'interrogation et la recherche dans les tables.  \nCommençons par créer les relations de notre modèle relationnel, autrement dit, la structure de la base. Les tables qui en résulteront seront vides, mais prêtes à accueillir les futures données.\n[/IN]\n\n##La description des données/1\n\nLe langage utilisé pour créer la structure d'une base de données est un\u0026nbsp;LDD (Langage de description des données). SQL, en plus d'autres langages, est un LDD.\n\n[AST]\nSQL est le sigle de __Structured query language__ qui signifie en français «\u0026nbsp;Langage de requêtes structuré\u0026nbsp;».\n[/AST]\n\nExaminons les requêtes que nous pouvons adresser au SGBD pour créer la structure de notre base de données.\n\n###Création de la structure de la base de données/a.\n\nLa structure de la base de données comporte l'ensemble de ses tables. Il est donc nécessaire de les créer une à une.  \nLa création d'une table est une opération qu'il faut effectuer avec attention. C'est lors de cette étape que, en plus de ses colonnes, on définit les contraintes d'intégrité de domaine, de relation et de référence.\n\nLa syntaxe employée est la suivante\u0026nbsp;:\n\n[BUTC]CREATE TABLE nomTable ([/BUTC]  \n\u003c\u003c((auto,-22,0,0,75))[BUTC]colonne1 --type de donnée--,[/BUTC]  \n[BUTC]colonne2 --type de donnée--,[/BUTC]  \n[BUTC]colonne3 --type de donnée--,[/BUTC]  \n[BUTC]colonne4 --type de donnée--,[/BUTC]  \n[BUTC]….[/BUTC]  \n[BUTC]PRIMARY KEY (colonnex, colonney, …),[/BUTC]  \n[BUTC]FOREIGN KEY (colonnea, colonneb,…) REFERENCES nomTableX (colonnei, colonnej…) ON DELETE --option--[/BUTC]  \n[BUTC]…);[/BUTC]\u003e\u003e\n\n[RETENIR]\n* Chaque instruction se termine obligatoirement par un «\u0026nbsp;;\u0026nbsp;».\n* L'orthographe des termes écrits en lettre capitales uniquement doit être respectée. Ce sont des mots-clés composant la syntaxe.\n* Les termes soulignés sont obligatoires.\n* Les autres termes sont les noms qui sont affectés librement aux attributs et aux tables.\n[/RETENIR]\n\n[ATT]\nCette syntaxe n'est pas exhaustive, mais nous l'avons volontairement limitée aux notions que nous avons jugées les plus utiles pour ce cours.\n[/ATT]\n\n* **Type de donnée**((bulle))\n\nLe type de donnée constitue en lui-même une contrainte de domaine. Il précise la nature d'un attribut\u0026nbsp;:\n\n* **Numérique**\n* INT (codé sur $32\\,\\text{bits}$)\u0026nbsp;;((liste2))\n* SMALLINT (codé sur $16\\,\\text{bits}$)\u0026nbsp;;((liste2))\n* REAL (taille qui dépend du SGBD)\u0026nbsp;;((liste2))\n* FLOAT(n) (réel représenté sur $n\\,\\text{bit}$).((liste2))\n* **Caractère**\n* CHAR(n) (chaîne de longueur\u0026nbsp;n, codage ASCII $1\\,\\text{octet}$)\u0026nbsp;;((liste2))\n* VARCHAR(n) (chaîne de longueur maximale\u0026nbsp;n, codage ASCII $1\\,\\text{octet}$)\u0026nbsp;;((liste2))\n* NCHAR(n) (chaîne de longueur\u0026nbsp;n, codage UNICODE $2\\,\\text{octets}$)\u0026nbsp;;((liste2))\n* NVARCHAR(n) (chaîne de longueur maximale\u0026nbsp;n, codage UNICODE $2\\,\\text{octets}$).((liste2))\n* **Binaire**\n* BOOLEAN (booléen)\u0026nbsp;;((liste2))\n* BLOB (__Binary large object__ qui permet de stocker tout type binaire tel que photo, document mis en forme…).((liste2))\n* **Date**\n* DATE (date)\u0026nbsp;;((liste2))\n* TIME(n) (heure, n, optionnel, étant le nombre de décimales pour représenter une fraction de seconde).((liste2))\n* **Clé primaire**((bulle))\n\nLe terme «\u0026nbsp;PRIMARY KEY\u0026nbsp;» désigne le ou les attributs qui constituent la clé primaire de la relation. C'est une contrainte de relation qui garantit l'unicité de la clé primaire.\n* **Clé étrangère**((bulle))\n* Le terme «\u0026nbsp;FOREIGN KEY\u0026nbsp;» désigne le ou les attributs qui constituent une clé étrangère dans la relation. C'est une contrainte de référence qui garantit une cohérence entre les données.((fleche))\n* Le terme «\u0026nbsp;REFERENCE\u0026nbsp;» sert à désigner la table et la ou les colonnes de cette table dont la clé étrangère est issue.((fleche))\n* Enfin, le terme «\u0026nbsp;ON DELETE\u0026nbsp;» permet de préciser l'option choisie en cas de suppression de la clé étrangère dans la table d'où celle-ci provient.((fleche))\n\n[EX]\nSi nous reprenons le modèle relationnel de la base de données de notre club de cuisine (voir cours précédents du même chapitre), voici sa traduction en une commande\u0026nbsp;SQL qui permet de créer les tables __ville__ et __adherent__ de notre base.\n\n[TAB]((auto, g, n, texte-centre))\n[LI]\n| **[18]Schéma relationnel[18]** ((0,0,0,#9AE)) |\n| **[18]Commande SQL[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| [BUTC]Ville(idVille, nomVille, codePostal) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,75))[BUTC]idVille : clé primaire[/BUTC]\u003e\u003e |\n| [BUTC]CREATE TABLE ville([/BUTC]\n\u003c\u003c((auto,-22,0,0,75))[BUTC]idVille INT NOT NULL AUTO_INCREMENT,[/BUTC]  \n[BUTC]nomVille CHAR(50),[/BUTC]  \n[BUTC]codePostal INT,[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]PRIMARY KEY (idVille)[/BUTC]  \n[BUTC]);[/BUTC]\u003e\u003e\n |\n[/LI]\n[LI]\n| [BUTC]Adherent(idAdherent, nomAdherent, prenom, mail, numero, rue, complement, idVille, passe, telephone) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,75))[BUTC]idAdherent : clé primaire[/BUTC]  \n[BUTC]idVille : clé étrangère en référence à idVille de Ville[/BUTC]\u003e\u003e\n |\n| [BUTC]CREATE TABLE adherent([/BUTC]  \n\u003c\u003c((auto,-22,0,0,75))[BUTC]idAdherent INT NOT NULL AUTO_INCREMENT,[/BUTC]  \n[BUTC]nomAdherent CHAR(50),[/BUTC]  \n[BUTC]prenom CHAR(50),[/BUTC]  \n[BUTC]mail CHAR(30),numero CHAR(10),[/BUTC]  \n[BUTC]rue CHAR(50),[/BUTC]  \n[BUTC]complement CHAR(50),[/BUTC]  \n[BUTC]idVille INT,[/BUTC]  \n[BUTC]passe CHAR(30),[/BUTC]  \n[BUTC]telephone INT,[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]PRIMARY KEY (idAdherent),[/BUTC]  \n[BUTC]FOREIGN KEY (idVille) REFERENCES ville(idVille) ON DELETE NO ACTION[/BUTC]  \n[BUTC];[/BUTC]\u003e\u003e\n |\n[/LI]\n[/TAB]\n\n\n[/EX]\n\nOn remarquera la consigne «\u0026nbsp;AUTO_INCREMENT\u0026nbsp;» qui laisse l'initiative au\u0026nbsp;SGBD d'affecter une valeur numérique à la colonne __idAdherent__, s'incrémentant de $1$ en $1$ au fur et à mesure que l'on ajoute des lignes dans la table __adherent__ (idem pour __idVille__).  \nOn notera également la précision «\u0026nbsp;NOT NULL\u0026nbsp;» qui évite qu'une ligne soit insérée sans clé primaire (dans le cas contraire, il serait impossible de l'identifier\u0026nbsp;!).  \nEnfin, on constate que l'on choisit de ne supprimer aucun enregistrement dans la table __ville__ si sa colonne __idVille__ figure comme clé étrangère dans une ligne de la table __adherent__.\n\nNous avons ainsi créé les deux tables vides suivantes\u0026nbsp;: \n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idVille[18]** ((0,0,0,#9AE)) |\n| **[18]nomVille[18]** ((0,0,0,#9AE)) |\n| **[18]codePostal[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| \n |\n|\n |\n|\n |\n[/LI]\n[LI]\n|\n |\n|\n |\n|\n |\n[/LI]\n[/TAB]\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]mail[18]** ((0,0,0,#9AE)) |\n| **[18]numero[18]** ((0,0,0,#9AE)) |\n| **[18]rue[18]** ((0,0,0,#9AE)) |\n| **[18]complement[18]** ((0,0,0,#9AE)) |\n| **[18]idVille[18]** ((0,0,0,#9AE)) |\n| **[18]passe[18]** ((0,0,0,#9AE)) |\n| **[18]telephone[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n|\n |\n|\n |\n|\n |\n|\n |\n|\n |\n|\n |\n|\n |\n|\n |\n|\n |\n|\n |\n[/LI]\n[LI]\n|\n |\n|\n |\n|\n |\n| \n |\n|\n |\n|\n |\n|\n |\n|\n |\n|\n |\n|\n |\n[/LI]\n[/TAB]\n\n###Suppression d'une table/b.\n\nLa syntaxe pour supprimer une table, et par conséquent son contenu, est la suivante\u0026nbsp;: [BUTC]DROP TABLE __nomTable__;[/BUTC].\n\nIl va de soi que si des contraintes d'intégrité référentielle ont été posées, dans les autres tables, sur des clés étrangères faisant appel à des colonnes issues de la table que l'on souhaite supprimer, l'opération ne sera pas possible.  \nIl est donc nécessaire de supprimer au préalable les tables ou les lignes dont les clés étrangères se réfèrent à une ligne de la table que l'on veut supprimer.\n\n[EX]\n[BUTC]DROP TABLE ingredient;[/BUTC]\n[IMG]((100))\n![langage SQL](https://kronos-images.schoolmouv.fr/t-fnx-num-c10-img01.png) #\n[/IMG]\n\n[BUTC]DROP TABLE utilise;[/BUTC]\n[IMG]((100))\n![langage SQL](https://kronos-images.schoolmouv.fr/t-fnx-num-c10-img02.png) #\n[/IMG]\n\n[BUTC]DROP TABLE ingredient;[/BUTC]\n [IMG]((100))\n![langage SQL](https://kronos-images.schoolmouv.fr/t-fnx-num-c10-img03.png) #\n[/IMG]\n[/EX]\n\nDans un premier temps, il n'a pas été possible de supprimer la table __ingredient__ car une ou plusieurs de ses lignes était référencée via une clé étrangère (__idIngredient__) dans une autre table (la table __utilise__).  \nLa suppression de la table __utilise__, qui, elle, n'est référencée dans aucune autre table, a été possible.  \nCela a alors permis, par la suite, la suppression de la table __ingredient__.\n\n###Modification d'une table/c.\n\nLa commande [BUTC]ALTER TABLE[/BUTC] permet de modifier la structure d'une table, que ce soit en ajoutant, supprimant ou modifiant ses colonnes.  \nCette opération est plus délicate lorsque la table contient déjà des lignes. Il est par conséquent important d'agir prudemment avec cette commande.\n\n* **Ajout d'une colonne à une table**((bulle))\n\n[BUTC]ALTER TABLE __nomTable__[/BUTC]  \n\u003c\u003c((auto,-22,0,0,0))[BUTC]ADD COLUMN __nouveauChamp__ TYPEDONNEE;[/BUTC]\u003e\u003e\n\nNotons que l'attribut __nouveauChamp__ sera affecté avec une valeur «\u0026nbsp;NULL\u0026nbsp;» aux enregistrements déjà existants dans la table.\n\n[EX]\n[BUTC]ALTER TABLE __recette__[/BUTC]  \n\u003c\u003c((auto,-22,0,25,0))[BUTC]ADD COLUMN __pays__ CHAR(30);[/BUTC]\u003e\u003e\n\nAvant ajout de la colonne __pays__\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| difficile |\n| 15 |\n| sauce |\n| 7 |\n[/LI]\n[LI]\n| 2 |\n| Omelette |\n| facile |\n| 5 |\n| plat |\n| 6 |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| moyen |\n| 20 |\n| autre |\n| 6 |\n[/LI]\n[LI]\n| 4 |\n| Quatre-quarts |\n| facile |\n| 10 |\n| dessert |\n| 4 |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| moyen |\n| 15 |\n| accompagnement |\n| 2 |\n[/LI]\n[LI]\n| 6 |\n| Poulet rôti |\n| facile |\n| 15 |\n| plat |\n| 2 |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| difficile |\n| 20 |\n| plat |\n| 7 |\n[/LI]\n[/TAB]\n\nAprès ajout de la colonne __pays__\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]pays[18]** ((0,0,0,#F4511E)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| difficile |\n| 15 |\n| sauce |\n| 7 |\n| ((0,0,0,#FFE5B4))\n |\n[/LI]\n[LI]\n| 2 |\n| Omelette |\n| facile |\n| 5 |\n| plat |\n| 6 |\n| ((0,0,0,#FFE5B4))\n |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| moyen |\n| 20 |\n| autre |\n| 6 |\n| ((0,0,0,#FFE5B4))\n |\n[/LI]\n[LI]\n| 4 |\n| Quatre-quarts |\n| facile |\n| 10 |\n| dessert |\n| 4 |\n| ((0,0,0,#FFE5B4))\n |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| moyen |\n| 15 |\n| accompagnement |\n| 2 |\n| ((0,0,0,#FFE5B4))\n |\n[/LI]\n[LI]\n| 6 |\n| Poulet rôti |\n| facile |\n| 15 |\n| plat |\n| 2 |\n| ((0,0,0,#FFE5B4))\n |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| difficile |\n| 20 |\n| plat |\n| 7 |\n| ((0,0,0,#FFE5B4))\n |\n[/LI]\n[/TAB]\n[/EX]\n\n* **Suppression de la colonne d'une table**((bulle))\n\n[BUTC]ALTER TABLE __nomTable__[/BUTC]  \n\u003c\u003c((auto,-22,0,0,0))[BUTC]DROP COLUMN __nomChamp__;[/BUTC]\u003e\u003e\n\n[EX]\n[BUTC]ALTER TABLE __recette__[/BUTC]  \n\u003c\u003c((auto,-22,0,25,0))[BUTC]DROP COLUMN __duree__;[/BUTC]\u003e\u003e\n\nAprès suppression de la colonne __duree__\u0026nbsp;:\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]pays[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| difficile |\n| sauce |\n| 7 |\n| \n |\n[/LI]\n[LI]\n| 2 |\n| Omelette |\n| facile |\n| sauce |\n| 6 |\n| \n |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| moyen |\n| sauce |\n| 6 |\n| \n |\n[/LI]\n[LI]\n| 4 |\n| Quatre-quarts |\n| facile |\n| sauce |\n| 4 |\n| \n |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| moyen |\n| sauce |\n| 2 |\n| \n |\n[/LI]\n[LI]\n| 6 |\n| Poulet rôti |\n| facile |\n| sauce |\n| 2 |\n| \n |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| difficile |\n| sauce |\n| 7 |\n| \n |\n[/LI]\n[/TAB]\n[/EX]\n\n* **Modification d'une colonne**((bulle))\n\nCette opération peut s'avérer délicate s'il s'agit, par exemple, de renommer le nom d'une colonne ou de changer son type. L'appel à une colonne supplémentaire s'avère alors nécessaire.\n\n[EX]\nSupposons que l'on souhaite renommer la colonne __rue__ de la table __adherent__ pour l'appeler __voie__ et que l'on souhaite augmenter sa taille à $100$ caractères maximum.  \nIl faudra alors procéder comme suit\u0026nbsp;:\n\n[BUTC]/* création d'une colonne portant le nom désiré et du type désiré */[/BUTC]  \n\u003c\u003c((auto,-22,0,0,0))[BUTC]ALTER TABLE adherent[/BUTC]  \n[BUTC]ADD COLUMN voie VARCHAR(100); [/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,22,0,0,0))[BUTC]/* initialisation de la nouvelle colonne avec les valeurs de l'ancienne colonne */[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,0,0,0,0))[BUTC]UPDATE adherent[/BUTC]  \n[BUTC]SET voie=rue;[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,22,0,0,0))[BUTC]/* suppression de l'ancienne colonne */[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,0,0,0,0))[BUTC]ALTER TABLE adherent[/BUTC]  \n[BUTC]DROP COLUMN rue;[/BUTC]\u003e\u003e\n[/EX]\n\nL'instruction [BUTC]UPDATE[/BUTC] qui figure dans cet exemple est étudiée plus en détail dans la suite de ce cours. Elle permet ici, pour chaque ligne existante dans la table __adherent__, de renseigner la valeur du nouveau champ __voie__ avec la valeur du champ existant __rue__.\n\nMaintenant que nous sommes en mesure de créer la structure de base, nous allons pouvoir commencer à y enregistrer des données. Un Langage de manipulation des données (LMD) nous est nécessaire.\n* SQL en est un.((fleche))\n\n##La manipulation des données/2\n\nLa manipulation des données consiste en leur insertion, modification et suppression dans les tables de la base. Regardons en détail les instructions qui nous permettent de faire réaliser ces opérations par le SGBD.\n\n###L'insertion d'une ligne dans une table/a.\n\nIl s'agit d'enregistrer une nouvelle ligne dans une table. Les mécanismes suivants vont être sollicités\u0026nbsp;:\n* contrôle des contraintes d'intégrité lors de l'insertion (domaine, relation et référentielle)\u0026nbsp;;((liste2))\n* renseignement des champs avec la valeur «\u0026nbsp;NULL\u0026nbsp;» si aucune valeur n'est précisée et si «\u0026nbsp;NULL\u0026nbsp;» est autorisé pour ces champs.((liste2))\n\nLa syntaxe est la suivante\u0026nbsp;:\n\n[BUTC]INSERT INTO nomTable[/BUTC]  \n[BUTC](champx, champY, ….)[/BUTC]  \n[BUTC]VALUES (valeurChampX, valeurChampY,…);[/BUTC]\n\n[RETENIR]\nQuelques précisions méritent notre attention\u0026nbsp;:\n* Les valeurs des colonnes doivent être renseignées dans le même ordre que celui de la liste des colonnes donnée juste avant.\n* Si la liste des colonnes n'est pas donnée, alors le SGBD se base sur la liste des colonnes de la table, dans l'ordre où celles-ci ont été définies lors de sa création.\n* Si certaines colonnes sont omises, elles prendront la valeur 'NULL'.\n[/RETENIR]\n\n[EX]\nInsérons un ingrédient dans la base de données du club de cuisine\u0026nbsp;:\n\n[BUTC]INSERT INTO ingredient[/BUTC]  \n[BUTC] (nomIngredient, type)[/BUTC]  \n[BUTC]VALUES (\"oeuf\",\"viande\")[/BUTC]\n[/EX]\n\nNous n'avons pas précisé la valeur de la colonne __idIngredient__ car le SGBD se charge lui-même de lui affecter une valeur numérique unique (option \"AUTO_INCREMENT\" spécifiée lors de la création de la table). Sachant qu'ici, c'est le premier ingrédient que nous insérons dans la table ingredient, la colonne idIngredient prendra la valeur 1.\n\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]nomIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]type[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| oeuf |\n| viande |\n[/LI]\n[/TAB]\n\n###La suppression de la ligne d'une table/b\n\n[AST]\nComme lors de la suppression d'une table, la suppression d'une ligne est soumise au respect des contraintes d'intégrité.\n[/AST]\n\nL'instruction de suppression permet de supprimer une ou plusieurs lignes d'une table. Pour cela, les lignes concernées par l'opération doivent être désignées. Celles-ci sont identifiées avec une condition.\n\n[RETENIR]\nC'est la clause [BUTC]WHERE[/BUTC] qui va nous le permettre.\n[/RETENIR]\n\nAinsi, la syntaxe de la commande SQL pour supprimer une ou plusieurs lignes d'une table est la suivante\u0026nbsp;:\n\n[BUTC]DELETE FROM nomTable[/BUTC]  \n[BUTC]WHERE --condition--;[/BUTC]\n\nLa condition consiste en un ou plusieurs critères portant sur le contenu d'une ou plusieurs colonnes. Elle s'exprime à l'aide d'opérateurs de comparaison, comparaison que l'on peut combiner avec d'autres en utilisant des connecteurs logiques.\n\n* **Opérateurs de comparaison**((bulle))\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| = |\n| Égal |\n[/LI]\n[LI]\n| \u003c\u003e |\n| Différent |\n[/LI]\n[LI]\n| \u003c |\n| Inférieur strictement |\n[/LI]\n[LI]\n| \u003e |\n| Supérieur strictement |\n[/LI]\n[LI]\n| \u003c= |\n| Inférieur ou égal |\n[/LI]\n[LI]\n| \u003e= |\n| Supérieur ou égal |\n[/LI]\n[LI]\n| BETWEEN \u0026#60;valeur1\u003e AND \u0026#60;valeur2\u003e |\n| Appartient à un intervalle  \n(\u0026#60;valeur2\u003e incluse) |\n[/LI]\n[LI]\n| IN \u0026#60;liste de valeurs\u003e |\n| Appartient à un ensemble de valeurs |\n[/LI]\n[LI]\n| IS NULL |\n| Colonne non\u0026nbsp;renseignée |\n[/LI]\n[LI]\n| LIKE \u0026#60;chaîne\u003e |\n| Recherche chaînes de caractères correspondant à un modèle |\n[/LI]\n[/TAB]\n\n* **Connecteurs logiques**((bulle))\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| \u0026#60;condition1\u003e AND \u0026#60;condition2\u003e |\n| Les $2$ conditions sont vraies simultanément |\n[/LI]\n[LI]\n| \u0026#60;condition1\u003e OR \u0026#60;condition2\u003e |\n| Au moins une des $2$ conditions est vraie |\n[/LI]\n[LI]\n| NOT \u0026#60;condition\u003e |\n| Inverse la condition |\n[/LI]\n[/TAB]\n\n[EX]\nSupprimons l'ingrédient dont la colonne __nomIngredient__ porte la valeur «\u0026nbsp;rutabaga\u0026nbsp;» dans la table __ingredient__\u0026nbp;:\n\n[BUTC]DELETE FROM ingredient[/BUTC]  \n[BUTC]WHERE nomIngredient = \"rutabaga\";[/BUTC]\n\nAvant suppression\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]nomIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]type[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| oeuf |\n| viande |\n[/LI]\n[LI]\n| 2 |\n| moutarde |\n| condiment |\n[/LI]\n[LI]\n| 3 |\n| vinaigre |\n| condiment |\n[/LI]\n[LI]\n| 4 |\n| huile |\n| condiment |\n[/LI]\n[LI]\n| 5 |\n| sel |\n| condiment |\n[/LI]\n[LI]\n| 6 |\n| poivre |\n| condiment |\n[/LI]\n[LI]\n| 7 |\n| gruyère râpé |\n| crèmerie |\n[/LI]\n[LI]\n| 8 |\n| huile d’olive |\n| condiment |\n[/LI]\n[LI]\n| 9 |\n| farine |\n| épicerie |\n[/LI]\n[LI]\n| 10 |\n| beurre |\n| crèmerie |\n[/LI]\n[LI]\n| 11 |\n| sucre |\n| épicerie |\n[/LI]\n[LI]\n| 12 |\n| lait |\n| crèmerie |\n[/LI]\n[LI]\n| 13 |\n| carotte |\n| légume |\n[/LI]\n[LI]\n| 14 |\n| crème fraîche |\n| crèmerie |\n[/LI]\n[LI]\n| 15 |\n| cumin |\n| condiment |\n[/LI]\n[LI]\n| 16 |\n| muscade |\n| condiment |\n[/LI]\n[LI]\n| 17 |\n| poulet |\n| viande |\n[/LI]\n[LI]\n| 18 |\n| persil |\n| condiment |\n[/LI]\n[LI]\n| 19 |\n| citron |\n| fruit |\n[/LI]\n[LI]\n| 20 |\n| sole |\n| viande |\n[/LI]\n[LI]\n| 21 ((0,0,0,#F3E5F5)) |\n| rutabaga ((0,0,0,#F3E5F5)) |\n| légume ((0,0,0,#F3E5F5)) |\n[/LI]\n[LI]\n| 22 |\n| levure |\n| épicerie |\n[/LI]\n[/TAB]\n\nAprès suppression de la ligne\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]nomIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]type[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| oeuf |\n| viande |\n[/LI]\n[LI]\n| 2 |\n| moutarde |\n| condiment |\n[/LI]\n[LI]\n| 3 |\n| vinaigre |\n| condiment |\n[/LI]\n[LI]\n| 4 |\n| huile |\n| condiment |\n[/LI]\n[LI]\n| 5 |\n| sel |\n| condiment |\n[/LI]\n[LI]\n| 6 |\n| poivre |\n| condiment |\n[/LI]\n[LI]\n| 7 |\n| gruyère râpé |\n| crèmerie |\n[/LI]\n[LI]\n| 8 |\n| huile d’olive |\n| condiment |\n[/LI]\n[LI]\n| 9 |\n| farine |\n| épicerie |\n[/LI]\n[LI]\n| 10 |\n| beurre |\n| crèmerie |\n[/LI]\n[LI]\n| 11 |\n| sucre |\n| épicerie |\n[/LI]\n[LI]\n| 12 |\n| lait |\n| crèmerie |\n[/LI]\n[LI]\n| 13 |\n| carotte |\n| légume |\n[/LI]\n[LI]\n| 14 |\n| crème fraîche |\n| crèmerie |\n[/LI]\n[LI]\n| 15 |\n| cumin |\n| condiment |\n[/LI]\n[LI]\n| 16 |\n| muscade |\n| condiment |\n[/LI]\n[LI]\n| 17 |\n| poulet |\n| viande |\n[/LI]\n[LI]\n| 18 |\n| persil |\n| condiment |\n[/LI]\n[LI]\n| 19 |\n| citron |\n| fruit |\n[/LI]\n[LI]\n| 20 |\n| sole |\n| viande |\n[/LI]\n[LI]\n| 22 |\n| levure |\n| épicerie |\n[/LI]\n[/TAB]\n\n\n[/EX]\n\nLe SGBD n'a pas refusé d'exécuter la commande\u0026nbsp;: l'ingrédient supprimé n'était référencé dans aucune autre table, ou, si c'était le cas, l'option a été choisie, dans les tables concernées (ici la table __utilise__), de supprimer les lignes dont la colonne clé étrangère correspond à l'ingrédient supprimé, ou de renseigner à «\u0026nbsp;NULL\u0026nbsp;» cette clé étrangère.\n\nNous pouvons émettre une critique sur le critère de sélection\u0026nbsp;: celui-ci porte sur la colonne __nomIngredient__ qui ne constitue pas une clé primaire pour la table __ingredient__. Cela impose au SGBD de parcourir séquentiellement les lignes de la table jusqu'à trouver celle dont la colonne __nomIngredient__ répond au critère.\n\n[AST]\nPour être plus efficace et plus fiable, il aurait été préférable de repérer l'ingrédient de nom «\u0026nbsp;rutabaga\u0026nbsp;» par sa colonne __idIngredient__ (en l'occurrence, la ligne\u0026nbsp;21)\u0026nbsp;: le SGBD aurait atteint la ligne directement, grâce à l'index de la table. De plus, il aurait identifié à coup sûr et de manière unique l'ingrédient visé, ce qui est préférable.\n[/AST]\n\n###La modification d'une ou plusieurs lignes d'une table/c.\n\n[RETENIR]\nUne opération de modification requiert que l'on précise :\n* les colonnes concernées\u0026nbsp;;((liste2))\n* les nouvelles valeurs prises par ces colonnes\u0026nbsp;;((liste2))\n* les lignes concernées, via la clause [BUTC]WHERE[/BUTC].((liste2))\n[/RETENIR]\n\n[AST]\nComme pour l'insertion ou la suppression d'une ligne dans une table, la modification d'une ligne doit respecter les contraintes d'intégrité spécifiées lors de la création de la structure de la base de données.\n[/AST]\n\nLa syntaxe d'une modification est la suivante\u0026nbsp;:\n\n[BUTC]UPDATE nomTable[/BUTC]  \n[BUTC]SET nomColonne1 = valeur 1, nomColonne2 = valeur2, …[/BUTC]  \n[BUTC]WHERE --condition--[/BUTC]\n\n[EX]\nModifions le nom de la recette dont la colonne __nomRecette__ contient «\u0026nbsp;Omelette\u0026nbsp;» et le niveau de difficulté actuellement évalué à «\u0026nbsp;facile\u0026nbsp;», sachant que son identifiant est\u0026nbsp;2.\n\n[BUTC]UPDATE recette[/BUTC]  \n[BUTC]SET nomRecette = \"Omelette au fromage\", niveau = \"moyen\"[/BUTC]  \n[BUTC]WHERE idRecette = 2;[/BUTC]\n\nAvant modification\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| difficile |\n| 15 |\n| sauce |\n| 7 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#F3E5F5)) |\n| Omelette ((0,0,0,#F3E5F5)) |\n| facile ((0,0,0,#F3E5F5)) |\n| 5 ((0,0,0,#F3E5F5)) |\n| plat ((0,0,0,#F3E5F5)) |\n| 6 ((0,0,0,#F3E5F5)) |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| moyen |\n| 20 |\n| autre |\n| 6 |\n[/LI]\n[LI]\n| 4 |\n| Quatre-quarts |\n| facile |\n| 10 |\n| dessert |\n| 4 |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| moyen |\n| 15 |\n| accompagnement |\n| 2 |\n[/LI]\n[LI]\n| 6 |\n| Poulet rôti |\n| facile |\n| 15 |\n| plat |\n| 2 |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| difficile |\n| 20 |\n| plat |\n| 7 |\n[/LI]\n[/TAB]\n\nAprès modification de la ligne\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| difficile |\n| 15 |\n| sauce |\n| 7 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#F3E5F5)) |\n| Omelette au fromage ((0,0,0,#F3E5F5)) |\n| moyen ((0,0,0,#F3E5F5)) |\n| 5 ((0,0,0,#F3E5F5)) |\n| plat ((0,0,0,#F3E5F5)) |\n| 6 ((0,0,0,#F3E5F5)) |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| moyen |\n| 20 |\n| autre |\n| 6 |\n[/LI]\n[LI]\n| 4 |\n| Quatre-quarts |\n| facile |\n| 10 |\n| dessert |\n| 4 |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| moyen |\n| 15 |\n| accompagnement |\n| 2 |\n[/LI]\n[LI]\n| 6 |\n| Poulet rôti |\n| facile |\n| 15 |\n| plat |\n| 2 |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| difficile |\n| 20 |\n| plat |\n| 7 |\n[/LI]\n[/TAB]\n\n[/EX]\n\nNous savons maintenant enregistrer, modifier et supprimer des données dans une base. L'objectif final de tout ce qui a été réalisé jusqu'ici est cependant de pouvoir **consulter ces données, selon des critères variés**. Nous allons donc aborder maintenant la manière d'**interroger la base**.\n\n##Interrogation des données/3\n\nPour interroger les données d'une base, on a recours à un LID (Langage d'interrogation des données).\n* SQL intègre un LID.((fleche))\n\nLorsque l'on effectue une recherche dans une base de données, le résultat de celle-ci se présente lui-même sous forme d'une table, que l'on nommera par la suite «\u0026nbsp;table résultat\u0026nbsp;».  \nDétaillons maintenant la syntaxe d'une instruction de recherche, autrement dénommée **requête**.\n\n###La projection/a.\n\nLa projection consiste à sélectionner la ou les colonnes que l'on souhaite voir apparaître dans la table résultat. C'est l'instruction [BUTC]SELECT[/BUTC] qui permet cela.\n\n* **La clause [BUTC]SELECT[/BUTC]**((bulle))\n\nLa syntaxe d'une recherche est la suivante\u0026nbsp;:\n\n[BUTC]SELECT nomColonne1, nomColonne2, …[/BUTC]  \n[BUTC]FROM nomTable;[/BUTC]\n\nSi l'on souhaite que toutes les colonnes apparaissent dans la table résultat, il suffit alors d'employer la syntaxe suivante\u0026nbsp;:\n\n[BUTC]SELECT *[/BUTC]  \n[BUTC]FROM nomTable;[/BUTC]\n\n[EX]\nOn souhaite obtenir la liste des recettes du club, présentée en trois\u0026nbsp;colonnes\u0026nbsp;: le nom de la recette, sa durée et son niveau de difficulté.\n\nLe schéma de la relation recette est le suivant\u0026nbsp;:\n\n[BUTC]recette(idRecette, nomRecette, niveau, duree, categorie, idAdherent) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,75))[BUTC]idRecette : clé primaire[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,0,0,20,75))[BUTC]idAdherent : clé étrangère en référence à idAdherent dans adherent[/BUTC]\u003e\u003e\n\nLa commande SQL sera donc la suivante\u0026nbsp;:\n\n[BUTC]SELECT nomRecette, duree, niveau[/BUTC]  \n[BUTC]FROM recette; [/BUTC]\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| Mayonnaise |\n| 15 |\n| difficile |\n[/LI]\n[LI]\n| Omelette au fomage |\n| 5 |\n| moyen |\n[/LI]\n[LI]\n| Pâte brisée |\n| 20 |\n| moyen |\n[/LI]\n[LI]\n| Quatre-quarts |\n| 10 |\n| facile |\n[/LI]\n[LI]\n| Purée de carottes |\n| 15 |\n| moyen |\n[/LI]\n[LI]\n| Poulet rôti |\n| 15 |\n| facile |\n[/LI]\n[LI]\n| Sole meunière |\n| 20 |\n| difficile |\n[/LI]\n[/TAB]\n\n\n[/EX]\n\n* **Valeurs distinctes d'une colonne**((bulle))\n\nSi l'on souhaite connaître toutes les valeurs prises par une colonne dans une table, sans que celles-ci soient répétées autant de fois qu'elles s'y retrouvent, on le précise avec la clause [BUTC]DISTINCT[/BUTC].\n\n[EX]\nLa table adhérent est ainsi constituée\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| 1 |\n| DURAND |\n| Jacques |\n| j.durand@orange.fr |\n| 16b |\n| rue brune |\n| 1 |\n| motdepass1 |\n| 0601020304 |\n[/LI]\n[LI]\n| 2 |\n| DUVAL |\n| Paul |\n| paul.d@sfr.fr |\n| 135 |\n| avenue rouge |\n| 4 |\n| motdepass2 |\n| 0704030201 |\n[/LI]\n[LI]\n| 3 |\n| DELORS |\n| Sophie |\n| sodelors@outlook.com |\n| 22a |\n| bd vert |\n| 3 |\n| motdepass3 |\n| 0606060202 |\n[/LI]\n[LI]\n| 4 |\n| VERGER |\n| Jehan |\n| jverger@aol.com |\n| 4ter |\n| impasse jaune |\n| 5 |\n| motdepass4 |\n| 0601020102 |\n[/LI]\n[LI]\n| 5 |\n| MONVILLE |\n| Fleur |\n| fleur1212@free.fr |\n| 9 |\n| sente aux loups |\n| 2 |\n| motdepass5 |\n| 0707020201 |\n[/LI]\n[LI]\n| 6 |\n| BRIARD |\n| Paul |\n| paul.briard27@hotmail.fr |\n| 191 |\n| rue violette |\n| 4 |\n| motdepass6 |\n| 0612345678 |\n[/LI]\n[LI]\n| 7 |\n| LÉGER |\n| Marguerite |\n| mag0506@perso.com |\n| 17 |\n| place noire |\n| 3 |\n| motdepass7 |\n| 0687654321 |\n[/LI]\n[LI]\n| 8 |\n| FLAMAND |\n| Lise |\n| flise@gmail.com |\n| 329 |\n| route bleue |\n| 2 |\n| motdepass8 |\n| 0632323232 |\n[/LI]\n[/TAB]\n[/EX]\n\nOn souhaite connaître la liste des prénoms de tous les adhérents du club de cuisine. La commande SQL qui nous vient est\u0026nbsp;:\n\n[BUTC]SELECT prenom[/BUTC]  \n[BUTC]FROM adherent;[/BUTC]\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| Jacques |\n[/LI]\n[LI]\n| Paul ((0,0,0,#FFE5B4)) |\n[/LI]\n[LI]\n| Sophie |\n[/LI]\n[LI]\n| Jehan |\n[/LI]\n[LI]\n| Fleur |\n[/LI]\n[LI]\n| Paul ((0,0,0,#FFE5B4)) |\n[/LI]\n[LI]\n| Marguerite |\n[/LI]\n[LI]\n| Lise |\n[/LI]\n[/TAB]\n\n\nMais si plusieurs adhérent·e·s portent le même prénom, par exemple deux adhérents s'appellent Paul, on retrouvera deux fois le prénom Paul dans la table résultat de la requête. Pour éviter cela, on affine notre commande avec la clause [BUTC]DISTINCT[/BUTC]\u0026nbsp;:\n\n[BUTC]SELECT DISTINCT prenom[/BUTC]  \n[BUTC]FROM adherent;[/BUTC]\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| Jacques |\n[/LI]\n[LI]\n| Paul |\n[/LI]\n[LI]\n| Sophie |\n[/LI]\n[LI]\n| Jehan |\n[/LI]\n[LI]\n| Fleur |\n[/LI]\n[LI]\n| Marguerite |\n[/LI]\n[LI]\n| Lise |\n[/LI]\n[/TAB]\n\n###La sélection/b.\n\nLa sélection (ou restriction) est le recours à un ou plusieurs critères pour retenir certaines lignes dans la table résultat de la requête.\n* C'est avec la clause [BUTC]WHERE[/BUTC] que l'on précise ces critères.((fleche))\n\nNous avons déjà détaillé cette clause lorsque nous avons étudié les commandes de suppression et de modification de lignes. Ces commandes requièrent en effet de préciser sur quelles lignes elles portent, donc nécessitent la clause [BUTC]SELECT[/BUTC]. L'usage de [BUTC]SELECT[/BUTC] dans une requête d'interrogation ne diffère pas de celui dans les requêtes de suppression ou de mise à jour de lignes.\n\nAinsi, si l'on souhaite effectuer une projection sur une sélection, la commande SQL prendra la forme  \n[BUTC]SELECT colonnex, colonney, …[/BUTC]  \n[BUTC]FROM nomTable[/BUTC]  \n[BUTC]WHERE --conditions--[/BUTC]\n\n[EX]\nLa commande SQL qui suit recueille la liste des recettes dont la durée n'excède pas $10$ minutes, constituée du nom de la recette, de sa durée et de sa catégorie\u0026nbsp;:\n\n[BUTC]SELECT nomRecette, duree, categorie[/BUTC]  \n[BUTC]FROM recette[/BUTC]  \n[BUTC]WHERE (duree \u003c= 10);[/BUTC]\n\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| Omelette au fromage |\n| 5 |\n| plat |\n[/LI]\n[LI]\n| Quatre-quarts |\n| 10 |\n| dessert |\n[/LI]\n[/TAB]\n\n\n[/EX]\n\n[C]\nConclusion\u0026nbsp;:\n\nNous achevons ici ce cours relatif aux commandes SQL de base. Nous savons créer des tables, les modifier et les supprimer. Nous avons vu comment insérer, supprimer ou modifier des lignes dans une table. Et nous pouvons également effectuer des recherches dans celle-ci.  \nNous ne savons pas encore effectuer des recherches faisant appel à plusieurs tables, ni des calculs ou des tris sur les résultats de nos recherches. C'est ce que nous aborderons dans le cours qui suit.\n[/C]","siblings":[{"resourceId":"5e74786f09e0a80100fe060f","type":"Cours","sort":null},{"resourceId":"5e906c8628e6370100441252","type":"Fiche de révision","sort":null}],"sheetDetails":{"id":"5dcd7d4509e0a80100fdbbdc","name":"Le langage SQL "}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d4509e0a80100fdbbdc","label":"Cours : Le langage SQL ","link":"https://www.schoolmouv.fr/cours/le-langage-sql-/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"le-langage-sql-","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/le-langage-sql-/fiche-de-cours","title":"Le langage SQL  : cours de Tle, Numérique \u0026 sciences informatiques","metaDescription":"SchoolMouv ® te propose ce cours sur Le langage SQL (Terminale - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices…","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"le-langage-sql-","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

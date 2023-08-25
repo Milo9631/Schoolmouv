@@ -1,0 +1,2311 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tri de données avec le langage SQL : cours de Tle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Tri de données avec le langage SQL : cours de Tle">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Tri de données avec le langage SQL (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/tri-de-donnees-avec-le-langage-sql/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/tri-de-donnees-avec-le-langage-sql/fiche-de-cours","name":"Cours : Tri de données avec le langage SQL"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Tri de données avec le langage SQL</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Tri de données avec le langage SQL</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Nous savons ce qu'est une base de données relationnelle, nous savons aussi la mettre en œuvre et l'utiliser grâce au SGBD et au langage SQL. Nous achevons ce chapitre sur les bases de données avec un cours destiné à compléter nos connaissances sur les requêtes SQL.<br>
+Il s'agira ici d'apprendre à formuler des recherches plus élaborées, faisant appel à des fonctions de tri ou de calcul. Nous verrons également comment articuler une requête SQL touchant plusieurs tables à la fois. Commençons donc par nous pencher sur les fonctions de calcul et transformation auxquelles il est possible d'avoir recours dans une commande SQL.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Calculs et transformations dans une requête</p></div></h2>
+<p>À l'occasion d'une requête, il est possible de demander le résultat d'un calcul opéré sur la valeur d'une ou plusieurs colonnes pour chaque ligne concernée. On peut aussi demander le résultat d'un calcul qui porte sur l'ensemble des lignes d'une table. D'autres manipulations sont également possibles.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Calcul portant sur la valeur d'une colonne</p></div></h3>
+<p>Le résultat d'un calcul effectué sur la valeur d'une colonne est stocké dans une colonne qui vient s'ajouter à la table résultat de la requête.<br>
+Ainsi, on peut effectuer des calculs impliquant une ou plusieurs colonnes en ayant recours aux opérateurs arithmétiques suivants :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#F0F4C3; ">
+<span class="calculator_button" markdown="1">$+$</span> </td>
+<td>addition</td>
+</tr>
+<tr>
+<td style="background:#F0F4C3; ">
+<span class="calculator_button" markdown="1">$-$</span> </td>
+<td>soustraction</td>
+</tr>
+<tr>
+<td style="background:#F0F4C3; ">
+<span class="calculator_button" markdown="1">$*$</span> </td>
+<td>multiplication</td>
+</tr>
+<tr>
+<td style="background:#F0F4C3; ">
+<span class="calculator_button" markdown="1">$/$</span> </td>
+<td>division</td>
+</tr>
+<tr>
+<td style="background:#F0F4C3; ">
+<span class="calculator_button" markdown="1">$\%$</span> </td>
+<td>reste dans la division</td>
+</tr>
+</table></div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Nous voulons la liste des recettes du club, avec leur nom et leur durée en seconde. Il est donc nécessaire d'effectuer un calcul avec la colonne <em>duree</em> qui est exprimée et stockée en minutes dans la base de données. Voici la commande SQL qui en résulte :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>nomrecette</em>, (<em>duree</em> * 60) AS <em>dureeSecondes</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em>;</span></p>
+</div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La clause <span class="calculator_button" markdown="1">AS</span> permet de baptiser le nom de la nouvelle colonne destinée à recueillir le résultat du calcul.</p></div>
+</div>
+<p>Voici la table recette :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>15</td>
+<td>sauce</td>
+<td>7</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Omelette </td>
+<td style="background:#E1F5FE; ">facile </td>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">plat </td>
+<td style="background:#E1F5FE; ">6 </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>20</td>
+<td>autre</td>
+<td>6</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">Quatre-quarts </td>
+<td style="background:#E1F5FE; ">facile </td>
+<td style="background:#E1F5FE; ">10 </td>
+<td style="background:#E1F5FE; ">dessert </td>
+<td style="background:#E1F5FE; ">4 </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>15</td>
+<td>accompagnement</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">Poulet rôti </td>
+<td style="background:#E1F5FE; ">facile </td>
+<td style="background:#E1F5FE; ">15 </td>
+<td style="background:#E1F5FE; ">plat </td>
+<td style="background:#E1F5FE; ">2 </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>20</td>
+<td>plat</td>
+<td>7</td>
+</tr>
+</table></div>
+<p>Le résultat obtenu est une table de deux colonnes :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">dureeSecondes</span></b> </td>
+</tr>
+<tr>
+<td>Mayonnaise</td>
+<td>900</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">Omelette </td>
+<td style="background:#E1F5FE; ">300 </td>
+</tr>
+<tr>
+<td>Pâte brisée</td>
+<td>1200</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">Quatre-quarts </td>
+<td style="background:#E1F5FE; ">600 </td>
+</tr>
+<tr>
+<td>Purée de carottes</td>
+<td>900</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">Poulet rôti </td>
+<td style="background:#E1F5FE; ">900 </td>
+</tr>
+<tr>
+<td>Sole meunière</td>
+<td>1200</td>
+</tr>
+</table></div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Calcul portant sur l'ensemble des lignes d'une table</p></div></h3>
+<p>Entre autres calculs et transformations, penchons-nous sur les fonctions statistiques simples que l'on peut appeler avec SQL, recensées dans le tableau qui suit :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">COUNT(*)</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">Nombre de lignes dans la table</span></b> </td>
+</tr>
+<tr>
+<td><span class="calculator_button" markdown="1">MAX(colonnex)</span></td>
+<td>valeur maximum dans la colonne</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">
+<span class="calculator_button" markdown="1">MIN(colonnex)</span> </td>
+<td style="background:#E1F5FE; ">valeur minimum dans la colonne </td>
+</tr>
+<tr>
+<td><span class="calculator_button" markdown="1">AVG(colonnex)</span></td>
+<td>valeur moyenne de la colonne</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">
+<span class="calculator_button" markdown="1">SUM(colonnex)</span> </td>
+<td style="background:#E1F5FE; ">somme des valeurs de la colonne </td>
+</tr>
+</table></div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Si l'on veut connaître la durée moyenne des recettes du club de cuisine, en minutes, on passera la commande SQL suivante au SGBD :</p>
+<p><span class="calculator_button" markdown="1">SELECT AVG(<em>duree</em>) AS <em>dureeMoyenne</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em>;</span></p>
+</div>
+</div>
+<p>Le résultat alors retourné est une table d'une colonne et d'une ligne :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">dureeMoyenne</span></b> </td>
+</tr>
+<tr>
+<td>14.2857</td>
+</tr>
+</table></div>
+<p>Et si l'on souhaite connaître le nombre d'adhérent·e·s du club de cuisine, il suffira d’entrer la commande suivante :</p>
+<p><span class="calculator_button" markdown="1">SELECT COUNT(*) AS <em>nbAdherents</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em>;</span></p>
+<p>Voici la table <em>adherent</em> :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">mail</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">numero</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">rue</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">passe</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">telephone</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>DURAND</td>
+<td>Jacques</td>
+<td>j.durand@orange.fr</td>
+<td>16b</td>
+<td>rue brune</td>
+<td>1</td>
+<td>motdepass1</td>
+<td>0601020304</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">DUVAL </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">paul.d@sfr.fr </td>
+<td style="background:#E1F5FE; ">135 </td>
+<td style="background:#E1F5FE; ">avenue rouge </td>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">motdepass2 </td>
+<td style="background:#E1F5FE; ">0704030201 </td>
+</tr>
+<tr>
+<td>3</td>
+<td>DELORS</td>
+<td>Sophie</td>
+<td>sodelors@outlook.com</td>
+<td>22a</td>
+<td>bd vert</td>
+<td>3</td>
+<td>motdepass3</td>
+<td>0606060202</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">VERGER </td>
+<td style="background:#E1F5FE; ">Jehan </td>
+<td style="background:#E1F5FE; ">jverger@aol.com </td>
+<td style="background:#E1F5FE; ">4ter </td>
+<td style="background:#E1F5FE; ">impasse jaune </td>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">motdepass4 </td>
+<td style="background:#E1F5FE; ">0601020102 </td>
+</tr>
+<tr>
+<td>5</td>
+<td>MONVILLE</td>
+<td>Fleur</td>
+<td>fleur1212@free.fr</td>
+<td>9</td>
+<td>sente aux loups</td>
+<td>2</td>
+<td>motdepass5</td>
+<td>0707020201</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">BRIARD </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">paul.briard27@hotmail.fr </td>
+<td style="background:#E1F5FE; ">191 </td>
+<td style="background:#E1F5FE; ">rue violette </td>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">motdepass6 </td>
+<td style="background:#E1F5FE; ">0612345678 </td>
+</tr>
+<tr>
+<td>7</td>
+<td>LÉGER</td>
+<td>Marguerite</td>
+<td>mag0506@perso.com</td>
+<td>17</td>
+<td>place noire</td>
+<td>3</td>
+<td>motdepass7</td>
+<td>0687654321</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">8 </td>
+<td style="background:#E1F5FE; ">FLAMAND </td>
+<td style="background:#E1F5FE; ">Lise </td>
+<td style="background:#E1F5FE; ">flise@gmail.com </td>
+<td style="background:#E1F5FE; ">329 </td>
+<td style="background:#E1F5FE; ">route bleue </td>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">motdepass8 </td>
+<td style="background:#E1F5FE; ">0632323232 </td>
+</tr>
+</table></div>
+<p>Et voici le résultat retourné, qui est une table d'une colonne et d'une ligne :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">nbAdherents</span></b> </td>
+</tr>
+<tr>
+<td>8</td>
+</tr>
+</table></div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On remarquera au passage qu'on ne spécifie pas une colonne en particulier dans la fonction <span class="calculator_button" markdown="1">COUNT</span> puisqu'il s'agit de compter le nombre de toutes les lignes dans la table, sans s'intéresser à une colonne en particulier.</p></div>
+</div>
+<h3 range="c." markdown="1"><div markdown="1"><p>Autres manipulations sur les données</p></div></h3>
+<p>D'autres transformations sur les colonnes sont possibles lors d'une requête d'interrogation, comme par exemple le passage en majuscule d'une colonne de type chaîne de caractères avec la fonction <span class="calculator_button" markdown="1">UPPER</span>. On peut également demander l'extraction du mois d'une date grâce à la fonction <span class="calculator_button" markdown="1">MONTH</span>.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Voici la requête permettant d'obtenir la liste des numéros, noms et prénoms des adhérent·e·s affichés en majuscules de notre club de cuisine :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>idAdherent</em>, UPPER(<em>nomAdherent</em>) AS <em>nomMaj</em>, UPPER(<em>prenom</em>) AS <em>prenomMaj</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em>;</span></p>
+</div>
+</div>
+<p>Le résultat est une table de trois colonnes :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<span class="color18"><b>nomMaj</b></span> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenomMaj</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>DURAND</td>
+<td>JACQUES</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">DUVAL </td>
+<td style="background:#E1F5FE; ">PAUL </td>
+</tr>
+<tr>
+<td>3</td>
+<td>DELORS</td>
+<td>SOPHIE</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">VERGER </td>
+<td style="background:#E1F5FE; ">JEHAN </td>
+</tr>
+<tr>
+<td>5</td>
+<td>MONVILLE</td>
+<td>FLEUR</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">BRIARD </td>
+<td style="background:#E1F5FE; ">PAUL </td>
+</tr>
+<tr>
+<td>7</td>
+<td>LEGER</td>
+<td>MARGUERITE</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">8 </td>
+<td style="background:#E1F5FE; ">FLAMAND </td>
+<td style="background:#E1F5FE; ">LISE </td>
+</tr>
+</table></div>
+<p>Il peut être parfois intéressant d'effectuer des calculs statistiques portant sur des groupes de lignes et toutes les lignes d'une table. On aura alors recours à des opérations d'agrégation. Nous allons voir également que l'on peut exiger d'une requête qu'elle nous restitue sa table résultat de manière triée.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Agrégats et tri</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Calcul sur agrégats</p></div></h3>
+<p>On effectue une opération dite d'<b>agrégation</b> pour regrouper les lignes d'une table par la même valeur qu'elles contiennent dans une colonne. L'objectif d'effectuer une agrégation est, en général, de pratiquer des calculs statistiques sur les groupes ainsi constitués.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La clause employée pour pratiquer une agrégation est <span class="calculator_button" markdown="1">GROUP BY</span> :</p>
+<p><span class="calculator_button" markdown="1">SELECT nomColonne1, <span class="underline">fonction statistique</span></span><br>
+<span class="calculator_button" markdown="1">FROM <em>nomTable</em></span><br>
+<span class="calculator_button" markdown="1">GROUP BY <em>nomColonne1</em>;</span></p>
+</div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Notre club de cuisine souhaite connaître le nombre de recettes dans sa base pour chaque catégorie.<br>
+La table des recettes est la suivante :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>15</td>
+<td>sauce</td>
+<td>7</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Omelette </td>
+<td style="background:#E1F5FE; ">facile </td>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">plat </td>
+<td style="background:#E1F5FE; ">6 </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>20</td>
+<td>autre</td>
+<td>6</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">Quatre-quarts </td>
+<td style="background:#E1F5FE; ">facile </td>
+<td style="background:#E1F5FE; ">10 </td>
+<td style="background:#E1F5FE; ">dessert </td>
+<td style="background:#E1F5FE; ">4 </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>15</td>
+<td>accompagnement</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">Poulet rôti </td>
+<td style="background:#E1F5FE; ">facile </td>
+<td style="background:#E1F5FE; ">15 </td>
+<td style="background:#E1F5FE; ">plat </td>
+<td style="background:#E1F5FE; ">2 </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>20</td>
+<td>plat</td>
+<td>7</td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>Il suffira donc de transmettre la requête SQL suivante au SGBD :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>categorie</em>, COUNT(*) AS nombre</span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em></span><br>
+<span class="calculator_button" markdown="1">GROUP BY <em>categorie</em>;</span></p>
+<p>La table résultat qui nous sera alors retournée sera par conséquent :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nombre</span></b> </td>
+</tr>
+<tr>
+<td>sauce</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">plat </td>
+<td style="background:#E1F5FE; ">3 </td>
+</tr>
+<tr>
+<td>autre</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">dessert </td>
+<td style="background:#E1F5FE; ">1 </td>
+</tr>
+<tr>
+<td>accompagnement</td>
+<td>1</td>
+</tr>
+</table></div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Restriction sur le résultat d'un calcul sur agrégat</p></div></h3>
+<p>On peut ajouter une opération de filtrage à la table résultant d'une opération sur agrégat. La clause <span class="calculator_button" markdown="1">HAVING</span> permet d'exprimer le critère de filtrage sur cette table résultat.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le club décide de recueillir les seules catégories de recette dont la durée moyenne est au moins de 14 minutes.</p></div>
+</div>
+<p>La commande SQL suivante nous permet de calculer la durée moyenne des recettes par catégorie :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>categorie</em>, AVG(<em>duree</em>) AS <em>dureeMoyenne</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em></span><br>
+<span class="calculator_button" markdown="1">GROUP BY <em>categorie</em>;</span></p>
+<p>La table résultat qui est restituée est ainsi :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">dureeMoyenne</span></b> </td>
+</tr>
+<tr>
+<td>sauce</td>
+<td>15.0000</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">plat </td>
+<td style="background:#E1F5FE; ">13.3333 </td>
+</tr>
+<tr>
+<td>autre</td>
+<td>20.0000</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">dessert </td>
+<td style="background:#E1F5FE; ">10.0000 </td>
+</tr>
+<tr>
+<td>accompagnement</td>
+<td>15.0000</td>
+</tr>
+</table></div>
+<p>En complétant la commande par la clause <span class="calculator_button" markdown="1">HAVING <em>dureeMoyenne</em> &gt;= 14</span>, on ne retient que les catégories figurant dans la table résultat dont la colonne <em>dureeMoyenne</em> répond au critère du filtre :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>categorie</em>, AVG(<em>duree</em>) AS <em>dureeMoyenne</em> </span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em></span><br>
+<span class="calculator_button" markdown="1">GROUP BY <em>categorie</em></span><br>
+<span class="calculator_button" markdown="1">HAVING <em>dureeMoyenne</em> &gt;= 14;</span></p>
+<p>Le résultat qui est restitué ne nous étonne pas :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">dureeMoyenne</span></b> </td>
+</tr>
+<tr>
+<td>sauce</td>
+<td>15.0000</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">autre </td>
+<td style="background:#E1F5FE; ">20.0000 </td>
+</tr>
+<tr>
+<td>accompagnement</td>
+<td>15.0000</td>
+</tr>
+</table></div>
+<h3 range="c." markdown="1"><div markdown="1"><p>Tris</p></div></h3>
+<p>Lorsque l'on effectue une requête, par défaut, la table résultat qui est restituée n'est pas triée.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pour que ce soit le cas, on emploie le mot-clé <span class="calculator_button" markdown="1">ORDER BY</span> suivi de la ou les colonnes sur lesquelles doit porter le tri.</p></div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Si plusieurs colonnes sont spécifiées dans la consigne de tri, alors le tri s'effectuera d'abord sur les valeurs de la colonne la plus à gauche, puis selon les valeurs des colonnes données pour le tri de gauche à droite.</p></div>
+</div>
+<p>Notons par ailleurs que le tri s'effectue par défaut de manière ascendante. L'option <span class="calculator_button" markdown="1">DESC</span> inversera le tri pour le critère concerné.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Notre club de cuisine souhaite avoir la liste de ses adhérent·e·s constituée de leurs numéros, noms et prénoms mis en majuscules, triée par nom, puis par prénom.<br>
+Reprenons la table des adhérent·e·s :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">mail</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">numero</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">rue</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">passe</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">telephone</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>DURAND</td>
+<td>Jacques</td>
+<td>j.durand@orange.fr</td>
+<td>16b</td>
+<td>rue brune</td>
+<td>1</td>
+<td>motdepass1</td>
+<td>0601020304</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">DUVAL </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">paul.d@sfr.fr </td>
+<td style="background:#E1F5FE; ">135 </td>
+<td style="background:#E1F5FE; ">avenue rouge </td>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">motdepass2 </td>
+<td style="background:#E1F5FE; ">0704030201 </td>
+</tr>
+<tr>
+<td>3</td>
+<td>DELORS</td>
+<td>Sophie</td>
+<td>sodelors@outlook.com</td>
+<td>22a</td>
+<td>bd vert</td>
+<td>3</td>
+<td>motdepass3</td>
+<td>0606060202</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">VERGER </td>
+<td style="background:#E1F5FE; ">Jehan </td>
+<td style="background:#E1F5FE; ">jverger@aol.com </td>
+<td style="background:#E1F5FE; ">4ter </td>
+<td style="background:#E1F5FE; ">impasse jaune </td>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">motdepass4 </td>
+<td style="background:#E1F5FE; ">0601020102 </td>
+</tr>
+<tr>
+<td>5</td>
+<td>MONVILLE</td>
+<td>Fleur</td>
+<td>fleur1212@free.fr</td>
+<td>9</td>
+<td>sente aux loups</td>
+<td>2</td>
+<td>motdepass5</td>
+<td>0707020201</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">BRIARD </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">paul.briard27@hotmail.fr </td>
+<td style="background:#E1F5FE; ">191 </td>
+<td style="background:#E1F5FE; ">rue violette </td>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">motdepass6 </td>
+<td style="background:#E1F5FE; ">0612345678 </td>
+</tr>
+<tr>
+<td>7</td>
+<td>LÉGER</td>
+<td>Marguerite</td>
+<td>mag0506@perso.com</td>
+<td>17</td>
+<td>place noire</td>
+<td>3</td>
+<td>motdepass7</td>
+<td>0687654321</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">8 </td>
+<td style="background:#E1F5FE; ">FLAMAND </td>
+<td style="background:#E1F5FE; ">Lise </td>
+<td style="background:#E1F5FE; ">flise@gmail.com </td>
+<td style="background:#E1F5FE; ">329 </td>
+<td style="background:#E1F5FE; ">route bleue </td>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">motdepass8 </td>
+<td style="background:#E1F5FE; ">0632323232 </td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>Voici la requête qui répond à l'objectif visé :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>idAdherent</em>, UPPER(<em>nomAdherent</em>), UPPER(<em>prenom</em>)</span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em></span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>nomAdherent</em>, <em>prenom</em>;</span></p>
+<p>Le résultat suivant nous est restitué :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomMaj</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenomMaj</span></b> </td>
+</tr>
+<tr>
+<td>6</td>
+<td>BRIARD</td>
+<td>PAUL</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">3 </td>
+<td style="background:#E1F5FE; ">DELORS </td>
+<td style="background:#E1F5FE; ">SOPHIE </td>
+</tr>
+<tr>
+<td>1</td>
+<td>DURAND</td>
+<td>JACQUES</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">DUVAL </td>
+<td style="background:#E1F5FE; ">PAUL </td>
+</tr>
+<tr>
+<td>8</td>
+<td>FLAMAND</td>
+<td>LISE</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">LEGER </td>
+<td style="background:#E1F5FE; ">MARGUERITE </td>
+</tr>
+<tr>
+<td>5</td>
+<td>MONVILLE</td>
+<td>FLEUR</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">VERGER </td>
+<td style="background:#E1F5FE; ">JEHAN </td>
+</tr>
+</table></div>
+<p>Nous savons maintenant effectuer, dans une requête, des calculs sur les colonnes et sur les lignes d'une table ou transformer une colonne, ainsi que trier le résultat d'une requête. Voyons maintenant quand et comment effectuer des requêtes portant sur plusieurs tables.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Requêtes portant sur plusieurs tables</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Contexte d'une requête portant sur plusieurs tables</p></div></h3>
+<p>Dans une base de données existent quasi systématiquement des <b>associations</b>. Celles-ci établissent un lien entre des entités. Ainsi, pour retrouver des informations relatives à une même entité, on peut être amené à récupérer celles-ci dans plusieurs tables par le biais de ces associations.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Pou rappel, les tables <em>adherent</em> et <em>ville</em> sont constituées ainsi :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">mail</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">numero</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">rue</span></b> </td>
+<td style="background:#FFCC80; ">
+<b><span class="color18">idVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">passe</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">telephone</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>DURAND</td>
+<td>Jacques</td>
+<td>j.durand@orange.fr</td>
+<td>16b</td>
+<td>rue brune</td>
+<td style="background:#FFF3E0; ">1 </td>
+<td>motdepass1</td>
+<td>0601020304</td>
+</tr>
+<tr>
+<td>2</td>
+<td>DUVAL</td>
+<td>Paul</td>
+<td>paul.d@sfr.fr</td>
+<td>135</td>
+<td>avenue rouge</td>
+<td style="background:#FFF3E0; ">4 </td>
+<td>motdepass2</td>
+<td>0704030201</td>
+</tr>
+<tr>
+<td>3</td>
+<td>DELORS</td>
+<td>Sophie</td>
+<td>sodelors@outlook.com</td>
+<td>22a</td>
+<td>bd vert</td>
+<td style="background:#FFF3E0; ">3 </td>
+<td>motdepass3</td>
+<td>0606060202</td>
+</tr>
+<tr>
+<td>4</td>
+<td>VERGER</td>
+<td>Jehan</td>
+<td>jverger@aol.com</td>
+<td>4ter</td>
+<td>impasse jaune</td>
+<td style="background:#FFF3E0; ">5 </td>
+<td>motdepass4</td>
+<td>0601020102</td>
+</tr>
+<tr>
+<td>5</td>
+<td>MONVILLE</td>
+<td>Fleur</td>
+<td>fleur1212@free.fr</td>
+<td>9</td>
+<td>sente aux loups</td>
+<td style="background:#FFF3E0; ">2 </td>
+<td>motdepass5</td>
+<td>0707020201</td>
+</tr>
+<tr>
+<td>6</td>
+<td>BRIARD</td>
+<td>Paul</td>
+<td>paul.briard27@hotmail.fr</td>
+<td>191</td>
+<td>rue violette</td>
+<td style="background:#FFF3E0; ">4 </td>
+<td>motdepass6</td>
+<td>0612345678</td>
+</tr>
+<tr>
+<td>7</td>
+<td>LÉGER</td>
+<td>Marguerite</td>
+<td>mag0506@perso.com</td>
+<td>17</td>
+<td>place noire</td>
+<td style="background:#FFF3E0; ">3 </td>
+<td>motdepass7</td>
+<td>0687654321</td>
+</tr>
+<tr>
+<td>8</td>
+<td>FLAMAND</td>
+<td>Lise</td>
+<td>flise@gmail.com</td>
+<td>329</td>
+<td>route bleue</td>
+<td style="background:#FFF3E0; ">2 </td>
+<td>motdepass8</td>
+<td>0632323232</td>
+</tr>
+</table></div>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#FFCC80; ">
+<b><span class="color18">idVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">codePostal</span></b> </td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">1 </td>
+<td>LE HAVRE</td>
+<td>76600</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">2 </td>
+<td>CAEN</td>
+<td>14000</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">3 </td>
+<td>NANTES</td>
+<td>44000</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">4 </td>
+<td>RENNES</td>
+<td>35000</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">5 </td>
+<td>QUIMPER</td>
+<td>29000</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">6 </td>
+<td>VANNES</td>
+<td>56000</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">7 </td>
+<td>SAINT-BRIEUC</td>
+<td>22000</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">8 </td>
+<td>PONTIVY</td>
+<td>56300</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">9 </td>
+<td>LOUDEAC</td>
+<td>22600</td>
+</tr>
+<tr>
+<td style="background:#FFF3E0; ">10 </td>
+<td>QUIMPERLE</td>
+<td>29300</td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>Nous ne sommes pas en mesure de connaître, dans notre table <em>adherent</em>, le nom de la ville où chaque adhérent·e habite. Nous connaissons néanmoins le numéro d'identification, soit <em>idVille</em>, de la ville où chacun habite. Grâce à ce numéro, nous pouvons retrouver le nom de celle-ci dans une autre table : la table <em>ville</em>.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Ainsi, si nous souhaitons recueillir la liste des adhérent·e·s de notre club de cuisine, constituée de leur numéro d'identification, nom, prénom et ville où ils résident, nous sommes appelés à effectuer des recherches dans deux tables : <em>adherent</em> et <em>ville</em>.</p></div>
+</div>
+<p>Dans ce contexte où nous effectuons une requête portant sur plusieurs tables, une ambiguïté concernant la désignation de leurs colonnes respectives peut se présenter.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">En effet, rien n'interdit de construire une base de données où <b>un même nom de colonne peut figurer dans deux tables différentes</b>.</div>
+</li>
+</ul>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Dans notre base de données, la table <em>recette</em> contient une colonne <em>idRecette</em>, tout comme la table <em>etape</em>.</p></div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Aussi, pour lever toute ambiguïté dans une requête qui porterait sur des tables ayant des colonnes nommées de la même manière, il est alors nécessaire de préfixer le nom de la colonne par celui de la table concernée.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Finalement, on préfèrera, qu'il y ait ambiguïté ou non, préfixer tous les noms de colonnes du nom de la table à laquelle celles-ci appartiennent.</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Dans notre exemple, ou désignera nos champs <em>idRecette</em> ainsi :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">
+<em>recette.idRecette</em> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">
+<em>etape.idRecette</em> ;</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Et voici une requête utilisant un préfixe de nom de table :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>recette.nomRecette</em>, <em>recette.categorie</em>, <em>recette.duree</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em>;</span></p>
+<p>À l'usage, on réalise que ce préfixe peut alourdir considérablement la rédaction de certaines requêtes, déjà complexes par ailleurs.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">On peut alors faire le choix de substituer le préfixe du nom de la table par un alias, plus court, qui sera précisé dans la commande SQL avec le mot-clé <span class="calculator_button" markdown="1">AS</span>.</div>
+</li>
+</ul>
+<p>Notons que le recours à l'alias n'est pas obligatoire.
+·</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>En affectant l’alias « re » pour notre table <em>recette</em>, la commande précédente est ainsi reformulée de façon plus compacte :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>re.nomRecette</em>, <em>re.categorie</em>, <em>re.duree</em> </span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em> AS <em>re</em>;</span></p>
+</div>
+</div>
+<p>Apprenons maintenant à formuler des requêtes portant sur plusieurs tables. Il s'agit de l'opération de <b>jointure</b> que nous allons dès à présent détailler.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>La jointure interne</p></div></h3>
+<p>Dans le cas de la base de données de notre club de cuisine, pour obtenir la liste des adhérent·e·s constituée de leur numéro d'adhérent, leur nom, leur prénom et de la ville où ils résident, nous pourrions formaliser la requête suivante :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>ad.idAdherent</em>, <em>ad.nomAdherent</em>, <em>ad.prenom, vi.nomVille</em> </span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>ad</em>, <em>ville</em> AS <em>vi</em></span><br>
+<span class="calculator_button" markdown="1">WHERE <em>ad.idVille</em> = <em>vi.idVille</em></span></p>
+<p>La logique de cette requête est tout à fait correcte. Le SGBD l’exécutera et donnera le résultat suivant :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomVille</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Durand</td>
+<td>Jacques</td>
+<td>LE HAVRE</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Duval </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">RENNES </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Delors</td>
+<td>Sophie</td>
+<td>NANTES</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">Verger </td>
+<td style="background:#E1F5FE; ">Jehan </td>
+<td style="background:#E1F5FE; ">QUIMPER </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Monville</td>
+<td>Fleur</td>
+<td>CAEN</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">Briard </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">RENNES </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Leger</td>
+<td>Marguerite</td>
+<td>NANTES</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">8 </td>
+<td style="background:#E1F5FE; ">Flamand </td>
+<td style="background:#E1F5FE; ">Lise </td>
+<td style="background:#E1F5FE; ">CAEN </td>
+</tr>
+</table></div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Cependant, il est nettement préférable d'avoir recours à un opérateur de jointure, nommé <span class="calculator_button" markdown="1">JOIN</span>, spécifique aux requêtes portant sur plusieurs tables.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le SGBD traitera alors la requête de manière optimisée.</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Jointure :</b></p>
+<p>Une jointure consiste à combiner des données issues de deux ou plusieurs tables, sur la base d'un point commun.</p>
+</div>
+</div>
+<p>La syntaxe requise pour effectuer une jointure est la suivante, dans le cadre de notre exemple :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>ad.idAdherent</em>, <em>ad.nomAdherent</em>, <em>ad.prenom</em>, <em>vi.nomVille</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>ad</em> JOIN <em>ville</em> AS <em>vi</em> ON <em>ad.idVille</em> = <em>vi.idVille</em>;</span></p>
+<p>Cette requête restituera le même résultat que précédemment, mais le SGBD aura optimisé les moyens de fournir ce résultat.<br>
+Notons par ailleurs qu'il est tout à fait possible de formaliser une requête ;SQL portant sur plus de deux tables.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Nous souhaitons avoir la liste des ingrédients de toutes les recettes, constituée de l'identifiant de la recette, du nom de la recette et du nom de l'ingrédient.
+La table <em>utilise</em> nous permet de savoir quelle recette utilise quel ingrédient. En revanche, dans cette table, les recettes sont identifiées par la clé <em>idRecette</em>, ce qui ne nous donne pas leur nom. Idem pour la clé <em>idIngredient</em> qui ne nous permet pas de connaître le nom des ingrédients.<br>
+Mais on peut retrouver le nom chaque recette dans la table <em>recette</em> avec la clé <em>idRecette</em>. De même, on retrouve le nom de chaque ingrédient dans la table <em>ingredient</em> avec la clé <em>idIngredient</em>.</p>
+<p>Voici nos tables :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#80DEEA; ">
+<b><span class="color18">idIngredient</span></b> </td>
+<td style="background:#CE93D8; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">quantite</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">unite</span></b> </td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">1 </td>
+<td style="background:#F3E5F5; ">1 </td>
+<td>1</td>
+<td>jaune d’oeuf</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">1 </td>
+<td style="background:#F3E5F5; ">2 </td>
+<td>3</td>
+<td>oeufs entiers</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">1 </td>
+<td style="background:#F3E5F5; ">4 </td>
+<td>3</td>
+<td>oeufs entiers</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">2 </td>
+<td style="background:#F3E5F5; ">1 </td>
+<td>1</td>
+<td>cuillère</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">3 </td>
+<td style="background:#F3E5F5; ">1 </td>
+<td>1</td>
+<td>filet</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">4 </td>
+<td style="background:#F3E5F5; ">1 </td>
+<td>10</td>
+<td>cL</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">5 </td>
+<td style="background:#F3E5F5; ">2 </td>
+<td>1</td>
+<td>pincée</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">5 </td>
+<td style="background:#F3E5F5; ">3 </td>
+<td>1</td>
+<td>cuillère à café</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">5 </td>
+<td style="background:#F3E5F5; ">4 </td>
+<td>1</td>
+<td>pincee</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">5 </td>
+<td style="background:#F3E5F5; ">7 </td>
+<td>1</td>
+<td>pincée</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">6 </td>
+<td style="background:#F3E5F5; ">2 </td>
+<td>2</td>
+<td>tour de moulin</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">6 </td>
+<td style="background:#F3E5F5; ">7 </td>
+<td>2</td>
+<td>tours de moulin</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">7 </td>
+<td style="background:#F3E5F5; ">2 </td>
+<td>30</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">8 </td>
+<td style="background:#F3E5F5; ">2 </td>
+<td>2</td>
+<td>cuillères à soupe</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">8 </td>
+<td style="background:#F3E5F5; ">6 </td>
+<td>1</td>
+<td>cuillère à soupe</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">8 </td>
+<td style="background:#F3E5F5; ">7 </td>
+<td>2</td>
+<td>cuillères à soupe</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">9 </td>
+<td style="background:#F3E5F5; ">3 </td>
+<td>150</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">9 </td>
+<td style="background:#F3E5F5; ">4 </td>
+<td>180</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">9 </td>
+<td style="background:#F3E5F5; ">7 </td>
+<td>100</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">10 </td>
+<td style="background:#F3E5F5; ">3 </td>
+<td>75</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">10 </td>
+<td style="background:#F3E5F5; ">4 </td>
+<td>180</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">10 </td>
+<td style="background:#F3E5F5; ">7 </td>
+<td>20</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">11 </td>
+<td style="background:#F3E5F5; ">4 </td>
+<td>180</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">12 </td>
+<td style="background:#F3E5F5; ">3 </td>
+<td>20</td>
+<td>cL</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">13 </td>
+<td style="background:#F3E5F5; ">5 </td>
+<td>500</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">14 </td>
+<td style="background:#F3E5F5; ">5 </td>
+<td>150</td>
+<td>g</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">15 </td>
+<td style="background:#F3E5F5; ">5 </td>
+<td>2</td>
+<td>pincées</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">16 </td>
+<td style="background:#F3E5F5; ">5 </td>
+<td>1</td>
+<td>pincée</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">17 </td>
+<td style="background:#F3E5F5; ">6 </td>
+<td>1</td>
+<td>poulet entier</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">18 </td>
+<td style="background:#F3E5F5; ">7 </td>
+<td>2</td>
+<td>branches</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">19 </td>
+<td style="background:#F3E5F5; ">7 </td>
+<td>1</td>
+<td>fruit entier</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">20 </td>
+<td style="background:#F3E5F5; ">7 </td>
+<td>4</td>
+<td>filets</td>
+</tr>
+</table></div>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#CE93D8; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">1 </td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>15</td>
+<td>sauce</td>
+<td>7</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">2 </td>
+<td>Omelette</td>
+<td>facile</td>
+<td>5</td>
+<td>plat</td>
+<td>6</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">3 </td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>20</td>
+<td>autre</td>
+<td>6</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">4 </td>
+<td>Quatre-quarts</td>
+<td>facile</td>
+<td>10</td>
+<td>dessert</td>
+<td>4</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">5 </td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>15</td>
+<td>accompagnement</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">6 </td>
+<td>Poulet rôti</td>
+<td>facile</td>
+<td>15</td>
+<td>plat</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">7 </td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>20</td>
+<td>plat</td>
+<td>7</td>
+</tr>
+</table></div>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#80DEEA; ">
+<b><span class="color18">idIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">type</span></b> </td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">1 </td>
+<td>oeuf</td>
+<td>viande</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">2 </td>
+<td>moutarde</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">3 </td>
+<td>vinaigre</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">4 </td>
+<td>huile</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">5 </td>
+<td>sel</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">6 </td>
+<td>poivre</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">7 </td>
+<td>gruyère râpé</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">8 </td>
+<td>huile d’olive</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">9 </td>
+<td>farine</td>
+<td>épicerie</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">10 </td>
+<td>beurre</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">11 </td>
+<td>sucre</td>
+<td>épicerie</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">12 </td>
+<td>lait</td>
+<td>crèmerie</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">13 </td>
+<td>carotte</td>
+<td>légume</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">14 </td>
+<td>crème fraîche</td>
+<td>crémerie</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">15 </td>
+<td>cumin</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">16 </td>
+<td>muscade</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">17 </td>
+<td>poulet</td>
+<td>viande</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">18 </td>
+<td>persil</td>
+<td>condiment</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">19 </td>
+<td>citron</td>
+<td>fruit</td>
+</tr>
+<tr>
+<td style="background:#E0F7FA; ">20 </td>
+<td>sole</td>
+<td>viande</td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>Nous pourrions rédiger la commande SQL suivante :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>r.idRecette</em>, <em>r.nomRecette</em>, <em>i.nomIngredient</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>utilise</em> AS <em>u</em>, <em>recette</em> AS <em>r</em>, <em>ingredient</em> AS <em>i</em></span><br>
+<span class="calculator_button" markdown="1">WHERE <em>u.idRecette</em> = <em>r.idRecette</em> AND <em>u.idIngredient</em> = <em>i.idIngredient</em></span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>r.idRecette</em>, <em>i.nomIngredient</em>;</span></p>
+<p>Mais le SGBD n'optimisera pas ses traitements pour restituer le résultat. Utilisons à nouveau une jointure avec le mot-clé <span class="calculator_button" markdown="1">JOIN</span> :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>r.idRecette</em>, <em>r.nomRecette</em>, <em>i.nomIngredient</em> </span><br>
+<span class="calculator_button" markdown="1">FROM <em>utilise</em> AS <em>u</em> JOIN <em>recette</em> AS <em>r</em> JOIN <em>ingredient</em> AS <em>i</em> ON (<em>u.idRecette</em> = <em>r.idRecette</em>) AND (<em>u.idIngredient</em> = <em>i.idIngredient</em>)</span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>r.idRecette</em>, <em>i.nomIngredient</em>;</span></p>
+<p>Le résultat de ces deux commandes sera identique :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomIngredient</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>huile</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">1 </td>
+<td style="background:#E1F5FE; ">Mayonnaise </td>
+<td style="background:#E1F5FE; ">moutarde </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>oeuf</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">1 </td>
+<td style="background:#E1F5FE; ">Mayonnaise </td>
+<td style="background:#E1F5FE; ">vinaigre </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Omelette</td>
+<td>gruyère râpé</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Omelette </td>
+<td style="background:#E1F5FE; ">huile d’olive </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Omelette</td>
+<td>oeuf</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Omelette </td>
+<td style="background:#E1F5FE; ">poivre </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Omelette</td>
+<td>sel</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">3 </td>
+<td style="background:#E1F5FE; ">Pâte brisée </td>
+<td style="background:#E1F5FE; ">beurre </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>farine</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">3 </td>
+<td style="background:#E1F5FE; ">Pâte brisée </td>
+<td style="background:#E1F5FE; ">lait </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>sel</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">Quatre-quarts </td>
+<td style="background:#E1F5FE; ">beurre </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quatre-quarts</td>
+<td>farine</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">Quatre-quarts </td>
+<td style="background:#E1F5FE; ">oeuf  </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quatre-quarts</td>
+<td>sel</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">4 </td>
+<td style="background:#E1F5FE; ">Quatre-quarts </td>
+<td style="background:#E1F5FE; ">sucre </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>carotte</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">Purée de carottes </td>
+<td style="background:#E1F5FE; ">crème fraîche </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>cumin</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">Purée de carottes </td>
+<td style="background:#E1F5FE; ">muscade </td>
+</tr>
+<tr>
+<td>6</td>
+<td>Poulet rôti</td>
+<td>huile d’olive</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">Poulet rôti </td>
+<td style="background:#E1F5FE; ">poulet </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>beurre</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">Sole meunière </td>
+<td style="background:#E1F5FE; ">citron </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>farine</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">Sole meunière </td>
+<td style="background:#E1F5FE; ">huile d’olive </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>persil</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">Sole meunière </td>
+<td style="background:#E1F5FE; ">poivre </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>sel</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">Sole meunière </td>
+<td style="background:#E1F5FE; ">sole </td>
+</tr>
+</table></div>
+<h3 range="c." markdown="1"><div markdown="1"><p>La jointure externe</p></div></h3>
+<p>La jointure externe permet d’effectuer une jointure en incluant les lignes dont la clé étrangère qui fait le lien entre deux tables n’est pas renseignée. Sachant que deux tables sont considérées dans cette jointure, il faut préciser laquelle des deux servira de <b>référence</b>.<br>
+Ainsi, toutes les lignes de la table qui servira de référence seront représentées dans la table résultat. L’attribut ou les attributs récupérés via la clé étrangère seront renseignés avec la valeur trouvée dans la seconde table, ou renseignée à « NULL » lorsque la clé étrangère n’est pas renseignée dans la première table.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Il faudra employer pour cela la clause <span class="calculator_button" markdown="1">OUTER JOIN</span>.</p></div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On souhaite avoir la liste des adhérent·e·s constituée de leur numéro d’identification, leur nom, leur prénom, l’identifiant et le nom de chaque recette rédigée par un adhérent donné.</p></div>
+</div>
+<p>On passera la commande suivante :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>a.idAdherent</em>, <em>a.nomAdherent</em>, <em>a.prenom</em>, <em>r.idRecette</em>, <em>r.nomRecette</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>a</em> JOIN <em>recette</em> AS <em>r</em> ON <em>a.idAdherent</em> = <em>r.idAdherent</em></span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>a.idAdherent</em>, <em>r.nomRecette</em>; </span></p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Pour rappel, les tables concernées sont constituées comme suit :</p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#8BC34A; ">
+<b><span class="color18">idAdherent</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mayonnaise</td>
+<td>difficile</td>
+<td>15</td>
+<td>sauce</td>
+<td style="background:#F1F8E9; ">7 </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Omelette</td>
+<td>facile</td>
+<td>5</td>
+<td>plat</td>
+<td style="background:#F1F8E9; ">6 </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pâte brisée</td>
+<td>moyen</td>
+<td>20</td>
+<td>autre</td>
+<td style="background:#F1F8E9; ">6 </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Quatre-quarts</td>
+<td>facile</td>
+<td>10</td>
+<td>dessert</td>
+<td style="background:#F1F8E9; ">4 </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Purée de carottes</td>
+<td>moyen</td>
+<td>15</td>
+<td>accompagnement</td>
+<td style="background:#F1F8E9; ">2 </td>
+</tr>
+<tr>
+<td>6</td>
+<td>Poulet rôti</td>
+<td>facile</td>
+<td>15</td>
+<td>plat</td>
+<td style="background:#F1F8E9; ">2 </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sole meunière</td>
+<td>difficile</td>
+<td>20</td>
+<td>plat</td>
+<td style="background:#F1F8E9; ">7 </td>
+</tr>
+</table></div>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#8BC34A; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">mail</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">numero</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">rue</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idVille</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">passe</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">telephone</span></b> </td>
+</tr>
+<tr>
+<td style="background:#F1F8E9; ">1 </td>
+<td>DURAND</td>
+<td>Jacques</td>
+<td>j.durand@orange.fr</td>
+<td>16b</td>
+<td>rue brune</td>
+<td>1</td>
+<td>motdepass1</td>
+<td>0601020304</td>
+</tr>
+<tr>
+<td style="background:#F1F8E9; ">2 </td>
+<td>DUVAL</td>
+<td>Paul</td>
+<td>paul.d@sfr.fr</td>
+<td>135</td>
+<td>avenue rouge</td>
+<td>4</td>
+<td>motdepass2</td>
+<td>0704030201</td>
+</tr>
+<tr>
+<td style="background:#F1F8E9; ">3 </td>
+<td>DELORS</td>
+<td>Sophie</td>
+<td>sodelors@outlook.com</td>
+<td>22a</td>
+<td>bd vert</td>
+<td>3</td>
+<td>motdepass3</td>
+<td>0606060202</td>
+</tr>
+<tr>
+<td style="background:#F1F8E9; ">4 </td>
+<td>VERGER</td>
+<td>Jehan</td>
+<td>jverger@aol.com</td>
+<td>4ter</td>
+<td>impasse jaune</td>
+<td>5</td>
+<td>motdepass4</td>
+<td>0601020102</td>
+</tr>
+<tr>
+<td style="background:#F1F8E9; ">5 </td>
+<td>MONVILLE</td>
+<td>Fleur</td>
+<td>fleur1212@free.fr</td>
+<td>9</td>
+<td>sente aux loups</td>
+<td>2</td>
+<td>motdepass5</td>
+<td>0707020201</td>
+</tr>
+<tr>
+<td style="background:#F1F8E9; ">6 </td>
+<td>BRIARD</td>
+<td>Paul</td>
+<td>paul.briard27@hotmail.fr</td>
+<td>191</td>
+<td>rue violette</td>
+<td>4</td>
+<td>motdepass6</td>
+<td>0612345678</td>
+</tr>
+<tr>
+<td style="background:#F1F8E9; ">7 </td>
+<td>LÉGER</td>
+<td>Marguerite</td>
+<td>mag0506@perso.com</td>
+<td>17</td>
+<td>place noire</td>
+<td>3</td>
+<td>motdepass7</td>
+<td>0687654321</td>
+</tr>
+<tr>
+<td style="background:#F1F8E9; ">8 </td>
+<td>FLAMAND</td>
+<td>Lise</td>
+<td>flise@gmail.com</td>
+<td>329</td>
+<td>route bleue</td>
+<td>2</td>
+<td>motdepass8</td>
+<td>0632323232</td>
+</tr>
+</table></div>
+</div>
+</div>
+<p>On obtient :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Duval</td>
+<td>Paul</td>
+<td>6</td>
+<td>Poulet rôti</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Duval </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">Purée de carottes </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Verger</td>
+<td>Jehan</td>
+<td>4</td>
+<td>Quatre-quarts</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">Briard </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Omelette </td>
+</tr>
+<tr>
+<td>6</td>
+<td>Briard</td>
+<td>Paul</td>
+<td>3</td>
+<td>Pâte brisée</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">Leger </td>
+<td style="background:#E1F5FE; ">Marguerite </td>
+<td style="background:#E1F5FE; ">1 </td>
+<td style="background:#E1F5FE; ">Mayonnaise </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Leger</td>
+<td>Marguerite</td>
+<td>7</td>
+<td>Sole meunière</td>
+</tr>
+</table></div>
+<p>Mais nous souhaiterions que cette liste d’adhérent·e·s n’exclue pas ceux qui n’ont rédigé aucune recette. Pour cela, il faut faire appel à une <b>jointure externe</b>, en prenant <em>adherent</em> comme table de référence.<br>
+La commande SQL qui correspond se formalise ainsi :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>a.idAdherent</em>, <em>a.nomAdherent</em>, <em>a.prenom</em>, <em>r.idRecette</em>, <em>r.nomRecette</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>a</em> LEFT OUTER JOIN <em>recette</em> AS <em>r</em> ON <em>a.idAdherent</em> = <em>r.idAdherent</em></span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>a.idAdherent</em>, <em>r.nomRecette</em>;</span></p>
+<p><span class="calculator_button" markdown="1">LEFT</span> indique que c’est la table qui apparaît à gauche dans la clause <span class="calculator_button" markdown="1">FROM</span> qui sert de référence.<br>
+Ce qui veut dire que la commande qui suit est identique à la précédente :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>a.idAdherent</em>, <em>a.nomAdherent</em>, <em>a.prenom</em>, <em>r.idRecette</em>, <em>r.nomRecette</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>a</em> RIGHT OUTER JOIN <em>recette</em> AS <em>r</em> ON <em>a.idAdherent</em> = <em>r.idAdherent</em></span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>a.idAdherent</em>, <em>r.nomRecette</em>;</span></p>
+<p>Et le résultat obtenu est le suivant :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Durand</td>
+<td>Jacques</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Duval </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">Poulet rôti </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Duval</td>
+<td>Paul</td>
+<td>5</td>
+<td>Purée de carottes</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">3 </td>
+<td style="background:#E1F5FE; ">Delors </td>
+<td style="background:#E1F5FE; ">Sophie </td>
+<td style="background:#E1F5FE; ">NULL </td>
+<td style="background:#E1F5FE; ">NULL </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Verger</td>
+<td>Jehan</td>
+<td>4</td>
+<td>Quatre-quarts</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">Monville </td>
+<td style="background:#E1F5FE; ">Fleur </td>
+<td style="background:#E1F5FE; ">NULL </td>
+<td style="background:#E1F5FE; ">NULL </td>
+</tr>
+<tr>
+<td>6</td>
+<td>Briard</td>
+<td>Paul</td>
+<td>2</td>
+<td>Omelette</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">Briard </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">3 </td>
+<td style="background:#E1F5FE; ">Pâte brisée </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Leger</td>
+<td>Marguerite</td>
+<td>1</td>
+<td>Mayonnaise</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">Leger </td>
+<td style="background:#E1F5FE; ">Marguerite </td>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">Sole meunière </td>
+</tr>
+<tr>
+<td>8</td>
+<td>Flamand</td>
+<td>Lise</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</table></div>
+<p>Prenons maintenant la table recette en référence en inscrivant la commande :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>a.idAdherent</em>, <em>a.nomAdherent</em>, <em>a.prenom</em>, <em>r.idRecette</em>, <em>r.nomRecette</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>a</em> RIGHT OUTER JOIN <em>recette</em> AS <em>r</em> ON <em>a.idAdherent</em> = <em>r.idAdherent</em></span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>a.idAdherent</em>, <em>r.nomRecette</em>;</span></p>
+<p>On obtient alors :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Duval</td>
+<td>Paul</td>
+<td>6</td>
+<td>Poulet rôti</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Duval </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">5 </td>
+<td style="background:#E1F5FE; ">Purée de carottes </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Verger</td>
+<td>Jehan</td>
+<td>4</td>
+<td>Quatre-quarts</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">6 </td>
+<td style="background:#E1F5FE; ">Briard </td>
+<td style="background:#E1F5FE; ">Paul </td>
+<td style="background:#E1F5FE; ">2 </td>
+<td style="background:#E1F5FE; ">Omelette </td>
+</tr>
+<tr>
+<td>6</td>
+<td>Briard</td>
+<td>Paul</td>
+<td>3</td>
+<td>Pâte brisée</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">7 </td>
+<td style="background:#E1F5FE; ">Leger </td>
+<td style="background:#E1F5FE; ">Marguerite </td>
+<td style="background:#E1F5FE; ">1 </td>
+<td style="background:#E1F5FE; ">Mayonnaise </td>
+</tr>
+<tr>
+<td>7</td>
+<td>Leger</td>
+<td>Marguerite</td>
+<td>7</td>
+<td>Sole meunière</td>
+</tr>
+</table></div>
+<p>Comme voulu, toutes les lignes de la table recette sont représentées dans la table résultat. Notons que l’on n’observe aucune colonne nulle (« NULL ») parmi les lignes de la table <em>résultat</em>. Cette particularité est due au fait que toute recette est forcément rédigée par un·e adhérent·e. L’inverse n’étant pas vrai, on l’a vu précédemment : tout adhérent n’a pas forcément rédigé une recette.</p>
+<p>Pour terminer, on peut tenter de combiner différentes clauses. Si nous souhaitons par exemple connaître tous les adhérent·e·s qui n’ont pas proposé de recette, il suffira de passer la commande SQL suivante :</p>
+<p><span class="calculator_button" markdown="1">SELECT <em>a.idAdherent</em>, <em>a.nomAdherent</em>, <em>a.prenom</em>, <em>r.idRecette</em>, <em>r.nomRecette</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em> AS <em>r</em> RIGHT OUTER JOIN <em>adherent</em> AS <em>a</em> ON <em>a.idAdherent</em> = <em>r.idAdherent</em></span><br>
+<span class="calculator_button" markdown="1">WHERE <em>r.idRecette</em> IS NULL;</span></p>
+<p>Ce qui donnera le résultat escompté, à savoir :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Durand</td>
+<td>Jacques</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">3 </td>
+<td style="background:#E1F5FE; ">Delors </td>
+<td style="background:#E1F5FE; ">Sophie </td>
+<td style="background:#E1F5FE; ">NULL </td>
+<td style="background:#E1F5FE; ">NULL </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Monville</td>
+<td>Fleur</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td style="background:#E1F5FE; ">8 </td>
+<td style="background:#E1F5FE; ">Flamand </td>
+<td style="background:#E1F5FE; ">Lise </td>
+<td style="background:#E1F5FE; ">NULL </td>
+<td style="background:#E1F5FE; ">NULL </td>
+</tr>
+</table></div>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous achevons ainsi ce cours donnant des notions complémentaires sur le langage SQL. Vous savez dorénavant rédiger des requêtes élaborées, faisant appel à des mécanismes de calcul, de regroupement, de transformation, de tri ou encore de jointure.</p>
+</div>
+</div></div>
+<div id="poool-onf6y-r6eem" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e74d7d309e0a80100fe0cc2","type":"Cours","title":"Tri de données avec le langage SQL","content":"[IN]\nIntroduction\u0026nbsp;:\n\nNous savons ce qu'est une base de données relationnelle, nous savons aussi la mettre en œuvre et l'utiliser grâce au\u0026nbsp;SGBD et au langage\u0026nbsp;SQL. Nous achevons ce chapitre sur les bases de données avec un cours destiné à compléter nos connaissances sur les requêtes\u0026nbsp;SQL.  \nIl s'agira ici d'apprendre à formuler des recherches plus élaborées, faisant appel à des fonctions de tri ou de calcul. Nous verrons également comment articuler une requête\u0026nbsp;SQL touchant plusieurs tables à la fois. Commençons donc par nous pencher sur les fonctions de calcul et transformation auxquelles il est possible d'avoir recours dans une commande\u0026nbsp;SQL.\n[/IN]\n\n##Calculs et transformations dans une requête/1\n\nÀ l'occasion d'une requête, il est possible de demander le résultat d'un calcul opéré sur la valeur d'une ou plusieurs colonnes pour chaque ligne concernée. On peut aussi demander le résultat d'un calcul qui porte sur l'ensemble des lignes d'une table. D'autres manipulations sont également possibles.\n\n###Calcul portant sur la valeur d'une colonne/a.\n\nLe résultat d'un calcul effectué sur la valeur d'une colonne est stocké dans une colonne qui vient s'ajouter à la table résultat de la requête.  \nAinsi, on peut effectuer des calculs impliquant une ou plusieurs colonnes en ayant recours aux opérateurs arithmétiques suivants\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| [BUTC]$+$[/BUTC] ((0,0,0,#F0F4C3)) |\n| addition |\n[/LI]\n[LI]\n| [BUTC]$-$[/BUTC] ((0,0,0,#F0F4C3)) |\n| soustraction |\n[/LI]\n[LI]\n| [BUTC]$*$[/BUTC] ((0,0,0,#F0F4C3)) |\n| multiplication |\n[/LI]\n[LI]\n| [BUTC]$/$[/BUTC] ((0,0,0,#F0F4C3)) |\n| division |\n[/LI]\n[LI]\n| [BUTC]$\\%$[/BUTC] ((0,0,0,#F0F4C3)) |\n| reste dans la division |\n[/LI]\n[/TAB]\n\n[EX]\nNous voulons la liste des recettes du club, avec leur nom et leur durée en seconde. Il est donc nécessaire d'effectuer un calcul avec la colonne __duree__ qui est exprimée et stockée en minutes dans la base de données. Voici la commande\u0026nbsp;SQL qui en résulte\u0026nbsp;:\n\n[BUTC]SELECT __nomrecette__, (__duree__ * 60) AS __dureeSecondes__[/BUTC]  \n[BUTC]FROM __recette__;[/BUTC]\n[/EX]\n\n[RETENIR]\nLa clause [BUTC]AS[/BUTC] permet de baptiser le nom de la nouvelle colonne destinée à recueillir le résultat du calcul.\n[/RETENIR]\n\nVoici la table recette\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| difficile |\n| 15 |\n| sauce |\n| 7 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| Omelette ((0,0,0,#E1F5FE)) |\n| facile ((0,0,0,#E1F5FE)) |\n| 5 ((0,0,0,#E1F5FE)) |\n| plat ((0,0,0,#E1F5FE)) |\n| 6 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| moyen |\n| 20 |\n| autre |\n| 6 |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| Quatre-quarts ((0,0,0,#E1F5FE)) |\n| facile ((0,0,0,#E1F5FE)) |\n| 10 ((0,0,0,#E1F5FE)) |\n| dessert ((0,0,0,#E1F5FE)) |\n| 4 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| moyen |\n| 15 |\n| accompagnement |\n| 2 |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| Poulet rôti ((0,0,0,#E1F5FE)) |\n| facile ((0,0,0,#E1F5FE)) |\n| 15 ((0,0,0,#E1F5FE)) |\n| plat ((0,0,0,#E1F5FE)) |\n| 2 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| difficile |\n| 20 |\n| plat |\n| 7 |\n[/LI]\n[/TAB]\n\nLe résultat obtenu est une table de deux colonnes\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]dureeSecondes[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| Mayonnaise |\n| 900 |\n[/LI]\n[LI]\n| Omelette ((0,0,0,#E1F5FE)) |\n| 300 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| Pâte brisée |\n| 1200 |\n[/LI]\n[LI]\n| Quatre-quarts ((0,0,0,#E1F5FE)) |\n| 600 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| Purée de carottes |\n| 900 |\n[/LI]\n[LI]\n| Poulet rôti ((0,0,0,#E1F5FE)) |\n| 900 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| Sole meunière |\n| 1200 |\n[/LI]\n[/TAB]\n\n###Calcul portant sur l'ensemble des lignes d'une table/b.\n\nEntre autres calculs et transformations, penchons-nous sur les fonctions statistiques simples que l'on peut appeler avec\u0026nbsp;SQL, recensées dans le tableau qui suit\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]COUNT(*)[18]** ((0,0,0,#9AE)) |\n| **[18]Nombre de lignes dans la table[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| [BUTC]MAX(colonnex)[/BUTC] |\n| valeur maximum dans la colonne |\n[/LI]\n[LI]\n| [BUTC]MIN(colonnex)[/BUTC] ((0,0,0,#E1F5FE)) |\n| valeur minimum dans la colonne ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| [BUTC]AVG(colonnex)[/BUTC] |\n| valeur moyenne de la colonne |\n[/LI]\n[LI]\n| [BUTC]SUM(colonnex)[/BUTC] ((0,0,0,#E1F5FE)) |\n| somme des valeurs de la colonne ((0,0,0,#E1F5FE)) |\n[/LI]\n[/TAB]\n\n[EX]\nSi l'on veut connaître la durée moyenne des recettes du club de cuisine, en minutes, on passera la commande\u0026nbsp;SQL suivante au SGBD\u0026nbsp;:\n\n[BUTC]SELECT AVG(__duree__) AS __dureeMoyenne__[/BUTC]  \n[BUTC]FROM __recette__;[/BUTC]\n[/EX]\n\nLe résultat alors retourné est une table d'une colonne et d'une ligne\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]dureeMoyenne[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 14.2857 |\n[/LI]\n[/TAB]\n\nEt si l'on souhaite connaître le nombre d'adhérent·e·s du club de cuisine, il suffira d’entrer la commande suivante\u0026nbsp;:\n\n[BUTC]SELECT COUNT(*) AS __nbAdherents__[/BUTC]  \n[BUTC]FROM __adherent__;[/BUTC]\n\nVoici la table __adherent__\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]mail[18]** ((0,0,0,#9AE)) |\n| **[18]numero[18]** ((0,0,0,#9AE)) |\n| **[18]rue[18]** ((0,0,0,#9AE)) |\n| **[18]idVille[18]** ((0,0,0,#9AE)) |\n| **[18]passe[18]** ((0,0,0,#9AE)) |\n| **[18]telephone[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| DURAND |\n| Jacques |\n| j.durand@orange.fr |\n| 16b |\n| rue brune |\n| 1 |\n| motdepass1 |\n| 0601020304 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| DUVAL ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| paul.d@sfr.fr ((0,0,0,#E1F5FE)) |\n| 135 ((0,0,0,#E1F5FE)) |\n| avenue rouge ((0,0,0,#E1F5FE)) |\n| 4 ((0,0,0,#E1F5FE)) |\n| motdepass2 ((0,0,0,#E1F5FE)) |\n| 0704030201 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 3 |\n| DELORS |\n| Sophie |\n| sodelors@outlook.com |\n| 22a |\n| bd vert |\n| 3 |\n| motdepass3 |\n| 0606060202 |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| VERGER ((0,0,0,#E1F5FE)) |\n| Jehan ((0,0,0,#E1F5FE)) |\n| jverger@aol.com ((0,0,0,#E1F5FE)) |\n| 4ter ((0,0,0,#E1F5FE)) |\n| impasse jaune ((0,0,0,#E1F5FE)) |\n| 5 ((0,0,0,#E1F5FE)) |\n| motdepass4 ((0,0,0,#E1F5FE)) |\n| 0601020102 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| MONVILLE |\n| Fleur |\n| fleur1212@free.fr |\n| 9 |\n| sente aux loups |\n| 2 |\n| motdepass5 |\n| 0707020201 |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| BRIARD ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| paul.briard27@hotmail.fr ((0,0,0,#E1F5FE)) |\n| 191 ((0,0,0,#E1F5FE)) |\n| rue violette ((0,0,0,#E1F5FE)) |\n| 4 ((0,0,0,#E1F5FE)) |\n| motdepass6 ((0,0,0,#E1F5FE)) |\n| 0612345678 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| LÉGER |\n| Marguerite |\n| mag0506@perso.com |\n| 17 |\n| place noire |\n| 3 |\n| motdepass7 |\n| 0687654321 |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E1F5FE)) |\n| FLAMAND ((0,0,0,#E1F5FE)) |\n| Lise ((0,0,0,#E1F5FE)) |\n| flise@gmail.com ((0,0,0,#E1F5FE)) |\n| 329 ((0,0,0,#E1F5FE)) |\n| route bleue ((0,0,0,#E1F5FE)) |\n| 2 ((0,0,0,#E1F5FE)) |\n| motdepass8 ((0,0,0,#E1F5FE)) |\n| 0632323232 ((0,0,0,#E1F5FE)) |\n[/LI]\n[/TAB]\n\nEt voici le résultat retourné, qui est une table d'une colonne et d'une ligne\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]nbAdherents[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 8 |\n[/LI]\n[/TAB]\n\n[AST]\nOn remarquera au passage qu'on ne spécifie pas une colonne en particulier dans la fonction [BUTC]COUNT[/BUTC] puisqu'il s'agit de compter le nombre de toutes les lignes dans la table, sans s'intéresser à une colonne en particulier.\n[/AST]\n\n###Autres manipulations sur les données/c.\n\nD'autres transformations sur les colonnes sont possibles lors d'une requête d'interrogation, comme par exemple le passage en majuscule d'une colonne de type chaîne de caractères avec la fonction [BUTC]UPPER[/BUTC]. On peut également demander l'extraction du mois d'une date grâce à la fonction [BUTC]MONTH[/BUTC].\n\n[EX]\nVoici la requête permettant d'obtenir la liste des numéros, noms et prénoms des adhérent·e·s affichés en majuscules de notre club de cuisine :\n\n[BUTC]SELECT __idAdherent__, UPPER(__nomAdherent__) AS __nomMaj__, UPPER(__prenom__) AS __prenomMaj__[/BUTC]  \n[BUTC]FROM __adherent__;[/BUTC]\n[/EX]\n\nLe résultat est une table de trois colonnes\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| [18]**nomMaj**[18] ((0,0,0,#9AE)) |\n| **[18]prenomMaj[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| DURAND |\n| JACQUES |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| DUVAL ((0,0,0,#E1F5FE)) |\n| PAUL ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 3 |\n| DELORS |\n| SOPHIE |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| VERGER ((0,0,0,#E1F5FE)) |\n| JEHAN ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| MONVILLE |\n| FLEUR |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| BRIARD ((0,0,0,#E1F5FE)) |\n| PAUL ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| LEGER |\n| MARGUERITE |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E1F5FE)) |\n| FLAMAND ((0,0,0,#E1F5FE)) |\n| LISE ((0,0,0,#E1F5FE)) |\n[/LI]\n[/TAB]\n\nIl peut être parfois intéressant d'effectuer des calculs statistiques portant sur des groupes de lignes et toutes les lignes d'une table. On aura alors recours à des opérations d'agrégation. Nous allons voir également que l'on peut exiger d'une requête qu'elle nous restitue sa table résultat de manière triée.\n\n##Agrégats et tri/2\n\n###Calcul sur agrégats/a.\n\nOn effectue une opération dite d'**agrégation** pour regrouper les lignes d'une table par la même valeur qu'elles contiennent dans une colonne. L'objectif d'effectuer une agrégation est, en général, de pratiquer des calculs statistiques sur les groupes ainsi constitués.\n\n[RETENIR]\nLa clause employée pour pratiquer une agrégation est [BUTC]GROUP BY[/BUTC]\u0026nbsp;:\n\n[BUTC]SELECT nomColonne1, --fonction statistique--[/BUTC]  \n[BUTC]FROM __nomTable__[/BUTC]  \n[BUTC]GROUP BY __nomColonne1__;[/BUTC]\n[/RETENIR]\n\n[EX]\nNotre club de cuisine souhaite connaître le nombre de recettes dans sa base pour chaque catégorie.  \nLa table des recettes est la suivante\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| difficile |\n| 15 |\n| sauce |\n| 7 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| Omelette ((0,0,0,#E1F5FE)) |\n| facile ((0,0,0,#E1F5FE)) |\n| 5 ((0,0,0,#E1F5FE)) |\n| plat ((0,0,0,#E1F5FE)) |\n| 6 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| moyen |\n| 20 |\n| autre |\n| 6 |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| Quatre-quarts ((0,0,0,#E1F5FE)) |\n| facile ((0,0,0,#E1F5FE)) |\n| 10 ((0,0,0,#E1F5FE)) |\n| dessert ((0,0,0,#E1F5FE)) |\n| 4 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| moyen |\n| 15 |\n| accompagnement |\n| 2 |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| Poulet rôti ((0,0,0,#E1F5FE)) |\n| facile ((0,0,0,#E1F5FE)) |\n| 15 ((0,0,0,#E1F5FE)) |\n| plat ((0,0,0,#E1F5FE)) |\n| 2 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| difficile |\n| 20 |\n| plat |\n| 7 |\n[/LI]\n[/TAB]\n[/EX]\n\nIl suffira donc de transmettre la requête SQL suivante au SGBD :\n\n[BUTC]SELECT __categorie__, COUNT(*) AS nombre[/BUTC]  \n[BUTC]FROM __recette__[/BUTC]  \n[BUTC]GROUP BY __categorie__;[/BUTC]\n\nLa table résultat qui nous sera alors retournée sera par conséquent\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]nombre[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| sauce |\n| 1 |\n[/LI]\n[LI]\n| plat ((0,0,0,#E1F5FE)) |\n| 3 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| autre |\n| 1 |\n[/LI]\n[LI]\n| dessert ((0,0,0,#E1F5FE)) |\n| 1 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| accompagnement |\n| 1 |\n[/LI]\n[/TAB]\n\n###Restriction sur le résultat d'un calcul sur agrégat/b.\n\nOn peut ajouter une opération de filtrage à la table résultant d'une opération sur agrégat. La clause [BUTC]HAVING[/BUTC] permet d'exprimer le critère de filtrage sur cette table résultat.\n\n[EX]\nLe club décide de recueillir les seules catégories de recette dont la durée moyenne est au moins de 14\u0026nbsp;minutes.\n[/EX]\n\nLa commande\u0026nbsp;SQL suivante nous permet de calculer la durée moyenne des recettes par catégorie :\n\n[BUTC]SELECT __categorie__, AVG(__duree__) AS __dureeMoyenne__[/BUTC]  \n[BUTC]FROM __recette__[/BUTC]  \n[BUTC]GROUP BY __categorie__;[/BUTC]\n\nLa table résultat qui est restituée est ainsi\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]dureeMoyenne[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| sauce |\n| 15.0000 |\n[/LI]\n[LI]\n| plat ((0,0,0,#E1F5FE)) |\n| 13.3333 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| autre |\n| 20.0000 |\n[/LI]\n[LI]\n| dessert ((0,0,0,#E1F5FE)) |\n| 10.0000 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| accompagnement |\n| 15.0000 |\n[/LI]\n[/TAB]\n\nEn complétant la commande par la clause [BUTC]HAVING __dureeMoyenne__ \u003e= 14[/BUTC], on ne retient que les catégories figurant dans la table résultat dont la colonne __dureeMoyenne__ répond au critère du filtre\u0026nbsp;:\n\n[BUTC]SELECT __categorie__, AVG(__duree__) AS __dureeMoyenne__ [/BUTC]  \n[BUTC]FROM __recette__[/BUTC]  \n[BUTC]GROUP BY __categorie__[/BUTC]  \n[BUTC]HAVING __dureeMoyenne__ \u003e= 14;[/BUTC]\n\nLe résultat qui est restitué ne nous étonne pas\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]dureeMoyenne[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| sauce |\n| 15.0000 |\n[/LI]\n[LI]\n| autre ((0,0,0,#E1F5FE)) |\n| 20.0000 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| accompagnement |\n| 15.0000 |\n[/LI]\n[/TAB]\n\n###Tris/c.\n\nLorsque l'on effectue une requête, par défaut, la table résultat qui est restituée n'est pas triée.\n\n[RETENIR]\nPour que ce soit le cas, on emploie le mot-clé [BUTC]ORDER BY[/BUTC] suivi de la ou les colonnes sur lesquelles doit porter le tri.\n[/RETENIR]\n\n[AST]\nSi plusieurs colonnes sont spécifiées dans la consigne de tri, alors le tri s'effectuera d'abord sur les valeurs de la colonne la plus à gauche, puis selon les valeurs des colonnes données pour le tri de gauche à droite.\n[/AST]\n\nNotons par ailleurs que le tri s'effectue par défaut de manière ascendante. L'option [BUTC]DESC[/BUTC] inversera le tri pour le critère concerné.\n\n[EX]\nNotre club de cuisine souhaite avoir la liste de ses adhérent·e·s constituée de leurs numéros, noms et prénoms mis en majuscules, triée par nom, puis par prénom.  \nReprenons la table des adhérent·e·s\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]mail[18]** ((0,0,0,#9AE)) |\n| **[18]numero[18]** ((0,0,0,#9AE)) |\n| **[18]rue[18]** ((0,0,0,#9AE)) |\n| **[18]idVille[18]** ((0,0,0,#9AE)) |\n| **[18]passe[18]** ((0,0,0,#9AE)) |\n| **[18]telephone[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| DURAND |\n| Jacques |\n| j.durand@orange.fr |\n| 16b |\n| rue brune |\n| 1 |\n| motdepass1 |\n| 0601020304 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| DUVAL ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| paul.d@sfr.fr ((0,0,0,#E1F5FE)) |\n| 135 ((0,0,0,#E1F5FE)) |\n| avenue rouge ((0,0,0,#E1F5FE)) |\n| 4 ((0,0,0,#E1F5FE)) |\n| motdepass2 ((0,0,0,#E1F5FE)) |\n| 0704030201 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 3 |\n| DELORS |\n| Sophie |\n| sodelors@outlook.com |\n| 22a |\n| bd vert |\n| 3 |\n| motdepass3 |\n| 0606060202 |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| VERGER ((0,0,0,#E1F5FE)) |\n| Jehan ((0,0,0,#E1F5FE)) |\n| jverger@aol.com ((0,0,0,#E1F5FE)) |\n| 4ter ((0,0,0,#E1F5FE)) |\n| impasse jaune ((0,0,0,#E1F5FE)) |\n| 5 ((0,0,0,#E1F5FE)) |\n| motdepass4 ((0,0,0,#E1F5FE)) |\n| 0601020102 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| MONVILLE |\n| Fleur |\n| fleur1212@free.fr |\n| 9 |\n| sente aux loups |\n| 2 |\n| motdepass5 |\n| 0707020201 |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| BRIARD ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| paul.briard27@hotmail.fr ((0,0,0,#E1F5FE)) |\n| 191 ((0,0,0,#E1F5FE)) |\n| rue violette ((0,0,0,#E1F5FE)) |\n| 4 ((0,0,0,#E1F5FE)) |\n| motdepass6 ((0,0,0,#E1F5FE)) |\n| 0612345678 ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| LÉGER |\n| Marguerite |\n| mag0506@perso.com |\n| 17 |\n| place noire |\n| 3 |\n| motdepass7 |\n| 0687654321 |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E1F5FE)) |\n| FLAMAND ((0,0,0,#E1F5FE)) |\n| Lise ((0,0,0,#E1F5FE)) |\n| flise@gmail.com ((0,0,0,#E1F5FE)) |\n| 329 ((0,0,0,#E1F5FE)) |\n| route bleue ((0,0,0,#E1F5FE)) |\n| 2 ((0,0,0,#E1F5FE)) |\n| motdepass8 ((0,0,0,#E1F5FE)) |\n| 0632323232 ((0,0,0,#E1F5FE)) |\n[/LI]\n[/TAB]\n[/EX]\n\nVoici la requête qui répond à l'objectif visé\u0026nbsp;:\n\n[BUTC]SELECT __idAdherent__, UPPER(__nomAdherent__), UPPER(__prenom__)[/BUTC]  \n[BUTC]FROM __adherent__[/BUTC]  \n[BUTC]ORDER BY __nomAdherent__, __prenom__;[/BUTC]\n\nLe résultat suivant nous est restitué\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomMaj[18]** ((0,0,0,#9AE)) |\n| **[18]prenomMaj[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 6 |\n| BRIARD |\n| PAUL |\n[/LI]\n[LI]\n| 3 ((0,0,0,#E1F5FE)) |\n| DELORS ((0,0,0,#E1F5FE)) |\n| SOPHIE ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 1 |\n| DURAND |\n| JACQUES |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| DUVAL ((0,0,0,#E1F5FE)) |\n| PAUL ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 8 |\n| FLAMAND |\n| LISE |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E1F5FE)) |\n| LEGER ((0,0,0,#E1F5FE)) |\n| MARGUERITE ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| MONVILLE |\n| FLEUR |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| VERGER ((0,0,0,#E1F5FE)) |\n| JEHAN ((0,0,0,#E1F5FE)) |\n[/LI]\n[/TAB]\n\nNous savons maintenant effectuer, dans une requête, des calculs sur les colonnes et sur les lignes d'une table ou transformer une colonne, ainsi que trier le résultat d'une requête. Voyons maintenant quand et comment effectuer des requêtes portant sur plusieurs tables.\n\n##Requêtes portant sur plusieurs tables/3\n\n###Contexte d'une requête portant sur plusieurs tables/a.\n\nDans une base de données existent quasi systématiquement des **associations**. Celles-ci établissent un lien entre des entités. Ainsi, pour retrouver des informations relatives à une même entité, on peut être amené à récupérer celles-ci dans plusieurs tables par le biais de ces associations.\n\n[RAP]\nPou rappel, les tables __adherent__ et __ville__ sont constituées ainsi\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]mail[18]** ((0,0,0,#9AE)) |\n| **[18]numero[18]** ((0,0,0,#9AE)) |\n| **[18]rue[18]** ((0,0,0,#9AE)) |\n| **[18]idVille[18]** ((0,0,0,#FFCC80)) |\n| **[18]passe[18]** ((0,0,0,#9AE)) |\n| **[18]telephone[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| DURAND |\n| Jacques |\n| j.durand@orange.fr |\n| 16b |\n| rue brune |\n| 1 ((0,0,0,#FFF3E0)) |\n| motdepass1 |\n| 0601020304 |\n[/LI]\n[LI]\n| 2 |\n| DUVAL |\n| Paul |\n| paul.d@sfr.fr |\n| 135 |\n| avenue rouge |\n| 4 ((0,0,0,#FFF3E0)) |\n| motdepass2 |\n| 0704030201 |\n[/LI]\n[LI]\n| 3 |\n| DELORS |\n| Sophie |\n| sodelors@outlook.com |\n| 22a |\n| bd vert |\n| 3 ((0,0,0,#FFF3E0)) |\n| motdepass3 |\n| 0606060202 |\n[/LI]\n[LI]\n| 4 |\n| VERGER |\n| Jehan |\n| jverger@aol.com |\n| 4ter |\n| impasse jaune |\n| 5 ((0,0,0,#FFF3E0)) |\n| motdepass4 |\n| 0601020102 |\n[/LI]\n[LI]\n| 5 |\n| MONVILLE |\n| Fleur |\n| fleur1212@free.fr |\n| 9 |\n| sente aux loups |\n| 2 ((0,0,0,#FFF3E0)) |\n| motdepass5 |\n| 0707020201 |\n[/LI]\n[LI]\n| 6 |\n| BRIARD |\n| Paul |\n| paul.briard27@hotmail.fr |\n| 191 |\n| rue violette |\n| 4 ((0,0,0,#FFF3E0)) |\n| motdepass6 |\n| 0612345678 |\n[/LI]\n[LI]\n| 7 |\n| LÉGER |\n| Marguerite |\n| mag0506@perso.com |\n| 17 |\n| place noire |\n| 3 ((0,0,0,#FFF3E0)) |\n| motdepass7 |\n| 0687654321 |\n[/LI]\n[LI]\n| 8 |\n| FLAMAND |\n| Lise |\n| flise@gmail.com |\n| 329 |\n| route bleue |\n| 2 ((0,0,0,#FFF3E0)) |\n| motdepass8 |\n| 0632323232 |\n[/LI]\n[/TAB]\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idVille[18]** ((0,0,0,#FFCC80)) |\n| **[18]nomVille[18]** ((0,0,0,#9AE)) |\n| **[18]codePostal[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 ((0,0,0,#FFF3E0)) |\n| LE HAVRE |\n| 76600 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#FFF3E0)) |\n| CAEN |\n| 14000 |\n[/LI]\n[LI]\n| 3 ((0,0,0,#FFF3E0)) |\n| NANTES |\n| 44000 |\n[/LI]\n[LI]\n| 4 ((0,0,0,#FFF3E0)) |\n| RENNES |\n| 35000 |\n[/LI]\n[LI]\n| 5 ((0,0,0,#FFF3E0)) |\n| QUIMPER |\n| 29000 |\n[/LI]\n[LI]\n| 6 ((0,0,0,#FFF3E0)) |\n| VANNES |\n| 56000 |\n[/LI]\n[LI]\n| 7 ((0,0,0,#FFF3E0)) |\n| SAINT-BRIEUC |\n| 22000 |\n[/LI]\n[LI]\n| 8 ((0,0,0,#FFF3E0)) |\n| PONTIVY |\n| 56300 |\n[/LI]\n[LI]\n| 9 ((0,0,0,#FFF3E0)) |\n| LOUDEAC |\n| 22600 |\n[/LI]\n[LI]\n| 10 ((0,0,0,#FFF3E0)) |\n| QUIMPERLE |\n| 29300 |\n[/LI]\n[/TAB]\n[/RAP]\n\nNous ne sommes pas en mesure de connaître, dans notre table __adherent__, le nom de la ville où chaque adhérent·e habite. Nous connaissons néanmoins le numéro d'identification, soit __idVille__, de la ville où chacun habite. Grâce à ce numéro, nous pouvons retrouver le nom de celle-ci dans une autre table : la table __ville__.\n\n[EX]\nAinsi, si nous souhaitons recueillir la liste des adhérent·e·s de notre club de cuisine, constituée de leur numéro d'identification, nom, prénom et ville où ils résident, nous sommes appelés à effectuer des recherches dans deux tables\u0026nbsp;: __adherent__ et __ville__.\n[/EX]\n\nDans ce contexte où nous effectuons une requête portant sur plusieurs tables, une ambiguïté concernant la désignation de leurs colonnes respectives peut se présenter.\n* En effet, rien n'interdit de construire une base de données où **un même nom de colonne peut figurer dans deux tables différentes**.((fleche))\n\n[EX]\nDans notre base de données, la table __recette__ contient une colonne __idRecette__, tout comme la table __etape__.\n[/EX]\n\n[RETENIR]\nAussi, pour lever toute ambiguïté dans une requête qui porterait sur des tables ayant des colonnes nommées de la même manière, il est alors nécessaire de préfixer le nom de la colonne par celui de la table concernée.\n* Finalement, on préfèrera, qu'il y ait ambiguïté ou non, préfixer tous les noms de colonnes du nom de la table à laquelle celles-ci appartiennent.((fleche))\n[/RETENIR]\n\n[EX]\nDans notre exemple, ou désignera nos champs __idRecette__ ainsi\u0026nbsp;:\n* __recette.idRecette__ ;((liste2))\n* __etape.idRecette__ ;((liste2))\n[/EX]\n\nEt voici une requête utilisant un préfixe de nom de table\u0026nbsp;:\n\n[BUTC]SELECT __recette.nomRecette__, __recette.categorie__, __recette.duree__[/BUTC]  \n[BUTC]FROM __recette__;[/BUTC]\n\nÀ l'usage, on réalise que ce préfixe peut alourdir considérablement la rédaction de certaines requêtes, déjà complexes par ailleurs.\n* On peut alors faire le choix de substituer le préfixe du nom de la table par un alias, plus court, qui sera précisé dans la commande SQL avec le mot-clé [BUTC]AS[/BUTC].((fleche))\n\nNotons que le recours à l'alias n'est pas obligatoire.\n·\n[EX]\nEn affectant l’alias «\u0026nbsp;re\u0026nbsp;» pour notre table __recette__, la commande précédente est ainsi reformulée de façon plus compacte\u0026nbsp;:\n\n[BUTC]SELECT __re.nomRecette__, __re.categorie__, __re.duree__ [/BUTC]  \n[BUTC]FROM __recette__ AS __re__;[/BUTC]\n[/EX]\n\nApprenons maintenant à formuler des requêtes portant sur plusieurs tables. Il s'agit de l'opération de **jointure** que nous allons dès à présent détailler.\n\n###La jointure interne/b.\n\nDans le cas de la base de données de notre club de cuisine, pour obtenir la liste des adhérent·e·s constituée de leur numéro d'adhérent, leur nom, leur prénom et de la ville où ils résident, nous pourrions formaliser la requête suivante\u0026nbsp;:\n\n[BUTC]SELECT __ad.idAdherent__, __ad.nomAdherent__, __ad.prenom, vi.nomVille__ [/BUTC]  \n[BUTC]FROM __adherent__ AS __ad__, __ville__ AS __vi__[/BUTC]  \n[BUTC]WHERE __ad.idVille__ = __vi.idVille__[/BUTC]\n\nLa logique de cette requête est tout à fait correcte. Le SGBD l’exécutera et donnera le résultat suivant\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]nomVille[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Durand |\n| Jacques |\n| LE HAVRE |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| Duval ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| RENNES ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 3  |\n| Delors |\n| Sophie |\n| NANTES |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| Verger ((0,0,0,#E1F5FE)) |\n| Jehan ((0,0,0,#E1F5FE)) |\n| QUIMPER ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| Monville |\n| Fleur |\n| CAEN |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| Briard ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| RENNES ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Leger |\n| Marguerite |\n| NANTES |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E1F5FE)) |\n| Flamand ((0,0,0,#E1F5FE)) |\n| Lise ((0,0,0,#E1F5FE)) |\n| CAEN ((0,0,0,#E1F5FE)) |\n[/LI]\n[/TAB]\n\n[ATT]\nCependant, il est nettement préférable d'avoir recours à un opérateur de jointure, nommé [BUTC]JOIN[/BUTC], spécifique aux requêtes portant sur plusieurs tables.\n* Le SGBD traitera alors la requête de manière optimisée.((fleche))\n[/ATT]\n\n[DEF]\n**Jointure\u0026nbsp;:**\n\nUne jointure consiste à combiner des données issues de deux ou plusieurs tables, sur la base d'un point commun.\n[/DEF]\n\nLa syntaxe requise pour effectuer une jointure est la suivante, dans le cadre de notre exemple\u0026nbsp;:\n\n[BUTC]SELECT __ad.idAdherent__, __ad.nomAdherent__, __ad.prenom__, __vi.nomVille__[/BUTC]  \n[BUTC]FROM __adherent__ AS __ad__ JOIN __ville__ AS __vi__ ON __ad.idVille__ = __vi.idVille__;[/BUTC]\n\nCette requête restituera le même résultat que précédemment, mais le SGBD aura optimisé les moyens de fournir ce résultat.  \nNotons par ailleurs qu'il est tout à fait possible de formaliser une requête\u0026nbsp;;SQL portant sur plus de deux tables.\n\n[EX]\nNous souhaitons avoir la liste des ingrédients de toutes les recettes, constituée de l'identifiant de la recette, du nom de la recette et du nom de l'ingrédient.\nLa table __utilise__ nous permet de savoir quelle recette utilise quel ingrédient. En revanche, dans cette table, les recettes sont identifiées par la clé __idRecette__, ce qui ne nous donne pas leur nom. Idem pour la clé __idIngredient__ qui ne nous permet pas de connaître le nom des ingrédients.  \nMais on peut retrouver le nom chaque recette dans la table __recette__ avec la clé __idRecette__. De même, on retrouve le nom de chaque ingrédient dans la table __ingredient__ avec la clé __idIngredient__.\n\nVoici nos tables\u0026nbsp;:\n\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idIngredient[18]** ((0,0,0,#80DEEA)) |\n| **[18]idRecette[18]** ((0,0,0,#CE93D8)) |\n| **[18]quantite[18]** ((0,0,0,#9AE)) |\n| **[18]unite[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 ((0,0,0,#E0F7FA)) |\n| 1 ((0,0,0,#F3E5F5)) |\n| 1 |\n| jaune d’oeuf |\n[/LI]\n[LI]\n| 1 ((0,0,0,#E0F7FA)) |\n| 2 ((0,0,0,#F3E5F5)) |\n| 3 |\n| oeufs entiers |\n[/LI]\n[LI]\n| 1 ((0,0,0,#E0F7FA)) |\n| 4 ((0,0,0,#F3E5F5)) |\n| 3 |\n| oeufs entiers |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E0F7FA)) |\n| 1 ((0,0,0,#F3E5F5)) |\n| 1 |\n| cuillère |\n[/LI]\n[LI]\n| 3 ((0,0,0,#E0F7FA)) |\n| 1 ((0,0,0,#F3E5F5)) |\n| 1 |\n| filet |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E0F7FA)) |\n| 1 ((0,0,0,#F3E5F5)) |\n| 10 |\n| cL |\n[/LI]\n[LI]\n| 5 ((0,0,0,#E0F7FA)) |\n| 2 ((0,0,0,#F3E5F5)) |\n| 1 |\n| pincée |\n[/LI]\n[LI]\n| 5 ((0,0,0,#E0F7FA)) |\n| 3 ((0,0,0,#F3E5F5)) |\n| 1 |\n| cuillère à café |\n[/LI]\n[LI]\n| 5 ((0,0,0,#E0F7FA)) |\n| 4 ((0,0,0,#F3E5F5)) |\n| 1 |\n| pincee |\n[/LI]\n[LI]\n| 5 ((0,0,0,#E0F7FA)) |\n| 7 ((0,0,0,#F3E5F5)) |\n| 1 |\n| pincée |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E0F7FA)) |\n| 2 ((0,0,0,#F3E5F5)) |\n| 2 |\n| tour de moulin |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E0F7FA)) |\n| 7 ((0,0,0,#F3E5F5)) |\n| 2 |\n| tours de moulin |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E0F7FA)) |\n| 2 ((0,0,0,#F3E5F5)) |\n| 30 |\n| g |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E0F7FA)) |\n| 2 ((0,0,0,#F3E5F5)) |\n| 2 |\n| cuillères à soupe |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E0F7FA)) |\n| 6 ((0,0,0,#F3E5F5)) |\n| 1 |\n| cuillère à soupe |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E0F7FA)) |\n| 7 ((0,0,0,#F3E5F5)) |\n| 2 |\n| cuillères à soupe |\n[/LI]\n[LI]\n| 9 ((0,0,0,#E0F7FA)) |\n| 3 ((0,0,0,#F3E5F5)) |\n| 150 |\n| g |\n[/LI]\n[LI]\n| 9 ((0,0,0,#E0F7FA)) |\n| 4 ((0,0,0,#F3E5F5)) |\n| 180 |\n| g |\n[/LI]\n[LI]\n| 9 ((0,0,0,#E0F7FA)) |\n| 7 ((0,0,0,#F3E5F5)) |\n| 100 |\n| g |\n[/LI]\n[LI]\n| 10 ((0,0,0,#E0F7FA)) |\n| 3 ((0,0,0,#F3E5F5)) |\n| 75 |\n| g |\n[/LI]\n[LI]\n| 10 ((0,0,0,#E0F7FA)) |\n| 4 ((0,0,0,#F3E5F5)) |\n| 180 |\n| g |\n[/LI]\n[LI]\n| 10 ((0,0,0,#E0F7FA)) |\n| 7 ((0,0,0,#F3E5F5)) |\n| 20 |\n| g |\n[/LI]\n[LI]\n| 11 ((0,0,0,#E0F7FA)) |\n| 4 ((0,0,0,#F3E5F5)) |\n| 180 |\n| g |\n[/LI]\n[LI]\n| 12 ((0,0,0,#E0F7FA)) |\n| 3 ((0,0,0,#F3E5F5)) |\n| 20 |\n| cL |\n[/LI]\n[LI]\n| 13 ((0,0,0,#E0F7FA)) |\n| 5 ((0,0,0,#F3E5F5)) |\n| 500 |\n| g |\n[/LI]\n[LI]\n| 14 ((0,0,0,#E0F7FA)) |\n| 5 ((0,0,0,#F3E5F5)) |\n| 150 |\n| g |\n[/LI]\n[LI]\n| 15 ((0,0,0,#E0F7FA)) |\n| 5 ((0,0,0,#F3E5F5)) |\n| 2 |\n| pincées |\n[/LI]\n[LI]\n| 16 ((0,0,0,#E0F7FA)) |\n| 5 ((0,0,0,#F3E5F5)) |\n| 1 |\n| pincée |\n[/LI]\n[LI]\n| 17 ((0,0,0,#E0F7FA)) |\n| 6 ((0,0,0,#F3E5F5)) |\n| 1 |\n| poulet entier |\n[/LI]\n[LI]\n| 18 ((0,0,0,#E0F7FA)) |\n| 7 ((0,0,0,#F3E5F5)) |\n| 2 |\n| branches |\n[/LI]\n[LI]\n| 19 ((0,0,0,#E0F7FA)) |\n| 7 ((0,0,0,#F3E5F5)) |\n| 1 |\n| fruit entier |\n[/LI]\n[LI]\n| 20 ((0,0,0,#E0F7FA)) |\n| 7 ((0,0,0,#F3E5F5)) |\n| 4 |\n| filets |\n[/LI]\n[/TAB]\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#CE93D8)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 ((0,0,0,#F3E5F5)) |\n| Mayonnaise |\n| difficile |\n| 15 |\n| sauce |\n| 7 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#F3E5F5)) |\n| Omelette |\n| facile |\n| 5 |\n| plat |\n| 6 |\n[/LI]\n[LI]\n| 3 ((0,0,0,#F3E5F5)) |\n| Pâte brisée |\n| moyen |\n| 20 |\n| autre |\n| 6 |\n[/LI]\n[LI]\n| 4 ((0,0,0,#F3E5F5)) |\n| Quatre-quarts |\n| facile |\n| 10 |\n| dessert |\n| 4 |\n[/LI]\n[LI]\n| 5 ((0,0,0,#F3E5F5)) |\n| Purée de carottes |\n| moyen |\n| 15 |\n| accompagnement |\n| 2 |\n[/LI]\n[LI]\n| 6 ((0,0,0,#F3E5F5)) |\n| Poulet rôti |\n| facile |\n| 15 |\n| plat |\n| 2 |\n[/LI]\n[LI]\n| 7 ((0,0,0,#F3E5F5)) |\n| Sole meunière |\n| difficile |\n| 20 |\n| plat |\n| 7 |\n[/LI]\n[/TAB]\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idIngredient[18]** ((0,0,0,#80DEEA))  |\n| **[18]nomIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]type[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 ((0,0,0,#E0F7FA)) |\n| oeuf |\n| viande |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E0F7FA)) |\n| moutarde |\n| condiment |\n[/LI]\n[LI]\n| 3 ((0,0,0,#E0F7FA)) |\n| vinaigre |\n| condiment |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E0F7FA)) |\n| huile |\n| condiment |\n[/LI]\n[LI]\n| 5 ((0,0,0,#E0F7FA)) |\n| sel |\n| condiment |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E0F7FA)) |\n| poivre |\n| condiment |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E0F7FA)) |\n| gruyère râpé |\n| crèmerie |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E0F7FA)) |\n| huile d’olive |\n| condiment |\n[/LI]\n[LI]\n| 9 ((0,0,0,#E0F7FA)) |\n| farine |\n| épicerie |\n[/LI]\n[LI]\n| 10 ((0,0,0,#E0F7FA)) |\n| beurre |\n| crèmerie |\n[/LI]\n[LI]\n| 11 ((0,0,0,#E0F7FA)) |\n| sucre |\n| épicerie |\n[/LI]\n[LI]\n| 12 ((0,0,0,#E0F7FA)) |\n| lait |\n| crèmerie |\n[/LI]\n[LI]\n| 13 ((0,0,0,#E0F7FA)) |\n| carotte |\n| légume |\n[/LI]\n[LI]\n| 14 ((0,0,0,#E0F7FA)) |\n| crème fraîche |\n| crémerie |\n[/LI]\n[LI]\n| 15 ((0,0,0,#E0F7FA)) |\n| cumin |\n| condiment |\n[/LI]\n[LI]\n| 16 ((0,0,0,#E0F7FA)) |\n| muscade |\n| condiment |\n[/LI]\n[LI]\n| 17 ((0,0,0,#E0F7FA)) |\n| poulet |\n| viande |\n[/LI]\n[LI]\n| 18 ((0,0,0,#E0F7FA)) |\n| persil |\n| condiment |\n[/LI]\n[LI]\n| 19 ((0,0,0,#E0F7FA)) |\n| citron |\n| fruit |\n[/LI]\n[LI]\n| 20 ((0,0,0,#E0F7FA)) |\n| sole |\n| viande |\n[/LI]\n[/TAB]\n[/EX]\n\nNous pourrions rédiger la commande\u0026nbsp;SQL suivante\u0026nbsp;:\n\n[BUTC]SELECT __r.idRecette__, __r.nomRecette__, __i.nomIngredient__[/BUTC]  \n[BUTC]FROM __utilise__ AS __u__, __recette__ AS __r__, __ingredient__ AS __i__[/BUTC]  \n[BUTC]WHERE __u.idRecette__ = __r.idRecette__ AND __u.idIngredient__ = __i.idIngredient__[/BUTC]  \n[BUTC]ORDER BY __r.idRecette__, __i.nomIngredient__;[/BUTC]\n\nMais le SGBD n'optimisera pas ses traitements pour restituer le résultat. Utilisons à nouveau une jointure avec le mot-clé [BUTC]JOIN[/BUTC]\u0026nbsp;:\n\n[BUTC]SELECT __r.idRecette__, __r.nomRecette__, __i.nomIngredient__ [/BUTC]  \n[BUTC]FROM __utilise__ AS __u__ JOIN __recette__ AS __r__ JOIN __ingredient__ AS __i__ ON (__u.idRecette__ = __r.idRecette__) AND (__u.idIngredient__ = __i.idIngredient__)[/BUTC]  \n[BUTC]ORDER BY __r.idRecette__, __i.nomIngredient__;[/BUTC]\n\nLe résultat de ces deux commandes sera identique\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomIngredient[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| huile |\n[/LI]\n[LI]\n| 1 ((0,0,0,#E1F5FE)) |\n| Mayonnaise ((0,0,0,#E1F5FE)) |\n| moutarde ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| oeuf |\n[/LI]\n[LI]\n| 1 ((0,0,0,#E1F5FE)) |\n| Mayonnaise ((0,0,0,#E1F5FE)) |\n| vinaigre ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 2 |\n| Omelette |\n| gruyère râpé |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| Omelette ((0,0,0,#E1F5FE)) |\n| huile d’olive ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 2 |\n| Omelette |\n| oeuf |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| Omelette ((0,0,0,#E1F5FE)) |\n| poivre ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 2 |\n| Omelette |\n| sel |\n[/LI]\n[LI]\n| 3 ((0,0,0,#E1F5FE)) |\n| Pâte brisée ((0,0,0,#E1F5FE)) |\n| beurre ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| farine |\n[/LI]\n[LI]\n| 3 ((0,0,0,#E1F5FE)) |\n| Pâte brisée ((0,0,0,#E1F5FE)) |\n| lait ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| sel |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| Quatre-quarts ((0,0,0,#E1F5FE)) |\n| beurre ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 4 |\n| Quatre-quarts |\n| farine |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| Quatre-quarts ((0,0,0,#E1F5FE)) |\n| oeuf  ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 4 |\n| Quatre-quarts |\n| sel |\n[/LI]\n[LI]\n| 4 ((0,0,0,#E1F5FE)) |\n| Quatre-quarts ((0,0,0,#E1F5FE)) |\n| sucre ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| carotte |\n[/LI]\n[LI]\n| 5 ((0,0,0,#E1F5FE)) |\n| Purée de carottes ((0,0,0,#E1F5FE)) |\n| crème fraîche ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| cumin |\n[/LI]\n[LI]\n| 5 ((0,0,0,#E1F5FE)) |\n| Purée de carottes ((0,0,0,#E1F5FE)) |\n| muscade ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 6 |\n| Poulet rôti |\n| huile d’olive |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| Poulet rôti ((0,0,0,#E1F5FE)) |\n| poulet ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| beurre |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E1F5FE)) |\n| Sole meunière ((0,0,0,#E1F5FE)) |\n| citron ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| farine |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E1F5FE)) |\n| Sole meunière ((0,0,0,#E1F5FE)) |\n| huile d’olive ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| persil |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E1F5FE)) |\n| Sole meunière ((0,0,0,#E1F5FE)) |\n| poivre ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| sel |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E1F5FE)) |\n| Sole meunière ((0,0,0,#E1F5FE)) |\n| sole ((0,0,0,#E1F5FE)) |\n[/LI]\n[/TAB]\n\n\n\n###La jointure externe/c.\n\nLa jointure externe permet d’effectuer une jointure en incluant les lignes dont la clé étrangère qui fait le lien entre deux tables n’est pas renseignée. Sachant que deux tables sont considérées dans cette jointure, il faut préciser laquelle des deux servira de **référence**.  \nAinsi, toutes les lignes de la table qui servira de référence seront représentées dans la table résultat. L’attribut ou les attributs récupérés via la clé étrangère seront renseignés avec la valeur trouvée dans la seconde table, ou renseignée à «\u0026nbsp;NULL\u0026nbsp;» lorsque la clé étrangère n’est pas renseignée dans la première table.\n\n[RETENIR]\nIl faudra employer pour cela la clause [BUTC]OUTER JOIN[/BUTC].\n[/RETENIR]\n\n[EX]\nOn souhaite avoir la liste des adhérent·e·s constituée de leur numéro d’identification, leur nom, leur prénom, l’identifiant et le nom de chaque recette rédigée par un adhérent donné.\n[/EX]\n\nOn passera la commande suivante :\n\n[BUTC]SELECT __a.idAdherent__, __a.nomAdherent__, __a.prenom__, __r.idRecette__, __r.nomRecette__[/BUTC]  \n[BUTC]FROM __adherent__ AS __a__ JOIN __recette__ AS __r__ ON __a.idAdherent__ = __r.idAdherent__[/BUTC]  \n[BUTC]ORDER BY __a.idAdherent__, __r.nomRecette__; [/BUTC]\n\n[RAP]\nPour rappel, les tables concernées sont constituées comme suit\u0026nbsp;:\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#8BC34A)) |\n[/LI]\n[LI]\n| 1 |\n| Mayonnaise |\n| difficile |\n| 15 |\n| sauce |\n| 7 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 2 |\n| Omelette |\n| facile |\n| 5 |\n| plat |\n| 6 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 3 |\n| Pâte brisée |\n| moyen |\n| 20 |\n| autre |\n| 6 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 4 |\n| Quatre-quarts |\n| facile |\n| 10 |\n| dessert |\n| 4 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 5 |\n| Purée de carottes |\n| moyen |\n| 15 |\n| accompagnement |\n| 2 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 6 |\n| Poulet rôti |\n| facile |\n| 15 |\n| plat |\n| 2 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 7 |\n| Sole meunière |\n| difficile |\n| 20 |\n| plat |\n| 7 ((0,0,0,#F1F8E9)) |\n[/LI]\n[/TAB]\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#8BC34A)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]mail[18]** ((0,0,0,#9AE)) |\n| **[18]numero[18]** ((0,0,0,#9AE)) |\n| **[18]rue[18]** ((0,0,0,#9AE)) |\n| **[18]idVille[18]** ((0,0,0,#9AE)) |\n| **[18]passe[18]** ((0,0,0,#9AE)) |\n| **[18]telephone[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 ((0,0,0,#F1F8E9)) |\n| DURAND |\n| Jacques |\n| j.durand@orange.fr |\n| 16b |\n| rue brune |\n| 1 |\n| motdepass1 |\n| 0601020304 |\n[/LI]\n[LI]\n| 2 ((0,0,0,#F1F8E9)) |\n| DUVAL |\n| Paul |\n| paul.d@sfr.fr |\n| 135 |\n| avenue rouge |\n| 4 |\n| motdepass2 |\n| 0704030201 |\n[/LI]\n[LI]\n| 3 ((0,0,0,#F1F8E9)) |\n| DELORS |\n| Sophie |\n| sodelors@outlook.com |\n| 22a |\n| bd vert |\n| 3 |\n| motdepass3 |\n| 0606060202 |\n[/LI]\n[LI]\n| 4 ((0,0,0,#F1F8E9)) |\n| VERGER |\n| Jehan |\n| jverger@aol.com |\n| 4ter |\n| impasse jaune |\n| 5 |\n| motdepass4 |\n| 0601020102 |\n[/LI]\n[LI]\n| 5 ((0,0,0,#F1F8E9)) |\n| MONVILLE |\n| Fleur |\n| fleur1212@free.fr |\n| 9 |\n| sente aux loups |\n| 2 |\n| motdepass5 |\n| 0707020201 |\n[/LI]\n[LI]\n| 6 ((0,0,0,#F1F8E9)) |\n| BRIARD |\n| Paul |\n| paul.briard27@hotmail.fr |\n| 191 |\n| rue violette |\n| 4 |\n| motdepass6 |\n| 0612345678 |\n[/LI]\n[LI]\n| 7 ((0,0,0,#F1F8E9)) |\n| LÉGER |\n| Marguerite |\n| mag0506@perso.com |\n| 17 |\n| place noire |\n| 3 |\n| motdepass7 |\n| 0687654321 |\n[/LI]\n[LI]\n| 8 ((0,0,0,#F1F8E9)) |\n| FLAMAND |\n| Lise |\n| flise@gmail.com |\n| 329 |\n| route bleue |\n| 2 |\n| motdepass8 |\n| 0632323232 |\n[/LI]\n[/TAB]\n[/RAP]\n\nOn obtient\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 2 |\n| Duval |\n| Paul |\n| 6 |\n| Poulet rôti |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| Duval ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| 5 ((0,0,0,#E1F5FE)) |\n| Purée de carottes ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 4 |\n| Verger |\n| Jehan |\n| 4 |\n| Quatre-quarts |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| Briard ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| 2 ((0,0,0,#E1F5FE)) |\n| Omelette ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 6 |\n| Briard |\n| Paul |\n| 3 |\n| Pâte brisée |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E1F5FE)) |\n| Leger ((0,0,0,#E1F5FE)) |\n| Marguerite ((0,0,0,#E1F5FE)) |\n| 1 ((0,0,0,#E1F5FE)) |\n| Mayonnaise ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Leger |\n| Marguerite |\n| 7 |\n| Sole meunière |\n[/LI]\n[/TAB]\n\n\nMais nous souhaiterions que cette liste d’adhérent·e·s n’exclue pas ceux qui n’ont rédigé aucune recette. Pour cela, il faut faire appel à une **jointure externe**, en prenant __adherent__ comme table de référence.  \nLa commande SQL qui correspond se formalise ainsi\u0026nbsp;:\n\n[BUTC]SELECT __a.idAdherent__, __a.nomAdherent__, __a.prenom__, __r.idRecette__, __r.nomRecette__[/BUTC]  \n[BUTC]FROM __adherent__ AS __a__ LEFT OUTER JOIN __recette__ AS __r__ ON __a.idAdherent__ = __r.idAdherent__[/BUTC]  \n[BUTC]ORDER BY __a.idAdherent__, __r.nomRecette__;[/BUTC]\n\n[BUTC]LEFT[/BUTC] indique que c’est la table qui apparaît à gauche dans la clause [BUTC]FROM[/BUTC] qui sert de référence.  \nCe qui veut dire que la commande qui suit est identique à la précédente\u0026nbsp;:\n\n[BUTC]SELECT __a.idAdherent__, __a.nomAdherent__, __a.prenom__, __r.idRecette__, __r.nomRecette__[/BUTC]  \n[BUTC]FROM __adherent__ AS __a__ RIGHT OUTER JOIN __recette__ AS __r__ ON __a.idAdherent__ = __r.idAdherent__[/BUTC]  \n[BUTC]ORDER BY __a.idAdherent__, __r.nomRecette__;[/BUTC]\n\nEt le résultat obtenu est le suivant\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Durand |\n| Jacques |\n| NULL |\n| NULL |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| Duval ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| 6 ((0,0,0,#E1F5FE)) |\n| Poulet rôti ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 2 |\n| Duval |\n| Paul |\n| 5 |\n| Purée de carottes |\n[/LI]\n[LI]\n| 3 ((0,0,0,#E1F5FE)) |\n| Delors ((0,0,0,#E1F5FE)) |\n| Sophie ((0,0,0,#E1F5FE)) |\n| NULL ((0,0,0,#E1F5FE)) |\n| NULL ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 4 |\n| Verger |\n| Jehan |\n| 4 |\n| Quatre-quarts |\n[/LI]\n[LI]\n| 5 ((0,0,0,#E1F5FE)) |\n| Monville ((0,0,0,#E1F5FE)) |\n| Fleur ((0,0,0,#E1F5FE)) |\n| NULL ((0,0,0,#E1F5FE)) |\n| NULL ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 6 |\n| Briard |\n| Paul |\n| 2 |\n| Omelette |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| Briard ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| 3 ((0,0,0,#E1F5FE)) |\n| Pâte brisée ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Leger |\n| Marguerite |\n| 1 |\n| Mayonnaise |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E1F5FE)) |\n| Leger ((0,0,0,#E1F5FE)) |\n| Marguerite ((0,0,0,#E1F5FE)) |\n| 7 ((0,0,0,#E1F5FE)) |\n| Sole meunière ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 8 |\n| Flamand |\n| Lise |\n| NULL |\n| NULL |\n[/LI]\n[/TAB]\n\nPrenons maintenant la table recette en référence en inscrivant la commande\u0026nbsp;:\n\n[BUTC]SELECT __a.idAdherent__, __a.nomAdherent__, __a.prenom__, __r.idRecette__, __r.nomRecette__[/BUTC]  \n[BUTC]FROM __adherent__ AS __a__ RIGHT OUTER JOIN __recette__ AS __r__ ON __a.idAdherent__ = __r.idAdherent__[/BUTC]  \n[BUTC]ORDER BY __a.idAdherent__, __r.nomRecette__;[/BUTC]\n\nOn obtient alors\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 2 |\n| Duval |\n| Paul |\n| 6 |\n| Poulet rôti |\n[/LI]\n[LI]\n| 2 ((0,0,0,#E1F5FE)) |\n| Duval ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| 5 ((0,0,0,#E1F5FE)) |\n| Purée de carottes ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 4 |\n| Verger |\n| Jehan |\n| 4 |\n| Quatre-quarts |\n[/LI]\n[LI]\n| 6 ((0,0,0,#E1F5FE)) |\n| Briard ((0,0,0,#E1F5FE)) |\n| Paul ((0,0,0,#E1F5FE)) |\n| 2 ((0,0,0,#E1F5FE)) |\n| Omelette ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 6 |\n| Briard |\n| Paul |\n| 3 |\n| Pâte brisée |\n[/LI]\n[LI]\n| 7 ((0,0,0,#E1F5FE)) |\n| Leger ((0,0,0,#E1F5FE)) |\n| Marguerite ((0,0,0,#E1F5FE)) |\n| 1 ((0,0,0,#E1F5FE)) |\n| Mayonnaise ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 7 |\n| Leger |\n| Marguerite |\n| 7 |\n| Sole meunière |\n[/LI]\n[/TAB]\n\nComme voulu, toutes les lignes de la table recette sont représentées dans la table résultat. Notons que l’on n’observe aucune colonne nulle («\u0026nbsp;NULL\u0026nbsp;») parmi les lignes de la table __résultat__. Cette particularité est due au fait que toute recette est forcément rédigée par un·e adhérent·e. L’inverse n’étant pas vrai, on l’a vu précédemment : tout adhérent n’a pas forcément rédigé une recette.\n\nPour terminer, on peut tenter de combiner différentes clauses. Si nous souhaitons par exemple connaître tous les adhérent·e·s qui n’ont pas proposé de recette, il suffira de passer la commande\u0026nbsp;SQL suivante\u0026nbsp;:\n\n[BUTC]SELECT __a.idAdherent__, __a.nomAdherent__, __a.prenom__, __r.idRecette__, __r.nomRecette__[/BUTC]  \n[BUTC]FROM __recette__ AS __r__ RIGHT OUTER JOIN __adherent__ AS __a__ ON __a.idAdherent__ = __r.idAdherent__[/BUTC]  \n[BUTC]WHERE __r.idRecette__ IS NULL;[/BUTC]\n\nCe qui donnera le résultat escompté, à savoir\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Durand |\n| Jacques |\n| NULL |\n| NULL |\n[/LI]\n[LI]\n| 3 ((0,0,0,#E1F5FE)) |\n| Delors ((0,0,0,#E1F5FE)) |\n| Sophie ((0,0,0,#E1F5FE)) |\n| NULL ((0,0,0,#E1F5FE)) |\n| NULL ((0,0,0,#E1F5FE)) |\n[/LI]\n[LI]\n| 5 |\n| Monville |\n| Fleur |\n| NULL |\n| NULL |\n[/LI]\n[LI]\n| 8 ((0,0,0,#E1F5FE)) |\n| Flamand ((0,0,0,#E1F5FE)) |\n| Lise ((0,0,0,#E1F5FE)) |\n| NULL ((0,0,0,#E1F5FE)) |\n| NULL ((0,0,0,#E1F5FE)) |\n[/LI]\n[/TAB]\n\n[C]\nConclusion :\n\nNous achevons ainsi ce cours donnant des notions complémentaires sur le langage SQL. Vous savez dorénavant rédiger des requêtes élaborées, faisant appel à des mécanismes de calcul, de regroupement, de transformation, de tri ou encore de jointure.\n[/C]","siblings":[{"resourceId":"5e74d7d309e0a80100fe0cc2","type":"Cours","sort":null},{"resourceId":"5e74838928e637010043ff1d","type":"Fiche de révision","sort":null},{"resourceId":"5e908aad09e0a80100fe1b96","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d5009e0a80100fdbbdd","name":"Tri de données avec le langage SQL"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d5009e0a80100fdbbdd","label":"Cours : Tri de données avec le langage SQL","link":"https://www.schoolmouv.fr/cours/tri-de-donnees-avec-le-langage-sql/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"tri-de-donnees-avec-le-langage-sql","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/tri-de-donnees-avec-le-langage-sql/fiche-de-cours","title":"Tri de données avec le langage SQL : cours de Tle","metaDescription":"SchoolMouv ® te propose ce cours sur Tri de données avec le langage SQL (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"tri-de-donnees-avec-le-langage-sql","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

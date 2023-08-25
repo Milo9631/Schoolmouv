@@ -1,0 +1,235 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Algorithme récursif : Fiche de révision Tle et sciences info</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Algorithme récursif : Fiche de révision Tle et sciences info">
+<meta name="description" content="Fiche de révision SchoolMouv ® pour apprendre facilement Algorithme récursif (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/algorithme-recursif/fiche-de-revision">
+<link rel="stylesheet" type="text/css" href="D:\Schoolmouv\Site\fiche_revision_style.css">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/algorithme-recursif/fiche-de-cours","name":"Algorithme récursif"}},{"@type":"ListItem","position":5,"item":{"@id":"","name":"Fiche de révision : Algorithme récursif"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb-with-ellipsis__23a_n breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><h1>Fiche de révision : Algorithme récursif</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Algorithme récursif</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<h2 range="1" markdown="1"><div markdown="1"><p>Principe général</p></div></h2>
+<ul>
+
+<li>Les fonctions peuvent comporter un ou plusieurs appels à d’autres fonctions.</li>
+
+<li>La récursivité est la capacité d’une fonction à s’appeler elle-même.</li>
+
+<li>Si nous modifions notre fonction <span class="calculator_button" markdown="1">accueil()</span> en ajoutant un appel à elle-même dans sa définition, après l’appel à <span class="calculator_button" markdown="1">print()</span> : l’ordinateur va produire un grand nombre d’affichages (quelques milliers de ligne) avant d’afficher une erreur.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Abstraction faite de l’erreur, notre fonction a bien réussi à s’appeler elle-même, produisant un comportement assez analogue à celui d’une boucle infinie.</div>
+</li>
+
+<li>Si on reproduit la même expérience en conférant un paramètre à la fonction, là encore une erreur s’affiche après quelques milliers de lignes, mais on constate que l’argument passé en paramètre a bien été pris en compte.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Notre fonction est récursive : elle s’appelle elle-même, elle s’auto-référence.</div>
+</li>
+
+<li>Une fonction récursive se compose de deux parties :</li>
+
+<li class="liste2">
+<div class="list_text">une partie récursive qui comporte un appel récursif (ce qui permet à la fonction de s’auto-référencer) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">une partie terminale qui définit les conditions de terminaison de la fonction (ce qui permet de stopper les appels récursifs quand une condition est atteinte).</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si la partie terminale est manquante, la fonction s’appelle un nombre infini de fois.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si la partie récursive est manquante, la fonction n’est pas récursive.</div>
+</li>
+
+<li>On veut définir de manière récursive une fonction qui raccourcit une chaîne de caractères pour n’en conserver que la première lettre :</li>
+
+<li class="liste2">
+<div class="list_text">la partie terminale vérifiera si la condition voulue est atteinte : une chaîne de caractères qui en comporte un seul ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la partie récursive effectuera un appel à la fonction avec en paramètre une chaîne de caractères tronquée de son caractère final, et en retournera le résultat.</div>
+</li>
+
+<li>Si nous appelons la fonction avec une chaîne vide avec <span class="calculator_button" markdown="1">print(raccourcit(''))</span>, son exécution durera plusieurs secondes et finira par générer une erreur de type <span class="calculator_button" markdown="1">RecursionError</span> car comme la troncature du dernier élément d’une chaîne vide est une chaîne vide, l’appel récursif n’évoluera pas et s’effectuera en permanence sur une chaîne vide.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans ces conditions la fonction n’atteindra jamais la condition terminale où la longueur de chaîne est de longueur $1$.</div>
+</li>
+
+<li>Une légère modification de la partie terminale de notre fonction permet de pallier ce problème : au lieu d’une égalité stricte, nous retournons toute chaîne de longueur inférieure ou égale à $1$ caractère.</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>Fonctionnement récursif</p></div></h2>
+<ul>
+
+<li>Dans cette partie nous nous intéressons à la manière dont l’interpréteur Python gère la récursivité, on peut l’illustrer en s’appuyant sur l’exemple du calcul de la factorielle  $5!$.</li>
+
+<li>$5! = 5\times{4}\times{3}\times{2}\times{1}$<br>
+$5! = 5\times{4!}$<br>
+or $4! = 4\times{3!}$<br>
+de la même manière $3! = 3\times{2!}$ et $2! = 2\times{1!}$<br>
+et par définition $1!= 1$</li>
+
+<li>Nous disposons des éléments requis pour implémenter une version récursive du calcul de la factorielle d’un nombre :</li>
+
+<li class="liste2">
+<div class="list_text">la partie terminale est $1! = 1$ ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la partie récursive s’applique ainsi à tout $n &gt; 1$ :<br>
+$n! = n\times{(n - 1)!}$</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L’implémentation en Python en est une transcription assez littérale.</div>
+</li>
+
+<li>Notre fonction produit bien le résultat attendu :<br>
+<span class="calculator_button" markdown="1">print(factorielle_recursive(5))</span><br>
+<span class="calculator_button" markdown="1"># affiche 120</span>
+</li>
+
+<li>On pourra modifier notre condition terminale :
+<span class="calculator_button" markdown="1">if nombre == 1:</span> en <span class="calculator_button" markdown="1">if nombre &lt;= 1:</span>.</li>
+
+<li>Cela nous permet de calculer $0!$ (égal à $1$), mais aussi d’empêcher des appels récursifs pour des nombres négatifs qui conduiraient à une <span class="calculator_button" markdown="1">RecursionError</span>.</li>
+
+<li>Afin de pouvoir suivre le fonctionnement de notre programme récursif, nous insérerons des affichages à différents endroits.</li>
+
+<li>On observera alors des appels en cascade : chaque calcul de la factorielle d’un nombre donné reste suspendu en attente du résultat de celle de valeur immédiatement inférieure.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le mécanisme qui permet de suivre ces appels successifs et les retours attendus s’appelle une pile d’exécution.</div>
+</li>
+
+<li>La pile d’exécution (LIFO) empile les appels de fonction successifs correspondant aux cas récursifs, permettant à l’interpréteur Python de garder la trace des appels individuels.</li>
+
+<li>Une fois le cas terminal atteint, la pile est progressivement dépilée et chaque appel reçoit en retour le résultat qu’il attendait.</li>
+
+<li>Ces appels étant potentiellement gourmands en mémoire, les langages qui permettent la récursivité de fonctions ou de programmes limitent le nombre d’appels récursifs.</li>
+
+<li>En Python le débordement de pile génère l’erreur spécifique <span class="calculator_button" markdown="1">RecursionError</span>.</li>
+</ul>
+<h2 range="3" markdown="1"><div markdown="1"><p>Implémentations récursives</p></div></h2>
+<ul>
+
+<li>Il existe différents types d’implémentations récursives. Les exemples que nous avons présentés jusqu’à présent étaient des cas de récursivité simple, mais la récursivité peut prendre d’autres formes.</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">Récursivité terminale</div>
+</li>
+
+
+<li>Une fonction $f$ récursive est dite « terminale » si la valeur qu’elle retourne est directement la valeur obtenue par un appel récursif (sans aucune opération sur cette valeur).</li>
+
+
+<li>Certains langages détectent et optimisent les implémentations de récursivité terminale.</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">Récursivité mutuelle</div>
+</li>
+
+
+<li>Une récursivité est dite « mutuelle » lorsqu’elle est rendue possible par deux ou plusieurs fonctions effectuant des appels mutuels.</li>
+
+
+<li>Deux fonctions retirent un caractère respectivement avant et après la chaîne de caractères : le cas terminal sera le caractère restant.</li>
+
+
+<li>Ces deux fonctions sont mutuellement récursives : la récursivité est créée par les appels croisés d’une fonction à l’autre.</li>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text">Récursivité multiple</div>
+</li>
+
+
+<li>Une récursivité est dite « multiple » lorsqu’elle comporte plusieurs appels récursifs à eux-mêmes.</li>
+
+
+<li>Le calcul d’un terme de la <a target="_blank" href="/personnages/fibonacci/scientifique">suite de Fibonacci</a> est un exemple classique de récursivité multiple.</li>
+
+
+<li>Chaque exécution de la partie récursive entraîne deux appels récursifs, caractérisant une récursivité multiple.</li>
+</ul></div>
+<ul>
+
+<li>L’implémentation récursive n’est pas une obligation mais un choix : tout algorithme itératif peut être écrit en récursif et vice-versa.</li>
+
+<li>Ce choix dépend de plusieurs facteurs :</li>
+
+<li class="liste2">
+<div class="list_text">la facilité d’implémentation ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les contraintes de mémoire et de performance ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la nature des données sur lesquelles les traitements sont effectués ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l’aisance du·de la développeur·se avec l’une ou l’autre approche ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les pratiques logicielles en vigueur dans une organisation ou un secteur d’activité.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La récursivité étant possible dans tous les langages de programmation généraliste et implémentée dans un certain nombre d’algorithmes, tout·e développeur·se doit connaître et maîtriser les bases de la récursivité.</div>
+</li>
+</ul>
+</div></div>
+<div id="poool-qla3w-66qs4" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5ecd1bc128e637010044527a","type":"Fiche de révision","title":"Algorithme récursif","content":"##Principe général/1\n* Les fonctions peuvent comporter un ou plusieurs appels à d’autres fonctions.\n* La récursivité est la capacité d’une fonction à s’appeler elle-même. \n* Si nous modifions notre fonction [BUTC]accueil()[/BUTC] en ajoutant un appel à elle-même dans sa définition, après l’appel à [BUTC]print()[/BUTC]\u0026nbsp;: l’ordinateur va produire un grand nombre d’affichages (quelques milliers de ligne) avant d’afficher une erreur.\n* Abstraction faite de l’erreur, notre fonction a bien réussi à s’appeler elle-même, produisant un comportement assez analogue à celui d’une boucle infinie.((fleche))\n* Si on reproduit la même expérience en conférant un paramètre à la fonction, là encore une erreur s’affiche après quelques milliers de lignes, mais on constate que l’argument passé en paramètre a bien été pris en compte.\n* Notre fonction est récursive\u0026nbsp;: elle s’appelle elle-même, elle s’auto-référence.((fleche))\n* Une fonction récursive se compose de deux parties\u0026nbsp;: \n* une partie récursive qui comporte un appel récursif (ce qui permet à la fonction de s’auto-référencer)\u0026nbsp;;((liste2))\n* une partie terminale qui définit les conditions de terminaison de la fonction (ce qui permet de stopper les appels récursifs quand une condition est atteinte).((liste2))\n* Si la partie terminale est manquante, la fonction s’appelle un nombre infini de fois.((fleche))\n* Si la partie récursive est manquante, la fonction n’est pas récursive.((fleche))\n* On veut définir de manière récursive une fonction qui raccourcit une chaîne de caractères pour n’en conserver que la première lettre\u0026nbsp;:\n* la partie terminale vérifiera si la condition voulue est atteinte\u0026nbsp;: une chaîne de caractères qui en comporte un seul\u0026nbsp;;((liste2))\n* la partie récursive effectuera un appel à la fonction avec en paramètre une chaîne de caractères tronquée de son caractère final, et en retournera le résultat.((liste2))\n* Si nous appelons la fonction avec une chaîne vide avec [BUTC]print(raccourcit(''))[/BUTC], son exécution durera plusieurs secondes et finira par générer une erreur de type [BUTC]RecursionError[/BUTC] car comme la troncature du dernier élément d’une chaîne vide est une chaîne vide, l’appel récursif n’évoluera pas et s’effectuera en permanence sur une chaîne vide.\n* Dans ces conditions la fonction n’atteindra jamais la condition terminale où la longueur de chaîne est de longueur $1$.((fleche))\n* Une légère modification de la partie terminale de notre fonction permet de pallier ce problème\u0026nbsp;: au lieu d’une égalité stricte, nous retournons toute chaîne de longueur inférieure ou égale à $1$ caractère.\n\n##Fonctionnement récursif/2\n\n* Dans cette partie nous nous intéressons à la manière dont l’interpréteur Python gère la récursivité, on peut l’illustrer en s’appuyant sur l’exemple du calcul de la factorielle  $5!$.\n* $5! = 5\\times{4}\\times{3}\\times{2}\\times{1}$  \n$5! = 5\\times{4!}$  \nor $4! = 4\\times{3!}$  \nde la même manière $3! = 3\\times{2!}$ et $2! = 2\\times{1!}$  \net par définition $1!= 1$\n* Nous disposons des éléments requis pour implémenter une version récursive du calcul de la factorielle d’un nombre\u0026nbsp;:\n* la partie terminale est $1! = 1$ ;((liste2))\n* la partie récursive s’applique ainsi à tout $n \u003e 1$ :  \n$n! = n\\times{(n - 1)!}$((liste2))\n* L’implémentation en Python en est une transcription assez littérale.((fleche))\n* Notre fonction produit bien le résultat attendu\u0026nbsp;:  \n[BUTC]print(factorielle_recursive(5))[/BUTC]  \n[BUTC]# affiche 120[/BUTC]\n* On pourra modifier notre condition terminale :\n[BUTC]if nombre == 1:[/BUTC] en [BUTC]if nombre \u003c= 1:[/BUTC].\n* Cela nous permet de calculer $0!$ (égal à $1$), mais aussi d’empêcher des appels récursifs pour des nombres négatifs qui conduiraient à une [BUTC]RecursionError[/BUTC].\n* Afin de pouvoir suivre le fonctionnement de notre programme récursif, nous insérerons des affichages à différents endroits.\n* On observera alors des appels en cascade\u0026nbsp;: chaque calcul de la factorielle d’un nombre donné reste suspendu en attente du résultat de celle de valeur immédiatement inférieure.\n* Le mécanisme qui permet de suivre ces appels successifs et les retours attendus s’appelle une pile d’exécution.((fleche))\n* La pile d’exécution (LIFO) empile les appels de fonction successifs correspondant aux cas récursifs, permettant à l’interpréteur Python de garder la trace des appels individuels.\n* Une fois le cas terminal atteint, la pile est progressivement dépilée et chaque appel reçoit en retour le résultat qu’il attendait.\n* Ces appels étant potentiellement gourmands en mémoire, les langages qui permettent la récursivité de fonctions ou de programmes limitent le nombre d’appels récursifs.\n* En Python le débordement de pile génère l’erreur spécifique [BUTC]RecursionError[/BUTC].\n\n##Implémentations récursives/3\n\n* Il existe différents types d’implémentations récursives. Les exemples que nous avons présentés jusqu’à présent étaient des cas de récursivité simple, mais la récursivité peut prendre d’autres formes.\n\u003c\u003c((90,0,auto,0,auto))* Récursivité terminale((bulle,1))\n* Une fonction $f$ récursive est dite «\u0026nbsp;terminale\u0026nbsp;» si la valeur qu’elle retourne est directement la valeur obtenue par un appel récursif (sans aucune opération sur cette valeur).\n* Certains langages détectent et optimisent les implémentations de récursivité terminale.\n* Récursivité mutuelle((bulle,2))\n* Une récursivité est dite «\u0026nbsp;mutuelle\u0026nbsp;» lorsqu’elle est rendue possible par deux ou plusieurs fonctions effectuant des appels mutuels.\n* Deux fonctions retirent un caractère respectivement avant et après la chaîne de caractères\u0026nbsp;: le cas terminal sera le caractère restant.\n* Ces deux fonctions sont mutuellement récursives\u0026nbsp;: la récursivité est créée par les appels croisés d’une fonction à l’autre.\n* Récursivité multiple((bulle,3))\n* Une récursivité est dite «\u0026nbsp;multiple\u0026nbsp;» lorsqu’elle comporte plusieurs appels récursifs à eux-mêmes.\n* Le calcul d’un terme de la \u003ca target=\"_blank\" href=\"/personnages/fibonacci/scientifique\"\u003esuite de Fibonacci\u003c/a\u003e est un exemple classique de récursivité multiple.\n* Chaque exécution de la partie récursive entraîne deux appels récursifs, caractérisant une récursivité multiple.\u003e\u003e\n* L’implémentation récursive n’est pas une obligation mais un choix\u0026nbsp;: tout algorithme itératif peut être écrit en récursif et vice-versa.\n* Ce choix dépend de plusieurs facteurs\u0026nbsp;:\n* la facilité d’implémentation\u0026nbsp;;((liste2))\n* les contraintes de mémoire et de performance\u0026nbsp;;((liste2))\n* la nature des données sur lesquelles les traitements sont effectués\u0026nbsp;;((liste2))\n* l’aisance du·de la développeur·se avec l’une ou l’autre approche\u0026nbsp;;((liste2))\n* les pratiques logicielles en vigueur dans une organisation ou un secteur d’activité.((liste2))\n* La récursivité étant possible dans tous les langages de programmation généraliste et implémentée dans un certain nombre d’algorithmes, tout·e développeur·se doit connaître et maîtriser les bases de la récursivité.((fleche))\n","siblings":[{"resourceId":"635643858bbb300100fa28ef","type":"Cours","sort":null},{"resourceId":"5ecd1bc128e637010044527a","type":"Fiche de révision","sort":null},{"resourceId":"5ee2295115d7610100837cd1","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7e1c28e637010043bf86","name":"Algorithme récursif"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7e1c28e637010043bf86","label":"Algorithme récursif","link":"https://www.schoolmouv.fr/cours/algorithme-recursif/fiche-de-cours"},{"key":"fiche-de-revision","label":"Fiche de révision : Algorithme récursif","link":""}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"algorithme-recursif","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/algorithme-recursif/fiche-de-revision","title":"Algorithme récursif : Fiche de révision Tle et sciences info","metaDescription":"Fiche de révision SchoolMouv ® pour apprendre facilement Algorithme récursif (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"algorithme-recursif","resourceType":"fiche-de-revision"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

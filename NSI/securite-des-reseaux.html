@@ -1,0 +1,675 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sécurité des réseaux : cours de Tle - Numérique | SchoolMouv</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Sécurité des réseaux : cours de Tle - Numérique | SchoolMouv">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Sécurité des réseaux (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/securite-des-reseaux/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/securite-des-reseaux/fiche-de-cours","name":"Cours : Sécurité des réseaux"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Sécurité des réseaux</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Sécurité des réseaux</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Notre usage d’Internet repose sur le bon fonctionnement de ce réseau décentralisé, et nécessite de sécuriser certaines informations qui y circulent. Nous allons nous intéresser dans une première partie à la manière dont nos données sont acheminées sur les réseaux. Nous aborderons dans une deuxième partie les grands principes de chiffrement et, dans une troisième, leur application à la sécurisation d’une communication web.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Routage</p></div></h2>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Routeur :</b></p>
+<p>Les routeurs sont chargés d’acheminer les paquets (paquet = entité de transmission) entre les réseaux. Ils s’appuient sur des tables de routage qui répertorient les différentes routes possibles dans leur voisinage réseau.</p>
+</div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">Ces tables de routage peuvent être composées <b>manuellement</b> : c’est le <b>routage statique</b>. Il implique d’effectuer des modifications à chaque évolution ou incident sur le réseau. Cela nécessite une intervention humaine sur chaque routeur concerné pour mettre à jour la table de routage correspondante.</div>
+</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">Des protocoles ont été définis pour permettre de réaliser ces mises à jour de manière <b>automatique</b> : c’est le <b>routage dynamique</b>. Il permet aux routeurs de communiquer entre eux afin d’actualiser leurs tables de routage chaque fois que nécessaire, en cas d’incident, d’indisponibilité ou de modification du réseau, pour continuer à sélectionner les meilleures routes possibles parmi celles restant accessibles.</div>
+</li>
+</ul>
+<p>Ce calcul des routes consiste à déterminer <b>le plus court chemin</b> que peut emprunter un paquet, il s’agit donc d’une mesure de distance.<br>
+La démarche algorithmique est celle de la recherche du <a target="_blank" href="/cours/graphes-abstraits/fiche-de-cours">plus court chemin sur un graphe</a>, le critère de <b>pondération</b> pouvant varier d’un algorithme à l’autre. Cette pondération consiste à donner plus ou moins de poids à une arête du graphe selon le critère choisi, par exemple le débit.</p>
+<p>Dans le cadre de ce cours nous nous intéressons aux seuls protocoles de <b>routage interne</b> (IGP pour <em>Interior Gateway Protocol</em>), applicables au sein de systèmes autonomes, correspondant en général à une même organisation. Nous présenterons donc, et comparerons, les principales caractéristiques des protocoles de routage RIP et OSPF.<br>
+Le routage externe, que nous n'abordons pas ici, est quant à lui utilisé entre des systèmes autonomes.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Protocole RIP</p></div></h3>
+<p><b>RIP</b> signifie <em>Routing Information Protocol</em>, soit « protocole d’information de routage ». Il fait partie des plus anciens protocoles de routage. </p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>C’est un protocole dit à <b>vecteur de distance</b>. Il retient les routes minimisant le nombre de routeurs qu’un paquet IP doit traverser pour atteindre sa destination.</p></div>
+</div>
+<p>Le protocole RIP met en œuvre l’algorithme de Bellman-Ford. Sa métrique est le <b>nombre de sauts à effectuer entre la source et la destination</b>, avec un maximum fixé à quinze sauts.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Au-delà de quinze sauts, la destination est considérée comme inaccessible.</p></div>
+</div>
+<p>Tous les routeurs sont impliqués, sans spécialisation ni hiérarchisation. La propagation des meilleures routes s’effectue par le biais de <b>communications régulières entre les routeurs</b>, cette communication périodique restant indépendante d’éventuelles modifications sur le réseau.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Protocole OSPF</p></div></h3>
+<p><b>OSPF</b> signifie <em>Open Shortest Path First Protocol</em>, soit « protocole ouvert du plus court chemin ».</p>
+<p>Initialement développé dans les années 1980 sous forme propriétaire par Digital Equipment Corporation, il est ensuite devenu un standard ouvert à partir de 1989.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>OSPF est un protocole à <b>état de liens</b>.</p></div>
+</div>
+<p>Il met en œuvre l’algorithme du plus court chemin de Dijkstra. Sa métrique est le <b>coût des liens</b>. Ce coût des liens est basé sur le débit disponible entre les routeurs pour favoriser les routes disposant d’une bande passante plus importante.</p>
+<p>C’est un routage avec une composante hiérarchique permettant le découpage par zones, dans lequel certains routeurs sont spécialisés. Les routeurs échangent avec leurs voisins des informations sur la topologie du réseau.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La communication n’est pas systématique, elle a lieu uniquement lorsqu’un changement survient, et porte uniquement sur la modification survenue.</p></div>
+</div>
+<h3 range="c." markdown="1"><div markdown="1"><p>Comparaison des protocoles</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La principale différence entre les deux protocoles porte sur la <b>métrique</b>. Le coût d’une route est évalué très différemment d’un protocole à l’autre :</p>
+<ul>
+
+
+
+<li>RIP cherche à <b>minimiser le nombre de sauts</b>.</li>
+
+
+
+<li>OSPF prend en compte la <b>bande passante entre les routeurs</b>.</li>
+</ul>
+</div>
+</div>
+<p>Illustrons cette différence avec une portion de réseau comportant trois routeurs $A$, $B$, et $C$ interconnectés.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c2-img01.png" alt="interconnexion de trois routeurs"> </p></div></div>
+<p>Dans cette configuration, il existe deux routes possibles pour aller de $A$ à $B$ :</p>
+<ul>
+
+<li>la route $A\rightarrow B$ (route directe) ;</li>
+
+<li>la route $A\rightarrow C\rightarrow B$ (route indirecte).</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">Calculons le coût des routes selon RIP, dont la métrique est le nombre de sauts.</div>
+</li>
+</ul></div>
+<div markdown="1" class="tab-c texte-centre"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#80DEEA; ">
+<b>Route</b> </td>
+<td style="background:#80DEEA; ">
+<b>Coût</b> </td>
+</tr>
+<tr>
+<td>route $A\rightarrow B$</td>
+<td>$1$ saut</td>
+</tr>
+<tr>
+<td>route $A\rightarrow C\rightarrow B$</td>
+<td>$1$ saut + $1$ saut ($2$ sauts)</td>
+</tr>
+</table></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le protocole RIP minimise le nombre de sauts et considère de ce fait la route directe de $A$ à $B$ comme étant la meilleure.</div>
+</li>
+</ul></div>
+<p>Toutefois le protocole RIP ne prend pas en compte d’éventuelles différences de bande passante au niveau des liaisons entre les trois routeurs ; alors que le protocole OSPF détermine justement le coût des liens sur la base des débits.</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">Considérons que les routeurs $A$ et $B$ soient reliés entre eux en Ethernet ($10\,\text{Mbps}$), et que les autres liaisons soient en FastEthernet ($100\,\text{Mbps}$). OSPF calcule le coût des liens en divisant un débit maximum théorique de $100\,\text{Mbps}$ (par défaut, ajustable si nécessaire pour des débits supérieurs) par la bande passante du lien pour chaque segment.</div>
+</li>
+</ul>
+<p>Avec cette base de calcul :</p>
+<ul>
+
+<li>les segments en Ethernet ont un coût de $10$ $\biggl(\dfrac{100\,\text{Mbps}}{10\,\text{Mbps}}\biggr)$.</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+
+<li>les segments en FastEthernet ont un coût de $1$ $\biggl(\dfrac{100\,\text{Mbps}}{100\,\text{Mbps}}\biggr)$.</li>
+</ul></div>
+<p>Muni de ces valeurs, nous calculons le coût des routes selon OSPF.</p>
+<div markdown="1" class="tab-c texte-centre"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#80DEEA; ">
+<b>Route</b> </td>
+<td style="background:#80DEEA; ">
+<b>Coût</b> </td>
+</tr>
+<tr>
+<td>route $A\rightarrow B$</td>
+<td>$10$</td>
+</tr>
+<tr>
+<td>route $A\rightarrow C\rightarrow B$</td>
+<td>$1+1$ $(2)$</td>
+</tr>
+</table></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">C’est la route indirecte $A\rightarrow C\rightarrow B$, dotée d’une bien meilleure bande passante, qui est privilégiée par OSPF, malgré un nombre supérieur de routeurs à traverser qui avait conduit RIP à ne pas l’utiliser.</div>
+</li>
+</ul></div>
+<p>Parmi les autres différences notables entre les deux protocoles, on retiendra que :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">RIP nécessite davantage de trafic du fait de la transmission périodique des tables de routages complètes, tandis qu’OSPF ne transmet que les incréments et uniquement en cas de survenue d’une modification ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la vitesse de convergence (c’est-à-dire le temps nécessaire pour l’actualisation de l’ensemble des routeurs concernés) est plus rapide avec OSPF qu’avec RIP ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la meilleure efficacité de l’algorithme d’OSPF est au prix d’une puissance de calcul supérieure à celle requise pour RIP ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">RIP est plus simple à configurer mais peu adapté à des topologies complexes, contrairement à OSPF.</div>
+</li>
+</ul>
+<p>Au-delà des différences techniques d’un protocole à l’autre, le routage vise à transmettre de manière efficiente les flux réseaux en choisissant à tout moment les meilleures routes possibles. La capacité de résilience offerte par le routage dynamique permet de composer sans intervention humaine, avec des incidents ou des modifications.</p>
+<p>Mais la transmission rapide des informations n’est pas le seul aspect à prendre en compte, en particulier sur des réseaux ouverts (réseaux Wifi où les échanges ne sont pax cryptés) : la <b>sécurité des informations</b> doit également pouvoir être garantie dans certains cas.<br>
+Nous allons maintenant nous intéresser aux méthodes de chiffrement qui peuvent être mises en œuvre pour sécuriser les flux réseaux.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Principes de chiffrement</p></div></h2>
+<div class="columns" markdown="1">
+<div markdown="1" class="undefined" style="width:50%; "><div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c02-img02.png" alt="scytale cryptographie chiffrement"> 
+<span>La scytale, par exemple, était utilisée par les Spartiates pour encoder des messages. Le destinataire doit posséder un bâton de même dimension autour duquel enrouler le message pour que les lettres s’assemblent.
+ </span></p></div></div></div>
+<div markdown="1" class="undefined" style="width:50%; "><p>La <b>cryptologie</b> est une discipline aussi ancienne que le besoin de secret dans les correspondances. Elle est pratiquée depuis l’Antiquité et s’est perfectionnée au cours de l’histoire.</p></div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La cryptologie moderne s’appuie depuis plusieurs décennies sur la puissance de calcul toujours plus importante des outils informatiques.</p></div>
+</div>
+<p>Cette discipline se décompose en deux branches complémentaires :</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">la <b>cryptographie</b> qui vise à chiffrer les messages pour les rendre incompréhensibles par des personnes non autorisées ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">la <b>cryptanalyse</b> qui cherche à déchiffrer les messages rendus incompréhensibles par la cryptographie.</div>
+</li>
+</ul>
+<div class="columns" markdown="1">
+<div markdown="1" class="undefined" style="width:50%; "><div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c02-img03.jpg" alt="Enigma Turing cryptanalyse"> 
+<span>Machine Enigma, modèle civil
+ </span></p></div></div></div>
+<div markdown="1" class="undefined" style="width:50%; "><div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pendant la Seconde Guerre mondiale, la machine conçue par Alan Turing était destinée à la cryptanalyse. Le mathématicien britannique et son équipe de Bletchley Park travaillaient sur des messages allemands, chiffrés avec la machine à coder Enigma, interceptés par les services secrets britanniques.</p></div>
+</div></div>
+</div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Bases de la cryptographie</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La cryptographie consiste à appliquer un <b>algorithme de chiffrement</b>, à un message en <b>texte clair</b>, afin de le transformer en un <b>message chiffré</b>.</p></div>
+</div>
+<ul>
+
+<li>Le message en clair est le message de départ, lisible et compréhensible par un humain, tel que son auteur l’a rédigé.</li>
+
+<li>Le message chiffré est le résultat incompréhensible de la transformation du message en clair par l’algorithme de chiffrement.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le déchiffrement est le résultat de la transformation d’un message chiffré en message clair.</div>
+</li>
+</ul>
+<p>Pour chiffrer ou pour déchiffrer un message, un algorithme utilise un paramètre bien spécifique ; une <b>clé</b>.</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Il ne faut pas confondre déchiffrement et décryptage.<br>
+Les abus de langage sont fréquents, notamment pour le chiffrement qui est régulièrement désigné par le terme « cryptage » (un faux anglicisme).</p></div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>En cryptographie, le déchiffrement consiste à décoder à l’aide de sa clé un message préalablement chiffré.</li>
+
+
+
+<li>En cryptanalyse, le décryptage consiste à « casser le code », c’est-à-dire à découvrir un chiffrement par cryptanalyse, <span class="underline">sans en connaître la clé de chiffrement</span>.</li>
+</ul></div>
+</div>
+<p>Il existe de nombreux algorithmes de chiffrement, que l’on peut regrouper en deux grandes familles de systèmes cryptographiques :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">la <b>cryptographie symétrique</b>, également appelée cryptographie à clé secrète ou à clé partagée ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la <b>cryptographie asymétrique</b>, également appelée cryptographie à clé publique.</div>
+</li>
+</ul>
+<h3 range="b." markdown="1"><div markdown="1"><p>Cryptographie à clé secrète</p></div></h3>
+<p>Les systèmes cryptographiques à clé secrète sont symétriques, c’est-à-dire que les fonctions mathématiques qui composent les algorithmes de chiffrement sont réversibles. Il suffit de les appliquer en sens inverse avec la clé pour pouvoir déchiffrer un message préalablement chiffré.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La cryptographie à clé secrète repose sur l’utilisation d’une <b>même clé</b> pour chiffrer et pour déchiffrer un message. Cette clé est donc nécessairement partagée entre l’émetteur et le destinataire.</p></div>
+</div>
+<p>En cryptologie les correspondants A et B sont usuellement appelés Alice et Bob (Bob étant parfois remplacé par son cousin français Bernard). Un tiers E, usuellement appelé Ève, voudrait connaître la teneur des échanges entre Alice et Bob.<br>
+Voyons quelles sont les actions menées par Alice, Bob et Ève dans le cadre de la cryptographie à clé secrète.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Alice et Bob s’accordent sur une clé secrète qu’ils utiliseront pour protéger leurs échanges.</p>
+<p>Alice utilise la clé secrète pour chiffrer le message.<br>
+Alice transmet le message chiffré à Bob.</p>
+<p>Bob utilise la clé secrète pour déchiffrer le message.<br>
+Bob peut lire le message déchiffré.</p>
+<p>Si Ève voit passer le message chiffré au cours de sa transmission entre Alice et Bob, elle sera incapable d’en comprendre la teneur car elle ne connaît pas la clé secrète nécessaire au déchiffrement.</p>
+</div>
+</div>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c2-img04.png" alt="cryptographie clé cryptée clé privée"> 
+<span>Transmission d’un message d’Alice à Bob par cryptographie à clé secrète
+ </span></p></div></div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Il n’est pas nécessaire que l’algorithme utilisé soit secret, mais il faut que la clé le soit.</p></div>
+</div>
+<p>Avec un algorithme robuste et une clé suffisamment longue, les attaques par force brute seront déraisonnablement longues en raison du nombre très important de possibilités à tester.</p>
+<p>Il existe de nombreux algorithmes de chiffrement symétrique. Le plus connu est l’algorithme AES.</p>
+<h4 id="algorithmeaes">Algorithme AES</h4>
+<p>L’algorithme Rijndael a été conçu par deux cryptologues belges, Johan Daemen et Vincent Rijmen, à la fin des années 1990. Il a servi de base en 2000 à une nouvelle norme de chiffrement adoptée par le gouvernement américain, connue sous l’appellation <b>AES</b> (pour <em>Advanced Encryption Standard</em>, soit « norme de chiffrement avancé »).</p>
+<p>Cet algorithme opère différentes transpositions et substitutions en traitant les données par blocs de $128\,\text{bits}$. Il fonctionne avec des clés de $128$, $192$ ou $256\,\text{bits}$.<br>
+Il remplace, au début des années 2000, l’algorithme DES (<em>Data Encryption Standard</em>, soit « norme de chiffrement de données »). Le DES utilisait une clé de $56\,\text{bits}$, suffisante lors de son invention en 1975, mais insuffisante en 2000 pour faire face aux progrès des attaques de cryptanalyse.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>Le principal avantage du chiffrement symétrique réside dans sa rapidité, les calculs informatiques requis étant relativement légers.</li>
+
+
+
+<li>Le principal inconvénient de la cryptographie à clé secrète est qu’il nécessite le partage préalable du secret, c’est-à-dire celui de la clé, entre l’émetteur et le destinataire du message.</li>
+</ul></div>
+</div>
+<p>En effet, si le canal de transmission est considéré comme suffisamment peu fiable au point de devoir chiffrer les messages, il serait dangereux d’y faire transiter la clé alors qu’elle doit rester secrète.<br>
+Les systèmes cryptographiques symétriques obligent, en outre, à avoir autant de clés que de correspondants pour maintenir une confidentialité individuelle.</p>
+<p>D’autres solutions ont été imaginées pour pallier le problème parfois insoluble de la transmission sécurisée de la clé secrète : des systèmes à clé publique.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Cryptographie à clé publique</p></div></h3>
+<p>Les systèmes cryptographiques à clé publique sont asymétriques. Ils s’appuient sur des fonctions non réversibles.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Cette approche cryptographique nécessite l’utilisation d’une <b>paire de clés</b>. Ce sont deux clés distinctes mais liées, et elles sont de nature différente : l’une d’elles est une clé publique et l’autre une clé privée.</p></div>
+</div>
+<ul>
+
+<li>La <b>clé publique</b>, fournie par le destinataire, est utilisée par l’émetteur pour chiffrer le message clair.</li>
+
+<li>La <b>clé privée</b> est utilisée par le destinataire pour déchiffrer le message qui a été chiffré par l’émetteur avec la clé publique.</li>
+</ul>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Comme son nom l’indique, la clé publique peut être communiquée librement. En effet, si elle permet de chiffrer le message, elle ne permet pas de le déchiffrer. Sa transmission sur un canal non sécurisé ne pose donc aucun problème particulier.<br>
+La clé privée n’a pas à être transmise, car elle est utilisée uniquement par le destinataire, pour déchiffrer le message qui lui a été transmis après chiffrement par la clé publique.</p></div>
+</div>
+<p>Retrouvons Alice, Bob et Ève, cette fois dans le contexte d’un système cryptographique à clé publique.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Alice souhaite pouvoir écrire des messages à Bob sans qu’Ève ne puisse en connaître la teneur.</p>
+<p>Pour pouvoir recevoir des messages d’Alice en utilisant un système cryptographique asymétrique, Bob génère une paire de clés :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">une clé publique qu’il communique à Alice (et qu’il pourra communiquer à quiconque voudrait lui écrire) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">une clé privée qu’il conserve précieusement et ne communique à personne.</div>
+</li>
+</ul>
+<p>Alice utilise la clé publique mise à disposition par Bob pour chiffrer son message à l’attention de Bob.<br>
+Alice transmet le message chiffré à Bob.</p>
+<p>Bob reçoit le message chiffré transmis par Alice.<br>
+Bob déchiffre le message chiffré avec sa clé privée.</p>
+<p>Ève peut éventuellement connaître la clé publique de Bob utilisée par Alice, mais cela n’a pas d’importance car cette clé publique ne lui sera d’aucune utilité : elle permet uniquement le chiffrement des messages. La clé privée est nécessaire pour pouvoir déchiffrer le message. Comme Bob ne la transmet à aucun moment, Ève ne peut pas en avoir connaissance.</p>
+</div>
+</div>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c2-img05.png" alt="cryptographie clé cryptée clé publique"> 
+<span>Transmission d’un message d’Alice à Bob par cryptographie à clé publique
+ </span></p></div></div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La paire de clés détenue par Bob ne lui permet cependant pas de répondre à Alice.</p></div>
+</div>
+<p>S’il veut pouvoir écrire à Alice de manière confidentielle, il faut qu’Alice génère à son tour une paire de clés, et qu’elle communique sa clé publique à Bob. Bob pourra alors chiffrer son message avec la clé publique d’Alice, qui utilisera sa clé privée pour le déchiffrer.</p>
+<p>Il existe de nombreux algorithmes à clé publique. Le plus connu est l’algorithme RSA.</p>
+<h4 id="algorithmersa">Algorithme RSA</h4>
+<p>L’algorithme de chiffrement asymétrique RSA a été conçu au MIT. Le sigle RSA fait référence aux noms des trois cryptographes Ron Rivest, Adi Shamir et Leonard Adleman qui ont conçu cet algorithme en 1977.</p>
+<p>Leur algorithme s’appuie sur l’utilisation d’un produit de deux grands nombres premiers et de fonctions à sens unique, dont le principe est d’être faciles à calculer mais beaucoup plus difficiles à inverser.<br>
+L’algorithme RSA utilise des clés de $1,024$ à $4,096\,\text{bits}$.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>Le principal avantage du chiffrement asymétrique est qu’il n’y a aucune clé secrète à transmettre, il suffit de communiquer la clé publique. En outre, chaque utilisateur n’a besoin que d’une clé privée unique pour pouvoir déchiffrer les messages en provenance de plusieurs correspondants, lesquels utiliseront la clé publique.</li>
+
+
+
+<li>Le principal inconvénient du chiffrement asymétrique est sa lenteur, du fait de la complexité des calculs informatiques requis.</li>
+</ul></div>
+</div>
+<p>L’autre inconvénient est qu’en cas de pluralité de correspondants, ce système cryptographique ne permet pas directement au destinataire de <b>savoir avec certitude qui est l’émetteur du message</b>.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>En utilisant la clé publique de Bob, Ève pourrait lui envoyer un message chiffré en se faisant passer pour Alice.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La clé privée de Bob lui permet de déchiffrer le message, mais pas d’en authentifier l’expéditeur.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Le chiffrement asymétrique permet en outre de <b>signer numériquement</b> un document ou un logiciel. Cela permet au destinataire de s’assurer de l’identité de l’auteur et de l’absence de modification du fichier transmis.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Alice peut utiliser sa clé privée pour générer la signature numérique d’un document. Bob utilisera alors la clé publique d’Alice pour vérifier la signature du document transmis, qui lui en garantit l’authenticité et l’intégrité.</p></div>
+</div>
+<h3 range="d." markdown="1"><div markdown="1"><p>Comparaison des deux familles de chiffrement</p></div></h3>
+<p>Le tableau ci-après résume les principales caractéristiques distinctives des chiffrements symétrique et asymétrique.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><div markdown="1" class="tab-c texte-centre"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#80DEEA; ">
+<b>Famille cryptographique</b> </td>
+<td>symétrique</td>
+<td>asymétrique</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">
+<b>Clés</b> </td>
+<td>unique (commune), secrète</td>
+<td>paire de clés</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">
+<b>Échange de clés</b> </td>
+<td>problématique</td>
+<td>non problématique (clé publique)</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">
+<b>Temps de calcul</b> </td>
+<td>faible</td>
+<td>important</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">
+<b>Usages</b> </td>
+<td>confidentialité uniquement</td>
+<td>confidentialité, authentification et intégrité</td>
+</tr>
+</table></div></div>
+</div>
+<p>Nous allons maintenant étudier un cas d’usage mettant en œuvre ces différents systèmes cryptographiques pour sécuriser nos échanges sur Internet.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Sécurisation des communications web</p></div></h2>
+<p>Dans la partie précédente, nous avons principalement étudié la cryptographie sous l’angle de la protection du contenu d’un message, mais nous avons indiqué que les outils cryptographiques asymétriques peuvent également servir à d’autres usages tels que l’<b>authentification</b> et la <b>signature de ces messages</b>.</p>
+<p>Nous allons en découvrir un usage concret et coordonné avec la sécurisation des communications mises en œuvre par le protocole HTTPS.<br>
+Le chiffrement a, en effet, pris une importance déterminante dans le fonctionnement des échanges numériques d’informations.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Limites de http</p></div></h3>
+<p>Le web s’est d’abord développé sur la base très ouverte du <b>protocole HTTP</b> : celui-ci était parfaitement adapté pour partager librement des connaissances. Mais l’essor du réseau a fait apparaître d’autres usages nécessitant de pouvoir authentifier des sites et sécuriser certains échanges, notamment ceux comportant des informations personnelles ou sensibles.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Les sites de commerce électronique traitent des ensembles de données sensibles :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">données à caractère personnel de leurs clients (nom, adresses électronique et physique, téléphone) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">données bancaires pour les paiements (référence de compte ou de carte bancaire).</div>
+</li>
+</ul>
+</div>
+</div>
+<p>L’absence de chiffrement dans le protocole HTTP exposait les données transmises à des risques d’écoutes et de manipulations au cours de leur acheminement par le réseau.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Sécurisation des échanges</p></div></h3>
+<p><b>HTTPS</b> est une extension sécurisée du protocole HTTP, dans laquelle le protocole de communication est chiffré avec des protocoles cryptographiques.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Les URL en HTTP commencent par <span class="calculator_button" markdown="1">http://</span> et utilisent par défaut le port 80.<br>
+Les URL en HTTPS commencent par <span class="calculator_button" markdown="1">https://</span> et utilisent par défaut le port 443.</p></div>
+</div>
+<p>Initialement réservé aux seuls échanges sensibles, l’usage du protocole HTTPS s’est généralisé ces dernières années. Les navigateurs web alertent désormais les internautes lorsque la connexion à un site n’est pas correctement sécurisée.</p>
+<p>Le protocole HTTPS s’appuie sur des protocoles cryptographiques <b>sécurisant la couche de transport</b>.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Sécurité de la couche de transport</p></div></h3>
+<p>La sécurisation des communications est assurée au niveau de la couche de transport par le protocole cryptographique TLS.<br>
+Le sigle TLS signifie <em>Transport Layer Security</em>, soit « sécurité de la couche de transport ». Ce protocole est une évolution de SSL (<em>Secure Sockets Layer</em>) utilisée avant lui pour la sécurisation des échanges sur le web.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Le protocole TLS répond à trois objectifs de sécurité :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">authentification ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">confidentialité ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">intégrité.</div>
+</li>
+</ul>
+</div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">L’<b>authentification</b> consiste à s’assurer de l’identité des tiers avec lesquels on échange. Dans le contexte d’une consultation web, l’authentification porte au moins sur le serveur, et peut si nécessaire concerner aussi le client.</div>
+</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">La <b>confidentialité</b> consiste à chiffrer les échanges pour les rendre incompréhensibles pour des tiers observant le trafic entre le client et le serveur.</div>
+</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">
+<b>L’intégrité</b> consiste à s’assurer que les données échangées n’ont pas été altérées lors de leur acheminement.</div>
+</li>
+</ul>
+<h3 range="d." markdown="1"><div markdown="1"><p>Déroulement d’une session TLS</p></div></h3>
+<p>Une connexion TLS s’appuie sur un certain nombre d’échanges préliminaires entre le client et le serveur, dans le but de sécuriser un échange souhaité de données applicatives.</p>
+<p>L’établissement d’une session se déroule en plusieurs phases consécutives.</p>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Négociation des paramètres de sécurité</b></div>
+</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:-22px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><p>Le client et le serveur doivent se mettre d’accord sur les paramètres de sécurité qui seront utilisés, en particulier les méthodes de chiffrement : client et serveur doivent être capables de mettre en œuvre les mêmes algorithmes s’ils veulent se comprendre.</p></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Authentification du serveur et échange de clés</b></div>
+</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:-22px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><p>Le serveur transmet au client un certificat numérique contenant sa clé publique. Le client peut vérifier la validité du certificat numérique auprès d’un tiers de confiance pour authentifier le serveur.<br>
+Le client génère une clé secrète, qu’il chiffre avec la clé publique du serveur avant de la lui transmettre.
+Dans le cas optionnel où le serveur exige une authentification du client, celui-ci envoie aussi un certificat.</p></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text"><b>Adoption de la clé secrète par le serveur</b></div>
+</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:-22px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><p>Le serveur déchiffre avec sa clé privé le message transmis par le client et prend connaissance de la clé secrète proposée par celui-ci. Il applique la méthode de chiffrement convenu précédemment.</p></div>
+<p>À l’issue de ces phases :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">le serveur a été authentifié (et le client aussi si nécessaire) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les flux réseaux entre le client et le serveur sont protégés : toutes les données applicatives sont encapsulées, garantissant leur confidentialité et leur intégrité.</div>
+</li>
+</ul>
+<h3 range="e." markdown="1"><div markdown="1"><p>Chiffrement hybride</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le protocole TLS a recours à un chiffrement hybride, qui combine l’usage des deux familles de systèmes cryptographiques que sont les chiffrements symétrique et asymétrique.</p></div>
+</div>
+<p>Le chiffrement asymétrique est utilisé dans un premier temps afin de pouvoir sécuriser un canal de communication entre le client et le serveur, afin d’authentifier le serveur et de pouvoir lui transmettre confidentiellement une clé secrète de chiffrement symétrique.</p>
+<p>Le chiffrement asymétrique utilisé à ce stade, gourmand en calcul, ne concerne que les premiers échanges et porte sur de faibles volumes de données. Une fois la clé secrète transmise et déchiffrée par le serveur, les échanges basculent sur un chiffrement symétrique, beaucoup plus rapide à réaliser et donc moins pénalisant pour la transmission sécurisée de l’ensemble des données applicatives. </p>
+<p>Le chiffrement hybride exploité par le protocole TLS exploite donc judicieusement les avantages particuliers de chacun des systèmes cryptographiques.</p>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous avons étudié et comparé la manière dont les protocoles de routage RIP et OSPF déterminaient les meilleures routes pour transmettre des flux de données. Nous avons ensuite présenté le chiffrement de données, effectué soit de manière symétrique avec une clé secrète, soit de manière asymétrique avec une clé publique. Nous avons enfin montré une application combinée de ces deux méthodes dans le cadre de la sécurisation des communications web.</p>
+</div>
+</div></div>
+<div id="poool-c96kt-8p51i" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5f871028635bc301007f13d4","type":"Cours","title":"Sécurité des réseaux","content":"[IN]\nIntroduction\u0026nbsp;:\n\nNotre usage d’Internet repose sur le bon fonctionnement de ce réseau décentralisé, et nécessite de sécuriser certaines informations qui y circulent. Nous allons nous intéresser dans une première partie à la manière dont nos données sont acheminées sur les réseaux. Nous aborderons dans une deuxième partie les grands principes de chiffrement et, dans une troisième, leur application à la sécurisation d’une communication web.\n[/IN]\n\n##Routage/1\n\n[DEF]\n**Routeur\u0026nbsp;:**\n\nLes routeurs sont chargés d’acheminer les paquets (paquet\u0026nbsp;=\u0026nbsp;entité de transmission) entre les réseaux. Ils s’appuient sur des tables de routage qui répertorient les différentes routes possibles dans leur voisinage réseau.\n[/DEF]\n\n* Ces tables de routage peuvent être composées **manuellement**\u0026nbsp;: c’est le **routage statique**. Il implique d’effectuer des modifications à chaque évolution ou incident sur le réseau. Cela nécessite une intervention humaine sur chaque routeur concerné pour mettre à jour la table de routage correspondante.((bulle))\n* Des protocoles ont été définis pour permettre de réaliser ces mises à jour de manière **automatique**\u0026nbsp;: c’est le **routage dynamique**. Il permet aux routeurs de communiquer entre eux afin d’actualiser leurs tables de routage chaque fois que nécessaire, en cas d’incident, d’indisponibilité ou de modification du réseau, pour continuer à sélectionner les meilleures routes possibles parmi celles restant accessibles.((bulle))\n\nCe calcul des routes consiste à déterminer **le plus court chemin** que peut emprunter un paquet, il s’agit donc d’une mesure de distance.  \nLa démarche algorithmique est celle de la recherche du \u003ca target=\"_blank\" href=\"/cours/graphes-abstraits/fiche-de-cours\"\u003eplus court chemin sur un graphe\u003c/a\u003e, le critère de **pondération** pouvant varier d’un algorithme à l’autre. Cette pondération consiste à donner plus ou moins de poids à une arête du graphe selon le critère choisi, par exemple le débit.\n\nDans le cadre de ce cours nous nous intéressons aux seuls protocoles de **routage interne** (IGP pour __Interior Gateway Protocol__), applicables au sein de systèmes autonomes, correspondant en général à une même organisation. Nous présenterons donc, et comparerons, les principales caractéristiques des protocoles de routage\u0026nbsp;RIP et\u0026nbsp;OSPF.  \nLe routage externe, que nous n'abordons pas ici, est quant à lui utilisé entre des systèmes autonomes.\n\n###Protocole RIP/a.\n\n**RIP** signifie __Routing Information Protocol__, soit «\u0026nbsp;protocole d’information de routage\u0026nbsp;». Il fait partie des plus anciens protocoles de routage. \n\n[RETENIR]\nC’est un protocole dit à **vecteur de distance**. Il retient les routes minimisant le nombre de routeurs qu’un paquet\u0026nbsp;IP doit traverser pour atteindre sa destination.\n[/RETENIR]\n\nLe protocole RIP met en œuvre l’algorithme de Bellman-Ford. Sa métrique est le **nombre de sauts à effectuer entre la source et la destination**, avec un maximum fixé à quinze\u0026nbsp;sauts.\n\n[AST]\nAu-delà de quinze\u0026nbsp;sauts, la destination est considérée comme inaccessible.\n[/AST]\n\nTous les routeurs sont impliqués, sans spécialisation ni hiérarchisation. La propagation des meilleures routes s’effectue par le biais de **communications régulières entre les routeurs**, cette communication périodique restant indépendante d’éventuelles modifications sur le réseau.\n\n###Protocole OSPF/b.\n\n**OSPF** signifie __Open Shortest Path First Protocol__, soit «\u0026nbsp;protocole ouvert du plus court chemin\u0026nbsp;».\n\nInitialement développé dans les années\u0026nbsp;1980 sous forme propriétaire par Digital Equipment Corporation, il est ensuite devenu un standard ouvert à partir de\u0026nbsp;1989.\n\n[RETENIR]\nOSPF est un protocole à **état de liens**.\n[/RETENIR]\n\nIl met en œuvre l’algorithme du plus court chemin de Dijkstra. Sa métrique est le **coût des liens**. Ce coût des liens est basé sur le débit disponible entre les routeurs pour favoriser les routes disposant d’une bande passante plus importante.\n\nC’est un routage avec une composante hiérarchique permettant le découpage par zones, dans lequel certains routeurs sont spécialisés. Les routeurs échangent avec leurs voisins des informations sur la topologie du réseau.\n\n[AST]\nLa communication n’est pas systématique, elle a lieu uniquement lorsqu’un changement survient, et porte uniquement sur la modification survenue.\n[/AST]\n\n###Comparaison des protocoles/c.\n\n[RETENIR]\nLa principale différence entre les deux protocoles porte sur la **métrique**. Le coût d’une route est évalué très différemment d’un protocole à l’autre\u0026nbsp;:\n* RIP cherche à **minimiser le nombre de sauts**.\n* OSPF prend en compte la **bande passante entre les routeurs**.\n[/RETENIR]\n\nIllustrons cette différence avec une portion de réseau comportant trois routeurs $A$, $B$, et $C$ interconnectés.\n\n[IMG]((100))\n![interconnexion de trois routeurs](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c2-img01.png) #\n[/IMG]\n\nDans cette configuration, il existe deux routes possibles pour aller de $A$ à $B$ :\n* la route $A\\rightarrow B$ (route directe)\u0026nbsp;;\n* la route $A\\rightarrow C\\rightarrow B$ (route indirecte).\n\n\u003c\u003c((100,35,auto,0,auto))* Calculons le coût des routes selon RIP, dont la métrique est le nombre de sauts.((bulle,1))\u003e\u003e\n\n[TAB]((auto, c, n, texte-centre))\n[LI]\n| **Route** ((0,0,0,#80DEEA)) |\n| **Coût** ((0,0,0,#80DEEA)) |\n[/LI]\n[LI]\n| route $A\\rightarrow B$ |\n| $1$ saut |\n[/LI]\n[LI]\n| route $A\\rightarrow C\\rightarrow B$ |\n| $1$ saut + $1$ saut ($2$ sauts) |\n[/LI]\n[/TAB]\n\n\u003c\u003c((100,35,auto,0,auto))* Le protocole\u0026nbsp;RIP minimise le nombre de sauts et considère de ce fait la route directe de $A$ à $B$ comme étant la meilleure.((fleche))\u003e\u003e\n\nToutefois le protocole\u0026nbsp;RIP ne prend pas en compte d’éventuelles différences de bande passante au niveau des liaisons entre les trois\u0026nbsp;routeurs\u0026nbsp;; alors que le protocole\u0026nbsp;OSPF détermine justement le coût des liens sur la base des débits.\n\n* Considérons que les routeurs $A$ et $B$ soient reliés entre eux en Ethernet ($10\\,\\text{Mbps}$), et que les autres liaisons soient en FastEthernet ($100\\,\\text{Mbps}$). OSPF\u0026nbsp;calcule le coût des liens en divisant un débit maximum théorique de $100\\,\\text{Mbps}$ (par défaut, ajustable si nécessaire pour des débits supérieurs) par la bande passante du lien pour chaque segment.((bulle,2)) \n\nAvec cette base de calcul\u0026nbsp;:\n* les segments en Ethernet ont un coût de $10$ $\\biggl(\\dfrac{100\\,\\text{Mbps}}{10\\,\\text{Mbps}}\\biggr)$.\n\u003c\u003c((100,35,auto,0,auto))* les segments en FastEthernet ont un coût de $1$ $\\biggl(\\dfrac{100\\,\\text{Mbps}}{100\\,\\text{Mbps}}\\biggr)$.\u003e\u003e\n\nMuni de ces valeurs, nous calculons le coût des routes selon OSPF.\n\n[TAB]((auto, c, n, texte-centre))\n[LI]\n| **Route** ((0,0,0,#80DEEA)) |\n| **Coût** ((0,0,0,#80DEEA)) |\n[/LI]\n[LI]\n| route $A\\rightarrow B$ |\n| $10$ |\n[/LI]\n[LI]\n| route $A\\rightarrow C\\rightarrow B$ |\n| $1+1$ $(2)$ |\n[/LI]\n[/TAB]\n\n\u003c\u003c((100,35,auto,0,auto))* C’est la route indirecte $A\\rightarrow C\\rightarrow B$, dotée d’une bien meilleure bande passante, qui est privilégiée par\u0026nbsp;OSPF, malgré un nombre supérieur de routeurs à traverser qui avait conduit RIP à ne pas l’utiliser.((fleche))\u003e\u003e\n\nParmi les autres différences notables entre les deux protocoles, on retiendra que\u0026nbsp;:\n* RIP nécessite davantage de trafic du fait de la transmission périodique des tables de routages complètes, tandis qu’OSPF ne transmet que les incréments et uniquement en cas de survenue d’une modification\u0026nbsp;;((liste2))\n* la vitesse de convergence (c’est-à-dire le temps nécessaire pour l’actualisation de l’ensemble des routeurs concernés) est plus rapide avec\u0026nbsp;OSPF qu’avec\u0026nbsp;RIP\u0026nbsp;;((liste2))\n* la meilleure efficacité de l’algorithme d’OSPF est au prix d’une puissance de calcul supérieure à celle requise pour\u0026nbsp;RIP\u0026nbsp;;((liste2))\n* RIP est plus simple à configurer mais peu adapté à des topologies complexes, contrairement à\u0026nbsp;OSPF.((liste2))\n\nAu-delà des différences techniques d’un protocole à l’autre, le routage vise à transmettre de manière efficiente les flux réseaux en choisissant à tout moment les meilleures routes possibles. La capacité de résilience offerte par le routage dynamique permet de composer sans intervention humaine, avec des incidents ou des modifications.\n\nMais la transmission rapide des informations n’est pas le seul aspect à prendre en compte, en particulier sur des réseaux ouverts (réseaux Wifi où les échanges ne sont pax cryptés)\u0026nbsp;: la **sécurité des informations** doit également pouvoir être garantie dans certains cas.  \nNous allons maintenant nous intéresser aux méthodes de chiffrement qui peuvent être mises en œuvre pour sécuriser les flux réseaux.\n\n##Principes de chiffrement/2\n\n[COLONNES][COL][IMG]((100))\n![scytale cryptographie chiffrement](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c02-img02.png) #La scytale, par exemple, était utilisée par les Spartiates pour encoder des messages. Le destinataire doit posséder un bâton de même dimension autour duquel enrouler le message pour que les lettres s’assemblent.\n[/IMG][/COL]((50))\n\n[COL]La **cryptologie** est une discipline aussi ancienne que le besoin de secret dans les correspondances. Elle est pratiquée depuis l’Antiquité et s’est perfectionnée au cours de l’histoire.[/COL]((50))[/COLONNES]\n\n[AST]\nLa cryptologie moderne s’appuie depuis plusieurs décennies sur la puissance de calcul toujours plus importante des outils informatiques.\n[/AST]\n\nCette discipline se décompose en deux branches complémentaires\u0026nbsp;:\n* la **cryptographie** qui vise à chiffrer les messages pour les rendre incompréhensibles par des personnes non\u0026nbsp;autorisées\u0026nbsp;;((bulle,1))\n* la **cryptanalyse** qui cherche à déchiffrer les messages rendus incompréhensibles par la cryptographie.((bulle,2))\n\n[COLONNES][COL][IMG]((100))\n![Enigma Turing cryptanalyse](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c02-img03.jpg) #Machine Enigma, modèle civil\n[/IMG][/COL]((50))\n[COL][EX]\nPendant la Seconde Guerre mondiale, la machine conçue par Alan Turing était destinée à la cryptanalyse. Le mathématicien britannique et son équipe de Bletchley\u0026nbsp;Park travaillaient sur des messages allemands, chiffrés avec la machine à coder Enigma, interceptés par les services secrets britanniques.\n[/EX][/COL]((50))[/COLONNES]\n\n\n\n###Bases de la cryptographie/a.\n\n[RETENIR]\nLa cryptographie consiste à appliquer un **algorithme de chiffrement**, à un message en **texte clair**, afin de le transformer en un **message chiffré**.\n[/RETENIR]\n\n* Le message en clair est le message de départ, lisible et compréhensible par un humain, tel que son auteur l’a rédigé.\n* Le message chiffré est le résultat incompréhensible de la transformation du message en clair par l’algorithme de chiffrement.\n* Le déchiffrement est le résultat de la transformation d’un message chiffré en message clair.((fleche))\n\nPour chiffrer ou pour déchiffrer un message, un algorithme utilise un paramètre bien spécifique\u0026nbsp;; une **clé**.\n\n[ATT]\nIl ne faut pas confondre déchiffrement et décryptage.  \nLes abus de langage sont fréquents, notamment pour le chiffrement qui est régulièrement désigné par le terme «\u0026nbsp;cryptage\u0026nbsp;» (un faux anglicisme).\n[/ATT]\n\n[RETENIR]\n* En cryptographie, le déchiffrement consiste à décoder à l’aide de sa clé un message préalablement chiffré.\n* En cryptanalyse, le décryptage consiste à «\u0026nbsp;casser le code\u0026nbsp;», c’est-à-dire à découvrir un chiffrement par cryptanalyse, --sans en connaître la clé de chiffrement--.\n[/RETENIR]\n\nIl existe de nombreux algorithmes de chiffrement, que l’on peut regrouper en deux grandes familles de systèmes cryptographiques\u0026nbsp;:\n* la **cryptographie symétrique**, également appelée cryptographie à clé secrète ou à clé partagée\u0026nbsp;;((liste2))\n* la **cryptographie asymétrique**, également appelée cryptographie à clé publique.((liste2))\n\n###Cryptographie à clé secrète/b.\n\nLes systèmes cryptographiques à clé secrète sont symétriques, c’est-à-dire que les fonctions mathématiques qui composent les algorithmes de chiffrement sont réversibles. Il suffit de les appliquer en sens inverse avec la clé pour pouvoir déchiffrer un message préalablement chiffré.\n\n[RETENIR]\nLa cryptographie à clé secrète repose sur l’utilisation d’une **même clé** pour chiffrer et pour déchiffrer un message. Cette clé est donc nécessairement partagée entre l’émetteur et le destinataire.\n[/RETENIR]\n\nEn cryptologie les correspondants\u0026nbsp;A et\u0026nbsp;B sont usuellement appelés Alice et Bob (Bob étant parfois remplacé par son cousin français Bernard). Un tiers\u0026nbsp;E, usuellement appelé Ève, voudrait connaître la teneur des échanges entre Alice et Bob.  \nVoyons quelles sont les actions menées par Alice, Bob et Ève dans le cadre de la cryptographie à clé secrète.\n\n[EX]\nAlice et Bob s’accordent sur une clé secrète qu’ils utiliseront pour protéger leurs échanges.\n\nAlice utilise la clé secrète pour chiffrer le message.  \nAlice transmet le message chiffré à Bob.\n\nBob utilise la clé secrète pour déchiffrer le message.  \nBob peut lire le message déchiffré.\n\nSi Ève voit passer le message chiffré au cours de sa transmission entre Alice et Bob, elle sera incapable d’en comprendre la teneur car elle ne connaît pas la clé secrète nécessaire au déchiffrement.\n[/EX]\n\n[IMG]((100))\n![cryptographie clé cryptée clé privée](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c2-img04.png) #Transmission d’un message d’Alice à Bob par cryptographie à clé secrète\n[/IMG]\n\n[AST]\nIl n’est pas nécessaire que l’algorithme utilisé soit secret, mais il faut que la clé le soit.\n[/AST]\n\nAvec un algorithme robuste et une clé suffisamment longue, les attaques par force brute seront déraisonnablement longues en raison du nombre très important de possibilités à tester.\n\nIl existe de nombreux algorithmes de chiffrement symétrique. Le plus connu est l’algorithme AES.\n\n####Algorithme AES\n\nL’algorithme Rijndael a été conçu par deux cryptologues belges, Johan Daemen et Vincent Rijmen, à la fin des années\u0026nbsp;1990. Il a servi de base en\u0026nbsp;2000 à une nouvelle norme de chiffrement adoptée par le gouvernement américain, connue sous l’appellation **AES** (pour __Advanced Encryption Standard__, soit «\u0026nbsp;norme de chiffrement avancé\u0026nbsp;»).\n\nCet algorithme opère différentes transpositions et substitutions en traitant les données par blocs de $128\\,\\text{bits}$. Il fonctionne avec des clés de $128$, $192$ ou $256\\,\\text{bits}$.  \nIl remplace, au début des années\u0026nbsp;2000, l’algorithme DES (__Data Encryption Standard__, soit «\u0026nbsp;norme de chiffrement de données\u0026nbsp;»). Le DES utilisait une clé de $56\\,\\text{bits}$, suffisante lors de son invention en\u0026nbsp;1975, mais insuffisante en\u0026nbsp;2000 pour faire face aux progrès des attaques de cryptanalyse.\n\n[RETENIR]\n* Le principal avantage du chiffrement symétrique réside dans sa rapidité, les calculs informatiques requis étant relativement légers.\n* Le principal inconvénient de la cryptographie à clé secrète est qu’il nécessite le partage préalable du secret, c’est-à-dire celui de la clé, entre l’émetteur et le destinataire du message.\n[/RETENIR]\n\nEn effet, si le canal de transmission est considéré comme suffisamment peu fiable au point de devoir chiffrer les messages, il serait dangereux d’y faire transiter la clé alors qu’elle doit rester secrète.  \nLes systèmes cryptographiques symétriques obligent, en outre, à avoir autant de clés que de correspondants pour maintenir une confidentialité individuelle.\n\nD’autres solutions ont été imaginées pour pallier le problème parfois insoluble de la transmission sécurisée de la clé secrète\u0026nbsp;: des systèmes à clé publique.\n\n###Cryptographie à clé publique/c.\n\nLes systèmes cryptographiques à clé publique sont asymétriques. Ils s’appuient sur des fonctions non réversibles.\n\n[RETENIR]\nCette approche cryptographique nécessite l’utilisation d’une **paire de clés**. Ce sont deux clés distinctes mais liées, et elles sont de nature différente\u0026nbsp;: l’une d’elles est une clé publique et l’autre une clé privée.\n[/RETENIR]\n\n* La **clé publique**, fournie par le destinataire, est utilisée par l’émetteur pour chiffrer le message clair.\n* La **clé privée** est utilisée par le destinataire pour déchiffrer le message qui a été chiffré par l’émetteur avec la clé publique.\n\n[AST]\nComme son nom l’indique, la clé publique peut être communiquée librement. En effet, si elle permet de chiffrer le message, elle ne permet pas de le déchiffrer. Sa transmission sur un canal non\u0026nbsp;sécurisé ne pose donc aucun problème particulier.  \nLa clé privée n’a pas à être transmise, car elle est utilisée uniquement par le destinataire, pour déchiffrer le message qui lui a été transmis après chiffrement par la clé publique.\n[/AST]\n\nRetrouvons Alice, Bob et Ève, cette fois dans le contexte d’un système cryptographique à clé publique.\n\n[EX]\nAlice souhaite pouvoir écrire des messages à Bob sans qu’Ève ne puisse en connaître la teneur.\n\nPour pouvoir recevoir des messages d’Alice en utilisant un système cryptographique asymétrique, Bob génère une paire de clés\u0026nbsp;:\n* une clé publique qu’il communique à Alice (et qu’il pourra communiquer à quiconque voudrait lui écrire)\u0026nbsp;;((liste2))\n* une clé privée qu’il conserve précieusement et ne communique à personne.((liste2))\n\nAlice utilise la clé publique mise à disposition par Bob pour chiffrer son message à l’attention de Bob.  \nAlice transmet le message chiffré à Bob.\n\nBob reçoit le message chiffré transmis par Alice.  \nBob déchiffre le message chiffré avec sa clé privée.\n\nÈve peut éventuellement connaître la clé publique de Bob utilisée par Alice, mais cela n’a pas d’importance car cette clé publique ne lui sera d’aucune utilité\u0026nbsp;: elle permet uniquement le chiffrement des messages. La clé privée est nécessaire pour pouvoir déchiffrer le message. Comme Bob ne la transmet à aucun moment, Ève ne peut pas en avoir connaissance.\n[/EX]\n\n[IMG]((100))\n![cryptographie clé cryptée clé publique](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c2-img05.png) #Transmission d’un message d’Alice à Bob par cryptographie à clé publique\n[/IMG]\n\n[ATT]\nLa paire de clés détenue par Bob ne lui permet cependant pas de répondre à Alice.\n[/ATT]\n\nS’il veut pouvoir écrire à Alice de manière confidentielle, il faut qu’Alice génère à son tour une paire de clés, et qu’elle communique sa clé publique à Bob. Bob pourra alors chiffrer son message avec la clé publique d’Alice, qui utilisera sa clé privée pour le déchiffrer.\n\nIl existe de nombreux algorithmes à clé publique. Le plus connu est l’algorithme RSA.\n\n####Algorithme RSA\n\nL’algorithme de chiffrement asymétrique\u0026nbsp;RSA a été conçu au\u0026nbsp;MIT. Le sigle\u0026nbsp;RSA fait référence aux noms des trois cryptographes Ron Rivest, Adi Shamir et Leonard Adleman qui ont conçu cet algorithme en\u0026nbsp;1977.\n\nLeur algorithme s’appuie sur l’utilisation d’un produit de deux grands nombres premiers et de fonctions à sens unique, dont le principe est d’être faciles à calculer mais beaucoup plus difficiles à inverser.  \nL’algorithme RSA utilise des clés de $1,024$ à $4,096\\,\\text{bits}$.\n\n[RETENIR]\n* Le principal avantage du chiffrement asymétrique est qu’il n’y a aucune clé secrète à transmettre, il suffit de communiquer la clé publique. En outre, chaque utilisateur n’a besoin que d’une clé privée unique pour pouvoir déchiffrer les messages en provenance de plusieurs correspondants, lesquels utiliseront la clé publique.\n* Le principal inconvénient du chiffrement asymétrique est sa lenteur, du fait de la complexité des calculs informatiques requis.\n[/RETENIR]\n\nL’autre inconvénient est qu’en cas de pluralité de correspondants, ce système cryptographique ne permet pas directement au destinataire de **savoir avec certitude qui est l’émetteur du message**.\n\n[EX]\nEn utilisant la clé publique de Bob, Ève pourrait lui envoyer un message chiffré en se faisant passer pour Alice.\n* La clé privée de Bob lui permet de déchiffrer le message, mais pas d’en authentifier l’expéditeur.((fleche))\n[/EX]\n\nLe chiffrement asymétrique permet en outre de **signer numériquement** un document ou un logiciel. Cela permet au destinataire de s’assurer de l’identité de l’auteur et de l’absence de modification du fichier transmis.\n\n[EX]\nAlice peut utiliser sa clé privée pour générer la signature numérique d’un document. Bob utilisera alors la clé publique d’Alice pour vérifier la signature du document transmis, qui lui en garantit l’authenticité et l’intégrité.\n[/EX]\n\n###Comparaison des deux familles de chiffrement/d.\n\nLe tableau ci-après résume les principales caractéristiques distinctives des chiffrements symétrique et asymétrique.\n\n[RETENIR]\n\n[TAB]((auto, c, n, texte-centre))\n[LI]\n| **Famille cryptographique** ((0,0,0,#80DEEA)) |\n| symétrique |\n| asymétrique |\n[/LI]\n[LI]\n| **Clés** ((0,0,0,#80DEEA)) |\n| unique (commune), secrète |\n| paire de clés |\n[/LI]\n[LI]\n| **Échange de clés** ((0,0,0,#80DEEA)) |\n| problématique |\n| non\u0026nbsp;problématique (clé publique) |\n[/LI]\n[LI]\n| **Temps de calcul** ((0,0,0,#80DEEA)) |\n| faible |\n| important |\n[/LI]\n[LI]\n| **Usages** ((0,0,0,#80DEEA)) |\n| confidentialité uniquement |\n| confidentialité, authentification et intégrité |\n[/LI]\n[/TAB]\n\n[/RETENIR]\n\nNous allons maintenant étudier un cas d’usage mettant en œuvre ces différents systèmes cryptographiques pour sécuriser nos échanges sur Internet.\n\n##Sécurisation des communications web/3\n\nDans la partie précédente, nous avons principalement étudié la cryptographie sous l’angle de la protection du contenu d’un message, mais nous avons indiqué que les outils cryptographiques asymétriques peuvent également servir à d’autres usages tels que l’**authentification** et la **signature de ces messages**.\n\nNous allons en découvrir un usage concret et coordonné avec la sécurisation des communications mises en œuvre par le protocole\u0026nbsp;HTTPS.  \nLe chiffrement a, en effet, pris une importance déterminante dans le fonctionnement des échanges numériques d’informations.\n\n###Limites de http/a.\n\nLe web s’est d’abord développé sur la base très ouverte du **protocole\u0026nbsp;HTTP**\u0026nbsp;: celui-ci était parfaitement adapté pour partager librement des connaissances. Mais l’essor du réseau a fait apparaître d’autres usages nécessitant de pouvoir authentifier des sites et sécuriser certains échanges, notamment ceux comportant des informations personnelles ou sensibles.\n\n[EX]\nLes sites de commerce électronique traitent des ensembles de données sensibles\u0026nbsp;:\n* données à caractère personnel de leurs clients (nom, adresses électronique et physique, téléphone)\u0026nbsp;;((liste2))\n* données bancaires pour les paiements (référence de compte ou de carte bancaire).((liste2))\n[/EX]\n\nL’absence de chiffrement dans le protocole\u0026nbsp;HTTP exposait les données transmises à des risques d’écoutes et de manipulations au cours de leur acheminement par le réseau.\n\n###Sécurisation des échanges/b.\n\n**HTTPS** est une extension sécurisée du protocole\u0026nbsp;HTTP, dans laquelle le protocole de communication est chiffré avec des protocoles cryptographiques.\n\n[RAP]\nLes URL en HTTP commencent par [BUTC]http://[/BUTC] et utilisent par défaut le port\u0026nbsp;80.  \nLes URL en HTTPS commencent par [BUTC]https://[/BUTC] et utilisent par défaut le port\u0026nbsp;443.\n[/RAP]\n\nInitialement réservé aux seuls échanges sensibles, l’usage du protocole\u0026nbsp;HTTPS s’est généralisé ces dernières années. Les navigateurs web alertent désormais les internautes lorsque la connexion à un site n’est pas correctement sécurisée.\n\nLe protocole HTTPS s’appuie sur des protocoles cryptographiques **sécurisant la couche de transport**.\n\n###Sécurité de la couche de transport/c.\n\nLa sécurisation des communications est assurée au niveau de la couche de transport par le protocole cryptographique\u0026nbsp;TLS.  \nLe sigle TLS signifie __Transport Layer Security__, soit «\u0026nbsp;sécurité de la couche de transport\u0026nbsp;». Ce protocole est une évolution de\u0026nbsp;SSL (__Secure Sockets Layer__) utilisée avant lui pour la sécurisation des échanges sur le web.\n\n[RETENIR]\nLe protocole\u0026nbsp;TLS répond à trois objectifs de sécurité\u0026nbsp;:\n* authentification\u0026nbsp;;((liste2))\n* confidentialité\u0026nbsp;;((liste2))\n* intégrité.((liste2))\n[/RETENIR]\n\n* L’**authentification** consiste à s’assurer de l’identité des tiers avec lesquels on échange. Dans le contexte d’une consultation web, l’authentification porte au moins sur le serveur, et peut si nécessaire concerner aussi le client.((bulle))\n* La **confidentialité** consiste à chiffrer les échanges pour les rendre incompréhensibles pour des tiers observant le trafic entre le client et le serveur.((bulle))\n* **L’intégrité** consiste à s’assurer que les données échangées n’ont pas été altérées lors de leur acheminement.((bulle))\n\n###Déroulement d’une session TLS/d.\n\nUne connexion\u0026nbsp;TLS s’appuie sur un certain nombre d’échanges préliminaires entre le client et le serveur, dans le but de sécuriser un échange souhaité de données applicatives.\n\nL’établissement d’une session se déroule en plusieurs phases consécutives.\n\n\u003c\u003c((100,35,auto,0,auto))* **Négociation des paramètres de sécurité**((bulle,1))\u003e\u003e\n\n\u003c\u003c((100,-22,auto,0,auto))Le client et le serveur doivent se mettre d’accord sur les paramètres de sécurité qui seront utilisés, en particulier les méthodes de chiffrement\u0026nbsp;: client et serveur doivent être capables de mettre en œuvre les mêmes algorithmes s’ils veulent se comprendre.\u003e\u003e\n\n\u003c\u003c((100,35,auto,0,auto))* **Authentification du serveur et échange de clés**((bulle,2))\u003e\u003e\n\n\u003c\u003c((100,-22,auto,0,auto))Le serveur transmet au client un certificat numérique contenant sa clé publique. Le client peut vérifier la validité du certificat numérique auprès d’un tiers de confiance pour authentifier le serveur.  \nLe client génère une clé secrète, qu’il chiffre avec la clé publique du serveur avant de la lui transmettre.\nDans le cas optionnel où le serveur exige une authentification du client, celui-ci envoie aussi un certificat.\u003e\u003e\n\n\u003c\u003c((100,35,auto,0,auto))* **Adoption de la clé secrète par le serveur**((bulle,3))\u003e\u003e\n\n\u003c\u003c((100,-22,auto,0,auto))Le serveur déchiffre avec sa clé privé le message transmis par le client et prend connaissance de la clé secrète proposée par celui-ci. Il applique la méthode de chiffrement convenu précédemment.\u003e\u003e\n\nÀ l’issue de ces phases\u0026nbsp;:\n* le serveur a été authentifié (et le client aussi si nécessaire)\u0026nbsp;;((liste2))\n* les flux réseaux entre le client et le serveur sont protégés\u0026nbsp;: toutes les données applicatives sont encapsulées, garantissant leur confidentialité et leur intégrité.((liste2))\n\n###Chiffrement hybride/e.\n\n[RETENIR]\nLe protocole\u0026nbsp;TLS a recours à un chiffrement hybride, qui combine l’usage des deux familles de systèmes cryptographiques que sont les chiffrements symétrique et asymétrique.\n[/RETENIR]\n\nLe chiffrement asymétrique est utilisé dans un premier temps afin de pouvoir sécuriser un canal de communication entre le client et le serveur, afin d’authentifier le serveur et de pouvoir lui transmettre confidentiellement une clé secrète de chiffrement symétrique.\n\nLe chiffrement asymétrique utilisé à ce stade, gourmand en calcul, ne concerne que les premiers échanges et porte sur de faibles volumes de données. Une fois la clé secrète transmise et déchiffrée par le serveur, les échanges basculent sur un chiffrement symétrique, beaucoup plus rapide à réaliser et donc moins pénalisant pour la transmission sécurisée de l’ensemble des données applicatives. \n\nLe chiffrement hybride exploité par le protocole TLS exploite donc judicieusement les avantages particuliers de chacun des systèmes cryptographiques.\n\n[C]\nConclusion\u0026nbsp;:\n\nNous avons étudié et comparé la manière dont les protocoles de routage\u0026nbsp;RIP et\u0026nbsp;OSPF déterminaient les meilleures routes pour transmettre des flux de données. Nous avons ensuite présenté le chiffrement de données, effectué soit de manière symétrique avec une clé secrète, soit de manière asymétrique avec une clé publique. Nous avons enfin montré une application combinée de ces deux méthodes dans le cadre de la sécurisation des communications web.\n[/C]\n","siblings":[{"resourceId":"5f871028635bc301007f13d4","type":"Cours","sort":null},{"resourceId":"5f47a0e51f3276010020e142","type":"Fiche de révision","sort":null},{"resourceId":"5f4df304e4d05a0100ae813f","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d1a28e637010043bf7b","name":"Sécurité des réseaux"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d1a28e637010043bf7b","label":"Cours : Sécurité des réseaux","link":"https://www.schoolmouv.fr/cours/securite-des-reseaux/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"securite-des-reseaux","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/securite-des-reseaux/fiche-de-cours","title":"Sécurité des réseaux : cours de Tle - Numérique | SchoolMouv","metaDescription":"SchoolMouv ® te propose ce cours sur Sécurité des réseaux (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"securite-des-reseaux","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

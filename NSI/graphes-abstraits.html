@@ -1,0 +1,852 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Graphes abstraits : cours de Tle - Numérique | SchoolMouv</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Graphes abstraits : cours de Tle - Numérique | SchoolMouv">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Graphes abstraits (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/graphes-abstraits/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/graphes-abstraits/fiche-de-cours","name":"Cours : Graphes abstraits"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Graphes abstraits</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Graphes abstraits</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Les graphes sont des structures de données relationnelles très utiles pour la modélisation de nombreuses problématiques, dans des domaines très variés.<br>
+Nous en préciserons d'abord les caractéristiques dans une première partie. Nous étudierons ensuite les parcours et cheminements sur les graphes dans une deuxième partie. Nous nous intéresserons enfin, dans une troisième partie, aux modalités d'implémentation des structures de données de type graphe.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Caractérisation des graphes</p></div></h2>
+<p>La notion de graphe est principalement connue sous l'angle de sa représentation graphique, mais c'est aussi un type de structure de données relationnelles.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La représentation graphique d'une structure de type graphe fait figurer des éléments reliés entre eux par des liaisons.</div>
+</li>
+</ul>
+<h3 range="a." markdown="1"><div markdown="1"><p>Éléments constitutifs d'un graphe</p></div></h3>
+<p>Un graphe se compose de deux types d'éléments complémentaires : les <b>sommets</b> et les <b>arêtes</b>.</p>
+<ul>
+
+<li>Les sommets, également appelés « nœuds », sont les éléments individuels.</li>
+
+<li>Les arêtes sont les connexions reliant deux sommets entre eux, matérialisées graphiquement par une ligne.</li>
+</ul>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Le graphe ci-dessous comporte :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">6 sommets ou nœuds ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">8 arêtes.</div>
+</li>
+</ul>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img01.png" alt="Graphe NSI"> 
+<span>Graphe comportant 6 sommets et 8 arêtes
+ </span></p></div></div>
+<p>Les sommets sont A, B, C, D, E et F.<br>
+Les arêtes relient les paires de sommets suivantes :</p>
+<ul>
+
+
+
+<li>A et B ;</li>
+
+
+
+<li>A et C ;</li>
+
+
+
+<li>B et C ;</li>
+
+
+
+<li>C et D ;</li>
+
+
+
+<li>B et E ;</li>
+
+
+
+<li>E et F ;</li>
+
+
+
+<li>C et F ;</li>
+
+
+
+<li>D et F.</li>
+</ul>
+</div>
+</div>
+<p>Tous les sommets ne doivent pas nécessairement être liés entre eux. On remarque dans notre exemple qu'aucune arête ne relie B et F.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Un graphe est défini par deux ensembles complémentaires :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">l'ensemble des sommets ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l'ensemble des arêtes reliant des sommets par paires.</div>
+</li>
+</ul>
+</div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Orientation</p></div></h3>
+<p>On distingue deux types de graphes selon leur orientation :</p>
+<ul>
+
+<li>les graphes <b>non orientés</b> ;</li>
+
+<li>les graphes <b>orientés</b>.</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Graphe non orienté</b></div>
+</li>
+</ul></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Sur un graphe non orienté, les relations sont <b>mutuelles</b> : quand une arête relie deux sommets, il n'y a pas de notion de sens.</p></div>
+</div>
+<p>Ces relations s'illustrent bien avec des réseaux sociaux connus : c'est le cas pour le réseau social Facebook où les relations entre les membres peuvent être représentées par un graphe non orienté.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img02.png" alt="graphe NSI"> 
+<span>Réseau social avec relations symétriques
+ </span></p></div></div>
+<p>Paul est ami avec Lisa, et Lisa est amie avec Paul. L'arête traduit la symétrie de la relation.</p>
+</div>
+</div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La nature des relations entre membres des réseaux sociaux varie d'un réseau à l'autre. </p></div>
+</div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Graphe orienté</b></div>
+</li>
+</ul></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Sur un graphe orienté, les sommets ne sont pas reliés par des arêtes mais par des arcs indiquant un sens à la relation. Quand ils sont reliés entre eux, les sommets d'un graphe orienté peuvent donc l'être par un ou deux arcs, selon qu'il y ait ou non réciprocité.</p></div>
+</div>
+<p>Sur des réseaux sociaux, comme Twitter ou Instagram, la relation n'est pas nécessairement mutuelle. Le suivi unilatéral est possible : un membre choisit de suivre les publications d'un autre, mais il n'y a pas de réciprocité automatique. La personne suivie peut, si elle le souhaite, suivre l'autre personne en retour, mais rien ne l'y oblige.</p>
+<p>Les relations unilatérales, sur des graphes orientés, sont représentées par des <b>arcs fléchés</b>. Une éventuelle réciprocité de la relation est représentée par un arc complémentaire dans l'autre sens.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img03.png" alt="graphe NSI"> 
+<span>Réseau social avec relations asymétriques
+ </span></p></div></div>
+<ul>
+
+
+
+<li>Lisa suit Paul et Léa. Elle n'est suivie par personne.</li>
+
+
+
+<li>Léa suit Paul et Ada. Elle est suivie par Lisa et par Théo.</li>
+
+
+
+<li>Théo suit Léa et Ada.</li>
+
+
+
+<li>Ada suit Théo.</li>
+
+
+
+<li>Seuls Ada et Théo se suivent mutuellement.</li>
+</ul>
+</div>
+</div>
+<p>Les graphes orientés sont parfois représentés avec des segments de droite fléchés, bidirectionnels le cas échéant. Le schéma ci-dessous illustre le même graphe que précédemment.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img04.png" alt="Graphe NSI"> 
+<span>Représentation alternative d'un graphe orienté
+ </span></p></div></div>
+<h3 range="c." markdown="1"><div markdown="1"><p>Pondération</p></div></h3>
+<p>Les graphes peuvent être ou non pondérés :</p>
+<ul>
+
+<li>les relations des graphes <b>non pondérés</b> ont toutes la même valeur, qui n'a donc pas à être précisée ;</li>
+
+<li>les relations des graphes <b>pondérés</b> pouvant varier, elles doivent être précisées.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La valeur affectée à la relation est appelée <b>pondération</b> ou <b>coût</b>.</div>
+</li>
+</ul>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img05.png" alt="Graphe NSI"> 
+<span>Graphe pondéré
+ </span></p></div></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>Quand la pondération porte sur un graphe non orienté, elle est affectée à chaque arête.</li>
+
+
+
+<li>Quand la pondération porte sur un graphe orienté, une pondération est affectée à chaque arc.</li>
+</ul></div>
+</div>
+<h3 range="d." markdown="1"><div markdown="1"><p>Chemin</p></div></h3>
+<p>Un <b>chemin</b> est une séquence d'arêtes distinctes (un chemin ne repasse pas par la même arête) permettant de relier deux sommets entre eux. Il peut exister plusieurs chemins reliant une même paire de sommets.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Sur le schéma ci-dessous, différentes chaînes plus ou moins longues de segments permettent de rejoindre le sommet D en partant du sommet A :</p>
+<ul>
+
+
+
+<li>A, B, C, D ;</li>
+
+
+
+<li>A, B, C, E, D ;</li>
+
+
+
+<li>A, B, E, D ;</li>
+
+
+
+<li>A, B, E, C, D ;</li>
+
+
+
+<li>A, C, B, E, D ;</li>
+
+
+
+<li>A, C, D ;</li>
+
+
+
+<li>A, C, E, D.</li>
+</ul>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img06.png" alt="Graphe NSI"> 
+<span>Multiplicité des chaînes de segments reliant deux sommets
+ </span></p></div></div>
+</div>
+</div>
+<p>Les graphes ou les portions de graphes peuvent comporter des <b>cycles</b>, c'est-à-dire des chaînes de segments permettant de retourner à un point de départ sans passer deux fois par un même sommet.</p>
+<p>Quand les graphes sont orientés, les séquences d'arcs, appelées chemins, peuvent présenter un caractère cyclique en formant des <b>chemins fermés</b>. </p>
+<p>Dans un graphe orienté, les chemins entre un sommet de départ et un sommet d'arrivée ne sont pas nécessairement symétriques.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Le schéma ci-après montre qu'il est possible de se rendre en C à partir de A, mais le retour direct de C en A n'est pas possible. Pour se rendre de C en A, il faut emprunter d'autres chemins, en passant soit par D, soit par B.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img07.png" alt="graphe NSI"> 
+<span>Multiplicité des séquences d'arcs reliant deux sommets
+ </span></p></div></div>
+</div>
+</div>
+<p>Cette capacité à distinguer les sens de cheminement entre deux sommets peut s'avérer utile dans différentes applications.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Par exemple, quand les logiciels et applications de navigation routière et d'aide à la conduite calculent et proposent un itinéraire, ils doivent prendre en compte le fait que certains axes de circulation sont en sens unique, notamment en centre-ville.</div>
+</li>
+</ul>
+<h3 range="e." markdown="1"><div markdown="1"><p>Adjacence</p></div></h3>
+<p>Des sommets sont dits <b>adjacents</b>, ou <b>voisins</b>, s'ils sont reliés entre eux par une arête.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>L'amitié entre membres d'un réseau social est représentée sur un graphe par l'adjacence des sommets correspondant aux membres de ce réseau.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img08.png" alt="graphe NSI"> 
+<span>Adjacences de sommets sur un réseau social
+ </span></p></div></div>
+<ul>
+
+
+
+<li>Léa est amie avec Paul, Lisa et Théo.</li>
+
+
+
+<li>Théo est ami avec Léa et Ada.</li>
+</ul>
+</div>
+</div>
+<p>On peut facilement déterminer les ami·e·s commun·e·s de deux personnes en comparant les listes de leurs ami·e·s, représentées par les sommets adjacents à celui considéré.
+On peut également déterminer quel·le·s ami·e·s de l'un·e ne sont pas ami·e·s de l'autre pour éventuellement les suggérer comme nouveaux·elles ami·e·s possibles.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>Lisa et Théo sont tous deux ami·e·s avec Ada et Léa qui sont leurs amies communes.</li>
+
+
+
+<li>Lisa est également amie avec Paul, mais pas avec Théo. Le réseau social pourrait demander à Théo s'il connaît Paul.</li>
+</ul></div>
+</div>
+<p>Nous avons défini les principales caractéristiques des graphes, lesquels peuvent être ou non orientés, de même qu’ils peuvent être ou non pondérés. Les sommets des graphes peuvent être reliés entre eux par des arêtes ou des arcs selon le type de graphe, et composer des cheminements. Intéressons-nous maintenant à ces cheminements et aux parcours des graphes.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Parcours</p></div></h2>
+<p>Dans cette partie nous nous intéressons aux différentes manières de parcourir les graphes.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Définition</p></div></h3>
+<p>Le terme « parcours » est parfois employé comme synonyme de chemin ou de cheminement, mais l'expression « le parcours d'un graphe » désigne l'exploration de celui-ci afin de visiter tous ses sommets.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Parcours d'un graphe :</b></p>
+<p>Le parcours d'un graphe consiste à visiter l'ensemble des sommets d'un graphe à partir d'un point de départ quelconque.</p>
+</div>
+</div>
+<p>Il existe plusieurs manières de parcourir les graphes. Nous étudions ici les plus courantes que sont :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">le <b>parcours en largeur</b> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">et le <b>parcours en profondeur</b>.</div>
+</li>
+</ul>
+<p>Nous allons effectuer ces deux parcours sur un même graphe.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img09.png" alt="graphe NSI"> 
+<span>Graphe utilisé pour les parcours
+ </span></p></div></div>
+<p>Un même graphe peut être dessiné de nombreuses manières. Pour faciliter la compréhension des parcours que nous allons présenter, nous redessinons le graphe précédent en lui donnant une orientation plus verticale et en positionnant les sommets par ordre alphabétique.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img10.png" alt="graphe NSI"> 
+<span>Orientation différente du graphe utilisé pour les parcours
+ </span></p></div></div>
+<p>Si la forme de ce second schéma est différente, les relations entre les sommets sont strictement identiques à la représentation précédente. C'est bien le même graphe.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Parcours en largeur</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le parcours en largeur d'un graphe consiste, à partir du sommet de départ, à considérer toutes les adjacences de ce sommet, puis les adjacences des sommets adjacents, et ainsi de suite.<br>
+On garde la trace de chaque sommet visité pour ne pas les visiter plusieurs fois.</p></div>
+</div>
+<p>Ce parcours s'apparente à une exploration par cercles concentriques depuis le sommet de départ dont on s'éloigne progressivement. On visite d'abord tous les voisins immédiats du sommet initial, puis tous les voisins des voisins initiaux qui n'ont pas déjà été visités, puis leurs voisins qui n'ont pas déjà été visités, etc.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La répétition de ce processus permet de découvrir l'intégralité des sommets présents sur le graphe.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">On commence par le sommet A, en notant chacun des sommets que nous visitons.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">On commence donc par visiter chacun des voisins immédiats de A, c'est-à-dire B, C et D. Ils sont marqués comme <b>visités</b>.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text">On considère ensuite les voisins des voisins B, C et D :</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">B a pour voisins E, F et G, qui n'ont pas été visités. On les visite et on les marque comme visités.</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">C a pour voisins G et D, mais ils ont tous deux déjà été visités.</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">D a pour voisins C et H. C a déjà été visité, on visite H.</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">Depuis H on constate que tous les voisins ont été visités.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le parcours est terminé. Il a été effectué par la visite des sommets suivants, dans cet ordre : A, B, C, D, E, F, G, H.</div>
+</li>
+</ul>
+<p>Les sommets ont été disposés pour être présentés par ordre alphabétique afin de faciliter la compréhension du parcours, mais il n'y a pas de notion d'ordre entre voisins d'un même sommet. Après avoir exploré les voisins initiaux de A que sont B, C et D, on aurait pu poursuivre l'exploration en commençant par les voisins de C, ou de D, au lieu de B.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Parcours en profondeur</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Contrairement au parcours en largeur, le parcours en profondeur ne considère pas d'emblée l'ensemble des voisins, mais un seul d'entre eux, à partir duquel il cherche à aller le plus loin possible, jusqu'à être entourés de sommets déjà visités.<br>
+Quand cela se produit, on revient sur les sommets découverts mais non visités aux précédentes étapes.</p></div>
+</div>
+<p>Comme pour le parcours en largeur, on doit garder la trace de chaque sommet visité. On commence arbitrairement par le sommet A pour faciliter la comparaison avec le parcours en largeur que nous venons d'effectuer.</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">Commençant par le sommet A, on identifie les voisins B, C et D.</div>
+</li>
+</ul>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On choisit arbitrairement de visiter B (comme pour le parcours en largeur, on aurait pu indifféremment choisir un autre des trois sommets voisins de A).</p></div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">Le sommet B a pour voisins non visités E, F et G. On choisit de visiter E.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text">E a pour voisins B et F. B a déjà été visité, on visite F.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="4"></div>
+<div class="list_text">G a pour voisins B et G. B a déjà été visité, on visite G.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="5"></div>
+<div class="list_text">G a pour voisins C et H. On choisit arbitrairement de visiter C.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="6"></div>
+<div class="list_text">C a pour voisins A et D. A a déjà été visité, on visite D.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="7"></div>
+<div class="list_text">D a pour voisins A et H. A a déjà été visité, on visite H.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">H a pour voisins D et G. Tous deux ont déjà été visités. Le parcours est terminé. Il a été effectué par la visite des sommets suivants, dans cet ordre : A, B, E, F, G, C, D, H.</div>
+</li>
+</ul>
+<p>En largeur comme en profondeur, les graphes peuvent être parcourus de différentes manières, en fonction de l'ordre dans lequel sont traités les sommets voisins à visiter.</p>
+<p>L'ordre des chemins parcourus lors d'un parcours en largeur et d'un parcours en profondeur sont très différents, mais la logique d'exploration du graphe est similaire, à une différence près.</p>
+<h3 range="d." markdown="1"><div markdown="1"><p>Algorithmiques de parcours</p></div></h3>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L'algorithme des deux modes de parcours est en réalité <b>identique</b>. C'est la manière dont on traite les sommets restant à explorer qui fait la différence.</p></div>
+</div>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><a target="_blank" href="/cours/conteneurs-de-donnees/fiche-de-cours">Voir le cours Conteneur de données</a></p>
+<ul>
+
+
+
+<li>Le parcours en largeur est effectué en recourant à une pile de type FIFO (<em>First In, First Out</em>, soit premier arrivé premier sorti), également appelée file d'attente.</li>
+
+
+
+<li>Le parcours en profondeur est effectué en recourant à une pile de type LIFO (<em>Last In, First Out</em>, soit dernier arrivé premier sorti).</li>
+</ul>
+</div>
+</div>
+<p>La pile (ou file) est initialisée avec le sommet de départ choisi.<br>
+Tant que la pile (ou file) n'est pas vide, on la dépile (ou défile) pour traiter le sommet courant, qui est ajouté à la liste des sommets visités.</p>
+<p>On ajoute à la pile (ou file) l'ensemble des adjacents du sommet courant qui n'ont pas déjà été visités, c'est-à-dire qui ne font pas partie des sommets déjà visités.</p>
+<p>Quand la pile ou la file est vide, l'ensemble du graphe a été parcouru et la liste des sommets constitue son parcours.</p>
+<h3 range="e." markdown="1"><div markdown="1"><p>Recherche de chemins</p></div></h3>
+<p>La recherche de chemins consiste à déterminer les chemins possibles entre deux sommets. Cette recherche est généralement orientée vers une recherche d'efficacité : celle du <b>meilleur chemin</b>.</p>
+<p>Cette recherche s'inscrit souvent dans le contexte d'un graphe pondéré, et éventuellement orienté. Le critère selon lequel un chemin sera jugé meilleur qu'un autre doit donc être défini.</p>
+<p>Les logiciels de navigation routière peuvent évaluer les chemins possibles d'un point de départ à un point d'arrivée selon différents critères :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">rapidité du parcours ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">nombre de kilomètres parcourus ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">coût kilométrique.</div>
+</li>
+</ul>
+<p>De la même façon, pour se rendre d'une ville à l'autre, le réseau routier peut proposer différents axes :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">une circulation sur autoroutes ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">une circulation sur routes principales et voies rapides sans péages ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">une circulation par de petites routes secondaires.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si le critère choisi est le temps de parcours, le trajet autoroutier constitue souvent le meilleur chemin tant qu'il n'occasionne pas de détours importants.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si le critère choisi est la minimisation du nombre de kilomètres, le meilleur parcours emprunte souvent de petites routes, moins sujettes à contournements que les autoroutes et certaines routes principales.((fleche))
+Si le critère choisi est la minimisation du coût kilométrique, la détermination du meilleur itinéraire prendra en compte la présence ou non de péage, mais aussi de la consommation du véhicule, laquelle varie avec sa vitesse et donc les axes empruntés.</div>
+</li>
+</ul>
+<p>Il existe plusieurs algorithmes de détermination du chemin le plus court. Le plus connu est celui de l'informaticien néerlandais Dijkstra, étudié en classe de seconde dans le cours portant sur le calcul d'itinéraire.</p>
+<p>La recherche du meilleur chemin s'applique également au routage dans les réseaux informatiques.<br>
+La métrique des protocoles de routage, également appelée coût des routes, dépend du protocole utilisé. Les protocoles de routage interne présentés dans le cours de Terminale sur les réseaux et la sécurité s'appuient sur deux métriques différentes en fonction des protocoles utilisés :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">le nombre de sauts pour le protocole RIP ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la bande passante disponible de chaque segment pour le protocole OSPF.</div>
+</li>
+</ul>
+<p>Pour le calcul des routes selon RIP, chaque relation a la même valeur : elles peuvent donc être représentées par un graphe non pondéré.<br>
+Le calcul des routes selon OSPF prenant en compte la bande passante disponible des différents segments composant une route, leur représentation nécessite un graphe pondéré.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Adjacence</p></div></h2>
+<p>Les adjacences sont une propriété importante des graphes. Elles indiquent la proximité entre des sommets ou nœuds.</p>
+<p>Il existe plusieurs manières de représenter et d'implémenter ces adjacences. Nous étudierons les adjacences selon deux représentations :</p>
+<ul>
+
+<li>les <b>matrices d'adjacence</b> ;</li>
+
+<li>les <b>listes d'adjacence</b>.</li>
+</ul>
+<p>Nous utiliserons le même graphe ci-dessous pour construire les deux représentations.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img11.png" alt="graphe NSI"> 
+<span>Graphe utilisé pour la représentation des adjacences
+ </span></p></div></div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Matrice d'adjacences</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La <b>représentation par matrice</b> consiste à matérialiser chacune des adjacences, elles-mêmes matérialisées par l'existence d'une relation entre deux nœuds, elle-même matérialisée par une arête.</p></div>
+</div>
+<p>Cela revient à remplir un tableau dont les entrées horizontales et verticales sont les nœuds.</p>
+<div markdown="1" class="tab-c texte-centre"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style=""></td>
+<td style="background:#80DEEA; ">A </td>
+<td style="background:#80DEEA; ">B </td>
+<td style="background:#80DEEA; ">C </td>
+<td style="background:#80DEEA; ">D </td>
+<td style="background:#80DEEA; ">E </td>
+<td style="background:#80DEEA; ">F </td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">A </td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">B </td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">C </td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">D </td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">E </td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="background:#80DEEA; ">F </td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</table></div>
+<p>Sur la première ligne, on considère le sommet A. Le graphe montre qu'il est relié par une arête aux sommets B et C. On note donc un 1 dans les colonnes correspondantes. L'absence d'arête est notée par un 0.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Cette matrice est symétrique par rapport à la diagonale, s'agissant d'un graphe non orienté. Elle ne le serait pas nécessairement pour un graphe orienté, sauf dans le cas particulier où il comporterait uniquement des arcs réciproques.</p></div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Listes d'adjacences</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La <b>représentation par listes d'adjacence</b> consiste à lister, pour chaque sommet, l'ensemble des sommets qui y sont eux-mêmes reliés par une arête.</p></div>
+</div>
+<p><span class="calculator_button" markdown="1">A [B, C]</span><br>
+<span class="calculator_button" markdown="1">B [A, C, E]</span><br>
+<span class="calculator_button" markdown="1">C [A, B, D, F]</span><br>
+<span class="calculator_button" markdown="1">D [C, F]</span><br>
+<span class="calculator_button" markdown="1">E [B, F]</span><br>
+<span class="calculator_button" markdown="1">F [E, C, D]</span></p>
+<p>L'implémentation des listes d'adjacence peut prendre la forme suivante :</p>
+<p><span class="calculator_button" markdown="1">adjacences = {</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">'A': ['B', 'C'],</span><br>
+<span class="calculator_button" markdown="1">'B': ['A', 'C', 'E'],</span><br>
+<span class="calculator_button" markdown="1">'C': ['A', 'B', 'D', 'F'],</span><br>
+<span class="calculator_button" markdown="1">'D': ['C', 'F'],</span><br>
+<span class="calculator_button" markdown="1">'E': ['B', 'F'],</span><br>
+<span class="calculator_button" markdown="1">'F': ['C', 'D', 'E']</span></p></div>
+<p><span class="calculator_button" markdown="1">}</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L'expression « listes d'adjacence » pourrait faire penser que celles-ci doivent obligatoirement être implémentées avec des listes, mais ce n'est pas le cas. On pourrait remplacer par des <b>sets</b> dans le cas présent, et par des <b>dictionnaires</b> pour des graphes pondérés.</p></div>
+</div>
+<p><span class="calculator_button" markdown="1"># Implémentation à base de sets</span><br>
+<span class="calculator_button" markdown="1">adjacences = {</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">'A': {'B', 'C'},</span><br>
+<span class="calculator_button" markdown="1">'B': {'A', 'C', 'E'},</span><br>
+<span class="calculator_button" markdown="1">'C': {'A', 'B', 'D', 'F'},</span><br>
+<span class="calculator_button" markdown="1">'D': {'C', 'F'},</span><br>
+<span class="calculator_button" markdown="1">'E': {'B', 'F'},</span><br>
+<span class="calculator_button" markdown="1">'F': {'C', 'D', 'E'},</span></p></div>
+<p><span class="calculator_button" markdown="1">}</span></p>
+<p>Si on souhaite n'avoir qu'une seule implémentation pour les graphes pondérés ou non, les graphes non pondérés sont affectés d'une même valeur arbitraire.</p>
+<p><span class="calculator_button" markdown="1"># Implémentation avec des dictionnaires</span><br>
+<span class="calculator_button" markdown="1">adjacences = {</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">'A': {'B': 1, 'C': 1},</span><br>
+<span class="calculator_button" markdown="1">'B': {'A': 1, 'C': 1, 'E': 1},</span><br>
+<span class="calculator_button" markdown="1">'C': {'A': 1, 'B': 1, 'D': 1, 'F': 1},</span><br>
+<span class="calculator_button" markdown="1">'D': {'C': 1, 'F': 1},</span><br>
+<span class="calculator_button" markdown="1">'E': {'B': 1, 'F': 1},</span><br>
+<span class="calculator_button" markdown="1">'F': {'C': 1, 'D': 1, 'E': 1},</span></p></div>
+<p><span class="calculator_button" markdown="1">}</span></p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Dans le cas de graphes orientés, la simple adjacence n'est pas suffisante pour renseigner les propriétés du graphe. Le caractère orienté des arcs se traduit par l'établissement de deux listes pour les différents sommets :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">listes de prédécesseurs ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">listes de successeurs.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Les matrices d'adjacence et les listes d'adjacence sont les principales structures de données pour représenter les graphes. D'autres structures sont utilisables mais cela dépasse le cadre de ce cours.</p>
+<p>Abordons maintenant l'intérêt d'utiliser plutôt l'une ou l'autre de ces structures.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Choix d'une représentation</p></div></h3>
+<p>Le choix d'une représentation dépend du traitement algorithmique que l'on souhaite mettre en place et de la densité du graphe.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Densité d’un graphe :</b></p>
+<p>La densité d'un graphe exprime la proportion des relations existantes parmi celles possibles entre tous les sommets.</p>
+</div>
+</div>
+<p>Un graphe dont les sommets sont très largement reliés entre eux sera considéré comme <b>dense</b>. <em>A contrario</em> un graphe dont les sommets sont relativement peu reliés est dit <b>creux</b>.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Les deux graphes ci-après comportent le même nombre de sommets, avec une densité plus ou moins importante de relations.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img12.png" alt="graphe creux NSI"> 
+<span>Graphe creux
+ </span></p></div></div>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img13.png" alt="graphe dense NSI"> 
+<span>Graphe dense
+ </span></p></div></div>
+</div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Les listes d'adjacence sont plus indiquées pour des graphes creux.<br>
+Les matrices sont préférables pour des graphes denses.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le choix du mode de représentation dépend également des traitements que l'on envisage d'effectuer sur le graphe.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Les graphes peuvent être implémentés selon différents paradigmes. Ils peuvent notamment être implémentés sous forme de classes, pour encapsuler les données qui leur sont liées, et leur appliquer différentes méthodes correspondant aux fonctionnalités requises.</p>
+<p>Les traitements sur les graphes peuvent notamment inclure :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">l'ajout, la modification ou la suppression de sommets ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l'ajout, modification ou suppression de relations (arcs ou arêtes), et de leurs pondérations éventuelles ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la recherche d'adjacences, prenant en compte la notion de prédécesseurs et de successeurs dans le cas de graphes orientés.</div>
+</li>
+</ul>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous avons présenté dans ce cours les structures de données relationnelles appelées graphes. Nous avons d'abord caractérisé les graphes, lesquels peuvent être orientés ou non, et pondérés ou non. Nous nous sommes ensuite intéressés aux parcours sur les graphes et à la recherche de chemins optimisés. Nous avons enfin abordé les modalités d'implémentation des graphes, et notamment des adjacences sous forme de listes ou de matrices. Les différents exemples illustrant ce cours ont montré la grande diversité des problématiques qu'il est possible de modéliser à l'aide de graphes, du routage aux itinéraires routiers en passant par les réseaux sociaux.</p>
+</div>
+</div></div>
+<div id="poool-r7638-s9g5i" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5f48bf5b1f3276010020e20e","type":"Cours","title":"Graphes abstraits","content":"[IN]\nIntroduction\u0026nbsp;:\n\nLes graphes sont des structures de données relationnelles très utiles pour la modélisation de nombreuses problématiques, dans des domaines très variés.  \nNous en préciserons d'abord les caractéristiques dans une première partie. Nous étudierons ensuite les parcours et cheminements sur les graphes dans une deuxième partie. Nous nous intéresserons enfin, dans une troisième partie, aux modalités d'implémentation des structures de données de type graphe.\n[/IN]\n\n##Caractérisation des graphes/1\n\nLa notion de graphe est principalement connue sous l'angle de sa représentation graphique, mais c'est aussi un type de structure de données relationnelles.\n* La représentation graphique d'une structure de type graphe fait figurer des éléments reliés entre eux par des liaisons.((fleche))\n\n###Éléments constitutifs d'un graphe/a.\n\nUn graphe se compose de deux types d'éléments complémentaires\u0026nbsp;: les **sommets** et les **arêtes**.\n* Les sommets, également appelés «\u0026nbsp;nœuds\u0026nbsp;», sont les éléments individuels.\n* Les arêtes sont les connexions reliant deux sommets entre eux, matérialisées graphiquement par une ligne.\n\n[EX]\nLe graphe ci-dessous comporte\u0026nbsp;:\n* 6\u0026nbsp;sommets ou nœuds\u0026nbsp;;((liste2))\n* 8\u0026nbsp;arêtes.((liste2))\n\n[IMG]((100))\n![Graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img01.png) #Graphe comportant 6 sommets et 8 arêtes\n[/IMG]\n \nLes sommets sont A, B, C, D, E et F.  \nLes arêtes relient les paires de sommets suivantes\u0026nbsp;:\n* A et B\u0026nbsp;;\n* A et C\u0026nbsp;;\n* B et C\u0026nbsp;;\n* C et D\u0026nbsp;;\n* B et E\u0026nbsp;;\n* E et F\u0026nbsp;;\n* C et F\u0026nbsp;;\n* D et F.\n[/EX]\n\nTous les sommets ne doivent pas nécessairement être liés entre eux. On remarque dans notre exemple qu'aucune arête ne relie\u0026nbsp;B et\u0026nbsp;F.\n\n[RETENIR]\nUn graphe est défini par deux ensembles complémentaires\u0026nbsp;:\n* l'ensemble des sommets\u0026nbsp;;((liste2))\n* l'ensemble des arêtes reliant des sommets par paires.((liste2))\n[/RETENIR]\n\n###Orientation/b.\n\nOn distingue deux types de graphes selon leur orientation\u0026nbsp;:\n* les graphes **non\u0026nbsp;orientés**\u0026nbsp;;\n* les graphes **orientés**.\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Graphe non\u0026nbsp;orienté**((bulle,1))\n\u003e\u003e\n\n[RETENIR]\nSur un graphe non\u0026nbsp;orienté, les relations sont **mutuelles**\u0026nbsp;: quand une arête relie deux sommets, il n'y a pas de notion de sens.\n[/RETENIR]\n\nCes relations s'illustrent bien avec des réseaux sociaux connus\u0026nbsp;: c'est le cas pour le réseau social Facebook où les relations entre les membres peuvent être représentées par un graphe non\u0026nbsp;orienté.\n\n[EX]\n[IMG]((100))\n![graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img02.png) #Réseau social avec relations symétriques\n[/IMG]\n \nPaul est ami avec Lisa, et Lisa est amie avec Paul. L'arête traduit la symétrie de la relation.\n[/EX]\n\n[ATT]\nLa nature des relations entre membres des réseaux sociaux varie d'un réseau à l'autre.\u0026nbsp;\n[/ATT]\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Graphe orienté**((bulle,2))\n\u003e\u003e\n\n[RETENIR]\nSur un graphe orienté, les sommets ne sont pas reliés par des arêtes mais par des arcs indiquant un sens à la relation. Quand ils sont reliés entre eux, les sommets d'un graphe orienté peuvent donc l'être par un ou deux arcs, selon qu'il y ait ou non réciprocité.\n[/RETENIR]\n\nSur des réseaux sociaux, comme Twitter ou Instagram, la relation n'est pas nécessairement mutuelle. Le suivi unilatéral est possible\u0026nbsp;: un membre choisit de suivre les publications d'un autre, mais il n'y a pas de réciprocité automatique. La personne suivie peut, si elle le souhaite, suivre l'autre personne en retour, mais rien ne l'y oblige.\n\nLes relations unilatérales, sur des graphes orientés, sont représentées par des **arcs fléchés**. Une éventuelle réciprocité de la relation est représentée par un arc complémentaire dans l'autre sens.\n\n[EX]\n[IMG]((100))\n![graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img03.png) #Réseau social avec relations asymétriques\n[/IMG]\n \n\n* Lisa suit Paul et Léa. Elle n'est suivie par personne.\n* Léa suit Paul et Ada. Elle est suivie par Lisa et par Théo.\n* Théo suit Léa et Ada.\n* Ada suit Théo.\n* Seuls Ada et Théo se suivent mutuellement.\n[/EX]\n\nLes graphes orientés sont parfois représentés avec des segments de droite fléchés, bidirectionnels le cas échéant. Le schéma ci-dessous illustre le même graphe que précédemment.\n\n[IMG]((100))\n![Graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img04.png) #Représentation alternative d'un graphe orienté\n[/IMG]\n \n\n###Pondération/c.\n\nLes graphes peuvent être ou non pondérés\u0026nbsp;:\n* les relations des graphes **non\u0026nbsp;pondérés** ont toutes la même valeur, qui n'a donc pas à être précisée\u0026nbsp;;\n* les relations des graphes **pondérés** pouvant varier, elles doivent être précisées.\n* La valeur affectée à la relation est appelée **pondération** ou **coût**.((fleche))\n\n[IMG]((100))\n![Graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img05.png) #Graphe pondéré\n[/IMG]\n\n[RETENIR]\n* Quand la pondération porte sur un graphe non\u0026nbsp;orienté, elle est affectée à chaque arête.\n* Quand la pondération porte sur un graphe orienté, une pondération est affectée à chaque arc.\n[/RETENIR]\n\n###Chemin/d.\n\nUn **chemin** est une séquence d'arêtes distinctes (un chemin ne repasse pas par la même arête) permettant de relier deux sommets entre eux. Il peut exister plusieurs chemins reliant une même paire de sommets.\n\n[EX]\nSur le schéma ci-dessous, différentes chaînes plus ou moins longues de segments permettent de rejoindre le sommet\u0026nbsp;D en partant du sommet\u0026nbsp;A\u0026nbsp;:\n\n* A, B, C, D\u0026nbsp;;\n* A, B, C, E, D\u0026nbsp;;\n* A, B, E, D\u0026nbsp;;\n* A, B, E, C, D\u0026nbsp;;\n* A, C, B, E, D\u0026nbsp;;\n* A, C, D\u0026nbsp;;\n* A, C, E, D.\n\n[IMG]((100))\n![Graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img06.png) #Multiplicité des chaînes de segments reliant deux sommets\n[/IMG] \n[/EX]\n\nLes graphes ou les portions de graphes peuvent comporter des **cycles**, c'est-à-dire des chaînes de segments permettant de retourner à un point de départ sans passer deux fois par un même sommet.\n\nQuand les graphes sont orientés, les séquences d'arcs, appelées chemins, peuvent présenter un caractère cyclique en formant des **chemins fermés**. \n\nDans un graphe orienté, les chemins entre un sommet de départ et un sommet d'arrivée ne sont pas nécessairement symétriques.\n\n[EX]\nLe schéma ci-après montre qu'il est possible de se rendre en\u0026nbsp;C à partir de\u0026nbsp;A, mais le retour direct de\u0026nbsp;C en\u0026nbsp;A n'est pas possible. Pour se rendre de\u0026nbsp;C en\u0026nbsp;A, il faut emprunter d'autres chemins, en passant soit par\u0026nbsp;D, soit par\u0026nbsp;B.\n\n[IMG]((100))\n![graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img07.png) #Multiplicité des séquences d'arcs reliant deux sommets\n[/IMG]\n[/EX]\n\nCette capacité à distinguer les sens de cheminement entre deux sommets peut s'avérer utile dans différentes applications.\n* Par exemple, quand les logiciels et applications de navigation routière et d'aide à la conduite calculent et proposent un itinéraire, ils doivent prendre en compte le fait que certains axes de circulation sont en sens unique, notamment en centre-ville.((fleche))\n\n###Adjacence/e.\n\nDes sommets sont dits **adjacents**, ou **voisins**, s'ils sont reliés entre eux par une arête.\n\n[EX]\nL'amitié entre membres d'un réseau social est représentée sur un graphe par l'adjacence des sommets correspondant aux membres de ce réseau.\n\n[IMG]((100))\n![graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img08.png) #Adjacences de sommets sur un réseau social\n[/IMG]\n\n* Léa est amie avec Paul, Lisa et Théo.\n* Théo est ami avec Léa et Ada.\n[/EX]\n\nOn peut facilement déterminer les ami·e·s commun·e·s de deux personnes en comparant les listes de leurs ami·e·s, représentées par les sommets adjacents à celui considéré.\nOn peut également déterminer quel·le·s ami·e·s de l'un·e ne sont pas ami·e·s de l'autre pour éventuellement les suggérer comme nouveaux·elles ami·e·s possibles.\n\n[EX]\n* Lisa et Théo sont tous deux ami·e·s avec Ada et Léa qui sont leurs amies communes.\n* Lisa est également amie avec Paul, mais pas avec Théo. Le réseau social pourrait demander à Théo s'il connaît Paul.\n[/EX]\n\nNous avons défini les principales caractéristiques des graphes, lesquels peuvent être ou non orientés, de même qu’ils peuvent être ou non pondérés. Les sommets des graphes peuvent être reliés entre eux par des arêtes ou des arcs selon le type de graphe, et composer des cheminements. Intéressons-nous maintenant à ces cheminements et aux parcours des graphes.\n\n##Parcours/2\n\nDans cette partie nous nous intéressons aux différentes manières de parcourir les graphes.\n\n###Définition/a.\n\nLe terme «\u0026nbsp;parcours\u0026nbsp;» est parfois employé comme synonyme de chemin ou de cheminement, mais l'expression «\u0026nbsp;le parcours d'un graphe\u0026nbsp;» désigne l'exploration de celui-ci afin de visiter tous ses sommets.\n\n[DEF]\n**Parcours d'un graphe\u0026nbsp;:**\n\nLe parcours d'un graphe consiste à visiter l'ensemble des sommets d'un graphe à partir d'un point de départ quelconque.\n[/DEF]\n\nIl existe plusieurs manières de parcourir les graphes. Nous étudions ici les plus courantes que sont\u0026nbsp;:\n* le **parcours en largeur**\u0026nbsp;;((liste2))\n* et le **parcours en profondeur**.((liste2))\n\nNous allons effectuer ces deux parcours sur un même graphe.\n\n[IMG]((100))\n![graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img09.png) #Graphe utilisé pour les parcours\n[/IMG]\n\nUn même graphe peut être dessiné de nombreuses manières. Pour faciliter la compréhension des parcours que nous allons présenter, nous redessinons le graphe précédent en lui donnant une orientation plus verticale et en positionnant les sommets par ordre alphabétique.\n\n[IMG]((100))\n![graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img10.png) #Orientation différente du graphe utilisé pour les parcours\n[/IMG]\n\nSi la forme de ce second schéma est différente, les relations entre les sommets sont strictement identiques à la représentation précédente. C'est bien le même graphe.\n\n###Parcours en largeur/b.\n\n[RETENIR]\nLe parcours en largeur d'un graphe consiste, à partir du sommet de départ, à considérer toutes les adjacences de ce sommet, puis les adjacences des sommets adjacents, et ainsi de suite.  \nOn garde la trace de chaque sommet visité pour ne pas les visiter plusieurs fois.\n[/RETENIR]\n\nCe parcours s'apparente à une exploration par cercles concentriques depuis le sommet de départ dont on s'éloigne progressivement. On visite d'abord tous les voisins immédiats du sommet initial, puis tous les voisins des voisins initiaux qui n'ont pas déjà été visités, puis leurs voisins qui n'ont pas déjà été visités, etc.\n* La répétition de ce processus permet de découvrir l'intégralité des sommets présents sur le graphe.((fleche))\n* On commence par le sommet\u0026nbsp;A, en notant chacun des sommets que nous visitons.((bulle,1))\n* On commence donc par visiter chacun des voisins immédiats de\u0026nbsp;A, c'est-à-dire\u0026nbsp;B,\u0026nbsp;C et\u0026nbsp;D. Ils sont marqués comme **visités**.((bulle,2))\n* On considère ensuite les voisins des voisins\u0026nbsp;B,\u0026nbsp;C et\u0026nbsp;D\u0026nbsp;:((bulle,3))\n* B a pour voisins\u0026nbsp;E,\u0026nbsp;F et\u0026nbsp;G, qui n'ont pas été visités. On les visite et on les marque comme visités.((liste2))\n* C a pour voisins\u0026nbsp;G et\u0026nbsp;D, mais ils ont tous deux déjà été visités.((liste2))\n* D a pour voisins\u0026nbsp;C et\u0026nbsp;H. C a déjà été visité, on visite\u0026nbsp;H.((liste2))\n* Depuis\u0026nbsp;H on constate que tous les voisins ont été visités.((liste2))\n* Le parcours est terminé. Il a été effectué par la visite des sommets suivants, dans cet ordre\u0026nbsp;: A, B, C, D, E, F, G, H.((fleche))\n\nLes sommets ont été disposés pour être présentés par ordre alphabétique afin de faciliter la compréhension du parcours, mais il n'y a pas de notion d'ordre entre voisins d'un même sommet. Après avoir exploré les voisins initiaux de\u0026nbsp;A que sont\u0026nbsp;B,\u0026nbsp;C et\u0026nbsp;D, on aurait pu poursuivre l'exploration en commençant par les voisins de\u0026nbsp;C, ou de\u0026nbsp;D, au lieu de\u0026nbsp;B.\n\n###Parcours en profondeur/c.\n\n[RETENIR]\nContrairement au parcours en largeur, le parcours en profondeur ne considère pas d'emblée l'ensemble des voisins, mais un seul d'entre eux, à partir duquel il cherche à aller le plus loin possible, jusqu'à être entourés de sommets déjà visités.  \nQuand cela se produit, on revient sur les sommets découverts mais non visités aux précédentes étapes.\n[/RETENIR]\n\nComme pour le parcours en largeur, on doit garder la trace de chaque sommet visité. On commence arbitrairement par le sommet\u0026nbsp;A pour faciliter la comparaison avec le parcours en largeur que nous venons d'effectuer.\n\n* Commençant par le sommet\u0026nbsp;A, on identifie les voisins B, C et D.((bulle,1))\n\n[AST]\nOn choisit arbitrairement de visiter\u0026nbsp;B (comme pour le parcours en largeur, on aurait pu indifféremment choisir un autre des trois sommets voisins de\u0026nbsp;A).\n[/AST]\n\n* Le sommet B a pour voisins non visités E, F et G. On choisit de visiter E.((bulle,2))\n* E a pour voisins B et F. B a déjà été visité, on visite F.((bulle,3))\n* G a pour voisins B et G. B a déjà été visité, on visite G.((bulle,4))\n* G a pour voisins C et H. On choisit arbitrairement de visiter C.((bulle,5))\n* C a pour voisins A et D. A a déjà été visité, on visite D.((bulle,6))\n* D a pour voisins A et H. A a déjà été visité, on visite H.((bulle,7))\n* H a pour voisins D et G. Tous deux ont déjà été visités. Le parcours est terminé. Il a été effectué par la visite des sommets suivants, dans cet ordre : A, B, E, F, G, C, D, H.((fleche))\n\nEn largeur comme en profondeur, les graphes peuvent être parcourus de différentes manières, en fonction de l'ordre dans lequel sont traités les sommets voisins à visiter.\n\nL'ordre des chemins parcourus lors d'un parcours en largeur et d'un parcours en profondeur sont très différents, mais la logique d'exploration du graphe est similaire, à une différence près.\n\n###Algorithmiques de parcours/d.\n\n[AST]\nL'algorithme des deux modes de parcours est en réalité **identique**. C'est la manière dont on traite les sommets restant à explorer qui fait la différence.\n[/AST]\n\n[RAP]\n\u003ca target=\"_blank\" href=\"/cours/conteneurs-de-donnees/fiche-de-cours\"\u003eVoir le cours Conteneur de données\u003c/a\u003e\n* Le parcours en largeur est effectué en recourant à une pile de type\u0026nbsp;FIFO (__First In, First Out__, soit premier arrivé premier sorti), également appelée file d'attente.\n* Le parcours en profondeur est effectué en recourant à une pile de type LIFO (__Last In, First Out__, soit dernier arrivé premier sorti).\n[/RAP]\n\nLa pile (ou file) est initialisée avec le sommet de départ choisi.  \nTant que la pile (ou file) n'est pas vide, on la dépile (ou défile) pour traiter le sommet courant, qui est ajouté à la liste des sommets visités.\n\nOn ajoute à la pile (ou file) l'ensemble des adjacents du sommet courant qui n'ont pas déjà été visités, c'est-à-dire qui ne font pas partie des sommets déjà visités.\n\nQuand la pile ou la file est vide, l'ensemble du graphe a été parcouru et la liste des sommets constitue son parcours.\n\n###Recherche de chemins/e.\n\nLa recherche de chemins consiste à déterminer les chemins possibles entre deux sommets. Cette recherche est généralement orientée vers une recherche d'efficacité\u0026nbsp;: celle du **meilleur chemin**.\n\nCette recherche s'inscrit souvent dans le contexte d'un graphe pondéré, et éventuellement orienté. Le critère selon lequel un chemin sera jugé meilleur qu'un autre doit donc être défini.\n\nLes logiciels de navigation routière peuvent évaluer les chemins possibles d'un point de départ à un point d'arrivée selon différents critères\u0026nbsp;:\n* rapidité du parcours\u0026nbsp;;((liste2))\n* nombre de kilomètres parcourus\u0026nbsp;;((liste2))\n* coût kilométrique.((liste2))\n\nDe la même façon, pour se rendre d'une ville à l'autre, le réseau routier peut proposer différents axes\u0026nbsp;:\n* une circulation sur autoroutes\u0026nbsp;;((liste2))\n* une circulation sur routes principales et voies rapides sans péages\u0026nbsp;;((liste2))\n* une circulation par de petites routes secondaires.((liste2))\n* Si le critère choisi est le temps de parcours, le trajet autoroutier constitue souvent le meilleur chemin tant qu'il n'occasionne pas de détours importants.((fleche))\n* Si le critère choisi est la minimisation du nombre de kilomètres, le meilleur parcours emprunte souvent de petites routes, moins sujettes à contournements que les autoroutes et certaines routes principales.((fleche))\nSi le critère choisi est la minimisation du coût kilométrique, la détermination du meilleur itinéraire prendra en compte la présence ou non de péage, mais aussi de la consommation du véhicule, laquelle varie avec sa vitesse et donc les axes empruntés.((fleche))\n\nIl existe plusieurs algorithmes de détermination du chemin le plus court. Le plus connu est celui de l'informaticien néerlandais Dijkstra, étudié en classe de seconde dans le cours portant sur le calcul d'itinéraire.\n\nLa recherche du meilleur chemin s'applique également au routage dans les réseaux informatiques.  \nLa métrique des protocoles de routage, également appelée coût des routes, dépend du protocole utilisé. Les protocoles de routage interne présentés dans le cours de Terminale sur les réseaux et la sécurité s'appuient sur deux métriques différentes en fonction des protocoles utilisés\u0026nbsp;:\n* le nombre de sauts pour le protocole RIP\u0026nbsp;;((liste2))\n* la bande passante disponible de chaque segment pour le protocole OSPF.((liste2))\n\nPour le calcul des routes selon RIP, chaque relation a la même valeur\u0026nbsp;: elles peuvent donc être représentées par un graphe non\u0026nbsp;pondéré.  \nLe calcul des routes selon OSPF prenant en compte la bande passante disponible des différents segments composant une route, leur représentation nécessite un graphe pondéré.\n\n##Adjacence/3\n\nLes adjacences sont une propriété importante des graphes. Elles indiquent la proximité entre des sommets ou nœuds.\n\nIl existe plusieurs manières de représenter et d'implémenter ces adjacences. Nous étudierons les adjacences selon deux représentations\u0026nbsp;:\n* les **matrices d'adjacence**\u0026nbsp;;\n* les **listes d'adjacence**.\n\nNous utiliserons le même graphe ci-dessous pour construire les deux représentations.\n\n[IMG]((100))\n![graphe NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img11.png) #Graphe utilisé pour la représentation des adjacences\n[/IMG]\n\n###Matrice d'adjacences/a.\n\n[RETENIR]\nLa **représentation par matrice** consiste à matérialiser chacune des adjacences, elles-mêmes matérialisées par l'existence d'une relation entre deux nœuds, elle-même matérialisée par une arête.\n[/RETENIR]\n\nCela revient à remplir un tableau dont les entrées horizontales et verticales sont les nœuds.\n\n[TAB]((auto, c, n, texte-centre))\n[LI]\n| (()) |\n| A ((0,0,0,#80DEEA)) |\n| B ((0,0,0,#80DEEA)) |\n| C ((0,0,0,#80DEEA)) |\n| D ((0,0,0,#80DEEA)) |\n| E ((0,0,0,#80DEEA)) |\n| F ((0,0,0,#80DEEA)) |\n[/LI]\n[LI]\n| A ((0,0,0,#80DEEA)) |\n| 0 |\n| 1 |\n| 1 |\n| 0 |\n| 0 |\n| 0 |\n[/LI]\n[LI]\n| B ((0,0,0,#80DEEA)) |\n| 1 |\n| 0 |\n| 1 |\n| 0 |\n| 1 |\n| 1 |\n[/LI]\n[LI]\n| C ((0,0,0,#80DEEA)) |\n| 1 |\n| 1 |\n| 0 |\n| 1 |\n| 0 |\n| 1 |\n[/LI]\n[LI]\n| D ((0,0,0,#80DEEA)) |\n| 0 |\n| 0 |\n| 1 |\n| 0 |\n| 0 |\n| 1 |\n[/LI]\n[LI]\n| E ((0,0,0,#80DEEA)) |\n| 0 |\n| 1 |\n| 0 |\n| 0 |\n| 0 |\n| 1 |\n[/LI]\n[LI]\n| F ((0,0,0,#80DEEA)) |\n| 0 |\n| 0 |\n| 1 |\n| 1 |\n| 1 |\n| 0 |\n[/LI]\n[/TAB]\n\nSur la première ligne, on considère le sommet\u0026nbsp;A. Le graphe montre qu'il est relié par une arête aux sommets\u0026nbsp;B et\u0026nbsp;C. On note donc un\u0026nbsp;1 dans les colonnes correspondantes. L'absence d'arête est notée par un\u0026nbsp;0.\n\n[AST]\nCette matrice est symétrique par rapport à la diagonale, s'agissant d'un graphe non\u0026nbsp;orienté. Elle ne le serait pas nécessairement pour un graphe orienté, sauf dans le cas particulier où il comporterait uniquement des arcs réciproques.\n[/AST]\n\n###Listes d'adjacences/b.\n\n[RETENIR]\nLa **représentation par listes d'adjacence** consiste à lister, pour chaque sommet, l'ensemble des sommets qui y sont eux-mêmes reliés par une arête.\n[/RETENIR]\n\n[BUTC]A [B, C][/BUTC]  \n[BUTC]B [A, C, E][/BUTC]  \n[BUTC]C [A, B, D, F][/BUTC]  \n[BUTC]D [C, F][/BUTC]  \n[BUTC]E [B, F][/BUTC]  \n[BUTC]F [E, C, D][/BUTC]\n\nL'implémentation des listes d'adjacence peut prendre la forme suivante\u0026nbsp;:\n\n[BUTC]adjacences = {[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]'A': ['B', 'C'],[/BUTC]  \n[BUTC]'B': ['A', 'C', 'E'],[/BUTC]  \n[BUTC]'C': ['A', 'B', 'D', 'F'],[/BUTC]  \n[BUTC]'D': ['C', 'F'],[/BUTC]  \n[BUTC]'E': ['B', 'F'],[/BUTC]  \n[BUTC]'F': ['C', 'D', 'E'][/BUTC]\u003e\u003e\n[BUTC]}[/BUTC]\n\n[AST]\nL'expression «\u0026nbsp;listes d'adjacence\u0026nbsp;» pourrait faire penser que celles-ci doivent obligatoirement être implémentées avec des listes, mais ce n'est pas le cas. On pourrait remplacer par des **sets** dans le cas présent, et par des **dictionnaires** pour des graphes pondérés.\n[/AST]\n\n[BUTC]# Implémentation à base de sets[/BUTC]  \n[BUTC]adjacences = {[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]'A': {'B', 'C'},[/BUTC]  \n[BUTC]'B': {'A', 'C', 'E'},[/BUTC]  \n[BUTC]'C': {'A', 'B', 'D', 'F'},[/BUTC]  \n[BUTC]'D': {'C', 'F'},[/BUTC]  \n[BUTC]'E': {'B', 'F'},[/BUTC]  \n[BUTC]'F': {'C', 'D', 'E'},[/BUTC]\u003e\u003e\n[BUTC]}[/BUTC]\n\nSi on souhaite n'avoir qu'une seule implémentation pour les graphes pondérés ou non, les graphes non\u0026nbsp;pondérés sont affectés d'une même valeur arbitraire.\n\n[BUTC]# Implémentation avec des dictionnaires[/BUTC]  \n[BUTC]adjacences = {[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]'A': {'B': 1, 'C': 1},[/BUTC]  \n[BUTC]'B': {'A': 1, 'C': 1, 'E': 1},[/BUTC]  \n[BUTC]'C': {'A': 1, 'B': 1, 'D': 1, 'F': 1},[/BUTC]  \n[BUTC]'D': {'C': 1, 'F': 1},[/BUTC]  \n[BUTC]'E': {'B': 1, 'F': 1},[/BUTC]  \n[BUTC]'F': {'C': 1, 'D': 1, 'E': 1},[/BUTC]\u003e\u003e\n[BUTC]}[/BUTC]\n\n[ATT]\nDans le cas de graphes orientés, la simple adjacence n'est pas suffisante pour renseigner les propriétés du graphe. Le caractère orienté des arcs se traduit par l'établissement de deux listes pour les différents sommets\u0026nbsp;:\n* listes de prédécesseurs\u0026nbsp;;((liste2))\n* listes de successeurs.((liste2))\n[/ATT]\n\nLes matrices d'adjacence et les listes d'adjacence sont les principales structures de données pour représenter les graphes. D'autres structures sont utilisables mais cela dépasse le cadre de ce cours.\n\nAbordons maintenant l'intérêt d'utiliser plutôt l'une ou l'autre de ces structures.\n\n###Choix d'une représentation/c.\n\nLe choix d'une représentation dépend du traitement algorithmique que l'on souhaite mettre en place et de la densité du graphe.\n\n[DEF]\n**Densité d’un graphe\u0026nbsp;:**\n\nLa densité d'un graphe exprime la proportion des relations existantes parmi celles possibles entre tous les sommets.\n[/DEF]\n\nUn graphe dont les sommets sont très largement reliés entre eux sera considéré comme **dense**. __A\u0026nbsp;contrario__ un graphe dont les sommets sont relativement peu reliés est dit **creux**.\n\n[EX]\nLes deux graphes ci-après comportent le même nombre de sommets, avec une densité plus ou moins importante de relations.\n\n[IMG]((100))\n![graphe creux NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img12.png) #Graphe creux\n[/IMG]\n\n[IMG]((100))\n![graphe dense NSI](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c06-img13.png) #Graphe dense\n[/IMG]\n[/EX]\n\n[RETENIR]\nLes listes d'adjacence sont plus indiquées pour des graphes creux.  \nLes matrices sont préférables pour des graphes denses.\n* Le choix du mode de représentation dépend également des traitements que l'on envisage d'effectuer sur le graphe.((fleche))\n[/RETENIR]\n\nLes graphes peuvent être implémentés selon différents paradigmes. Ils peuvent notamment être implémentés sous forme de classes, pour encapsuler les données qui leur sont liées, et leur appliquer différentes méthodes correspondant aux fonctionnalités requises.\n\nLes traitements sur les graphes peuvent notamment inclure\u0026nbsp;:\n* l'ajout, la modification ou la suppression de sommets\u0026nbsp;;((liste2))\n* l'ajout, modification ou suppression de relations (arcs ou arêtes), et de leurs pondérations éventuelles\u0026nbsp;;((liste2))\n* la recherche d'adjacences, prenant en compte la notion de prédécesseurs et de successeurs dans le cas de graphes orientés.((liste2))\n\n[C]\nConclusion\u0026nbsp;:\n\nNous avons présenté dans ce cours les structures de données relationnelles appelées graphes. Nous avons d'abord caractérisé les graphes, lesquels peuvent être orientés ou non, et pondérés ou non. Nous nous sommes ensuite intéressés aux parcours sur les graphes et à la recherche de chemins optimisés. Nous avons enfin abordé les modalités d'implémentation des graphes, et notamment des adjacences sous forme de listes ou de matrices. Les différents exemples illustrant ce cours ont montré la grande diversité des problématiques qu'il est possible de modéliser à l'aide de graphes, du routage aux itinéraires routiers en passant par les réseaux sociaux.\n[/C]\n","siblings":[{"resourceId":"5f48bf5b1f3276010020e20e","type":"Cours","sort":null},{"resourceId":"5f48bf931f3276010020e210","type":"Fiche de révision","sort":null},{"resourceId":"5f4e47396b94d20100f7a5c5","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7dce28e637010043bf85","name":"Graphes abstraits"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7dce28e637010043bf85","label":"Cours : Graphes abstraits","link":"https://www.schoolmouv.fr/cours/graphes-abstraits/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"graphes-abstraits","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/graphes-abstraits/fiche-de-cours","title":"Graphes abstraits : cours de Tle - Numérique | SchoolMouv","metaDescription":"SchoolMouv ® te propose ce cours sur Graphes abstraits (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"graphes-abstraits","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

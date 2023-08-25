@@ -1,0 +1,202 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Modélisation d'une base de données : Fiche de révision de Tle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Modélisation d'une base de données : Fiche de révision de Tle">
+<meta name="description" content="Fiche de révision SchoolMouv ® pour apprendre facilement Modélisation d'une base de données (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/modelisation-d-une-base-de-donnees/fiche-de-revision">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/modelisation-d-une-base-de-donnees/fiche-de-cours","name":"Modélisation d'une base de données"}},{"@type":"ListItem","position":5,"item":{"@id":"","name":"Fiche de révision : Modélisation d'une base de données"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb-with-ellipsis__23a_n breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><h1>Fiche de révision : Modélisation d'une base de données</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Modélisation d'une base de données</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Nous utilisons l’exemple de la base de données d’un club de cuisine.</p></div>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>L'analyse de l'existant</p></div></h2>
+<ul>
+
+<li>Il s'agit d'identifier les différents « objets » du monde réel concernés par le projet de base de données, ainsi que les liens qui les unissent.</li>
+
+<li>On met facilement en évidence :</li>
+
+<li class="liste2">
+<div class="list_text">les objets suivants : adhérent, recette, ingrédient ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">et les liens entre adhérent et recette ; et entre recette et ingrédent.</div>
+</li>
+
+<li>Il convient ensuite de caractériser les liens identifiés, c’est-à-dire se demander de quelle manière les objets sont reliés les uns aux autres :</li>
+
+<li class="liste2">
+<div class="list_text">une recette est proposée par un seul adhérent / un adhérent peut ou non proposer des recettes ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">une recette fait appel à un ou plusieurs ingrédients / un ingrédient peut n'être impliqué dans aucune recette ou intervenir dans plusieurs recettes.</div>
+</li>
+
+<li>Pour achever le recueil de l'existant, on s'attache à décrire les données relatives aux objets comme aux liens :</li>
+
+<li class="liste2">
+<div class="list_text">un adhérent est caractérisé par son nom, son prénom, son mail etc. ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">une recette peut être caractérisée par son nom, son niveau de difficulté, sa durée etc. ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">un ingrédient est caractérisé par son nom.</div>
+</li>
+
+<li>À l'issue de ce travail sur l'existant, on peut d'ores et déjà constituer une première version du dictionnaire de données de la future base.</li>
+
+<li>Le fait de préciser le type, la taille, et, le cas échéant, les valeurs possibles prises par une donnée définit son domaine.</li>
+
+<li>Il est temps maintenant de modéliser le monde réel.</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>Le modèle entité-association</p></div></h2>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Dans ce cours, nous ferons appel au modèle conceptuel de données (MCD) pour représenter l’ensemble de nos objets et leurs liens.</p></div>
+</div>
+<ul>
+
+<li>L’entité est représentée par un rectangle, doté d'un titre. Elle est constituée d'attributs.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans le cas de notre club de cuisine, « recette » et « adhérent » sont des entités.</div>
+</li>
+
+<li>L’occurrence est un représentant d'une entité.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans le cas de notre club de cuisine, « mousse au chocolat » est une occurrence de l'entité « recette</div>
+</li>
+
+<li>L’attribut caractérise une propriété d’ne entité (ou d’une association).</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans le cas de notre club de cuisine, « duree » est l'un des attributs de l'entité « recette ».</div>
+</li>
+
+<li>L’identifiant est un ensemble d’attributs qui permet d’identifier chaque occurrence d’une entité.</li>
+
+<li>Dans le cas de notre club de cuisine, « idRecette » est l’identifiant de l’entité « recette ».</li>
+
+<li>Pour des raisons d'efficacité dans les traitements qui seront développés par la suite , il est recommandé de privilégier un identifiant aussi simple que possible, de préférence numérique.</li>
+
+<li>Les liaisons que les entités peuvent faire entre elles sont appelées « associations » dans l'approche entité-association.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans le cas de notre club de cuisine, l'association impliquant l'entité « recette » et l'entité « ingrédient » dispose des attributs « quantite », « unite » et « type ».</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans un MCD, on la représente par un segment reliant les deux entités concernées.</div>
+</li>
+
+<li>À chaque extrémité de ce segment, on précise les cardinalités de l'association.</li>
+</ul>
+<h2 range="3" markdown="1"><div markdown="1"><p>Le modèle relationnel</p></div></h2>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Nous adoptons ici le modèle relationnel qui est le plus répandu de nos jours et qui a maintes fois fait ses preuves.</p></div>
+</div>
+<ul>
+
+<li>Le modèle relationnel s'appuie sur la notion de « relation », d'où son nom :</li>
+
+<li class="liste2">
+<div class="list_text">on représente une relation par une « table » ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les lignes de cette table sont nommées « tuples » ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">et ses colonnes sont nommées « champs ».</div>
+</li>
+
+<li>Cette relation peut s'écrire sous la forme $\rightarrow$ Recette(idRecette, nomRecette, niveau, duree, categorie, etapes).</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">C'est ce qu'on appelle le schéma relationnel de la relation recette.</div>
+</li>
+
+<li>Une relation peut comprendre plusieurs clés possible qu’on nomme « clés candidates ».</li>
+
+<li>On nommera plus précisément « clé primaire » celle d'entre elles qui est choisie.</li>
+
+<li>La clé primaire doit contenir le minimum de champs possible.</li>
+
+<li>Deux règles principales doivent être observées pour passer au modèle relationnel.</li>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">Une <span class="underline">entité</span> du MCD devient une <b><span class="underline">relation</span></b> du modèle relationnel. Ses <span class="underline">attributs</span> deviennent les <b><span class="underline">champs</span></b> de cette relation ainsi créée. L'<span class="underline">identifiant</span> de l'entité devient la <b><span class="underline">clé</span></b> de la relation dont elle est à l'origine.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">Une <span class="underline">association</span> du MCD devient une <b><span class="underline">relation</span></b>. Les <span class="underline">champs</span> qui la composent sont les <b><span class="underline">identifiants</span></b> des entités impliquées et, le cas échant, les <b><span class="underline">attributs</span></b> qui caractérisent l'association. La clé de cette relation ainsi créée est composée des deux identifiants évoqués à l'instant.</div>
+</li>
+
+<li>Un cas particulier : une association qui comporte une cardinalité $1,1$.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">On ne crée pas une relation pour une telle association. Tous les champs de l'association sont simplement intégrés à la relation issue de l'entité associée à la cardinalité $1,1$.</div>
+</li>
+</ul>
+</div></div>
+<div id="poool-8hsdo-eb6zo" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e53cc0c09e0a80100fdf8f7","type":"Fiche de révision","title":"Modélisation d'une base de données","content":"[AST]\nNous utilisons l’exemple de la base de données d’un club de cuisine.\n[/AST]\n\n##L'analyse de l'existant/1\n\n* Il s'agit d'identifier les différents «\u0026nbsp;objets\u0026nbsp;» du monde réel concernés par le projet de base de données, ainsi que les liens qui les unissent.\n* On met facilement en évidence\u0026nbsp;:\n* les objets suivants\u0026nbsp;: adhérent, recette, ingrédient\u0026nbsp;;((liste2))\n* et les liens entre adhérent et recette\u0026nbsp;; et entre recette et ingrédent.((liste2))\n* Il convient ensuite de caractériser les liens identifiés, c’est-à-dire se demander de quelle manière les objets sont reliés les uns aux autres\u0026nbsp;:\n* une recette est proposée par un seul adhérent / un adhérent peut ou non proposer des recettes\u0026nbsp;;((liste2))\n* une recette fait appel à un ou plusieurs ingrédients / un ingrédient peut n'être impliqué dans aucune recette ou intervenir dans plusieurs recettes.((liste2))\n* Pour achever le recueil de l'existant, on s'attache à décrire les données relatives aux objets comme aux liens\u0026nbsp;:\n* un adhérent est caractérisé par son nom, son prénom, son mail etc.\u0026nbsp;;((liste2))\n* une recette peut être caractérisée par son nom, son niveau de difficulté, sa durée etc.\u0026nbsp;;((liste2))\n* un ingrédient est caractérisé par son nom.((liste2))\n* À l'issue de ce travail sur l'existant, on peut d'ores et déjà constituer une première version du dictionnaire de données de la future base.\n* Le fait de préciser le type, la taille, et, le cas échéant, les valeurs possibles prises par une donnée définit son domaine. \n* Il est temps maintenant de modéliser le monde réel.\n\n##Le modèle entité-association/2\n\n[AST]\nDans ce cours, nous ferons appel au modèle conceptuel de données (MCD) pour représenter l’ensemble de nos objets et leurs liens.\n[/AST]\n\n* L’entité est représentée par un rectangle, doté d'un titre. Elle est constituée d'attributs.\n* Dans le cas de notre club de cuisine, «\u0026nbsp;recette\u0026nbsp;» et «\u0026nbsp;adhérent\u0026nbsp;» sont des entités.((fleche))\n* L’occurrence est un représentant d'une entité.\n* Dans le cas de notre club de cuisine, «\u0026nbsp;mousse au chocolat\u0026nbsp;» est une occurrence de l'entité «\u0026nbsp;recette((fleche))\n* L’attribut caractérise une propriété d’ne entité (ou d’une association).\n* Dans le cas de notre club de cuisine, «\u0026nbsp;duree\u0026nbsp;» est l'un des attributs de l'entité «\u0026nbsp;recette\u0026nbsp;».((fleche))\n* L’identifiant est un ensemble d’attributs qui permet d’identifier chaque occurrence d’une entité.\n* Dans le cas de notre club de cuisine, «\u0026nbsp;idRecette\u0026nbsp;» est l’identifiant de l’entité «\u0026nbsp;recette\u0026nbsp;».\n* Pour des raisons d'efficacité dans les traitements qui seront développés par la suite , il est recommandé de privilégier un identifiant aussi simple que possible, de préférence numérique.\n* Les liaisons que les entités peuvent faire entre elles sont appelées «\u0026nbsp;associations\u0026nbsp;» dans l'approche entité-association. \n* Dans le cas de notre club de cuisine, l'association impliquant l'entité «\u0026nbsp;recette\u0026nbsp;» et l'entité «\u0026nbsp;ingrédient\u0026nbsp;» dispose des attributs «\u0026nbsp;quantite\u0026nbsp;», «\u0026nbsp;unite\u0026nbsp;» et «\u0026nbsp;type\u0026nbsp;».((fleche))\n* Dans un MCD, on la représente par un segment reliant les deux entités concernées.((fleche))\n* À chaque extrémité de ce segment, on précise les cardinalités de l'association.\n\n##Le modèle relationnel/3\n\n[AST]\nNous adoptons ici le modèle relationnel qui est le plus répandu de nos jours et qui a maintes fois fait ses preuves.\n[/AST]\n\n* Le modèle relationnel s'appuie sur la notion de «\u0026nbsp;relation\u0026nbsp;», d'où son nom\u0026nbsp;:\n* on représente une relation par une «\u0026nbsp;table\u0026nbsp;»\u0026nbsp;;((liste2))\n* les lignes de cette table sont nommées «\u0026nbsp;tuples\u0026nbsp;»\u0026nbsp;;((liste2))\n* et ses colonnes sont nommées «\u0026nbsp;champs\u0026nbsp;».((liste2))\n* Cette relation peut s'écrire sous la forme $\\rightarrow$ Recette(idRecette, nomRecette, niveau, duree, categorie, etapes).\n* C'est ce qu'on appelle le schéma relationnel de la relation recette.((fleche))\n* Une relation peut comprendre plusieurs clés possible qu’on nomme «\u0026nbsp;clés candidates\u0026nbsp;».\n* On nommera plus précisément «\u0026nbsp;clé primaire\u0026nbsp;» celle d'entre elles qui est choisie.\n* La clé primaire doit contenir le minimum de champs possible.\n* Deux règles principales doivent être observées pour passer au modèle relationnel.\n* Une --entité-- du\u0026nbsp;MCD devient une **--relation--** du modèle relationnel. Ses --attributs-- deviennent les **--champs--** de cette relation ainsi créée. L'--identifiant-- de l'entité devient la **--clé--** de la relation dont elle est à l'origine.((bulle,1))\n* Une --association-- du MCD devient une **--relation--**. Les --champs-- qui la composent sont les **--identifiants--** des entités impliquées et, le cas échant, les **--attributs--** qui caractérisent l'association. La clé de cette relation ainsi créée est composée des deux identifiants évoqués à l'instant.((bulle,2))\n* Un cas particulier\u0026nbsp;: une association qui comporte une cardinalité $1,1$.\n* On ne crée pas une relation pour une telle association. Tous les champs de l'association sont simplement intégrés à la relation issue de l'entité associée à la cardinalité $1,1$.((fleche))","siblings":[{"resourceId":"608fb291b4f3e001000c8ace","type":"Cours","sort":null},{"resourceId":"5e53cc0c09e0a80100fdf8f7","type":"Fiche de révision","sort":null},{"resourceId":"5e86e5b128e6370100440b55","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d2728e637010043bf7c","name":"Modélisation d'une base de données"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d2728e637010043bf7c","label":"Modélisation d'une base de données","link":"https://www.schoolmouv.fr/cours/modelisation-d-une-base-de-donnees/fiche-de-cours"},{"key":"fiche-de-revision","label":"Fiche de révision : Modélisation d'une base de données","link":""}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"modelisation-d-une-base-de-donnees","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/modelisation-d-une-base-de-donnees/fiche-de-revision","title":"Modélisation d'une base de données : Fiche de révision de Tle","metaDescription":"Fiche de révision SchoolMouv ® pour apprendre facilement Modélisation d'une base de données (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"modelisation-d-une-base-de-donnees","resourceType":"fiche-de-revision"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

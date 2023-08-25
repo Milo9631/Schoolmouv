@@ -1,0 +1,253 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Recherche de sous-chaîne : Fiche de révision de Tle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Recherche de sous-chaîne : Fiche de révision de Tle">
+<meta name="description" content="Fiche de révision SchoolMouv ® pour apprendre facilement Recherche de sous-chaîne (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/recherche-de-sous-chaine/fiche-de-revision">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/recherche-de-sous-chaine/fiche-de-cours","name":"Recherche de sous-chaîne"}},{"@type":"ListItem","position":5,"item":{"@id":"","name":"Fiche de révision : Recherche de sous-chaîne"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb-with-ellipsis__23a_n breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><h1>Fiche de révision : Recherche de sous-chaîne</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Recherche de sous-chaîne</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<h2 range="1" markdown="1"><div markdown="1"><p>Recherche naïve</p></div></h2>
+<ul>
+
+<li>Un algorithme pour vérifier la présence d’une sous-chaîne (motif) au sein d’une chaîne de caractères (fenêtre) est assez facile à mettre au point.</li>
+
+<li>Le motif peut être :</li>
+
+<li class="liste2">
+<div class="list_text">absent ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">ou présent (une ou plusieurs fois).</div>
+</li>
+
+<li>On compare les caractères de la chaîne à ceux formant le motif.</li>
+
+<li>On procède par décalages successifs jusqu’à atteindre la fin du texte.</li>
+
+<li>Si les caractères correspondent en regard du texte, on a trouvé une occurrence du motif dans le texte.</li>
+
+<li>Dans une recherche naïve le texte est parcouru par déplacements de la fenêtre glissante, de gauche à droite
+et le contrôle du motif est effectué lettre à lettre, de gauche à droite.</li>
+
+<li>L’implémentation de cet algorithme de recherche consiste à imbriquer deux boucles, et à relever les positions d’éventuelles occurrences, qu’on retourne sous forme d’une liste d’indices (vide si le motif recherché est absent).</li>
+</ul>
+<p><span class="calculator_button" markdown="1">def recherche(motif, texte):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">positions = []</span><br>
+<span class="calculator_button" markdown="1">for i in range(len(texte) - len(motif)):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">for j in range(len(motif)):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">if not texte[i + j] == motif[j]:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:100px;"><p><span class="calculator_button" markdown="1">break</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if j == len(motif) - 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:80px;"><p><span class="calculator_button" markdown="1">positions.append(i)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return positions</span></p></div>
+<ul>
+
+<li>On peut également utiliser la construction <span class="calculator_button" markdown="1">for</span> assortie de la clause optionnelle <span class="calculator_button" markdown="1">else</span>, cette dernière n’étant exécutée que si la boucle s’est terminée normalement, sans avoir été interrompue par un <span class="calculator_button" markdown="1">break</span>.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La complexité du code est dans le pire des cas $O(n\times{m})$, où $m$ est la longueur du motif et $n$ celle du texte.</div>
+</li>
+
+<li>Nous allons réaliser avec l’étude de l’algorithme de Boyer-Moore que différentes optimisations sont possibles pour ce type de recherche.</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>Algorithme de Boyer Moore</p></div></h2>
+<ul>
+
+<li>L’algorithme de Boyer-Moore est la figure de référence des algorithmes de recherche.</li>
+
+<li>Cet algorithme est capable d’éviter de nombreuses comparaisons inutiles : il s’avère bien plus performant que la recherche naïve.</li>
+
+<li>Il prend en compte les occurrences des lettres composant le motif et en déduit des comparaisons inutiles, qu’il ne sera pas nécessaire d’effectuer.</li>
+
+<li>Les déplacements du motif s’effectuent de gauche à droite comme dans l’algorithme naïf, mais celui de Boyer-Moore présente la particularité d’évaluer le motif de la droite vers la gauche.</li>
+
+<li>L’algorithme de Boyer-Moore commence par contrôler la fin du motif (matérialisé par un curseur au-dessus du texte).</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-20px;margin-right:0px;margin-bottom:0px;margin-left:54px;"><p><span class="calculator_button" markdown="1"><span class="color21">⇩</span></span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">CORRE<span class="color21">L</span>ATION N'EST PAS CAUSALITE</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:9px;"><p><span class="calculator_button" markdown="1">VERIT<span class="color21">E</span></span></p></div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La comparaison entre le <span class="calculator_button" markdown="1">E</span> du motif et le <span class="calculator_button" markdown="1">L</span> du texte permet de constater une non-correspondance.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Cette absence de la lettre « L » dans le motif garantit qu’on ne pourra trouver aucune correspondance, quelle que soit la manière dont on décalera le motif en regard de la position courante d’évaluation.</div>
+</li>
+
+<li>En conséquence, il est totalement inutile de vérifier les positions suivantes sur toute la longueur du motif.</li>
+
+<li>On décale donc le motif vers la droite jusqu’à le positionner au-delà du caractère comparé dans le texte.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L’algorithme de Boyer-Moore a permis d’éliminer cinq positions inutiles de la fenêtre glissante du motif.</div>
+</li>
+
+<li>Nous allons maintenant décrire de manière plus formelle les deux règles complémentaires de l’algorithme de Boyer-Moore :</li>
+
+<li class="liste2">
+<div class="list_text">la règle du mauvais caractère ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">et la règle du bon suffixe.</div>
+</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:50px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">Règle du mauvais caractère</div>
+</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+
+<li>La règle du mauvais caractère consiste à éliminer des positions considérées comme impossibles pour le motif.</li>
+
+
+<li>Lors de l’évaluation d’un mauvais caractère, deux cas de figure sont possibles :</li>
+
+<li class="liste2">
+<div class="list_text">soit le caractère du texte est totalement absent du motif recherché (aucune position ne pourra aboutir à une correspondance) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">soit le caractère du texte est présent, une ou plusieurs fois, ailleurs dans le motif, auquel cas on décale le motif jusqu’à alignement de la première occurrence du motif avec le caractère du texte (de la droite vers la gauche).</div>
+</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:414px;"><p><span class="calculator_button" markdown="1"><span class="color21">⇩</span></span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:auto;"><p><span class="calculator_button" markdown="1">LA REALISATION INFORMATIQUE PAR PROGRAM<span class="color21">M</span>ATION CONSTITUE UNE IMPLEMENTATION LOGICIELLE.</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:275px;"><p><span class="calculator_button" markdown="1">IMPLEMENTATIO<span class="color21">N</span></span></p></div>
+<ul>
+
+<li>Le caractère « M » est présent dans le motif : ce dernier est donc décalé pour mettre le <span class="calculator_button" markdown="1">M</span> en correspondance.</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-20px;margin-right:0px;margin-bottom:0px;margin-left:499px;"><p><span class="calculator_button" markdown="1"><span class="color21">⇩</span></span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:auto;"><p><span class="calculator_button" markdown="1">LA REALISATION INFORMATIQUE PAR PROGRAM<span class="color2">M</span>ATION C<span class="color21">O</span>NSTITUE UNE IMPLEMENTATION LOGICIELLE.</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:362px;"><p><span class="calculator_button" markdown="1">IMPLE<span class="color2">M</span>ENTATIO<span class="color21">N</span></span></p></div>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:50px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">Règle du bon suffixe</div>
+</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+
+<li>La comparaison entre le motif et le texte s’effectuant de la droite vers la gauche, s’il existe une correspondance elle se matérialise au niveau du suffixe.</li>
+
+
+<li>De la droite vers la gauche, on recherche une autre occurrence du suffixe qui soit précédée par un autre caractère que celui qui ne correspond pas : on s’arrête dès qu’une occurrence est trouvée et on décale le motif pour mettre cette occurrence en correspondance avec le suffixe du texte.</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-20px;margin-right:0px;margin-bottom:0px;margin-left:185px;"><p><span class="calculator_button" markdown="1"><span class="color21">⇩</span></span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:auto;"><p><span class="calculator_button" markdown="1">L OBJECTIF EST D EVIT<span class="color2">ER</span> DES COMPARAISONS INUTILES</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:130px;"><p><span class="calculator_button" markdown="1">RESERV<span class="color2">ER</span></span></p></div>
+<p><span class="calculator_button" markdown="1">L OBJECTIF EST D EVIT<span class="color2">ER</span> DES COMPARAISONS INUTILES</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:165px;"><p><span class="calculator_button" markdown="1">RES<span class="color2">ER</span>VER</span></p></div>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+
+<li>S’il n’existe pas d’autre occurrence du suffixe dans le motif, on le décale jusqu’à la mise en correspondance du plus long suffixe possible qui corresponde à un préfixe du motif.</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1"><span class="color21">⇩</span></span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:auto;"><p><span class="calculator_button" markdown="1">RATIONAL<span class="color2">ISATION</span> DES RESSOURCES</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:58px;"><p><span class="calculator_button" markdown="1">ION<span class="color2">ISATION</span></span></p></div>
+<p><span class="calculator_button" markdown="1">RATIONALISAT<span class="color2">ION</span> DES RESSOURCES</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:127px;"><p><span class="calculator_button" markdown="1"><span class="color2">ION</span>ISATION</span></p></div>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+
+<li>S’il n’existe pas de préfixe du motif qui puisse correspondre à un suffixe du texte, on décale le motif au-delà du suffixe.</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+
+<li>La découverte d’une occurrence est un cas particulier de la règle du bon suffixe où le bon suffixe est aussi long que le motif recherché.</li>
+</ul></div>
+<ul>
+
+<li>Chacune des deux règles permet d’effectuer des décalages importants du motif sans risquer de manquer une occurrence de celui-ci.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L’algorithme de Boyer-Moore combine ces deux règles (et choisit au cas par cas la meilleure) pour maximiser les décalages.</div>
+</li>
+</ul>
+<h2 range="3" markdown="1"><div markdown="1"><p>Optimisation algorithmique</p></div></h2>
+<ul>
+
+<li>Les prétraitements permettent d’améliorer la performance des algorithmes de recherche textuelle. On distingue deux approches :</li>
+
+<li class="liste2">
+<div class="list_text">le prétraitement du motif (comme Boyer-Moore) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">le prétraitement du texte.</div>
+</li>
+
+<li>Le prétraitement du motif vise à éviter d’effectuer de manière répétitive les mêmes calculs, en stockant leurs résultats dans des tables de saut, pour les réutiliser.</li>
+
+<li>Les tables de saut indiquent l’ampleur du décalage à effectuer en fonction des lettres rencontrées dans le texte, en appliquant des règles de l’algorithme.</li>
+
+<li>La table de sauts du mauvais caractère transpose l’application de la règle du mauvais caractère à l’alphabet des caractères possiblement présents dans le texte.</li>
+
+<li>Il existe plusieurs méthodes équivalentes pour la génération de cette table de saut. On peut procéder :</li>
+
+<li class="liste2">
+<div class="list_text">en traitant le motif à partir de la fin ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">en listant successivement les lettres composant le motif ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">et en notant le nombre de décalages par rapport à la fin du motif.</div>
+</li>
+
+<li>Les lettres absentes du motif, représentées collectivement par un caractère « * », entraineront un décalage de la longueur du motif complet.</li>
+</ul>
+</div></div>
+<div id="poool-v26it-aaa8j" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5f106f5e2fe66e010012ad3c","type":"Fiche de révision","title":"Recherche de sous-chaîne","content":"##Recherche naïve/1\n\n* Un algorithme pour vérifier la présence d’une sous-chaîne (motif) au sein d’une chaîne de caractères (fenêtre) est assez facile à mettre au point.\n* Le motif peut être\u0026nbsp;:\n* absent\u0026nbsp;;((liste2))\n* ou présent (une ou plusieurs fois).((liste2))\n* On compare les caractères de la chaîne à ceux formant le motif.\n* On procède par décalages successifs jusqu’à atteindre la fin du texte.\n* Si les caractères correspondent en regard du texte, on a trouvé une occurrence du motif dans le texte.\n* Dans une recherche naïve le texte est parcouru par déplacements de la fenêtre glissante, de gauche à droite\n et le contrôle du motif est effectué lettre à lettre, de gauche à droite.\n* L’implémentation de cet algorithme de recherche consiste à imbriquer deux boucles, et à relever les positions d’éventuelles occurrences, qu’on retourne sous forme d’une liste d’indices (vide si le motif recherché est absent).\n\n[BUTC]def recherche(motif, texte):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]positions = [][/BUTC]  \n[BUTC]for i in range(len(texte) - len(motif)):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]for j in range(len(motif)):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]if not texte[i + j] == motif[j]:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,100))[BUTC]break[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if j == len(motif) - 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,80))[BUTC]positions.append(i)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return positions[/BUTC]\u003e\u003e\n\n* On peut également utiliser la construction [BUTC]for[/BUTC] assortie de la clause optionnelle [BUTC]else[/BUTC], cette dernière n’étant exécutée que si la boucle s’est terminée normalement, sans avoir été interrompue par un [BUTC]break[/BUTC].\n* La complexité du code est dans le pire des cas $O(n\\times{m})$, où $m$ est la longueur du motif et $n$ celle du texte.((fleche))\n* Nous allons réaliser avec l’étude de l’algorithme de Boyer-Moore que différentes optimisations sont possibles pour ce type de recherche.\n\n##Algorithme de Boyer Moore/2\n\n* L’algorithme de Boyer-Moore est la figure de référence des algorithmes de recherche.\n* Cet algorithme est capable d’éviter de nombreuses comparaisons inutiles\u0026nbsp;: il s’avère bien plus performant que la recherche naïve.  \n* Il prend en compte les occurrences des lettres composant le motif et en déduit des comparaisons inutiles, qu’il ne sera pas nécessaire d’effectuer.  \n* Les déplacements du motif s’effectuent de gauche à droite comme dans l’algorithme naïf, mais celui de Boyer-Moore présente la particularité d’évaluer le motif de la droite vers la gauche.\n* L’algorithme de Boyer-Moore commence par contrôler la fin du motif (matérialisé par un curseur au-dessus du texte). \n\n\u003c\u003c((auto,-20,0,0,54))[BUTC][21]⇩[21][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]CORRE[21]L[21]ATION N'EST PAS CAUSALITE[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,22,9))[BUTC]VERIT[21]E[21][/BUTC]\u003e\u003e\n\n* La comparaison entre le [BUTC]E[/BUTC] du motif et le [BUTC]L[/BUTC] du texte permet de constater une non-correspondance.((fleche))\n* Cette absence de la lettre «\u0026nbsp;L\u0026nbsp;» dans le motif garantit qu’on ne pourra trouver aucune correspondance, quelle que soit la manière dont on décalera le motif en regard de la position courante d’évaluation.((fleche))\n* En conséquence, il est totalement inutile de vérifier les positions suivantes sur toute la longueur du motif.\n* On décale donc le motif vers la droite jusqu’à le positionner au-delà du caractère comparé dans le texte.\n* L’algorithme de Boyer-Moore a permis d’éliminer cinq\u0026nbsp;positions inutiles de la fenêtre glissante du motif.((fleche))\n* Nous allons maintenant décrire de manière plus formelle les deux règles complémentaires de l’algorithme de Boyer-Moore\u0026nbsp;:\n* la règle du mauvais caractère\u0026nbsp;;((liste2))\n* et la règle du bon suffixe.((liste2))\n\u003c\u003c((90,50,auto,0,auto))* Règle du mauvais caractère((bulle,1))\u003e\u003e\n\u003c\u003c((90,0,auto,0,auto))* La règle du mauvais caractère consiste à éliminer des positions considérées comme impossibles pour le motif.\n* Lors de l’évaluation d’un mauvais caractère, deux cas de figure sont possibles\u0026nbsp;:\n* soit le caractère du texte est totalement absent du motif recherché (aucune position ne pourra aboutir à une correspondance)\u0026nbsp;;((liste2))\n* soit le caractère du texte est présent, une ou plusieurs fois, ailleurs dans le motif, auquel cas on décale le motif jusqu’à alignement de la première occurrence du motif avec le caractère du texte (de la droite vers la gauche).((liste2))\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,414))[BUTC][21]⇩[21][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,auto))[BUTC]LA REALISATION INFORMATIQUE PAR PROGRAM[21]M[21]ATION CONSTITUE UNE IMPLEMENTATION LOGICIELLE.[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,22,275))[BUTC]IMPLEMENTATIO[21]N[21][/BUTC]\u003e\u003e\n\n* Le caractère «\u0026nbsp;M\u0026nbsp;» est présent dans le motif\u0026nbsp;: ce dernier est donc décalé pour mettre le [BUTC]M[/BUTC] en correspondance.\n\n\u003c\u003c((auto,-20,0,0,499))[BUTC][21]⇩[21][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,auto))[BUTC]LA REALISATION INFORMATIQUE PAR PROGRAM[2]M[2]ATION C[21]O[21]NSTITUE UNE IMPLEMENTATION LOGICIELLE.[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,22,362))[BUTC]IMPLE[2]M[2]ENTATIO[21]N[21][/BUTC]\u003e\u003e\n\n\u003c\u003c((90,50,auto,0,auto))* Règle du bon suffixe((bulle,2))\u003e\u003e\n\u003c\u003c((90,0,auto,0,auto))* La comparaison entre le motif et le texte s’effectuant de la droite vers la gauche, s’il existe une correspondance elle se matérialise au niveau du suffixe.\n* De la droite vers la gauche, on recherche une autre occurrence du suffixe qui soit précédée par un autre caractère que celui qui ne correspond pas\u0026nbsp;: on s’arrête dès qu’une occurrence est trouvée et on décale le motif pour mettre cette occurrence en correspondance avec le suffixe du texte.\u003e\u003e\n\n\u003c\u003c((auto,-20,0,0,185))[BUTC][21]⇩[21][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,auto))[BUTC]L OBJECTIF EST D EVIT[2]ER[2] DES COMPARAISONS INUTILES[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,22,130))[BUTC]RESERV[2]ER[2][/BUTC]\u003e\u003e\n\n[BUTC]L OBJECTIF EST D EVIT[2]ER[2] DES COMPARAISONS INUTILES[/BUTC]\n\u003c\u003c((auto,-22,0,22,165))[BUTC]RES[2]ER[2]VER[/BUTC]\u003e\u003e\n\n\u003c\u003c((90,0,auto,0,auto))* S’il n’existe pas d’autre occurrence du suffixe dans le motif, on le décale jusqu’à la mise en correspondance du plus long suffixe possible qui corresponde à un préfixe du motif.\u003e\u003e\n\n\u003c\u003c((auto,-22,0,0,75))[BUTC][21]⇩[21][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,auto))[BUTC]RATIONAL[2]ISATION[2] DES RESSOURCES[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,22,58))[BUTC]ION[2]ISATION[2][/BUTC]\u003e\u003e\n\n[BUTC]RATIONALISAT[2]ION[2] DES RESSOURCES[/BUTC]\n\u003c\u003c((auto,-22,0,22,127))[BUTC][2]ION[2]ISATION[/BUTC]\u003e\u003e\n\n\u003c\u003c((90,0,auto,0,auto))* S’il n’existe pas de préfixe du motif qui puisse correspondre à un suffixe du texte, on décale le motif au-delà du suffixe.\u003e\u003e\n\n\u003c\u003c((90,0,auto,0,auto))* La découverte d’une occurrence est un cas particulier de la règle du bon suffixe où le bon suffixe est aussi long que le motif recherché.\u003e\u003e\n\n* Chacune des deux règles permet d’effectuer des décalages importants du motif sans risquer de manquer une occurrence de celui-ci.\n* L’algorithme de Boyer-Moore combine ces deux règles (et choisit au cas par cas la meilleure) pour maximiser les décalages.((fleche))\n\n##Optimisation algorithmique/3\n\n* Les prétraitements permettent d’améliorer la performance des algorithmes de recherche textuelle. On distingue deux approches\u0026nbsp;:\n* le prétraitement du motif (comme Boyer-Moore)\u0026nbsp;;((liste2))\n* le prétraitement du texte.((liste2))\n* Le prétraitement du motif vise à éviter d’effectuer de manière répétitive les mêmes calculs, en stockant leurs résultats dans des tables de saut, pour les réutiliser.\n* Les tables de saut indiquent l’ampleur du décalage à effectuer en fonction des lettres rencontrées dans le texte, en appliquant des règles de l’algorithme.\n* La table de sauts du mauvais caractère transpose l’application de la règle du mauvais caractère à l’alphabet des caractères possiblement présents dans le texte.\n* Il existe plusieurs méthodes équivalentes pour la génération de cette table de saut. On peut procéder\u0026nbsp;:\n* en traitant le motif à partir de la fin\u0026nbsp;;((liste2))\n* en listant successivement les lettres composant le motif\u0026nbsp;;((liste2))\n* et en notant le nombre de décalages par rapport à la fin du motif.((liste2))\n* Les lettres absentes du motif, représentées collectivement par un caractère «\u0026nbsp;*\u0026nbsp;», entraineront un décalage de la longueur du motif complet.","siblings":[{"resourceId":"5f16d51f2fe66e010012be7e","type":"Cours","sort":null},{"resourceId":"5f106f5e2fe66e010012ad3c","type":"Fiche de révision","sort":null},{"resourceId":"5f1570732fe66e010012b83c","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7e5309e0a80100fdbbea","name":"Recherche de sous-chaîne"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7e5309e0a80100fdbbea","label":"Recherche de sous-chaîne","link":"https://www.schoolmouv.fr/cours/recherche-de-sous-chaine/fiche-de-cours"},{"key":"fiche-de-revision","label":"Fiche de révision : Recherche de sous-chaîne","link":""}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"recherche-de-sous-chaine","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/recherche-de-sous-chaine/fiche-de-revision","title":"Recherche de sous-chaîne : Fiche de révision de Tle","metaDescription":"Fiche de révision SchoolMouv ® pour apprendre facilement Recherche de sous-chaîne (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"recherche-de-sous-chaine","resourceType":"fiche-de-revision"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

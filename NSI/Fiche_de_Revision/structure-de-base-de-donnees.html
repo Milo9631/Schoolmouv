@@ -1,0 +1,243 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Structure de base de données : Fiche de révision de Tle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Structure de base de données : Fiche de révision de Tle">
+<meta name="description" content="Fiche de révision SchoolMouv ® pour apprendre facilement Structure de base de données (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/structure-de-base-de-donnees/fiche-de-revision">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/structure-de-base-de-donnees/fiche-de-cours","name":"Structure de base de données"}},{"@type":"ListItem","position":5,"item":{"@id":"","name":"Fiche de révision : Structure de base de données"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb-with-ellipsis__23a_n breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><h1>Fiche de révision : Structure de base de données</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Structure de base de données</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<h2 range="1" markdown="1"><div markdown="1"><p>Dépendance fonctionnelle</p></div></h2>
+<ul>
+
+<li>Soient $A$ et $B$ deux ensembles d'attributs. On dit que $B$ dépend fonctionnellement de $A$, si, à chaque occurrence prise par $A$ ne correspond qu'une et une seule valeur de $B$.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">On note cette dépendance $A \rightarrow B$.</div>
+</li>
+
+<li>Il est possible de caractériser une DP : on observera si une dépendance fonctionnelle :</li>
+
+<li class="liste2">
+<div class="list_text">est élémentaire ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">et si elle est directe.</div>
+</li>
+
+<li>Soient $A$ et $B$ deux ensembles d'attributs tels que $A \rightarrow B$. La dépendance $A \rightarrow B$ est élémentaire s'il n'existe pas un attribut $C$ contenu dans $A$ tel que $C \rightarrow B$.</li>
+
+<li>Dans notre exemple de base de données du club de cuisine, on a :</li>
+
+<li class="liste2">
+<div class="list_text">$(idIngredient, idRecette) \rightarrow nomIngredient$</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La DF n'est pas élémentaire.</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">$(idIngredient, idRecette) \rightarrow quantite$</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La DF est élémentaire.</div>
+</li>
+
+<li>Soient $A$ et $B$ deux ensembles d'attributs tels que $A \rightarrow B$. La dépendance $A \rightarrow B$ est directe s'il n'existe pas un attribut $C$ tel que $A \rightarrow C$ et $C \rightarrow B$.</li>
+
+<li>Dans notre exemple de base de données du club de cuisine, on a :</li>
+
+<li class="liste2">
+<div class="list_text">$idRecette \rightarrow nomAdherent$</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La DF n'est pas directe.</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">$idRecette \rightarrow idAdherent$</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La DF est directe.</div>
+</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>La normalisation</p></div></h2>
+<ul>
+
+<li>La normalisation permet de contrôler les relations du schéma relationnel issu du MCD afin d'éviter les redondances.</li>
+
+<li>Cette démarche peut donc conduire à une modification du schéma relationnel initial.</li>
+
+<li>La normalisation impose cinq formes : dans ce cours, nous nous focaliserons sur les trois premières formes normales qui sont suffisantes dans une grande majorité des cas.</li>
+</ul>
+<h3 range="a." markdown="1"><div markdown="1"><p>Première forme normale</p></div></h3>
+<ul>
+
+<li>Une relation est dite en première forme normale si, et seulement si, tout attribut qui la compose contient une valeur atomique (pas décomposable). On la note 1FN.</li>
+
+<li>Si on observe la relation <em>Recette</em> de la base de données du club de cuisine, on voit que son attribut « etapes » est décomposable.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Notre relation <em>Recette</em> n'est donc pas conforme à la 1FN.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si on ne la rend pas conforme, on risque de sous-estimer ou surestimer la place à réserver dans la relation pour l'enregistrement des étapes d’un seul attribut.</div>
+</li>
+
+<li>Si on observe la relation <em>Adherent</em>, on voit que son attribut « adresse » est décomposable (numéro, rue, complément, code postal et ville).</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Notre relation <em>Adherent</em> n'est donc pas conforme à la 1FN.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si on ne la rend pas conforme, on ne sera pas en mesure de recenser tous les adhérents d'une même commune.</div>
+</li>
+
+<li>Une fois les relations du schéma mises en forme 1NF, il est temps de vérifier que le nouveau schéma relationnel respecte la deuxième forme normale.</li>
+</ul>
+<h3 range="b." markdown="1"><div markdown="1"><p>Deuxième forme normale</p></div></h3>
+<ul>
+
+<li>Une relation est dite en deuxième forme normale si, et seulement si, elle est en première forme normale et si toutes les dépendances fonctionnelles entre la clé et les autres attributs sont élémentaires. On la note 2FN et on peut écrire : 1FN ⊂ 2FN.</li>
+
+<li>Si nous regardons la relation <span class="calculator_button" markdown="1">Utilise(<em>idRecette, idIngredient, quantite, unite, type</em>)</span>, on a $idRecette, idIngredient \rightarrow type$, mais aussi $idIngredient \rightarrow type$.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La relation <em>Utilise</em> ne respecte pas la 2FN.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si on ne la rend pas conforme, il va se produire une redondance.</div>
+</li>
+
+<li>Pour y remédier, sachant que l'on a identifié $idIngredient \rightarrow type$, il semble naturel de sortir « type » de la relation <em>Utilise</em> pour l'ajouter aux attributs de la relation <em>Ingredient</em>.</li>
+
+<li>Maintenant que les relations du schéma respectent la 2NF, il ne nous reste plus qu'à contrôler que nos relations respectent la troisième forme normale.</li>
+</ul>
+<h3 range="c." markdown="1"><div markdown="1"><p>Troisième forme normale</p></div></h3>
+<ul>
+
+<li>Une relation est dite en troisième forme normale si, et seulement si, elle est en seconde forme normale et si tout attribut n'appartenant pas à la clé primaire n'est pas en dépendance fonctionnelle directe avec un attribut ou un ensemble d'attributs non-clé. On la note 3FN et on peut écrire : 1FN ⊂ 2FN ⊂ 3FN.</li>
+
+<li>Si nous regardons la relation <em>Adherent</em>, on peut remarquer que $ville \rightarrow codePostal$ ; or ni « ville », ni « codePostal » ne sont des attributs appartenant à la clé primaire de la relation <em>Adherent</em>.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Notre relation <em>Adherent</em> ne respecte pas la 3NF.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si on ne la rend pas conforme, on se trouvera confronté à une redondance (villes et codes postaux).</div>
+</li>
+
+<li>Pour y remédier, sachant que l'on a mis en évidence $ville \rightarrow codePostal$, il suffit de sortir « codePostal » de la relation <em>Adherent</em> et de créer une nouvelle relation <em>Ville</em>.<br>
+Ce qui donne :</li>
+
+<li>Nous avons donc normalisé notre schéma relationnel en veillant à ce que ses relations respectent la 3NF, donc la 2NF et par conséquent la 1NF.<br>
+Voici le MCD et le schéma relationnel final de notre exemple, maintenant normalisé.</li>
+</ul>
+<h2 range="3" markdown="1"><div markdown="1"><p>Les contraintes d'intégrité</p></div></h2>
+<ul>
+
+<li>Les contraintes d'intégrité sont des règles que doivent respecter les attributs des relations.</li>
+
+<li>On en compte trois principales.</li>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">La contrainte de domaine</div>
+</li>
+
+<li>Lors de la création d'une table dans la base de données, il est nécessaire de préciser le domaine dans lequel chacun de ses attributs prend ses valeurs.</li>
+
+<li>Une fois la contrainte de domaine définie pour chaque attribut, le SGBD interdit l'introduction de tuples dans une relation dont le type d'un des attributs ne serait pas conforme à celui qui lui aura été attribué par la contrainte de domaine.</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">La contrainte de relation</div>
+</li>
+
+<li>La contrainte de relation impose que la clé primaire formée par un ou plusieurs attributs d'une relation soit unique et non nulle.</li>
+
+<li>C'est le respect de cette contrainte qui garantit l'identification sans ambiguïté d'un tuple dans une relation.</li>
+
+<li>Dès lors que cette contrainte de relation est précisée pour une table, le SGBD interdira l'introduction d'un tuple dont la valeur de la clé primaire sera identique à celle d'un tuple déjà présent dans la base ou sera nulle.</li>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text">La contrainte de référence</div>
+</li>
+
+<li>Si l'on insère un tuple dans une table faisant appel à des clés étrangères, le SGBD doit contrôler l'existence de ces clés dans les relations d'où elles proviennent.</li>
+
+<li>Il est nécessaire d'indiquer au SGBD ce qu'il doit faire dans le cadre de la suppression d'un tuple dans une table dont la clé primaire est étrangère dans une autre table. Quatre options possible :</li>
+
+<li class="liste2">
+<div class="list_text">interdire la suppression ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">supprimer les tuples concernés dans les autres tables ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">avertir l'utilisateur d'une incohérence ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">mettre les valeurs des attributs concernés à une valeur nulle dans les tuples concernés, si l'opération est possible.</div>
+</li>
+</ul>
+</div></div>
+<div id="poool-uidjv-uzlwm" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e86fbcd28e6370100440c23","type":"Fiche de révision","title":"Structure de base de données","content":"##Dépendance fonctionnelle/1\n\n* Soient $A$ et $B$ deux ensembles d'attributs. On dit que $B$ dépend fonctionnellement de $A$, si, à chaque occurrence prise par $A$ ne correspond qu'une et une seule valeur de $B$.\n* On note cette dépendance $A \\rightarrow B$.((fleche))\n* Il est possible de caractériser une DP\u0026nbsp;: on observera si une dépendance fonctionnelle\u0026nbsp;:\n* est élémentaire\u0026nbsp;;((liste2))\n* et si elle est directe.((liste2))\n* Soient $A$ et $B$ deux ensembles d'attributs tels que $A \\rightarrow B$. La dépendance $A \\rightarrow B$ est élémentaire s'il n'existe pas un attribut $C$ contenu dans $A$ tel que $C \\rightarrow B$.\n* Dans notre exemple de base de données du club de cuisine, on a\u0026nbsp;: \n* $(idIngredient, idRecette) \\rightarrow nomIngredient$((liste2))\n* La DF n'est pas élémentaire.((fleche))\n* $(idIngredient, idRecette) \\rightarrow quantite$((liste2))\n* La DF est élémentaire.((fleche))\n* Soient $A$ et $B$ deux ensembles d'attributs tels que $A \\rightarrow B$. La dépendance $A \\rightarrow B$ est directe s'il n'existe pas un attribut $C$ tel que $A \\rightarrow C$ et $C \\rightarrow B$.\n* Dans notre exemple de base de données du club de cuisine, on a\u0026nbsp;: \n* $idRecette \\rightarrow nomAdherent$((liste2))\n* La DF n'est pas directe.((fleche))\n* $idRecette \\rightarrow idAdherent$((liste2))\n* La DF est directe.((fleche))\n\n##La normalisation/2\n\n* La normalisation permet de contrôler les relations du schéma relationnel issu du MCD afin d'éviter les redondances.\n* Cette démarche peut donc conduire à une modification du schéma relationnel initial.\n* La normalisation impose cinq formes\u0026nbsp;: dans ce cours, nous nous focaliserons sur les trois premières formes normales qui sont suffisantes dans une grande majorité des cas.  \n\n###Première forme normale/a.\n*  Une relation est dite en première forme normale si, et seulement si, tout attribut qui la compose contient une valeur atomique (pas décomposable). On la note\u0026nbsp;1FN.\n* Si on observe la relation __Recette__ de la base de données du club de cuisine, on voit que son attribut «\u0026nbsp;etapes\u0026nbsp;» est décomposable.\n* Notre relation __Recette__ n'est donc pas conforme à la\u0026nbsp;1FN.((fleche))\n* Si on ne la rend pas conforme, on risque de sous-estimer ou surestimer la place à réserver dans la relation pour l'enregistrement des étapes d’un seul attribut.((fleche))\n* Si on observe la relation __Adherent__, on voit que son attribut «\u0026nbsp;adresse\u0026nbsp;» est décomposable (numéro, rue, complément, code postal et ville).\n* Notre relation __Adherent__ n'est donc pas conforme à la\u0026nbsp;1FN.((fleche))\n* Si on ne la rend pas conforme, on ne sera pas en mesure de recenser tous les adhérents d'une même commune.((fleche))\n* Une fois les relations du schéma mises en forme\u0026nbsp;1NF, il est temps de vérifier que le nouveau schéma relationnel respecte la deuxième forme normale.\n\n###Deuxième forme normale/b.\n* Une relation est dite en deuxième forme normale si, et seulement si, elle est en première forme normale et si toutes les dépendances fonctionnelles entre la clé et les autres attributs sont élémentaires. On la note 2FN et on peut écrire\u0026nbsp;: 1FN\u0026nbsp;⊂\u0026nbsp;2FN.\n* Si nous regardons la relation [BUTC]Utilise(__idRecette, idIngredient, quantite, unite, type__)[/BUTC], on a $idRecette, idIngredient \\rightarrow type$, mais aussi $idIngredient \\rightarrow type$.\n* La relation __Utilise__ ne respecte pas la\u0026nbsp;2FN.((fleche))\n* Si on ne la rend pas conforme, il va se produire une redondance.((fleche))\n* Pour y remédier, sachant que l'on a identifié $idIngredient \\rightarrow type$, il semble naturel de sortir «\u0026nbsp;type\u0026nbsp;» de la relation __Utilise__ pour l'ajouter aux attributs de la relation __Ingredient__.  \n* Maintenant que les relations du schéma respectent la\u0026nbsp;2NF, il ne nous reste plus qu'à contrôler que nos relations respectent la troisième forme normale.\n\n###Troisième forme normale/c.\n* Une relation est dite en troisième forme normale si, et seulement si, elle est en seconde forme normale et si tout attribut n'appartenant pas à la clé primaire n'est pas en dépendance fonctionnelle directe avec un attribut ou un ensemble d'attributs non-clé. On la note\u0026nbsp;3FN et on peut écrire : 1FN\u0026nbsp;⊂\u0026nbsp;2FN\u0026nbsp;⊂\u0026nbsp;3FN.\n* Si nous regardons la relation __Adherent__, on peut remarquer que $ville \\rightarrow codePostal$\u0026nbsp;; or ni «\u0026nbsp;ville\u0026nbsp;», ni «\u0026nbsp;codePostal\u0026nbsp;» ne sont des attributs appartenant à la clé primaire de la relation __Adherent__.\n* Notre relation __Adherent__ ne respecte pas la\u0026nbsp;3NF.((fleche))\n* Si on ne la rend pas conforme, on se trouvera confronté à une redondance (villes et codes postaux).((fleche))\n* Pour y remédier, sachant que l'on a mis en évidence $ville \\rightarrow codePostal$, il suffit de sortir «\u0026nbsp;codePostal\u0026nbsp;» de la relation __Adherent__ et de créer une nouvelle relation __Ville__.  \nCe qui donne\u0026nbsp;:\n* Nous avons donc normalisé notre schéma relationnel en veillant à ce que ses relations respectent la\u0026nbsp;3NF, donc la\u0026nbsp;2NF et par conséquent la\u0026nbsp;1NF.  \nVoici le MCD et le schéma relationnel final de notre exemple, maintenant normalisé.\n\n##Les contraintes d'intégrité/3\n\n* Les contraintes d'intégrité sont des règles que doivent respecter les attributs des relations.\n* On en compte trois principales.\n* La contrainte de domaine((bulle,1))\n* Lors de la création d'une table dans la base de données, il est nécessaire de préciser le domaine dans lequel chacun de ses attributs prend ses valeurs.\n* Une fois la contrainte de domaine définie pour chaque attribut, le SGBD interdit l'introduction de tuples dans une relation dont le type d'un des attributs ne serait pas conforme à celui qui lui aura été attribué par la contrainte de domaine.\n* La contrainte de relation((bulle,2))\n* La contrainte de relation impose que la clé primaire formée par un ou plusieurs attributs d'une relation soit unique et non\u0026nbsp;nulle.\n* C'est le respect de cette contrainte qui garantit l'identification sans ambiguïté d'un tuple dans une relation.\n* Dès lors que cette contrainte de relation est précisée pour une table, le\u0026nbsp;SGBD interdira l'introduction d'un tuple dont la valeur de la clé primaire sera identique à celle d'un tuple déjà présent dans la base ou sera nulle.\n* La contrainte de référence((bulle,3))\n* Si l'on insère un tuple dans une table faisant appel à des clés étrangères, le SGBD doit contrôler l'existence de ces clés dans les relations d'où elles proviennent.\n* Il est nécessaire d'indiquer au SGBD ce qu'il doit faire dans le cadre de la suppression d'un tuple dans une table dont la clé primaire est étrangère dans une autre table. Quatre\u0026nbsp;options possible\u0026nbsp;:\n* interdire la suppression\u0026nbsp;;((liste2))\n* supprimer les tuples concernés dans les autres tables\u0026nbsp;;((liste2))\n* avertir l'utilisateur d'une incohérence\u0026nbsp;;((liste2))\n* mettre les valeurs des attributs concernés à une valeur nulle dans les tuples concernés, si l'opération est possible.((liste2))","siblings":[{"resourceId":"5e70fc8c09e0a80100fe05ce","type":"Cours","sort":null},{"resourceId":"5e86fbcd28e6370100440c23","type":"Fiche de révision","sort":null},{"resourceId":"5e8711f728e6370100440c26","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d3109e0a80100fdbbda","name":"Structure de base de données"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d3109e0a80100fdbbda","label":"Structure de base de données","link":"https://www.schoolmouv.fr/cours/structure-de-base-de-donnees/fiche-de-cours"},{"key":"fiche-de-revision","label":"Fiche de révision : Structure de base de données","link":""}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"structure-de-base-de-donnees","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/structure-de-base-de-donnees/fiche-de-revision","title":"Structure de base de données : Fiche de révision de Tle","metaDescription":"Fiche de révision SchoolMouv ® pour apprendre facilement Structure de base de données (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"structure-de-base-de-donnees","resourceType":"fiche-de-revision"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

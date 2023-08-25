@@ -1,0 +1,490 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programmes et données : Fiche de cours - Numérique et sciences informatiques | SchoolMouv</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Programmes et données : Fiche de cours - Numérique et sciences informatiques | SchoolMouv">
+<meta name="description" content="Révise le cours : Programmes et données de Numérique et sciences informatiques Terminale grâce à notre fiche de cours">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/programmes-et-donnees/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/programmes-et-donnees/fiche-de-cours","name":"Cours : Programmes et données"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Programmes et données</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Programmes et données</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Le chapitre sur le génie logiciel nous amène à aborder les méthodes de programmation et les bonnes pratiques de développement logiciel. Afin de situer ces activités de conception logicielle, ce premier cours du chapitre s'intéresse à des concepts appartenant à la préhistoire de l'informatique, fondamentale pour la conception et le fonctionnement de nos ordinateurs modernes. Nous étudierons dans un premier temps les machines de Turing, pour nous intéresser dans un deuxième temps à la décidabilité avec le problème de l'arrêt. Nous ferons ensuite le lien avec les notions de programmes et de données dans le contexte des ordinateurs actuels.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Machines de Turing</p></div></h2>
+<p>Précisons dans un premier temps le contexte historique dans lequel le mathématicien britannique Alan Turing a mené ses recherches au cours de la première moitié du XX<sup>e</sup> siècle.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Contexte historique</p></div></h3>
+<p>Dans les années 1930, les ordinateurs n'existent pas encore : ils seront inventés en 1948. Pour autant, un certain nombre de concepts et de connaissances existent déjà depuis plus ou moins longtemps :</p>
+<ul>
+
+<li>les premiers algorithmes sont très anciens puisqu'ils remontent à l'Antiquité ;</li>
+
+<li>les premières machines à calculer sont apparues au XVII<sup>e</sup> siècle ;</li>
+
+<li>le concept de programme informatique est apparu au XIX<sup>e</sup> siècle, quand Ada Lovelace a proposé un programme applicable à la machine analytique de Charles Babbage.</li>
+</ul>
+<p>Alan Turing travaille sur une question posée par le mathématicien allemand David Hilbert : <b>qu'est-ce qui est calculable ?</b>  </p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">C'est en cherchant à répondre à cette question qu'il va inventer une machine abstraite, laquelle sera rapidement appelée « <b>machine de Turing</b> ».</div>
+</li>
+</ul>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Cherchant à formaliser ce qui caractérise fondamentalement le calcul, Turing réfléchit à une <b>logique générale qui pourrait s'appliquer à tous les calculs</b>, et qu'on pourrait faire réaliser par n'importe qui en suivant rigoureusement des procédures composées d'opérations simples et strictement codifiées. </p></div>
+</div>
+<p>Un humain réalisant ces tâches devrait le faire mécaniquement, en suivant à la lettre les instructions fournies.<br>
+L'outil est abstrait, mais le comportement mécanique évoque celui d'une machine, décrite par Turing dans un article scientifique fondateur qu'il publie en 1936. Il imagine sa machine calculante dotée de différents composants, que nous allons à présent nous attacher à détailler.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Anatomie d'une machine de Turing</p></div></h3>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Une machine de Turing est un dispositif abstrait.</p></div>
+</div>
+<p>Elle est composée des éléments suivants :</p>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">un <b>ruban</b>, analogue à celui d'une machine à écrire, divisé en cases individuelles sur lesquelles différents caractères d'un alphabet donné peuvent être lus et écrits ;</div>
+</li>
+</ul>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img01.png" alt="Programmes données machines de Turing ruban"> 
+<span>Ruban
+ </span></p></div></div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">un <b>pointeur mobile</b> (ou curseur), doté d'un état interne (comparable à un registre mémoire capable de stocker une valeur) et d'une tête de lecture et d'écriture, capable de lire, d'effacer et d'écrire sur le ruban, et aussi de se déplacer par rapport à celui-ci ;</div>
+</li>
+</ul>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img02.png" alt="Programmes données machines de Turing pointeur"> 
+<span>Pointeur (ou curseur)
+ </span></p></div></div>
+<ul>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text">une <b>table de transition</b> qui précise les actions à mener par le pointeur en fonction de son état et de la valeur lue sur le ruban.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Ces actions peuvent inclure la lecture, l’écriture, l'effacement et l'écriture d'une valeur à l'endroit où se trouve le pointeur, un changement d'état interne de ce dernier, et son déplacement sur le ruban (d'un cran vers la droite ou vers la gauche).</div>
+</li>
+</ul>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img03.png" alt="Programmes données machines de Turing table de transition"> 
+<span>Table de transition
+ </span></p></div></div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L'alphabet est fini, de même que le nombre d'états internes que peut prendre le pointeur.<br>
+Le ruban est potentiellement de longueur infinie, et au moins considéré comme suffisamment long pour pouvoir effectuer toutes les étapes nécessaires au calcul effectué.</p></div>
+</div>
+<p>La table de transition est composée d'une série d'instructions indiquant la marche à suivre en fonction de l'état interne du pointeur (colonne « état initial » du tableau) et de la valeur figurant à la position courante sur le ruban (colonne « lecture » du tableau).</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">En d'autres termes la table de transition constitue le <b>programme</b> qui va s'appliquer aux données présentes sur le ruban, et ainsi permettre d'effectuer le calcul désiré en un nombre fini d'opérations.</div>
+</li>
+</ul>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img04.png" alt="Programmes données machines de Turing"> 
+<span>Schéma général d’une machine de Turing
+ </span></p></div></div>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La machine décrite par Turing est totalement abstraite. Elle peut exister et fonctionner sans aucun support mécanique ou informatique : un humain doté d'un papier, d'un crayon et d'une gomme peut se comporter en machine de Turing.</p></div>
+</div>
+<p>Étudions un exemple simple de table de transition.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img05.png" alt="Programmes données machines de Turing table de transition"> 
+<span>Table de transition pour la multiplication par 2 d’un nombre binaire
+ </span></p></div></div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L'opération revient à multiplier le nombre par $10$ ($2$ en binaire), c'est-à-dire à ajouter un zéro à la fin du nombre binaire.</p></div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La table de transition indique les actions à mener, en fonction de l'état interne du pointeur et du contenu de la case courante du ruban. Ces actions consistent en l'écriture d'une valeur (éventuellement identique) sur le ruban, puis en un déplacement ou l'arrêt de la machine.</p>
+<p>Le ruban est au départ positionné sur un emplacement blanc, et le nombre binaire à traiter est situé à droite de cet emplacement. Une fois le traitement terminé, la machine s'arrête sur la position blanche située immédiatement après le zéro final.</p>
+<p>Appliquons la table de transition au nombre écrit en binaire sur le ruban comme suit : 10011</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img06.png" alt="Programmes données machines de Turing table de transition"> 
+<span>Table de transition du nombre 10011
+ </span></p></div></div>
+</div>
+</div>
+<p>Alan Turing a ensuite généralisé son concept pour le rendre universellement applicable. </p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Machine de Turing universelle</p></div></h3>
+<p>On peut concevoir des machines de Turing pour mener à bien toutes sortes d'opérations spécialisées plus ou moins complexes. Alan Turing avait également imaginé un concept de machine universelle, que l'on désigne sans surprise comme « machine de Turing universelle » ou « machine universelle de Turing ».</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Cette machine universelle a pour particularité de pouvoir simuler le fonctionnement de n'importe quelle autre machine de Turing.</p></div>
+</div>
+<p>Elle prend en entrées :</p>
+<ul>
+
+<li>la table de transition de la machine considérée ;</li>
+
+<li>les données d'entrée, initialement présentes sur le ruban, de la machine considérée.</li>
+</ul>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Remarque :</b></p>
+<p>Si on transpose ce concept aux ordinateurs modernes, ils ont globalement les possibilités de calcul d'une machine de Turing universelle (à ceci près que leur mémoire, bien que considérable, n’est pas infinie).</p>
+</div>
+</div>
+<p>La logique de traitement définie par la table de transition indique le modèle des traitements à effectuer. Ces traitements pourraient être indifféremment réalisés par un humain ou par une machine. La logique algorithmique est donc indépendante de tout langage informatique, même si de nos jours les ordinateurs et les langages informatiques sont de précieux alliés.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Ils nous permettent d'appliquer cette logique de traitement à d'importants volumes de données.</div>
+</li>
+</ul>
+<h3 range="d" markdown="1"><div markdown="1"><p>Calculabilité et décidabilité</p></div></h3>
+<p>Le modèle proposé par Turing pour évaluer la <b>calculabilité</b> est abstrait. </p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">En somme, un problème est calculable s'il est traitable par une machine de Turing.</div>
+</li>
+</ul>
+<p>Travaillant sur la même problématique que Turing, le mathématicien américain Alonzo Church invente son propre système formel, appelé <b>lambda-calcul</b>, qui servira plus tard de base à des langages informatiques parmi lesquels Lisp, Haskell ou OCaml.</p>
+<p>Church et Turing se rejoignent dans leurs recherches sur <b>les limites de ce qui est calculable et de ce qui ne l'est pas</b>. Leurs modèles sont différents mais aboutissent aux mêmes conclusions, et permettent de constater une forme d'équivalence, connue sous le nom de <b>thèse de Church-Turing</b>.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Cette thèse affirme que tout traitement réalisable par des processus mécaniques est également réalisable par une machine deTuring.</div>
+</li>
+</ul>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Décidabilité :</b></p>
+<p>La décidabilité algorithmique fait référence à l'existence ou non d'un algorithme capable de fournir une réponse à un problème donné en un temps fini.</p>
+</div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La problématique de la décidabilité est équivalente à celle de la calculabilité.</p></div>
+</div>
+<p>Pour déterminer si tout est ou non calculable, Church et Turing ont chacun recherché et trouvé l'existence d'un problème qu'il ne serait pas possible de résoudre par un algorithme : il s'agit du problème de l’arrêt.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Le problème de l'arrêt</p></div></h2>
+<p>Un problème est dit « décidable » s'il existe un algorithme qui permet de le résoudre. <em>A contrario</em>, un problème est dit « indécidable » s'il n'existe pas d'algorithme qui permette de le résoudre. Nous allons étudier le <b>problème de l'arrêt</b> avec des machines de Turing.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Exposé du problème</p></div></h3>
+<p>La question posée par Turing peut se présenter ainsi : existe-t-il une machine de Turing capable de déterminer si une machine de Turing quelconque finira par s'arrêter ou si au contraire elle continuera de boucler de manière infinie ?<br>
+Pour certaines machines, il est facile et rapide d'apporter une réponse. Mais la question porte sur une machine quelconque : autrement dit, un principe général qui pourrait s'appliquer à n'importe quelle machine de Turing.</p>
+<p>On ne peut évidemment pas tester tous les programmes imaginables. Mais il suffirait de trouver un seul cas mettant en échec ce principe pour prouver qu'un tel programme ne peut pas exister.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Il s'agit d'une démonstration par l'absurde : on suppose que ce problème de l'arrêt est décidable, c'est-à-dire qu'il existe une méthode générale pour savoir si une machine va s'arrêter ou pas sur une entrée donnée.</div>
+</li>
+</ul>
+<h3 range="b." markdown="1"><div markdown="1"><p>Formalisation avec des machines de Turing</p></div></h3>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Machine A</b></div>
+</li>
+</ul>
+<p>Appelons « machine A » (pour arrêt) cette machine de Turing qui sait résoudre le problème de l'arrêt, c'est-à-dire qu'elle est capable de déterminer si une machine quelconque finira ou non par s'arrêter.</p>
+<p>Cette machine A prend en entrées :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">la table de transition de la machine à évaluer ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les entrées à traiter par cette machine.</div>
+</li>
+</ul>
+<p>La machine A doit indiquer en sortie si :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">la machine évaluée finit par s'arrêter ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">ou si la machine évaluée ne s'arrête pas et boucle à l'infini.</div>
+</li>
+</ul>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img07.png" alt="Programmes données machines de Turing problème de l’arrêt"> 
+<span>Machine A
+ </span></p></div></div>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Machine C</b></div>
+</li>
+</ul>
+<p>On crée une deuxième machine de Turing, appelée machine C (pour copie).
+La machine C est une machine à copier, qui duplique simplement l'entrée reçue et produit deux exemplaires identiques en sortie.</p>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img08.png" alt="Programmes données machines de Turing problème de l’arrêt"> 
+<span>Machien C
+ </span></p></div></div>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text"><b>Machine I</b></div>
+</li>
+</ul>
+<p>On crée ensuite une troisième machine de Turing, appelée machine I (pour inverseur) qui inverse les résultats reçus en entrée :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">elle indique « boucle à l'infini » quand elle reçoit l'entrée « finit par s'arrêter » ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">elle indique « finit par s'arrêter » quand elle reçoit l'entrée « boucle à l'infini ».</div>
+</li>
+</ul>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img09.png" alt="Programmes données machines de Turing problème de l’arrêt"> 
+<span>Machine I
+ </span></p></div></div>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="4"></div>
+<div class="list_text"><b>Machine P</b></div>
+</li>
+</ul>
+<p>On place en séquence la machine C de copie, la machine A d'arrêt et enfin l'inverseur (machine I). L'ensemble forme une machine P (pour paradoxe).</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img10.png" alt="Programmes données machines de Turing problème de l’arrêt"> 
+<span>Machine P
+ </span></p></div></div>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img11.png" alt="Programmes données machines de Turing problème de l’arrêt"> 
+<span>Machine P
+ </span></p></div></div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Il est possible d'effectuer la démonstration avec un programme.</p>
+<p>Supposons que la fonction <span class="calculator_button" markdown="1">Evaluation</span> recherchée existe.<br>
+<span class="calculator_button" markdown="1">Evaluation (prog,donnees)</span> renvoie à :</p>
+<ul>
+
+
+
+<li>« se termine » si <span class="calculator_button" markdown="1">prog(donnees)</span> se termine ;</li>
+
+
+
+<li>ou « ne se termine pas » si <span class="calculator_button" markdown="1">prog(donnees)</span> ne s'arrête pas.</li>
+</ul>
+<p>Considérons maintenant le programme :<br>
+<span class="calculator_button" markdown="1">Test(x)</span><br>
+<span class="calculator_button" markdown="1">Si Evaluation (x,x) = "se termine" alors</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-20px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">boucle infinie</span></p></div>
+<p><span class="calculator_button" markdown="1">Sinon</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-20px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">Arret</span></p></div>
+<p>En appliquant <span class="calculator_button" markdown="1">Test</span> à lui-même <span class="calculator_button" markdown="1">Test(Test)</span>, on obtient une contradiction : si <span class="calculator_button" markdown="1">Test(Test)</span> boucle, c'est que <span class="calculator_button" markdown="1">Evaluation(Test,Test)</span> renvoie « se termine » c'est-à dire si <span class="calculator_button" markdown="1">Test(Test)</span> se termine.</p>
+</div>
+</div>
+<h3 range="c." markdown="1"><div markdown="1"><p>Hypothèses de fonctionnement</p></div></h3>
+<p>Étudions maintenant ce qu’il se passe si on fournit à P sa propre table de transition.</p>
+<p>La machine C effectue une copie de son entrée et fournit donc deux exemplaires de la table de transition de P.
+La machine A reçoit en entrées ces deux exemplaires, l'un étant considéré comme table de transition à appliquer et l'autre comme données à évaluer.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Quel résultat peut produire la machine A ?</div>
+</li>
+</ul>
+<p>Supposons que la machine A indique que le programme finira par s'arrêter. Ce résultat est ensuite passé à la machine I qui l'inverse et indique au final que le programme boucle à l'infini. Cela signifierait globalement au niveau de P que fournir la table de transition de P à elle-même la fait boucler à l'infini. Mais la machine A a dit que ce n'était pas le cas, puisqu'elle a indiqué que le programme finirait par s'arrêter. Il y a donc une incohérence.</p>
+<p>Supposons <em>a contrario</em> que la machine A indique que le programme bouclera à l'infini. Ce résultat est ensuite passé à la machine I qui l'inverse et indique au final que le programme P finit par s'arrêter. Mais la machine A a dit que ce n'était pas le cas, puisqu'elle a indiqué que le programme bouclerait à l'infini. Il y a donc là encore une incohérence.</p>
+<h3 range="d." markdown="1"><div markdown="1"><p>Indécidabilité du problème</p></div></h3>
+<p>Comme le met en évidence la machine P, la machine A produit un résultat incohérent. La mise en évidence de ce paradoxe nous indique qu'il n'existe pas de machine A capable de décider si une machine finira ou non par s'arrêter. </p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Il n'existe pas d'algorithme qui permette de résoudre ce problème : le problème de l'arrêt est donc indécidable.</p></div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>On retrouve le même type d'incohérence avec le paradoxe du menteur : un homme affirme qu'il ment. Ment-il ?</p>
+<ul>
+
+
+
+<li>Soit l'homme ment lorsqu'il affirme qu'il ment, ce qui signifie qu'il ne ment pas.</li>
+
+
+
+<li>Soit l'homme ne ment pas lorsqu'il affirme qu'il ment, ce qui signifie qu'il ment.</li>
+</ul>
+</div>
+</div>
+<p>L'indécidabilité du problème de l'arrêt a permis à Church et Turing de montrer que tout n'était pas calculable. Même si les travaux de Church et de Turing étaient mathématiques, ils ont eu une grande influence sur la conception ultérieure de machines qu'on appellera ordinateurs. </p>
+<p>Turing sera ensuite particulièrement impliqué dans la construction de machines concrètes, notamment au cours de la Seconde Guerre mondiale pour percer les secrets de la machine électromécanique allemande de chiffrement et de déchiffrement Enigma.</p>
+<p>Examinons maintenant nos programmes informatiques modernes et les données qu'ils traitent sous l'angle des machines de Turing.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Programmes et données</p></div></h2>
+<p>La machine de Turing est à la fois l'ancêtre conceptuel et une représentation tout à fait actuelle de l'ordinateur tel que nous le connaissons aujourd'hui.</p>
+<p>Même si sa conception était abstraite, la machine de Turing constituait un modèle à la fois très simple et très puissant par son universalité. </p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Tout ce qui peut être calculé par une machine de Turing peut l'être par un ordinateur. Inversement, ce qu'une machine de Turing ne peut pas calculer ne peut pas non plus l'être par un ordinateur.</p></div>
+</div>
+<p>Ainsi, les machines de Turing traitent des tables de transition appliquées à des données, comme nos ordinateurs exécutent des programmes traitant des données.<br>
+Précisions ce qu'on entend par programmes et par données numériques.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Programme :</b></p>
+<p>Au sens informatique, un programme est une implémentation d'un algorithme de traitement de données.</p>
+</div>
+</div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Donnée :</b></p>
+<p>Une donnée est une information ou un ensemble d'informations pouvant être fournies à un programme, traitées par un programme ou fournies par un programme</p>
+</div>
+</div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La distinction entre programmes et données n'est cependant pas aussi nette qu'on pourrait le penser à première vue, dans la mesure où tout programme est aussi une donnée, ainsi que nous allons l'illustrer dans différents contextes.</p></div>
+</div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Programmation</p></div></h3>
+<p>L'exemple ci-après montre un extrait de code en langage Python qui définit une fonction déterminant la parité d'un nombre (un entier donné est-il ou n’est-il pas un multiple de deux).</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La fonction ci-dessous indique si un nombre est pair ou impair.</p>
+<p><span class="calculator_button" markdown="1">def est_pair(nombre) :</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">"""Indique si un nombre est pair.</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">Prend en entrée un nombre entier.</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">Retourne un booléen (True ou False).</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">"""</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return nombre % 2 == 0</span></p></div>
+</div>
+</div>
+<p>La fonction définit un algorithme (programme) capable d'évaluer des données (nombres) passées en arguments lors des appels de la fonction.<br>
+Le code définissant cette fonction est lui-même exprimé sous forme de texte interprétable par le langage Python. Ce code constitue des données qui sont traitées par le programme qu'est l'interpréteur Python.</p>
+<p>La même logique s'applique au code source d'un langage compilé lorsque ce code est traité par le compilateur afin de produire un programme exécutable.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Logiciel</p></div></h3>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Un logiciel est un programme destiné à s'exécuter sur un système d'exploitation.</p></div>
+</div>
+<p>Lorsqu'il est téléchargé (par un navigateur, un gestionnaire de fichiers distants ou une instruction en ligne de commande), ce logiciel est transféré sous forme d'octets qui constituent des données de téléchargement, au même titre que le téléchargement d'une image ou d'une vidéo. </p>
+<p>Le stockage des logiciels sur la machine locale s'effectue sous forme de données enregistrées et gérées par le système d'exploitation. Lorsqu'il est lancé (exécuté), cet ensemble de données est un programme, qui peut lui-même recevoir, transformer et produire des données.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Navigation web</p></div></h3>
+<p>Dans le contexte de la navigation sur le web, une page consultée par un internaute peut avoir été produite de manière dynamique par un script côté serveur, par exemple programmé en PHP. Ce code PHP a donc été interprété localement au niveau du serveur pour produire en résultat un code HTML, lequel est ensuite transmis au navigateur sous forme de données de téléchargement. Ces données sont prises en compte sous forme de code HTML par le navigateur qui interprète à son tour ce code pour en effectuer le rendu graphique et fournir les informations destinées à l'utilisateur.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Ces différentes illustrations montrent qu'en fonction du contexte, un même élément peut être soit un programme, soit un ensemble de données, ainsi que nous l'avions abordé de manière plus abstraite avec les machines de Turing.</div>
+</li>
+</ul>
+<div class="conclusion" markdown="1">
+<p><b>Conclusion :</b></p>
+<p>Nous avons montré à la fois l'ancienneté et la modernité des machines de Turing comme modèles conceptuels en informatique, et souligné que tout n'était pas nécessairement décidable par un algorithme. Nos ordinateurs modernes étant comparables à des machines de Turing, nous avons ensuite abordé les notions de programmes et de données, constatant qu'en fonction des contextes de traitement, un même élément pouvait être tantôt un programme, tantôt un ensemble de données.</p>
+</div>
+</div></div>
+<div id="poool-ameaq-i887n" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e626cdb09e0a80100fdff35","type":"Cours","title":"Programmes et données","content":"[IN]\nIntroduction\u0026nbsp;:\n\nLe chapitre sur le génie logiciel nous amène à aborder les méthodes de programmation et les bonnes pratiques de développement logiciel. Afin de situer ces activités de conception logicielle, ce premier cours du chapitre s'intéresse à des concepts appartenant à la préhistoire de l'informatique, fondamentale pour la conception et le fonctionnement de nos ordinateurs modernes. Nous étudierons dans un premier temps les machines de Turing, pour nous intéresser dans un deuxième temps à la décidabilité avec le problème de l'arrêt. Nous ferons ensuite le lien avec les notions de programmes et de données dans le contexte des ordinateurs actuels.\n[/IN]\n\n##Machines de Turing/1\n\nPrécisons dans un premier temps le contexte historique dans lequel le mathématicien britannique Alan Turing a mené ses recherches au cours de la première moitié du XX^^e^^\u0026nbsp;siècle.\n\n###Contexte historique/a.\n\nDans les années\u0026nbsp;1930, les ordinateurs n'existent pas encore\u0026nbsp;: ils seront inventés en\u0026nbsp;1948. Pour autant, un certain nombre de concepts et de connaissances existent déjà depuis plus ou moins longtemps\u0026nbsp;:\n* les premiers algorithmes sont très anciens puisqu'ils remontent à l'Antiquité\u0026nbsp;;\n* les premières machines à calculer sont apparues au XVII^^e^^\u0026nbsp;siècle\u0026nbsp;;\n* le concept de programme informatique est apparu au XIX^^e^^\u0026nbsp;siècle, quand Ada Lovelace a proposé un programme applicable à la machine analytique de Charles Babbage.\n\nAlan Turing travaille sur une question posée par le mathématicien allemand David Hilbert\u0026nbsp;: **qu'est-ce qui est calculable\u0026nbsp;?**  \n* C'est en cherchant à répondre à cette question qu'il va inventer une machine abstraite, laquelle sera rapidement appelée «\u0026nbsp;**machine de Turing**\u0026nbsp;».((fleche))\n\n[RETENIR]\nCherchant à formaliser ce qui caractérise fondamentalement le calcul, Turing réfléchit à une **logique générale qui pourrait s'appliquer à tous les calculs**, et qu'on pourrait faire réaliser par n'importe qui en suivant rigoureusement des procédures composées d'opérations simples et strictement codifiées. \n[/RETENIR]\n\nUn humain réalisant ces tâches devrait le faire mécaniquement, en suivant à la lettre les instructions fournies.  \nL'outil est abstrait, mais le comportement mécanique évoque celui d'une machine, décrite par Turing dans un article scientifique fondateur qu'il publie en\u0026nbsp;1936. Il imagine sa machine calculante dotée de différents composants, que nous allons à présent nous attacher à détailler.\n\n###Anatomie d'une machine de Turing/b.\n\n[ATT]\nUne machine de Turing est un dispositif abstrait.\n[/ATT]\n\nElle est composée des éléments suivants\u0026nbsp;:\n* un **ruban**, analogue à celui d'une machine à écrire, divisé en cases individuelles sur lesquelles différents caractères d'un alphabet donné peuvent être lus et écrits\u0026nbsp;;((bulle))\n\n[IMG]((75))\n![Programmes données machines de Turing ruban](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img01.png) #Ruban\n[/IMG]\n\n* un **pointeur mobile** (ou curseur), doté d'un état interne (comparable à un registre mémoire capable de stocker une valeur) et d'une tête de lecture et d'écriture, capable de lire, d'effacer et d'écrire sur le ruban, et aussi de se déplacer par rapport à celui-ci\u0026nbsp;;((bulle))\n\n[IMG]((75))\n![Programmes données machines de Turing pointeur](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img02.png) #Pointeur (ou curseur)\n[/IMG]\n\n* une **table de transition** qui précise les actions à mener par le pointeur en fonction de son état et de la valeur lue sur le ruban.((bulle))\n* Ces actions peuvent inclure la lecture, l’écriture, l'effacement et l'écriture d'une valeur à l'endroit où se trouve le pointeur, un changement d'état interne de ce dernier, et son déplacement sur le ruban (d'un cran vers la droite ou vers la gauche).((fleche))\n\n[IMG]((100))\n![Programmes données machines de Turing table de transition](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img03.png) #Table de transition\n[/IMG]\n\n[AST]\nL'alphabet est fini, de même que le nombre d'états internes que peut prendre le pointeur.  \nLe ruban est potentiellement de longueur infinie, et au moins considéré comme suffisamment long pour pouvoir effectuer toutes les étapes nécessaires au calcul effectué.\n[/AST]\n\nLa table de transition est composée d'une série d'instructions indiquant la marche à suivre en fonction de l'état interne du pointeur (colonne «\u0026nbsp;état initial\u0026nbsp;» du tableau) et de la valeur figurant à la position courante sur le ruban (colonne «\u0026nbsp;lecture\u0026nbsp;» du tableau).\n* En d'autres termes la table de transition constitue le **programme** qui va s'appliquer aux données présentes sur le ruban, et ainsi permettre d'effectuer le calcul désiré en un nombre fini d'opérations.((fleche))\n\n[IMG]((100))\n![Programmes données machines de Turing](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img04.png) #Schéma général d’une machine de Turing\n[/IMG]\n\n[RAP]\nLa machine décrite par Turing est totalement abstraite. Elle peut exister et fonctionner sans aucun support mécanique ou informatique\u0026nbsp;: un humain doté d'un papier, d'un crayon et d'une gomme peut se comporter en machine de Turing.\n[/RAP]\n\nÉtudions un exemple simple de table de transition.\n\n[IMG]((100))\n![Programmes données machines de Turing table de transition](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img05.png) #Table de transition pour la multiplication par\u0026nbsp;2 d’un nombre binaire\n[/IMG]\n\n[AST]\nL'opération revient à multiplier le nombre par $10$ ($2$ en binaire), c'est-à-dire à ajouter un\u0026nbsp;zéro à la fin du nombre binaire.\n[/AST]\n\n[EX]\nLa table de transition indique les actions à mener, en fonction de l'état interne du pointeur et du contenu de la case courante du ruban. Ces actions consistent en l'écriture d'une valeur (éventuellement identique) sur le ruban, puis en un déplacement ou l'arrêt de la machine.\n\nLe ruban est au départ positionné sur un emplacement blanc, et le nombre binaire à traiter est situé à droite de cet emplacement. Une fois le traitement terminé, la machine s'arrête sur la position blanche située immédiatement après le zéro final.\n\nAppliquons la table de transition au nombre écrit en binaire sur le ruban comme suit\u0026nbsp;: 10011\n\n[IMG]((100))\n![Programmes données machines de Turing table de transition](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img06.png) #Table de transition du nombre 10011\n[/IMG]\n[/EX]\n\nAlan Turing a ensuite généralisé son concept pour le rendre universellement applicable. \n\n###Machine de Turing universelle/c.\n\nOn peut concevoir des machines de Turing pour mener à bien toutes sortes d'opérations spécialisées plus ou moins complexes. Alan Turing avait également imaginé un concept de machine universelle, que l'on désigne sans surprise comme «\u0026nbsp;machine de Turing universelle\u0026nbsp;» ou «\u0026nbsp;machine universelle de Turing\u0026nbsp;».\n\n[RETENIR]\nCette machine universelle a pour particularité de pouvoir simuler le fonctionnement de n'importe quelle autre machine de Turing.\n[/RETENIR]\n\nElle prend en entrées\u0026nbsp;:\n* la table de transition de la machine considérée\u0026nbsp;;\n* les données d'entrée, initialement présentes sur le ruban, de la machine considérée.\n\n[AST]\n**Remarque\u0026nbsp;:**\n\nSi on transpose ce concept aux ordinateurs modernes, ils ont globalement les possibilités de calcul d'une machine de Turing universelle (à ceci près que leur mémoire, bien que considérable, n’est pas infinie).\n[/AST]\n\nLa logique de traitement définie par la table de transition indique le modèle des traitements à effectuer. Ces traitements pourraient être indifféremment réalisés par un humain ou par une machine. La logique algorithmique est donc indépendante de tout langage informatique, même si de nos jours les ordinateurs et les langages informatiques sont de précieux alliés.\n* Ils nous permettent d'appliquer cette logique de traitement à d'importants volumes de données.((fleche))\n\n###Calculabilité et décidabilité/d\n\nLe modèle proposé par Turing pour évaluer la **calculabilité** est abstrait. \n* En somme, un problème est calculable s'il est traitable par une machine de Turing.((fleche))\n\nTravaillant sur la même problématique que Turing, le mathématicien américain Alonzo Church invente son propre système formel, appelé **lambda-calcul**, qui servira plus tard de base à des langages informatiques parmi lesquels Lisp, Haskell ou OCaml.\n\nChurch et Turing se rejoignent dans leurs recherches sur **les limites de ce qui est calculable et de ce qui ne l'est pas**. Leurs modèles sont différents mais aboutissent aux mêmes conclusions, et permettent de constater une forme d'équivalence, connue sous le nom de **thèse de Church-Turing**.\n* Cette thèse affirme que tout traitement réalisable par des processus mécaniques est également réalisable par une machine deTuring.((fleche))\n\n[DEF]\n**Décidabilité\u0026nbsp;:**\n\nLa décidabilité algorithmique fait référence à l'existence ou non d'un algorithme capable de fournir une réponse à un problème donné en un temps fini.\n[/DEF]\n\n[RETENIR]\nLa problématique de la décidabilité est équivalente à celle de la calculabilité.\n[/RETENIR]\n\nPour déterminer si tout est ou non calculable, Church et Turing ont chacun recherché et trouvé l'existence d'un problème qu'il ne serait pas possible de résoudre par un algorithme\u0026nbsp;: il s'agit du problème de l’arrêt.\n\n##Le problème de l'arrêt/2\n\nUn problème est dit «\u0026nbsp;décidable\u0026nbsp;» s'il existe un algorithme qui permet de le résoudre. __A\u0026nbsp;contrario__, un problème est dit «\u0026nbsp;indécidable\u0026nbsp;» s'il n'existe pas d'algorithme qui permette de le résoudre. Nous allons étudier le **problème de l'arrêt** avec des machines de Turing.\n\n###Exposé du problème/a.\n\nLa question posée par Turing peut se présenter ainsi\u0026nbsp;: existe-t-il une machine de Turing capable de déterminer si une machine de Turing quelconque finira par s'arrêter ou si au contraire elle continuera de boucler de manière infinie\u0026nbsp;?  \nPour certaines machines, il est facile et rapide d'apporter une réponse. Mais la question porte sur une machine quelconque\u0026nbsp;: autrement dit, un principe général qui pourrait s'appliquer à n'importe quelle machine de Turing.\n\nOn ne peut évidemment pas tester tous les programmes imaginables. Mais il suffirait de trouver un seul cas mettant en échec ce principe pour prouver qu'un tel programme ne peut pas exister.\n* Il s'agit d'une démonstration par l'absurde\u0026nbsp;: on suppose que ce problème de l'arrêt est décidable, c'est-à-dire qu'il existe une méthode générale pour savoir si une machine va s'arrêter ou pas sur une entrée donnée.((fleche))\n\n###Formalisation avec des machines de Turing/b.\n\n* **Machine\u0026nbsp;A**((bulle,1))\n\nAppelons «\u0026nbsp;machine\u0026nbsp;A\u0026nbsp;» (pour arrêt) cette machine de Turing qui sait résoudre le problème de l'arrêt, c'est-à-dire qu'elle est capable de déterminer si une machine quelconque finira ou non par s'arrêter.\n\nCette machine\u0026nbsp;A prend en entrées\u0026nbsp;:\n* la table de transition de la machine à évaluer\u0026nbsp;;((liste2))\n* les entrées à traiter par cette machine.((liste2))\n\nLa machine\u0026nbsp;A doit indiquer en sortie si\u0026nbsp;:\n* la machine évaluée finit par s'arrêter\u0026nbsp;;((liste2))\n* ou si la machine évaluée ne s'arrête pas et boucle à l'infini.((liste2))\n\n[IMG]((75))\n![Programmes données machines de Turing problème de l’arrêt](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img07.png) #Machine\u0026nbsp;A\n[/IMG]\n\n* **Machine\u0026nbsp;C**((bulle,2))\n\nOn crée une deuxième machine de Turing, appelée machine\u0026nbsp;C (pour copie).\nLa machine\u0026nbsp;C est une machine à copier, qui duplique simplement l'entrée reçue et produit deux exemplaires identiques en sortie.\n\n[IMG]((75))\n![Programmes données machines de Turing problème de l’arrêt](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img08.png) #Machien\u0026nbsp;C\n[/IMG]\n\n* **Machine\u0026nbsp;I**((bulle,3))\n\nOn crée ensuite une troisième machine de Turing, appelée machine\u0026nbsp;I (pour inverseur) qui inverse les résultats reçus en entrée\u0026nbsp;:\n* elle indique «\u0026nbsp;boucle à l'infini\u0026nbsp;» quand elle reçoit l'entrée «\u0026nbsp;finit par s'arrêter\u0026nbsp;»\u0026nbsp;;((liste2))\n* elle indique «\u0026nbsp;finit par s'arrêter\u0026nbsp;» quand elle reçoit l'entrée «\u0026nbsp;boucle à l'infini\u0026nbsp;».((liste2))\n\n[IMG]((75))\n![Programmes données machines de Turing problème de l’arrêt](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img09.png) #Machine\u0026nbsp;I\n[/IMG]\n\n* **Machine\u0026nbsp;P**((bulle,4))\n\nOn place en séquence la machine\u0026nbsp;C de copie, la machine\u0026nbsp;A d'arrêt et enfin l'inverseur (machine\u0026nbsp;I). L'ensemble forme une machine\u0026nbsp;P (pour paradoxe).\n\n[IMG]((100))\n![Programmes données machines de Turing problème de l’arrêt](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img10.png) #Machine\u0026nbsp;P\n[/IMG]\n[IMG]((100))\n![Programmes données machines de Turing problème de l’arrêt](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c12-img11.png) #Machine\u0026nbsp;P\n[/IMG]\n\n[EX]\nIl est possible d'effectuer la démonstration avec un programme.\n\nSupposons que la fonction [BUTC]Evaluation[/BUTC] recherchée existe.  \n[BUTC]Evaluation (prog,donnees)[/BUTC] renvoie à\u0026nbsp;:\n* «\u0026nbsp;se termine\u0026nbsp;» si [BUTC]prog(donnees)[/BUTC] se termine\u0026nbsp;;\n* ou «\u0026nbsp;ne se termine pas\u0026nbsp;» si [BUTC]prog(donnees)[/BUTC] ne s'arrête pas.\n\nConsidérons maintenant le programme\u0026nbsp;:  \n[BUTC]Test(x)[/BUTC]  \n[BUTC]Si Evaluation (x,x) = \"se termine\" alors[/BUTC]  \n\u003c\u003c((auto,-20,0,0,50))[BUTC]boucle infinie[/BUTC]\u003e\u003e  \n[BUTC]Sinon[/BUTC]\n\u003c\u003c((auto,-20,0,0,50)) [BUTC]Arret[/BUTC]\u003e\u003e\n\nEn appliquant [BUTC]Test[/BUTC] à lui-même [BUTC]Test(Test)[/BUTC], on obtient une contradiction\u0026nbsp;: si [BUTC]Test(Test)[/BUTC] boucle, c'est que [BUTC]Evaluation(Test,Test)[/BUTC] renvoie «\u0026nbsp;se termine\u0026nbsp;» c'est-à dire si [BUTC]Test(Test)[/BUTC] se termine.\n[/EX]\n\n###Hypothèses de fonctionnement/c.\n\nÉtudions maintenant ce qu’il se passe si on fournit à\u0026nbsp;P sa propre table de transition.\n\nLa machine\u0026nbsp;C effectue une copie de son entrée et fournit donc deux exemplaires de la table de transition de\u0026nbsp;P.\nLa machine\u0026nbsp;A reçoit en entrées ces deux exemplaires, l'un étant considéré comme table de transition à appliquer et l'autre comme données à évaluer.\n* Quel résultat peut produire la machine\u0026nbsp;A\u0026nbsp;?((fleche))\n\nSupposons que la machine\u0026nbsp;A indique que le programme finira par s'arrêter. Ce résultat est ensuite passé à la machine\u0026nbsp;I qui l'inverse et indique au final que le programme boucle à l'infini. Cela signifierait globalement au niveau de\u0026nbsp;P que fournir la table de transition de\u0026nbsp;P à elle-même la fait boucler à l'infini. Mais la machine\u0026nbsp;A a dit que ce n'était pas le cas, puisqu'elle a indiqué que le programme finirait par s'arrêter. Il y a donc une incohérence.\n\nSupposons __a\u0026nbsp;contrario__ que la machine\u0026nbsp;A indique que le programme bouclera à l'infini. Ce résultat est ensuite passé à la machine\u0026nbsp;I qui l'inverse et indique au final que le programme\u0026nbsp;P finit par s'arrêter. Mais la machine\u0026nbsp;A a dit que ce n'était pas le cas, puisqu'elle a indiqué que le programme bouclerait à l'infini. Il y a donc là encore une incohérence.\n\n###Indécidabilité du problème/d.\n\nComme le met en évidence la machine\u0026nbsp;P, la machine\u0026nbsp;A produit un résultat incohérent. La mise en évidence de ce paradoxe nous indique qu'il n'existe pas de machine\u0026nbsp;A capable de décider si une machine finira ou non par s'arrêter. \n\n[RETENIR]\nIl n'existe pas d'algorithme qui permette de résoudre ce problème\u0026nbsp;: le problème de l'arrêt est donc indécidable.\n[/RETENIR]\n\n[AST]\nOn retrouve le même type d'incohérence avec le paradoxe du menteur\u0026nbsp;: un homme affirme qu'il ment. Ment-il\u0026nbsp;?\n* Soit l'homme ment lorsqu'il affirme qu'il ment, ce qui signifie qu'il ne ment pas.\n* Soit l'homme ne ment pas lorsqu'il affirme qu'il ment, ce qui signifie qu'il ment.\n[/AST]\n\nL'indécidabilité du problème de l'arrêt a permis à Church et Turing de montrer que tout n'était pas calculable. Même si les travaux de Church et de Turing étaient mathématiques, ils ont eu une grande influence sur la conception ultérieure de machines qu'on appellera ordinateurs. \n\nTuring sera ensuite particulièrement impliqué dans la construction de machines concrètes, notamment au cours de la Seconde Guerre mondiale pour percer les secrets de la machine électromécanique allemande de chiffrement et de déchiffrement Enigma.\n\nExaminons maintenant nos programmes informatiques modernes et les données qu'ils traitent sous l'angle des machines de Turing.\n\n##Programmes et données/3\n\nLa machine de Turing est à la fois l'ancêtre conceptuel et une représentation tout à fait actuelle de l'ordinateur tel que nous le connaissons aujourd'hui.\n\nMême si sa conception était abstraite, la machine de Turing constituait un modèle à la fois très simple et très puissant par son universalité. \n\n[RETENIR]\nTout ce qui peut être calculé par une machine de Turing peut l'être par un ordinateur. Inversement, ce qu'une machine de Turing ne peut pas calculer ne peut pas non plus l'être par un ordinateur.\n[/RETENIR]\n\nAinsi, les machines de Turing traitent des tables de transition appliquées à des données, comme nos ordinateurs exécutent des programmes traitant des données.  \nPrécisions ce qu'on entend par programmes et par données numériques.\n\n[DEF]\n**Programme\u0026nbsp;:**\n\nAu sens informatique, un programme est une implémentation d'un algorithme de traitement de données.\n[/DEF]\n\n[DEF]\n**Donnée\u0026nbsp;:**\n\nUne donnée est une information ou un ensemble d'informations pouvant être fournies à un programme, traitées par un programme ou fournies par un programme\n[/DEF]\n\n[ATT]\nLa distinction entre programmes et données n'est cependant pas aussi nette qu'on pourrait le penser à première vue, dans la mesure où tout programme est aussi une donnée, ainsi que nous allons l'illustrer dans différents contextes.\n[/ATT]\n\n###Programmation/a.\n\nL'exemple ci-après montre un extrait de code en langage Python qui définit une fonction déterminant la parité d'un nombre (un entier donné est-il ou n’est-il pas un multiple de deux).\n\n[EX]\nLa fonction ci-dessous indique si un nombre est pair ou impair.\n\n[BUTC]def est_pair(nombre) :[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]\"\"\"Indique si un nombre est pair.[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,50))[BUTC]Prend en entrée un nombre entier.[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,50))[BUTC]Retourne un booléen (True ou False).[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,50))[BUTC]\"\"\"[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,50))[BUTC]return nombre % 2 == 0[/BUTC]\u003e\u003e\n[/EX]\n\nLa fonction définit un algorithme (programme) capable d'évaluer des données (nombres) passées en arguments lors des appels de la fonction.  \nLe code définissant cette fonction est lui-même exprimé sous forme de texte interprétable par le langage Python. Ce code constitue des données qui sont traitées par le programme qu'est l'interpréteur Python.\n\nLa même logique s'applique au code source d'un langage compilé lorsque ce code est traité par le compilateur afin de produire un programme exécutable.\n\n###Logiciel/b.\n\n[RAP]\nUn logiciel est un programme destiné à s'exécuter sur un système d'exploitation.\n[/RAP]\n\nLorsqu'il est téléchargé (par un navigateur, un gestionnaire de fichiers distants ou une instruction en ligne de commande), ce logiciel est transféré sous forme d'octets qui constituent des données de téléchargement, au même titre que le téléchargement d'une image ou d'une vidéo. \n\nLe stockage des logiciels sur la machine locale s'effectue sous forme de données enregistrées et gérées par le système d'exploitation. Lorsqu'il est lancé (exécuté), cet ensemble de données est un programme, qui peut lui-même recevoir, transformer et produire des données.\n\n###Navigation web/c.\n\nDans le contexte de la navigation sur le web, une page consultée par un internaute peut avoir été produite de manière dynamique par un script côté serveur, par exemple programmé en PHP. Ce code\u0026nbsp;PHP a donc été interprété localement au niveau du serveur pour produire en résultat un code\u0026nbsp;HTML, lequel est ensuite transmis au navigateur sous forme de données de téléchargement. Ces données sont prises en compte sous forme de code\u0026nbsp;HTML par le navigateur qui interprète à son tour ce code pour en effectuer le rendu graphique et fournir les informations destinées à l'utilisateur.\n\n* Ces différentes illustrations montrent qu'en fonction du contexte, un même élément peut être soit un programme, soit un ensemble de données, ainsi que nous l'avions abordé de manière plus abstraite avec les machines de Turing.((fleche))\n\n[C]\n**Conclusion\u0026nbsp;:**\n\nNous avons montré à la fois l'ancienneté et la modernité des machines de Turing comme modèles conceptuels en informatique, et souligné que tout n'était pas nécessairement décidable par un algorithme. Nos ordinateurs modernes étant comparables à des machines de Turing, nous avons ensuite abordé les notions de programmes et de données, constatant qu'en fonction des contextes de traitement, un même élément pouvait être tantôt un programme, tantôt un ensemble de données.\n[/C]","siblings":[{"resourceId":"5e626cdb09e0a80100fdff35","type":"Cours","sort":null},{"resourceId":"5e4bc6ee09e0a80100fdefa2","type":"Fiche de révision","sort":null},{"resourceId":"5f3e75092263e30100dfa4df","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7ddc09e0a80100fdbbe5","name":"Programmes et données"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7ddc09e0a80100fdbbe5","label":"Cours : Programmes et données","link":"https://www.schoolmouv.fr/cours/programmes-et-donnees/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"programmes-et-donnees","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/programmes-et-donnees/fiche-de-cours","title":"Programmes et données : Fiche de cours - Numérique et sciences informatiques | SchoolMouv","metaDescription":"Révise le cours : Programmes et données de Numérique et sciences informatiques Terminale grâce à notre fiche de cours","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"programmes-et-donnees","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

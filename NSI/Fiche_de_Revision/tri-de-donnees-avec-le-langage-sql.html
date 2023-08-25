@@ -1,0 +1,200 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tri de données avec le langage SQL : Fiche de révision de Tle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Tri de données avec le langage SQL : Fiche de révision de Tle">
+<meta name="description" content="Fiche de révision SchoolMouv ® pour apprendre facilement Tri de données avec le langage SQL (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/tri-de-donnees-avec-le-langage-sql/fiche-de-revision">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/tri-de-donnees-avec-le-langage-sql/fiche-de-cours","name":"Tri de données avec le langage SQL"}},{"@type":"ListItem","position":5,"item":{"@id":"","name":"Fiche de révision : Tri de données avec le langage SQL"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb-with-ellipsis__23a_n breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><h1>Fiche de révision : Tri de données avec le langage SQL</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Tri de données avec le langage SQL</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<h2 range="1" markdown="1"><div markdown="1"><p>Calculs et transformations dans une requête</p></div></h2>
+<ul>
+
+<li>À l'occasion d'une requête, il est possible de demander le résultat d'un calcul portant sur la valeur d'une colonne.</li>
+
+<li>Il est stocké dans une colonne qui vient s'ajouter à la table résultat de la requête.</li>
+
+<li>On peut effectuer des calculs impliquant une ou plusieurs colonnes en ayant recours aux opérateurs arithmétiques suivants : addition, soustraction, multiplication, division, reste dans la division.</li>
+
+<li>La clause <span class="calculator_button" markdown="1">AS</span> permet de baptiser le nom de la nouvelle colonne destinée à recueillir le résultat du calcul.</li>
+
+<li>À l'occasion d'une requête, il est possible de demander le résultat d'un calcul portant sur l'ensemble des lignes d'une table.</li>
+
+<li>Voici les fonctions statistiques simples que l'on peut appeler avec SQL :</li>
+</ul>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">COUNT(*)</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">Nombre de lignes dans la table</span></b> </td>
+</tr>
+<tr>
+<td>MAX(colonnex)</td>
+<td>valeur maximum dans la colonne</td>
+</tr>
+<tr>
+<td>MIN(colonnex)</td>
+<td>valeur minimum dans la colonne</td>
+</tr>
+<tr>
+<td>AVG(colonnex)</td>
+<td>valeur moyenne de la colonne</td>
+</tr>
+<tr>
+<td>SUM(colonnex)</td>
+<td>somme des valeurs de la colonne</td>
+</tr>
+</table></div>
+<ul>
+
+<li>D'autres transformations sur les colonnes sont possibles lors d'une requête d'interrogation, comme par exemple le passage en majuscule d'une colonne de type chaîne de caractères avec la fonction <span class="calculator_button" markdown="1">UPPER</span>.</li>
+
+<li>On peut également demander l'extraction du mois d'une date grâce à la fonction <span class="calculator_button" markdown="1">MONTH</span>.</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>Agrégats et tri</p></div></h2>
+<ul>
+
+<li>On effectue une opération d'agrégation pour regrouper les lignes d'une table par la même valeur qu'elles contiennent dans une colonne.</li>
+
+<li>L'objectif d'effectuer une agrégation est, en général, de pratiquer des calculs statistiques sur les groupes ainsi constitués.</li>
+
+<li>La clause employée pour pratiquer une agrégation est <span class="calculator_button" markdown="1">GROUP BY</span> :<br>
+<span class="calculator_button" markdown="1">SELECT nomColonne1, <span class="underline">fonction statistique</span></span><br>
+<span class="calculator_button" markdown="1">FROM <em>nomTable</em></span><br>
+<span class="calculator_button" markdown="1">GROUP BY <em>nomColonne1</em>;</span>
+</li>
+
+<li>On peut ajouter une opération de filtrage à la table résultant d'une opération sur agrégat.</li>
+
+<li>La clause <span class="calculator_button" markdown="1">HAVING</span> permet d'exprimer le critère de filtrage sur cette table résultat.</li>
+
+<li>Mais, lorsque l'on effectue une requête, la table résultat qui est restituée n'est pas triée par défaut.</li>
+
+<li>Pour que ce soit le cas, on emploie le mot-clé <span class="calculator_button" markdown="1">ORDER BY</span> suivi de la ou les colonnes sur lesquelles doit porter le tri.</li>
+
+<li>Si plusieurs colonnes sont spécifiées dans la consigne de tri, alors le tri s'effectuera d'abord sur les valeurs de la colonne la plus à gauche, puis selon les valeurs des colonnes données pour le tri de gauche à droite.</li>
+
+<li>Notons par ailleurs que le tri s'effectue par défaut de manière ascendant : l'option <span class="calculator_button" markdown="1">DESC</span> inversera le tri pour le critère concerné.</li>
+</ul>
+<h2 range="3" markdown="1"><div markdown="1"><p>Requêtes portant sur plusieurs tables</p></div></h2>
+<ul>
+
+<li>Pour retrouver des informations relatives à une même entité, on peut être amené à récupérer celles-ci dans plusieurs tables par le biais de ses associations.</li>
+
+<li>Dans ce contexte où nous effectuons une requête portant sur plusieurs tables, une ambiguïté concernant la désignation de leurs colonnes respectives peut se présenter.</li>
+
+<li>En effet, rien n'interdit de construire une base de données où un même nom de colonne peut figurer dans deux tables différentes.</li>
+
+<li>Aussi, pour lever toute ambiguïté dans une requête qui porterait sur des tables ayant des colonnes nommées de la même manière, il est alors nécessaire de préfixer le nom de la colonne par celui de la table concernée.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Finalement, on préfèrera, qu'il y ait ambiguïté ou non, préfixer tous les noms de colonnes du nom de la table à laquelle celles-ci appartiennent.</div>
+</li>
+
+<li>Dans notre exemple, ou désignera nos champs <em>idRecette</em> ainsi :</li>
+
+<li class="liste2">
+<div class="list_text">
+<em>recette.idRecette</em> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">
+<em>etape.idRecette</em> ;</div>
+</li>
+
+<li>Et voici une requête utilisant un préfixe de nom de table :<br>
+<span class="calculator_button" markdown="1">SELECT <em>recette.nomRecette</em>, <em>recette.categorie</em>, <em>recette.duree</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em>;</span>
+</li>
+
+<li>À l'usage, on réalise que ce préfixe peut alourdir considérablement la rédaction de certaines requêtes, déjà complexes par ailleurs.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">On peut alors faire le choix de substituer le préfixe du nom de la table par un alias, plus court, qui sera précisé dans la commande SQL avec le mot-clé <span class="calculator_button" markdown="1">AS</span>.</div>
+</li>
+
+<li>Pour formuler des requêtes portant sur plusieurs tables, on utilise une opération de jointure.</li>
+
+<li>Dans le cas de la base de données de notre club de cuisine, pour obtenir la liste des adhérent·e·s constituée de leur numéro d'adhérent, leur nom, leur prénom et de la ville où ils résident, nous pourrions formaliser la requête suivante :<br>
+<span class="calculator_button" markdown="1">SELECT <em>ad.idAdherent</em>, <em>ad.nomAdherent</em>, <em>ad.prenom, vi.nomVille</em> </span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>ad</em>, <em>ville</em> AS <em>vi</em></span><br>
+<span class="calculator_button" markdown="1">WHERE <em>ad.idVille</em> = <em>vi.idVille</em></span>
+</li>
+
+<li>Cependant, il est nettement préférable d'avoir recours à un opérateur de jointure, nommé <span class="calculator_button" markdown="1">JOIN</span>, spécifique aux requêtes portant sur plusieurs tables.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le SGBD traitera alors la requête de manière optimisée.</div>
+</li>
+
+<li>La syntaxe requise pour effectuer une jointure est la suivante, dans le cadre de notre exemple :<br>
+<span class="calculator_button" markdown="1">SELECT <em>ad.idAdherent</em>, <em>ad.nomAdherent</em>, <em>ad.prenom</em>, <em>vi.nomVille</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>ad</em> JOIN <em>ville</em> AS <em>vi</em> ON <em>ad.idVille</em> = <em>vi.idVille</em>;</span>
+</li>
+
+<li>La jointure externe permet d’effectuer une jointure en incluant les lignes dont la clé étrangère qui fait le lien entre deux tables n’est pas renseignée.</li>
+
+<li>Sachant que deux tables sont considérées dans cette jointure, il faut préciser laquelle des deux servira de référence.</li>
+
+<li>Il faudra employer pour cela la clause <span class="calculator_button" markdown="1">OUTER JOIN</span>.</li>
+
+<li>Ainsi, toutes les lignes de la table qui servira de référence seront représentées dans la table résultat. L’attribut ou les attributs récupérés via la clé étrangère seront renseignés avec la valeur trouvée dans la seconde table, ou renseignée à « NULL » lorsque la clé étrangère n’est pas renseignée dans la première table.</li>
+
+<li>Si par exemple on souhaite avoir la liste des adhérent·e·s constituée de leur numéro d’identification, leur nom, leur prénom, l’identifiant et le nom de chaque recette rédigée par un adhérent donné, on passera la commande suivante :<br>
+<span class="calculator_button" markdown="1">SELECT <em>a.idAdherent</em>, <em>a.nomAdherent</em>, <em>a.prenom</em>, <em>r.idRecette</em>, <em>r.nomRecette</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>a</em> JOIN <em>recette</em> AS <em>r</em> ON <em>a.idAdherent</em> = <em>r.idAdherent</em></span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>a.idAdherent</em>, <em>r.nomRecette</em>; </span>
+</li>
+
+<li>Mais nous souhaiterions que cette liste d’adhérent·e·s n’exclue pas ceux qui n’ont rédigé aucune recette. Pour cela, il faut faire appel à une jointure externe, en prenant <em>adherent</em> comme table de référence :<br>
+<span class="calculator_button" markdown="1">SELECT <em>a.idAdherent</em>, <em>a.nomAdherent</em>, <em>a.prenom</em>, <em>r.idRecette</em>, <em>r.nomRecette</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>adherent</em> AS <em>a</em> LEFT OUTER JOIN <em>recette</em> AS <em>r</em> ON <em>a.idAdherent</em> = <em>r.idAdherent</em></span><br>
+<span class="calculator_button" markdown="1">ORDER BY <em>a.idAdherent</em>, <em>r.nomRecette</em>;</span>
+<span class="calculator_button" markdown="1">LEFT</span> indique que c’est la table qui apparaît à gauche dans la clause <span class="calculator_button" markdown="1">FROM</span> qui sert de référence.</li>
+
+<li>Pour terminer, on peut tenter de combiner différentes clauses. Si nous souhaitons par exemple connaître tous les adhérent·e·s qui n’ont pas proposé de recette, il suffira de passer la commande SQL suivante :<br>
+<span class="calculator_button" markdown="1">SELECT <em>a.idAdherent</em>, <em>a.nomAdherent</em>, <em>a.prenom</em>, <em>r.idRecette</em>, <em>r.nomRecette</em></span><br>
+<span class="calculator_button" markdown="1">FROM <em>recette</em> AS <em>r</em> RIGHT OUTER JOIN <em>adherent</em> AS <em>a</em> ON <em>a.idAdherent</em> = <em>r.idAdherent</em></span><br>
+<span class="calculator_button" markdown="1">WHERE <em>r.idRecette</em> IS NULL;</span>
+</li>
+</ul>
+</div></div>
+<div id="poool-dyeq2-940bg" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e74838928e637010043ff1d","type":"Fiche de révision","title":"Tri de données avec le langage SQL","content":"##Calculs et transformations dans une requête/1\n* À l'occasion d'une requête, il est possible de demander le résultat d'un calcul portant sur la valeur d'une colonne.\n* Il est stocké dans une colonne qui vient s'ajouter à la table résultat de la requête.  \n* On peut effectuer des calculs impliquant une ou plusieurs colonnes en ayant recours aux opérateurs arithmétiques suivants\u0026nbsp;: addition, soustraction, multiplication, division, reste dans la division.\n* La clause [BUTC]AS[/BUTC] permet de baptiser le nom de la nouvelle colonne destinée à recueillir le résultat du calcul.\n* À l'occasion d'une requête, il est possible de demander le résultat d'un calcul portant sur l'ensemble des lignes d'une table.\n* Voici les fonctions statistiques simples que l'on peut appeler avec\u0026nbsp;SQL\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]COUNT(*)[18]** ((0,0,0,#9AE)) |\n| **[18]Nombre de lignes dans la table[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| MAX(colonnex) |\n| valeur maximum dans la colonne |\n[/LI]\n[LI]\n| MIN(colonnex) |\n| valeur minimum dans la colonne |\n[/LI]\n[LI]\n| AVG(colonnex) |\n| valeur moyenne de la colonne |\n[/LI]\n[LI]\n| SUM(colonnex) |\n| somme des valeurs de la colonne |\n[/LI]\n[/TAB]\n* D'autres transformations sur les colonnes sont possibles lors d'une requête d'interrogation, comme par exemple le passage en majuscule d'une colonne de type chaîne de caractères avec la fonction [BUTC]UPPER[/BUTC].\n* On peut également demander l'extraction du mois d'une date grâce à la fonction [BUTC]MONTH[/BUTC].\n\n##Agrégats et tri/2\n\n* On effectue une opération d'agrégation pour regrouper les lignes d'une table par la même valeur qu'elles contiennent dans une colonne.\n* L'objectif d'effectuer une agrégation est, en général, de pratiquer des calculs statistiques sur les groupes ainsi constitués.\n* La clause employée pour pratiquer une agrégation est [BUTC]GROUP BY[/BUTC]\u0026nbsp;:  \n[BUTC]SELECT nomColonne1, --fonction statistique--[/BUTC]  \n[BUTC]FROM __nomTable__[/BUTC]  \n[BUTC]GROUP BY __nomColonne1__;[/BUTC]\n* On peut ajouter une opération de filtrage à la table résultant d'une opération sur agrégat.\n* La clause [BUTC]HAVING[/BUTC] permet d'exprimer le critère de filtrage sur cette table résultat.\n* Mais, lorsque l'on effectue une requête, la table résultat qui est restituée n'est pas triée par défaut.\n* Pour que ce soit le cas, on emploie le mot-clé [BUTC]ORDER BY[/BUTC] suivi de la ou les colonnes sur lesquelles doit porter le tri.\n* Si plusieurs colonnes sont spécifiées dans la consigne de tri, alors le tri s'effectuera d'abord sur les valeurs de la colonne la plus à gauche, puis selon les valeurs des colonnes données pour le tri de gauche à droite.\n* Notons par ailleurs que le tri s'effectue par défaut de manière ascendant\u0026nbsp;: l'option [BUTC]DESC[/BUTC] inversera le tri pour le critère concerné.\n\n##Requêtes portant sur plusieurs tables/3\n* Pour retrouver des informations relatives à une même entité, on peut être amené à récupérer celles-ci dans plusieurs tables par le biais de ses associations.\n* Dans ce contexte où nous effectuons une requête portant sur plusieurs tables, une ambiguïté concernant la désignation de leurs colonnes respectives peut se présenter.\n* En effet, rien n'interdit de construire une base de données où un même nom de colonne peut figurer dans deux tables différentes.\n* Aussi, pour lever toute ambiguïté dans une requête qui porterait sur des tables ayant des colonnes nommées de la même manière, il est alors nécessaire de préfixer le nom de la colonne par celui de la table concernée.\n* Finalement, on préfèrera, qu'il y ait ambiguïté ou non, préfixer tous les noms de colonnes du nom de la table à laquelle celles-ci appartiennent.((fleche))\n* Dans notre exemple, ou désignera nos champs __idRecette__ ainsi :\n* __recette.idRecette__ ;((liste2))\n* __etape.idRecette__ ;((liste2))\n* Et voici une requête utilisant un préfixe de nom de table\u0026nbsp;:  \n[BUTC]SELECT __recette.nomRecette__, __recette.categorie__, __recette.duree__[/BUTC]  \n[BUTC]FROM __recette__;[/BUTC]\n* À l'usage, on réalise que ce préfixe peut alourdir considérablement la rédaction de certaines requêtes, déjà complexes par ailleurs.\n* On peut alors faire le choix de substituer le préfixe du nom de la table par un alias, plus court, qui sera précisé dans la commande SQL avec le mot-clé [BUTC]AS[/BUTC].((fleche))\n* Pour formuler des requêtes portant sur plusieurs tables, on utilise une opération de jointure.\n* Dans le cas de la base de données de notre club de cuisine, pour obtenir la liste des adhérent·e·s constituée de leur numéro d'adhérent, leur nom, leur prénom et de la ville où ils résident, nous pourrions formaliser la requête suivante\u0026nbsp;:  \n[BUTC]SELECT __ad.idAdherent__, __ad.nomAdherent__, __ad.prenom, vi.nomVille__ [/BUTC]  \n[BUTC]FROM __adherent__ AS __ad__, __ville__ AS __vi__[/BUTC]  \n[BUTC]WHERE __ad.idVille__ = __vi.idVille__[/BUTC]\n* Cependant, il est nettement préférable d'avoir recours à un opérateur de jointure, nommé [BUTC]JOIN[/BUTC], spécifique aux requêtes portant sur plusieurs tables.\n* Le SGBD traitera alors la requête de manière optimisée.((fleche))\n* La syntaxe requise pour effectuer une jointure est la suivante, dans le cadre de notre exemple\u0026nbsp;:  \n[BUTC]SELECT __ad.idAdherent__, __ad.nomAdherent__, __ad.prenom__, __vi.nomVille__[/BUTC]  \n[BUTC]FROM __adherent__ AS __ad__ JOIN __ville__ AS __vi__ ON __ad.idVille__ = __vi.idVille__;[/BUTC]\n* La jointure externe permet d’effectuer une jointure en incluant les lignes dont la clé étrangère qui fait le lien entre deux tables n’est pas renseignée.\n* Sachant que deux tables sont considérées dans cette jointure, il faut préciser laquelle des deux servira de référence.\n* Il faudra employer pour cela la clause [BUTC]OUTER JOIN[/BUTC].\n* Ainsi, toutes les lignes de la table qui servira de référence seront représentées dans la table résultat. L’attribut ou les attributs récupérés via la clé étrangère seront renseignés avec la valeur trouvée dans la seconde table, ou renseignée à «\u0026nbsp;NULL\u0026nbsp;» lorsque la clé étrangère n’est pas renseignée dans la première table.\n* Si par exemple on souhaite avoir la liste des adhérent·e·s constituée de leur numéro d’identification, leur nom, leur prénom, l’identifiant et le nom de chaque recette rédigée par un adhérent donné, on passera la commande suivante :  \n[BUTC]SELECT __a.idAdherent__, __a.nomAdherent__, __a.prenom__, __r.idRecette__, __r.nomRecette__[/BUTC]  \n[BUTC]FROM __adherent__ AS __a__ JOIN __recette__ AS __r__ ON __a.idAdherent__ = __r.idAdherent__[/BUTC]  \n[BUTC]ORDER BY __a.idAdherent__, __r.nomRecette__; [/BUTC]\n* Mais nous souhaiterions que cette liste d’adhérent·e·s n’exclue pas ceux qui n’ont rédigé aucune recette. Pour cela, il faut faire appel à une jointure externe, en prenant __adherent__ comme table de référence\u0026nbsp;:  \n[BUTC]SELECT __a.idAdherent__, __a.nomAdherent__, __a.prenom__, __r.idRecette__, __r.nomRecette__[/BUTC]  \n[BUTC]FROM __adherent__ AS __a__ LEFT OUTER JOIN __recette__ AS __r__ ON __a.idAdherent__ = __r.idAdherent__[/BUTC]  \n[BUTC]ORDER BY __a.idAdherent__, __r.nomRecette__;[/BUTC]\n[BUTC]LEFT[/BUTC] indique que c’est la table qui apparaît à gauche dans la clause [BUTC]FROM[/BUTC] qui sert de référence.  \n* Pour terminer, on peut tenter de combiner différentes clauses. Si nous souhaitons par exemple connaître tous les adhérent·e·s qui n’ont pas proposé de recette, il suffira de passer la commande\u0026nbsp;SQL suivante\u0026nbsp;:  \n[BUTC]SELECT __a.idAdherent__, __a.nomAdherent__, __a.prenom__, __r.idRecette__, __r.nomRecette__[/BUTC]  \n[BUTC]FROM __recette__ AS __r__ RIGHT OUTER JOIN __adherent__ AS __a__ ON __a.idAdherent__ = __r.idAdherent__[/BUTC]  \n[BUTC]WHERE __r.idRecette__ IS NULL;[/BUTC]","siblings":[{"resourceId":"5e74d7d309e0a80100fe0cc2","type":"Cours","sort":null},{"resourceId":"5e74838928e637010043ff1d","type":"Fiche de révision","sort":null},{"resourceId":"5e908aad09e0a80100fe1b96","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d5009e0a80100fdbbdd","name":"Tri de données avec le langage SQL"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d5009e0a80100fdbbdd","label":"Tri de données avec le langage SQL","link":"https://www.schoolmouv.fr/cours/tri-de-donnees-avec-le-langage-sql/fiche-de-cours"},{"key":"fiche-de-revision","label":"Fiche de révision : Tri de données avec le langage SQL","link":""}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"tri-de-donnees-avec-le-langage-sql","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/tri-de-donnees-avec-le-langage-sql/fiche-de-revision","title":"Tri de données avec le langage SQL : Fiche de révision de Tle","metaDescription":"Fiche de révision SchoolMouv ® pour apprendre facilement Tri de données avec le langage SQL (Tle) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"tri-de-donnees-avec-le-langage-sql","resourceType":"fiche-de-revision"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

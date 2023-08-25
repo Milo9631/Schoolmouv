@@ -1,0 +1,565 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Système de gestion de bases de données (SGBD) : cours de Tle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Système de gestion de bases de données (SGBD) : cours de Tle">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Système de gestion de bases de données (SGBD) (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/systeme-de-gestion-de-bases-de-donnees-sgbd-/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/systeme-de-gestion-de-bases-de-donnees-sgbd-/fiche-de-cours","name":"Cours : Système de gestion de bases de données (SGBD)"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Système de gestion de bases de données (SGBD)</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Système de gestion de bases de données (SGBD)</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>L’objectif de ce chapitre est d’identifier les enjeux que représentent les bases de données informatisées et les besoins qui découlent de l’exploitation de ces bases.<br>
+Dans un premier temps dans ce cours, nous nous pencherons sur les besoins à l’origine des bases de données informatiques. Puis nous déroulerons un bref historique concernant les techniques employées pour leur mise en œuvre. Enfin, nous détaillerons en quoi consiste un système de gestion de base de données ainsi que les différents moyens d’interagir avec celui-ci.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Qu’attend-on des bases de données informatisées ?</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Des attentes au niveau des données elles-mêmes</p></div></h3>
+<p>Le but de regrouper un ensemble d’informations dans une base de données est de pouvoir les retrouver facilement, en faisant appel à des <b>critères de recherche</b>.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Dans cette première sous-partie nous utiliserons l’exemple de données relatives aux recettes et adhérent·e·s d’un club de cuisine.</p></div>
+</div>
+<p>Le volume d’informations que les organisations sont amenées à brasser est toujours grandissant. Aussi, si l’on souhaite retrouver tous les adhérent·e·s de moins de trente ans dans cette base de données, celle-ci sera informatisée dans le but premier de <b>limiter le temps des recherches</b>.</p>
+<ul>
+
+<li>Toutefois, une base de données informatisée doit aussi pouvoir répondre à une grande variété de recherches, sans que l’on ait à les prévoir toutes au moment où elle est conçue.</li>
+
+<li>Il est également essentiel que cette base soit accessible par différents programmes, donc qu’elle soit <b>indépendante des traitements informatiques</b> que l’on peut élaborer sur les données qu’elle stocke.</li>
+
+<li>Enfin, on attend d’une base d’une part que ses données soient <b>cohérentes</b>, d’autre part que les informations qui y sont stockées ne soient <b>pas redondantes</b>.</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Exemple d’incohérence</b></div>
+</li>
+</ul>
+<p>Dans la base recensant des recettes de cuisine, certaines recettes sont enregistrées avec l’ingrédient « yaourt », d’autres avec « yogourt ». Ainsi, en cherchant les recettes à bases de « yaourt », on ne retrouvera pas celles enregistrées à base de « yogourt ».</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Bien que les deux termes désignent le même ingrédient, cette incohérence sur son nom biaise le résultat des recherches.</div>
+</li>
+
+<li class="bullet_list">
+<div style=""></div>
+<div class="list_text"><b>Exemple de redondance</b></div>
+</li>
+</ul>
+<p>Toujours dans notre base, on stocke le nom, le prénom, l’adresse de messagerie ainsi que l’ adresse, le code postal et la commune où habite chaque adhérent·e du club. Cette information « code postal +ville » va se trouver dupliquée dans la base autant de fois qu’il y a d’auteur·e·s de recette qui habitent la même commune.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">C’est, un gâchis de place qui peut s’avérer coûteux lorsqu’il ne s’agit plus de la base de recettes d’un petit club de cuisine, mais, par exemple, de celle d’un grand site international de partage de recettes qui compte les adresses des auteur·e·s pas millions.</div>
+</li>
+</ul>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>C’est le rôle d’une base de données informatisée, que l’on aura conçue selon des règles précises, que de permettre d’éviter les incohérences et redondances.</p></div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Des attentes au niveau des performances</p></div></h3>
+<p>L’optimisation du temps pris par les opérations dans une base de données informatisée implique une réflexion sur l’architecture matérielle employée.<br>
+On identifie trois grands rôles (niveaux) dans un système d’informations :</p>
+<ul>
+
+<li>
+<b>interactions avec l’utilisateur·rice</b> ;</li>
+
+<li>
+<b>calcul et traitements sur les données</b> ;</li>
+
+<li>et <b>gestion des données</b> (organisation, stockage et accès).</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Selon l’architecture employée et les besoins en performance, ces rôles sont répartis différemment.</div>
+</li>
+</ul>
+<p>Les architectures peuvent comporter plusieurs couches, généralement appelées « tiers » (ex. : 1-tier, 2-tiers, … n-tiers).</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le terme « tiers » est un anglicisme et un faux-ami signifiant en français « niveau », « couche » ou « étage ».</p></div>
+</div>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’interaction client-serveur repose sur des échanges entre plusieurs programmes : l’un (le client) contacte l’autre (le serveur) et lui envoie des requêtes auxquelles ce dernier doit répondre.</p></div>
+</div>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Architecture 1-tiers : architecture correspondant à un client dit « autonome »</b></div>
+</li>
+</ul>
+<p>Cette architecture, aujourd’hui un peu dépassée, impliquait l’installation des applications sur chacun des postes de travail. Cette répartition rendait la gestion du parc matériel assez lourde. Les données étaient alors à l’époque plutôt réparties dans des fichiers individuels (et non dans un SGBD, tel qu’étudié plus loin).</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img01.png" alt="Architecture 1-tiers SGBD"> 
+<span>Architecture 1-tiers
+ </span></p></div></div>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Architecture 2-tiers : architecture correspondant à un client dit « lourd »</b></div>
+</li>
+</ul>
+<p>Cette architecture nécessite l’installation sur chaque poste de l’IHM particulière aux traitements. Les traitements eux-mêmes et la gestion des données sont, quant à eux, assurés par un serveur qui peut se trouver sur un réseau différent de celui du client.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img02.png" alt="Architecture 2-tiers SGBD"> 
+<span>Architecture 2-tiers
+ </span></p></div></div>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text"><b>Architecture 3-tiers : architecture correspondant à un client dit « léger »</b></div>
+</li>
+</ul>
+<p>Cette architecture nécessite l’installation sur chaque poste d’une application légère de visualisation, telle qu’un <b>navigateur web</b> par exemple. Les traitements et la gestion des données sont chacun assurés par un serveur différent.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img03.png" alt="Architecture 3-tiers SGBD"> 
+<span>Architecture 3-tiers
+ </span></p></div></div>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="4"></div>
+<div class="list_text"><b>Architecture 4-tiers</b></div>
+</li>
+</ul>
+<p>Cette architecture répartit les trois rôles sur des serveurs différents.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img04.png" alt="Architecture 4-tiers SGBD"> 
+<span>Architecture 4-tiers
+ </span></p></div></div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Notons que le serveur de données peut lui-même faire l’objet d’une répartition : pour des besoins de performance ou de sécurité, les bases de données peuvent être dupliquées ou réparties techniquement sur plusieurs serveurs.</p></div>
+</div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">On parle alors de <b>bases de données répliquées</b> dans le premier cas et de <b>bases de données réparties</b> dans le second.</div>
+</li>
+</ul>
+<p>Nous avons identifié les attentes vis-à-vis des bases de données informatisées, étudions à présent comment celles-ci se sont développées au fil des années.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Plusieurs modèles de données</p></div></h2>
+<p>Le développement des bases de données a démarré à partir des années 1960, lorsque les ordinateurs se sont démocratisés et ont commencé à étendre, au-delà du calcul, leurs capacités à des traitements d’informations plus élaborées.<br>
+Plusieurs modèles de données ont émergé jusqu’à nos jours.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Modèle de données :</b></p>
+<p>Un modèle de données définit la manière dont l’information est structurée dans la base de données. Il est une représentation, exploitable par l’informatique, d’informations du monde réel.</p>
+</div>
+</div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Le modèle hiérarchique</p></div></h3>
+<p>Dans le <b>modèle hiérarchique</b>, les éléments d’information sont reliés entre eux par une <b>arborescence</b> dans laquelle chacun d’eux n’est rattaché qu’à <b>un seul possesseur</b>.<br>
+La recherche d’une information est contrainte de suivre un parcours défini par un système de chaînage interne : à chaque étape du chaînage, un pointeur stocké avec la donnée indique où trouver la donnée suivante Pour accéder à une donnée, on part du niveau qui lui est supérieur et on parcourt séquentiellement, de proche en proche, grâce aux pointeurs, l’ensemble de ses entités filles, pour trouver la donnée cherchée.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Un tel système lie très fortement les données aux programmes qui les manipulent.</div>
+</li>
+</ul>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img05.png" alt="SGBD modèle hiérarchique"> 
+<span>Exemple d’informations du monde réel organisées selon un modèle hiérarchique : l’organisation du territoire français en communes/départements/régions
+ </span></p></div></div></div>
+</div>
+<p>Le modèle hiérarchique a, entre autres projets, servi à la gestion des données relatives au projet Apollo de la NASA. Cependant, le monde réel n’est pas toujours organisé selon une hiérarchie rigoureuse au sein de laquelle les liaisons transversales ne sont pas toutes immédiates.<br>
+En effet, dans l’exemple du découpage du territoire français, pour récupérer la liste de tous les départements de France (approche transversale), il est nécessaire d’emprunter des liaisons transversales mais aussi verticales.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Pour retrouver tous les départements de France, on suit le parcours France $\rightarrow$ Normandie $\rightarrow$ Seine maritime $\rightarrow$ Calvados ; puis Bretagne $\rightarrow$ Côtes d’Armor $\rightarrow$ Finsitère.</div>
+</li>
+</ul>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Il n’est pas possible de parcourir l’arbre de façon uniquement transversale : Seine-Maritime, Calavados, Côtes d’Armor puis Finistère, car Calvados et Finistère n’ont pas le même possesseur.</p></div>
+</div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Ce qui alourdit considérablement les recherches. D’où l’apparition du modèle réseau.</div>
+</li>
+</ul>
+<h3 range="b." markdown="1"><div markdown="1"><p>Le modèle réseau</p></div></h3>
+<p>Le <b>modèle réseau</b> lève certaines limitations du modèle hiérarchique, en particulier en autorisant des liens transversaux. Le système de chaînage interne, formant un graphe, s’en voit inévitablement, et malheureusement, plus compliqué. Une structure en graphe se substitue à la structure en arbre du modèle hiérarchique.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pour mieux comprendre son principe voici l’exemple de deux usines : Usine A et Usine B produisent respectivement les engins Jeep A, Camion D et Char F pour l’une ; Jeep A et Avion G pour l’autre.</p></div>
+</div>
+<p>Si l’on traduit cette situation par un modèle hiérarchique, on obtient le résultat suivant.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img06.png" alt="SGBD modèle hiérarchique"> 
+<span>Modèle hiérarchique appliqué à notre exemple
+ </span></p></div></div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Avec l’utilisation du modèle hiérarchique, on constate un problème de redondance : Jeep A est renseignée deux fois.</p></div>
+</div>
+<p>Alors qu’avec l’utilisation d’un graphe structuré en modèle réseau, on obtient le résultat suivant.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img07.png" alt="SGBD modèle réseau"> 
+<span>Modèle réseau appliqué à notre exemple
+ </span></p></div></div>
+<p>Des données intermédiaires sont de nature technique et ne font donc pas partie des données issues du monde réel modélisé (ici identifiées 23000, 22501, 17000, etc…). Elles stockent divers pointeurs qui permettent d’établir des parcours chaînés entre les données. </p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">On trouve ici un intérêt au graphe par rapport au modèle hiérarchique : la donnée Jeep A n’est pas dupliquée, et, pour autant, on n’a pas perdu l’information qu’elle était produite par l’usine 1 et l’usine 2.</div>
+</li>
+</ul>
+<p>La complexité de ce modèle s’accompagne d’une grande dépendance entre les données et les programmes qui les manipulent.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Cette complexité explique que ce modèle ait été abandonné au profit du modèle relationnel.</div>
+</li>
+</ul>
+<h3 range="c." markdown="1"><div markdown="1"><p>Le modèle relationnel</p></div></h3>
+<p>C’est en 1970 qu’a émergé le concept du <b>modèle relationnel</b>, proposé par l’informaticien britannique Edgar Frank Codd, alors directeur de recherche chez le constructeur IBM. Il faudra une dizaine d’années pour que l’idée débouche sur un produit abouti, nommé « Oracle », alors commercialisé par Relational Software. Il sera suivi plus tard par DB2, commercialisé par IBM.</p>
+<p>Ce modèle a pour vocation première d’améliorer l’indépendance des données par rapport à leurs traitements : contrat qu’il remplit avec succès.<br>
+Il s’appuie sur des tableaux à deux dimensions nommés « relations ». Ceux-ci sont liés à d’autres relations (ou « tables ») par un mécanisme d’associations qui repose sur l’<b>algèbre relationnelle</b>. Ces associations définissent et précisent les liens entre les relations.</p>
+<p>Les accès aux enregistrements ne reposent pas sur des pointeurs, tels que ceux utilisés dans les systèmes de chaînage évoqués dans les modèles précédents. Ils sont assurés par des clés primaires ou étrangères accessibles par des index.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’index est une sorte de répertoire qui indique où trouver sur le disque l’enregistrement relatif à une clé donnée.</p></div>
+</div>
+<p>Par ailleurs, c’est grâce au processus de modélisation abordé dans les chapitres précédents que l’on parvient à définir les liaisons entre les tables. </p>
+<h3 range="d." markdown="1"><div markdown="1"><p>Le modèle objet et relationnel-objet</p></div></h3>
+<p>Ces modèles intègrent la <b>notion d’objet</b>, c’est-à-dire celle employée par les langages de programmation orientée objet. Ce concept d’objet s’avère en particulier utile pour modéliser des informations complexes, comme par exemple celles de type multimédia.</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Ces modèles sont encore en phase de réflexion et de recherche. Nous n’en développerons pas plus le principe ici.</p></div>
+</div>
+<p>Ces différents modèles ont été conçus pour traiter des données fortement structurées et finement catégorisées. Ils sont en revanche peu adaptés aux besoins croissants de stockage et de traitements, souvent en temps réel, de données massives. Ces mégadonnées (communément appelées <em>"big data"</em>) sont alors gérées avec des SGDB de type NoSQL. Cette appellation NoSQL désigne collectivement une famille hétérogène de bases de données différentes du modèle relationnel : s’appuyant sur différents paradigmes (clés-valeurs, colonnes, documents, graphes, multi-modèles, etc.), ces SGBD NoSQL sont capables de traiter de très gros volumes de données possiblement hétérogènes.</p>
+<p>Pour conclure sur cet inventaire, nous pouvons noter qu’il subsiste encore, en particulier dans le secteur bancaire, des bases de données hiérarchiques qui s’avèrent plus performantes pour la gestion de certaines informations que les bases de données relationnelles.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Mais retenons que le modèle relationnel est celui qui est le plus largement répandu de nos jours. </p></div>
+</div>
+<p>Il est temps maintenant de nous intéresser aux SGBD, systèmes qui permettent de mettre en œuvre un modèle de données.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Les missions d’un SGBD</p></div></h2>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Une base de données informatisée est un ensemble d’informations stockées sous forme de données sur un support numérique.</p></div>
+</div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>SGBD :</b></p>
+<p>Un SGBD, sigle signifiant « Système de gestion de base de données », est un logiciel spécialisé pour manipuler des données stockées en base.</p>
+</div>
+</div>
+<p>Parmi les SGBD relationnels les plus connus et utilisés, on peut citer : </p>
+<ul>
+
+<li>open-source ;</li>
+</ul>
+<div class="image_container" style="width:60%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img08.png" alt="SGBD open-source"> </p></div></div>
+<ul>
+
+<li>propriétaires.</li>
+</ul>
+<div class="image_container" style="width:60%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img09.png" alt="SGBD propriétaires"> </p></div></div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Système d’informations :</b></p>
+<p>Un système d’informations est l’ensemble constitué par la base de données, le SGBD et les programmes d’applications qui lui sont associés.</p>
+</div>
+</div>
+<p>L’architecture ANSI/SPARC spécifie l’architecture d’un SGBD selon un découpage en trois niveaux.</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">
+<b>Le niveau physique</b> correspond au niveau interne, dans lequel on décrit les données telles qu’elles sont stockées dans la machine. Ce niveau est dépendant du SGBD employé, utilisant un modèle physique de données qui lui est spécifique.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">
+<b>Le niveau conceptuel</b> (ou logique) est utilisé pour décrire les éléments de la base qui traduisent, de manière structurée, les informations du monde réel. Ce niveau, qui définit l’organisation des données, ignore totalement le niveau physique.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text">
+<b>Le niveau externe</b> sert à décrire les différentes vues des données qui doivent être proposées aux utilisateur·rice·s suivant leur catégorie. Il est indépendant du niveau conceptuel.</div>
+</li>
+</ul>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img10.png" alt="modèle ANSI/SPARC d’un SGBD"> </p></div></div>
+<p>Voyons un peu plus en détail ce qu’apporte chacun de ces niveaux.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Le niveau physique</p></div></h3>
+<p>Vous trouverez listées ci-dessous les différentes missions du niveau physique.</p>
+<ul>
+
+<li>Gestion des données sur le support de stockage (fichiers).</li>
+
+<li>Représentation physique des valeurs de données et encodage (réel, entier, texte…).</li>
+
+<li>Partage des données et gestion des accès concurrents :</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">il s’agit de permettre à plusieurs utilisateur·rice·s d’accéder simultanément aux mêmes données, y compris lorsqu’il s’agit de les modifier.</div>
+</li>
+
+<li>Résistance aux pannes :</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">il faut que le SGBD garantisse un état « sain » de la base après une panne intervenant au milieu d’une modification. Le but est que la modification alors interrompue soit achevée ou que les données soient ramenées dans l’état qui précédait la modification.</div>
+</li>
+</ul>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Notons que l’on peut mesurer la qualité des opérations de modifications d’un SGBD en vérifiant les propriétés ACID que voici.</p>
+<ul>
+
+
+
+<li>
+<b>A</b>tomicité : une modification est soit exécutée entièrement, soit abandonnée.</li>
+
+
+
+<li>
+<b>C</b>ohérence : une modification doit se faire d’un état cohérent de la base vers un état cohérent de la base.</li>
+
+
+
+<li>
+<b>I</b>solement : deux modifications simultanées ne doivent pas interférer entre elles.</li>
+
+
+
+<li>
+<b>D</b>urabilité : une modification est permanente, même en cas de panne.</li>
+</ul>
+</div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Le niveau conceptuel</p></div></h3>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le niveau conceptuel est indépendant du niveau physique.</p></div>
+</div>
+<p>Vous trouverez listées ci-dessous les différentes missions du niveau conceptuel.</p>
+<ul>
+
+<li>Définition de la structure de données à l’aide d’un langage de description de données (LDD)</li>
+
+<li>Consultation et mise à jour des données à l’aide d’un langage d’interrogation des données (LID) ainsi qu’un langage de manipulation des données (LMD)</li>
+
+<li>Cohérence de données assurée par la description de contraintes d’intégrités</li>
+
+<li>Gestion de la confidentialité</li>
+</ul>
+<h3 range="c." markdown="1"><div markdown="1"><p>Le niveau externe</p></div></h3>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le niveau externe est indépendant du niveau conceptuel.</p></div>
+</div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Un ensemble de données peut être vu différemment selon le profil des utilisateur·rice·s.</div>
+</li>
+</ul>
+<p>Vous trouverez listées ci-dessous les différentes missions du niveau externe.</p>
+<ul>
+
+<li>Vues décrivant la partie des données qui présente un intérêt pour un·e utilisateur·rice ou un groupe d’utilisateur·rice·s</li>
+
+<li>Vues décrivant la partie des données qui présente un intérêt pour des programmeur·euse·s d’applications</li>
+
+<li>Interfaces d’utilisation</li>
+
+<li>Environnements de programmation</li>
+</ul>
+<p>Nous connaissons dorénavant les missions d’un SGBD. Mais comment l’utiliser ? C’est ce que nous allons voir maintenant, en recensant les différents moyens d’interagir avec lui.</p>
+<h2 range="4" markdown="1"><div markdown="1"><p>Modes d’interaction avec un SGBD</p></div></h2>
+<p>Pour <b>agir sur la base de données</b>, que ce soit dans le but de la créer, de la mettre à jour ou de la consulter, il est nécessaire de solliciter le SGBD. Selon les situations et les utilisateur·rice·s, plusieurs moyens permettent d’interagir avec le SGBD. Quels sont-ils ?</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>La ligne de commande</p></div></h3>
+<p>À l’aide de l’application « Terminal » ou « Console » (sous Linux ou Unix) ou de l’« invite de commandes » (sous Windows), il est possible de solliciter le SGBD via des commandes entrées en mode texte, donc au clavier.</p>
+<p>Ce mode d’interaction, assez rudimentaire et peu ergonomique, est plutôt employé par les informaticien·ne·s. Ces dernier·e·s formulent leurs commandes en ayant recours au LDD, LMD et LID.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’intérêt de la ligne de commande est qu’elle exige peu de ressources, ce qui peut être utile dans certains cas de situations dégradées.</p></div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Sous Windows avec MySQL : connexion à la base de données « recettes » et commande pour obtenir la liste des tables de la base de données. </p>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/fnx-tle-ses-c09-img11.png" alt="SGBD mysql"> 
+<span>Le mode « ligne de commande » pour le SGBD MySQL
+ </span></p></div></div>
+</div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>L’interface graphique</p></div></h3>
+<p>Les SGBD s’accompagnent d’une interface graphique d’administration. Une partie des instructions passées avec le LDD, le LMD ou le LID en ligne de commande y sont substituées par de simples clics. Notons qu’il est nécessaire de se connecter au SGBD au préalable afin que les données et les opérations proposées par l’interface ne soient que celles qui sont autorisées.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Par exemple, PhpMyAdmin est une interface d’administration très répandue de bases MySQL. Il en existe d’autres. PHPMyAdmin se présente sous la forme d’une application Web accessible <em>via</em> un navigateur.
+Dans l’exemple donné ci-dessous, un seul clic de souris dans l’interface PHPMyadmin suffit pour demander au SGBD la suppression de la table « auteur ».</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Cela a eu pour effet de lui transmettre la commande « drop table auteur », empruntée au LDD.</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/fnx-tle-ses-c09-img12.png" alt="SGBD MySQL phpMyadmin"> 
+<span>L’interface graphique phpMyAdmin pour le SGBD MySQL
+ </span></p></div></div>
+<h3 range="c." markdown="1"><div markdown="1"><p>Les bibliothèques spécialisées</p></div></h3>
+<p>Les bibliothèques spécialisées sont les éléments de code qui permettent à des programmes de solliciter un SGBD, que ce soit pour lui adresser des instructions de consultation, modification, suppression de donnée ou plus encore, de modification de la structure de la base de données elle-même.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’exemple ci-dessous est un programme écrit en PHP qui effectue la même opération que celle effectuée via l’interface PHPMyAdmin dans l’exemple précédent : la suppression de la table « auteur ».</p></div>
+</div>
+<p><span class="calculator_button" markdown="1">&lt;!DOCTYPE html&gt;</span><br>
+<span class="calculator_button" markdown="1">&lt;html&gt;</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:25px;"><p><span class="calculator_button" markdown="1">&lt;head&gt;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">&lt;title&gt;Exemple d’usage de la bibliothèque spécialisée mysql</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">&lt;meta charset=‘utf-8’&gt;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:25px;"><p><span class="calculator_button" markdown="1">&lt;/head&gt;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:25px;"><p><span class="calculator_button" markdown="1">&lt;body&gt;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">&lt;h1&gt;Suppression de la table "auteur"</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">&lt;?php</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:60px;"><p><span class="calculator_button" markdown="1">$servname = "localhost" ; $dbname = "recettes" ; $ user = "admin4289 » ; $pass = "QiJArRlLste4qiy";</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:60px;"><p><span class="calculator_button" markdown="1">/* connexion à la base de données */</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:60px;"><p><span class="calculator_button" markdown="1">try{</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">$ dbco = new PDO("mysql:host=$servname ;dbname =$dbname", $user, pass) ;;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">$dbco-&gt;setAttribute(PDO : :ATTR<em>ERRMODE, PDO,: :ERRMODE</em>EXCEPTION);</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">/* soumission de l’instruction au SGBD</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">$ sql = "DROP TABLEauteur";</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">$ dbco-&gt;exec($sql);</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">echo ‘Table bien supprimée’;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:60px;"><p><span class="calculator_button" markdown="1">}</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:60px;"><p><span class="calculator_button" markdown="1">catch(PDOException ]$e){</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">echo "Erreur : " . $e-&gt;getMessage();</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:60px;"><p><span class="calculator_button" markdown="1">}</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">?&gt;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:25px;"><p><span class="calculator_button" markdown="1">&lt;/body&gt;</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">&lt;/html&gt;</span></p></div>
+<p>Notons au passage que PHPMyAdmin n’est ni plus ni moins qu’une application PHP qui a été écrite en faisant appel aux bibliothèques spécialisées relatives au SGBD MySQL.</p>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous connaissons maintenant l’intérêt des bases de données informatisées ainsi que la richesse des SGBD. Il est temps d’apprendre à les exploiter. C’est ce que nous allons aborder dans les deux chapitres qui suivent. Nous y découvrirons SQL, et plus précisément les sous-ensembles LID et LMD de langage.</p>
+</div>
+</div></div>
+<div id="poool-53jls-vvtz8" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5efb44e906dc000100ebe76b","type":"Cours","title":"Système de gestion de bases de données (SGBD)","content":"[IN]\nIntroduction\u0026nbsp;:\n\nL’objectif de ce chapitre est d’identifier les enjeux que représentent les bases de données informatisées et les besoins qui découlent de l’exploitation de ces bases.  \nDans un premier temps dans ce cours, nous nous pencherons sur les besoins à l’origine des bases de données informatiques. Puis nous déroulerons un bref historique concernant les techniques employées pour leur mise en œuvre. Enfin, nous détaillerons en quoi consiste un système de gestion de base de données ainsi que les différents moyens d’interagir avec celui-ci.\n[/IN]\n\n##Qu’attend-on des bases de données informatisées\u0026nbsp;?/1\n\n###Des attentes au niveau des données elles-mêmes/a.\n\nLe but de regrouper un ensemble d’informations dans une base de données est de pouvoir les retrouver facilement, en faisant appel à des **critères de recherche**.\n\n[EX]\nDans cette première sous-partie nous utiliserons l’exemple de données relatives aux recettes et adhérent·e·s d’un club de cuisine.\n[/EX]\n\nLe volume d’informations que les organisations sont amenées à brasser est toujours grandissant. Aussi, si l’on souhaite retrouver tous les adhérent·e·s de moins de trente\u0026nbsp;ans dans cette base de données, celle-ci sera informatisée dans le but premier de **limiter le temps des recherches**.\n\n* Toutefois, une base de données informatisée doit aussi pouvoir répondre à une grande variété de recherches, sans que l’on ait à les prévoir toutes au moment où elle est conçue.\n* Il est également essentiel que cette base soit accessible par différents programmes, donc qu’elle soit **indépendante des traitements informatiques** que l’on peut élaborer sur les données qu’elle stocke.\n* Enfin, on attend d’une base d’une part que ses données soient **cohérentes**, d’autre part que les informations qui y sont stockées ne soient **pas redondantes**.\n* **Exemple d’incohérence**((bulle))\n\nDans la base recensant des recettes de cuisine, certaines recettes sont enregistrées avec l’ingrédient «\u0026nbsp;yaourt\u0026nbsp;», d’autres avec «\u0026nbsp;yogourt\u0026nbsp;». Ainsi, en cherchant les recettes à bases de «\u0026nbsp;yaourt\u0026nbsp;», on ne retrouvera pas celles enregistrées à base de «\u0026nbsp;yogourt\u0026nbsp;».\n* Bien que les deux termes désignent le même ingrédient, cette incohérence sur son nom biaise le résultat des recherches.((fleche))\n* **Exemple de redondance**((bulle))\n\nToujours dans notre base, on stocke le nom, le prénom, l’adresse de messagerie ainsi que l’ adresse, le code postal et la commune où habite chaque adhérent·e du club. Cette information «\u0026nbsp;code postal +ville\u0026nbsp;» va se trouver dupliquée dans la base autant de fois qu’il y a d’auteur·e·s de recette qui habitent la même commune.\n* C’est, un gâchis de place qui peut s’avérer coûteux lorsqu’il ne s’agit plus de la base de recettes d’un petit club de cuisine, mais, par exemple, de celle d’un grand site international de partage de recettes qui compte les adresses des auteur·e·s pas millions.((fleche))\n\n[RETENIR]\nC’est le rôle d’une base de données informatisée, que l’on aura conçue selon des règles précises, que de permettre d’éviter les incohérences et redondances.\n[/RETENIR]\n\n###Des attentes au niveau des performances/b.\n\nL’optimisation du temps pris par les opérations dans une base de données informatisée implique une réflexion sur l’architecture matérielle employée.  \nOn identifie trois grands rôles (niveaux) dans un système d’informations\u0026nbsp;:\n* **interactions avec l’utilisateur·rice**\u0026nbsp;;\n* **calcul et traitements sur les données**\u0026nbsp;;\n* et **gestion des données** (organisation, stockage et accès).\n* Selon l’architecture employée et les besoins en performance, ces rôles sont répartis différemment.((fleche))\n\nLes architectures peuvent comporter plusieurs couches, généralement appelées «\u0026nbsp;tiers\u0026nbsp;» (ex.\u0026nbsp;: 1-tier, 2-tiers, ... n-tiers).\n\n[ATT]\nLe terme «\u0026nbsp;tiers\u0026nbsp;» est un anglicisme et un faux-ami signifiant en français «\u0026nbsp;niveau\u0026nbsp;», «\u0026nbsp;couche\u0026nbsp;» ou «\u0026nbsp;étage\u0026nbsp;».\n[/ATT]\n\n[RAP]\nL’interaction client-serveur repose sur des échanges entre plusieurs programmes\u0026nbsp;: l’un (le client) contacte l’autre (le serveur) et lui envoie des requêtes auxquelles ce dernier doit répondre.\n[/RAP]\n\n* **Architecture 1-tiers\u0026nbsp;: architecture correspondant à un client dit «\u0026nbsp;autonome\u0026nbsp;»**((bulle,1))\n\nCette architecture, aujourd’hui un peu dépassée, impliquait l’installation des applications sur chacun des postes de travail. Cette répartition rendait la gestion du parc matériel assez lourde. Les données étaient alors à l’époque plutôt réparties dans des fichiers individuels (et non dans un SGBD, tel qu’étudié plus loin).\n\n[IMG]((100))\n![Architecture 1-tiers SGBD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img01.png) #Architecture 1-tiers\n[/IMG]\n\n* **Architecture 2-tiers\u0026nbsp;: architecture correspondant à un client dit «\u0026nbsp;lourd\u0026nbsp;»**((bulle,2))\n\nCette architecture nécessite l’installation sur chaque poste de l’IHM particulière aux traitements. Les traitements eux-mêmes et la gestion des données sont, quant à eux, assurés par un serveur qui peut se trouver sur un réseau différent de celui du client.\n\n[IMG]((100))\n![Architecture 2-tiers SGBD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img02.png) #Architecture 2-tiers\n[/IMG]\n\n* **Architecture 3-tiers\u0026nbsp;: architecture correspondant à un client dit «\u0026nbsp;léger\u0026nbsp;»**((bulle,3))\n\nCette architecture nécessite l’installation sur chaque poste d’une application légère de visualisation, telle qu’un **navigateur web** par exemple. Les traitements et la gestion des données sont chacun assurés par un serveur différent.\n\n[IMG]((100))\n![Architecture 3-tiers SGBD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img03.png) #Architecture 3-tiers\n[/IMG]\n\n* **Architecture 4-tiers**((bulle,4))\n\nCette architecture répartit les trois\u0026nbsp;rôles sur des serveurs différents.\n\n[IMG]((100))\n![Architecture 4-tiers SGBD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img04.png) #Architecture 4-tiers\n[/IMG]\n\n[AST]\nNotons que le serveur de données peut lui-même faire l’objet d’une répartition\u0026nbsp;: pour des besoins de performance ou de sécurité, les bases de données peuvent être dupliquées ou réparties techniquement sur plusieurs serveurs.\n[/AST]\n* On parle alors de **bases de données répliquées** dans le premier cas et de **bases de données réparties** dans le second.((fleche))\n\nNous avons identifié les attentes vis-à-vis des bases de données informatisées, étudions à présent comment celles-ci se sont développées au fil des années.\n\n##Plusieurs modèles de données/2\n\nLe développement des bases de données a démarré à partir des années\u0026nbsp;1960, lorsque les ordinateurs se sont démocratisés et ont commencé à étendre, au-delà du calcul, leurs capacités à des traitements d’informations plus élaborées.  \nPlusieurs modèles de données ont émergé jusqu’à nos jours.\n\n[DEF]\n**Modèle de données\u0026nbsp;:**\n\nUn modèle de données définit la manière dont l’information est structurée dans la base de données. Il est une représentation, exploitable par l’informatique, d’informations du monde réel.\n[/DEF]\n\n###Le modèle hiérarchique/a.\n\nDans le **modèle hiérarchique**, les éléments d’information sont reliés entre eux par une **arborescence** dans laquelle chacun d’eux n’est rattaché qu’à **un seul possesseur**.  \nLa recherche d’une information est contrainte de suivre un parcours défini par un système de chaînage interne\u0026nbsp;: à chaque étape du chaînage, un pointeur stocké avec la donnée indique où trouver la donnée suivante Pour accéder à une donnée, on part du niveau qui lui est supérieur et on parcourt séquentiellement, de proche en proche, grâce aux pointeurs, l’ensemble de ses entités\u0026nbsp;filles, pour trouver la donnée cherchée.\n* Un tel système lie très fortement les données aux programmes qui les manipulent.((fleche))\n\n[EX]\n[IMG]((100))\n![SGBD modèle hiérarchique](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img05.png) #Exemple d’informations du monde réel organisées selon un modèle hiérarchique\u0026nbsp;: l’organisation du territoire français en communes/départements/régions\n[/IMG]\n[/EX]\n\nLe modèle hiérarchique a, entre autres projets, servi à la gestion des données relatives au projet Apollo de la NASA. Cependant, le monde réel n’est pas toujours organisé selon une hiérarchie rigoureuse au sein de laquelle les liaisons transversales ne sont pas toutes immédiates.  \nEn effet, dans l’exemple du découpage du territoire français, pour récupérer la liste de tous les départements de France (approche transversale), il est nécessaire d’emprunter des liaisons transversales mais aussi verticales.\n* Pour retrouver tous les départements de France, on suit le parcours France $\\rightarrow$ Normandie $\\rightarrow$ Seine maritime $\\rightarrow$ Calvados\u0026nbsp;; puis Bretagne $\\rightarrow$ Côtes d’Armor $\\rightarrow$ Finsitère.((fleche))\n\n[ATT]\nIl n’est pas possible de parcourir l’arbre de façon uniquement transversale\u0026nbsp;: Seine-Maritime, Calavados, Côtes d’Armor puis Finistère, car Calvados et Finistère n’ont pas le même possesseur.\n[/ATT]\n\n* Ce qui alourdit considérablement les recherches. D’où l’apparition du modèle réseau.((fleche))\n\n###Le modèle réseau/b.\n\nLe **modèle réseau** lève certaines limitations du modèle hiérarchique, en particulier en autorisant des liens transversaux. Le système de chaînage interne, formant un graphe, s’en voit inévitablement, et malheureusement, plus compliqué. Une structure en graphe se substitue à la structure en arbre du modèle hiérarchique.\n\n[EX]\nPour mieux comprendre son principe voici l’exemple de deux usines\u0026nbsp;: Usine\u0026nbsp;A et Usine\u0026nbsp;B produisent respectivement les engins Jeep\u0026nbsp;A, Camion\u0026nbsp;D et Char\u0026nbsp;F pour l’une\u0026nbsp;; Jeep\u0026nbsp;A et Avion\u0026nbsp;G pour l’autre.\n[/EX]\n\nSi l’on traduit cette situation par un modèle hiérarchique, on obtient le résultat suivant.\n\n[IMG]((100))\n![SGBD modèle hiérarchique](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img06.png) #Modèle hiérarchique appliqué à notre exemple\n[/IMG]\n\n[ATT]\nAvec l’utilisation du modèle hiérarchique, on constate un problème de redondance\u0026nbsp;: Jeep\u0026nbsp;A est renseignée deux fois.\n[/ATT]\n\nAlors qu’avec l’utilisation d’un graphe structuré en modèle réseau, on obtient le résultat suivant.\n\n[IMG]((100))\n![SGBD modèle réseau](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img07.png) #Modèle réseau appliqué à notre exemple\n[/IMG]\n\nDes données intermédiaires sont de nature technique et ne font donc pas partie des données issues du monde réel modélisé (ici identifiées 23000, 22501, 17000, etc…). Elles stockent divers pointeurs qui permettent d’établir des parcours chaînés entre les données. \n* On trouve ici un intérêt au graphe par rapport au modèle hiérarchique\u0026nbsp;: la donnée Jeep\u0026nbsp;A n’est pas dupliquée, et, pour autant, on n’a pas perdu l’information qu’elle était produite par l’usine 1 et l’usine 2.((fleche))\n\nLa complexité de ce modèle s’accompagne d’une grande dépendance entre les données et les programmes qui les manipulent.\n* Cette complexité explique que ce modèle ait été abandonné au profit du modèle relationnel.((fleche))\n\n###Le modèle relationnel/c.\n\nC’est en\u0026nbsp;1970 qu’a émergé le concept du **modèle relationnel**, proposé par l’informaticien britannique Edgar Frank Codd, alors directeur de recherche chez le constructeur\u0026nbsp;IBM. Il faudra une dizaine d’années pour que l’idée débouche sur un produit abouti, nommé «\u0026nbsp;Oracle\u0026nbsp;», alors commercialisé par Relational Software. Il sera suivi plus tard par\u0026nbsp;DB2, commercialisé par\u0026nbsp;IBM.\n\nCe modèle a pour vocation première d’améliorer l’indépendance des données par rapport à leurs traitements\u0026nbsp;: contrat qu’il remplit avec succès.  \nIl s’appuie sur des tableaux à deux dimensions nommés «\u0026nbsp;relations\u0026nbsp;». Ceux-ci sont liés à d’autres relations (ou «\u0026nbsp;tables\u0026nbsp;») par un mécanisme d’associations qui repose sur l’**algèbre relationnelle**. Ces associations définissent et précisent les liens entre les relations.\n\nLes accès aux enregistrements ne reposent pas sur des pointeurs, tels que ceux utilisés dans les systèmes de chaînage évoqués dans les modèles précédents. Ils sont assurés par des clés primaires ou étrangères accessibles par des index.\n\n[RAP]\nL’index est une sorte de répertoire qui indique où trouver sur le disque l’enregistrement relatif à une clé donnée.\n[/RAP]\n\nPar ailleurs, c’est grâce au processus de modélisation abordé dans les chapitres précédents que l’on parvient à définir les liaisons entre les tables. \n\n###Le modèle objet et relationnel-objet/d.\n\nCes modèles intègrent la **notion d’objet**, c’est-à-dire celle employée par les langages de programmation orientée objet. Ce concept d’objet s’avère en particulier utile pour modéliser des informations complexes, comme par exemple celles de type multimédia.\n\n[ATT]\nCes modèles sont encore en phase de réflexion et de recherche. Nous n’en développerons pas plus le principe ici.\n[/ATT]\n\nCes différents modèles ont été conçus pour traiter des données fortement structurées et finement catégorisées. Ils sont en revanche peu adaptés aux besoins croissants de stockage et de traitements, souvent en temps réel, de données massives. Ces mégadonnées (communément appelées __\"big data\"__) sont alors gérées avec des\u0026nbsp;SGDB de type NoSQL. Cette appellation NoSQL désigne collectivement une famille hétérogène de bases de données différentes du modèle relationnel\u0026nbsp;: s’appuyant sur différents paradigmes (clés-valeurs, colonnes, documents, graphes, multi-modèles, etc.), ces SGBD NoSQL sont capables de traiter de très gros volumes de données possiblement hétérogènes.\n\nPour conclure sur cet inventaire, nous pouvons noter qu’il subsiste encore, en particulier dans le secteur bancaire, des bases de données hiérarchiques qui s’avèrent plus performantes pour la gestion de certaines informations que les bases de données relationnelles.\n\n[RETENIR]\nMais retenons que le modèle relationnel est celui qui est le plus largement répandu de nos jours. \n[/RETENIR]\n\nIl est temps maintenant de nous intéresser aux SGBD, systèmes qui permettent de mettre en œuvre un modèle de données.\n\n##Les missions d’un SGBD/3\n\n[RAP]\nUne base de données informatisée est un ensemble d’informations stockées sous forme de données sur un support numérique.\n[/RAP]\n\n[DEF]\n**SGBD\u0026nbsp;:**\n\nUn SGBD, sigle signifiant «\u0026nbsp;Système de gestion de base de données\u0026nbsp;», est un logiciel spécialisé pour manipuler des données stockées en base.\n[/DEF]\n\nParmi les SGBD relationnels les plus connus et utilisés, on peut citer\u0026nbsp;: \n* open-source\u0026nbsp;;\n\n[IMG]((60))\n![SGBD open-source](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img08.png) #\n[/IMG]\n\n* propriétaires.\n\n[IMG]((60))\n![SGBD propriétaires](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img09.png) #\n[/IMG]\n\n[DEF]\n**Système d’informations\u0026nbsp;:**\n\nUn système d’informations est l’ensemble constitué par la base de données, le SGBD et les programmes d’applications qui lui sont associés.\n[/DEF]\n\nL’architecture ANSI/SPARC spécifie l’architecture d’un SGBD selon un découpage en trois niveaux.\n* **Le niveau physique** correspond au niveau interne, dans lequel on décrit les données telles qu’elles sont stockées dans la machine. Ce niveau est dépendant du SGBD employé, utilisant un modèle physique de données qui lui est spécifique.((bulle,1))\n* **Le niveau conceptuel** (ou logique) est utilisé pour décrire les éléments de la base qui traduisent, de manière structurée, les informations du monde réel. Ce niveau, qui définit l’organisation des données, ignore totalement le niveau physique.((bulle,2))\n* **Le niveau externe** sert à décrire les différentes vues des données qui doivent être proposées aux utilisateur·rice·s suivant leur catégorie. Il est indépendant du niveau conceptuel.((bulle,3))\n\n[IMG]((100))\n![modèle ANSI/SPARC d’un SGBD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c09-img10.png) #\n[/IMG]\n\nVoyons un peu plus en détail ce qu’apporte chacun de ces niveaux.\n\n###Le niveau physique/a.\n\nVous trouverez listées ci-dessous les différentes missions du niveau physique.\n* Gestion des données sur le support de stockage (fichiers).\n* Représentation physique des valeurs de données et encodage (réel, entier, texte…).\n* Partage des données et gestion des accès concurrents\u0026nbsp;:\n* il s’agit de permettre à plusieurs utilisateur·rice·s d’accéder simultanément aux mêmes données, y compris lorsqu’il s’agit de les modifier.((fleche))\n* Résistance aux pannes\u0026nbsp;:\n* il faut que le SGBD garantisse un état «\u0026nbsp;sain\u0026nbsp;» de la base après une panne intervenant au milieu d’une modification. Le but est que la modification alors interrompue soit achevée ou que les données soient ramenées dans l’état qui précédait la modification.((fleche))\n\n[RETENIR]\nNotons que l’on peut mesurer la qualité des opérations de modifications d’un SGBD en vérifiant les propriétés ACID que voici.\n* **A**tomicité\u0026nbsp;: une modification est soit exécutée entièrement, soit abandonnée.\n* **C**ohérence\u0026nbsp;: une modification doit se faire d’un état cohérent de la base vers un état cohérent de la base.\n* **I**solement\u0026nbsp;: deux modifications simultanées ne doivent pas interférer entre elles.\n* **D**urabilité\u0026nbsp;: une modification est permanente, même en cas de panne.\n[/RETENIR]\n\n###Le niveau conceptuel/b.\n\n[RAP]\nLe niveau conceptuel est indépendant du niveau physique.\n[/RAP]\n\nVous trouverez listées ci-dessous les différentes missions du niveau conceptuel.\n* Définition de la structure de données à l’aide d’un langage de description de données (LDD)\n* Consultation et mise à jour des données à l’aide d’un langage d’interrogation des données (LID) ainsi qu’un langage de manipulation des données (LMD)\n* Cohérence de données assurée par la description de contraintes d’intégrités\n* Gestion de la confidentialité\n\n###Le niveau externe/c.\n[RAP]\nLe niveau externe est indépendant du niveau conceptuel.\n[/RAP]\n* Un ensemble de données peut être vu différemment selon le profil des utilisateur·rice·s.((fleche))\n\nVous trouverez listées ci-dessous les différentes missions du niveau externe.\n* Vues décrivant la partie des données qui présente un intérêt pour un·e utilisateur·rice ou un groupe d’utilisateur·rice·s\n* Vues décrivant la partie des données qui présente un intérêt pour des programmeur·euse·s d’applications\n* Interfaces d’utilisation\n* Environnements de programmation\n\nNous connaissons dorénavant les missions d’un SGBD. Mais comment l’utiliser\u0026nbsp;? C’est ce que nous allons voir maintenant, en recensant les différents moyens d’interagir avec lui.\n\n##Modes d’interaction avec un SGBD/4\n\nPour **agir sur la base de données**, que ce soit dans le but de la créer, de la mettre à jour ou de la consulter, il est nécessaire de solliciter le SGBD. Selon les situations et les utilisateur·rice·s, plusieurs moyens permettent d’interagir avec le SGBD. Quels sont-ils\u0026nbsp;?\n\n###La ligne de commande/a.\n\nÀ l’aide de l’application «\u0026nbsp;Terminal\u0026nbsp;» ou «\u0026nbsp;Console\u0026nbsp;» (sous Linux ou Unix) ou de l’«\u0026nbsp;invite de commandes\u0026nbsp;» (sous Windows), il est possible de solliciter le SGBD via des commandes entrées en mode texte, donc au clavier.\n\nCe mode d’interaction, assez rudimentaire et peu ergonomique, est plutôt employé par les informaticien·ne·s. Ces dernier·e·s formulent leurs commandes en ayant recours au LDD, LMD et LID.\n\n[AST]\nL’intérêt de la ligne de commande est qu’elle exige peu de ressources, ce qui peut être utile dans certains cas de situations dégradées.\n[/AST]\n\n[EX]\nSous Windows avec MySQL\u0026nbsp;: connexion à la base de données «\u0026nbsp;recettes\u0026nbsp;» et commande pour obtenir la liste des tables de la base de données. \n\n[IMG]((75))\n![SGBD mysql](https://kronos-images.schoolmouv.fr/fnx-tle-ses-c09-img11.png) #Le mode «\u0026nbsp;ligne de commande\u0026nbsp;» pour le SGBD MySQL\n[/IMG]\n[/EX]\n\n###L’interface graphique/b.\n\nLes SGBD s’accompagnent d’une interface graphique d’administration. Une partie des instructions passées avec le LDD, le LMD ou le LID en ligne de commande y sont substituées par de simples clics. Notons qu’il est nécessaire de se connecter au SGBD au préalable afin que les données et les opérations proposées par l’interface ne soient que celles qui sont autorisées.\n\n[EX]\nPar exemple, PhpMyAdmin est une interface d’administration très répandue de bases MySQL. Il en existe d’autres. PHPMyAdmin se présente sous la forme d’une application Web accessible __via__ un navigateur.\nDans l’exemple donné ci-dessous, un seul clic de souris dans l’interface PHPMyadmin suffit pour demander au\u0026nbsp;SGBD la suppression de la table «\u0026nbsp;auteur\u0026nbsp;».\n* Cela a eu pour effet de lui transmettre la commande «\u0026nbsp;drop table auteur\u0026nbsp;», empruntée au LDD.((fleche))\n[/EX]\n\n[IMG]((100))\n![SGBD MySQL phpMyadmin](https://kronos-images.schoolmouv.fr/fnx-tle-ses-c09-img12.png) #L’interface graphique phpMyAdmin pour le SGBD MySQL\n[/IMG]\n\n\n\n###Les bibliothèques spécialisées/c.\n\nLes bibliothèques spécialisées sont les éléments de code qui permettent à des programmes de solliciter un SGBD, que ce soit pour lui adresser des instructions de consultation, modification, suppression de donnée ou plus encore, de modification de la structure de la base de données elle-même.\n\n[EX]\nL’exemple ci-dessous est un programme écrit en PHP qui effectue la même opération que celle effectuée via l’interface PHPMyAdmin dans l’exemple précédent\u0026nbsp;: la suppression de la table «\u0026nbsp;auteur\u0026nbsp;».\n[/EX]\n\n[BUTC]\u0026#60!DOCTYPE html\u003e[/BUTC]  \n[BUTC]\u0026#60html\u003e[/BUTC]\n\u003c\u003c((auto,-22,0,0,25))[BUTC]\u0026#60head\u003e[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]\u0026#60title\u003eExemple d’usage de la bibliothèque spécialisée mysql\u003c/title\u003e[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]\u0026#60meta charset=‘utf-8’\u003e[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,25))[BUTC]\u0026#60/head\u003e[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,25))[BUTC]\u0026#60body\u003e[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]\u0026#60h1\u003eSuppression de la table \"auteur\"\u003c/h1\u003e[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]\u0026#60?php[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,60))[BUTC]\u0026#36servname \u0026#61 \u0026#34localhost\u0026#34\u0026nbsp;; \u0026#36dbname \u0026#61 \u0026#34recettes\u0026#34\u0026nbsp;; \u0026#36\u0026nbsp;user = \"admin4289\u0026nbsp;»\u0026nbsp;; $pass = \"QiJArRlLste4qiy\";[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,60))[BUTC]\u0026#47\u0026#42 connexion à la base de données \u0026#42\u0026#47[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,60))[BUTC]try{[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]\u0026#36\u0026nbsp;dbco \u0026#61 new PDO(\u0026#34mysql:host\u0026#61\u0026#36servname\u0026nbsp;;dbname\u0026nbsp;\u0026#61\u0026#36dbname\u0026#34, \u0026#36user, pass)\u0026nbsp;;;[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]\u0026#36dbco-\u003esetAttribute(PDO\u0026nbsp;:\u0026nbsp;:ATTR_ERRMODE, PDO,: :ERRMODE_EXCEPTION);[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]\u0026#47\u0026#42 soumission de l’instruction au SGBD[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]\u0026#36\u0026nbsp;sql = \"DROP TABLEauteur\";[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]\u0026#36\u0026nbsp;dbco\u0026#45\u0026#62exec(\u0026#36sql);[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]echo ‘Table bien supprimée’;[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,60))[BUTC]}[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,60))[BUTC]catch(PDOException ]\u0026#36e){[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]echo \u0026#34Erreur : \u0026#34 . \u0026#36e-\u003egetMessage();[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,60))[BUTC]}[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]?\u003e[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,25))[BUTC]\u0026#60/body\u003e[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]\u0026#60/html\u003e[/BUTC]\u003e\u003e\n\nNotons au passage que PHPMyAdmin n’est ni plus ni moins qu’une application PHP qui a été écrite en faisant appel aux bibliothèques spécialisées relatives au SGBD MySQL.\n\n[C]\nConclusion\u0026nbsp;:\n\nNous connaissons maintenant l’intérêt des bases de données informatisées ainsi que la richesse des SGBD. Il est temps d’apprendre à les exploiter. C’est ce que nous allons aborder dans les deux chapitres qui suivent. Nous y découvrirons SQL, et plus précisément les sous-ensembles LID et LMD de langage.\n[/C]\n","siblings":[{"resourceId":"5efb44e906dc000100ebe76b","type":"Cours","sort":null},{"resourceId":"5e872a9428e6370100440cf7","type":"Fiche de révision","sort":null},{"resourceId":"5e87323228e6370100440cfc","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d3a09e0a80100fdbbdb","name":"Système de gestion de bases de données (SGBD)"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d3a09e0a80100fdbbdb","label":"Cours : Système de gestion de bases de données (SGBD)","link":"https://www.schoolmouv.fr/cours/systeme-de-gestion-de-bases-de-donnees-sgbd-/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"systeme-de-gestion-de-bases-de-donnees-sgbd-","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/systeme-de-gestion-de-bases-de-donnees-sgbd-/fiche-de-cours","title":"Système de gestion de bases de données (SGBD) : cours de Tle","metaDescription":"SchoolMouv ® te propose ce cours sur Système de gestion de bases de données (SGBD) (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"systeme-de-gestion-de-bases-de-donnees-sgbd-","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

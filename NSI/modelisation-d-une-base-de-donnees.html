@@ -1,0 +1,812 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Modélisation d'une base de données : cours de Tle - Numérique</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Modélisation d'une base de données : cours de Tle - Numérique">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Modélisation d'une base de données (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/modelisation-d-une-base-de-donnees/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/modelisation-d-une-base-de-donnees/fiche-de-cours","name":"Cours : Modélisation d'une base de données"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Modélisation d'une base de données</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Modélisation d'une base de données</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Une base de données est un ensemble d'informations regroupées et organisées dans un objectif commun. Elle peut être gérée manuellement (fiches, dossiers, archives, microfilms, etc.) ou informatisée (tableurs, fichiers). Les évolutions continuelles que l'on observe dans le domaine du numérique s'appuient sur des bases informatisées amenées à gérer toujours plus de données.</p>
+<p>C'est dans ce contexte que nous allons aborder comment, à partir du monde réel, concevoir « sur le papier » une base de données.<br>
+Ce processus se décompose en trois étapes :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">la première consiste en une analyse de l'existant ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">à l'issue de cette étape, on établit un schéma conceptuel, résultat d'une modélisation du monde réel ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la dernière étape est la transformation du schéma conceptuel obtenu en une représentation exploitable par le système informatique (qui sera chargé de sa mise en œuvre). De cette étape résulte un schéma relationnel.</div>
+</li>
+</ul>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>L'analyse de l'existant</p></div></h2>
+<p>Penchons-nous sur la première étape relative à l'analyse de l'existant. Il faut naturellement commencer par le recueil des informations permettant de décrire le monde réel.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Recueil des informations du monde réel</p></div></h3>
+<p>Il s'agit d'<b>identifier les différents « objets »</b> du monde réel concernés par le projet de base de données et les liens qui les unissent. Pour ce faire, on procède à des entretiens, des visites sur place, et à l'examen des documents et fichiers existants.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Nous utiliserons tout au long du cours l’exemple de la base de données d’un club de cuisine.</p></div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>On s'intéresse à la base de données d'un club de cuisine :</p>
+<ul>
+
+
+
+<li>Des <b>adhérents</b> proposent des recettes.</li>
+
+
+
+<li>Ces <b>recettes</b> nécessitent des ingrédients d'un type donné, dans des quantités données, exprimées dans des unités données.</li>
+</ul>
+</div>
+</div>
+<p>En étant attentif·ve aux sujets, verbes et compléments de chacune de ces phrases, on met facilement en évidence les objets suivants : adhérent, recette, ingrédient.<br>
+On détecte par ailleurs les liens ci-dessous.</p>
+<ul>
+
+<li>Entre adhérent et recette : un adhérent propose une recette ; une recette est proposée par un adhérent.</li>
+
+<li>Entre recette et ingrédient : une recette fait appel à un ingrédient ; un ingrédient intervient dans des recettes.</li>
+</ul>
+<p>Si l'on veut être en mesure de garder la trace qu'un adhérent donné a proposé une recette donnée et qu'une recette donnée fait appel à un ingrédient donné, il est nécessaire d'identifier ces liens pour la conception de la future base de données.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Caractérisation des liens</p></div></h3>
+<p>Il convient ensuite de <b>caractériser les liens identifiés</b>, c’est-à-dire se demander de quelle manière les objets sont reliés les uns aux autres.<br>
+Poursuivons avec notre exemple.</p>
+<ul>
+
+<li>En ce qui concerne le lien entre adhérent et recette, on peut dire qu'une recette est proposée par un et un seul adhérent (il n'y a aucun intérêt à stocker la même recette, avec les mêmes étapes et les mêmes ingrédients, proposée par deux adhérents différents). Dans l'autre sens, on peut affirmer qu'un adhérent peut ou non proposer des recettes.</li>
+
+<li>Pour ce qui est du lien entre recette et ingrédient, on peut affirmer qu'une recette fait appel à un ou plusieurs ingrédients (il est difficile de ne cuisiner avec aucun ingrédient). Dans l'autre sens, on peut dire qu'un ingrédient, à un moment donné dans la base du club, peut n'être impliqué dans aucune recette ou, au contraire, intervenir dans plusieurs recettes.</li>
+</ul>
+<h3 range="c." markdown="1"><div markdown="1"><p>Description des données</p></div></h3>
+<p>Pour achever le recueil de l'existant, on s'attache à décrire les données relatives aux objets comme aux liens.<br>
+Continuons avec notre exemple.</p>
+<ul>
+
+<li>Un adhérent est caractérisé par son nom, son prénom, son adresse de messagerie électronique, son adresse postale, son mot de passe, son numéro de téléphone.</li>
+
+<li>Une recette peut, par exemple, être caractérisée par son nom, son niveau de difficulté (aucune, moyenne, grande), sa catégorie (entrée, plat, dessert), sa durée, ses étapes (étape 1 : séparer les blancs des jaunes, étape 2 : monter les blancs en neige…).</li>
+
+<li>Un ingrédient est quant à lui caractérisé par son nom.</li>
+
+<li>Le lien entre recette et ingrédient qui nous indique qu'une recette peut faire appel à un ingrédient doit également préciser le type d'ingrédient (viande, légume, fruit, poisson etc.), dans quelle quantité et dans quelle unité cette quantité est exprimée.</li>
+</ul>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Les données relatives aux adhérent·e·s de l'association constituent des données à caractère personnel.
+Tout traitement de données personnelles doit s'effectuer dans le respect des dispositions prévues par le RGPD (Règlement Général sur la Protection des Données).</p></div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>À l'issue de ce travail sur l'existant, on peut d'ores et déjà constituer une première version du <b>dictionnaire de données</b> de la future base.</p></div>
+</div>
+<h3 range="d." markdown="1"><div markdown="1"><p>Le dictionnaire de données</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Dictionnaire de données :</b></p>
+<p>Un dictionnaire de données, ou référentiel de données, recense l'ensemble des données amenées à être stockées en base. Pour chacune d'elles, on précise au minimum son code d'identification, sa description, son type et sa taille.</p>
+</div>
+</div>
+<p>Voici ce à quoi pourrait ressembler le dictionnaire de données de notre club de cuisine :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#00BCD4; ">
+<b><span class="color18">Code</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">Description</span></b> </td>
+<td style="background:#FFC107; ">
+<b><span class="color18">Type</span></b> </td>
+<td style="background:#C39BD3; ">
+<b><span class="color18">Taille</span></b> </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">nomAdherent </td>
+<td>Nom de l'adhérent</td>
+<td style="background:#FFECB3; ">Alphabétique </td>
+<td style="background:#EBDEF0; ">30 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">prenom </td>
+<td>Prénom de l'adhérent</td>
+<td style="background:#FFECB3; ">Alphabétique </td>
+<td style="background:#EBDEF0; ">30 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">mail </td>
+<td>Adresse de messagerie de l'adhérent</td>
+<td style="background:#FFECB3; ">Alphanumérique </td>
+<td style="background:#EBDEF0; ">100 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">adresse </td>
+<td>adresse de l’adhérent</td>
+<td style="background:#FFECB3; ">Alphanumérique </td>
+<td style="background:#EBDEF0; ">100 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">passe </td>
+<td>Mot de passe de l'adhérent</td>
+<td style="background:#FFECB3; ">Alphanumérique </td>
+<td style="background:#EBDEF0; ">30 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">telephone </td>
+<td>Numéro de téléphone</td>
+<td style="background:#FFECB3; ">Numérique </td>
+<td style="background:#EBDEF0; ">&lt; 10000000000 </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">categorie </td>
+<td>Catégorie de la recette</td>
+<td style="background:#FFECB3; ">Alphabétique </td>
+<td style="background:#EBDEF0; ">30 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">nomRecette </td>
+<td>Nom de la recette</td>
+<td style="background:#FFECB3; ">Alphabétique </td>
+<td style="background:#EBDEF0; ">100 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">niveau </td>
+<td>Niveau de difficulté de la recette</td>
+<td style="background:#FFECB3; ">Alphabétique </td>
+<td style="background:#EBDEF0; ">30 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">duree </td>
+<td>Durée de la recette</td>
+<td style="background:#FFECB3; ">Numérique </td>
+<td style="background:#EBDEF0; ">&lt; 32767 minutes </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">etapes </td>
+<td>Étapes de la recette</td>
+<td style="background:#FFECB3; ">Alphanumérique </td>
+<td style="background:#EBDEF0; ">&lt; 10000 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">nomIngredient </td>
+<td>Nom de l'ingrédient</td>
+<td style="background:#FFECB3; ">Alphabétique </td>
+<td style="background:#EBDEF0; ">30 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">quantite </td>
+<td>Quantité de l'ingrédient dans la recette</td>
+<td style="background:#FFECB3; ">Numérique </td>
+<td style="background:#EBDEF0; ">&lt; 10000 </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">unite </td>
+<td>Unité de la quantité de l'ingrédient</td>
+<td style="background:#FFECB3; ">Alphabétique </td>
+<td style="background:#EBDEF0; ">30 caractères </td>
+</tr>
+<tr>
+<td style="background:#B3E5FC; ">type </td>
+<td>Type d’ingrédient</td>
+<td style="background:#FFECB3; ">Alphabétique </td>
+<td style="background:#EBDEF0; ">30 caractères </td>
+</tr>
+</table></div>
+<p>Notons au passage que nous avons précisé dans ce dictionnaire :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">un <span class="color9">code</span> qui sera adopté par la suite en lieu et place de la description de la donnée (plus longue) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">le <span class="color19">type</span> et la <span class="color5">taille</span> de la donnée qui conditionneront son codage futur en base.</div>
+</li>
+</ul>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le code doit être dépourvu de caractères accentués et de caractères spéciaux (on écrira par exemple « duree » et pas « durée »).</p></div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le fait de préciser le type, la taille, et, le cas échéant, les valeurs possibles prises par une donnée définit son <b>domaine</b>. Seules les valeurs appartenant à ce domaine seront permises.</p></div>
+</div>
+<p>Il est temps maintenant de modéliser le monde réel.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Le modèle entité-association</p></div></h2>
+<p>Afin de représenter l'ensemble de nos objets et leurs liens, on a recours à un formalisme particulier qui sera une aide précieuse dans cette démarche. Les formalismes les plus employés aujourd'hui à cette fin sont le <b>diagramme de classes</b> de l'approche UML et, dans une moindre mesure, le <b>modèle conceptuel de données</b> (MCD) de l'approche entité-association. Dans ce cours, nous ferons appel au second (MCD).<br>
+Commençons par en étudier les notions principales.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Les notions de base</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Entité :</b></p>
+<p>Le terme « entité » sert à désigner un objet réel, concret ou abstrait, identifié lors de l'analyse de l'existant. </p>
+</div>
+</div>
+<p>Elle est représentée par un rectangle, doté d'un titre. Elle est constituée d'attributs.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Dans le cas de notre club de cuisine, « recette » et « adhérent » sont des entités.</div>
+</li>
+</ul>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Occurrence :</b></p>
+<p>L’occurrence désigne un exemplaire (un représentant) d'une entité.</p>
+</div>
+</div>
+<p>Si l’on applique le terme à notre club de cuisine :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">« mousse au chocolat » est une occurrence de l'entité « recette » ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">« sucre » est une occurrence de l'entité « ingrédient » ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">« Dupont Jacques » est une occurrence de l'entité « adhérent ».</div>
+</li>
+</ul>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Attribut :</b></p>
+<p>L’attribut désigne une donnée élémentaire qui sert à caractériser une propriété d'une entité ou d'une association.</p>
+</div>
+</div>
+<p>Dans notre étude de cas, « duree » est l'un des attributs de l'entité « recette ».</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Identifiant :</b></p>
+<p>L’identifiant est un attribut, ou un ensemble d'attributs, qui permet d'identifier sans ambiguïté chaque occurrence d'une entité.</p>
+</div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Une entité doit nécessairement être dotée d'un identifiant.</p></div>
+</div>
+<p>Voici, ci-dessous, la représentation de l'entité « recette » et de trois de ses occurrences.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c07-img01.png" alt="entité occurrence SGBD BDD"> 
+<span>Une entité et trois de ses occurrences
+ </span></p></div></div>
+<p>Dans l’exemple ci-dessus, nous pouvons voir qu'il y a deux recettes de mousse au chocolat, l'une facile et plus longue, l'autre plus rapide mais plus difficile. Or, ces deux recettes portent le même nom. Ce n'est donc pas via l'attribut nom qu’il sera possible de les différencier ni, donc, de les identifier.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Il est par conséquent nécessaire d'ajouter un attribut à l'entité « recette » qui lui servira d'identifiant. Nommons-le « idRecette ».</div>
+</li>
+</ul>
+<p>On peut noter au passage que notre dictionnaire de données s'enrichira d'une nouvelle donnée : idRecette. Cet identifiant prendra la forme d'un <b>numéro unique</b>.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pour des raisons d'efficacité dans les traitements qui seront développés par la suite sur les données de la base, il est recommandé de privilégier un identifiant aussi simple que possible, de préférence numérique.</p></div>
+</div>
+<div class="columns" markdown="1">
+<div markdown="1" class="undefined" style="width:50%; "><div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img02.png" alt="entité identifiant SGBD BDD"> 
+<span>Une entité représentée avec son identifiant
+ </span></p></div></div></div>
+<div markdown="1" class="undefined" style="width:50%; "><p>Voici donc notre entité « recette » corrigée en conséquence. Notons que, selon la convention adoptée dans les MCD, on reconnaît l'identifiant en repérant l'attribut qui est souligné.</p></div>
+</div>
+<p>Nous avons vu que les entités peuvent faire l'objet de liaisons entre elles. Ces liaisons sont appelées « <b>associations</b> » dans l'approche entité-association. Nous avons également vu qu'elles peuvent être elles-mêmes porteuses de données, c'est-à-dire d'attributs. En effet, l'association impliquant l'entité « recette » et l'entité « ingrédient » dispose des attributs « quantite », « unite » et « type ».</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Association :</b></p>
+<p>Une association correspond au lien qui existe entre deux entités. Elle peut être composée ou non d'attributs.</p>
+</div>
+</div>
+<p>On la représente dans un MCD par un segment reliant les deux entités concernées. Une ellipse y est tracée en son milieu : elle contient un terme pour la désigner (généralement un verbe), ainsi que les éventuels attributs qui la caractérisent.<br>
+À chaque extrémité de ce segment, on précise les <b>cardinalités</b> de l'association.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Cardinalités :</b></p>
+<p>Les cardinalités d'une association entre deux entités précisent ses caractéristiques.</p>
+</div>
+</div>
+<p>Dans la pratique, on détermine deux nombres qui correspondent à la quantité minimale et maximale d'occurrences relatives aux entités impliquées dans l'association, dans un sens et dans l'autre.<br>
+Dans notre exemple, une recette fait appel à $1$ ou plusieurs ingrédients. Et un ingrédient intervient dans $0$ ou $+$ de recettes. Cela se traduit par les cardinalités formalisées comme suit dans notre MCD.</p>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img03.png" alt="association SGBD BDD"> 
+<span>Formalisation d’une association
+ </span></p></div></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Codification des cardinalités :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">$0,1$ veut dire $\text{aucun}$ ou $1$ ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">$1,1$ veut dire $1$ et $1$ seul ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">$0,\text{n}$ (ou $0,\text{N}$) veut dire $0$ ou $+$ ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">$1,\text{n}$ (ou $1,\text{N}$) veut dire $1$ ou $+$ ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">$a,b$ au minimum $a$, et au plus $b$.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>On notera au passage que, dans notre exemple, nous avons fait apparaître un nouvel attribut : idIngredient. Nous avons en effet décidé d'affecter un attribut qui sera numérique et unique pour identifier sans ambiguïté un ingrédient, plutôt que d'utiliser son nom.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Mise en pratique</p></div></h3>
+<p>Il s'agit maintenant de représenter dans le MCD l'ensemble des entités de la base de données, accompagnées de leurs attributs (dont leur identifiant). On formalisera également les associations impliquant les entités, accompagnées de leurs cardinalités et de leurs éventuels attributs.<br>
+Dans notre cas, nous avons identifié les entités suivantes : adherent, recette, ingredient. Deux associations ont été recensées : l'une entre adherent et recette, l'autre entre et recette et ingredient.<br>
+Il en résulte le MCD suivant :</p>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img04.png" alt="MCD SGBD BDD"> 
+<span>Exemple d’un MCD
+ </span></p></div></div>
+<p>Maintenant que nous avons modélisé les données du monde réel selon un MCD, il va nous falloir le traduire en modèle relationnel. C'est un modèle qui permet d'organiser les données dans une base informatisée.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Le modèle relationnel</p></div></h2>
+<p><a target="_blank" href="/cours/systeme-de-gestion-de-bases-de-donnees-sgbd-/fiche-de-cours">Nous verrons plus loin, dans le cours consacré aux SGBD, qu'il existe plusieurs modèles de données possibles pour traduire un MCD : hiérarchique, réseau, relationnel ou relationnel-objet.</a></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Nous adoptons ici le modèle relationnel qui est le plus répandu de nos jours et qui a maintes fois fait ses preuves.</p></div>
+</div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Principes du modèle relationnel</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Modèle de données :</b></p>
+<p>Un modèle de données définit la manière dont l'information est structurée dans la base de données. Il est une représentation d'informations du monde réel, exploitable par l'informatique.</p>
+</div>
+</div>
+<p>Le <b>modèle relationnel</b> s'appuie sur la notion de « relation », d'où son nom. On représente une relation par une <b>table</b>. Les lignes de cette table sont nommées « tuples », et ses colonnes sont nommées « champs ».</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c07-img05.png" alt="SGBD modèle relationnel relation"> 
+<span>Représentation d'une relation par une table
+ </span></p></div></div>
+<p>Cette relation peut s'écrire sous la forme $\rightarrow$ Recette(idRecette, nomRecette, niveau, duree, categorie, etapes).</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">C'est ce qu'on appelle le schéma relationnel de la relation recette.</div>
+</li>
+</ul>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On doit pouvoir accéder à un tuple donné de la relation par le contenu d'un ou plusieurs de ses champs identifiant de manière unique ce tuple. Le ou les champs en question constituent une <b>clé</b>.</p></div>
+</div>
+<p>Une relation peut comprendre plusieurs clés possibles. On les nomme « clés candidates ». On nommera plus précisément « clé primaire » celle d'entre elles qui est choisie. Les clés primaires de l'ensemble des tuples sont stockées dans un index (sorte de répertoire) qui indique l'emplacement où trouver chacun des tuples qui constituent la relation.</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La clé primaire doit contenir le minimum de champs possible.</p></div>
+</div>
+<p>Maintenant que nous savons comment est structuré le modèle relationnel, étudions comment il est conçu à partir du modèle conceptuel qui, rappelons-le, est une vue tout à fait abstraite de la future base de données.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Passage du modèle conceptuel au modèle relationnel</p></div></h3>
+<p>Nous disposons à ce stade d'un MCD, constitué d'entités, d'attributs et d'associations.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Deux règles principales doivent être observées pour passer au modèle relationnel.</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">Une <span class="underline">entité</span> du MCD devient une <b><span class="underline">relation</span></b> du modèle relationnel. Ses <span class="underline">attributs</span> deviennent les <b><span class="underline">champs</span></b> de cette relation ainsi créée. L'<span class="underline">identifiant</span> de l'entité devient la <b><span class="underline">clé</span></b> de la relation dont elle est à l'origine.</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">Une <span class="underline">association</span> du MCD devient une <b><span class="underline">relation</span></b>. Les <span class="underline">champs</span> qui la composent sont les <b><span class="underline">identifiants</span></b> des entités impliquées et, le cas échant, les <b><span class="underline">attributs</span></b> qui caractérisent l'association. La clé de cette relation ainsi créée est composée des deux identifiants évoqués à l'instant.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Appliquons ces règles à une partie du MCD relatif à la base de données du club de cuisine. En observant les entités Recette et Ingredient et l'association qui les implique, on obtient les schémas relationnels suivants :</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img07.png" alt="association SGBD BDD"> 
+<span>Exemple d’association quelconque
+ </span></p></div></div>
+<p><span class="calculator_button" markdown="1">Recette(idRecette, nomRecette, niveau, duree, categorie, etapes) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé primaire</span></p></div>
+<p><span class="calculator_button" markdown="1">Ingredient(idIngredient, nomIngredient) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé primaire</span></p></div>
+<p><span class="calculator_button" markdown="1">Utilise(idRecette, idIngredient, quantite, unite, type) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette, idIngredient : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé étrangère en référence à idRecette dans recette</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idIngredient : clé étrangère en référence à idIngredient dans ingredient</span></p></div>
+<p>La notion de <b>clé étrangère</b> apparaît dans le schéma relationnel de Utilise : cela signifie que ce sont des champs qui prennent forcément leurs valeurs parmi celles prises par la clé qui s'y rapporte. idRecette dans Utilise ne peut prendre ses valeurs que parmi celles prises par la clé idRecette dans Recette. Autrement dit, on ne peut pas trouver, dans la relation Utilise, un tuple qui se rapporterait à une recette inexistante dans la relation recette ou un ingrédient inexistant dans la relation ingredient. C'est ce qui contribue à maintenir la cohérence des données au sein de la base.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Un cas particulier doit néanmoins être traité différemment : il s'agit de celui d'une association qui comporte une cardinalité $1,1$. Dans cette situation, on ne crée pas une relation pour une telle association. Tous les champs de l'association sont simplement intégrés à la relation issue de l'entité associée à la cardinalité $1,1$.</p></div>
+</div>
+<p>Pour illustrer ce cas, prenons l'exemple suivant : une recette est proposée par $1$ et $1$ seul adhérent, et un adhérent peut proposer aucune ou plusieurs recettes. Le MCD qui en résulte est le suivant :</p>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img08.png" alt="association cardinalité SGBD BDD"> 
+<span>Exemple d'association avec cardinalité $1,1$
+ </span></p></div></div>
+<p>Les schémas relationnels qui en découlent sont alors :
+<span class="calculator_button" markdown="1">Adherent(idAdherent, nomAdherent, prenom, mail, adresse, passe, telephone) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idAdherent : clé primaire</span></p></div>
+<p><span class="calculator_button" markdown="1">Recette(idRecette, nomRecette, niveau, duree, categorie, etapes, idAdherent) avec</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idRecette : clé primaire</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">idAdherent : clé étrangère</span></p></div>
+<p>L'association modélisée dans le MCD impliquant les entités recette et adhérent n'a pas donné lieu à la création de la relation Propose(idRecette, idAdherent). Les champs qui la constituent ont été intégrés à la relation Recette.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On remarque que parmi ces champs, idRecette est déjà présent dans Recette.</p></div>
+</div>
+<p>Voici une illustration des relations obtenues sous forme de tableau, qui ne sont pas exhaustifs. Vous pourrez constater que les clés étrangères (mises en évidence dans les colonnes colorées) ne prennent que des valeurs parmi celles prises par les clés primaires auxquelles elles se réfèrent.</p>
+<p><b>Adherent</b></p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomAdherent</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">prenom</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">mail</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">adresse</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">passe</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">telephone</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Dupont</td>
+<td>Jacques</td>
+<td>dup@orange.fr</td>
+<td>3 rue blanche 23000 Gueret</td>
+<td></td>
+<td>0612345678</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dampierre</td>
+<td>Gérard</td>
+<td>gege@free.fr</td>
+<td>7 rue Dumont 29000 Brest</td>
+<td></td>
+<td>0711223344</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Forestier</td>
+<td>Denise</td>
+<td>dd@gmail.com</td>
+<td>9 rue aux loups 12000 Rodez</td>
+<td></td>
+<td>0488665544</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Vielle</td>
+<td>Rose</td>
+<td>vr@sfr.fr</td>
+<td>1 av. des prés 10000 Troyes</td>
+<td></td>
+<td>0612121313</td>
+</tr>
+</table></div>
+<p><b>Recette</b></p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomRecette</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">niveau</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">duree</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">categorie</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">etapes</span></b> </td>
+<td style="background:#8BC34A; ">
+<b><span class="color18">idAdherent</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mousse au chocolat</td>
+<td>moyen</td>
+<td>20</td>
+<td>dessert</td>
+<td>1) Séparer les blancs des jaunes.
+<p>2) Monter les blancs en neige.</p>
+<p>3) …</p>
+</td>
+<td style="background:#F1F8E9; ">2 </td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mousse au chocolat</td>
+<td>facile</td>
+<td>30</td>
+<td>dessert</td>
+<td>1) Casser le chocolat en petits morceaux.
+<p>2) Faire fondre le chocolat avec un peu d'eau.</p>
+<p>3) …</p>
+</td>
+<td style="background:#F1F8E9; ">3 </td>
+</tr>
+<tr>
+<td>3</td>
+<td>Poulet au citron</td>
+<td>moyen</td>
+<td>90</td>
+<td>plat</td>
+<td>1) Couper le poulet en morceaux.
+<p>2) Dans une poêle, faire revenir un oignon haché.</p>
+<p>3) …</p>
+</td>
+<td style="background:#F1F8E9; ">2 </td>
+</tr>
+<tr>
+<td>4</td>
+<td>Soupe à l’oignon</td>
+<td>facile</td>
+<td>45</td>
+<td>entrée</td>
+<td>1) Éplucher et couper les pommes de terre en morceaux.
+<p>2) Faire de même pour les oignons.</p>
+<p>3) …</p>
+</td>
+<td style="background:#F1F8E9; ">1 </td>
+</tr>
+</table></div>
+<p><b>Ingredient</b></p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#9AE; ">
+<b><span class="color18">idIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">nomIngredient</span></b> </td>
+</tr>
+<tr>
+<td>1</td>
+<td>oeuf</td>
+</tr>
+<tr>
+<td>2</td>
+<td>chocolat</td>
+</tr>
+<tr>
+<td>3</td>
+<td>sucre</td>
+</tr>
+<tr>
+<td>4</td>
+<td>beurre</td>
+</tr>
+<tr>
+<td>5</td>
+<td>oignon</td>
+</tr>
+<tr>
+<td>6</td>
+<td>poulet</td>
+</tr>
+<tr>
+<td>7</td>
+<td>pommes de terre</td>
+</tr>
+</table></div>
+<p><b>Utilise</b></p>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td style="background:#CE93D8; ">
+<b><span class="color18">idRecette</span></b> </td>
+<td style="background:#80DEEA; ">
+<b><span class="color18">idIngredient</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">quantite</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">unite</span></b> </td>
+<td style="background:#9AE; ">
+<b><span class="color18">type</span></b> </td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">1 </td>
+<td style="background:#E0F7FA; ">1 </td>
+<td>6</td>
+<td>oeuf</td>
+<td>viande</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">1 </td>
+<td style="background:#E0F7FA; ">2 </td>
+<td>200</td>
+<td>gramme</td>
+<td>epicerie</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">1 </td>
+<td style="background:#E0F7FA; ">3 </td>
+<td>3</td>
+<td>cuillère à soupe</td>
+<td>epicerie</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">2 </td>
+<td style="background:#E0F7FA; ">2 </td>
+<td>1</td>
+<td>tablette</td>
+<td>epicerie</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">2 </td>
+<td style="background:#E0F7FA; ">1 </td>
+<td>6</td>
+<td>oeuf</td>
+<td>viande</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">3 </td>
+<td style="background:#E0F7FA; ">6 </td>
+<td>1</td>
+<td>kg</td>
+<td>viande</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">3 </td>
+<td style="background:#E0F7FA; ">5 </td>
+<td>2</td>
+<td>gros oignon</td>
+<td>legume</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">4 </td>
+<td style="background:#E0F7FA; ">7 </td>
+<td>350</td>
+<td>g</td>
+<td>legume</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">4 </td>
+<td style="background:#E0F7FA; ">5 </td>
+<td>5</td>
+<td>oignon moyen</td>
+<td>legume</td>
+</tr>
+<tr>
+<td style="background:#F3E5F5; ">4 </td>
+<td style="background:#E0F7FA; ">4 </td>
+<td>2</td>
+<td>cuillère à café</td>
+<td>laitage</td>
+</tr>
+</table></div>
+<p>Cela nous donne un aperçu de la manière dont les données de notre base y sont concrètement organisées.</p>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous savons maintenant modéliser le monde réel selon un MCD et transcrire un MCD en un modèle relationnel, également dénommé « modèle logique ». Ce modèle logique permet la création concrète de la structure de la base donnée. Cependant, il est important, avant la création de cette structure, de s'assurer que le modèle relationnel ne présente pas d'anomalies. Nous allons ainsi découvrir dans le cours qui suit le principe de la normalisation et des contraintes d'intégrité.</p>
+</div>
+</div></div>
+<div id="poool-e7fxd-8fvqu" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"608fb291b4f3e001000c8ace","type":"Cours","title":"Modélisation d'une base de données","content":"[IN]\nIntroduction\u0026nbsp;:\n\nUne base de données est un ensemble d'informations regroupées et organisées dans un objectif commun. Elle peut être gérée manuellement (fiches, dossiers, archives, microfilms, etc.) ou informatisée (tableurs, fichiers). Les évolutions continuelles que l'on observe dans le domaine du numérique s'appuient sur des bases informatisées amenées à gérer toujours plus de données.\n\nC'est dans ce contexte que nous allons aborder comment, à partir du monde réel, concevoir «\u0026nbsp;sur le papier\u0026nbsp;» une base de données.  \nCe processus se décompose en trois étapes\u0026nbsp;:\n* la première consiste en une analyse de l'existant\u0026nbsp;;((liste2))\n* à l'issue de cette étape, on établit un schéma conceptuel, résultat d'une modélisation du monde réel\u0026nbsp;;((liste2))\n* la dernière étape est la transformation du schéma conceptuel obtenu en une représentation exploitable par le système informatique (qui sera chargé de sa mise en œuvre). De cette étape résulte un schéma relationnel.((liste2))\n[/IN]\n\n##L'analyse de l'existant/1\n\nPenchons-nous sur la première étape relative à l'analyse de l'existant. Il faut naturellement commencer par le recueil des informations permettant de décrire le monde réel.\n\n###Recueil des informations du monde réel/a.\n\nIl s'agit d'**identifier les différents «\u0026nbsp;objets\u0026nbsp;»** du monde réel concernés par le projet de base de données et les liens qui les unissent. Pour ce faire, on procède à des entretiens, des visites sur place, et à l'examen des documents et fichiers existants.\n\n[AST]\nNous utiliserons tout au long du cours l’exemple de la base de données d’un club de cuisine.\n[/AST]\n\n[EX]\nOn s'intéresse à la base de données d'un club de cuisine\u0026nbsp;:\n* Des **adhérents** proposent des recettes.\n* Ces **recettes** nécessitent des ingrédients d'un type donné, dans des quantités données, exprimées dans des unités données.\n[/EX]\n\nEn étant attentif·ve aux sujets, verbes et compléments de chacune de ces phrases, on met facilement en évidence les objets suivants\u0026nbsp;: adhérent, recette, ingrédient.  \nOn détecte par ailleurs les liens ci-dessous.\n* Entre adhérent et recette\u0026nbsp;: un adhérent propose une recette\u0026nbsp;; une recette est proposée par un adhérent.\n* Entre recette et ingrédient\u0026nbsp;: une recette fait appel à un ingrédient\u0026nbsp;; un ingrédient intervient dans des recettes.\n\nSi l'on veut être en mesure de garder la trace qu'un adhérent donné a proposé une recette donnée et qu'une recette donnée fait appel à un ingrédient donné, il est nécessaire d'identifier ces liens pour la conception de la future base de données.\n\n###Caractérisation des liens/b.\n\nIl convient ensuite de **caractériser les liens identifiés**, c’est-à-dire se demander de quelle manière les objets sont reliés les uns aux autres.  \nPoursuivons avec notre exemple.\n* En ce qui concerne le lien entre adhérent et recette, on peut dire qu'une recette est proposée par un et un seul adhérent (il n'y a aucun intérêt à stocker la même recette, avec les mêmes étapes et les mêmes ingrédients, proposée par deux adhérents différents). Dans l'autre sens, on peut affirmer qu'un adhérent peut ou non proposer des recettes.\n* Pour ce qui est du lien entre recette et ingrédient, on peut affirmer qu'une recette fait appel à un ou plusieurs ingrédients (il est difficile de ne cuisiner avec aucun ingrédient). Dans l'autre sens, on peut dire qu'un ingrédient, à un moment donné dans la base du club, peut n'être impliqué dans aucune recette ou, au contraire, intervenir dans plusieurs recettes.\n\n###Description des données/c.\n\nPour achever le recueil de l'existant, on s'attache à décrire les données relatives aux objets comme aux liens.  \nContinuons avec notre exemple.\n* Un adhérent est caractérisé par son nom, son prénom, son adresse de messagerie électronique, son adresse postale, son mot de passe, son numéro de téléphone.\n* Une recette peut, par exemple, être caractérisée par son nom, son niveau de difficulté (aucune, moyenne, grande), sa catégorie (entrée, plat, dessert), sa durée, ses étapes (étape\u0026nbsp;1\u0026nbsp;: séparer les blancs des jaunes, étape\u0026nbsp;2\u0026nbsp;: monter les blancs en neige...).\n* Un ingrédient est quant à lui caractérisé par son nom.\n* Le lien entre recette et ingrédient qui nous indique qu'une recette peut faire appel à un ingrédient doit également préciser le type d'ingrédient (viande, légume, fruit, poisson etc.), dans quelle quantité et dans quelle unité cette quantité est exprimée.\n\n[RAP]\nLes données relatives aux adhérent·e·s de l'association constituent des données à caractère personnel.\nTout traitement de données personnelles doit s'effectuer dans le respect des dispositions prévues par le RGPD (Règlement Général sur la Protection des Données).\n[/RAP]\n\n[RETENIR]\nÀ l'issue de ce travail sur l'existant, on peut d'ores et déjà constituer une première version du **dictionnaire de données** de la future base.\n[/RETENIR]\n\n###Le dictionnaire de données/d.\n\n[DEF]\n**Dictionnaire de données\u0026nbsp;:**\n\nUn dictionnaire de données, ou référentiel de données, recense l'ensemble des données amenées à être stockées en base. Pour chacune d'elles, on précise au minimum son code d'identification, sa description, son type et sa taille.\n[/DEF]\n\nVoici ce à quoi pourrait ressembler le dictionnaire de données de notre club de cuisine\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| **[18]Code[18]** ((0,0,0,#00BCD4)) |\n| **[18]Description[18]** ((0,0,0,#9AE)) |\n| **[18]Type[18]** ((0,0,0,#FFC107)) |\n| **[18]Taille[18]** ((0,0,0,#C39BD3)) |\n[/LI]\n[LI]\n| nomAdherent ((0,0,0,#B3E5FC)) |\n| Nom de l'adhérent |\n| Alphabétique ((0,0,0,#FFECB3)) |\n| 30 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| prenom ((0,0,0,#B3E5FC)) |\n| Prénom de l'adhérent |\n| Alphabétique ((0,0,0,#FFECB3)) |\n| 30 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| mail ((0,0,0,#B3E5FC)) |\n| Adresse de messagerie de l'adhérent |\n| Alphanumérique ((0,0,0,#FFECB3)) |\n| 100 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| adresse ((0,0,0,#B3E5FC)) |\n| adresse de l’adhérent |\n| Alphanumérique ((0,0,0,#FFECB3)) |\n| 100 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| passe ((0,0,0,#B3E5FC)) |\n| Mot de passe de l'adhérent |\n| Alphanumérique ((0,0,0,#FFECB3)) |\n| 30 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| telephone ((0,0,0,#B3E5FC)) |\n| Numéro de téléphone |\n| Numérique ((0,0,0,#FFECB3)) |\n| \u003c 10000000000 ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| categorie ((0,0,0,#B3E5FC)) |\n| Catégorie de la recette |\n| Alphabétique ((0,0,0,#FFECB3)) |\n| 30 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| nomRecette ((0,0,0,#B3E5FC)) |\n| Nom de la recette |\n| Alphabétique ((0,0,0,#FFECB3)) |\n| 100 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| niveau ((0,0,0,#B3E5FC)) |\n| Niveau de difficulté de la recette |\n| Alphabétique ((0,0,0,#FFECB3)) |\n| 30 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| duree ((0,0,0,#B3E5FC)) |\n| Durée de la recette |\n| Numérique ((0,0,0,#FFECB3)) |\n| \u003c 32767 minutes ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| etapes ((0,0,0,#B3E5FC)) |\n| Étapes de la recette |\n| Alphanumérique ((0,0,0,#FFECB3)) |\n| \u003c 10000 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| nomIngredient ((0,0,0,#B3E5FC)) |\n| Nom de l'ingrédient |\n| Alphabétique ((0,0,0,#FFECB3)) |\n| 30 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| quantite ((0,0,0,#B3E5FC)) |\n| Quantité de l'ingrédient dans la recette |\n| Numérique ((0,0,0,#FFECB3)) |\n| \u003c 10000 ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| unite ((0,0,0,#B3E5FC)) |\n| Unité de la quantité de l'ingrédient |\n| Alphabétique ((0,0,0,#FFECB3)) |\n| 30 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[LI]\n| type ((0,0,0,#B3E5FC)) |\n| Type d’ingrédient |\n| Alphabétique ((0,0,0,#FFECB3)) |\n| 30 caractères ((0,0,0,#EBDEF0)) |\n[/LI]\n[/TAB]\n\nNotons au passage que nous avons précisé dans ce dictionnaire\u0026nbsp;:\n* un [9]code[9] qui sera adopté par la suite en lieu et place de la description de la donnée (plus longue)\u0026nbsp;;((liste2))\n* le [19]type[19] et la [5]taille[5] de la donnée qui conditionneront son codage futur en base.((liste2))\n\n[ATT]\nLe code doit être dépourvu de caractères accentués et de caractères spéciaux (on écrira par exemple «\u0026nbsp;duree\u0026nbsp;» et pas «\u0026nbsp;durée\u0026nbsp;»).\n[/ATT]\n\n[RETENIR]\nLe fait de préciser le type, la taille, et, le cas échéant, les valeurs possibles prises par une donnée définit son **domaine**. Seules les valeurs appartenant à ce domaine seront permises.\n[/RETENIR]\n\nIl est temps maintenant de modéliser le monde réel.\n\n##Le modèle entité-association/2\n\nAfin de représenter l'ensemble de nos objets et leurs liens, on a recours à un formalisme particulier qui sera une aide précieuse dans cette démarche. Les formalismes les plus employés aujourd'hui à cette fin sont le **diagramme de classes** de l'approche UML et, dans une moindre mesure, le **modèle conceptuel de données** (MCD) de l'approche entité-association. Dans ce cours, nous ferons appel au second (MCD).  \nCommençons par en étudier les notions principales.\n\n###Les notions de base/a.\n\n[DEF]\n**Entité\u0026nbsp;:**\n\nLe terme «\u0026nbsp;entité\u0026nbsp;» sert à désigner un objet réel, concret ou abstrait, identifié lors de l'analyse de l'existant. \n[/DEF]\n\nElle est représentée par un rectangle, doté d'un titre. Elle est constituée d'attributs.\n* Dans le cas de notre club de cuisine, «\u0026nbsp;recette\u0026nbsp;» et «\u0026nbsp;adhérent\u0026nbsp;» sont des entités.((fleche))\n\n[DEF]\n**Occurrence\u0026nbsp;:**\n\nL’occurrence désigne un exemplaire (un représentant) d'une entité.\n[/DEF]\n\nSi l’on applique le terme à notre club de cuisine\u0026nbsp;:\n* «\u0026nbsp;mousse au chocolat\u0026nbsp;» est une occurrence de l'entité «\u0026nbsp;recette\u0026nbsp;»\u0026nbsp;;((liste2))\n* «\u0026nbsp;sucre\u0026nbsp;» est une occurrence de l'entité «\u0026nbsp;ingrédient\u0026nbsp;»\u0026nbsp;;((liste2))\n* «\u0026nbsp;Dupont Jacques\u0026nbsp;» est une occurrence de l'entité «\u0026nbsp;adhérent\u0026nbsp;».((liste2))\n\n[DEF]\n**Attribut\u0026nbsp;:**\n\nL’attribut désigne une donnée élémentaire qui sert à caractériser une propriété d'une entité ou d'une association.\n[/DEF]\n\nDans notre étude de cas, «\u0026nbsp;duree\u0026nbsp;» est l'un des attributs de l'entité «\u0026nbsp;recette\u0026nbsp;».\n\n[DEF]\n**Identifiant\u0026nbsp;:**\n\nL’identifiant est un attribut, ou un ensemble d'attributs, qui permet d'identifier sans ambiguïté chaque occurrence d'une entité.\n[/DEF]\n\n[RETENIR]\nUne entité doit nécessairement être dotée d'un identifiant.\n[/RETENIR]\n\nVoici, ci-dessous, la représentation de l'entité «\u0026nbsp;recette\u0026nbsp;» et de trois de ses occurrences.\n\n[IMG]((100))\n![entité occurrence SGBD BDD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c07-img01.png) #Une entité et trois de ses occurrences\n[/IMG]\n\nDans l’exemple ci-dessus, nous pouvons voir qu'il y a deux\u0026nbsp;recettes de mousse au chocolat, l'une facile et plus longue, l'autre plus rapide mais plus difficile. Or, ces deux recettes portent le même nom. Ce n'est donc pas via l'attribut nom qu’il sera possible de les différencier ni, donc, de les identifier.\n* Il est par conséquent nécessaire d'ajouter un attribut à l'entité «\u0026nbsp;recette\u0026nbsp;» qui lui servira d'identifiant. Nommons-le «\u0026nbsp;idRecette\u0026nbsp;».((fleche))\n\nOn peut noter au passage que notre dictionnaire de données s'enrichira d'une nouvelle donnée\u0026nbsp;: idRecette. Cet identifiant prendra la forme d'un **numéro unique**.\n\n[AST]\nPour des raisons d'efficacité dans les traitements qui seront développés par la suite sur les données de la base, il est recommandé de privilégier un identifiant aussi simple que possible, de préférence numérique.\n[/AST]\n\n[COLONNES][COL]\n[IMG]((100))\n![entité identifiant SGBD BDD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img02.png) #Une entité représentée avec son identifiant\n[/IMG]\n[/COL]((50))\n[COL]Voici donc notre entité «\u0026nbsp;recette\u0026nbsp;» corrigée en conséquence. Notons que, selon la convention adoptée dans les MCD, on reconnaît l'identifiant en repérant l'attribut qui est souligné.[/COL]((50))[/COLONNES]\n\nNous avons vu que les entités peuvent faire l'objet de liaisons entre elles. Ces liaisons sont appelées «\u0026nbsp;**associations**\u0026nbsp;» dans l'approche entité-association. Nous avons également vu qu'elles peuvent être elles-mêmes porteuses de données, c'est-à-dire d'attributs. En effet, l'association impliquant l'entité «\u0026nbsp;recette\u0026nbsp;» et l'entité «\u0026nbsp;ingrédient\u0026nbsp;» dispose des attributs «\u0026nbsp;quantite\u0026nbsp;», «\u0026nbsp;unite\u0026nbsp;» et «\u0026nbsp;type\u0026nbsp;».\n\n[DEF]\n**Association\u0026nbsp;:**\n\nUne association correspond au lien qui existe entre deux entités. Elle peut être composée ou non d'attributs.\n[/DEF]\n\nOn la représente dans un MCD par un segment reliant les deux entités concernées. Une ellipse y est tracée en son milieu\u0026nbsp;: elle contient un terme pour la désigner (généralement un verbe), ainsi que les éventuels attributs qui la caractérisent.  \nÀ chaque extrémité de ce segment, on précise les **cardinalités** de l'association.\n\n[DEF]\n**Cardinalités\u0026nbsp;:**\n\nLes cardinalités d'une association entre deux entités précisent ses caractéristiques.\n[/DEF]\n\nDans la pratique, on détermine deux nombres qui correspondent à la quantité minimale et maximale d'occurrences relatives aux entités impliquées dans l'association, dans un sens et dans l'autre.  \nDans notre exemple, une recette fait appel à $1$ ou plusieurs ingrédients. Et un ingrédient intervient dans $0$ ou $+$ de recettes. Cela se traduit par les cardinalités formalisées comme suit dans notre MCD.\n\n[IMG]((75))\n![association SGBD BDD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img03.png) #Formalisation d’une association\n[/IMG]\n\n[RETENIR]\nCodification des cardinalités\u0026nbsp;:\n* $0,1$ veut dire $\\text{aucun}$ ou $1$ ;((liste2))\n* $1,1$ veut dire $1$ et $1$ seul\u0026nbsp;;((liste2))\n* $0,\\text{n}$ (ou $0,\\text{N}$) veut dire $0$ ou $+$ ;((liste2))\n* $1,\\text{n}$ (ou $1,\\text{N}$) veut dire $1$ ou $+$ ;((liste2))\n* $a,b$ au minimum $a$, et au plus $b$.((liste2))\n[/RETENIR]\n\nOn notera au passage que, dans notre exemple, nous avons fait apparaître un nouvel attribut\u0026nbsp;: idIngredient. Nous avons en effet décidé d'affecter un attribut qui sera numérique et unique pour identifier sans ambiguïté un ingrédient, plutôt que d'utiliser son nom.\n\n###Mise en pratique/b.\n\nIl s'agit maintenant de représenter dans le MCD l'ensemble des entités de la base de données, accompagnées de leurs attributs (dont leur identifiant). On formalisera également les associations impliquant les entités, accompagnées de leurs cardinalités et de leurs éventuels attributs.  \nDans notre cas, nous avons identifié les entités suivantes\u0026nbsp;: adherent, recette, ingredient. Deux associations ont été recensées\u0026nbsp;: l'une entre adherent et recette, l'autre entre et recette et ingredient.  \nIl en résulte le MCD suivant\u0026nbsp;:\n\n[IMG]((75))\n![MCD SGBD BDD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img04.png) #Exemple d’un MCD\n[/IMG]\n\nMaintenant que nous avons modélisé les données du monde réel selon un MCD, il va nous falloir le traduire en modèle relationnel. C'est un modèle qui permet d'organiser les données dans une base informatisée.\n\n##Le modèle relationnel/3\n\n\u003ca target=\"_blank\" href=\"/cours/systeme-de-gestion-de-bases-de-donnees-sgbd-/fiche-de-cours\"\u003eNous verrons plus loin, dans le cours consacré aux\u0026nbsp;SGBD, qu'il existe plusieurs modèles de données possibles pour traduire un MCD\u0026nbsp;: hiérarchique, réseau, relationnel ou relationnel-objet.\u003c/a\u003e\n\n[AST]\nNous adoptons ici le modèle relationnel qui est le plus répandu de nos jours et qui a maintes fois fait ses preuves.\n[/AST]\n\n###Principes du modèle relationnel/a.\n\n[DEF]\n**Modèle de données\u0026nbsp;:**\n\nUn modèle de données définit la manière dont l'information est structurée dans la base de données. Il est une représentation d'informations du monde réel, exploitable par l'informatique.\n[/DEF]\n\nLe **modèle relationnel** s'appuie sur la notion de «\u0026nbsp;relation\u0026nbsp;», d'où son nom. On représente une relation par une **table**. Les lignes de cette table sont nommées «\u0026nbsp;tuples\u0026nbsp;», et ses colonnes sont nommées «\u0026nbsp;champs\u0026nbsp;».\n\n[IMG]((100))\n![SGBD modèle relationnel relation](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c07-img05.png) #Représentation d'une relation par une table\n[/IMG]\n\nCette relation peut s'écrire sous la forme $\\rightarrow$ Recette(idRecette, nomRecette, niveau, duree, categorie, etapes).\n* C'est ce qu'on appelle le schéma relationnel de la relation recette.((fleche))\n\n[RETENIR]\nOn doit pouvoir accéder à un tuple donné de la relation par le contenu d'un ou plusieurs de ses champs identifiant de manière unique ce tuple. Le ou les champs en question constituent une **clé**.\n[/RETENIR]\n\nUne relation peut comprendre plusieurs clés possibles. On les nomme «\u0026nbsp;clés candidates\u0026nbsp;». On nommera plus précisément «\u0026nbsp;clé primaire\u0026nbsp;» celle d'entre elles qui est choisie. Les clés primaires de l'ensemble des tuples sont stockées dans un index (sorte de répertoire) qui indique l'emplacement où trouver chacun des tuples qui constituent la relation.\n\n[ATT]\nLa clé primaire doit contenir le minimum de champs possible.\n[/ATT]\n\nMaintenant que nous savons comment est structuré le modèle relationnel, étudions comment il est conçu à partir du modèle conceptuel qui, rappelons-le, est une vue tout à fait abstraite de la future base de données.\n\n###Passage du modèle conceptuel au modèle relationnel/b.\n\nNous disposons à ce stade d'un MCD, constitué d'entités, d'attributs et d'associations.\n\n[RETENIR]\nDeux règles principales doivent être observées pour passer au modèle relationnel.\n* Une --entité-- du\u0026nbsp;MCD devient une **--relation--** du modèle relationnel. Ses --attributs-- deviennent les **--champs--** de cette relation ainsi créée. L'--identifiant-- de l'entité devient la **--clé--** de la relation dont elle est à l'origine.((bulle,1))\n* Une --association-- du MCD devient une **--relation--**. Les --champs-- qui la composent sont les **--identifiants--** des entités impliquées et, le cas échant, les **--attributs--** qui caractérisent l'association. La clé de cette relation ainsi créée est composée des deux identifiants évoqués à l'instant.((bulle,2))\n[/RETENIR]\n\nAppliquons ces règles à une partie du MCD relatif à la base de données du club de cuisine. En observant les entités Recette et Ingredient et l'association qui les implique, on obtient les schémas relationnels suivants\u0026nbsp;:\n\n[IMG]((100))\n![association SGBD BDD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img07.png) #Exemple d’association quelconque\n[/IMG]\n\n[BUTC]Recette(idRecette, nomRecette, niveau, duree, categorie, etapes) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé primaire[/BUTC]\u003e\u003e\n\n[BUTC]Ingredient(idIngredient, nomIngredient) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé primaire[/BUTC]\u003e\u003e\n\n[BUTC]Utilise(idRecette, idIngredient, quantite, unite, type) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette, idIngredient : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé étrangère en référence à idRecette dans recette[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idIngredient : clé étrangère en référence à idIngredient dans ingredient[/BUTC]\u003e\u003e\n\nLa notion de **clé étrangère** apparaît dans le schéma relationnel de Utilise\u0026nbsp;: cela signifie que ce sont des champs qui prennent forcément leurs valeurs parmi celles prises par la clé qui s'y rapporte. idRecette dans Utilise ne peut prendre ses valeurs que parmi celles prises par la clé idRecette dans Recette. Autrement dit, on ne peut pas trouver, dans la relation Utilise, un tuple qui se rapporterait à une recette inexistante dans la relation recette ou un ingrédient inexistant dans la relation ingredient. C'est ce qui contribue à maintenir la cohérence des données au sein de la base.\n\n[RETENIR]\nUn cas particulier doit néanmoins être traité différemment\u0026nbsp;: il s'agit de celui d'une association qui comporte une cardinalité $1,1$. Dans cette situation, on ne crée pas une relation pour une telle association. Tous les champs de l'association sont simplement intégrés à la relation issue de l'entité associée à la cardinalité $1,1$.\n[/RETENIR]\n\nPour illustrer ce cas, prenons l'exemple suivant\u0026nbsp;: une recette est proposée par $1$ et $1$ seul adhérent, et un adhérent peut proposer aucune ou plusieurs recettes. Le MCD qui en résulte est le suivant\u0026nbsp;:\n\n[IMG]((75))\n![association cardinalité SGBD BDD](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-num-c07-img08.png) #Exemple d'association avec cardinalité $1,1$\n[/IMG]\n\nLes schémas relationnels qui en découlent sont alors\u0026nbsp;:\n[BUTC]Adherent(idAdherent, nomAdherent, prenom, mail, adresse, passe, telephone) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idAdherent : clé primaire[/BUTC]\u003e\u003e\n[BUTC]Recette(idRecette, nomRecette, niveau, duree, categorie, etapes, idAdherent) avec[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idRecette : clé primaire[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]idAdherent : clé étrangère[/BUTC]\u003e\u003e\n\nL'association modélisée dans le MCD impliquant les entités recette et adhérent n'a pas donné lieu à la création de la relation Propose(idRecette, idAdherent). Les champs qui la constituent ont été intégrés à la relation Recette.\n\n[AST]\nOn remarque que parmi ces champs, idRecette est déjà présent dans Recette.\n[/AST]\n\nVoici une illustration des relations obtenues sous forme de tableau, qui ne sont pas exhaustifs. Vous pourrez constater que les clés étrangères (mises en évidence dans les colonnes colorées) ne prennent que des valeurs parmi celles prises par les clés primaires auxquelles elles se réfèrent.\n\n**Adherent**\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]nomAdherent[18]** ((0,0,0,#9AE)) |\n| **[18]prenom[18]** ((0,0,0,#9AE)) |\n| **[18]mail[18]** ((0,0,0,#9AE)) |\n| **[18]adresse[18]** ((0,0,0,#9AE)) |\n| **[18]passe[18]** ((0,0,0,#9AE)) |\n| **[18]telephone[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| Dupont |\n| Jacques |\n| dup@orange.fr |\n| 3 rue blanche 23000 Gueret |\n| /|\n| 0612345678 |\n[/LI]\n[LI]\n| 2 |\n| Dampierre |\n| Gérard |\n| gege@free.fr |\n| 7 rue Dumont 29000 Brest |\n| /|\n| 0711223344 |\n[/LI]\n[LI]\n| 3 |\n| Forestier |\n| Denise |\n| dd@gmail.com |\n| 9 rue aux loups 12000 Rodez |\n| /|\n| 0488665544 |\n[/LI]\n[LI]\n| 4 |\n| Vielle |\n| Rose |\n| vr@sfr.fr |\n| 1 av. des prés 10000 Troyes |\n| /|\n| 0612121313 |\n[/LI]\n[/TAB]\n\n**Recette**\n\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#9AE)) |\n| **[18]nomRecette[18]** ((0,0,0,#9AE)) |\n| **[18]niveau[18]** ((0,0,0,#9AE)) |\n| **[18]duree[18]** ((0,0,0,#9AE)) |\n| **[18]categorie[18]** ((0,0,0,#9AE)) |\n| **[18]etapes[18]** ((0,0,0,#9AE)) |\n| **[18]idAdherent[18]** ((0,0,0,#8BC34A)) |\n[/LI]\n[LI]\n| 1 |\n| Mousse au chocolat |\n| moyen |\n| 20 |\n| dessert |\n| 1) Séparer les blancs des jaunes.\n\n2) Monter les blancs en neige.\n\n3) ... |\n| 2 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 2 |\n| Mousse au chocolat |\n| facile |\n| 30 |\n| dessert |\n| 1) Casser le chocolat en petits morceaux.\n\n2) Faire fondre le chocolat avec un peu d'eau.\n\n3) ... |\n| 3 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 3 |\n| Poulet au citron |\n| moyen |\n| 90 |\n| plat |\n| 1) Couper le poulet en morceaux.\n\n2) Dans une poêle, faire revenir un oignon haché.\n\n3) ... |\n| 2 ((0,0,0,#F1F8E9)) |\n[/LI]\n[LI]\n| 4 |\n| Soupe à l’oignon |\n| facile |\n| 45 |\n| entrée |\n| 1) Éplucher et couper les pommes de terre en morceaux.\n\n2) Faire de même pour les oignons.\n\n3) ... |\n| 1 ((0,0,0,#F1F8E9)) |\n[/LI]\n[/TAB]\n\n**Ingredient**\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idIngredient[18]** ((0,0,0,#9AE)) |\n| **[18]nomIngredient[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 |\n| oeuf |\n[/LI]\n[LI]\n| 2 |\n| chocolat |\n[/LI]\n[LI]\n| 3 |\n| sucre |\n[/LI]\n[LI]\n| 4 |\n| beurre |\n[/LI]\n[LI]\n| 5 |\n| oignon |\n[/LI]\n[LI]\n| 6 |\n| poulet |\n[/LI]\n[LI]\n| 7 |\n| pommes de terre |\n[/LI]\n[/TAB]\n\n**Utilise**\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| **[18]idRecette[18]** ((0,0,0,#CE93D8)) |\n| **[18]idIngredient[18]** ((0,0,0,#80DEEA)) |\n| **[18]quantite[18]** ((0,0,0,#9AE)) |\n| **[18]unite[18]** ((0,0,0,#9AE)) |\n| **[18]type[18]** ((0,0,0,#9AE)) |\n[/LI]\n[LI]\n| 1 ((0,0,0,#F3E5F5)) |\n| 1 ((0,0,0,#E0F7FA)) |\n| 6 |\n| oeuf |\n| viande |\n[/LI]\n[LI]\n| 1 ((0,0,0,#F3E5F5)) |\n| 2 ((0,0,0,#E0F7FA)) |\n| 200 |\n| gramme |\n| epicerie |\n[/LI]\n[LI]\n| 1 ((0,0,0,#F3E5F5)) |\n| 3 ((0,0,0,#E0F7FA)) |\n| 3 |\n| cuillère à soupe |\n| epicerie |\n[/LI]\n[LI]\n| 2 ((0,0,0,#F3E5F5)) |\n| 2 ((0,0,0,#E0F7FA)) |\n| 1 |\n| tablette |\n| epicerie |\n[/LI]\n[LI]\n| 2 ((0,0,0,#F3E5F5)) |\n| 1 ((0,0,0,#E0F7FA)) |\n| 6 |\n| oeuf |\n| viande |\n[/LI]\n[LI]\n| 3 ((0,0,0,#F3E5F5)) |\n| 6 ((0,0,0,#E0F7FA)) |\n| 1 |\n| kg |\n| viande |\n[/LI]\n[LI]\n| 3 ((0,0,0,#F3E5F5)) |\n| 5 ((0,0,0,#E0F7FA)) |\n| 2 |\n| gros oignon |\n| legume |\n[/LI]\n[LI]\n| 4 ((0,0,0,#F3E5F5)) |\n| 7 ((0,0,0,#E0F7FA)) |\n| 350 |\n| g |\n| legume |\n[/LI]\n[LI]\n| 4 ((0,0,0,#F3E5F5)) |\n| 5 ((0,0,0,#E0F7FA)) |\n| 5 |\n| oignon moyen |\n| legume |\n[/LI]\n[LI]\n| 4 ((0,0,0,#F3E5F5)) |\n| 4 ((0,0,0,#E0F7FA)) |\n| 2 |\n| cuillère à café |\n| laitage |\n[/LI]\n[/TAB]\n\nCela nous donne un aperçu de la manière dont les données de notre base y sont concrètement organisées.\n\n[C]\nConclusion\u0026nbsp;:\n\nNous savons maintenant modéliser le monde réel selon un\u0026nbsp;MCD et transcrire un\u0026nbsp;MCD en un modèle relationnel, également dénommé «\u0026nbsp;modèle logique\u0026nbsp;». Ce modèle logique permet la création concrète de la structure de la base donnée. Cependant, il est important, avant la création de cette structure, de s'assurer que le modèle relationnel ne présente pas d'anomalies. Nous allons ainsi découvrir dans le cours qui suit le principe de la normalisation et des contraintes d'intégrité.\n[/C]","siblings":[{"resourceId":"608fb291b4f3e001000c8ace","type":"Cours","sort":null},{"resourceId":"5e53cc0c09e0a80100fdf8f7","type":"Fiche de révision","sort":null},{"resourceId":"5e86e5b128e6370100440b55","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d2728e637010043bf7c","name":"Modélisation d'une base de données"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d2728e637010043bf7c","label":"Cours : Modélisation d'une base de données","link":"https://www.schoolmouv.fr/cours/modelisation-d-une-base-de-donnees/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"modelisation-d-une-base-de-donnees","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/modelisation-d-une-base-de-donnees/fiche-de-cours","title":"Modélisation d'une base de données : cours de Tle - Numérique","metaDescription":"SchoolMouv ® te propose ce cours sur Modélisation d'une base de données (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"modelisation-d-une-base-de-donnees","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

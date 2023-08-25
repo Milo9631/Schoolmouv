@@ -1,0 +1,581 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Algorithme récursif : cours Tle - Numérique et sciences info</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Algorithme récursif : cours Tle - Numérique et sciences info">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Algorithme récursif (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/algorithme-recursif/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/algorithme-recursif/fiche-de-cours","name":"Cours : Algorithme récursif"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Algorithme récursif</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Algorithme récursif</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Dans ce cours nous nous apprêtons à étudier un concept important et parfois déroutant de la programmation informatique : celui de la récursivité, c’est-à-dire de la capacité d’une fonction ou d’un algorithme à s’appeler lui-même. Nous présenterons dans un premier temps ce principe et ses caractéristiques générales. Nous analyserons dans un deuxième temps les mécanismes qui permettent de le faire fonctionner ; et nous terminerons par une étude d’implémentations récursives.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Principe général</p></div></h2>
+<p>Commençons par un bref rappel sur les fonctions.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Une fonction se définit de la manière suivante en Python :</p>
+<p><span class="calculator_button" markdown="1">def accueil():</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:20px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print('bonjour')</span></p></div>
+<p>Elle s’appelle ensuite de la manière suivante :</p>
+<p><span class="calculator_button" markdown="1">accueil()</span><br>
+<span class="calculator_button" markdown="1"># affiche bonjour</span></p>
+</div>
+</div>
+<p>On rappelle également que les fonctions peuvent comporter un ou plusieurs appels à d’autres fonctions. Notre fonction <span class="calculator_button" markdown="1">accueil()</span> fait ainsi appel à la fonction <span class="calculator_button" markdown="1">print()</span>, et pourrait de la même manière appeler toute autre fonction, qu’elle soit native ou définie par nous.</p>
+<p>Ces rappels étant effectués, nous allons nous pencher sur le cas particulier d’une fonction qui, au lieu d’appeler une autre fonction, essaie de s’appeler elle-même.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Appels de fonction</p></div></h3>
+<p>Nous modifions notre fonction <span class="calculator_button" markdown="1">accueil()</span> en ajoutant un appel à elle-même dans sa définition, après l’appel à <span class="calculator_button" markdown="1">print()</span> :</p>
+<p><span class="calculator_button" markdown="1">def accueil():</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print('bonjour')</span><br>
+<span class="calculator_button" markdown="1">accueil()</span></p></div>
+<p>Observons maintenant ce qui se produit lors de l’appel de notre fonction ainsi modifiée.</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’ordinateur va produire un grand nombre d’affichages avant d’afficher une erreur.</p></div>
+</div>
+<p><span class="calculator_button" markdown="1">accueil()</span></p>
+<p>affiche un très grand nombre de fois…</p>
+<p><span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span><br>
+<span class="calculator_button" markdown="1">bonjour</span></p>
+<p>et finit par afficher le message suivant :</p>
+<p><span class="calculator_button" markdown="1">RecursionError: maximum recursion depth exceeded while calling a Python object</span></p>
+<p>Le nombre exact de lignes d’affichage dépend de la configuration du langage Python utilisée, mais il est généralement de l’ordre de quelques milliers de lignes.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Si on fait abstraction de l’erreur qui a mis fin au programme, on observe que notre fonction a bien réussi à s’appeler elle-même, produisant un comportement assez analogue à celui d’une boucle infinie.</div>
+</li>
+</ul>
+<p>En réalité si le programme finit par s’arrêter en produisant une erreur, c’est parce qu’un mécanisme de protection a été intégré au langage pour limiter le nombre d’appels. Sans ce mécanisme que nous étudierons dans la deuxième partie du cours, la fonction s’appellerait elle-même <b>à l’infini jusqu’à saturation de la mémoire</b>.</p>
+<p>Redéfinissons maintenant notre fonction avec la prise en compte d’un paramètre :</p>
+<p><span class="calculator_button" markdown="1">def accueil(prenom):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print('bonjour', prenom)</span><br>
+<span class="calculator_button" markdown="1">accueil(prenom)</span></p></div>
+<p>Observons maintenant ce qui se produit lors de l’appel de notre fonction avec un argument.</p>
+<p><span class="calculator_button" markdown="1">accueil('Guido')</span></p>
+<p>affiche un très grand nombre de fois :</p>
+<p><span class="calculator_button" markdown="1">bonjour Guido</span><br>
+<span class="calculator_button" markdown="1">bonjour Guido</span><br>
+<span class="calculator_button" markdown="1">bonjour Guido</span><br>
+<span class="calculator_button" markdown="1">bonjour Guido</span><br>
+<span class="calculator_button" markdown="1">bonjour Guido</span><br>
+<span class="calculator_button" markdown="1">bonjour Guido</span><br>
+<span class="calculator_button" markdown="1">bonjour Guido</span></p>
+<p>et finit par afficher :</p>
+<p><span class="calculator_button" markdown="1">RecursionError: maximum recursion depth exceeded while calling a Python object</span></p>
+<p>Là encore une erreur s’affiche après un grand nombre d’affichages, mais on constate que l’argument passé en paramètre a bien été pris en compte. Notre fonction est <b>récursive</b>.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Définition</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Fonction récursive :</b></p>
+<p>Une fonction récursive est une fonction qui s’appelle elle-même.</p>
+</div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Autrement dit, une fonction récursive est une fonction qui s’<b>auto-référence</b>.</p></div>
+</div>
+<p>Notre fonction récursive actuelle n’est guère utile et finit par générer une erreur. Mais elle nous a permis d’illustrer qu’une fonction pouvait s’appeler elle-même. Ainsi que nous allons le découvrir dans la suite du cours, cette caractéristique peut s’avérer très intéressante.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On dit aussi que « pour bien comprendre la récursivité, il faut bien comprendre la récursivité », ce qui revient à donner une définition récursive de la récursivité.</p></div>
+</div>
+<p>Les références récursives de ce genre sont assez répandues en informatique.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le sigle PHP est un sigle récursif, P.H.P. signifiant « PHP : Hypertext Preprocessor ».</div>
+</li>
+</ul>
+<div class="columns" markdown="1">
+<div markdown="1" class="undefined" style="width:50%; "><div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-num-c17-img01.jpg" alt="Algorithme récursif vache qui rit"> 
+<span>La vache qui rit ©ludovic </span></p></div></div></div>
+<div markdown="1" class="undefined" style="width:50%; "><div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Certaines représentations graphiques illustrent le principe récursif, comme les images fractales ou le logo bien connu du fromage Vache qui rit, qui est mis en abyme dans les boucles d’oreille portées par la vache.</p></div>
+</div></div>
+</div>
+<p>Intéressons-nous maintenant de plus près aux caractéristiques d’une fonction récursive utilisable sans erreur.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Caractéristiques d’une fonction récursive</p></div></h3>
+<p>Une fonction récursive se compose de deux parties : </p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">une <b>partie récursive</b> (également appelée cas récursif) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">une <b>partie terminale</b> (également appelée cas de base ou cas d’arrêt), destinée à stopper les appels récursifs quand une condition est atteinte.</div>
+</li>
+</ul>
+<p>La partie récursive de la fonction comporte un <b>appel récursif</b>. C’est la partie récursive qui permet à la fonction de s’auto-référencer.<br>
+La partie terminale d’une fonction récursive définit les conditions de terminaison de la fonction, de manière assez analogue aux conditions de sorties des boucles non bornées.</p>
+<p>Notre fonction expérimentale ne comportait pas de partie terminale ou cas de base, ce qui la conduisait à s’appeler un nombre infini de fois. Elle ne comportait pas non plus de paramètres dans sa définition initiale, mais une fonction récursive peut tout à fait en posséder, comme n’importe quelle fonction, ainsi que nous l’avons constaté dans sa version modifiée. Dans une fonction récursive opérationnelle, la ou les valeurs passées en argument évoluent d’un appel à l’autre, jusqu’à finir par remplir la ou les conditions attendues par la partie terminale.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Une fonction récursive est obligatoirement composée d’une partie récursive et d’une partie terminale.</p>
+<ul>
+
+
+
+<li>Si la partie terminale est manquante, la fonction s’appelle un nombre infini de fois.</li>
+
+
+
+<li>Si la partie récursive est manquante, la fonction n’est pas récursive.</li>
+</ul>
+</div>
+</div>
+<p>Définissons de manière récursive une fonction qui raccourcit une chaîne de caractères pour n’en conserver que la première lettre :</p>
+<ul>
+
+<li>La partie terminale, ou cas de base, vérifiera si la condition voulue est atteinte : une chaîne de caractères qui en comporte un seul.</li>
+
+<li>La partie récursive effectuera un appel à la fonction avec en paramètre une chaîne de caractères tronquée de son caractère final, et en retournera le résultat.</li>
+</ul>
+<p><span class="calculator_button" markdown="1">def raccourcit(chaine):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if len(chaine) == 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">print(chaine)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return raccourcit(chaine[:-1])</span></p></div>
+<p><span class="calculator_button" markdown="1">raccourcit('hello world')</span><br>
+<span class="calculator_button" markdown="1"># affiche h</span></p>
+<p><span class="calculator_button" markdown="1">raccourcit('z')</span><br>
+<span class="calculator_button" markdown="1"># affiche z</span></p>
+<p>Nous obtenons bien le résultat attendu. Toutefois notre fonction est en l’état une procédure qui ne retourne rien : elle se borne à imprimer la chaîne finalement obtenue à l’issue des appels récursifs successifs. </p>
+<p>Adaptons donc notre fonction pour qu’elle retourne les résultats obtenus :</p>
+<p><span class="calculator_button" markdown="1">def raccourcit(chaine):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if len(chaine) == 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return chaine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return raccourcit(chaine[:-1])</span></p></div>
+<p><span class="calculator_button" markdown="1">print(raccourcit('hello world'))</span><br>
+<span class="calculator_button" markdown="1"># affiche h</span></p>
+<p><span class="calculator_button" markdown="1">print(raccourcit('z'))</span><br>
+<span class="calculator_button" markdown="1"># affiche z</span></p>
+<p>À nouveau, notre fonction raccourcit bien les chaînes de caractères qu’on lui soumet, et retourne cette fois le caractère correspondant. </p>
+<p>Toutefois nous n’avons pas prévu le cas d’une chaîne vide. Si nous appelons la fonction avec une chaîne vide avec <span class="calculator_button" markdown="1">print(raccourcit(''))</span>, son exécution dure plusieurs secondes et finit par générer une erreur de type <span class="calculator_button" markdown="1">RecursionError</span>. Analysons pourquoi.</p>
+<p>Lors de l’appel initial, la longueur de la chaîne est évaluée. Comme elle ne vaut pas $1$, nous ne sommes pas dans le cas terminal. La fonction passe alors dans la partie récursive, et effectue un appel sur la chaîne reçue en argument, tronquée de son dernier caractère.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Comme la troncature du dernier élément d’une chaîne vide est une chaîne vide, l’appel récursif n’évolue pas et s’effectue en permanence sur une chaîne vide.</div>
+</li>
+</ul>
+<p>Nous comprenons que, dans ces conditions, la fonction n’atteindra jamais la condition terminale où la longueur de chaîne est de longueur $1$.<br>
+Une légère modification de la partie terminale de notre fonction permet de pallier ce problème : <b>au lieu d’une égalité stricte, nous retournons toute chaîne de longueur inférieure ou égale à $1$ caractère</b>.</p>
+<p><span class="calculator_button" markdown="1">def raccourcit(chaine):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if len(chaine) &lt;= 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return chaine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return raccourcit(chaine[:-1])</span></p></div>
+<p><span class="calculator_button" markdown="1">print(raccourcit(''))</span><br>
+<span class="calculator_button" markdown="1"># n’affiche rien mais ne produit pas d’erreur</span></p>
+<p>On vérifie que la fonction retourne bien un résultat et on évalue sa nature.</p>
+<p><span class="calculator_button" markdown="1">resultat = raccourci('')</span><br>
+<span class="calculator_button" markdown="1">print(resultat, len(resultat), type(resultat))</span><br>
+<span class="calculator_button" markdown="1"># affiche 0 <class></class></span></p>
+<p>Comme avec les conditions de sortie des boucles non bornées, une attention particulière doit être portée à la manière dont les conditions de terminaison sont évaluées.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’appel effectué dans la partie récursive doit faire évoluer le paramètre de départ, sinon il n’y a pas de convergence vers la partie terminale.<br>
+La partie terminale doit prendre en compte l’ensemble des cas de base possibles devant conduire à la terminaison de la fonction.</p></div>
+</div>
+<p>Maintenant que nous avons découvert les principes et caractéristiques générales de la récursivité des fonctions, intéressons-nous de plus près aux mécanismes qui en permettent l’usage.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Fonctionnement récursif</p></div></h2>
+<p>Dans cette partie nous nous intéressons à la manière dont l’interpréteur Python gère la récursivité. Afin d’illustrer concrètement le fonctionnement, prenons appui sur le calcul de la factorielle d’un nombre.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>En mathématique, la factorielle d’un nombre $n$, notée $n!$, est le produit de l’ensemble des entiers strictement positifs inférieurs ou égaux à $n$.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Ainsi factorielle $5$ (notée $5!$) est égale à $5\times{4}\times{3}\times{2}\times{1}$.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">$5!=120$</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Notez la valeur particulière du cas $0! = 1$</p></div>
+</div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Implémentation récursive</p></div></h3>
+<p>Considérons les caractéristiques mathématiques de $5!$ :<br>
+$5! = 5\times{4}\times{3}\times{2}\times{1}$<br>
+${4}\times{3}\times{2}\times{1}$ est égal à $4!$</p>
+<p>Nous pouvons donc réécrire la première ligne ainsi :<br>
+$5! = 5\times{4!}$</p>
+<p>$4!$ est égal à ${4}\times{3}\times{2}\times{1}$, que nous pouvons aussi écrire ainsi :<br>
+$4! = 4\times{3!}$</p>
+<p>De la même manière :<br>
+$3! = 3\times{2!}$<br>
+$2! = 2\times{1!}$</p>
+<p>Et par définition $1!= 1$</p>
+<p>Nous disposons des éléments requis pour implémenter une version récursive du calcul de la factorielle d’un nombre :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">la partie terminale est $1! = 1$ ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la partie récursive s’applique ainsi à tout $n &gt; 1$ :<br>
+$n! = n\times{(n - 1)!}$</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L’implémentation en Python en est une transcription assez littérale.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">def factorielle_recursive(nombre):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if nombre == 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return nombre</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return nombre * factorielle_recursive(nombre - 1)</span></p></div>
+<p>Notre fonction produit bien le résultat attendu :</p>
+<p><span class="calculator_button" markdown="1">print(factorielle_recursive(5))</span><br>
+<span class="calculator_button" markdown="1"># affiche 120</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’instruction <span class="calculator_button" markdown="1">return</span> termine l’exécution d’une fonction. Le recours à la clause <span class="calculator_button" markdown="1">else</span> n’est donc pas nécessaire par rapport à notre instruction <span class="calculator_button" markdown="1">if</span>.</p></div>
+</div>
+<p>On peut alléger notre code ainsi :</p>
+<p><span class="calculator_button" markdown="1">def factorielle_recursive(nombre):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if nombre == 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return nombre</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return nombre * factorielle_recursive(nombre - 1)</span></p></div>
+<p>Notre fonction n’effectue aucune vérification sur le type ni sur la valeur entrée. On peut <em>a minima</em> modifier notre condition terminale :</p>
+<p><span class="calculator_button" markdown="1">if nombre == 1:</span></p>
+<p>en :</p>
+<p><span class="calculator_button" markdown="1">if nombre &lt;= 1:</span></p>
+<p>Cela nous permet de calculer $0!$ (égal à $1$), mais aussi d’empêcher des appels récursifs pour des nombres négatifs, dépourvus de sens mathématiques et qui conduiraient à une <span class="calculator_button" markdown="1">RecursionError</span>. Idéalement on complèterait les vérifications avec la levée d’une exception pour toute saisie de nombre négatif (<span class="calculator_button" markdown="1">ValueError</span>) ou pour tout type de valeur non entière (<span class="calculator_button" markdown="1">TypeError</span>).</p>
+<p>Même quand l’implémentation semble triviale, il est judicieux de bien réfléchir aux modalités quand plusieurs choix sont possibles.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Suivi des appels de fonction</p></div></h3>
+<p>Afin de pouvoir suivre le fonctionnement de notre programme récursif, nous insérons des affichages à différents endroits. </p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Remarque :</b></p>
+<p>Nous pourrions aussi utiliser un décorateur, une construction qui permet de modifier le comportement d’une fonction, mais leur emploi sort du cadre de ce cours.</p>
+</div>
+</div>
+<p>Nous utilisons ici une variable globale qui nous servira à augmenter le décalage des messages affichés à chaque nouvel appel récursif, afin d’illustrer la cascade d’appels.</p>
+<p><span class="calculator_button" markdown="1">decalage = ' ' * 5</span><br>
+<span class="calculator_button" markdown="1">i = 0</span></p>
+<p><span class="calculator_button" markdown="1">def factorielle_recursive(nombre):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">global i</span><br>
+<span class="calculator_button" markdown="1">print(decalage * i, 'réception d\'une demande de calcul de {}!'.format(nombre))</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if nombre &lt;= 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">print(decalage * i, ' &gt; cas terminal atteint (retourne 1) ')</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return nombre</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(decalage * i, ' &gt; cas récursif : appel de {}!, requis pour pouvoir retourner ensuite {}!\n'.format(nombre - 1, nombre))</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">i += 1</span><br>
+<span class="calculator_button" markdown="1">return nombre * factorielle_recursive(nombre - 1)</span></p></div>
+<p><span class="calculator_button" markdown="1">print(factorielle_recursive(5))</span></p>
+<p>produit l’affichage suivant :</p>
+<p><span class="calculator_button" markdown="1">réception d’une demande de calcul de 5!</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:25px;"><p><span class="calculator_button" markdown="1">&gt; cas récursif : appel de 4!, requis pour pouvoir retourner ensuite 5!</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:60px;"><p><span class="calculator_button" markdown="1">réception d'une demande de calcul de 4!</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:65px;"><p><span class="calculator_button" markdown="1">&gt; cas récursif : appel de 3!, requis pour pouvoir retourner ensuite 4!</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:85px;"><p><span class="calculator_button" markdown="1">réception d’une demande de calcul de 3!</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">&gt; cas récursif : appel de 2!, requis pour pouvoir retourner ensuite 3!</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:100px;"><p><span class="calculator_button" markdown="1">réception d'une demande de calcul de 2!</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:105px;"><p><span class="calculator_button" markdown="1">&gt; cas récursif : appel de 1!, requis pour pouvoir retourner ensuite 2!</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:110px;"><p><span class="calculator_button" markdown="1">réception d’une demande de calcul de 1!</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:115px;"><p><span class="calculator_button" markdown="1">&gt; cas terminal atteint (retourne 1)</span></p></div>
+<p><span class="calculator_button" markdown="1">120</span></p>
+<p>On observe des appels en cascade : chaque calcul de la factorielle d’un nombre donné reste suspendu en attente du résultat de celle de valeur immédiatement inférieure. L’interpréteur Python est donc contraint de garder la trace de chacun de ces appels en cascade.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le mécanisme qui permet de suivre ces appels successifs et les retours attendus s’appelle une pile d’exécution.</div>
+</li>
+</ul>
+<h3 range="c." markdown="1"><div markdown="1"><p>Pile d’exécution</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Pile d’exécution :</b></p>
+<p>Une pile d’exécution est une structure de données chargée de garder la trace des appels de fonction successifs.</p>
+</div>
+</div>
+<p>La <b>pile d’exécution</b> (ou <em>call stack</em> en anglais) est une pile type LIFO.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>LIFO :</b></p>
+<p>Le sigle LIFO signifie Last In, First Out. En français : dernier entré, premier sorti.<br>
+Le dernier élément ajouté à la pile (ou « empilé ») sera donc le premier à en être sorti (ou « dépilé »).</p>
+</div>
+</div>
+<p>La pile d’exécution <b>empile</b> les appels de fonction successifs correspondant aux cas récursifs, permettant à l’interpréteur Python de garder la trace des appels individuels pour pouvoir, le moment venu, gérer les retours correspondants. Une fois le cas terminal atteint, la pile est progressivement <b>dépilée</b> et chaque appel reçoit en retour le résultat qu’il attendait.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c17-img02-corr.png?1666597861184" alt="Appels et retours de fonction successifs dans la pile d’exécution"> 
+<span>Appels et retours de fonction successifs dans la pile d’exécution
+ </span></p></div></div>
+<p>Ces appels étant potentiellement gourmands en mémoire, les langages qui permettent la récursivité de fonctions ou de programmes limitent le nombre d’appels récursifs.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Dépassement de pile :</b></p>
+<p>Le dépassement ou débordement de pile est une erreur qui survient quand le nombre d’appels à stocker dans la pile dépasse la capacité de cette dernière.</p>
+</div>
+</div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">En Python le débordement de pile génère l’erreur spécifique <span class="calculator_button" markdown="1">RecursionError</span>.</div>
+</li>
+</ul>
+<p>L’expression anglaise équivalente est <em>stack overflow</em>. Cette erreur, redoutée des programmeur·se·s, est aussi le nom d’un célèbre site anglophone de questions/réponses ayant trait à la programmation informatique (http://www.stackoverflow.com/).</p>
+<p>Maintenant que nous avons décrit les mécanismes permettant la récursivité, intéressons-nous aux implémentations récursives d’algorithmes.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Implémentations récursives</p></div></h2>
+<p>Dans cette partie nous nous intéressons aux implémentations récursives, dont nous étudierons différentes formes et cas d’usage. Nous les comparerons ensuite aux implémentations itératives.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Types d’implémentation récursive</p></div></h3>
+<p>Il existe différents types d’implémentations récursives. Les exemples que nous avons présentés jusqu’à présent étaient des cas de <b>récursivité simple</b>, également appelée <b>récursivité linéaire</b>. Mais la récursivité peut prendre d’autres formes.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Récursivité terminale :</b></p>
+<p>Une fonction $f$ récursive est dite « terminale » (<em>tail recursion</em> en anglais) si la valeur qu’elle retourne est directement la valeur obtenue par un appel récursif, sans qu’il n’y ait aucune opération sur cette valeur. Autrement dit, si la valeur retournée par $f$ est de la forme <span class="calculator_button" markdown="1">return f(…)</span></p>
+</div>
+</div>
+<p>Certains langages détectent et optimisent les implémentations de <b>récursivité terminale</b>.<br>
+En ce qui concerne plus particulièrement le langage Python, il n’a pas fait l’objet d’optimisations poussées de ses facultés récursives. L’auteur de Python, Guido van Rossum, ne souhaitait pas en étendre l’usage et s’en est expliqué à plusieurs reprises.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Récursivité mutuelle :</b></p>
+<p>Une récursivité est dite « mutuelle » ou « croisée » lorsqu’elle est rendue possible par deux ou plusieurs fonctions effectuant des appels mutuels.</p>
+</div>
+</div>
+<p>Nous créons deux fonctions qui retirent un caractère d’extrémité d’une chaîne : au début de la chaîne pour l’une, et à la fin de la chaîne pour l’autre. Le cas terminal est le caractère restant.</p>
+<p><span class="calculator_button" markdown="1">def grignote_debut(chaine):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if len(chaine) &lt; 2:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return chaine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return grignote_fin(chaine[1:])</span></p></div>
+<p><span class="calculator_button" markdown="1">def grignote_fin(chaine):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if len(chaine) &lt; 2:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return chaine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return grignote_debut(chaine[:-1])</span></p></div>
+<p>Les deux fonctions sont <b>mutuellement récursives</b> : la récursivité est créée par les appels croisés d’une fonction à l’autre.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Il s’agit donc bien d’une <b>récursivité mutuelle</b> (ou croisée).</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">print(grignote_debut('récursivité'))</span><br>
+<span class="calculator_button" markdown="1"># affiche s</span></p>
+<p><span class="calculator_button" markdown="1">print(grignote_fin('récursivité'))</span><br>
+<span class="calculator_button" markdown="1"># affiche s</span></p>
+<p>Le résultat est identique qu’on commence par le début ou la fin car la chaine est de longueur impaire. Ce n’est en revanche pas le cas avec une chaine de longueur paire.</p>
+<p><span class="calculator_button" markdown="1">print(grignote_debut('python'))</span><br>
+<span class="calculator_button" markdown="1">v# affiche h</span></p>
+<p><span class="calculator_button" markdown="1">print(grignote_fin('python'))</span><br>
+<span class="calculator_button" markdown="1"># affiche t</span></p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Récursivité multiple :</b></p>
+<p>Une récursivité est dite « multiple" lorsqu’elle comporte plusieurs appels récursifs à eux-mêmes.</p>
+</div>
+</div>
+<p>Le calcul d’un terme de la <a target="_blank" href="/personnages/fibonacci/scientifique">suite de Fibonacci</a> est un exemple classique de <b>récursivité multiple</b>.<br>
+Les nombres de cette suite sont la somme des deux termes qui le précèdent. Sa définition mathématique par récurrence est $F(n) = F(n - 1) + F(n - 2)$, avec les deux premiers termes définis ainsi :</p>
+<p>L’implémentation récursive de l’algorithme est assez immédiate :</p>
+<p><span class="calculator_button" markdown="1">def fibonacci(nombre):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if nombre &lt; 2:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return nombre</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return fibonacci(nombre - 1) + fibonacci(nombre - 2)</span></p></div>
+<p>Chaque exécution de la partie récursive entraîne deux appels récursifs, caractérisant une récursivité multiple. Le calcul récursif de la suite de Fibonacci est étudié de manière détaillée dans le <a target="_blank" href="/cours/programmation-dynamique/fiche-de-cours">cours sur la programmation dynamique</a>.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Choix d’une implémentation récursive</p></div></h3>
+<p>L’implémentation récursive n’est pas une obligation mais un choix. En effet tout algorithme itératif peut être écrit en récursif et vice-versa.</p>
+<p>Dans la partie précédente, nous avions créé une implémentation récursive du calcul de la factorielle d’un nombre.</p>
+<p><span class="calculator_button" markdown="1">def factorielle_recursive(nombre):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if nombre &lt;= 1:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return nombre</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return nombre * factorielle_recursive(nombre - 1)</span></p></div>
+<p>Nous pouvons implémenter le calcul de la factorielle par itération.</p>
+<p><span class="calculator_button" markdown="1">def factorielle_iterative(nombre):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">resultat = 1</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">for i in range(1, nombre + 1):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">resultat *= i</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return resultat</span></p></div>
+<p>Le choix entre une implémentation itérative ou récursive dépend de plusieurs facteurs :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">la facilité d’implémentation, plus ou moins évidente dans une forme ou une autre selon le cas ; parfois l’implémentation récursive est intuitive, parfois l’implémentation itérative l’est davantage ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les contraintes de mémoire et de performance ; la récursivité implique une consommation d’espace mémoire parfois importante pour le suivi des appels récursifs ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la nature des données sur lesquelles les traitements sont effectués ; par leur nature récursive, les systèmes de fichiers ou les conteneurs de données de type listes se prêtent particulièrement bien à des approches récursives.</div>
+</li>
+</ul>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>On souhaite créer une fonction capable d’aplatir des listes imbriquées entre elles, c’est-à-dire d’extraire les données atomiques contenues dans une liste pouvant être composée de listes imbriquées sur plusieurs niveaux, afin de les réunir dans une seule et même liste.<br>
+Dans ce cas précis, l’implémentation récursive est assez intuitive :</p>
+<p><span class="calculator_button" markdown="1">def aplatissement(liste):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">resultat = []</span><br>
+<span class="calculator_button" markdown="1">for element in liste:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if isinstance(element, list):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">resultat += aplatissement(element)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">resultat += [element]</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:22px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return resultat</span></p></div>
+<p><span class="calculator_button" markdown="1">print(aplatissement([1, 2, [3, 4], [5, [6, 7, 8]], 9]))</span><br>
+<span class="calculator_button" markdown="1"># affiche [1, 2, 3, 4, 5, 6, 7, 8, 9]</span></p>
+</div>
+</div>
+<p>D’autres facteurs peuvent également entrer en ligne de compte :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">l’aisance du·de la développeur·se avec l’une ou l’autre approche ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les pratiques logicielles en vigueur dans une organisation ou un secteur d’activité.</div>
+</li>
+</ul>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La récursivité étant possible dans tous les langages de programmation généraliste et implémentée dans un certain nombre d’algorithmes, tout·e développeur·se doit connaître et maîtriser les bases de la récursivité.</p></div>
+</div>
+<div class="columns" markdown="1">
+<div markdown="1" class="undefined" style="width:50%; "><div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-num-c17-img03.jpg" alt="récursivité algorithme récursif chou romanesco"> 
+<span>Un exemple de récursivité graphique : le chou romanesco. Chaque pointe est un chou constitué de pointes qui sont elles-mêmes des choux, etc. </span></p></div></div></div>
+<div markdown="1" class="undefined" style="width:50%; "><div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous avons présenté le concept de récursivité des fonctions, composées d’une partie récursive et d’une partie terminale. Nous avons ensuite détaillé la manière dont ces appels récursifs étaient accumulés dans une pile d’exécution jusqu’à l’obtention du résultat attendu. Enfin nous avons étudié différents types de récursivité et les facteurs pouvant influer sur le choix d’une implémentation itérative ou récursive.</p>
+</div></div>
+</div>
+</div></div>
+<div id="poool-cj8jp-ic1e2" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"635643858bbb300100fa28ef","type":"Cours","title":"Algorithme récursif","content":"[IN]\nIntroduction\u0026nbsp;:\n\nDans ce cours nous nous apprêtons à étudier un concept important et parfois déroutant de la programmation informatique\u0026nbsp;: celui de la récursivité, c’est-à-dire de la capacité d’une fonction ou d’un algorithme à s’appeler lui-même. Nous présenterons dans un premier temps ce principe et ses caractéristiques générales. Nous analyserons dans un deuxième temps les mécanismes qui permettent de le faire fonctionner\u0026nbsp;; et nous terminerons par une étude d’implémentations récursives.\n[/IN]\n\n##Principe général/1\n\nCommençons par un bref rappel sur les fonctions.\n\n[RAP]\nUne fonction se définit de la manière suivante en Python\u0026nbsp;:\n\n[BUTC]def accueil():[/BUTC]\n\u003c\u003c((auto,-22,0,20,50))[BUTC]print('bonjour')[/BUTC]\u003e\u003e\n\nElle s’appelle ensuite de la manière suivante\u0026nbsp;:\n\n[BUTC]accueil()[/BUTC]  \n[BUTC]# affiche bonjour[/BUTC]\n[/RAP]\n\nOn rappelle également que les fonctions peuvent comporter un ou plusieurs appels à d’autres fonctions. Notre fonction [BUTC]accueil()[/BUTC] fait ainsi appel à la fonction [BUTC]print()[/BUTC], et pourrait de la même manière appeler toute autre fonction, qu’elle soit native ou définie par nous.\n\nCes rappels étant effectués, nous allons nous pencher sur le cas particulier d’une fonction qui, au lieu d’appeler une autre fonction, essaie de s’appeler elle-même.\n\n###Appels de fonction/a.\n\nNous modifions notre fonction [BUTC]accueil()[/BUTC] en ajoutant un appel à elle-même dans sa définition, après l’appel à [BUTC]print()[/BUTC]\u0026nbsp;:\n\n[BUTC]def accueil():[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print('bonjour')[/BUTC]  \n[BUTC]accueil()[/BUTC]\u003e\u003e\n\nObservons maintenant ce qui se produit lors de l’appel de notre fonction ainsi modifiée.\n\n[ATT]\nL’ordinateur va produire un grand nombre d’affichages avant d’afficher une erreur.\n[/ATT]\n\n[BUTC]accueil()[/BUTC]\n\naffiche un très grand nombre de fois...\n\n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]  \n[BUTC]bonjour[/BUTC]\n\net finit par afficher le message suivant\u0026nbsp;:\n\n[BUTC]RecursionError: maximum recursion depth exceeded while calling a Python object[/BUTC]\n\nLe nombre exact de lignes d’affichage dépend de la configuration du langage Python utilisée, mais il est généralement de l’ordre de quelques milliers de lignes.\n* Si on fait abstraction de l’erreur qui a mis fin au programme, on observe que notre fonction a bien réussi à s’appeler elle-même, produisant un comportement assez analogue à celui d’une boucle infinie.((fleche))\n\nEn réalité si le programme finit par s’arrêter en produisant une erreur, c’est parce qu’un mécanisme de protection a été intégré au langage pour limiter le nombre d’appels. Sans ce mécanisme que nous étudierons dans la deuxième partie du cours, la fonction s’appellerait elle-même **à l’infini jusqu’à saturation de la mémoire**.\n\nRedéfinissons maintenant notre fonction avec la prise en compte d’un paramètre\u0026nbsp;:\n\n[BUTC]def accueil(prenom):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print('bonjour', prenom)[/BUTC]  \n[BUTC]accueil(prenom)[/BUTC]\u003e\u003e\n\nObservons maintenant ce qui se produit lors de l’appel de notre fonction avec un argument.\n\n[BUTC]accueil('Guido')[/BUTC]\n\naffiche un très grand nombre de fois :\n\n[BUTC]bonjour Guido[/BUTC]  \n[BUTC]bonjour Guido[/BUTC]  \n[BUTC]bonjour Guido[/BUTC]  \n[BUTC]bonjour Guido[/BUTC]  \n[BUTC]bonjour Guido[/BUTC]  \n[BUTC]bonjour Guido[/BUTC]  \n[BUTC]bonjour Guido[/BUTC]\n\net finit par afficher\u0026nbsp;:\n\n[BUTC]RecursionError: maximum recursion depth exceeded while calling a Python object[/BUTC]\n\nLà encore une erreur s’affiche après un grand nombre d’affichages, mais on constate que l’argument passé en paramètre a bien été pris en compte. Notre fonction est **récursive**.\n\n###Définition/b.\n\n[DEF]\n**Fonction récursive\u0026nbsp;:**\n\nUne fonction récursive est une fonction qui s’appelle elle-même.\n[/DEF]\n\n[RETENIR]\nAutrement dit, une fonction récursive est une fonction qui s’**auto-référence**.\n[/RETENIR]\n\nNotre fonction récursive actuelle n’est guère utile et finit par générer une erreur. Mais elle nous a permis d’illustrer qu’une fonction pouvait s’appeler elle-même. Ainsi que nous allons le découvrir dans la suite du cours, cette caractéristique peut s’avérer très intéressante.\n\n[AST]\nOn dit aussi que «\u0026nbsp;pour bien comprendre la récursivité, il faut bien comprendre la récursivité\u0026nbsp;», ce qui revient à donner une définition récursive de la récursivité.\n[/AST]\n\nLes références récursives de ce genre sont assez répandues en informatique.\n* Le sigle\u0026nbsp;PHP est un sigle récursif, P.H.P. signifiant «\u0026nbsp;PHP\u0026nbsp;: Hypertext Preprocessor\u0026nbsp;».((fleche))\n\n[COLONNES][COL][IMG]((100))\n![Algorithme récursif vache qui rit](https://kronos-images.schoolmouv.fr/t-fnx-num-c17-img01.jpg) #La vache qui rit ©ludovic[/IMG][/COL]((50))\n[COL][EX]\nCertaines représentations graphiques illustrent le principe récursif, comme les images fractales ou le logo bien connu du fromage Vache qui rit, qui est mis en abyme dans les boucles d’oreille portées par la vache.\n[/EX][/COL]((50))[/COLONNES]\n\nIntéressons-nous maintenant de plus près aux caractéristiques d’une fonction récursive utilisable sans erreur.\n\n###Caractéristiques d’une fonction récursive/c.\n\nUne fonction récursive se compose de deux parties\u0026nbsp;: \n* une **partie récursive** (également appelée cas récursif)\u0026nbsp;;((liste2))\n* une **partie terminale** (également appelée cas de base ou cas d’arrêt), destinée à stopper les appels récursifs quand une condition est atteinte.((liste2))\n\nLa partie récursive de la fonction comporte un **appel récursif**. C’est la partie récursive qui permet à la fonction de s’auto-référencer.  \nLa partie terminale d’une fonction récursive définit les conditions de terminaison de la fonction, de manière assez analogue aux conditions de sorties des boucles non\u0026nbsp;bornées.\n\nNotre fonction expérimentale ne comportait pas de partie terminale ou cas de base, ce qui la conduisait à s’appeler un nombre infini de fois. Elle ne comportait pas non plus de paramètres dans sa définition initiale, mais une fonction récursive peut tout à fait en posséder, comme n’importe quelle fonction, ainsi que nous l’avons constaté dans sa version modifiée. Dans une fonction récursive opérationnelle, la ou les valeurs passées en argument évoluent d’un appel à l’autre, jusqu’à finir par remplir la ou les conditions attendues par la partie terminale.\n\n[RETENIR]\nUne fonction récursive est obligatoirement composée d’une partie récursive et d’une partie terminale.\n* Si la partie terminale est manquante, la fonction s’appelle un nombre infini de fois.\n* Si la partie récursive est manquante, la fonction n’est pas récursive.\n[/RETENIR]\n\nDéfinissons de manière récursive une fonction qui raccourcit une chaîne de caractères pour n’en conserver que la première lettre\u0026nbsp;:\n* La partie terminale, ou cas de base, vérifiera si la condition voulue est atteinte\u0026nbsp;: une chaîne de caractères qui en comporte un seul.\n* La partie récursive effectuera un appel à la fonction avec en paramètre une chaîne de caractères tronquée de son caractère final, et en retournera le résultat.\n\n[BUTC]def raccourcit(chaine):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if len(chaine) == 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]print(chaine)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return raccourcit(chaine[:-1])[/BUTC]\u003e\u003e\n\n[BUTC]raccourcit('hello world')[/BUTC]  \n[BUTC]# affiche h[/BUTC]\n\n[BUTC]raccourcit('z')[/BUTC]  \n[BUTC]# affiche z[/BUTC]\n\nNous obtenons bien le résultat attendu. Toutefois notre fonction est en l’état une procédure qui ne retourne rien\u0026nbsp;: elle se borne à imprimer la chaîne finalement obtenue à l’issue des appels récursifs successifs. \n\nAdaptons donc notre fonction pour qu’elle retourne les résultats obtenus\u0026nbsp;:\n\n[BUTC]def raccourcit(chaine):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if len(chaine) == 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return chaine[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return raccourcit(chaine[:-1])[/BUTC]\u003e\u003e\n\n[BUTC]print(raccourcit('hello world'))[/BUTC]  \n[BUTC]# affiche h[/BUTC]\n\n[BUTC]print(raccourcit('z'))[/BUTC]  \n[BUTC]# affiche z[/BUTC]\n\nÀ nouveau, notre fonction raccourcit bien les chaînes de caractères qu’on lui soumet, et retourne cette fois le caractère correspondant. \n\nToutefois nous n’avons pas prévu le cas d’une chaîne vide. Si nous appelons la fonction avec une chaîne vide avec [BUTC]print(raccourcit(''))[/BUTC], son exécution dure plusieurs secondes et finit par générer une erreur de type [BUTC]RecursionError[/BUTC]. Analysons pourquoi.\n\nLors de l’appel initial, la longueur de la chaîne est évaluée. Comme elle ne vaut pas $1$, nous ne sommes pas dans le cas terminal. La fonction passe alors dans la partie récursive, et effectue un appel sur la chaîne reçue en argument, tronquée de son dernier caractère.\n* Comme la troncature du dernier élément d’une chaîne vide est une chaîne vide, l’appel récursif n’évolue pas et s’effectue en permanence sur une chaîne vide.((fleche))\n\nNous comprenons que, dans ces conditions, la fonction n’atteindra jamais la condition terminale où la longueur de chaîne est de longueur $1$.  \nUne légère modification de la partie terminale de notre fonction permet de pallier ce problème\u0026nbsp;: **au lieu d’une égalité stricte, nous retournons toute chaîne de longueur inférieure ou égale à $1$ caractère**.\n\n[BUTC]def raccourcit(chaine):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if len(chaine) \u003c= 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return chaine[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return raccourcit(chaine[:-1])[/BUTC]\u003e\u003e\n\n[BUTC]print(raccourcit(''))[/BUTC]  \n[BUTC]# n’affiche rien mais ne produit pas d’erreur[/BUTC]\n\nOn vérifie que la fonction retourne bien un résultat et on évalue sa nature.\n\n[BUTC]resultat = raccourci('')[/BUTC]  \n[BUTC]print(resultat, len(resultat), type(resultat))[/BUTC]  \n[BUTC]# affiche 0 \u003cclass 'str'\u003e[/BUTC]\n\nComme avec les conditions de sortie des boucles non bornées, une attention particulière doit être portée à la manière dont les conditions de terminaison sont évaluées.\n\n[RETENIR]\nL’appel effectué dans la partie récursive doit faire évoluer le paramètre de départ, sinon il n’y a pas de convergence vers la partie terminale.  \nLa partie terminale doit prendre en compte l’ensemble des cas de base possibles devant conduire à la terminaison de la fonction.\n[/RETENIR]\n\nMaintenant que nous avons découvert les principes et caractéristiques générales de la récursivité des fonctions, intéressons-nous de plus près aux mécanismes qui en permettent l’usage.\n\n##Fonctionnement récursif/2\n\nDans cette partie nous nous intéressons à la manière dont l’interpréteur Python gère la récursivité. Afin d’illustrer concrètement le fonctionnement, prenons appui sur le calcul de la factorielle d’un nombre.\n\n[RAP]\nEn mathématique, la factorielle d’un nombre $n$, notée $n!$, est le produit de l’ensemble des entiers strictement positifs inférieurs ou égaux à $n$.\n* Ainsi factorielle $5$ (notée $5!$) est égale à $5\\times{4}\\times{3}\\times{2}\\times{1}$.((fleche))\n* $5!=120$((fleche))\n[/RAP]\n\n[ATT]\nNotez la valeur particulière du cas $0! = 1$\n[/ATT]\n\n###Implémentation récursive/a.\n\nConsidérons les caractéristiques mathématiques de $5!$ :  \n$5! = 5\\times{4}\\times{3}\\times{2}\\times{1}$  \n${4}\\times{3}\\times{2}\\times{1}$ est égal à $4!$\n\nNous pouvons donc réécrire la première ligne ainsi\u0026nbsp;:  \n$5! = 5\\times{4!}$\n\n$4!$ est égal à ${4}\\times{3}\\times{2}\\times{1}$, que nous pouvons aussi écrire ainsi\u0026nbsp;:  \n$4! = 4\\times{3!}$\n\nDe la même manière\u0026nbsp;:  \n$3! = 3\\times{2!}$  \n$2! = 2\\times{1!}$\n\nEt par définition $1!= 1$\n\nNous disposons des éléments requis pour implémenter une version récursive du calcul de la factorielle d’un nombre\u0026nbsp;:\n* la partie terminale est $1! = 1$ ;((liste2))\n* la partie récursive s’applique ainsi à tout $n \u003e 1$ :  \n$n! = n\\times{(n - 1)!}$((liste2))\n* L’implémentation en Python en est une transcription assez littérale.((fleche))\n\n[BUTC]def factorielle_recursive(nombre):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if nombre == 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return nombre[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return nombre * factorielle_recursive(nombre - 1)[/BUTC]\u003e\u003e\n\nNotre fonction produit bien le résultat attendu\u0026nbsp;:\n\n[BUTC]print(factorielle_recursive(5))[/BUTC]  \n[BUTC]# affiche 120[/BUTC]\n\n[AST]\nL’instruction [BUTC]return[/BUTC] termine l’exécution d’une fonction. Le recours à la clause [BUTC]else[/BUTC] n’est donc pas nécessaire par rapport à notre instruction [BUTC]if[/BUTC].\n[/AST]\n\nOn peut alléger notre code ainsi\u0026nbsp;:\n\n[BUTC]def factorielle_recursive(nombre):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if nombre == 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return nombre[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return nombre * factorielle_recursive(nombre - 1)[/BUTC]\u003e\u003e\n\nNotre fonction n’effectue aucune vérification sur le type ni sur la valeur entrée. On peut __a minima__ modifier notre condition terminale :\n\n[BUTC]if nombre == 1:[/BUTC]\n\nen\u0026nbsp;:\n\n[BUTC]if nombre \u003c= 1:[/BUTC]\n\nCela nous permet de calculer $0!$ (égal à $1$), mais aussi d’empêcher des appels récursifs pour des nombres négatifs, dépourvus de sens mathématiques et qui conduiraient à une [BUTC]RecursionError[/BUTC]. Idéalement on complèterait les vérifications avec la levée d’une exception pour toute saisie de nombre négatif ([BUTC]ValueError[/BUTC]) ou pour tout type de valeur non entière ([BUTC]TypeError[/BUTC]).\n\nMême quand l’implémentation semble triviale, il est judicieux de bien réfléchir aux modalités quand plusieurs choix sont possibles.\n\n###Suivi des appels de fonction/b.\n\nAfin de pouvoir suivre le fonctionnement de notre programme récursif, nous insérons des affichages à différents endroits. \n\n[AST]\n**Remarque\u0026nbsp;:**\n\nNous pourrions aussi utiliser un décorateur, une construction qui permet de modifier le comportement d’une fonction, mais leur emploi sort du cadre de ce cours.\n[/AST]\n\nNous utilisons ici une variable globale qui nous servira à augmenter le décalage des messages affichés à chaque nouvel appel récursif, afin d’illustrer la cascade d’appels.\n\n[BUTC]decalage = ' ' * 5[/BUTC]  \n[BUTC]i = 0[/BUTC]\n\n[BUTC]def factorielle_recursive(nombre):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]global i[/BUTC]  \n[BUTC]print(decalage * i, 'réception d\\'une demande de calcul de {}!'.format(nombre))[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if nombre \u003c= 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]print(decalage * i, ' \u003e cas terminal atteint (retourne 1) ')[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return nombre[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(decalage * i, ' \u003e cas récursif : appel de {}!, requis pour pouvoir retourner ensuite {}!\\n'.format(nombre - 1, nombre))[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]i += 1[/BUTC]  \n[BUTC]return nombre * factorielle_recursive(nombre - 1)[/BUTC]\u003e\u003e\n\n[BUTC]print(factorielle_recursive(5))[/BUTC]\n\nproduit l’affichage suivant :\n\n[BUTC]réception d’une demande de calcul de 5![/BUTC]\n\u003c\u003c((auto,-22,0,0,25))[BUTC]\u003e cas récursif : appel de 4!, requis pour pouvoir retourner ensuite 5![/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,-22,0,0,60))[BUTC]réception d'une demande de calcul de 4![/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,65))[BUTC]\u003e cas récursif : appel de 3!, requis pour pouvoir retourner ensuite 4![/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,-22,0,0,85))[BUTC]réception d’une demande de calcul de 3![/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]\u003e cas récursif : appel de 2!, requis pour pouvoir retourner ensuite 3![/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,-22,0,0,100))[BUTC]réception d'une demande de calcul de 2![/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,105))[BUTC]\u003e cas récursif : appel de 1!, requis pour pouvoir retourner ensuite 2![/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,-22,0,0,110))[BUTC]réception d’une demande de calcul de 1![/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,115))[BUTC]\u003e cas terminal atteint (retourne 1)[/BUTC]\u003e\u003e\n[BUTC]120[/BUTC]\n\nOn observe des appels en cascade\u0026nbsp;: chaque calcul de la factorielle d’un nombre donné reste suspendu en attente du résultat de celle de valeur immédiatement inférieure. L’interpréteur Python est donc contraint de garder la trace de chacun de ces appels en cascade.\n* Le mécanisme qui permet de suivre ces appels successifs et les retours attendus s’appelle une pile d’exécution.((fleche))\n\n###Pile d’exécution/c.\n\n[DEF]\n**Pile d’exécution\u0026nbsp;:**\n\nUne pile d’exécution est une structure de données chargée de garder la trace des appels de fonction successifs.\n[/DEF]\n\nLa **pile d’exécution** (ou __call stack__ en anglais) est une pile type\u0026nbsp;LIFO.\n\n[DEF]\n**LIFO\u0026nbsp;:**\n\nLe sigle LIFO signifie Last In, First Out. En français\u0026nbsp;: dernier entré, premier sorti.  \nLe dernier élément ajouté à la pile (ou «\u0026nbsp;empilé\u0026nbsp;») sera donc le premier à en être sorti (ou «\u0026nbsp;dépilé\u0026nbsp;»).\n[/DEF]\n\nLa pile d’exécution **empile** les appels de fonction successifs correspondant aux cas récursifs, permettant à l’interpréteur Python de garder la trace des appels individuels pour pouvoir, le moment venu, gérer les retours correspondants. Une fois le cas terminal atteint, la pile est progressivement **dépilée** et chaque appel reçoit en retour le résultat qu’il attendait.\n\n[IMG]((100))\n![Appels et retours de fonction successifs dans la pile d’exécution](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c17-img02-corr.png?1666597861184) #Appels et retours de fonction successifs dans la pile d’exécution\n[/IMG]\n\nCes appels étant potentiellement gourmands en mémoire, les langages qui permettent la récursivité de fonctions ou de programmes limitent le nombre d’appels récursifs.\n\n[DEF]\n**Dépassement de pile\u0026nbsp;:**\n\nLe dépassement ou débordement de pile est une erreur qui survient quand le nombre d’appels à stocker dans la pile dépasse la capacité de cette dernière.\n[/DEF]\n* En Python le débordement de pile génère l’erreur spécifique [BUTC]RecursionError[/BUTC].((fleche))\n\nL’expression anglaise équivalente est __stack overflow__. Cette erreur, redoutée des programmeur·se·s, est aussi le nom d’un célèbre site anglophone de questions/réponses ayant trait à la programmation informatique (http://www.stackoverflow.com/).\n\nMaintenant que nous avons décrit les mécanismes permettant la récursivité, intéressons-nous aux implémentations récursives d’algorithmes.\n\n##Implémentations récursives/3\n\nDans cette partie nous nous intéressons aux implémentations récursives, dont nous étudierons différentes formes et cas d’usage. Nous les comparerons ensuite aux implémentations itératives.\n\n###Types d’implémentation récursive/a.\n\nIl existe différents types d’implémentations récursives. Les exemples que nous avons présentés jusqu’à présent étaient des cas de **récursivité simple**, également appelée **récursivité linéaire**. Mais la récursivité peut prendre d’autres formes.\n\n[DEF]\n**Récursivité terminale\u0026nbsp;:**\n\nUne fonction $f$ récursive est dite «\u0026nbsp;terminale\u0026nbsp;» (__tail recursion__ en anglais) si la valeur qu’elle retourne est directement la valeur obtenue par un appel récursif, sans qu’il n’y ait aucune opération sur cette valeur. Autrement dit, si la valeur retournée par $f$ est de la forme [BUTC]return f(…)[/BUTC]\n[/DEF]\n\nCertains langages détectent et optimisent les implémentations de **récursivité terminale**.  \nEn ce qui concerne plus particulièrement le langage Python, il n’a pas fait l’objet d’optimisations poussées de ses facultés récursives. L’auteur de Python, Guido van Rossum, ne souhaitait pas en étendre l’usage et s’en est expliqué à plusieurs reprises.\n\n[DEF]\n**Récursivité mutuelle\u0026nbsp;:**\n\nUne récursivité est dite «\u0026nbsp;mutuelle\u0026nbsp;» ou «\u0026nbsp;croisée\u0026nbsp;» lorsqu’elle est rendue possible par deux ou plusieurs fonctions effectuant des appels mutuels.\n[/DEF]\n\nNous créons deux fonctions qui retirent un caractère d’extrémité d’une chaîne\u0026nbsp;: au début de la chaîne pour l’une, et à la fin de la chaîne pour l’autre. Le cas terminal est le caractère restant.\n\n[BUTC]def grignote_debut(chaine):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if len(chaine) \u003c 2:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return chaine[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return grignote_fin(chaine[1:])[/BUTC]\u003e\u003e\n\n[BUTC]def grignote_fin(chaine):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if len(chaine) \u003c 2:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return chaine[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return grignote_debut(chaine[:-1])[/BUTC]\u003e\u003e\n\nLes deux fonctions sont **mutuellement récursives**\u0026nbsp;: la récursivité est créée par les appels croisés d’une fonction à l’autre.\n* Il s’agit donc bien d’une **récursivité mutuelle** (ou croisée).((fleche))\n\n[BUTC]print(grignote_debut('récursivité'))[/BUTC]  \n[BUTC]# affiche s[/BUTC]\n\n[BUTC]print(grignote_fin('récursivité'))[/BUTC]  \n[BUTC]# affiche s[/BUTC]\n\nLe résultat est identique qu’on commence par le début ou la fin car la chaine est de longueur impaire. Ce n’est en revanche pas le cas avec une chaine de longueur paire.\n\n[BUTC]print(grignote_debut('python'))[/BUTC]  \n[BUTC]v# affiche h[/BUTC]\n\n[BUTC]print(grignote_fin('python'))[/BUTC]  \n[BUTC]# affiche t[/BUTC]\n\n[DEF]\n**Récursivité multiple\u0026nbsp;:**\n\nUne récursivité est dite «\u0026nbsp;multiple\" lorsqu’elle comporte plusieurs appels récursifs à eux-mêmes.\n[/DEF]\n\nLe calcul d’un terme de la \u003ca target=\"_blank\" href=\"/personnages/fibonacci/scientifique\"\u003esuite de Fibonacci\u003c/a\u003e est un exemple classique de **récursivité multiple**.  \nLes nombres de cette suite sont la somme des deux termes qui le précèdent. Sa définition mathématique par récurrence est $F(n) = F(n - 1) + F(n - 2)$, avec les deux premiers termes définis ainsi\u0026nbsp;:\n\nL’implémentation récursive de l’algorithme est assez immédiate\u0026nbsp;:\n\n[BUTC]def fibonacci(nombre):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if nombre \u003c 2:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return nombre[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return fibonacci(nombre - 1) + fibonacci(nombre - 2)[/BUTC]\u003e\u003e\n\nChaque exécution de la partie récursive entraîne deux appels récursifs, caractérisant une récursivité multiple. Le calcul récursif de la suite de Fibonacci est étudié de manière détaillée dans le \u003ca target=\"_blank\" href=\"/cours/programmation-dynamique/fiche-de-cours\"\u003ecours sur la programmation dynamique\u003c/a\u003e.\n\n###Choix d’une implémentation récursive/b.\n\nL’implémentation récursive n’est pas une obligation mais un choix. En effet tout algorithme itératif peut être écrit en récursif et vice-versa.\n\nDans la partie précédente, nous avions créé une implémentation récursive du calcul de la factorielle d’un nombre.\n\n[BUTC]def factorielle_recursive(nombre):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if nombre \u003c= 1:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return nombre[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return nombre * factorielle_recursive(nombre - 1)[/BUTC]\u003e\u003e\n\nNous pouvons implémenter le calcul de la factorielle par itération.\n\n[BUTC]def factorielle_iterative(nombre):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]resultat = 1[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]for i in range(1, nombre + 1):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]resultat *= i[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return resultat[/BUTC]\u003e\u003e\n\nLe choix entre une implémentation itérative ou récursive dépend de plusieurs facteurs\u0026nbsp;:\n* la facilité d’implémentation, plus ou moins évidente dans une forme ou une autre selon le cas\u0026nbsp;; parfois l’implémentation récursive est intuitive, parfois l’implémentation itérative l’est davantage\u0026nbsp;;((liste2))\n* les contraintes de mémoire et de performance\u0026nbsp;; la récursivité implique une consommation d’espace mémoire parfois importante pour le suivi des appels récursifs\u0026nbsp;;((liste2))\n* la nature des données sur lesquelles les traitements sont effectués\u0026nbsp;; par leur nature récursive, les systèmes de fichiers ou les conteneurs de données de type listes se prêtent particulièrement bien à des approches récursives.((liste2))\n\n[EX]\nOn souhaite créer une fonction capable d’aplatir des listes imbriquées entre elles, c’est-à-dire d’extraire les données atomiques contenues dans une liste pouvant être composée de listes imbriquées sur plusieurs niveaux, afin de les réunir dans une seule et même liste.  \nDans ce cas précis, l’implémentation récursive est assez intuitive\u0026nbsp;:\n\n[BUTC]def aplatissement(liste):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]resultat = [][/BUTC]  \n[BUTC]for element in liste:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,75))[BUTC]if isinstance(element, list):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,90))[BUTC]resultat += aplatissement(element)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,75))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,90))[BUTC]resultat += [element][/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,22,50))[BUTC]return resultat[/BUTC]\u003e\u003e\n\n[BUTC]print(aplatissement([1, 2, [3, 4], [5, [6, 7, 8]], 9]))[/BUTC]  \n[BUTC]# affiche [1, 2, 3, 4, 5, 6, 7, 8, 9][/BUTC]\n[/EX]\n\nD’autres facteurs peuvent également entrer en ligne de compte\u0026nbsp;:\n* l’aisance du·de la développeur·se avec l’une ou l’autre approche\u0026nbsp;;((liste2))\n* les pratiques logicielles en vigueur dans une organisation ou un secteur d’activité.((liste2))\n\n[RETENIR]\nLa récursivité étant possible dans tous les langages de programmation généraliste et implémentée dans un certain nombre d’algorithmes, tout·e développeur·se doit connaître et maîtriser les bases de la récursivité.\n[/RETENIR]\n\n[COLONNES][COL][IMG]((100))\n![récursivité algorithme récursif chou romanesco](https://kronos-images.schoolmouv.fr/t-fnx-num-c17-img03.jpg) #Un exemple de récursivité graphique\u0026nbsp;: le chou romanesco. Chaque pointe est un chou constitué de pointes qui sont elles-mêmes des choux, etc.[/IMG][/COL]((50))\n[COL][C]\nConclusion\u0026nbsp;:\n\nNous avons présenté le concept de récursivité des fonctions, composées d’une partie récursive et d’une partie terminale. Nous avons ensuite détaillé la manière dont ces appels récursifs étaient accumulés dans une pile d’exécution jusqu’à l’obtention du résultat attendu. Enfin nous avons étudié différents types de récursivité et les facteurs pouvant influer sur le choix d’une implémentation itérative ou récursive.\n[/C][/COL]((50))[/COLONNES]\n","siblings":[{"resourceId":"635643858bbb300100fa28ef","type":"Cours","sort":null},{"resourceId":"5ecd1bc128e637010044527a","type":"Fiche de révision","sort":null},{"resourceId":"5ee2295115d7610100837cd1","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7e1c28e637010043bf86","name":"Algorithme récursif"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7e1c28e637010043bf86","label":"Cours : Algorithme récursif","link":"https://www.schoolmouv.fr/cours/algorithme-recursif/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"algorithme-recursif","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/algorithme-recursif/fiche-de-cours","title":"Algorithme récursif : cours Tle - Numérique et sciences info","metaDescription":"SchoolMouv ® te propose ce cours sur Algorithme récursif (Tle - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"algorithme-recursif","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

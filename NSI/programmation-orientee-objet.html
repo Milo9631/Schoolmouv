@@ -1,0 +1,618 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Programmation orientée objet : cours de Terminale - Numérique</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Programmation orientée objet : cours de Terminale - Numérique">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Programmation orientée objet (Terminale - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/programmation-orientee-objet/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/programmation-orientee-objet/fiche-de-cours","name":"Cours : Programmation orientée objet"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Programmation orientée objet</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Programmation orientée objet</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Dans ce cours nous nous intéressons à la programmation objet sous l’angle des conteneurs de données. Dans une première partie, nous présenterons les principales caractéristiques du paradigme objet, son vocabulaire et sa syntaxe. Nous aborderons dans une deuxième partie la gestion des états internes des objets, puis de leurs fonctionnalités dans une troisième partie.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Principes de la programmation objet</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Le paradigme objet</p></div></h3>
+<p>L’<b>approche objet</b> permet de créer des structures de données et d’y associer un certain nombre de fonctionnalités. Cette approche fait partie des paradigmes majeurs de programmation.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Un paradigme est un style de programmation , une manière de modéliser les problèmes et d’écrire des programmes pour les résoudre.</p></div>
+</div>
+<p>La principale caractéristique du paradigme objet est d’associer étroitement les données et le code pour les traiter, selon le principe de l’<b>encapsulation</b>.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Encapsulation :</b></p>
+<p>L’encapsulation désigne le regroupement des données et du code relatif au traitement de ces données.</p>
+</div>
+</div>
+<p>Cette encapsulation se matérialise par la définition d’une classe d’objets. Celle-ci établit globalement les types de données et y associe des fonctionnalités communes à tous les objets de cette classe.</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Certains langages assortissent ce regroupement d’un contrôle très strict de l’accès aux données, mais nous verrons que ce n’est pas le cas en Python.</p></div>
+</div>
+<p>Les objets individuels sont créés à partir de la classe, par un mécanisme appelé <b>instanciation</b>.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Instanciation :</b></p>
+<p>L’instanciation désigne la création d’un objet appartenant à une classe.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L’objet devient donc une « instance » de la classe dont il émane.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Les instances partagent des fonctionnalités communes, mais les données sont individuellement propres à chaque objet.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Dans la terminologie objet, les données sont appelées <b>attributs</b>, tandis que les fonctions associées sont appelées <b>méthodes</b>.</p></div>
+</div>
+<p>Ce cours aborde la programmation objet sous l’angle des structures de données. Dans ce contexte, nous n’étudierons pas les notions d’héritage et de polymorphisme qui appartiennent également au paradigme de programmation objet.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Définition d’une classe</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Une classe se définit à partir du mot-clé <span class="calculator_button" markdown="1">class</span> suivi du nom de celle-ci. Par convention, les noms de classe commencent par une majuscule.</p></div>
+</div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">pass</span></p></div>
+<p>Dans le cas où le nom est composé, on utilise la convention dite « <em>camel case</em> » (« casse de chameau » en français), qui consiste à juxtaposer les mots en mettant leurs premières lettres en majuscules.</p>
+<p><span class="calculator_button" markdown="1">class ExempleComportantPlusieursMots:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">pass</span></p></div>
+<p>Les objets encapsulent des propriétés et des méthodes, comme le montre l’exemple ci-après de définition d’une classe.</p>
+<p><span class="calculator_button" markdown="1">class Eleve:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">"""</span><br>
+<span class="calculator_button" markdown="1">Classe représentant des élèves.</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">Un élève est caractérisé par :</span><br>
+<span class="calculator_button" markdown="1">- son prénom,</span><br>
+<span class="calculator_button" markdown="1">- son âge.</span><br>
+<span class="calculator_button" markdown="1">"""</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, prenom, age):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">"""construction d'un objet élève à partir de son prénom et de son âge"""</span><br>
+<span class="calculator_button" markdown="1">self.prenom = prenom</span>
+<span class="calculator_button" markdown="1">self.age = age</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def informations(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">"""indique le prénom et l'âge de l'élève"""</span><br>
+<span class="calculator_button" markdown="1">return '{} a {} ans'.format(self.prenom, self.age)</span></p></div>
+<p>Cette portion de code ci-dessus ne fabrique aucun objet. Elle se contente de définir les propriétés et fonctionnalités communes à tous les objets qui appartiendront à cette classe.</p>
+<p>Notre classe <span class="calculator_button" markdown="1">Eleve</span> définit les méthodes nommées <span class="calculator_button" markdown="1">__init__</span> et <span class="calculator_button" markdown="1">informations</span>.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La méthode appelée <span class="calculator_button" markdown="1">__init__</span> est le constructeur de nos futurs objets. Elle sera automatiquement appelée au moment de la création des objets de la classe <span class="calculator_button" markdown="1">Eleve</span>. Nous observons qu’elle requiert :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">un paramètre appelé <span class="calculator_button" markdown="1">self</span> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">deux autres paramètres qui sont les attributs des élèves, à savoir leur prénom et leur âge.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Les méthodes prennent un premier paramètre désignant l’objet individuel auquel elles s’appliquent. Par convention ce paramètre est appelé <span class="calculator_button" markdown="1">self</span> en Python.<br>
+Cette convention varie selon les langages : ce paramètre est ainsi nommé <span class="calculator_button" markdown="1">this</span> en Javascript, et <span class="calculator_button" markdown="1">$this</span> en PHP.</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Sa présence est nécessaire à la définition de la méthode au sein de la classe, mais il ne doit pas être passé en argument lors des créations d’objets ou des appels de leurs méthodes.</p></div>
+</div>
+<p>La méthode appelée <span class="calculator_button" markdown="1">informations</span> restitue sous forme de chaîne de caractères les informations définies pour un élève donné. Elle ne requiert aucun paramètre hormis <span class="calculator_button" markdown="1">self</span>.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Instanciation d’objets</p></div></h3>
+<p>Les objets sont instanciés (autrement dit créés) à partir de la classe à laquelle ils appartiennent.</p>
+<p><span class="calculator_button" markdown="1">eleve1 = Eleve('Lisa', 17)</span></p>
+<p>Les arguments passés pour la création de l’objet « eleve1 » de la classe <span class="calculator_button" markdown="1">Eleve</span> sont ceux définis par la méthode <span class="calculator_button" markdown="1">__init__</span>, c’est-à-dire son prénom et son âge. Cette méthode est appelée automatiquement pour construire l’objet. Le paramètre implicite <span class="calculator_button" markdown="1">self</span> ne doit pas être précisé.</p>
+<h3 range="d." markdown="1"><div markdown="1"><p>Appel de méthodes</p></div></h3>
+<p>La syntaxe générale pour l’appel d’une méthode s’effectue selon le format suivant :</p>
+<p><span class="calculator_button" markdown="1">objet.methode(arguments)</span>.</p>
+<p>Si la méthode requiert des paramètres (autres que <span class="calculator_button" markdown="1">self</span> qui n’a pas à être spécifié au moment de l’appel), les arguments correspondants doivent être présents entre les parenthèses, de la même manière qu’en programmation fonctionnelle.</p>
+<p>Les objets de notre classe <span class="calculator_button" markdown="1">Eleve</span> disposent d’une méthode <span class="calculator_button" markdown="1">informations</span> que nous pouvons appeler avec la notion pointée.</p>
+<p><span class="calculator_button" markdown="1">print(eleve1.informations())</span><br>
+<span class="calculator_button" markdown="1"># affiche Lisa a 17 ans</span></p>
+<p>L’appel de la méthode s’effectue sans passer d’arguments, puisqu’elle est définie sans paramètre autre que <span class="calculator_button" markdown="1">self</span>. Le paramètre <span class="calculator_button" markdown="1">self</span> utilisé dans la déclaration de la fonction au sein de la classe permet de désigner notre objet au sein de la classe. Nous évitons ainsi le recours à une autre syntaxe, possible mais moins compacte, qui oblige à préciser à la fois la classe et le nom de l’instance pour obtenir le même résultat :</p>
+<p><span class="calculator_button" markdown="1">print(Eleve.informations(eleve1))</span><br>
+<span class="calculator_button" markdown="1"># affiche Lisa a 17 ans</span></p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>À l'instar des fonctions, les parenthèses sont obligatoires pour appeler une méthode, même si on ne lui passe aucun paramètre.</p></div>
+</div>
+<p>Créons à présent un nouvel objet de la même classe pour un deuxième élève.</p>
+<p><span class="calculator_button" markdown="1">eleve2 = Eleve('Paul', 18)</span></p>
+<p><span class="calculator_button" markdown="1">print(eleve2.informations())</span><br>
+<span class="calculator_button" markdown="1"># affiche Paul a 18 ans</span></p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Cet exemple montre l’intérêt de la programmation objet : la possibilité de disposer de méthodes communes à des objets distincts dont les valeurs d’attributs peuvent être différentes.</p></div>
+</div>
+<h3 range="e." markdown="1"><div markdown="1"><p>Chaînes de documentation</p></div></h3>
+<p>Les chaînes de documentation (<em>docstrings</em> en anglais) contribuent, quand elles sont présentes, à informer sur la classe et ses méthodes. </p>
+<p><span class="calculator_button" markdown="1">help(Eleve)</span></p>
+<p>affiche le texte suivant :</p>
+<p><span class="calculator_button" markdown="1">Help on class Eleve in module  __main__:</span></p>
+<p><span class="calculator_button" markdown="1">class Eleve(builtins.object)</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:10px;"><p><span class="calculator_button" markdown="1">|  Eleve(prenom, age)</span><br>
+<span class="calculator_button" markdown="1">|</span><br>
+<span class="calculator_button" markdown="1">|  Classe représentant des élèves.</span><br>
+<span class="calculator_button" markdown="1">|</span><br>
+<span class="calculator_button" markdown="1">|  Un élève est caractérisé par :</span><br>
+<span class="calculator_button" markdown="1">|  - son prénom,</span><br>
+<span class="calculator_button" markdown="1">|  - son âge.</span><br>
+<span class="calculator_button" markdown="1">|</span><br>
+<span class="calculator_button" markdown="1">|  Methods defined here:</span><br>
+<span class="calculator_button" markdown="1">|</span><br>
+<span class="calculator_button" markdown="1">|  __init__(self, prenom, age)</span><br>
+<span class="calculator_button" markdown="1">|<span class="alinea"></span><span class="alinea"></span>construction d'un objet élève à partir de son prénom et de son âge</span><br>
+<span class="calculator_button" markdown="1">|</span><br>
+<span class="calculator_button" markdown="1">|  informations(self)</span><br>
+<span class="calculator_button" markdown="1">|<span class="alinea"></span><span class="alinea"></span>indique le prénom et l'âge de l'élève</span><br>
+<span class="calculator_button" markdown="1">|</span><br>
+<span class="calculator_button" markdown="1">|  ----------------------------------------------------------------------</span><br>
+<span class="calculator_button" markdown="1">|  Data descriptors defined here:</span><br>
+<span class="calculator_button" markdown="1">|</span><br>
+<span class="calculator_button" markdown="1">|  __dict__</span><br>
+<span class="calculator_button" markdown="1">|<span class="alinea"></span><span class="alinea"></span>dictionary for instance variables (if defined)</span><br>
+<span class="calculator_button" markdown="1">|</span><br>
+<span class="calculator_button" markdown="1">|  __weakref__</span><br>
+<span class="calculator_button" markdown="1">|<span class="alinea"></span><span class="alinea"></span>list of weak references to the object (if defined)</span></p></div>
+<p>Maintenant que ces éléments de vocabulaire et de syntaxe sont précisés, intéressons-nous aux états internes des objets et aux modalités d’accès à ceux-ci.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>États internes des objets</p></div></h2>
+<ul>
+
+<li>Le paradigme de programmation fonctionnelle repose sur l’<b>absence d’état des fonctions</b>. Le résultat d’une fonction ne dépend que des arguments fournis en entrée, sans conservation d’états internes une fois le résultat retourné.</li>
+
+<li>Le paradigme de programmation objet permet pour sa part une <b>conservation d’états internes</b> : les objets contiennent non seulement des fonctions, appelées méthodes, mais aussi des variables, appelées attributs.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">On distingue :</div>
+</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="a."></div>
+<div class="list_text">les variables d’instance ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="b."></div>
+<div class="list_text">et les variables de classe.</div>
+</li>
+</ul></div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Variables d’instance</p></div></h3>
+<p>Les objets peuvent contenir tout type de variable, et ces variables sont accessibles aux méthodes afin que ces dernières puissent les manipuler.</p>
+<p>Nous avons vu dans la partie précédente qu’elles pouvaient être définies au moment de l’instanciation de l’objet avec la méthode du constructeur, mais il est possible de définir ou de modifier des variables à tout moment.<br>
+Dans l’exemple ci-dessous, nous modifions la méthode <span class="calculator_button" markdown="1">informations</span> pour qu’elle génère les initiales d’un élève quand elle est appelée.</p>
+<p><span class="calculator_button" markdown="1">class Eleve:</span> </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, prenom, nom):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.prenom = prenom.title()</span><br>
+<span class="calculator_button" markdown="1">self.nom = nom.title()</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def informations(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.initiales = '{}.{}.'.format(self.prenom<span class="color0">, self.nom</span>)</span><br>
+<span class="calculator_button" markdown="1">return 'Les initiales de {} {} sont {}'.format(self.prenom, self.nom, self.initiales)</span></p></div>
+<p>Nous instancions un élève et appelons la méthode qui retourne des informations sur celui-ci.</p>
+<p><span class="calculator_button" markdown="1">tom = Eleve('Thomas', 'Martin')</span><br>
+<span class="calculator_button" markdown="1">print(tom.informations())</span><br>
+<span class="calculator_button" markdown="1"># affiche : Les initiales de Thomas Martin sont T.M.</span></p>
+<p>Les variables des objets, ou attributs d’instance, sont accessibles et modifiables avec la notation pointée.</p>
+<p><span class="calculator_button" markdown="1">print(tom.prenom)</span><br>
+<span class="calculator_button" markdown="1"># affiche Thomas</span></p>
+<p><span class="calculator_button" markdown="1">tom.nom = 'Dupont'</span><br>
+<span class="calculator_button" markdown="1">print(tom.informations())</span><br>
+<span class="calculator_button" markdown="1"># affiche Les initiales de Thomas Dupont sont T.D. </span></p>
+<p>Contrairement à d’autres langages, Python permet également de déclarer librement des attributs non explicitement définis dans la classe.</p>
+<p><span class="calculator_button" markdown="1">tom.loisirs = ['natation', 'escalade']</span></p>
+<p>Cette faculté permet si on le souhaite d’utiliser une classe comme conteneur de données. La présence de méthodes n’est pas requise pour définir une classe en Python.</p>
+<p><span class="calculator_button" markdown="1">class Enregistrement():</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">pass # ne fait rien</span></p></div>
+<p><span class="calculator_button" markdown="1">lisa = Enregistrement() # création d'une instance</span><br>
+<span class="calculator_button" markdown="1">lisa.nom = 'Legrand'</span><br>
+<span class="calculator_button" markdown="1">lisa.prenom = 'Lisa'</span><br>
+<span class="calculator_button" markdown="1">lisa.age = 17</span></p>
+<p>Les variables d’instance sont stockées dans l’objet sous forme d’un dictionnaire.</p>
+<p><span class="calculator_button" markdown="1">print(lisa.__dict__)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'nom': 'Legrand', 'prenom': 'Lisa', 'age': 17}</span></p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Variables de classe</p></div></h3>
+<p>Des variables peuvent également être définies au niveau de la classe. Dans ce cas, elles sont communes à tous ses membres, et toute modification d’une variable de classe concernera logiquement l’ensemble des objets qui y sont rattachés.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La syntaxe le reflète avec l’absence de <span class="calculator_button" markdown="1">self</span> et le rattachement explicite de la variable à la classe dans les méthodes qui manipulent la variable.</p></div>
+</div>
+<p>Nous l’illustrons avec une classe d’élèves qui comptabilise le nombre d’élèves.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le compteur correspondant est incrémenté à chaque fois qu’un élève est ajouté à la classe par instanciation d’un nouvel objet de cette classe.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">class Eleve:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">nombre_eleves = 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, prenom): </span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.prenom = prenom.title()</span><br>
+<span class="calculator_button" markdown="1">Eleve.nombre_eleves += 1</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def informations(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return '{} est dans une classe comportant {} élève(s)'.format(self.prenom, Eleve.nombre_eleves)</span></p></div>
+<p><span class="calculator_button" markdown="1">lisa = Eleve('Lisa')</span><br>
+<span class="calculator_button" markdown="1">print(lisa.informations())</span><br>
+<span class="calculator_button" markdown="1"># affiche Lisa est dans une classe comportant 1 élève(s)</span></p>
+<p><span class="calculator_button" markdown="1">paul = Eleve('Paul')</span><br>
+<span class="calculator_button" markdown="1">sarah = Eleve('Sarah')</span><br>
+<span class="calculator_button" markdown="1">print(sarah.informations())</span><br>
+<span class="calculator_button" markdown="1"># affiche Sarah est dans une classe comportant 3 élève(s)</span></p>
+<p>Nous avons présenté les attributs d’instance et de classe avec des variables de type chaîne de caractères et nombre entiers, mais les autres types de variables sont pareillement utilisables au sein des classes.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Accès aux variables</p></div></h3>
+<p>Certains langages obligent à utiliser des méthodes pour lire ou modifier les attributs des objets. </p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Ces méthodes sont appelées :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">
+<b>accesseur</b> (ou <em>getter</em> en anglais) pour une méthode permettant de connaître la valeur d’un attribut ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">
+<b>mutateur</b> (ou <em>setter</em> en anglais) pour une méthode permettant de modifier un attribut.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Il est possible d’en implémenter en Python, mais cela n’a rien d’obligatoire.<br>
+L’utilisation d’accesseurs ou de mutateurs peut présenter un intérêt quand les valeurs doivent faire l’objet d’un traitement particulier. Ou bien pour éviter qu’un·e utilisateur·rice de la classe n’introduise des incohérences, en intervenant sur les contenus des variables, hors du cadre des méthodes implémentées.</p>
+<p><span class="calculator_button" markdown="1">class Eleve:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, prenom):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.prenom = prenom.title().strip()</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def get_prenom(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return self.prenom</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def set_prenom(self, prenom):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.prenom = prenom.title().strip()</span></p></div>
+<p><span class="calculator_button" markdown="1">lisa = Eleve('<span class="alinea"></span>lisa<span class="alinea"></span> ')</span><br>
+<span class="calculator_button" markdown="1">lisa.get_prenom()</span><br>
+<span class="calculator_button" markdown="1"># affiche Lisa</span></p>
+<p><span class="calculator_button" markdown="1">lisa.set_prenom('eLISAbeth')</span><br>
+<span class="calculator_button" markdown="1">lisa.get_prenom()</span><br>
+<span class="calculator_button" markdown="1"># affiche Elisabeth</span></p>
+<p>On observe que le mutateur applique des traitements à la chaîne de caractère passée en argument :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">transformation si nécessaire de la casse pour mettre en majuscule la première lettre du prénom et les autres en minuscules (méthode <em>title</em>) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">suppression d’éventuels espaces avant et après le prénom (méthode <em>strip</em>).</div>
+</li>
+</ul>
+<p>Nous ne développerons pas davantage cet aspect, mais le langage Python propose différents mécanismes spécifiques d’encapsulation plus ou moins forte, avec des attributs privés ou protégés.</p>
+<h3 range="d." markdown="1"><div markdown="1"><p>Implémentation et interface</p></div></h3>
+<p>L’interface proposée par l’objet peut exposer directement et de manière transparente les structures de données qu’il manipule. Mais cette interface ne reflète pas nécessairement les états ou les types internes des objets.</p>
+<p>L’exemple développé ci-après montre un pseudo-dictionnaire implémenté dans une classe :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">dont l’accesseur proposé en interface retourne un dictionnaire ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">mais dont l’implémentation interne s’appuie sur deux listes mises à jour en parallèle.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">class PseudoDictionnaire:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.keys = []</span><br>
+<span class="calculator_button" markdown="1">self.values = []</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def set_key(self, key, value):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.keys.append(key)</span><br>
+<span class="calculator_button" markdown="1">self.values.append(value)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def get<em>pseudo</em>dictionnaire(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return {key: value for key, value in zip(self.keys, self.values)}</span></p></div>
+<p><span class="calculator_button" markdown="1">donnees = PseudoDictionnaire()</span><br>
+<span class="calculator_button" markdown="1">donnees.set_key('prenom', 'Alice')</span><br>
+<span class="calculator_button" markdown="1">donnees.set_key('age', 17)</span></p>
+<p><span class="calculator_button" markdown="1">resultat = donnees.get<em>pseudo</em>dictionnaire()</span><br>
+<span class="calculator_button" markdown="1">print(resultat)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'prenom': 'Alice', 'age': 17}</span><br>
+<span class="calculator_button" markdown="1">print(type(resultat))</span><br>
+<span class="calculator_button" markdown="1"># affiche <class></class></span></p>
+<p>Cette implémentation est tout sauf optimale, mais elle illustre la distinction à opérer entre interface et implémentation d’une structure de données.</p>
+<ul>
+
+<li>L’interface propose une forme d’accès aux données qui n’est pas nécessairement représentative de leur structure interne.</li>
+
+<li>Cette structure interne peut donc être modifiée tout en conservant à l’identique l’interface.</li>
+</ul>
+<p>Nous avons vu le rôle des variables de différents types dans le paradigme objet en tant que structure de données, mais les méthodes que nous allons étudier maintenant contribuent, elles aussi, à l’interface de ces objets.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Fonctionnalités</p></div></h2>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La programmation objet permet d’implémenter des fonctionnalités, liées aux données qu’elle structure, par l’implémentation de méthodes.<br>
+Les méthodes sont des fonctions définies au sein de la classe. Elles peuvent accéder et manipuler les attributs des objets, auxquels peuvent être appliqués différents traitements.</p></div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On distingue deux types de méthodes en Python : les méthodes normales et les méthodes spéciales.</p></div>
+</div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Méthodes normales :</b></p>
+<p>Les méthodes normales correspondent, dans le paradigme objet, aux fonctions créées en programmation fonctionnelle. La présence des fonctions dans la définition d’une classe les rend accessibles sous forme de méthodes dans les objets qui y sont rattachés.</p>
+<p><b>Méthodes spéciales :</b></p>
+<p>Les méthodes spéciales se distinguent par leur nommage entouré de doubles tirets bas (<em>underscores</em> en anglais), sous le format <span class="calculator_button" markdown="1">__methodespeciale__</span>. Elles permettent d’étendre les fonctionnalités des objets en leur conférant des caractéristiques particulières.</p>
+</div>
+</div>
+<p>Nous avons déjà rencontré une méthode spéciale, avec le constructeur <span class="calculator_button" markdown="1">__init__</span>.</p>
+<p>Quand cette méthode est présente dans la définition de la classe, elle est exécutée automatiquement à la création de chaque objet. Sa présence n’est toutefois pas indispensable pour créer des objets émanant d’une classe.</p>
+<p>Il existe un certain nombre de méthodes spéciales qui permettent d’apporter aux objets que nous créons des fonctionnalités particulières. Nous allons l’illustrer en présentant l’implémentation de deux d’entre elles, dont la mission est, respectivement, de mesurer et de comparer des objets.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Longueur d’un objet</p></div></h3>
+<p>Les objets peuvent disposer de nombreuses caractéristiques, à condition d’implémenter les méthodes correspondantes.</p>
+<p>Nous concevons une classe poème destinée à analyser des poésies.</p>
+<p><span class="calculator_button" markdown="1">class Poeme:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, poeme):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.poeme = poeme</span></p></div>
+<p>Nous créons une instance avec un poème de l’auteur japonais Matsuo Basho.</p>
+<p><span class="calculator_button" markdown="1">petit_poeme_japonais = """Un vieil étang</span><br>
+<span class="calculator_button" markdown="1">Une grenouille qui plonge,</span><br>
+<span class="calculator_button" markdown="1">Le bruit de l'eau."""</span></p>
+<p><span class="calculator_button" markdown="1">haiku = Poeme(petit_poeme_japonais)</span></p>
+<p>Notre objet étant créé, nous souhaitons connaitre sa longueur.</p>
+<p><span class="calculator_button" markdown="1">print(len(haiku))</span><br>
+<span class="calculator_button" markdown="1"># affiche TypeError: object of type 'Poeme' has no len()</span></p>
+<p>La notion de longueur n’est pas définie pour notre objet.</p>
+<p>Nous pourrions obtenir la longueur de la chaîne de caractères nommée <span class="calculator_button" markdown="1">petit_poeme_japonais</span> ayant servi à créer notre objet, mais l’idéal serait que cette caractéristique puisse être fournie par l’objet lui-même, en étant appelée en tant que méthode rattachée à l’objet.</p>
+<p>L’implémentation de la méthode spéciale <span class="calculator_button" markdown="1">__len__</span> va nous permettre d’accéder à cette fonctionnalité. Nous redéfinissons la classe en ajoutant cette méthode qui retourne la longueur de la variable d’instance <span class="calculator_button" markdown="1">self.poeme</span> qui contient le poème :</p>
+<p><span class="calculator_button" markdown="1">class Poeme:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__ (self, poeme):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.poeme = poeme</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __len__(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return len(self.poeme)</span></p></div>
+<p>À nouveau, nous créons une instance à partir de cette nouvelle définition de la classe.</p>
+<p><span class="calculator_button" markdown="1">haiku = Poeme(petit_poeme_japonais)</span></p>
+<p>Notre objet étant créé, nous passons la variable qui le référence en argument à la fonction native <span class="calculator_button" markdown="1">len()</span>.</p>
+<div markdown="1" class="paragraph" style="width:auto0%; margin-top:0px;margin-right:0px;margin-bottom:10px;margin-left:undefined;"><p><span class="calculator_button" markdown="1">print(len(haiku))</span><br>
+<span class="calculator_button" markdown="1"># affiche 60</span></p></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’existence de la méthode spéciale <span class="calculator_button" markdown="1">__len__</span> permet à l’interpréteur Python de retourner une longueur pour les objets de la classe ainsi redéfinie.</p></div>
+</div>
+<p>Notre méthode retourne simplement la longueur de la chaîne, mais nous pouvons également définir une autre manière de déterminer cette longueur.</p>
+<p>Considérons les deux poèmes suivants :</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">
+<em>Chanson d’automne</em>, de Paul Verlaine ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">
+<em>Le Dormeur du val</em>, d’Arthur Rimbaud.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">verlaine = """Les sanglots longs</span><br>
+<span class="calculator_button" markdown="1">Des violons</span><br>
+<span class="calculator_button" markdown="1">De l’automne</span><br>
+<span class="calculator_button" markdown="1">Blessent mon coeur</span><br>
+<span class="calculator_button" markdown="1">D’une langueur</span><br>
+<span class="calculator_button" markdown="1">Monotone."""</span></p>
+<p><span class="calculator_button" markdown="1">rimbaud = """C’est un trou de verdure où chante une rivière</span><br>
+<span class="calculator_button" markdown="1">Accrochant follement aux herbes des haillons</span><br>
+<span class="calculator_button" markdown="1">D’argent ; où le soleil, de la montagne fière,</span><br>
+<span class="calculator_button" markdown="1">Luit : c’est un petit val qui mousse de rayons"""</span></p>
+<p>Notre classe implémentant la longueur de manière littérale à partir de la longueur de la chaîne de caractères, nous obtenons les résultats suivants en instanciant les deux objets correspondants :</p>
+<p><span class="calculator_button" markdown="1">automne = Poeme(verlaine)</span><br>
+<span class="calculator_button" markdown="1">dormeur = Poeme(rimbaud)</span><br>
+<span class="calculator_button" markdown="1">print(len(automne), len(rimbaud))</span><br>
+<span class="calculator_button" markdown="1"># affiche 87 185</span></p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le poème de Verlaine comporte 87 caractères, celui de Rimbaud 185 caractères.</div>
+</li>
+</ul>
+<p>Mais nous pourrions considérer la longueur de ces poèmes différemment, en mesurant plutôt le nombre de lignes qu’ils comportent.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Cette notion serait par exemple utile à un·e éditeur·rice pour la publication d’un recueil, afin de déterminer le nombre de pages de l’ouvrage.</p></div>
+</div>
+<p>Il nous suffit de redéfinir notre classe afin que la longueur soit désormais définie par le nombre de lignes du poème.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Nous le déterminons avec la longueur de la liste obtenue en divisant la chaîne de caractères du poème sur la base du caractère spécial <span class="calculator_button" markdown="1">\n</span> de retour à la ligne).</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">class Poeme:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, poeme):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.poeme = poeme</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __len__(self):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.lignes=self.texte.split('\n')</span></p></div>
+<p><span class="calculator_button" markdown="1">return len(self.lignes)</span></p>
+<p>Nous instancions à nouveau deux objets à partir de cette nouvelle définition de notre classe.<br>
+Observons à présent leurs longueurs respectives en appelant la fonction native <span class="calculator_button" markdown="1">len()</span> comme précédemment.</p>
+<p><span class="calculator_button" markdown="1">automne = Poeme(verlaine)</span><br>
+<span class="calculator_button" markdown="1">dormeur = Poeme(rimbaud)</span><br>
+<span class="calculator_button" markdown="1">print(len(automne), len(dormeur))</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:10px;"><p><span class="calculator_button" markdown="1"># affiche 6 4</span></p></div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Nous obtenons cette fois 6 et 4, car le poème de Verlaine comporte 6 lignes, et celui de Rimbaud seulement 4.</div>
+</li>
+</ul>
+<p>Le résultat obtenu est très différent de notre précédente implémentation.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Comparaison d’objets</p></div></h3>
+<p>Les méthodes spéciales nous permettent également d’implémenter des comparaisons entre objets, sous réserve de définir les méthodes correspondantes.<br>
+Nous allons l’illustrer avec le principe d’un jeu de lettres privilégiant l’usage de lettres rares pour former des mots. Ce principe sert de base à de nombreux jeux de société.</p>
+<p>Nous implémentons ce principe avec une classe <span class="calculator_button" markdown="1">Mot</span>. Cette classe comporte :</p>
+<ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">une variable de classe, de type dictionnaire, définissant le nombre de points attribués pour l’usage de chacune des lettres de l’alphabet ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">un constructeur qui convertit le mot proposé en majuscules et conserve uniquement les lettres répertoriées dans le dictionnaire de lettres, et qui en calcule le score par comptage des points.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">class Mot:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">points = {'A': 1, 'B': 2, 'C': 2, 'D': 2, 'E': 1, 'F': 5, 'G': 2, 'H': 5,</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">'I': 1, 'J': 5, 'K': 10, 'L': 1, 'M': 2, 'N': 1, 'O': 1, 'P': 2,</span><br>
+<span class="calculator_button" markdown="1">'Q': 5, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'V': 2, 'W': 10, 'X': 5,</span><br>
+<span class="calculator_button" markdown="1">'Y': 5, 'Z': 10}</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, mot):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.mot = ''.join(lettre for lettre in mot.upper() if lettre in Mot.points)</span><span class="alinea"></span> 
+<span class="calculator_button" markdown="1">self.score = sum(Mot.points[lettre] for lettre in self.mot)</span></p></div>
+<p><span class="calculator_button" markdown="1">wok = Mot('wok')</span><br>
+<span class="calculator_button" markdown="1">casserole = Mot('casserole')</span></p>
+<p><span class="calculator_button" markdown="1">print(wok.score)</span><br>
+<span class="calculator_button" markdown="1"># affiche 21</span></p>
+<p><span class="calculator_button" markdown="1">print(casserole.score)</span><br>
+<span class="calculator_button" markdown="1"># affiche 10</span></p>
+<p>Nous pouvons calculer les scores des objets, mais pas les comparer entre eux.</p>
+<p><span class="calculator_button" markdown="1">print(wok &lt; casserole)</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:10px;"><h1 range="BUTC]" markdown="1"><div markdown="1"><p>affiche TypeError: '&lt;' not supported between instances of 'Mot' and 'Mot'[</p></div></h1></div>
+<p>Redéfinissions notre classe pour implémenter des méthodes de comparaison entre les instances.</p>
+<p>Nous déclarons pour cela les méthodes spéciales <span class="calculator_button" markdown="1">__lt__</span> (pour <em>lesser than</em>, soit « plus petit que ») et <span class="calculator_button" markdown="1">__le__</span> (pour <em>lesser or equal</em>, soit « plus petit que ou égal à »).<br>
+Ces méthodes requièrent deux paramètres, <span class="calculator_button" markdown="1">self</span> pour désigner l’objet de comparaison et un second paramètre, conventionnellement nommé <span class="calculator_button" markdown="1">other</span> (« autre »), pour désigner l’objet auquel le premier est comparé.</p>
+<p>Le critère de comparaison est librement défini au sein des méthodes correspondantes. Pour les besoins de notre jeu, nous souhaitons effectuer cette comparaison sur la base des scores.</p>
+<p><span class="calculator_button" markdown="1">class Mot:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">points = {'A': 1, 'B': 2, 'C': 2, 'D': 2, 'E': 1, 'F': 5, 'G': 2, 'H': 5,</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">'I': 1, 'J': 5, 'K': 10, 'L': 1, 'M': 2, 'N': 1, 'O': 1, 'P': 2,</span><br>
+<span class="calculator_button" markdown="1">'Q': 5, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'V': 2, 'W': 10, 'X': 5,</span><br>
+<span class="calculator_button" markdown="1">'Y': 5, 'Z': 10}</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, mot):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.mot = ''.join(lettre for lettre in mot.upper() if lettre in Mot.points)</span><br>
+<span class="calculator_button" markdown="1">self.score = sum(Mot.points[lettre] for lettre in self.mot)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __lt__(self, other):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return self.score &lt; other.score</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def__le__(self, other):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return self.score &lt;= other.score</span></p></div>
+<p><span class="calculator_button" markdown="1">wok = Mot('wok')</span><br>
+<span class="calculator_button" markdown="1">casserole = Mot('casserole')</span></p>
+<p><span class="calculator_button" markdown="1">print(wok &lt; casserole)</span><br>
+<span class="calculator_button" markdown="1"># affiche False</span></p>
+<p>Le résultat obtenu est correct : le score de wok est de 21, il est supérieur à celui de casserole qui est de 10.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L’expression évaluée est donc fausse.</div>
+</li>
+</ul>
+<p>Nous n’avons pas besoin de définir en miroir les méthodes spéciales complémentaires <span class="calculator_button" markdown="1">__gt__</span> (pour <em>greater than</em>, soit « plus grand que ») et <span class="calculator_button" markdown="1">__ge__</span> (pour <em>greater or equal</em>, soit « plus grand que ou égal à »), pour évaluer la comparaison associée.</p>
+<p><span class="calculator_button" markdown="1">print(wok &gt; casserole)</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Sans avoir recours à une méthode spéciale, il reste possible de comparer le score des deux objets de la manière suivantes :<br>
+<span class="calculator_button" markdown="1">print(wok.score &lt; casserole.score)</span></p></div>
+</div>
+<p>Nous avons montré un aperçu non exhaustif des méthodes spéciales afin d’illustrer l’intérêt de celles-ci pour enrichir les fonctionnalités des objets. Il est également possible de définir les contenus des méthodes appelées pour la suppression d’un objet, l’addition d’objets entre eux, mais aussi l’itération sur les objets (entre autres).</p>
+<p>Nous pouvons ainsi personnaliser le comportement de nos objets en implémentant différentes méthodes spéciales prévues par le langage.</p>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Les objets constituent un intéressant paradigme de programmation, associant variables et fonctions sous la forme d’attributs et de méthodes. Nous avons décrit le vocabulaire et la syntaxe de la programmation objet. Nous avons ensuite précisé les différents types de variables ou attributs et leurs modalités d’accès. Nous avons enfin montré qu’il était possible de conférer des fonctionnalités particulières aux objets en implémentant les méthodes correspondantes.</p>
+</div>
+</div></div>
+<div id="poool-aj59x-x9tsn" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5f47d1a61f3276010020e1ae","type":"Cours","title":"Programmation orientée objet","content":"[IN]\nIntroduction\u0026nbsp;:\n\nDans ce cours nous nous intéressons à la programmation objet sous l’angle des conteneurs de données. Dans une première partie, nous présenterons les principales caractéristiques du paradigme objet, son vocabulaire et sa syntaxe. Nous aborderons dans une deuxième partie la gestion des états internes des objets, puis de leurs fonctionnalités dans une troisième partie.\n[/IN]\n\n##Principes de la programmation objet/1\n\n###Le paradigme objet/a.\n\nL’**approche objet** permet de créer des structures de données et d’y associer un certain nombre de fonctionnalités. Cette approche fait partie des paradigmes majeurs de programmation.\n\n[RAP]\nUn paradigme est un style de programmation , une manière de modéliser les problèmes et d’écrire des programmes pour les résoudre.\n[/RAP]\n\nLa principale caractéristique du paradigme\u0026nbsp;objet est d’associer étroitement les données et le code pour les traiter, selon le principe de l’**encapsulation**.\n\n[DEF]\n**Encapsulation\u0026nbsp;:**\n\nL’encapsulation désigne le regroupement des données et du code relatif au traitement de ces données.\n[/DEF]\n\nCette encapsulation se matérialise par la définition d’une classe d’objets. Celle-ci établit globalement les types de données et y associe des fonctionnalités communes à tous les objets de cette classe.\n\n[ATT]\nCertains langages assortissent ce regroupement d’un contrôle très strict de l’accès aux données, mais nous verrons que ce n’est pas le cas en Python.\n[/ATT]\n\nLes objets individuels sont créés à partir de la classe, par un mécanisme appelé **instanciation**.\n\n[DEF]\n**Instanciation\u0026nbsp;:**\n\nL’instanciation désigne la création d’un objet appartenant à une classe.\n* L’objet devient donc une «\u0026nbsp;instance\u0026nbsp;» de la classe dont il émane.((fleche))\n[/DEF]\n\nLes instances partagent des fonctionnalités communes, mais les données sont individuellement propres à chaque objet.\n\n[RETENIR]\nDans la terminologie objet, les données sont appelées **attributs**, tandis que les fonctions associées sont appelées **méthodes**.\n[/RETENIR]\n\nCe cours aborde la programmation objet sous l’angle des structures de données. Dans ce contexte, nous n’étudierons pas les notions d’héritage et de polymorphisme qui appartiennent également au paradigme de programmation objet.\n\n###Définition d’une classe/b.\n\n[RETENIR]\nUne classe se définit à partir du mot-clé [BUTC]class[/BUTC] suivi du nom de celle-ci. Par convention, les noms de classe commencent par une majuscule.\n[/RETENIR]\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]pass[/BUTC]\u003e\u003e\n\nDans le cas où le nom est composé, on utilise la convention dite «\u0026nbsp;__camel case__\u0026nbsp;» («\u0026nbsp;casse de chameau\u0026nbsp;» en français), qui consiste à juxtaposer les mots en mettant leurs premières lettres en majuscules.\n\n[BUTC]class ExempleComportantPlusieursMots:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]pass[/BUTC]\u003e\u003e\n\nLes objets encapsulent des propriétés et des méthodes, comme le montre l’exemple ci-après de définition d’une classe.\n\n[BUTC]class Eleve:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]\"\"\"[/BUTC]  \n[BUTC]Classe représentant des élèves.[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,-22,0,0,50))[BUTC]Un élève est caractérisé par :[/BUTC]  \n[BUTC]- son prénom,[/BUTC]  \n[BUTC]- son âge.[/BUTC]  \n[BUTC]\"\"\"[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, prenom, age):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]\"\"\"construction d'un objet élève à partir de son prénom et de son âge\"\"\"[/BUTC]  \n[BUTC]self.prenom = prenom[/BUTC]\n[BUTC]self.age = age[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def informations(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]\"\"\"indique le prénom et l'âge de l'élève\"\"\"[/BUTC]  \n[BUTC]return '{} a {} ans'.format(self.prenom, self.age)[/BUTC]\u003e\u003e\n\nCette portion de code ci-dessus ne fabrique aucun objet. Elle se contente de définir les propriétés et fonctionnalités communes à tous les objets qui appartiendront à cette classe.\n\nNotre classe [BUTC]Eleve[/BUTC] définit les méthodes nommées [BUTC]\u0026#95;\u0026#95;init\u0026#95;\u0026#95;[/BUTC] et [BUTC]informations[/BUTC].\n\n[RETENIR]\nLa méthode appelée [BUTC]\u0026#95;\u0026#95;init\u0026#95;\u0026#95;[/BUTC] est le constructeur de nos futurs objets. Elle sera automatiquement appelée au moment de la création des objets de la classe [BUTC]Eleve[/BUTC]. Nous observons qu’elle requiert\u0026nbsp;:\n* un paramètre appelé [BUTC]self[/BUTC]\u0026nbsp;;((liste2))\n* deux autres paramètres qui sont les attributs des élèves, à savoir leur prénom et leur âge.((liste2))\n[/RETENIR]\n\nLes méthodes prennent un premier paramètre désignant l’objet individuel auquel elles s’appliquent. Par convention ce paramètre est appelé [BUTC]self[/BUTC] en Python.  \nCette convention varie selon les langages\u0026nbsp;: ce paramètre est ainsi nommé [BUTC]this[/BUTC] en Javascript, et [BUTC]$this[/BUTC] en\u0026nbsp;PHP.\n\n[ATT]\nSa présence est nécessaire à la définition de la méthode au sein de la classe, mais il ne doit pas être passé en argument lors des créations d’objets ou des appels de leurs méthodes.\n[/ATT]\n\nLa méthode appelée [BUTC]informations[/BUTC] restitue sous forme de chaîne de caractères les informations définies pour un élève donné. Elle ne requiert aucun paramètre hormis [BUTC]self[/BUTC].\n\n###Instanciation d’objets/c.\n\nLes objets sont instanciés (autrement dit créés) à partir de la classe à laquelle ils appartiennent.\n\n[BUTC]eleve1 = Eleve('Lisa', 17)[/BUTC]\n\nLes arguments passés pour la création de l’objet «\u0026nbsp;eleve1\u0026nbsp;» de la classe [BUTC]Eleve[/BUTC] sont ceux définis par la méthode [BUTC]\u0026#95;\u0026#95;init\u0026#95;\u0026#95;[/BUTC], c’est-à-dire son prénom et son âge. Cette méthode est appelée automatiquement pour construire l’objet. Le paramètre implicite [BUTC]self[/BUTC] ne doit pas être précisé.\n\n###Appel de méthodes/d.\n\nLa syntaxe générale pour l’appel d’une méthode s’effectue selon le format suivant\u0026nbsp;:\n\n[BUTC]objet.methode(arguments)[/BUTC].\n\nSi la méthode requiert des paramètres (autres que [BUTC]self[/BUTC] qui n’a pas à être spécifié au moment de l’appel), les arguments correspondants doivent être présents entre les parenthèses, de la même manière qu’en programmation fonctionnelle.\n\nLes objets de notre classe [BUTC]Eleve[/BUTC] disposent d’une méthode [BUTC]informations[/BUTC] que nous pouvons appeler avec la notion pointée.\n\n[BUTC]print(eleve1.informations())[/BUTC]  \n[BUTC]# affiche Lisa a 17 ans[/BUTC]\n\nL’appel de la méthode s’effectue sans passer d’arguments, puisqu’elle est définie sans paramètre autre que [BUTC]self[/BUTC]. Le paramètre [BUTC]self[/BUTC] utilisé dans la déclaration de la fonction au sein de la classe permet de désigner notre objet au sein de la classe. Nous évitons ainsi le recours à une autre syntaxe, possible mais moins compacte, qui oblige à préciser à la fois la classe et le nom de l’instance pour obtenir le même résultat\u0026nbsp;:\n\n[BUTC]print(Eleve.informations(eleve1))[/BUTC]  \n[BUTC]# affiche Lisa a 17 ans[/BUTC]\n\n[ATT]\nÀ l'instar des fonctions, les parenthèses sont obligatoires pour appeler une méthode, même si on ne lui passe aucun paramètre.\n[/ATT]\n\nCréons à présent un nouvel objet de la même classe pour un deuxième élève.\n\n[BUTC]eleve2 = Eleve('Paul', 18)[/BUTC]\n\n[BUTC]print(eleve2.informations())[/BUTC]  \n[BUTC]# affiche Paul a 18 ans[/BUTC]\n\n[RETENIR]\nCet exemple montre l’intérêt de la programmation objet\u0026nbsp;: la possibilité de disposer de méthodes communes à des objets distincts dont les valeurs d’attributs peuvent être différentes.\n[/RETENIR]\n\n###Chaînes de documentation/e.\n\nLes chaînes de documentation (__docstrings__ en anglais) contribuent, quand elles sont présentes, à informer sur la classe et ses méthodes. \n\n[BUTC]help(Eleve)[/BUTC]\n\naffiche le texte suivant\u0026nbsp;:\n\n[BUTC]Help on class Eleve in module  \u0026#95;\u0026#95;main\u0026#95;\u0026#95;:[/BUTC]\n\n[BUTC]class Eleve(builtins.object)[/BUTC]\n\u003c\u003c((auto,-22,0,0,10))[BUTC]|  Eleve(prenom, age)[/BUTC]  \n[BUTC]|[/BUTC]  \n[BUTC]|  Classe représentant des élèves.[/BUTC]  \n[BUTC]|[/BUTC]  \n[BUTC]|  Un élève est caractérisé par :[/BUTC]  \n[BUTC]|  - son prénom,[/BUTC]  \n[BUTC]|  - son âge.[/BUTC]  \n[BUTC]|[/BUTC]  \n[BUTC]|  Methods defined here:[/BUTC]  \n[BUTC]|[/BUTC]  \n[BUTC]|  \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, prenom, age)[/BUTC]  \n[BUTC]|      construction d'un objet élève à partir de son prénom et de son âge[/BUTC]  \n[BUTC]|[/BUTC]  \n[BUTC]|  informations(self)[/BUTC]  \n[BUTC]|      indique le prénom et l'âge de l'élève[/BUTC]  \n[BUTC]|[/BUTC]  \n[BUTC]|  \u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;\u0026#45;[/BUTC]  \n[BUTC]|  Data descriptors defined here:[/BUTC]  \n[BUTC]|[/BUTC]  \n[BUTC]|  \u0026#95;\u0026#95;dict\u0026#95;\u0026#95;[/BUTC]  \n[BUTC]|      dictionary for instance variables (if defined)[/BUTC]  \n[BUTC]|[/BUTC]  \n[BUTC]|  \u0026#95;\u0026#95;weakref\u0026#95;\u0026#95;[/BUTC]  \n[BUTC]|      list of weak references to the object (if defined)[/BUTC]\u003e\u003e\n\nMaintenant que ces éléments de vocabulaire et de syntaxe sont précisés, intéressons-nous aux états internes des objets et aux modalités d’accès à ceux-ci.\n\n##États internes des objets/2\n\n* Le paradigme de programmation fonctionnelle repose sur l’**absence d’état des fonctions**. Le résultat d’une fonction ne dépend que des arguments fournis en entrée, sans conservation d’états internes une fois le résultat retourné.\n* Le paradigme de programmation objet permet pour sa part une **conservation d’états internes**\u0026nbsp;: les objets contiennent non seulement des fonctions, appelées méthodes, mais aussi des variables, appelées attributs.\n* On distingue\u0026nbsp;:((fleche))\n\u003c\u003c((90,0,auto,0,auto))* les variables d’instance\u0026nbsp;;((bulle,a.))\n* et les variables de classe.((bulle,b.))\u003e\u003e\n\n###Variables d’instance/a.\n\nLes objets peuvent contenir tout type de variable, et ces variables sont accessibles aux méthodes afin que ces dernières puissent les manipuler.\n\nNous avons vu dans la partie précédente qu’elles pouvaient être définies au moment de l’instanciation de l’objet avec la méthode du constructeur, mais il est possible de définir ou de modifier des variables à tout moment.  \nDans l’exemple ci-dessous, nous modifions la méthode [BUTC]informations[/BUTC] pour qu’elle génère les initiales d’un élève quand elle est appelée.\n\n[BUTC]class Eleve:[/BUTC] \n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, prenom, nom):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.prenom = prenom.title()[/BUTC]  \n[BUTC]self.nom = nom.title()[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def informations(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.initiales = '{}.{}.'.format(self.prenom[0], self.nom[0])[/BUTC]  \n[BUTC]return 'Les initiales de {} {} sont {}'.format(self.prenom, self.nom, self.initiales)[/BUTC]\u003e\u003e\n\nNous instancions un élève et appelons la méthode qui retourne des informations sur celui-ci.\n\n[BUTC]tom = Eleve('Thomas', 'Martin')[/BUTC]  \n[BUTC]print(tom.informations())[/BUTC]  \n[BUTC]# affiche : Les initiales de Thomas Martin sont T.M.[/BUTC]\n\nLes variables des objets, ou attributs d’instance, sont accessibles et modifiables avec la notation pointée.\n\n[BUTC]print(tom.prenom)[/BUTC]  \n[BUTC]# affiche Thomas[/BUTC]\n\n[BUTC]tom.nom = 'Dupont'[/BUTC]  \n[BUTC]print(tom.informations())[/BUTC]  \n[BUTC]# affiche Les initiales de Thomas Dupont sont T.D. [/BUTC]\n\nContrairement à d’autres langages, Python permet également de déclarer librement des attributs non explicitement définis dans la classe.\n\n[BUTC]tom.loisirs = ['natation', 'escalade'][/BUTC]\n\nCette faculté permet si on le souhaite d’utiliser une classe comme conteneur de données. La présence de méthodes n’est pas requise pour définir une classe en Python.\n\n[BUTC]class Enregistrement():[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]pass # ne fait rien[/BUTC]\u003e\u003e\n\n[BUTC]lisa = Enregistrement() # création d'une instance[/BUTC]  \n[BUTC]lisa.nom = 'Legrand'[/BUTC]  \n[BUTC]lisa.prenom = 'Lisa'[/BUTC]  \n[BUTC]lisa.age = 17[/BUTC]\n\nLes variables d’instance sont stockées dans l’objet sous forme d’un dictionnaire.\n\n[BUTC]print(lisa.\u0026#95;\u0026#95;dict\u0026#95;\u0026#95;)[/BUTC]  \n[BUTC]# affiche {'nom': 'Legrand', 'prenom': 'Lisa', 'age': 17}[/BUTC]\n\n###Variables de classe/b.\n\nDes variables peuvent également être définies au niveau de la classe. Dans ce cas, elles sont communes à tous ses membres, et toute modification d’une variable de classe concernera logiquement l’ensemble des objets qui y sont rattachés.\n\n[AST]\nLa syntaxe le reflète avec l’absence de [BUTC]self[/BUTC] et le rattachement explicite de la variable à la classe dans les méthodes qui manipulent la variable.\n[/AST]\n\nNous l’illustrons avec une classe d’élèves qui comptabilise le nombre d’élèves.\n* Le compteur correspondant est incrémenté à chaque fois qu’un élève est ajouté à la classe par instanciation d’un nouvel objet de cette classe.((fleche))\n\n[BUTC]class Eleve:[/BUTC]\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]nombre_eleves = 0[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, prenom): [/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.prenom = prenom.title()[/BUTC]  \n[BUTC]Eleve.nombre_eleves += 1[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def informations(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return '{} est dans une classe comportant {} élève(s)'.format(self.prenom, Eleve.nombre_eleves)[/BUTC]\u003e\u003e\n\n[BUTC]lisa = Eleve('Lisa')[/BUTC]  \n[BUTC]print(lisa.informations())[/BUTC]  \n[BUTC]# affiche Lisa est dans une classe comportant 1 élève(s)[/BUTC]\n\n[BUTC]paul = Eleve('Paul')[/BUTC]  \n[BUTC]sarah = Eleve('Sarah')[/BUTC]  \n[BUTC]print(sarah.informations())[/BUTC]  \n[BUTC]# affiche Sarah est dans une classe comportant 3 élève(s)[/BUTC]\n\nNous avons présenté les attributs d’instance et de classe avec des variables de type chaîne de caractères et nombre entiers, mais les autres types de variables sont pareillement utilisables au sein des classes.\n\n###Accès aux variables/c.\n\nCertains langages obligent à utiliser des méthodes pour lire ou modifier les attributs des objets. \n\n[RETENIR]\nCes méthodes sont appelées\u0026nbsp;:\n* **accesseur** (ou __getter__ en anglais) pour une méthode permettant de connaître la valeur d’un attribut\u0026nbsp;;((liste2))\n* **mutateur** (ou __setter__ en anglais) pour une méthode permettant de modifier un attribut.((liste2))\n[/RETENIR]\n\nIl est possible d’en implémenter en Python, mais cela n’a rien d’obligatoire.  \nL’utilisation d’accesseurs ou de mutateurs peut présenter un intérêt quand les valeurs doivent faire l’objet d’un traitement particulier. Ou bien pour éviter qu’un·e utilisateur·rice de la classe n’introduise des incohérences, en intervenant sur les contenus des variables, hors du cadre des méthodes implémentées.\n\n[BUTC]class Eleve:[/BUTC]\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, prenom):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.prenom = prenom.title().strip()[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def get_prenom(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return self.prenom[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def set_prenom(self, prenom):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.prenom = prenom.title().strip()[/BUTC]\u003e\u003e\n\n[BUTC]lisa = Eleve('   lisa    ')[/BUTC]  \n[BUTC]lisa.get\u0026#95;prenom()[/BUTC]  \n[BUTC]# affiche Lisa[/BUTC]\n\n[BUTC]lisa.set\u0026#95;prenom('eLISAbeth')[/BUTC]  \n[BUTC]lisa.get\u0026#95;prenom()[/BUTC]  \n[BUTC]# affiche Elisabeth[/BUTC]\n\nOn observe que le mutateur applique des traitements à la chaîne de caractère passée en argument\u0026nbsp;:\n* transformation si nécessaire de la casse pour mettre en majuscule la première lettre du prénom et les autres en minuscules (méthode __title__)\u0026nbsp;;((liste2))\n* suppression d’éventuels espaces avant et après le prénom (méthode __strip__).((liste2))\n\nNous ne développerons pas davantage cet aspect, mais le langage Python propose différents mécanismes spécifiques d’encapsulation plus ou moins forte, avec des attributs privés ou protégés.\n\n###Implémentation et interface/d.\n\nL’interface proposée par l’objet peut exposer directement et de manière transparente les structures de données qu’il manipule. Mais cette interface ne reflète pas nécessairement les états ou les types internes des objets.\n\nL’exemple développé ci-après montre un pseudo-dictionnaire implémenté dans une classe\u0026nbsp;:\n* dont l’accesseur proposé en interface retourne un dictionnaire\u0026nbsp;;((liste2))\n* mais dont l’implémentation interne s’appuie sur deux listes mises à jour en parallèle.((liste2))\n\n[BUTC]class PseudoDictionnaire:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.keys = [][/BUTC]  \n[BUTC]self.values = [][/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def set_key(self, key, value):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.keys.append(key)[/BUTC]  \n[BUTC]self.values.append(value)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def get_pseudo_dictionnaire(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return {key: value for key, value in zip(self.keys, self.values)}[/BUTC]\u003e\u003e\n\n[BUTC]donnees = PseudoDictionnaire()[/BUTC]  \n[BUTC]donnees.set\u0026#95;key('prenom', 'Alice')[/BUTC]  \n[BUTC]donnees.set\u0026#95;key('age', 17)[/BUTC]\n\n[BUTC]resultat = donnees.get_pseudo_dictionnaire()[/BUTC]  \n[BUTC]print(resultat)[/BUTC]  \n[BUTC]# affiche {'prenom': 'Alice', 'age': 17}[/BUTC]  \n[BUTC]print(type(resultat))[/BUTC]  \n[BUTC]# affiche \u003cclass 'dict'\u003e[/BUTC]\n\nCette implémentation est tout sauf optimale, mais elle illustre la distinction à opérer entre interface et implémentation d’une structure de données.\n* L’interface propose une forme d’accès aux données qui n’est pas nécessairement représentative de leur structure interne.\n* Cette structure interne peut donc être modifiée tout en conservant à l’identique l’interface.\n\nNous avons vu le rôle des variables de différents types dans le paradigme objet en tant que structure de données, mais les méthodes que nous allons étudier maintenant contribuent, elles aussi, à l’interface de ces objets.\n\n##Fonctionnalités/3\n\n[RAP]\nLa programmation objet permet d’implémenter des fonctionnalités, liées aux données qu’elle structure, par l’implémentation de méthodes.  \nLes méthodes sont des fonctions définies au sein de la classe. Elles peuvent accéder et manipuler les attributs des objets, auxquels peuvent être appliqués différents traitements.\n[/RAP]\n\n[RETENIR]\nOn distingue deux types de méthodes en Python\u0026nbsp;: les méthodes normales et les méthodes spéciales.\n[/RETENIR]\n\n[DEF]\n**Méthodes normales\u0026nbsp;:**\n\nLes méthodes normales correspondent, dans le paradigme objet, aux fonctions créées en programmation fonctionnelle. La présence des fonctions dans la définition d’une classe les rend accessibles sous forme de méthodes dans les objets qui y sont rattachés.\n\n**Méthodes spéciales\u0026nbsp;:**\n\nLes méthodes spéciales se distinguent par leur nommage entouré de doubles tirets bas (__underscores__ en anglais), sous le format [BUTC]\u0026#95;\u0026#95;methodespeciale\u0026#95;\u0026#95;[/BUTC]. Elles permettent d’étendre les fonctionnalités des objets en leur conférant des caractéristiques particulières.\n[/DEF]\n\nNous avons déjà rencontré une méthode spéciale, avec le constructeur [BUTC]\u0026#95;\u0026#95;init\u0026#95;\u0026#95;[/BUTC].\n\nQuand cette méthode est présente dans la définition de la classe, elle est exécutée automatiquement à la création de chaque objet. Sa présence n’est toutefois pas indispensable pour créer des objets émanant d’une classe.\n\nIl existe un certain nombre de méthodes spéciales qui permettent d’apporter aux objets que nous créons des fonctionnalités particulières. Nous allons l’illustrer en présentant l’implémentation de deux d’entre elles, dont la mission est, respectivement, de mesurer et de comparer des objets.\n\n###Longueur d’un objet/a.\n\nLes objets peuvent disposer de nombreuses caractéristiques, à condition d’implémenter les méthodes correspondantes.\n\nNous concevons une classe poème destinée à analyser des poésies.\n\n[BUTC]class Poeme:[/BUTC]\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, poeme):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.poeme = poeme[/BUTC]\u003e\u003e\n\nNous créons une instance avec un poème de l’auteur japonais Matsuo Basho.\n\n[BUTC]petit\u0026#95;poeme\u0026#95;japonais = \"\"\"Un vieil étang[/BUTC]  \n[BUTC]Une grenouille qui plonge,[/BUTC]  \n[BUTC]Le bruit de l'eau.\"\"\"[/BUTC]\n\n[BUTC]haiku = Poeme(petit\u0026#95;poeme\u0026#95;japonais)[/BUTC]\n\nNotre objet étant créé, nous souhaitons connaitre sa longueur.\n\n[BUTC]print(len(haiku))[/BUTC]  \n[BUTC]# affiche TypeError: object of type 'Poeme' has no len()[/BUTC]\n\nLa notion de longueur n’est pas définie pour notre objet.\n\nNous pourrions obtenir la longueur de la chaîne de caractères nommée [BUTC]petit\u0026#95;poeme\u0026#95;japonais[/BUTC] ayant servi à créer notre objet, mais l’idéal serait que cette caractéristique puisse être fournie par l’objet lui-même, en étant appelée en tant que méthode rattachée à l’objet.\n\nL’implémentation de la méthode spéciale [BUTC]\u0026#95;\u0026#95;len\u0026#95;\u0026#95;[/BUTC] va nous permettre d’accéder à cette fonctionnalité. Nous redéfinissons la classe en ajoutant cette méthode qui retourne la longueur de la variable d’instance [BUTC]self.poeme[/BUTC] qui contient le poème\u0026nbsp;:\n\n[BUTC]class Poeme:[/BUTC]\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95; (self, poeme):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.poeme = poeme[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;len\u0026#95;\u0026#95;(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return len(self.poeme)[/BUTC]\u003e\u003e\n\nÀ nouveau, nous créons une instance à partir de cette nouvelle définition de la classe.\n\n[BUTC]haiku = Poeme(petit\u0026#95;poeme\u0026#95;japonais)[/BUTC]\n\nNotre objet étant créé, nous passons la variable qui le référence en argument à la fonction native [BUTC]len()[/BUTC].\n\n\u003c\u003c((auto0,0,0,10))[BUTC]print(len(haiku))[/BUTC]  \n[BUTC]# affiche 60[/BUTC]\u003e\u003e\n\n[RETENIR]\nL’existence de la méthode spéciale [BUTC]\u0026#95;\u0026#95;len\u0026#95;\u0026#95;[/BUTC] permet à l’interpréteur Python de retourner une longueur pour les objets de la classe ainsi redéfinie.\n[/RETENIR]\n\nNotre méthode retourne simplement la longueur de la chaîne, mais nous pouvons également définir une autre manière de déterminer cette longueur.\n\nConsidérons les deux poèmes suivants\u0026nbsp;:\n* __Chanson d’automne__, de Paul Verlaine\u0026nbsp;;((bulle,1))\n* __Le Dormeur du val__, d’Arthur Rimbaud.((bulle,2))\n\n[BUTC]verlaine = \"\"\"Les sanglots longs[/BUTC]  \n[BUTC]Des violons[/BUTC]  \n[BUTC]De l’automne[/BUTC]  \n[BUTC]Blessent mon coeur[/BUTC]  \n[BUTC]D’une langueur[/BUTC]  \n[BUTC]Monotone.\"\"\"[/BUTC]\n\n[BUTC]rimbaud = \"\"\"C’est un trou de verdure où chante une rivière[/BUTC]  \n[BUTC]Accrochant follement aux herbes des haillons[/BUTC]  \n[BUTC]D’argent ; où le soleil, de la montagne fière,[/BUTC]  \n[BUTC]Luit : c’est un petit val qui mousse de rayons\"\"\"[/BUTC]\n\nNotre classe implémentant la longueur de manière littérale à partir de la longueur de la chaîne de caractères, nous obtenons les résultats suivants en instanciant les deux objets correspondants\u0026nbsp;:\n\n[BUTC]automne = Poeme(verlaine)[/BUTC]  \n[BUTC]dormeur = Poeme(rimbaud)[/BUTC]  \n[BUTC]print(len(automne), len(rimbaud))[/BUTC]  \n[BUTC]# affiche 87 185[/BUTC]\n\n* Le poème de Verlaine comporte 87\u0026nbsp;caractères, celui de Rimbaud 185\u0026nbsp;caractères.((fleche))\n\nMais nous pourrions considérer la longueur de ces poèmes différemment, en mesurant plutôt le nombre de lignes qu’ils comportent.\n\n[EX]\nCette notion serait par exemple utile à un·e éditeur·rice pour la publication d’un recueil, afin de déterminer le nombre de pages de l’ouvrage.\n[/EX]\n\nIl nous suffit de redéfinir notre classe afin que la longueur soit désormais définie par le nombre de lignes du poème.\n* Nous le déterminons avec la longueur de la liste obtenue en divisant la chaîne de caractères du poème sur la base du caractère spécial [BUTC]\\n[/BUTC] de retour à la ligne).((fleche))\n\n[BUTC]class Poeme:[/BUTC]\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, poeme):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.poeme = poeme[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;len\u0026#95;\u0026#95;(self):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.lignes=self.texte.split('\\n')[/BUTC]\u003e\u003e\n[BUTC]return len(self.lignes)[/BUTC]\n\nNous instancions à nouveau deux objets à partir de cette nouvelle définition de notre classe.  \nObservons à présent leurs longueurs respectives en appelant la fonction native [BUTC]len()[/BUTC] comme précédemment.\n\n[BUTC]automne = Poeme(verlaine)[/BUTC]  \n[BUTC]dormeur = Poeme(rimbaud)[/BUTC]  \n[BUTC]print(len(automne), len(dormeur))[/BUTC]\n\u003c\u003c((auto,-22,0,0,10))[BUTC]# affiche 6 4[/BUTC]\u003e\u003e\n\n* Nous obtenons cette fois\u0026nbsp;6 et\u0026nbsp;4, car le poème de Verlaine comporte 6\u0026nbsp;lignes, et celui de Rimbaud seulement\u0026nbsp;4.((fleche))\n\nLe résultat obtenu est très différent de notre précédente implémentation.\n\n###Comparaison d’objets/b.\n\nLes méthodes spéciales nous permettent également d’implémenter des comparaisons entre objets, sous réserve de définir les méthodes correspondantes.  \nNous allons l’illustrer avec le principe d’un jeu de lettres privilégiant l’usage de lettres rares pour former des mots. Ce principe sert de base à de nombreux jeux de société.\n\nNous implémentons ce principe avec une classe [BUTC]Mot[/BUTC]. Cette classe comporte\u0026nbsp;:\n* une variable de classe, de type dictionnaire, définissant le nombre de points attribués pour l’usage de chacune des lettres de l’alphabet\u0026nbsp;;((bulle,1))\n* un constructeur qui convertit le mot proposé en majuscules et conserve uniquement les lettres répertoriées dans le dictionnaire de lettres, et qui en calcule le score par comptage des points.((bulle,2))\n\n[BUTC]class Mot:[/BUTC]\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]points = {'A': 1, 'B': 2, 'C': 2, 'D': 2, 'E': 1, 'F': 5, 'G': 2, 'H': 5,[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]'I': 1, 'J': 5, 'K': 10, 'L': 1, 'M': 2, 'N': 1, 'O': 1, 'P': 2,[/BUTC]  \n[BUTC]'Q': 5, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'V': 2, 'W': 10, 'X': 5,[/BUTC]  \n[BUTC]'Y': 5, 'Z': 10}[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, mot):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.mot = ''.join(lettre for lettre in mot.upper() if lettre in Mot.points)[/BUTC]    \n[BUTC]self.score = sum(Mot.points[lettre] for lettre in self.mot)[/BUTC]\u003e\u003e\n\n[BUTC]wok = Mot('wok')[/BUTC]  \n[BUTC]casserole = Mot('casserole')[/BUTC]\n\n[BUTC]print(wok.score)[/BUTC]  \n[BUTC]# affiche 21[/BUTC]\n\n[BUTC]print(casserole.score)[/BUTC]  \n[BUTC]# affiche 10[/BUTC]\n\nNous pouvons calculer les scores des objets, mais pas les comparer entre eux.\n\n[BUTC]print(wok \u003c casserole)[/BUTC]\n\u003c\u003c((auto,-22,0,0,10))#affiche TypeError: '\u003c' not supported between instances of 'Mot' and 'Mot'[/BUTC]\u003e\u003e\n\nRedéfinissions notre classe pour implémenter des méthodes de comparaison entre les instances.\n\nNous déclarons pour cela les méthodes spéciales [BUTC]\u0026#95;\u0026#95;lt\u0026#95;\u0026#95;[/BUTC] (pour __lesser\u0026nbsp;than__, soit «\u0026nbsp;plus petit que\u0026nbsp;») et [BUTC]\u0026#95;\u0026#95;le\u0026#95;\u0026#95;[/BUTC] (pour __lesser\u0026nbsp;or\u0026nbsp;equal__, soit «\u0026nbsp;plus petit que ou égal à\u0026nbsp;»).  \nCes méthodes requièrent deux paramètres, [BUTC]self[/BUTC] pour désigner l’objet de comparaison et un second paramètre, conventionnellement nommé [BUTC]other[/BUTC] («\u0026nbsp;autre\u0026nbsp;»), pour désigner l’objet auquel le premier est comparé.\n\nLe critère de comparaison est librement défini au sein des méthodes correspondantes. Pour les besoins de notre jeu, nous souhaitons effectuer cette comparaison sur la base des scores.\n\n[BUTC]class Mot:[/BUTC]\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]points = {'A': 1, 'B': 2, 'C': 2, 'D': 2, 'E': 1, 'F': 5, 'G': 2, 'H': 5,[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]'I': 1, 'J': 5, 'K': 10, 'L': 1, 'M': 2, 'N': 1, 'O': 1, 'P': 2,[/BUTC]  \n[BUTC]'Q': 5, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'V': 2, 'W': 10, 'X': 5,[/BUTC]  \n[BUTC]'Y': 5, 'Z': 10}[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, mot):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.mot = ''.join(lettre for lettre in mot.upper() if lettre in Mot.points)[/BUTC]  \n[BUTC]self.score = sum(Mot.points[lettre] for lettre in self.mot)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def \u0026#95;\u0026#95;lt\u0026#95;\u0026#95;(self, other):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return self.score \u003c other.score[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def\u0026#95;\u0026#95;le\u0026#95;\u0026#95;(self, other):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return self.score \u003c= other.score[/BUTC]\u003e\u003e\n\n[BUTC]wok = Mot('wok')[/BUTC]  \n[BUTC]casserole = Mot('casserole')[/BUTC]\n\n[BUTC]print(wok \u003c casserole)[/BUTC]  \n[BUTC]# affiche False[/BUTC]\n\nLe résultat obtenu est correct\u0026nbsp;: le score de wok est de\u0026nbsp;21, il est supérieur à celui de casserole qui est de\u0026nbsp;10.\n* L’expression évaluée est donc fausse.((fleche))\n\nNous n’avons pas besoin de définir en miroir les méthodes spéciales complémentaires [BUTC]\u0026#95;\u0026#95;gt\u0026#95;\u0026#95;[/BUTC] (pour __greater\u0026nbsp;than__, soit «\u0026nbsp;plus grand que\u0026nbsp;») et [BUTC]\u0026#95;\u0026#95;ge\u0026#95;\u0026#95;[/BUTC] (pour __greater\u0026nbsp;or\u0026nbsp;equal__, soit «\u0026nbsp;plus grand que ou égal à\u0026nbsp;»), pour évaluer la comparaison associée.\n\n[BUTC]print(wok \u003e casserole)[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\n[AST]\nSans avoir recours à une méthode spéciale, il reste possible de comparer le score des deux objets de la manière suivantes\u0026nbsp;:  \n[BUTC]print(wok.score \u003c casserole.score)[/BUTC]\n[/AST]\n\nNous avons montré un aperçu non\u0026nbsp;exhaustif des méthodes spéciales afin d’illustrer l’intérêt de celles-ci pour enrichir les fonctionnalités des objets. Il est également possible de définir les contenus des méthodes appelées pour la suppression d’un objet, l’addition d’objets entre eux, mais aussi l’itération sur les objets (entre autres).\n\nNous pouvons ainsi personnaliser le comportement de nos objets en implémentant différentes méthodes spéciales prévues par le langage.\n\n[C]\nConclusion\u0026nbsp;:\n\nLes objets constituent un intéressant paradigme de programmation, associant variables et fonctions sous la forme d’attributs et de méthodes. Nous avons décrit le vocabulaire et la syntaxe de la programmation objet. Nous avons ensuite précisé les différents types de variables ou attributs et leurs modalités d’accès. Nous avons enfin montré qu’il était possible de conférer des fonctionnalités particulières aux objets en implémentant les méthodes correspondantes.\n[/C]\n","siblings":[{"resourceId":"5f47d1a61f3276010020e1ae","type":"Cours","sort":null},{"resourceId":"5f47d2521f3276010020e1b0","type":"Fiche de révision","sort":null},{"resourceId":"5f4dfe4ee4d05a0100ae8336","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7da528e637010043bf84","name":"Programmation orientée objet"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7da528e637010043bf84","label":"Cours : Programmation orientée objet","link":"https://www.schoolmouv.fr/cours/programmation-orientee-objet/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"programmation-orientee-objet","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/programmation-orientee-objet/fiche-de-cours","title":"Programmation orientée objet : cours de Terminale - Numérique","metaDescription":"SchoolMouv ® te propose ce cours sur Programmation orientée objet (Terminale - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"programmation-orientee-objet","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

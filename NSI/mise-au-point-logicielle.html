@@ -1,0 +1,513 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mise au point logicielle : Fiche de cours - Numérique et sciences informatiques | SchoolMouv</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Mise au point logicielle : Fiche de cours - Numérique et sciences informatiques | SchoolMouv">
+<meta name="description" content="Révise le cours : Mise au point logicielle de Numérique et sciences informatiques Terminale grâce à notre fiche de cours">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/mise-au-point-logicielle/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/mise-au-point-logicielle/fiche-de-cours","name":"Cours : Mise au point logicielle"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Mise au point logicielle</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Mise au point logicielle</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>La mise au point logicielle repose sur la connaissance d'un certain nombre de principes et de bonnes pratiques de développement, mais aussi sur la prise en compte des spécificités du langage choisi pour l'implémentation. Aussi, dans ce cours, nous présenterons les bonnes pratiques logicielles en soulignant certaines spécificités du langage Python.</p>
+<p>Nous aborderons dans un premier temps les effets de bord, puis nous nous intéresserons aux traitements conditionnels et enfin aux comparaisons, chaque fois sous l'angle de la mise au point logicielle.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Effets de bord</p></div></h2>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Un langage à <b>typage dynamique</b> n'impose pas que le type des variables soit défini. Le type est alors déterminé à la volée au moment de l'interprétation du code.</p></div>
+</div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Typage dynamique</p></div></h3>
+<p>Python étant un langage à typage dynamique, il n'impose pas de spécifier le type d'une donnée, et on peut à loisir changer le type de donnée d'une variable.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p><span class="calculator_button" markdown="1">a = 'hello world'</span><br>
+<span class="calculator_button" markdown="1">a = a.split() # a désigne la liste ['hello', 'world']</span><br>
+<span class="calculator_button" markdown="1">a = 12</span><br>
+<span class="calculator_button" markdown="1">a = True</span></p></div>
+</div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>De tels changements seraient en revanche <b>impossibles dans les langages à typage statique</b> qui imposent de définir précisément le type de données d'une variable et de le respecter ensuite.</p></div>
+</div>
+<p>Le typage dynamique nous permet d'envisager un même traitement applicable à plusieurs types de données.<br>
+Illustrons-le avec une procédure simple qui imprime chacun des éléments d'un itérable.</p>
+<p><span class="calculator_button" markdown="1">def enumere(iterable):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">for element in iterable:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">print(element)</span></p></div>
+<p>Testons ensuite notre procédure avec plusieurs types d'itérables.</p>
+<p><span class="calculator_button" markdown="1">enumere('1497') # chaine de caractères</span></p>
+<p>On obtient l'affichage suivant :</p>
+<p><span class="calculator_button" markdown="1">1</span><br>
+<span class="calculator_button" markdown="1">4</span><br>
+<span class="calculator_button" markdown="1">9</span><br>
+<span class="calculator_button" markdown="1">7</span></p>
+<p>On peut obtenir le même affichage d'autres types de données.</p>
+<p><span class="calculator_button" markdown="1">enumere([1, 4, 9, 7]) # liste</span><br>
+<span class="calculator_button" markdown="1">enumere((1, 4, 9, 7)) # tuple</span><br>
+<span class="calculator_button" markdown="1">enumere({1, 4, 9, 7}) # set</span><br>
+<span class="calculator_button" markdown="1">enumere({'1': 5, '4': 0, '9': 8, '7': 2}) # dictionnaire</span></p>
+<p>Ces quatre appels de procédure produisent tous l'affichage suivant :</p>
+<p><span class="calculator_button" markdown="1">1</span><br>
+<span class="calculator_button" markdown="1">4</span><br>
+<span class="calculator_button" markdown="1">9</span><br>
+<span class="calculator_button" markdown="1">7</span></p>
+<p>Mais dans certains cas un traitement différencié peut s'avérer nécessaire en fonction de la nature des données traitées. Dans l'exemple qui précède, nous avons traité indifféremment des types mutables (liste, set, dictionnaire) et des types non mutables (chaîne de caractères, tuple).</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Les types mutables autorisent l'affectation ou la suppression d'éléments mais ce n'est pas le cas des types non mutables qui génèrent une erreur si on tente une affectation ou une suppression d'élément.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">t = ('a', 'b', 'c') # tuple</span><br>
+<span class="calculator_button" markdown="1">print(t[1])</span><br>
+<span class="calculator_button" markdown="1">t[1] = 'z'</span><br>
+<span class="calculator_button" markdown="1"># affiche TypeError: 'tuple' object does not support item assignment</span></p>
+<p><span class="calculator_button" markdown="1">del(t[2])</span><br>
+<span class="calculator_button" markdown="1"># affiche TypeError: 'tuple' object does not support item deletion</span></p>
+<p>Si nous voulions apporter des modifications aux itérables, il faudrait prévoir des traitements adaptés en fonction de leur mutabilité. De même certains d'entre eux sont ordonnés (chaîne de caractères, liste, tuple) et d'autres ne le sont pas (dictionnaire, set). La souplesse apportée par le typage dynamique ne dispense donc pas d'adapter les traitements aux types de données possiblement traités.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le choix du type de structure de donnée doit s'effectuer en fonction des besoins et des caractéristiques désirées, notamment d'ordre et de mutabilité.</p></div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Mutabilité</p></div></h3>
+<p>Certaines structures de données ont été conçues avec la caractéristique d'être <b>mutables</b>, c'est-à-dire modifiables.<br>
+Il est nécessaire d'être vigilant·e sur cette caractéristique en programmation fonctionnelle où une fonction ne doit pas créer d'<b>effet de bord</b>, c'est-à-dire qu'elle ne doit pas modifier d'éléments extérieurs à son environnement local.</p>
+<p>Voici un exemple de mutation appliquée à un dictionnaire par une fonction.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Nous disposons d'un dictionnaire composé de clés associées à des valeurs numériques entières, positives ou négatives. Nous souhaitons créer une fonction qui reçoive en entrée un tel dictionnaire et retourne en sortie un dictionnaire où les valeurs négatives ont été remplacées par zéro.</p>
+<p><span class="calculator_button" markdown="1">def plancher(dictionnaire):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">for cle, valeur in dictionnaire.items():</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if valeur &lt; 0:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">dictionnaire[cle] = 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:22px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return dictionnaire</span></p></div>
+<p><span class="calculator_button" markdown="1">entrees = {'A': 12, 'B': 21, 'C': -2, 'D':37, 'E':-99, 'F': 6}</span></p>
+<p><span class="calculator_button" markdown="1">print(plancher(entrees))</span><br>
+<span class="calculator_button" markdown="1"># affiche {'A': 12, 'B': 21, 'C': 0, 'D': 37, 'E': 0, 'F': 6}</span></p>
+<p><span class="calculator_button" markdown="1">print(entrees)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'A': 12, 'B': 21, 'C': 0, 'D': 37, 'E': 0, 'F': 6}</span></p>
+<p>On constate que la fonction <span class="calculator_button" markdown="1">plancher()</span> a bien retourné le résultat attendu, mais elle a aussi modifié le dictionnaire qui a servi de base au traitement.</p>
+<p>Pour éviter cette mutation notre fonction doit travailler sur une copie et pas sur l'original.</p>
+<p><span class="calculator_button" markdown="1">def plancher(dictionnaire):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">copie = dictionnaire.copy()</span><br>
+<span class="calculator_button" markdown="1">for cle, valeur in copie.items():</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if valeur &lt; 0:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">copie[cle] = 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return copie</span></p></div>
+<p><span class="calculator_button" markdown="1">entrees = {'A': 12, 'B': 21, 'C': -2, 'D':37, 'E':-99, 'F': 6}</span></p>
+<p><span class="calculator_button" markdown="1">print(plancher(entrees))</span><br>
+<span class="calculator_button" markdown="1"># affiche {'A': 12, 'B': 21, 'C': 0, 'D': 37, 'E': 0, 'F': 6}</span></p>
+<p><span class="calculator_button" markdown="1">print(entrees)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'A': 12, 'B': 21, 'C': -2, 'D': 37, 'E': -99, 'F': 6}</span></p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La version réécrite de notre fonction <span class="calculator_button" markdown="1">plancher()</span> a bien effectué le traitement demandé, mais elle n'a pas modifié le dictionnaire des entrées qui a servi de base au traitement.</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La copie de structures de données mutables avec la méthode <span class="calculator_button" markdown="1">copy()</span> consiste en une copie superficielle des données (« <em>shallow copy</em> » en anglais). Si ces structures de données mutables contiennent elles-mêmes des données mutables, telles que des listes ou des dictionnaires, il est nécessaire d'effectuer ce qu'on appelle une copie profonde (« <em>deep copy</em> » en anglais).</p></div>
+</div>
+<p>La bibliothèque <span class="calculator_button" markdown="1">copy</span> faisant partie de la bibliothèque standard de Python, elle propose les méthodes correspondantes.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Débordements</p></div></h3>
+<p>La notion de <b>débordement</b> est associée à la notion de <b>pile</b>.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Pile :</b></p>
+<p>Une pile est un conteneur dans lequel il est possible d'ajouter (empiler) et de retirer (dépiler) des éléments.</p>
+</div>
+</div>
+<p>La logique de fonctionnement d'une pile est résumée par le sigle LIFO (pour « <em>Last In, First Out</em> », c'est-à-dire « dernier entré, premier sorti »).</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Avec une pile <b>on ne peut retirer que le dernier élément empilé</b>. Si on veut accéder à des éléments situés en-dessous, il faut d'abord retirer (dépiler) un par un ceux qui se trouvent au-dessus.</p></div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On peut faire l'analogie avec une pile de cartons lourds qui ne pourraient être manipulés qu'individuellement.</p></div>
+</div>
+<p>Des débordements peuvent survenir dans deux cas : </p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">
+<b>débordement positif</b> quand la pile, limitée en taille, est pleine et qu'on tente d'ajouter un nouvel élément ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">
+<b>débordement négatif</b> quand la pile est vide et qu'on tente de retirer un élément.</div>
+</li>
+</ul>
+<p>En Python on peut assez facilement modéliser une pile en s'appuyant sur une liste. Si certains langages imposent de définir à l'avance une taille de tableau, et donc un nombre fixe d'éléments, ce n'est pas le cas de Python dont les listes peuvent par défaut être étendues à loisir. Mais on pourrait facilement implémenter une telle restriction sur une liste pour disposer d'une pile à capacité limitée.</p>
+<p>On peut constater un débordement négatif sur une liste si on appelle la méthode <span class="calculator_button" markdown="1">pop()</span> sans nous assurer au préalable que la liste contient au moins un élément.</p>
+<p><span class="calculator_button" markdown="1">nombres = [12, 7, 9]</span></p>
+<p><span class="calculator_button" markdown="1">print(nombres.pop())</span><br>
+<span class="calculator_button" markdown="1"># affiche 9</span></p>
+<p><span class="calculator_button" markdown="1">print(nombres.pop())</span><br>
+<span class="calculator_button" markdown="1"># affiche 7</span></p>
+<p><span class="calculator_button" markdown="1">print(nombres.pop())</span><br>
+<span class="calculator_button" markdown="1"># affiche 12</span></p>
+<p><span class="calculator_button" markdown="1">print(nombres.pop())</span><br>
+<span class="calculator_button" markdown="1"># affiche IndexError: pop from empty list</span></p>
+<p>Un test préalable est donc nécessaire pour s'assurer que la liste n'est pas complètement vide avant de tenter de la dépiler.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>On peut implémenter ce test en exploitant la différence de valeur booléenne entre une liste vide et une liste qui ne l'est pas.</p></div>
+</div>
+<p><span class="calculator_button" markdown="1">print(bool([]))</span><br>
+<span class="calculator_button" markdown="1"># affiche False</span><br>
+<span class="calculator_button" markdown="1">print(bool([1]))</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p>Cette différence nous permet de produire facilement un code qui dépile complètement une liste sans erreur à la fin.</p>
+<p><span class="calculator_button" markdown="1">nombres = [12, 7, 9]</span><br>
+<span class="calculator_button" markdown="1">while nombres:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(nombres.pop())</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1"># absence d'erreur, on sort de la boucle quand la pile est vide</span></p></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Les effets de bord peuvent perturber la mise au point logicielle. Il est important de les connaître afin d'éviter de les subir de manière involontaire.</p></div>
+</div>
+<p>Les effets de bord ne sont pas les seules sources d'erreurs logicielles. Les instructions conditionnelles doivent elles aussi être employées de manière adéquate.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Instructions conditionnelles</p></div></h2>
+<p>Les instructions conditionnelles permettent à nos algorithmes d'effectuer des traitements distincts en fonction de conditions particulières. Nous évaluons si certaines conditions sont remplies et si c'est le cas nous effectuons le traitement correspondant.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Ces instructions conditionnelles sont articulées en Python autour d'au moins un <span class="calculator_button" markdown="1">if</span> (« si »), optionnellement associé à un ou plusieurs <span class="calculator_button" markdown="1">elif</span> (signifiant « sinon si ») et optionnellement à un <span class="calculator_button" markdown="1">else</span> (« sinon »).</p></div>
+</div>
+<p>Nous allons présenter plusieurs cas de figures d'<b>erreurs fréquemment commises</b> avec des instructions conditionnelles.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Séquence incomplète</p></div></h3>
+<p>Voyons tout d'abord une séquence incomplète.</p>
+<p><span class="calculator_button" markdown="1">x = 5</span></p>
+<p><span class="calculator_button" markdown="1">if x &lt; 0:</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">y = - 20</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">elif x &lt; 10:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">y = 21</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">elif 10 &lt; x &lt; 12:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">y = 35</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">elif x &gt;= 12:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">y = 37</span></p></div>
+<p><span class="calculator_button" markdown="1">print(y)</span><br>
+<span class="calculator_button" markdown="1"># affiche 21</span></p>
+<p>Mais si nous relançons ce même code en affectant la valeur $10$ à <span class="calculator_button" markdown="1">x</span>, nous obtenons une erreur.</p>
+<p><span class="calculator_button" markdown="1">NameError: name 'y' is not defined</span></p>
+<p>Cet ensemble d'instructions conditionnelles ne couvre pas tous les cas de figure. En effet le cas où <span class="calculator_button" markdown="1">x</span> est égal à $10$ n'est traité par aucune des branches : aucune valeur n'est affectée à <span class="calculator_button" markdown="1">y</span>.</p>
+<p>Une clause <span class="calculator_button" markdown="1">else</span> permet de fournir des instructions quand aucune autre condition n'a été remplie, mais dans le cas présent où toutes les valeurs de <span class="calculator_button" markdown="1">x</span> autres que $10$ ont été traitées, l'erreur viendrait plutôt d'un comparateur <span class="calculator_button" markdown="1">&lt;=</span> qui aurait été saisi en <span class="calculator_button" markdown="1">&lt;</span> dans le premier ou le deuxième <span class="calculator_button" markdown="1">elif</span>.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Séquence complète avec ordre incorrect des conditions</p></div></h3>
+<p>On peut avoir envisagé tous les cas de figure mais avoir commis une erreur dans l'ordre de traitement des conditions.</p>
+<p>On cherche à implémenter un algorithme qui affecte une valeur $y$ en fonction d'une valeur $x$ selon le tableau suivant :</p>
+<div markdown="1" class="tab-c texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td>Valeurs de $x$</td>
+<td>Valeurs de $y$</td>
+</tr>
+<tr>
+<td>$x &lt;= 20$</td>
+<td>$y = - 20$</td>
+</tr>
+<tr>
+<td>$x &gt; 20$</td>
+<td>$y = 21$</td>
+</tr>
+<tr>
+<td>$x &gt; 30$</td>
+<td>$y = 35$</td>
+</tr>
+<tr>
+<td>$x &gt; 50$</td>
+<td>$y = 37$</td>
+</tr>
+</table></div>
+<p>La transposition littérale du tableau par ordre chronologique nous fournit le code suivant :</p>
+<p><span class="calculator_button" markdown="1">if x &lt;= 20:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">y = - 20</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">elif x &gt; 20:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">y = 21</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">elif x &gt; 30:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">y = 35</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">elif x &gt; 50:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">y = 37</span></p></div>
+<p>Ce code fonctionnera uniquement pour certaines valeurs car dès que <span class="calculator_button" markdown="1">x</span> dépasse $20$, la condition du premier <span class="calculator_button" markdown="1">elif</span> devient vraie, et les branches suivantes ne seront jamais traitées. Il faudrait donc soit réordonner les inégalités existantes, soit créer des conditions sous forme d'encadrement, du type : <span class="calculator_button" markdown="1">elif 20 &lt; x &lt;=30</span>.</p>
+<p>La façon dont le problème est défini n'est pas toujours directement transposable en algorithme de manière littérale.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Traitement conditionnel d'égalités</p></div></h3>
+<p>Le problème d'ordre décrit précédemment avec des inégalités disparaît avec des égalités, puisque par définition une variable ne peut pas simultanément être égale à plusieurs valeurs. Toutefois, on peut être confronté·e à des problématiques proches avec l'évaluation simultanée d'égalités portant sur plusieurs valeurs.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Énoncé du problème :</p>
+<ul>
+
+
+
+<li>si $x = 2$ ou $y = 5$, alors $z = 35$</li>
+
+
+
+<li>si $x = 2$ et $y = 5$, alors $z = 15$</li>
+
+
+
+<li>sinon $z = 20$</li>
+</ul>
+</div>
+</div>
+<p>Avec un tel énoncé, qui s'apparente à du pseudo-code, la transposition paraît assez immédiate.</p>
+<p><span class="calculator_button" markdown="1">if x == 2 or y == 5:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">z = 35</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">elif x == 2 and y == 5:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">z = 15</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">z = 20</span></p></div>
+<p>Pourtant ce code ne fonctionnera pas comme prévu.</p>
+<p>Il est certain qu'une valeur sera affectée à <span class="calculator_button" markdown="1">z</span> grâce à la clause <span class="calculator_button" markdown="1">else</span>qui permet de traiter le cas où aucune des évaluations d'expressions antérieures n'est vraie.</p>
+<p>On comprend par ailleurs à la lecture de ce code l'intention recherchée d'affecter la valeur $15$ à <span class="calculator_button" markdown="1">z</span> quand <span class="calculator_button" markdown="1">x</span> vaut $2$ et <span class="calculator_button" markdown="1">y</span> vaut $5$.</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Mais l'embranchement correspondant, celui du premier <span class="calculator_button" markdown="1">elif</span>, n'est jamais atteint.</p></div>
+</div>
+<p>En effet, dans ce cas de figure, la condition évaluée dans le <span class="calculator_button" markdown="1">if</span> est vraie : il suffit qu'une seule des deux variables soit égale à la valeur testée, mais avec le « ou » logique la condition reste vraie aussi quand les deux expressions sont vraies. Comme cette condition est évaluée avant la condition comportant le « et » logique, cette dernière n'est pas évaluée.</p>
+<p>Pour obtenir le résultat souhaité, on doit donc <b>inverser l'ordre des deux évaluations</b> : on commence par vérifier si les deux égalités sont vraies simultanément, et si ce n'est pas le cas, on évalue ensuite si au moins une des deux l'est.</p>
+<p><span class="calculator_button" markdown="1">if x == 2 and y == 5: </span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">z = 5</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">elif x == 2 or y == 5: </span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">z = 35</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:0px;"><p><span class="calculator_button" markdown="1">else: </span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">z = 20</span></p></div>
+<h3 range="d." markdown="1"><div markdown="1"><p>Sécurité des traitements</p></div></h3>
+<p>Lorsqu'un algorithme doit déterminer selon un ensemble de conditions si une permission est accordée ou non, il est préférable de toujours considérer comme point de départ le niveau minimum de permission, plutôt que de faire le contraire. Ce niveau minimum pourra éventuellement être augmenté si les conditions sont réunies.</p>
+<p>Ainsi dans le cas où on cherche à déterminer si un mot de passe est, ou non, conforme à un certain nombre de critères, <b>on commencera par considérer qu'il n'est pas conforme</b>. On évaluera ensuite individuellement chaque condition (par exemple longueur du mot de passe, présence conjointe de majuscules et de minuscules, présence de caractères spéciaux etc.), et on ne validera le mot de passe que si toutes les conditions sont bien réunies.</p>
+<p>De la même manière lorsqu'on implémente une fonctionnalité d'ajout d'utilisateur·rice·s pour l'administrateur·rice d'une plateforme, et que ces visiteur·se·s peuvent avoir plusieurs rôles correspondant à des niveaux de permissions croissants (par exemple :visiteur·se, membre inscrit·e, modérateur·rice, administrateur·rice), on fera en sorte que le rôle par défaut d'un·e nouvel·le utilisateur·rice soit « visiteur » plutôt qu'« administrateur ». De cette manière si l'administrateur·rice oublie de changer les droits par défaut pour en faire un usager plus privilégié, celui-ci obtiendra seulement les droits d'un visiteur : ses droits seront trop restreints, ce qui est assurément moins problématique en termes de sécurité que des droits trop étendus.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Les traitements conditionnels nécessitent une vigilance particulière afin de s'assurer que tous les cas de figure possibles sont traités, et que les traitements prévus pour chaque cas spécifique sont bien effectués comme prévu.</p></div>
+</div>
+<p>Nous allons maintenant nous intéresser aux problèmes pouvant survenir en effectuant des comparaisons.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Comparaisons</p></div></h2>
+<p>De nombreux algorithmes nécessitent de comparer des valeurs entre elles. Nous avons montré précédemment qu'il était important de prévoir tous les cas de figure de manière exhaustive et sans commettre d'erreur dans l'ordre des évaluations pour les inégalités. Si l'ordre n'a pas d'importance pour les égalités simples, la notion même d'égalité doit être nuancée.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Égalité des nombres réels</p></div></h3>
+<p>La comparaison d'entiers (type <span class="calculator_button" markdown="1">int</span>) ne pose pas de problèmes particuliers.</p>
+<p><span class="calculator_button" markdown="1">print(1 + 1 == 2)</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p><span class="calculator_button" markdown="1">print(1 + 1 + 1 == 3)</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p>Il convient en revanche d'être prudent avec les nombres flottants (type <span class="calculator_button" markdown="1">float</span>).</p>
+<p><span class="calculator_button" markdown="1">print(0.1 + 0.1 == 0.2) </span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p><span class="calculator_button" markdown="1">print(0.1 + 0.1 + 0.1 == 0.3)</span><br>
+<span class="calculator_button" markdown="1"># affiche False</span></p>
+<p>Ce résultat surprenant et inattendu tient à la manière dont les ordinateurs gèrent les nombres flottants. Sans entrer dans les détails techniques, il faut retenir que certaines valeurs sont seulement des valeurs <b>approchées</b>. Nous pouvons l'illustrer en demandant à Python d'afficher la valeur du nombre réel $0.3$ avec un très grand nombre de décimales.</p>
+<p><span class="calculator_button" markdown="1">print('{:.80f}'.format(0.3))</span><br>
+<span class="calculator_button" markdown="1"># affiche 0.10000000000000000555111512312578270211815834045410156250000000000000000000000000</span></p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Les tests d'égalité stricte sont donc à éviter lorsqu'on manipule des nombres réels. On passera par des arrondis ou par des comparaisons prenant en compte un faible écart que l'on aura choisi de tolérer.</p></div>
+</div>
+<p><span class="calculator_button" markdown="1">print(round(0.1 + 0.1 + 0.1, 2) == round(0.3, 2))</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p><span class="calculator_button" markdown="1">ecart = 0.1 + 0.1 + 0.1 - 0.3</span><br>
+<span class="calculator_button" markdown="1">ecart_tolere = 0.01</span><br>
+<span class="calculator_button" markdown="1">print('{:.80f}'.format(ecart))</span><br>
+<span class="calculator_button" markdown="1"># affiche 0.00000000000000005551115123125782702118158340454101562500000000000000000000000000</span><br>
+<span class="calculator_button" markdown="1">print(abs(ecart) &lt; ecart_tolere)</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La bibliothèque de tests unitaires <span class="calculator_button" markdown="1">unittest</span>, incluse dans la bibliothèque standard, comporte une méthode d'assertion de quasi-égalité appelée <span class="calculator_button" markdown="1">AssertAlmostEqual</span> reposant sur ce principe.<br>
+Cette méthode permet de préciser un ordre de grandeur de l'écart (appelé conventionnellement delta) acceptable pour la comparaison.</p></div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Identité et équivalence</p></div></h3>
+<p>Lorsqu'on compare deux variables, il est important de comprendre sur quoi porte la comparaison.</p>
+<p>On doit distinguer deux notions :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">
+<b>l'égalité structurelle</b>, qui indique si le contenu des objets est identique ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">
+<b>l'égalité physique</b>, qui indique s'il s'agit ou non du même objet.</div>
+</li>
+</ul>
+<p>Illustrons ces deux notions avec un exemple.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><span class="calculator_button" markdown="1">liste1 = ['a', 'b', 'c']</span><br>
+<span class="calculator_button" markdown="1">liste2 = liste1</span><br>
+<span class="calculator_button" markdown="1">liste3 = ['a', 'b', 'c']</span></p>
+<p><span class="calculator_button" markdown="1">print(liste1 == liste2)</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p><span class="calculator_button" markdown="1">print(liste1 == liste3)</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p>Les variables <span class="calculator_button" markdown="1">liste1</span>, <span class="calculator_button" markdown="1">liste2</span> et <span class="calculator_button" markdown="1">liste3</span> ont bien le même contenu.</p>
+<p><span class="calculator_button" markdown="1">print(liste1 is liste2)</span><br>
+<span class="calculator_button" markdown="1">#affiche True</span></p>
+<p><span class="calculator_button" markdown="1">print(liste1 is liste3)</span><br>
+<span class="calculator_button" markdown="1"># affiche False</span></p>
+<p>Les variables <span class="calculator_button" markdown="1">liste1</span> et <span class="calculator_button" markdown="1">liste2</span> font référence à un même objet commun. En revanche <span class="calculator_button" markdown="1">liste3</span> est un objet distinct. On peut le matérialiser en consultant l'adresse mémoire pointée par les trois variables. On constate que <span class="calculator_button" markdown="1">liste1</span> et <span class="calculator_button" markdown="1">liste2</span> désignent bien la même adresse, contrairement à <span class="calculator_button" markdown="1">liste3</span>.</p>
+<p><span class="calculator_button" markdown="1">print(liste1.<em>repr</em>)</span><br>
+<span class="calculator_button" markdown="1"># affiche <method-wrapper>repr' of list object at 0x11191fb08&gt;</method-wrapper></span><br>
+<span class="calculator_button" markdown="1">print(liste2.<em>repr</em>)</span><br>
+<span class="calculator_button" markdown="1"># affiche <method-wrapper>repr' of list object at 0x11191fb08&gt;</method-wrapper></span><br>
+<span class="calculator_button" markdown="1">print(liste3.<em>repr</em>)</span><br>
+<span class="calculator_button" markdown="1"># affiche <method-wrapper>repr' of list object at 0x112339608&gt;</method-wrapper></span></p>
+<p>Toute modification effectuée sur <span class="calculator_button" markdown="1">liste1</span> affectera obligatoirement <span class="calculator_button" markdown="1">liste2</span> puisqu'il s'agit d'un seul et même objet. En revanche <span class="calculator_button" markdown="1">liste3</span> étant un objet distinct, il pourra être modifié de manière indépendante.</p>
+</div>
+</div>
+<p>En fonction de l'objectif recherché, on vérifiera soit l'identité soit l'équivalence entre deux objets comparés.</p>
+<p>La connaissance des sources d'erreur évoquées précédemment permet au·à la programmeur·se d'anticiper ses erreurs. En ayant en tête ces sources d'erreur au moment de l'écriture du programme, il·elle gagnera un temps précieux dans la mise au point de son programme. Cependant, on n'échappera pas forcément à la manifestation d'un bug. Il est alors nécessaire de procéder méthodiquement pour corriger celui-ci. Regardons cela de plus près.</p>
+<h2 range="4" markdown="1"><div markdown="1"><p>Démarche de correction d'un bug</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Identifier le bug</p></div></h3>
+<p>Lorsqu'un bug apparaît, il importe, dans un premier temps, de procéder à son identification. Pour cela, il est nécessaire de procéder en trois étapes :</p>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">être en mesure de reproduire le bug, donc d'identifier les circonstances dans lesquelles celui-ci apparaît ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">bien cerner le résultat normalement attendu, ce qui impose en particulier de reprendre connaissance du détail des exigences relatives au programme. Le but étant de corriger le programme dans le strict respect de celles-ci ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text">les étapes 1 et 2 étant passées, il est alors temps de localiser le bug, c'est-à-dire la partie de code fautive, sans rentrer au niveau de la ligne de code à ce stade-là.</div>
+</li>
+</ul></div>
+<p>On commence à identifier le module qui génère le bug. Le bug peut être dû à une erreur de programmation dans le module lui-même, ou au fait qu'il travaille avec des données en entrée qui sont elles-mêmes erronées. Une fois le module fautif identifié, on resserre le champ de recherche en se focalisant sur ce module et en cherchant à identifier le sous-module, puis la fonction ou la portion de code fautive.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Corriger le bug</p></div></h3>
+<p>Une fois le bug identifié on procède en quatre étapes :</p>
+<div markdown="1" class="paragraph" style="width:90%; margin-top:0px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text">corriger le bug ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text">enrichir le jeu de tests du programme pour couvrir le cas qui a généré le bug ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text">profiter de son intervention dans le code pour l'améliorer, le rendre plus clair ;</div>
+</li>
+
+<li class="bullet_list">
+<div style="" range="4"></div>
+<div class="list_text">tester la correction du bug et vérifier également que l'on n'a pas commis de régression, c'est-à-dire engendré d'autres bugs.</div>
+</li>
+</ul></div>
+<div class="columns" markdown="1">
+<div markdown="1" class="undefined" style="width:50%; "><div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c16-img01.png" alt="It’s not a bug it’s a feature"> 
+<span>En français : Ce n'est pas un bug, c'est une fonctionnalité
+ </span></p></div></div></div>
+<div markdown="1" class="undefined" style="width:50%; "><div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>La mise au point logicielle nécessite de respecter un certain nombre de bonnes pratiques de développement et aussi de connaître les spécificités du langage utilisé pour effectuer ce développement.</p>
+<p>Nous l'avons illustré avec le langage Python en abordant successivement les effets de bords, les traitements conditionnels et les comparaisons. Nous avons pu constater que l'écriture d'algorithmes corrects reposait sur des choix éclairés de structures de données prenant en compte leurs différentes caractéristiques, mais aussi sur notre capacité à implémenter une problématique qui n'est pas toujours littéralement transposable, même quand elle est exprimée de manière proche du code. Cependant, si le développeur est malgré tout confronté à un bug, il saura le corriger efficacement en suivant une démarche rigoureuse qui assurera capitalisation et non régression.<br>
+Pour terminer ce cours avec un peu d'humour, voici (ci-contre) une citation bien connue des développeurs.</p>
+</div></div>
+</div>
+</div></div>
+<div id="poool-zurhf-embx6" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"6442885ef1526801007d6382","type":"Cours","title":"Mise au point logicielle","content":"[IN]\nIntroduction\u0026nbsp;:\n\nLa mise au point logicielle repose sur la connaissance d'un certain nombre de principes et de bonnes pratiques de développement, mais aussi sur la prise en compte des spécificités du langage choisi pour l'implémentation. Aussi, dans ce cours, nous présenterons les bonnes pratiques logicielles en soulignant certaines spécificités du langage Python.\n\nNous aborderons dans un premier temps les effets de bord, puis nous nous intéresserons aux traitements conditionnels et enfin aux comparaisons, chaque fois sous l'angle de la mise au point logicielle.\n[/IN]\n\n##Effets de bord/1\n\n[RAP]\nUn langage à **typage dynamique** n'impose pas que le type des variables soit défini. Le type est alors déterminé à la volée au moment de l'interprétation du code.\n[/RAP]\n\n###Typage dynamique/a.\n\nPython étant un langage à typage dynamique, il n'impose pas de spécifier le type d'une donnée, et on peut à loisir changer le type de donnée d'une variable.\n\n[EX]\n[BUTC]a = 'hello world'[/BUTC]  \n[BUTC]a = a.split() # a désigne la liste ['hello', 'world'][/BUTC]  \n[BUTC]a = 12[/BUTC]  \n[BUTC]a = True[/BUTC]\n[/EX]\n\n[ATT]\nDe tels changements seraient en revanche **impossibles dans les langages à typage statique** qui imposent de définir précisément le type de données d'une variable et de le respecter ensuite.\n[/ATT]\n\nLe typage dynamique nous permet d'envisager un même traitement applicable à plusieurs types de données.  \nIllustrons-le avec une procédure simple qui imprime chacun des éléments d'un itérable.\n\n[BUTC]def enumere(iterable):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]for element in iterable:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]print(element)[/BUTC]\u003e\u003e\n\nTestons ensuite notre procédure avec plusieurs types d'itérables.\n\n[BUTC]enumere('1497') # chaine de caractères[/BUTC]\n\nOn obtient l'affichage suivant :\n\n[BUTC]1[/BUTC]  \n[BUTC]4[/BUTC]  \n[BUTC]9[/BUTC]  \n[BUTC]7[/BUTC]\n\nOn peut obtenir le même affichage d'autres types de données.\n\n[BUTC]enumere([1, 4, 9, 7]) # liste[/BUTC]  \n[BUTC]enumere((1, 4, 9, 7)) # tuple[/BUTC]  \n[BUTC]enumere({1, 4, 9, 7}) # set[/BUTC]  \n[BUTC]enumere({'1': 5, '4': 0, '9': 8, '7': 2}) # dictionnaire[/BUTC]\n\nCes quatre appels de procédure produisent tous l'affichage suivant\u0026nbsp;:\n\n[BUTC]1[/BUTC]  \n[BUTC]4[/BUTC]  \n[BUTC]9[/BUTC]  \n[BUTC]7[/BUTC]\n\nMais dans certains cas un traitement différencié peut s'avérer nécessaire en fonction de la nature des données traitées. Dans l'exemple qui précède, nous avons traité indifféremment des types mutables (liste, set, dictionnaire) et des types non mutables (chaîne de caractères, tuple).\n* Les types mutables autorisent l'affectation ou la suppression d'éléments mais ce n'est pas le cas des types non mutables qui génèrent une erreur si on tente une affectation ou une suppression d'élément.((fleche))\n\n[BUTC]t = ('a', 'b', 'c') # tuple[/BUTC]  \n[BUTC]print(t\u0026#91;1\u0026#93;)[/BUTC]  \n[BUTC]t[1] = 'z'[/BUTC]  \n[BUTC]# affiche TypeError: 'tuple' object does not support item assignment[/BUTC]\n\n[BUTC]del(t\u0026#91;2\u0026#93;)[/BUTC]  \n[BUTC]# affiche TypeError: 'tuple' object does not support item deletion[/BUTC]\n\nSi nous voulions apporter des modifications aux itérables, il faudrait prévoir des traitements adaptés en fonction de leur mutabilité. De même certains d'entre eux sont ordonnés (chaîne de caractères, liste, tuple) et d'autres ne le sont pas (dictionnaire, set). La souplesse apportée par le typage dynamique ne dispense donc pas d'adapter les traitements aux types de données possiblement traités.\n\n[RETENIR]\nLe choix du type de structure de donnée doit s'effectuer en fonction des besoins et des caractéristiques désirées, notamment d'ordre et de mutabilité.\n[/RETENIR]\n\n###Mutabilité/b.\n\nCertaines structures de données ont été conçues avec la caractéristique d'être **mutables**, c'est-à-dire modifiables.  \nIl est nécessaire d'être vigilant·e sur cette caractéristique en programmation fonctionnelle où une fonction ne doit pas créer d'**effet de bord**, c'est-à-dire qu'elle ne doit pas modifier d'éléments extérieurs à son environnement local.\n\nVoici un exemple de mutation appliquée à un dictionnaire par une fonction.\n\n[EX]\nNous disposons d'un dictionnaire composé de clés associées à des valeurs numériques entières, positives ou négatives. Nous souhaitons créer une fonction qui reçoive en entrée un tel dictionnaire et retourne en sortie un dictionnaire où les valeurs négatives ont été remplacées par zéro.\n\n[BUTC]def plancher(dictionnaire):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]for cle, valeur in dictionnaire.items():[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,75))[BUTC]if valeur \u003c 0:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,90))[BUTC]dictionnaire[cle] = 0[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,22,50))[BUTC]return dictionnaire[/BUTC]\u003e\u003e\n\n[BUTC]entrees = {'A': 12, 'B': 21, 'C': -2, 'D':37, 'E':-99, 'F': 6}[/BUTC]\n\n[BUTC]print(plancher(entrees))[/BUTC]  \n[BUTC]# affiche {'A': 12, 'B': 21, 'C': 0, 'D': 37, 'E': 0, 'F': 6}[/BUTC]\n\n[BUTC]print(entrees)[/BUTC]  \n[BUTC]# affiche {'A': 12, 'B': 21, 'C': 0, 'D': 37, 'E': 0, 'F': 6}[/BUTC]\n\nOn constate que la fonction [BUTC]plancher()[/BUTC] a bien retourné le résultat attendu, mais elle a aussi modifié le dictionnaire qui a servi de base au traitement.\n\nPour éviter cette mutation notre fonction doit travailler sur une copie et pas sur l'original.\n\n[BUTC]def plancher(dictionnaire):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]copie = dictionnaire.copy()[/BUTC]  \n[BUTC]for cle, valeur in copie.items():[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,75))[BUTC]if valeur \u003c 0:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,90))[BUTC]copie[cle] = 0[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,0,50))[BUTC]return copie[/BUTC]\u003e\u003e\n\n[BUTC]entrees = {'A': 12, 'B': 21, 'C': -2, 'D':37, 'E':-99, 'F': 6}[/BUTC]\n\n[BUTC]print(plancher(entrees))[/BUTC]  \n[BUTC]# affiche {'A': 12, 'B': 21, 'C': 0, 'D': 37, 'E': 0, 'F': 6}[/BUTC]\n\n[BUTC]print(entrees)[/BUTC]  \n[BUTC]# affiche {'A': 12, 'B': 21, 'C': -2, 'D': 37, 'E': -99, 'F': 6}[/BUTC]\n\n* La version réécrite de notre fonction [BUTC]plancher()[/BUTC] a bien effectué le traitement demandé, mais elle n'a pas modifié le dictionnaire des entrées qui a servi de base au traitement.((fleche))\n[/EX]\n\n[ATT]\nLa copie de structures de données mutables avec la méthode [BUTC]copy()[/BUTC] consiste en une copie superficielle des données («\u0026nbsp;__shallow copy__\u0026nbsp;» en anglais). Si ces structures de données mutables contiennent elles-mêmes des données mutables, telles que des listes ou des dictionnaires, il est nécessaire d'effectuer ce qu'on appelle une copie profonde («\u0026nbsp;__deep copy__\u0026nbsp;» en anglais).\n[/ATT]\n\nLa bibliothèque [BUTC]copy[/BUTC] faisant partie de la bibliothèque standard de Python, elle propose les méthodes correspondantes.\n\n###Débordements/c.\n\nLa notion de **débordement** est associée à la notion de **pile**.\n\n[DEF]\n**Pile\u0026nbsp;:**\n\nUne pile est un conteneur dans lequel il est possible d'ajouter (empiler) et de retirer (dépiler) des éléments.\n[/DEF]\n\nLa logique de fonctionnement d'une pile est résumée par le sigle LIFO (pour «\u0026nbsp;__Last In, First Out__\u0026nbsp;», c'est-à-dire «\u0026nbsp;dernier entré, premier sorti\u0026nbsp;»).\n\n[RETENIR]\nAvec une pile **on ne peut retirer que le dernier élément empilé**. Si on veut accéder à des éléments situés en-dessous, il faut d'abord retirer (dépiler) un par un ceux qui se trouvent au-dessus.\n[/RETENIR]\n\n[AST]\nOn peut faire l'analogie avec une pile de cartons lourds qui ne pourraient être manipulés qu'individuellement.\n[/AST]\n\nDes débordements peuvent survenir dans deux cas\u0026nbsp;: \n* **débordement positif** quand la pile, limitée en taille, est pleine et qu'on tente d'ajouter un nouvel élément\u0026nbsp;;((liste2))\n* **débordement négatif** quand la pile est vide et qu'on tente de retirer un élément.((liste2))\n\nEn Python on peut assez facilement modéliser une pile en s'appuyant sur une liste. Si certains langages imposent de définir à l'avance une taille de tableau, et donc un nombre fixe d'éléments, ce n'est pas le cas de Python dont les listes peuvent par défaut être étendues à loisir. Mais on pourrait facilement implémenter une telle restriction sur une liste pour disposer d'une pile à capacité limitée.\n\nOn peut constater un débordement négatif sur une liste si on appelle la méthode [BUTC]pop()[/BUTC] sans nous assurer au préalable que la liste contient au moins un élément.\n\n[BUTC]nombres = [12, 7, 9][/BUTC]\n\n[BUTC]print(nombres.pop())[/BUTC]  \n[BUTC]# affiche 9[/BUTC]\n\n[BUTC]print(nombres.pop())[/BUTC]  \n[BUTC]# affiche 7[/BUTC]\n\n[BUTC]print(nombres.pop())[/BUTC]  \n[BUTC]# affiche 12[/BUTC]\n\n[BUTC]print(nombres.pop())[/BUTC]  \n[BUTC]# affiche IndexError: pop from empty list[/BUTC]\n\nUn test préalable est donc nécessaire pour s'assurer que la liste n'est pas complètement vide avant de tenter de la dépiler.\n\n[AST]\nOn peut implémenter ce test en exploitant la différence de valeur booléenne entre une liste vide et une liste qui ne l'est pas.\n[/AST]\n\n[BUTC]print(bool([]))[/BUTC]  \n[BUTC]# affiche False[/BUTC]  \n[BUTC]print(bool([1]))[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\nCette différence nous permet de produire facilement un code qui dépile complètement une liste sans erreur à la fin.\n\n[BUTC]nombres = [12, 7, 9][/BUTC]  \n[BUTC]while nombres:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(nombres.pop())[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]# absence d'erreur, on sort de la boucle quand la pile est vide[/BUTC]\u003e\u003e\n\n[RETENIR]\nLes effets de bord peuvent perturber la mise au point logicielle. Il est important de les connaître afin d'éviter de les subir de manière involontaire.\n[/RETENIR]\n\nLes effets de bord ne sont pas les seules sources d'erreurs logicielles. Les instructions conditionnelles doivent elles aussi être employées de manière adéquate.\n\n##Instructions conditionnelles/2\n\nLes instructions conditionnelles permettent à nos algorithmes d'effectuer des traitements distincts en fonction de conditions particulières. Nous évaluons si certaines conditions sont remplies et si c'est le cas nous effectuons le traitement correspondant.\n\n[RAP]\nCes instructions conditionnelles sont articulées en Python autour d'au moins un [BUTC]if[/BUTC] («\u0026nbsp;si\u0026nbsp;»), optionnellement associé à un ou plusieurs [BUTC]elif[/BUTC] (signifiant «\u0026nbsp;sinon si\u0026nbsp;») et optionnellement à un [BUTC]else[/BUTC] («\u0026nbsp;sinon\u0026nbsp;»).\n[/RAP]\n\nNous allons présenter plusieurs cas de figures d'**erreurs fréquemment commises** avec des instructions conditionnelles.\n\n###Séquence incomplète/a.\n\nVoyons tout d'abord une séquence incomplète.\n\n[BUTC]x = 5[/BUTC]\n\n[BUTC]if x \u003c 0:[/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]y = - 20[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]elif x \u003c 10:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]y = 21[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]elif 10 \u003c x \u003c 12:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]y = 35[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]elif x \u003e= 12:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]y = 37[/BUTC]\u003e\u003e\n\n[BUTC]print(y)[/BUTC]  \n[BUTC]# affiche 21[/BUTC]\n\nMais si nous relançons ce même code en affectant la valeur $10$ à\u0026nbsp;[BUTC]x[/BUTC], nous obtenons une erreur.\n\n[BUTC]NameError: name 'y' is not defined[/BUTC]\n\nCet ensemble d'instructions conditionnelles ne couvre pas tous les cas de figure. En effet le cas où [BUTC]x[/BUTC] est égal à $10$ n'est traité par aucune des branches\u0026nbsp;: aucune valeur n'est affectée à\u0026nbsp;[BUTC]y[/BUTC].\n\nUne clause [BUTC]else[/BUTC] permet de fournir des instructions quand aucune autre condition n'a été remplie, mais dans le cas présent où toutes les valeurs de [BUTC]x[/BUTC] autres que $10$ ont été traitées, l'erreur viendrait plutôt d'un comparateur [BUTC]\u003c=[/BUTC] qui aurait été saisi en [BUTC]\u003c[/BUTC] dans le premier ou le deuxième [BUTC]elif[/BUTC].\n\n###Séquence complète avec ordre incorrect des conditions/b.\n\nOn peut avoir envisagé tous les cas de figure mais avoir commis une erreur dans l'ordre de traitement des conditions.\n\nOn cherche à implémenter un algorithme qui affecte une valeur $y$ en fonction d'une valeur $x$ selon le tableau suivant\u0026nbsp;:\n\n[TAB]((auto, c, n, texte-gauche))\n[LI]\n| Valeurs de $x$ |\n| Valeurs de $y$ |\n[/LI]\n[LI]\n| $x \u003c= 20$ |\n| $y = - 20$ |\n[/LI]\n[LI]\n| $x \u003e 20$ |\n| $y = 21$ |\n[/LI]\n[LI]\n| $x \u003e 30$ |\n| $y = 35$ |\n[/LI]\n[LI]\n| $x \u003e 50$ |\n| $y = 37$ |\n[/LI]\n[/TAB]\n\nLa transposition littérale du tableau par ordre chronologique nous fournit le code suivant\u0026nbsp;:\n\n[BUTC]if x \u003c= 20:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]y = - 20[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]elif x \u003e 20:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]y = 21[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]elif x \u003e 30:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]y = 35[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]elif x \u003e 50:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]y = 37[/BUTC]\u003e\u003e\n\nCe code fonctionnera uniquement pour certaines valeurs car dès que [BUTC]x[/BUTC] dépasse $20$, la condition du premier [BUTC]elif[/BUTC] devient vraie, et les branches suivantes ne seront jamais traitées. Il faudrait donc soit réordonner les inégalités existantes, soit créer des conditions sous forme d'encadrement, du type\u0026nbsp;: [BUTC]elif 20 \u003c x \u003c=30[/BUTC].\n\nLa façon dont le problème est défini n'est pas toujours directement transposable en algorithme de manière littérale.\n\n###Traitement conditionnel d'égalités/c.\n\nLe problème d'ordre décrit précédemment avec des inégalités disparaît avec des égalités, puisque par définition une variable ne peut pas simultanément être égale à plusieurs valeurs. Toutefois, on peut être confronté·e à des problématiques proches avec l'évaluation simultanée d'égalités portant sur plusieurs valeurs.\n\n[EX]\nÉnoncé du problème\u0026nbsp;:\n* si $x = 2$ ou $y = 5$, alors $z = 35$\n* si $x = 2$ et $y = 5$, alors $z = 15$\n* sinon $z = 20$\n[/EX]\n\nAvec un tel énoncé, qui s'apparente à du pseudo-code, la transposition paraît assez immédiate.\n\n[BUTC]if x == 2 or y == 5:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]z = 35[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]elif x == 2 and y == 5:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]z = 15[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]z = 20[/BUTC]\u003e\u003e\n\nPourtant ce code ne fonctionnera pas comme prévu.\n\nIl est certain qu'une valeur sera affectée à [BUTC]z[/BUTC] grâce à la clause [BUTC]else[/BUTC]qui permet de traiter le cas où aucune des évaluations d'expressions antérieures n'est vraie.\n\nOn comprend par ailleurs à la lecture de ce code l'intention recherchée d'affecter la valeur $15$ à [BUTC]z[/BUTC] quand [BUTC]x[/BUTC] vaut $2$ et [BUTC]y[/BUTC] vaut $5$.\n\n[ATT]\nMais l'embranchement correspondant, celui du premier [BUTC]elif[/BUTC], n'est jamais atteint.\n[/ATT]\n\nEn effet, dans ce cas de figure, la condition évaluée dans le [BUTC]if[/BUTC] est vraie\u0026nbsp;: il suffit qu'une seule des deux variables soit égale à la valeur testée, mais avec le «\u0026nbsp;ou\u0026nbsp;» logique la condition reste vraie aussi quand les deux expressions sont vraies. Comme cette condition est évaluée avant la condition comportant le «\u0026nbsp;et\u0026nbsp;» logique, cette dernière n'est pas évaluée.\n\nPour obtenir le résultat souhaité, on doit donc **inverser l'ordre des deux évaluations**\u0026nbsp;: on commence par vérifier si les deux égalités sont vraies simultanément, et si ce n'est pas le cas, on évalue ensuite si au moins une des deux l'est.\n\n[BUTC]if x == 2 and y == 5: [/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]z = 5[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]elif x == 2 or y == 5: [/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]z = 35[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,0))[BUTC]else: [/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,50))[BUTC]z = 20[/BUTC]\u003e\u003e\n\n###Sécurité des traitements/d.\n\nLorsqu'un algorithme doit déterminer selon un ensemble de conditions si une permission est accordée ou non, il est préférable de toujours considérer comme point de départ le niveau minimum de permission, plutôt que de faire le contraire. Ce niveau minimum pourra éventuellement être augmenté si les conditions sont réunies.\n\nAinsi dans le cas où on cherche à déterminer si un mot de passe est, ou non, conforme à un certain nombre de critères, **on commencera par considérer qu'il n'est pas conforme**. On évaluera ensuite individuellement chaque condition (par exemple longueur du mot de passe, présence conjointe de majuscules et de minuscules, présence de caractères spéciaux etc.), et on ne validera le mot de passe que si toutes les conditions sont bien réunies.\n\nDe la même manière lorsqu'on implémente une fonctionnalité d'ajout d'utilisateur·rice·s pour l'administrateur·rice d'une plateforme, et que ces visiteur·se·s peuvent avoir plusieurs rôles correspondant à des niveaux de permissions croissants (par exemple\u0026nbsp;:visiteur·se, membre inscrit·e, modérateur·rice, administrateur·rice), on fera en sorte que le rôle par défaut d'un·e nouvel·le utilisateur·rice soit «\u0026nbsp;visiteur\u0026nbsp;» plutôt qu'«\u0026nbsp;administrateur\u0026nbsp;». De cette manière si l'administrateur·rice oublie de changer les droits par défaut pour en faire un usager plus privilégié, celui-ci obtiendra seulement les droits d'un visiteur\u0026nbsp;: ses droits seront trop restreints, ce qui est assurément moins problématique en termes de sécurité que des droits trop étendus.\n\n[RETENIR]\nLes traitements conditionnels nécessitent une vigilance particulière afin de s'assurer que tous les cas de figure possibles sont traités, et que les traitements prévus pour chaque cas spécifique sont bien effectués comme prévu.\n[/RETENIR]\n\nNous allons maintenant nous intéresser aux problèmes pouvant survenir en effectuant des comparaisons.\n\n##Comparaisons/3\n\nDe nombreux algorithmes nécessitent de comparer des valeurs entre elles. Nous avons montré précédemment qu'il était important de prévoir tous les cas de figure de manière exhaustive et sans commettre d'erreur dans l'ordre des évaluations pour les inégalités. Si l'ordre n'a pas d'importance pour les égalités simples, la notion même d'égalité doit être nuancée.\n\n###Égalité des nombres réels/a.\n\nLa comparaison d'entiers (type [BUTC]int[/BUTC]) ne pose pas de problèmes particuliers.\n\n[BUTC]print(1 + 1 == 2)[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\n[BUTC]print(1 + 1 + 1 == 3)[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\nIl convient en revanche d'être prudent avec les nombres flottants (type [BUTC]float[/BUTC]).\n\n[BUTC]print(0.1 + 0.1 == 0.2) [/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\n[BUTC]print(0.1 + 0.1 + 0.1 == 0.3)[/BUTC]  \n[BUTC]# affiche False[/BUTC]\n\nCe résultat surprenant et inattendu tient à la manière dont les ordinateurs gèrent les nombres flottants. Sans entrer dans les détails techniques, il faut retenir que certaines valeurs sont seulement des valeurs **approchées**. Nous pouvons l'illustrer en demandant à Python d'afficher la valeur du nombre réel $0.3$ avec un très grand nombre de décimales.\n\n[BUTC]print('{:.80f}'.format(0.3))[/BUTC]  \n[BUTC]# affiche 0.10000000000000000555111512312578270211815834045410156250000000000000000000000000[/BUTC]\n\n[RETENIR]\nLes tests d'égalité stricte sont donc à éviter lorsqu'on manipule des nombres réels. On passera par des arrondis ou par des comparaisons prenant en compte un faible écart que l'on aura choisi de tolérer.\n[/RETENIR]\n\n[BUTC]print(round(0.1 + 0.1 + 0.1, 2) == round(0.3, 2))[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\n[BUTC]ecart = 0.1 + 0.1 + 0.1 - 0.3[/BUTC]  \n[BUTC]ecart\u0026#95;tolere = 0.01[/BUTC]  \n[BUTC]print('{:.80f}'.format(ecart))[/BUTC]  \n[BUTC]# affiche 0.00000000000000005551115123125782702118158340454101562500000000000000000000000000[/BUTC]  \n[BUTC]print(abs(ecart) \u003c ecart\u0026#95;tolere)[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\n[AST]\nLa bibliothèque de tests unitaires [BUTC]unittest[/BUTC], incluse dans la bibliothèque standard, comporte une méthode d'assertion de quasi-égalité appelée [BUTC]AssertAlmostEqual[/BUTC] reposant sur ce principe.  \nCette méthode permet de préciser un ordre de grandeur de l'écart (appelé conventionnellement delta) acceptable pour la comparaison.\n[/AST]\n\n###Identité et équivalence/b.\n\nLorsqu'on compare deux variables, il est important de comprendre sur quoi porte la comparaison.\n\nOn doit distinguer deux notions\u0026nbsp;:\n* **l'égalité structurelle**, qui indique si le contenu des objets est identique\u0026nbsp;;((liste2))\n* **l'égalité physique**, qui indique s'il s'agit ou non du même objet.((liste2))\n\nIllustrons ces deux notions avec un exemple.\n\n[EX]\n[BUTC]liste1 = ['a', 'b', 'c'][/BUTC]  \n[BUTC]liste2 = liste1[/BUTC]  \n[BUTC]liste3 = ['a', 'b', 'c'][/BUTC]\n\n[BUTC]print(liste1 == liste2)[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\n[BUTC]print(liste1 == liste3)[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\nLes variables [BUTC]liste1[/BUTC], [BUTC]liste2[/BUTC] et [BUTC]liste3[/BUTC] ont bien le même contenu.\n\n[BUTC]print(liste1 is liste2)[/BUTC]  \n[BUTC]#affiche True[/BUTC]\n\n[BUTC]print(liste1 is liste3)[/BUTC]  \n[BUTC]# affiche False[/BUTC]\n\nLes variables [BUTC]liste1[/BUTC] et [BUTC]liste2[/BUTC] font référence à un même objet commun. En revanche [BUTC]liste3[/BUTC] est un objet distinct. On peut le matérialiser en consultant l'adresse mémoire pointée par les trois variables. On constate que [BUTC]liste1[/BUTC] et [BUTC]liste2[/BUTC] désignent bien la même adresse, contrairement à [BUTC]liste3[/BUTC].\n\n[BUTC]print(liste1.__repr__)[/BUTC]  \n[BUTC]# affiche \u003cmethod-wrapper '__repr__' of list object at 0x11191fb08\u003e[/BUTC]  \n[BUTC]print(liste2.__repr__)[/BUTC]  \n[BUTC]# affiche \u003cmethod-wrapper '__repr__' of list object at 0x11191fb08\u003e[/BUTC]  \n[BUTC]print(liste3.__repr__)[/BUTC]  \n[BUTC]# affiche \u003cmethod-wrapper '__repr__' of list object at 0x112339608\u003e[/BUTC]\n\nToute modification effectuée sur [BUTC]liste1[/BUTC] affectera obligatoirement [BUTC]liste2[/BUTC] puisqu'il s'agit d'un seul et même objet. En revanche [BUTC]liste3[/BUTC] étant un objet distinct, il pourra être modifié de manière indépendante.\n[/EX]\n\nEn fonction de l'objectif recherché, on vérifiera soit l'identité soit l'équivalence entre deux objets comparés.\n\nLa connaissance des sources d'erreur évoquées précédemment permet au·à la programmeur·se d'anticiper ses erreurs. En ayant en tête ces sources d'erreur au moment de l'écriture du programme, il·elle gagnera un temps précieux dans la mise au point de son programme. Cependant, on n'échappera pas forcément à la manifestation d'un bug. Il est alors nécessaire de procéder méthodiquement pour corriger celui-ci. Regardons cela de plus près.\n\n##Démarche de correction d'un bug/4\n\n###Identifier le bug/a.\n\nLorsqu'un bug apparaît, il importe, dans un premier temps, de procéder à son identification. Pour cela, il est nécessaire de procéder en trois\u0026nbsp;étapes\u0026nbsp;:\n\u003c\u003c((90,0,auto,0,auto))* être en mesure de reproduire le bug, donc d'identifier les circonstances dans lesquelles celui-ci apparaît\u0026nbsp;;((bulle,1))\n* bien cerner le résultat normalement attendu, ce qui impose en particulier de reprendre connaissance du détail des exigences relatives au programme. Le but étant de corriger le programme dans le strict respect de celles-ci\u0026nbsp;;((bulle,2))\n* les étapes\u0026nbsp;1 et\u0026nbsp;2 étant passées, il est alors temps de localiser le bug, c'est-à-dire la partie de code fautive, sans rentrer au niveau de la ligne de code à ce stade-là.((bulle,3))\u003e\u003e\n\nOn commence à identifier le module qui génère le bug. Le bug peut être dû à une erreur de programmation dans le module lui-même, ou au fait qu'il travaille avec des données en entrée qui sont elles-mêmes erronées. Une fois le module fautif identifié, on resserre le champ de recherche en se focalisant sur ce module et en cherchant à identifier le sous-module, puis la fonction ou la portion de code fautive.\n\n###Corriger le bug/b.\n\nUne fois le bug identifié on procède en quatre\u0026nbsp;étapes\u0026nbsp;:\n\u003c\u003c((90,0,auto,0,auto))* corriger le bug\u0026nbsp;;((bulle,1))\n* enrichir le jeu de tests du programme pour couvrir le cas qui a généré le bug\u0026nbsp;;((bulle,2))\n* profiter de son intervention dans le code pour l'améliorer, le rendre plus clair\u0026nbsp;;((bulle,3))\n* tester la correction du bug et vérifier également que l'on n'a pas commis de régression, c'est-à-dire engendré d'autres bugs.((bulle,4))\u003e\u003e\n\n[COLONNES][COL][IMG]((100))\n![It’s not a bug it’s a feature](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c16-img01.png) #En français\u0026nbsp;: Ce n'est pas un bug, c'est une fonctionnalité\n[/IMG][/COL]((50))\n[COL][C]\nConclusion\u0026nbsp;:\n\nLa mise au point logicielle nécessite de respecter un certain nombre de bonnes pratiques de développement et aussi de connaître les spécificités du langage utilisé pour effectuer ce développement.\n\nNous l'avons illustré avec le langage Python en abordant successivement les effets de bords, les traitements conditionnels et les comparaisons. Nous avons pu constater que l'écriture d'algorithmes corrects reposait sur des choix éclairés de structures de données prenant en compte leurs différentes caractéristiques, mais aussi sur notre capacité à implémenter une problématique qui n'est pas toujours littéralement transposable, même quand elle est exprimée de manière proche du code. Cependant, si le développeur est malgré tout confronté à un bug, il saura le corriger efficacement en suivant une démarche rigoureuse qui assurera capitalisation et non régression.  \nPour terminer ce cours avec un peu d'humour, voici (ci-contre) une citation bien connue des développeurs.\n[/C][/COL]((50))[/COLONNES]\n \n","siblings":[{"resourceId":"6442885ef1526801007d6382","type":"Cours","sort":null},{"resourceId":"5e99c10328e6370100441613","type":"Fiche de révision","sort":null},{"resourceId":"5f3e6bdc2263e30100dfa403","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7e0209e0a80100fdbbe9","name":"Mise au point logicielle"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7e0209e0a80100fdbbe9","label":"Cours : Mise au point logicielle","link":"https://www.schoolmouv.fr/cours/mise-au-point-logicielle/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"mise-au-point-logicielle","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/mise-au-point-logicielle/fiche-de-cours","title":"Mise au point logicielle : Fiche de cours - Numérique et sciences informatiques | SchoolMouv","metaDescription":"Révise le cours : Mise au point logicielle de Numérique et sciences informatiques Terminale grâce à notre fiche de cours","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"mise-au-point-logicielle","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Le langage SQL : Fiche de révision de Terminale</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Le langage SQL : Fiche de révision de Terminale">
+<meta name="description" content="Fiche de révision SchoolMouv ® pour apprendre facilement Le langage SQL (Terminale) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/le-langage-sql-/fiche-de-revision">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/le-langage-sql-/fiche-de-cours","name":"Le langage SQL "}},{"@type":"ListItem","position":5,"item":{"@id":"","name":"Fiche de révision : Le langage SQL "}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb-with-ellipsis__23a_n breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><h1>Fiche de révision : Le langage SQL </h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Le langage SQL </p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<h2 range="1" markdown="1"><div markdown="1"><p>La description des données</p></div></h2>
+<ul>
+
+<li>Le langage utilisé pour créer la structure d'une base de données est un LDD (SQL, en plus d'autres langages, est un LDD).</li>
+
+<li>La structure de la base de données comporte l'ensemble de ses tables qu'il est nécessaire de créer une à une.</li>
+
+<li>C'est lors de cette étape que, en plus de ses colonnes, on définit les contraintes d'intégrité de domaine, de relation et de référence.</li>
+
+<li>Quelques éléments importants pour l’écriture des instructions :</li>
+
+<li class="liste2">
+<div class="list_text">chaque instruction de la syntaxe employée se termine obligatoirement par un « ; » ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l'orthographe des termes écrits en lettre capitales uniquement doit être respectée : ce sont des mots-clés ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les termes soulignés sont obligatoires ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les autres termes sont les noms qui sont affectés librement aux attributs et aux tables.</div>
+</li>
+
+<li>Le type de donnée constitue en lui-même une contrainte de domaine. Il précise la nature d'un attribut qui peut-être :</li>
+
+<li class="liste2">
+<div class="list_text">numérique ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">caractère ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">binaire ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">date.</div>
+</li>
+
+<li>Le terme « PRIMARY KEY » désigne le ou les attributs qui constituent la clé primaire de la relation.</li>
+
+<li>Le terme « FOREIGN KEY » désigne le ou les attributs qui constituent une clé étrangère dans la relation.</li>
+
+<li>Le terme « REFERENCE » sert à désigner la table et la ou les colonnes de cette table dont la clé étrangère est issue.</li>
+
+<li>Enfin, le terme « ON DELETE » permet de préciser l'option choisie en cas de suppression de la clé étrangère dans la table d'où celle-ci provient.</li>
+
+<li>La syntaxe pour supprimer une table, et par conséquent son contenu, est la suivante : <span class="calculator_button" markdown="1">DROP TABLE <em>nomTable</em>;</span>.</li>
+
+<li>Notez qu’il sera nécessaire de supprimer au préalable les tables ou les lignes dont les clés étrangères se réfèrent à une ligne de la table que l'on veut supprimer (sans quoi l’opération sera impossible).</li>
+
+<li>La commande <span class="calculator_button" markdown="1">ALTER TABLE</span> permet de modifier la structure d'une table, que ce soit en ajoutant, supprimant ou modifiant ses colonnes.</li>
+
+<li>Pour ajouter une colonne à une table :<br>
+<span class="calculator_button" markdown="1">ALTER TABLE <em>nomTable</em></span><br>
+<span class="calculator_button" markdown="1">ADD COLUMN <em>nouveauChamp</em> TYPEDONNEE;</span>
+</li>
+
+<li>Pour supprimer une colonne d'une table :<br>
+<span class="calculator_button" markdown="1">ALTER TABLE <em>nomTable</em></span><br>
+<span class="calculator_button" markdown="1">DROP COLUMN <em>nomChamp</em>;</span>
+</li>
+
+<li>Pour modifier une colonne :<br>
+<span class="calculator_button" markdown="1">/* création d'une colonne portant le nom désiré et du type désiré */</span><br>
+<span class="calculator_button" markdown="1">ALTER TABLE <em>nomTable</em></span><br>
+<span class="calculator_button" markdown="1">ADD COLUMN  <em>nouveaunomTable</em> VARCHAR(100); </span>
+</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>La manipulation des données</p></div></h2>
+<ul>
+
+<li>Pour insérer une ligne dans une table, les mécanismes suivants vont être sollicités :</li>
+
+<li class="liste2">
+<div class="list_text">contrôle des contraintes d'intégrité lors de l'insertion (domaine, relation et référentielle) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">renseignement des champs avec la valeur « NULL » si aucune valeur n'est précisée et si « NULL » est autorisé pour ces champs.</div>
+</li>
+
+<li>La syntaxe est la suivante :<br>
+<span class="calculator_button" markdown="1">INSERT INTO nomTable</span><br>
+<span class="calculator_button" markdown="1">(champx, champY, ….)</span><br>
+<span class="calculator_button" markdown="1">VALUES (valeurChampX, valeurChampY,…);</span>
+</li>
+
+<li>Les valeurs des colonnes doivent être renseignées dans le même ordre que celui de la liste des colonnes donnée juste avant.</li>
+
+<li>Si la liste des colonnes n'est pas donnée, alors le SGBD se base sur la liste des colonnes de la table, dans l'ordre où celles-ci ont été définies lors de sa création.</li>
+
+<li>Si certaines colonnes sont omises, elles prendront la valeur NULL.</li>
+
+<li>Exemple pour insérer un ingrédient dans la base de données du club de cuisine :<br>
+<span class="calculator_button" markdown="1">INSERT INTO ingredient</span><br>
+<span class="calculator_button" markdown="1"> (nomIngredient, type)</span><br>
+<span class="calculator_button" markdown="1">VALUES ("oeuf","viande")</span>
+</li>
+
+<li>Pour supprimer une ou plusieurs lignes d’une table, les lignes concernées par l'opération doivent être désignées et donc identifiées avec une condition.</li>
+
+<li>Ainsi, la syntaxe de la commande SQL pour supprimer une ou plusieurs lignes d'une table est la suivante :<br>
+<span class="calculator_button" markdown="1">DELETE FROM nomTable</span><br>
+<span class="calculator_button" markdown="1">WHERE <span class="underline">condition</span>;</span>
+</li>
+
+<li>La condition consiste en un ou plusieurs critères portant sur le contenu d'une ou plusieurs colonnes. Elle s'exprime à l'aide d'opérateurs de comparaison (cf. =, &gt;, &lt;, etc.)</li>
+
+<li>Connecteurs logiques :</li>
+</ul>
+<div markdown="1" class="tab-g texte-gauche"><table markdown="1" width="auto%" style="">
+<p></p>
+<tr>
+<td>&lt;condition1&gt; AND &lt;condition2&gt;</td>
+<td>Les $2$ conditions sont vraies simultanément</td>
+</tr>
+<tr>
+<td>&lt;condition1&gt; OR &lt;condition2&gt;</td>
+<td>Au moins une des $2$ conditions est vraie</td>
+</tr>
+<tr>
+<td>NOT &lt;condition&gt;</td>
+<td>Inverse la condition</td>
+</tr>
+</table></div>
+<ul>
+
+<li>Pour modifier une ou plusieurs lignes d'une table il faut préciser :</li>
+
+<li class="liste2">
+<div class="list_text">les colonnes concernées ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les nouvelles valeurs prises par ces colonnes ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les lignes concernées, via la clause <span class="calculator_button" markdown="1">WHERE</span>.</div>
+</li>
+
+<li>La syntaxe d'une modification est la suivante :<br>
+<span class="calculator_button" markdown="1">UPDATE nomTable</span><br>
+<span class="calculator_button" markdown="1">SET nomColonne1 = valeur 1, nomColonne2 = valeur2, …</span><br>
+<span class="calculator_button" markdown="1">WHERE <span class="underline">condition</span></span>
+</li>
+</ul>
+<h2 range="3" markdown="1"><div markdown="1"><p>Interrogation des données</p></div></h2>
+<ul>
+
+<li>Tout ce qui a été vu jusqu’à présent sert un objectif : consulter ces données, selon des critères variés en interrogeant la base.</li>
+
+<li>Pour interroger les données d'une base, on a recours à un LID (Langage d'interrogation des données).</li>
+
+<li>Lorsque l'on effectue une recherche dans une base de données, le résultat de celle-ci se présente lui-même sous forme d'une table, que l'on nommera par la suite « table résultat ».</li>
+
+<li>Détaillons maintenant la syntaxe d'une requête (= instruction de recherche).</li>
+
+<li>La syntaxe d'une recherche est la suivante :<br>
+<span class="calculator_button" markdown="1">SELECT nomColonne1, nomColonne2, …</span><br>
+<span class="calculator_button" markdown="1">FROM nomTable;</span>
+</li>
+
+<li>Si l'on souhaite que toutes les colonnes apparaissent dans la table résultat, il suffit alors d'employer la syntaxe suivante :<br>
+<span class="calculator_button" markdown="1">SELECT *</span><br>
+<span class="calculator_button" markdown="1">FROM nomTable;</span>
+</li>
+
+<li>Si l'on souhaite connaître toutes les valeurs prises par une colonne dans une table, sans que celles-ci soient répétées autant de fois qu'elles s'y retrouvent, on le précise avec la clause <span class="calculator_button" markdown="1">DISTINCT</span>.</li>
+
+<li>On peut affiner notre commande, par exemple :<br>
+<span class="calculator_button" markdown="1">SELECT DISTINCT prenom</span><br>
+<span class="calculator_button" markdown="1">FROM adherent;</span>
+</li>
+
+<li>La sélection (ou restriction) est le recours à un ou plusieurs critères pour retenir certaines lignes dans la table résultat de la requête.</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">C'est avec la clause <span class="calculator_button" markdown="1">WHERE</span> que l'on précise ces critères.</div>
+</li>
+
+<li>Ainsi, si l'on souhaite effectuer une projection sur une sélection, la commande SQL prendra la forme :<br>
+<span class="calculator_button" markdown="1">SELECT colonnex, colonney, …</span><br>
+<span class="calculator_button" markdown="1">FROM nomTable</span><br>
+<span class="calculator_button" markdown="1">WHERE <span class="underline">conditions</span></span>
+</li>
+</ul>
+</div></div>
+<div id="poool-qstow-wh80h" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e906c8628e6370100441252","type":"Fiche de révision","title":"Le langage SQL ","content":"##La description des données/1\n\n* Le langage utilisé pour créer la structure d'une base de données est un\u0026nbsp;LDD (SQL, en plus d'autres langages, est un LDD).\n* La structure de la base de données comporte l'ensemble de ses tables qu'il est nécessaire de créer une à une.  \n* C'est lors de cette étape que, en plus de ses colonnes, on définit les contraintes d'intégrité de domaine, de relation et de référence.\n* Quelques éléments importants pour l’écriture des instructions\u0026nbsp;:\n* chaque instruction de la syntaxe employée se termine obligatoirement par un «\u0026nbsp;;\u0026nbsp;»\u0026nbsp;;((liste2))\n* l'orthographe des termes écrits en lettre capitales uniquement doit être respectée\u0026nbsp;: ce sont des mots-clés\u0026nbsp;;((liste2))\n* les termes soulignés sont obligatoires\u0026nbsp;;((liste2))\n* les autres termes sont les noms qui sont affectés librement aux attributs et aux tables.((liste2))\n* Le type de donnée constitue en lui-même une contrainte de domaine. Il précise la nature d'un attribut qui peut-être\u0026nbsp;:\n* numérique\u0026nbsp;;((liste2))\n* caractère\u0026nbsp;;((liste2))\n* binaire\u0026nbsp;;((liste2))\n* date.((liste2))\n* Le terme «\u0026nbsp;PRIMARY KEY\u0026nbsp;» désigne le ou les attributs qui constituent la clé primaire de la relation.\n* Le terme «\u0026nbsp;FOREIGN KEY\u0026nbsp;» désigne le ou les attributs qui constituent une clé étrangère dans la relation. \n* Le terme «\u0026nbsp;REFERENCE\u0026nbsp;» sert à désigner la table et la ou les colonnes de cette table dont la clé étrangère est issue.\n* Enfin, le terme «\u0026nbsp;ON DELETE\u0026nbsp;» permet de préciser l'option choisie en cas de suppression de la clé étrangère dans la table d'où celle-ci provient.\n* La syntaxe pour supprimer une table, et par conséquent son contenu, est la suivante\u0026nbsp;: [BUTC]DROP TABLE __nomTable__;[/BUTC].\n* Notez qu’il sera nécessaire de supprimer au préalable les tables ou les lignes dont les clés étrangères se réfèrent à une ligne de la table que l'on veut supprimer (sans quoi l’opération sera impossible).\n* La commande [BUTC]ALTER TABLE[/BUTC] permet de modifier la structure d'une table, que ce soit en ajoutant, supprimant ou modifiant ses colonnes. \n* Pour ajouter une colonne à une table\u0026nbsp;:  \n[BUTC]ALTER TABLE __nomTable__[/BUTC]  \n[BUTC]ADD COLUMN __nouveauChamp__ TYPEDONNEE;[/BUTC]\n* Pour supprimer une colonne d'une table\u0026nbsp;:  \n[BUTC]ALTER TABLE __nomTable__[/BUTC]  \n[BUTC]DROP COLUMN __nomChamp__;[/BUTC]\n* Pour modifier une colonne\u0026nbsp;:  \n[BUTC]/* création d'une colonne portant le nom désiré et du type désiré */[/BUTC]  \n[BUTC]ALTER TABLE __nomTable__[/BUTC]  \n[BUTC]ADD COLUMN  __nouveaunomTable__ VARCHAR(100); [/BUTC]\n\n##La manipulation des données/2\n* Pour insérer une ligne dans une table, les mécanismes suivants vont être sollicités\u0026nbsp;:\n* contrôle des contraintes d'intégrité lors de l'insertion (domaine, relation et référentielle)\u0026nbsp;;((liste2))\n* renseignement des champs avec la valeur «\u0026nbsp;NULL\u0026nbsp;» si aucune valeur n'est précisée et si «\u0026nbsp;NULL\u0026nbsp;» est autorisé pour ces champs.((liste2))\n* La syntaxe est la suivante\u0026nbsp;:  \n[BUTC]INSERT INTO nomTable[/BUTC]  \n[BUTC](champx, champY, ….)[/BUTC]  \n[BUTC]VALUES (valeurChampX, valeurChampY,…);[/BUTC]\n* Les valeurs des colonnes doivent être renseignées dans le même ordre que celui de la liste des colonnes donnée juste avant.\n* Si la liste des colonnes n'est pas donnée, alors le SGBD se base sur la liste des colonnes de la table, dans l'ordre où celles-ci ont été définies lors de sa création.\n* Si certaines colonnes sont omises, elles prendront la valeur NULL.\n* Exemple pour insérer un ingrédient dans la base de données du club de cuisine\u0026nbsp;:  \n[BUTC]INSERT INTO ingredient[/BUTC]  \n[BUTC] (nomIngredient, type)[/BUTC]  \n[BUTC]VALUES (\"oeuf\",\"viande\")[/BUTC]\n* Pour supprimer une ou plusieurs lignes d’une table, les lignes concernées par l'opération doivent être désignées et donc identifiées avec une condition.\n* Ainsi, la syntaxe de la commande SQL pour supprimer une ou plusieurs lignes d'une table est la suivante\u0026nbsp;:  \n[BUTC]DELETE FROM nomTable[/BUTC]  \n[BUTC]WHERE --condition--;[/BUTC]\n* La condition consiste en un ou plusieurs critères portant sur le contenu d'une ou plusieurs colonnes. Elle s'exprime à l'aide d'opérateurs de comparaison (cf. =, \u003e, \u003c, etc.)\n* Connecteurs logiques\u0026nbsp;:\n[TAB]((auto, g, n, texte-gauche))\n[LI]\n| \u0026#60;condition1\u003e AND \u0026#60;condition2\u003e |\n| Les $2$ conditions sont vraies simultanément |\n[/LI]\n[LI]\n| \u0026#60;condition1\u003e OR \u0026#60;condition2\u003e |\n| Au moins une des $2$ conditions est vraie |\n[/LI]\n[LI]\n| NOT \u0026#60;condition\u003e |\n| Inverse la condition |\n[/LI]\n[/TAB]\n* Pour modifier une ou plusieurs lignes d'une table il faut préciser\u0026nbsp;:\n* les colonnes concernées\u0026nbsp;;((liste2))\n* les nouvelles valeurs prises par ces colonnes\u0026nbsp;;((liste2))\n* les lignes concernées, via la clause [BUTC]WHERE[/BUTC].((liste2))\n* La syntaxe d'une modification est la suivante\u0026nbsp;:  \n[BUTC]UPDATE nomTable[/BUTC]  \n[BUTC]SET nomColonne1 = valeur 1, nomColonne2 = valeur2, …[/BUTC]  \n[BUTC]WHERE --condition--[/BUTC]\n\n##Interrogation des données/3\n* Tout ce qui a été vu jusqu’à présent sert un objectif\u0026nbsp;: consulter ces données, selon des critères variés en interrogeant la base.\n* Pour interroger les données d'une base, on a recours à un LID (Langage d'interrogation des données).\n* Lorsque l'on effectue une recherche dans une base de données, le résultat de celle-ci se présente lui-même sous forme d'une table, que l'on nommera par la suite «\u0026nbsp;table résultat\u0026nbsp;».  \n* Détaillons maintenant la syntaxe d'une requête (= instruction de recherche).\n* La syntaxe d'une recherche est la suivante\u0026nbsp;:  \n[BUTC]SELECT nomColonne1, nomColonne2, …[/BUTC]  \n[BUTC]FROM nomTable;[/BUTC]\n* Si l'on souhaite que toutes les colonnes apparaissent dans la table résultat, il suffit alors d'employer la syntaxe suivante\u0026nbsp;:  \n[BUTC]SELECT *[/BUTC]  \n[BUTC]FROM nomTable;[/BUTC]\n* Si l'on souhaite connaître toutes les valeurs prises par une colonne dans une table, sans que celles-ci soient répétées autant de fois qu'elles s'y retrouvent, on le précise avec la clause [BUTC]DISTINCT[/BUTC].\n* On peut affiner notre commande, par exemple\u0026nbsp;:  \n[BUTC]SELECT DISTINCT prenom[/BUTC]  \n[BUTC]FROM adherent;[/BUTC]\n* La sélection (ou restriction) est le recours à un ou plusieurs critères pour retenir certaines lignes dans la table résultat de la requête.\n* C'est avec la clause [BUTC]WHERE[/BUTC] que l'on précise ces critères.((fleche))\n* Ainsi, si l'on souhaite effectuer une projection sur une sélection, la commande SQL prendra la forme\u0026nbsp;:  \n[BUTC]SELECT colonnex, colonney, …[/BUTC]  \n[BUTC]FROM nomTable[/BUTC]  \n[BUTC]WHERE --conditions--[/BUTC]","siblings":[{"resourceId":"5e74786f09e0a80100fe060f","type":"Cours","sort":null},{"resourceId":"5e906c8628e6370100441252","type":"Fiche de révision","sort":null}],"sheetDetails":{"id":"5dcd7d4509e0a80100fdbbdc","name":"Le langage SQL "}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d4509e0a80100fdbbdc","label":"Le langage SQL ","link":"https://www.schoolmouv.fr/cours/le-langage-sql-/fiche-de-cours"},{"key":"fiche-de-revision","label":"Fiche de révision : Le langage SQL ","link":""}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"le-langage-sql-","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/le-langage-sql-/fiche-de-revision","title":"Le langage SQL : Fiche de révision de Terminale","metaDescription":"Fiche de révision SchoolMouv ® pour apprendre facilement Le langage SQL (Terminale) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"le-langage-sql-","resourceType":"fiche-de-revision"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

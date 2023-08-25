@@ -1,0 +1,560 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bonnes pratiques logicielles : Fiche de cours - Numérique et sciences informatiques | SchoolMouv</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Bonnes pratiques logicielles : Fiche de cours - Numérique et sciences informatiques | SchoolMouv">
+<meta name="description" content="Révise le cours : Bonnes pratiques logicielles de Numérique et sciences informatiques Terminale grâce à notre fiche de cours">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/bonnes-pratiques-logicielles/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/bonnes-pratiques-logicielles/fiche-de-cours","name":"Cours : Bonnes pratiques logicielles"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Bonnes pratiques logicielles</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Bonnes pratiques logicielles</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Ce cours porte sur les bonnes pratiques logicielles. Car le développement de programmes informatiques nécessite non seulement des connaissances techniques, mais également le respect de principes et de conventions pour la production et la maintenance logicielle.</p>
+<p>Nous aborderons dans un premier temps la nécessité de produire un code conforme. Puis nous nous intéresserons aux différentes optimisations qu'il est possible d'apporter à un code existant. Enfin, nous soulignerons dans une troisième partie la nécessité de documenter et de maintenir le code.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Conformité</p></div></h2>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L'écriture de textes repose sur des règles d'orthographe, de grammaire et de ponctuation. De la même manière, les langages informatiques ont une orthographe, une grammaire et obéissent à des règles de syntaxe.</p></div>
+</div>
+<p>Nous allons présenter dans cette première partie les principes et outils qui contribuent à la production d’un code conforme aux usages.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Nommage</p></div></h3>
+<p>La manière de <b>nommer les éléments du code</b> a une incidence directe sur sa lisibilité. Nous pouvons aisément l'illustrer de manière concrète avec les portions de code ci-après.</p>
+<p><span class="calculator_button" markdown="1">for x in y:</span></p>
+<p>Ce code ci-dessus est bien moins explicite que le suivant, strictement équivalent pour l'ordinateur :</p>
+<p><span class="calculator_button" markdown="1">for lettre in chaine:</span></p>
+<p>De même le code <span class="calculator_button" markdown="1">m = sum(n) / len(n)</span> ne permet pas immédiatement de comprendre la nature de ce qui est calculé et stocké dans la variable. Le code suivant, strictement équivalent pour l'ordinateur, est beaucoup plus compréhensible pour un humain : <span class="calculator_button" markdown="1">moyenne = sum(notes) / len(notes)</span></p>
+<p>L'intérêt de choisir des noms explicites s'applique également aux fonctions.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><span class="calculator_button" markdown="1">def cf(dc):</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return dc * 9 / 5 + 32</span></p></div>
+</div>
+</div>
+<p>Dans cet exemple, on comprend que la fonction effectue un calcul ; mais, son nom n'étant pas explicite, il est difficile d'en deviner la nature. La variable manipulée par la fonction étant elle aussi nommée de manière sibylline, toute personne autre que l'auteur·e aura du mal à comprendre d'emblée à quoi sert cette fonction.</p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pire, l'auteur·e lui·elle-même aura peut-être des difficultés à se relire s'il·elle doit se plonger dans son propre code après plusieurs semaines ou plusieurs mois.</p></div>
+</div>
+<p>En réalité ce code est celui d'une fonction utilisée dans le cours précédent sur la modularité. </p>
+<p><span class="calculator_button" markdown="1">def celsius_en_fahrenheit(degres_celsius):</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">"""Calcule la température en degrés Fahrenheit</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">équivalente à la température en degrés Celsius fournie en argument</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">selon la formule température en Fahrenheit = température en Celsius x 9/5 + 32.</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">"""</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return degres_celsius * 9 / 5 + 32</span></p></div>
+<p>La <b>docstring</b> (ou <b>chaîne de documentation</b>) nous éclaire précisément sur le traitement effectué par la fonction. Mais, même en son absence, le code reste très compréhensible grâce aux nommages explicites de la fonction et de la variable qu'elle traite.</p>
+<p><span class="calculator_button" markdown="1">def celsius_en_fahrenheit(degres_celsius):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">return degres_celsius * 9 / 5 + 32</span></p></div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Règles stylistiques en Python</p></div></h3>
+<p>La production de code Python obéit à un certain nombre de règles. Elles servent de bases communes pour que l'ensemble des développeur·se·s uniformise la rédaction dans ce langage.</p>
+<p>Ces règles sont définies dans un document appelé PEP 8 (PEP signifiant <em>Python Enhancement Proposal</em>, soit « proposition d'amélioration de Python »). Le document PEP 8 est un guide stylistique écrit en 2001 par plusieurs auteurs dont Guido van Rossum, l'inventeur du langage Python. Ce document précise les conventions en vigueur en matière de style pour ce langage.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le PEP 8 est consultable (en anglais) dans son intégralité à l'adresse suivante :
+<a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p></div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img01.png" alt="Python NSI PEP8"> 
+<span>Extrait du PEP 8 relatifs à l’usage des espaces
+ </span></p></div></div>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img02.png" alt="Python NSI PEP8"> 
+<span>Extrait du PEP 8 relatifs à l’usage des espaces
+ </span></p></div></div>
+<p>Le PEP 8 indique par exemple qu'on doit trouver une espace avant et après le signe <span class="calculator_button" markdown="1">=</span> sauf pour les paramètres nommés des fonctions.</p>
+<p><span class="calculator_button" markdown="1">moyenne = 12.7</span></p>
+<p><span class="calculator_button" markdown="1">def genere_mot_de_passe(longueur=12, majuscules=1,</span><br>
+<span class="calculator_button" markdown="1">caracteres_speciaux=2):</span></p>
+</div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le respect des préconisations stylistiques du PEP 8 permet de produire un code dont la syntaxe est conforme aux usages pour le développement en Python.</p></div>
+</div>
+<p>Le guide PEP 8 précise entre autres :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">les conventions de <b>nommage</b> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les modalités d'<b>indentation</b> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la <b>longueur des lignes</b> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l'<b>espacement</b> à appliquer entre les lignes.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Ces préconisations permettent d'éviter que chaque développeur·se improvise sans concertation.</div>
+</li>
+</ul>
+<p>L'application de ces règles produit un code facilement lisible et compréhensible pour les autres développeur·se·s, habitué·e·s eux·elles aussi à appliquer ces mêmes règles. C'est une base qui sert de référence commune sur la manière d'écrire du code en Python.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Voici quelques exemples de nommage en PEP 8 :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">le nom des variables, des fonctions et des méthodes s'écrit toujours en snake_case (mots en minuscules séparés par des underscore) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">le nom des classes s'écrit en toujours CamelCase (mots accolés avec la première lettre de chaque mot en lettre capitale) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">le nom des constantes s'écrit toujours en lettres capitales.</div>
+</li>
+</ul>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img03.png" alt="Python NSI PEP8"> 
+<span>Extrait du PEP 8 relatif au nommage des fonctions
+ </span></p></div></div>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img04.png" alt="Python NSI PEP8"> 
+<span>Extrait du PEP 8 relatif au nommage des classes
+ </span></p></div></div>
+<div class="image_container" style="width:75%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img05.png" alt="Python NSI PEP8"> 
+<span>Extrait du PEP 8 relatif au nommage des constantes
+ </span></p></div></div>
+</div>
+</div>
+<p>Mais tout n'est pas nécessairement défini de manière stricte pour autant. Ainsi le PEP 8 n'impose aucun style de guillemet particulier pour les chaînes de caractères : l'utilisateur·trice est invité·e à librement choisir des guillemets simples ou doubles, <b>et à s'y tenir</b> (sauf dans les cas où cela évite d'échapper des caractères).<br>
+En revanche pour les chaînes de caractères multi-lignes encadrées par des triples guillemets, PEP 8 précise qu'il faut toujours utiliser les guillemets doubles.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Outils d'aide à la mise en conformité syntaxique</p></div></h3>
+<p>Il existe des outils spécifiques pour aider le développeur à produire un code conforme.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Linter :</b></p>
+<p>Un linter est un analyseur de code qui vérifie la conformité de sa syntaxe.</p>
+</div>
+</div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Linting :</b></p>
+<p>Le linting est l'analyse d'un code effectuée par un linter.</p>
+</div>
+</div>
+<p>Le périmètre d'analyse varie d'un linter à l'autre ; mais, d'une manière générale, ils signalent principalement les erreurs de syntaxe et le non-respect des règles stylistiques.</p>
+<p>Un linter Python peut notamment :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">repérer les espaces excédentaires ou manquantes ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">signaler les incohérences entre espaces et tabulations pour l'indentation ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">indiquer si le nombre de lignes blanches requis (deux après les imports, une seule après une définition de fonction) n'est pas respecté ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">alerter sur l'absence de chaîne de documentation.</div>
+</li>
+</ul>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Flake8 et Pylint sont deux linters Python fréquemment utilisés.</p></div>
+</div>
+<p>Les linters peuvent être utilisés en ligne de commande ou de manière intégrée à l'IDE (<em>Integrated Development Environnement</em>, soit « environnement de développement intégré ») du·de la développeur·se.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Lorsque le linter est intégré à l'éditeur de code, les erreurs ou problèmes sont directement balisés en regard du texte, avec des indications pour y remédier.</p></div>
+</div>
+<p>Le recours à un linter aide le·la développeur·se à adopter des bonnes pratiques et lui apporte la garantie que le code qu'il·elle produit est conforme aux règles syntaxiques et stylistiques du langage, contribuant ainsi à la qualité générale de son code.</p>
+<p>Toutefois la qualité d'un code ne se résume pas au seul respect de la syntaxe. Après une première écriture aboutissant à la production du résultat recherché, un code doit souvent être remanié pour différentes raisons, ainsi que nous allons l'étudier maintenant.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Optimisation du code</p></div></h2>
+<p>La conformité stylistique du code est d'autant plus importante que le code produit est amené à être lu pour être compris et éventuellement modifié, par l'auteur·e ou par des tiers.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Réusinage</p></div></h3>
+<p>La reformulation de code est souvent désignée par le terme <b>réusinage</b> ou son équivalent anglais <b><em>refactoring</em></b>.</p>
+<p>Le code peut être modifié pour différentes raisons.</p>
+<ul>
+
+<li>Un code non conforme aux règles de style en vigueur doit être modifié afin de devenir conforme.</li>
+
+<li>Un code non conforme aux spécifications doit être adapté pour y répondre correctement.</li>
+
+<li>De nouveaux besoins peuvent avoir fait leur apparition, apportant des modifications ou des ajouts aux spécifications initiales.</li>
+
+<li>Un code peut se prêter à des optimisations, avec le recours à des spécificités du langage ou des choix d'implémentations qui rendent le programme plus modulaire, plus rapide ou moins consommateur de ressources.</li>
+
+<li>L’évolution de l'environnement dans lequel le code fonctionne peut nécessiter des adaptations pour des raisons de compatibilité, de performance ou de sécurité.</li>
+</ul>
+<p>Chaque langage informatique a ses tournures et ses spécificités.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Même si dans de nombreux cas on peut transposer assez littéralement des pratiques acquises avec un autre langage, il est préférable de respecter les usages en vigueur et d'employer les outils de référence de chaque langage, d'autant plus que ces outils ont en général été optimisés.</p></div>
+</div>
+<p>Dans le cas de Python la formule consacrée pour indiquer la conformité du code aux principes du langage consiste à le qualifier de « <b>pythonesque</b> ».</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Le parcours d'une liste peut s'effectuer par référence indicielle à ses éléments individuels :</p>
+<p><span class="calculator_button" markdown="1">for i in range(len(liste)):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(liste[i])</span></p></div>
+<p>De nombreux langages informatiques obligent à recourir à la notation indicielle, mais ce n'est pas le cas de Python. Ce code produit bien le résultat escompté mais il n'est pas du tout pythonesque. Un parcours de liste en Python s'écrit typiquement comme suit :</p>
+<p><span class="calculator_button" markdown="1">for element in liste:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(element)</span></p></div>
+<p>Le code est ainsi plus lisible. De même si on a besoin d'accéder simultanément à l'indice et à l'élément de la liste, le parcours s'effectue de la manière suivante dans de nombreux langages : </p>
+<p><span class="calculator_button" markdown="1">for i in range(len(liste)):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:22px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(i, liste[i])</span></p></div>
+<p>En Python on privilégiera plutôt la formulation suivante :</p>
+<p><span class="calculator_button" markdown="1">for i, element in enumerate(liste):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(i, element)</span></p></div>
+</div>
+</div>
+<p>Les principes qui sous-tendent la programmation en Python ont été résumés dans un texte écrit en 1999 par Tim Peters, intitulé le « Zen de Python ». Ce texte de référence peut être affiché dans l'interpréteur Python avec la commande suivante :</p>
+<p><span class="calculator_button" markdown="1">import this</span></p>
+<p>On obtient l'affichage du texte suivant : </p>
+<p><span class="calculator_button" markdown="1">The Zen of Python, by Tim Peters</span></p>
+<p><span class="calculator_button" markdown="1">Beautiful is better than ugly.</span><br>
+<span class="calculator_button" markdown="1">Explicit is better than implicit.</span><br>
+<span class="calculator_button" markdown="1">Simple is better than complex.</span><br>
+<span class="calculator_button" markdown="1">Complex is better than complicated.</span><br>
+<span class="calculator_button" markdown="1">Flat is better than nested.</span><br>
+<span class="calculator_button" markdown="1">Sparse is better than dense.</span><br>
+<span class="calculator_button" markdown="1">Readability counts.</span><br>
+<span class="calculator_button" markdown="1">Special cases aren't special enough to break the rules.</span><br>
+<span class="calculator_button" markdown="1">Although practicality beats purity.</span><br>
+<span class="calculator_button" markdown="1">Errors should never pass silently.</span><br>
+<span class="calculator_button" markdown="1">Unless explicitly silenced.</span><br>
+<span class="calculator_button" markdown="1">In the face of ambiguity, refuse the temptation to guess.</span><br>
+<span class="calculator_button" markdown="1">There should be one-- and preferably only one --obvious way to do it.</span><br>
+<span class="calculator_button" markdown="1">Although that way may not be obvious at first unless you're Dutch.</span><br>
+<span class="calculator_button" markdown="1">Now is better than never.</span><br>
+<span class="calculator_button" markdown="1">Although never is often better than <em>right</em> now.</span><br>
+<span class="calculator_button" markdown="1">If the implementation is hard to explain, it's a bad idea.</span><br>
+<span class="calculator_button" markdown="1">If the implementation is easy to explain, it may be a good idea.</span><br>
+<span class="calculator_button" markdown="1">Namespaces are one honking great idea -- let's do more of those!</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Une version française du Zen de Python est consultable sur la page Wikipedia correspondante : <a href="https://fr.wikipedia.org/wiki/Zen_de_Python">https://fr.wikipedia.org/wiki/Zen_de_Python</a>.</p></div>
+</div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Sans détailler chaque principe, on relèvera notamment la recommandation d'aérer le code et de favoriser sa lisibilité.</p></div>
+</div>
+<p>L'optimisation peut également porter sur la rapidité des traitements. Il existe souvent plusieurs manières d'aboutir à un même résultat, et dans le cas de traitements lourds ou portant sur de gros volumes de données, il peut s'avérer très bénéfique de <b>comparer les temps d'exécution de différentes approches</b>.</p>
+<p>Dans le même ordre d'idée, la réduction de complexité algorithmique fait partie des motifs fréquents de réécriture de code. Illustrons-le avec un exemple.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Le code ci-après traite une liste de termes et vérifie, pour chacun d'entre eux, s'il figure parmi de nombreux termes d'une plus grande liste. Nous ferons l'analogie avec une meule de foin dans laquelle nous vérifions si plusieurs aiguilles sont ou non présentes.</p>
+<p><span class="calculator_button" markdown="1">compteur = 0</span></p>
+<p><span class="calculator_button" markdown="1">liste_aiguilles = [1,2,3]</span><br>
+<span class="calculator_button" markdown="1">meule_de_foin = [12,13,1,4,9,10,3,5,9,17,12,23,15,9,5,17]</span></p>
+<p><span class="calculator_button" markdown="1">for aiguille in liste_aiguilles:</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if aiguille in meule_de_foin:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:22px;margin-left:75px;"><p><span class="calculator_button" markdown="1">compteur = compteur +1</span></p></div>
+<p><span class="calculator_button" markdown="1">print(compteur)</span></p>
+<p>À chaque tour de boucle l'aiguille provenant de la liste d'aiguilles appelée <span class="calculator_button" markdown="1">liste_aiguilles</span> est recherchée dans la structure de données appelée <span class="calculator_button" markdown="1">meule_de_foin</span>. Les listes étant très souvent utilisées comme conteneur de données par défaut, on considère que, dans ce code, <span class="calculator_button" markdown="1">meule_de_foin</span> est une liste.</p>
+</div>
+</div>
+<p>La complexité de cet algorithme est de l'ordre de $O(n^2)$, c'est-à-dire quadratique. Il imbrique en effet le test d'appartenance à la liste, de complexité $O(n)$, dans une boucle de complexité $O(n)$.</p>
+<p>Ce code peut être grandement optimisé en optant pour un <b>set</b> à la place d'une liste (pour la meule de foin).</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">En effet, le test d'appartenance à un set étant de l'ordre de $O(1)$, cela ramène l'ensemble de ce code d'une complexité quadratique $O(n^2)$ à une complexité linéaire $O(n)$, avec un impact d'autant plus significatif sur les performances que les données traitées seront volumineuses.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">compteur = 0</span></p>
+<p><span class="calculator_button" markdown="1">liste_aiguilles = [1,2,3]</span><br>
+<span class="calculator_button" markdown="1">meule_de_foin = <span class="color10">set</span>([12,13,1,4,9,10,3,5,9,17,12,23,15,9,5,17])</span></p>
+<p><span class="calculator_button" markdown="1">for aiguille in liste_aiguilles:</span>  </p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if aiguille in meule_de_foin:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">compteur = compteur +1</span></p></div>
+<p><span class="calculator_button" markdown="1">print(compteur)</span></p>
+<p>Notons que si l'on peut optimiser le code lui-même, on peut aussi parfois optimiser la nature des données qu'il doit traiter. Cela peut répondre, par exemple, à l'objectif de limiter l'espace mémoire occupé par le programme.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Couverture de code</p></div></h3>
+<p>Le recours à des tests est très utile pour s'assurer que le code produit bien les résultats attendus. Les tests unitaires ont fait l'objet d'un cours spécifique en seconde.</p>
+<p>Ces tests permettent à la fois de vérifier que le code produit bien le résultat attendu par rapport aux spécifications, mais aussi de s'assurer que le code continue de bien fonctionner après modification. Ceci pour éviter des régressions involontaires à la faveur d'un réusinage dont les conséquences n'auraient pas été bien mesurées.</p>
+<p>Il apparaît donc important de disposer de jeux de tests permettant de le vérifier.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Couverture de code :</b></p>
+<p>La couverture de code est une mesure (exprimée en pourcentage) indiquant la proportion de code faisant l'objet de tests.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le pourcentage de couverture de code traduit le taux de code couvert par les tests.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Les outils de couverture de code peuvent utiliser différentes méthodes de calcul pour évaluer cette couverture selon différents axes, mais l'essentiel est de retenir qu'il s'agit d'une mesure quantitative.</p>
+<p>On comprend aisément que la seule présence de tests n'est pas une garantie de qualité, mais seulement de quantité. La couverture de code n'est donc pas un indicateur absolu : il ne permet pas de tirer de conclusion définitive sur la qualité et la pertinence des tests mis en place en regard du code.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Gestion des exigences et la certification CMMI</p></div></h3>
+<p>Un programme informatique est censé répondre à un certain nombre d'exigences, à l'instar d'objets plus concrets.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>L'objet qui doit être conçu devra répondre à plusieurs exigences.</p>
+<ul>
+
+
+
+<li>
+<b>Exigence fonctionnelle</b> : griller des tartines de pain de dimensions maximales $20\times20\,\text{cm}$</li>
+
+
+
+<li>
+<b>Exigence d’ergonomie</b> : être simple d'utilisation</li>
+
+
+
+<li>
+<b>Exigence d’apparence</b> : présenter un design épuré</li>
+
+
+
+<li>
+<b>Exigence de performance</b> : prendre au maximum $10\,\text{s.}$ pour griller un toast</li>
+
+
+
+<li>
+<b>Exigence de sécurité</b> : l'utilisateur ne doit pas risquer de se brûler ou de s'électrocuter en le manipulant.</li>
+</ul>
+</div>
+</div>
+<p>Les exigences étant de natures diverses, il importe de définir les critères qui vont permettre de vérifier que l'application développée les respecte.<br>
+C'est sur la base de ces exigences et de ces critères de validation qu'idéalement le jeu de tests doit être élaboré. Il est préférable de définir les tests en même temps que les exigences, sans attendre le développement. Cela permet en effet de vérifier que, d'une part, les demandes du client ont bien été comprises et que, d'autre part, elles sont testables.</p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La démarche CMMi (<em>Capability Maturity Model Integrated</em>) est un exemple de modèle méthodologique pour la gestion de projet qui prend en compte spécifiquement la gestion des exigences.</p></div>
+</div>
+<h3 range="d." markdown="1"><div markdown="1"><p>Développement collaboratif</p></div></h3>
+<p>Certains développements logiciels sont effectués de manière individuelle. D'autres sont effectués de manière collaborative, notamment dans les entreprises de services numériques où plusieurs développeur·se·s travaillent simultanément sur un même projet. C'est également le cas pour un certain nombre de projets open-source qui sont maintenus par un noyau de contributeurs réguliers.</p>
+<p>Le développement logiciel collaboratif nécessite que tous les participants s'accordent sur un certain nombre de conventions et s'organisent dans la répartition des tâches.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Des outils dédiés, tels Git, permettent la gestion de versions successives et la fusion de modifications (appelées « branches ») effectuées en parallèle par différentes personnes.</p></div>
+</div>
+<p>Abordons maintenant deux autres aspects importants du développement logiciel : sa documentation et sa maintenance.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Documentation et maintenance</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Documentation</p></div></h3>
+<p>Parfois négligée, la <b>documentation du code</b> est pourtant un investissement rentable : elle facilite l'exploitation des fonctionnalités par les autres développeur·se·s, et par l'auteur·e lorsqu'il·elle doit se replonger dans son propre code pour l'optimiser ou le maintenir.</p>
+<p>Les chaînes de documentation ou <em>doctstrings</em> constituent un moyen facile et rapide de documenter la production logicielle directement au niveau du code.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Au-delà d'une description factuelle des traitements opérés par le code, il ne faut pas hésiter à enrichir la documentation avec des exemples concrets qui correspondent à des cas d'usage simples et fréquents.</p></div>
+</div>
+<p>Cette documentation intégrée au code peut également être rendue accessible indépendamment du code à l'aide d'outils dédiés.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pydoc est un module de documentation faisant partie de la bibliothèque standard. Pydoc fournit en ligne de commande un accès équivalent à la documentation obtenue avec l'instruction <span class="calculator_button" markdown="1">help()</span> depuis un interpréteur Python.</p></div>
+</div>
+<p>Ce module permet non seulement d'accéder à l'ensemble de la documentation et d'effectuer des recherches sur le langage et ses bibliothèques, mais aussi de générer des fichiers de documentation au format texte ou HTML, et même un serveur HTTP local pour la consultation de la documentation.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img06.png" alt="Page de documentation HTML produite par Pydoc
+"> 
+<span>Page de documentation HTML produite par Pydoc
+ </span></p></div></div>
+<p>Cette page web a été générée par Pydoc directement à partir des différentes chaînes de documentation (<em>docstrings</em>) présentes dans le code du module « temperatures » développé dans <a target="_blank" href="/cours/modularite-des-programmes/fiche-de-cours">le cours précédent sur la modularité</a>.</p>
+</div>
+</div>
+<p>Cette documentation au format HTML peut ensuite facilement être publiée sur le web ou sur un intranet pour proposer une ressource de documentation en ligne.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pour des besoins de documentation plus élaborés, il existe un outil plus complet, écrit lui aussi en Python : le générateur de documentation <b>Sphinx</b>. Cet outil peut transformer des fichiers au format de balisage reStructuredText en différents formats parmi lesquels HTML, LaTeX, Epub, PDF, etc.</p></div>
+</div>
+<p>Enfin, la documentation en ligne d'une bibliothèque logicielle ne se limite pas nécessairement à l'aide intégrée ou à des documentations sur la description technique de ses composants.<br>
+Certain·e·s auteur·e·s proposent également des démonstrations et des tutoriels en ligne, sous forme textuelle ou vidéo, afin de faciliter la prise en main des outils qu'il·elle·s ont développés.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Maintenance</p></div></h3>
+<p>La vie d'un logiciel ne s'arrête pas à sa mise en production après validation de tous les tests. Il est nécessaire de maintenir la capacité de ce logiciel à fonctionner dans la durée.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Maintenance logicielle :</b></p>
+<p>La maintenance logicielle désigne l'ensemble des actions nécessaires au bon fonctionnement d'un logiciel après sa mise en production.</p>
+</div>
+</div>
+<p>La maintenance peut porter sur différents aspects susceptibles d'affecter le bon fonctionnement d'un logiciel, et notamment :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">des corrections de bugs découverts après la mise en production ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">des améliorations ou modifications de fonctionnalités à la demande de l'utilisateur ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l'anticipation ou la prise en compte de l'évolution de la plateforme hébergeant le logiciel ou des composants requis par le faire fonctionner ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la migration sur une autre plateforme.</div>
+</li>
+</ul>
+<p>La mise à jour d'un système d'exploitation par son éditeur·rice ou d'une bibliothèque utilisée par le logiciel peuvent également entraîner des modifications du code, soit pour bénéficier d'améliorations de performance ou de sécurité, soit même pour pouvoir continuer à fonctionner en cas d'incompatibilité.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Parmi les événements importants liés à la maintenance logicielle dans l'écosystème Python, on mentionnera la fin de vie de Python 2, survenue début 2020.</p></div>
+</div>
+<p>La version 2 de Python est apparue en 2000 et la version 3 en 2006. Les développeur·se·s du langage avaient annoncé en 2008 que la version 2 serait en fin de vie en 2015, afin de pouvoir se concentrer sur le développement de la version 3.<br>
+En 2015 un report a été décidé jusqu'au 1<sup>er</sup> janvier 2020 afin de laisser aux développeur·se·s le temps de faire évoluer leur code vers Python 3. Depuis cette date la version 2 de Python est officiellement obsolète et n'est plus supportée ni maintenue.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La fin de vie de la version 2 nécessite de porter le code Python 2 existant en Python 3 : on appelle cela le « portage de code ».</div>
+</li>
+</ul>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le portage de code est un terme technique qui désigne la transposition d'un code initial dans un autre environnement ou éventuellement un nouveau langage.</p></div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>la différence la plus visible entre du code écrit en version 2 ou en version 3 de Python se situe au niveau des appels à <span class="calculator_button" markdown="1">print</span>, dépourvus de parenthèses en Python 2 alors qu'elles sont obligatoirement présentes en Python 3.</p>
+<p><span class="calculator_button" markdown="1">print "hello world" # Python 2</span><br>
+<span class="calculator_button" markdown="1">print("hello world") # Python 3</span></p>
+</div>
+</div>
+<p>La documentation et la maintenance, parfois négligées, sont pourtant essentielles pour faciliter et entretenir le bon fonctionnement d'un logiciel dans la durée.</p>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Le développement logiciel repose sur un ensemble de bonnes pratiques visant à produire et à maintenir un code informatique conforme aux recommandations relatives au code utilisé, optimisé, documenté et répondant aux exigences du clients. Ces bonnes pratiques passent par le respect de règles et de conventions et peuvent également être empruntées à des méthodes de gestion de projet. De plus, des outils spécialisés aident le·la développeur·se à dans sa démarche.</p>
+</div>
+</div></div>
+<div id="poool-2s5yr-ixh5j" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e99b06109e0a80100fe1d70","type":"Cours","title":"Bonnes pratiques logicielles","content":"[IN]\nIntroduction\u0026nbsp;:\n\nCe cours porte sur les bonnes pratiques logicielles. Car le développement de programmes informatiques nécessite non seulement des connaissances techniques, mais également le respect de principes et de conventions pour la production et la maintenance logicielle.\n\nNous aborderons dans un premier temps la nécessité de produire un code conforme. Puis nous nous intéresserons aux différentes optimisations qu'il est possible d'apporter à un code existant. Enfin, nous soulignerons dans une troisième partie la nécessité de documenter et de maintenir le code.\n[/IN]\n\n##Conformité/1\n\n[AST]\nL'écriture de textes repose sur des règles d'orthographe, de grammaire et de ponctuation. De la même manière, les langages informatiques ont une orthographe, une grammaire et obéissent à des règles de syntaxe.\n[/AST]\n\nNous allons présenter dans cette première partie les principes et outils qui contribuent à la production d’un code conforme aux usages.\n\n###Nommage/a.\n\nLa manière de **nommer les éléments du code** a une incidence directe sur sa lisibilité. Nous pouvons aisément l'illustrer de manière concrète avec les portions de code ci-après.\n\n[BUTC]for x in y:[/BUTC]\n\nCe code ci-dessus est bien moins explicite que le suivant, strictement équivalent pour l'ordinateur\u0026nbsp;:\n\n[BUTC]for lettre in chaine:[/BUTC]\n\nDe même le code [BUTC]m = sum(n) / len(n)[/BUTC] ne permet pas immédiatement de comprendre la nature de ce qui est calculé et stocké dans la variable. Le code suivant, strictement équivalent pour l'ordinateur, est beaucoup plus compréhensible pour un humain\u0026nbsp;: [BUTC]moyenne = sum(notes) / len(notes)[/BUTC]\n\nL'intérêt de choisir des noms explicites s'applique également aux fonctions.\n\n[EX]\n[BUTC]def cf(dc):[/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]return dc * 9 / 5 + 32[/BUTC]\u003e\u003e\n[/EX]\n\nDans cet exemple, on comprend que la fonction effectue un calcul\u0026nbsp;; mais, son nom n'étant pas explicite, il est difficile d'en deviner la nature. La variable manipulée par la fonction étant elle aussi nommée de manière sibylline, toute personne autre que l'auteur·e aura du mal à comprendre d'emblée à quoi sert cette fonction.\n\n[ATT]\nPire, l'auteur·e lui·elle-même aura peut-être des difficultés à se relire s'il·elle doit se plonger dans son propre code après plusieurs semaines ou plusieurs mois.\n[/ATT]\n\nEn réalité ce code est celui d'une fonction utilisée dans le cours précédent sur la modularité. \n\n[BUTC]def celsius\u0026#95;en\u0026#95;fahrenheit(degres\u0026#95;celsius):[/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]\"\"\"Calcule la température en degrés Fahrenheit[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]équivalente à la température en degrés Celsius fournie en argument[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]selon la formule température en Fahrenheit = température en Celsius x 9/5 + 32.[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]\"\"\"[/BUTC]\u003e\u003e  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]return degres\u0026#95;celsius * 9 / 5 + 32[/BUTC]\u003e\u003e\n\nLa **docstring** (ou **chaîne de documentation**) nous éclaire précisément sur le traitement effectué par la fonction. Mais, même en son absence, le code reste très compréhensible grâce aux nommages explicites de la fonction et de la variable qu'elle traite.\n\n[BUTC]def celsius\u0026#95;en\u0026#95;fahrenheit(degres\u0026#95;celsius):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]return degres\u0026#95;celsius * 9 / 5 + 32[/BUTC]\u003e\u003e\n\n###Règles stylistiques en Python/b.\n\nLa production de code Python obéit à un certain nombre de règles. Elles servent de bases communes pour que l'ensemble des développeur·se·s uniformise la rédaction dans ce langage.\n\nCes règles sont définies dans un document appelé PEP\u0026nbsp;8 (PEP signifiant __Python Enhancement Proposal__, soit «\u0026nbsp;proposition d'amélioration de Python\u0026nbsp;»). Le document PEP\u0026nbsp;8 est un guide stylistique écrit en\u0026nbsp;2001 par plusieurs auteurs dont Guido van\u0026nbsp;Rossum, l'inventeur du langage Python. Ce document précise les conventions en vigueur en matière de style pour ce langage.\n\n[AST]\nLe PEP\u0026nbsp;8 est consultable (en anglais) dans son intégralité à l'adresse suivante\u0026nbsp;:\n[https://www.python.org/dev/peps/pep-0008/](https://www.python.org/dev/peps/pep-0008/)\n[/AST]\n\n[EX]\n[IMG]((75))\n![Python NSI PEP8](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img01.png) #Extrait du PEP\u0026nbsp;8 relatifs à l’usage des espaces\n[/IMG]\n[IMG]((75))\n![Python NSI PEP8](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img02.png) #Extrait du PEP\u0026nbsp;8 relatifs à l’usage des espaces\n[/IMG]\n \n\n \n\nLe PEP\u0026nbsp;8 indique par exemple qu'on doit trouver une espace avant et après le signe [BUTC]=[/BUTC] sauf pour les paramètres nommés des fonctions.\n\n[BUTC]moyenne = 12.7[/BUTC]\n\n[BUTC]def genere\u0026#95;mot\u0026#95;de\u0026#95;passe(longueur=12, majuscules=1,[/BUTC]  \n[BUTC]caracteres\u0026#95;speciaux=2):[/BUTC]\n[/EX]\n\n[RETENIR]\nLe respect des préconisations stylistiques du PEP\u0026nbsp;8 permet de produire un code dont la syntaxe est conforme aux usages pour le développement en Python.\n[/RETENIR]\n\nLe guide PEP\u0026nbsp;8 précise entre autres\u0026nbsp;:\n* les conventions de **nommage**\u0026nbsp;;((liste2))\n* les modalités d'**indentation**\u0026nbsp;;((liste2))\n* la **longueur des lignes**\u0026nbsp;;((liste2))\n* l'**espacement** à appliquer entre les lignes.((liste2))\n* Ces préconisations permettent d'éviter que chaque développeur·se improvise sans concertation.((fleche))\n\nL'application de ces règles produit un code facilement lisible et compréhensible pour les autres développeur·se·s, habitué·e·s eux·elles aussi à appliquer ces mêmes règles. C'est une base qui sert de référence commune sur la manière d'écrire du code en Python.\n\n[EX]\nVoici quelques exemples de nommage en PEP\u0026nbsp;8\u0026nbsp;:\n* le nom des variables, des fonctions et des méthodes s'écrit toujours en snake_case (mots en minuscules séparés par des underscore)\u0026nbsp;;((liste2))\n* le nom des classes s'écrit en toujours CamelCase (mots accolés avec la première lettre de chaque mot en lettre capitale)\u0026nbsp;;((liste2))\n* le nom des constantes s'écrit toujours en lettres capitales.((liste2))\n[IMG]((75))\n![Python NSI PEP8](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img03.png) #Extrait du PEP\u0026nbsp;8 relatif au nommage des fonctions\n[/IMG]\n[IMG]((75))\n![Python NSI PEP8](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img04.png) #Extrait du PEP\u0026nbsp;8 relatif au nommage des classes\n[/IMG]\n[IMG]((75))\n![Python NSI PEP8](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img05.png) #Extrait du PEP\u0026nbsp;8 relatif au nommage des constantes\n[/IMG]\n[/EX]\n\nMais tout n'est pas nécessairement défini de manière stricte pour autant. Ainsi le PEP\u0026nbsp;8 n'impose aucun style de guillemet particulier pour les chaînes de caractères\u0026nbsp;: l'utilisateur·trice est invité·e à librement choisir des guillemets simples ou doubles, **et à s'y tenir** (sauf dans les cas où cela évite d'échapper des caractères).  \nEn revanche pour les chaînes de caractères multi-lignes encadrées par des triples guillemets, PEP\u0026nbsp;8 précise qu'il faut toujours utiliser les guillemets doubles.\n\n###Outils d'aide à la mise en conformité syntaxique/c.\n\nIl existe des outils spécifiques pour aider le développeur à produire un code conforme.\n\n[DEF]\n**Linter\u0026nbsp;:**\n\nUn linter est un analyseur de code qui vérifie la conformité de sa syntaxe.\n[/DEF]\n\n[DEF]\n**Linting\u0026nbsp;:**\n\nLe linting est l'analyse d'un code effectuée par un linter.\n[/DEF]\n\nLe périmètre d'analyse varie d'un linter à l'autre\u0026nbsp;; mais, d'une manière générale, ils signalent principalement les erreurs de syntaxe et le non-respect des règles stylistiques.\n\nUn linter Python peut notamment\u0026nbsp;:\n* repérer les espaces excédentaires ou manquantes\u0026nbsp;;((liste2))\n* signaler les incohérences entre espaces et tabulations pour l'indentation\u0026nbsp;;((liste2))\n* indiquer si le nombre de lignes blanches requis (deux après les imports, une seule après une définition de fonction) n'est pas respecté\u0026nbsp;;((liste2))\n* alerter sur l'absence de chaîne de documentation.((liste2))\n\n[EX]\nFlake8 et Pylint sont deux linters Python fréquemment utilisés.\n[/EX]\n\nLes linters peuvent être utilisés en ligne de commande ou de manière intégrée à l'IDE (__Integrated Development Environnement__, soit «\u0026nbsp;environnement de développement intégré\u0026nbsp;») du·de la développeur·se.\n\n[RETENIR]\nLorsque le linter est intégré à l'éditeur de code, les erreurs ou problèmes sont directement balisés en regard du texte, avec des indications pour y remédier.\n[/RETENIR]\n\nLe recours à un linter aide le·la développeur·se à adopter des bonnes pratiques et lui apporte la garantie que le code qu'il·elle produit est conforme aux règles syntaxiques et stylistiques du langage, contribuant ainsi à la qualité générale de son code.\n\nToutefois la qualité d'un code ne se résume pas au seul respect de la syntaxe. Après une première écriture aboutissant à la production du résultat recherché, un code doit souvent être remanié pour différentes raisons, ainsi que nous allons l'étudier maintenant.\n\n##Optimisation du code/2\n\nLa conformité stylistique du code est d'autant plus importante que le code produit est amené à être lu pour être compris et éventuellement modifié, par l'auteur·e ou par des tiers.\n\n###Réusinage/a.\n\nLa reformulation de code est souvent désignée par le terme **réusinage** ou son équivalent anglais **__refactoring__**.\n\nLe code peut être modifié pour différentes raisons.\n* Un code non conforme aux règles de style en vigueur doit être modifié afin de devenir conforme.\n* Un code non conforme aux spécifications doit être adapté pour y répondre correctement.\n* De nouveaux besoins peuvent avoir fait leur apparition, apportant des modifications ou des ajouts aux spécifications initiales.\n* Un code peut se prêter à des optimisations, avec le recours à des spécificités du langage ou des choix d'implémentations qui rendent le programme plus modulaire, plus rapide ou moins consommateur de ressources.\n* L’évolution de l'environnement dans lequel le code fonctionne peut nécessiter des adaptations pour des raisons de compatibilité, de performance ou de sécurité.\n\nChaque langage informatique a ses tournures et ses spécificités.\n\n[AST]\nMême si dans de nombreux cas on peut transposer assez littéralement des pratiques acquises avec un autre langage, il est préférable de respecter les usages en vigueur et d'employer les outils de référence de chaque langage, d'autant plus que ces outils ont en général été optimisés.\n[/AST]\n\nDans le cas de Python la formule consacrée pour indiquer la conformité du code aux principes du langage consiste à le qualifier de «\u0026nbsp;**pythonesque**\u0026nbsp;».\n\n[EX]\nLe parcours d'une liste peut s'effectuer par référence indicielle à ses éléments individuels\u0026nbsp;:\n\n[BUTC]for i in range(len(liste)):[/BUTC]\n\u003c\u003c((auto,-22,0,22,50))[BUTC]print(liste[i])[/BUTC]\u003e\u003e\n\nDe nombreux langages informatiques obligent à recourir à la notation indicielle, mais ce n'est pas le cas de Python. Ce code produit bien le résultat escompté mais il n'est pas du tout pythonesque. Un parcours de liste en Python s'écrit typiquement comme suit\u0026nbsp;:\n\n[BUTC]for element in liste:[/BUTC]\n\u003c\u003c((auto,-22,0,22,50))[BUTC]print(element)[/BUTC]\u003e\u003e\n\nLe code est ainsi plus lisible. De même si on a besoin d'accéder simultanément à l'indice et à l'élément de la liste, le parcours s'effectue de la manière suivante dans de nombreux langages : \n\n[BUTC]for i in range(len(liste)):[/BUTC]\n\u003c\u003c((auto,-22,0,22,50))[BUTC]print(i, liste[i])[/BUTC]\u003e\u003e\n\nEn Python on privilégiera plutôt la formulation suivante :\n\n[BUTC]for i, element in enumerate(liste):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(i, element)[/BUTC]\u003e\u003e\n[/EX]\n\nLes principes qui sous-tendent la programmation en Python ont été résumés dans un texte écrit en\u0026nbsp;1999 par Tim Peters, intitulé le «\u0026nbsp;Zen de Python\u0026nbsp;». Ce texte de référence peut être affiché dans l'interpréteur Python avec la commande suivante\u0026nbsp;:\n\n[BUTC]import this[/BUTC]\n\nOn obtient l'affichage du texte suivant\u0026nbsp;: \n\n[BUTC]The Zen of Python, by Tim Peters[/BUTC]\n\n[BUTC]Beautiful is better than ugly.[/BUTC]  \n[BUTC]Explicit is better than implicit.[/BUTC]  \n[BUTC]Simple is better than complex.[/BUTC]  \n[BUTC]Complex is better than complicated.[/BUTC]  \n[BUTC]Flat is better than nested.[/BUTC]  \n[BUTC]Sparse is better than dense.[/BUTC]  \n[BUTC]Readability counts.[/BUTC]  \n[BUTC]Special cases aren't special enough to break the rules.[/BUTC]  \n[BUTC]Although practicality beats purity.[/BUTC]  \n[BUTC]Errors should never pass silently.[/BUTC]  \n[BUTC]Unless explicitly silenced.[/BUTC]  \n[BUTC]In the face of ambiguity, refuse the temptation to guess.[/BUTC]  \n[BUTC]There should be one-- and preferably only one --obvious way to do it.[/BUTC]  \n[BUTC]Although that way may not be obvious at first unless you're Dutch.[/BUTC]  \n[BUTC]Now is better than never.[/BUTC]  \n[BUTC]Although never is often better than *right* now.[/BUTC]  \n[BUTC]If the implementation is hard to explain, it's a bad idea.[/BUTC]  \n[BUTC]If the implementation is easy to explain, it may be a good idea.[/BUTC]  \n[BUTC]Namespaces are one honking great idea -- let's do more of those![/BUTC]\n\n[AST]\nUne version française du Zen de Python est consultable sur la page Wikipedia correspondante\u0026nbsp;: [https://fr.wikipedia.org/wiki/Zen\u0026#95;de\u0026#95;Python](https://fr.wikipedia.org/wiki/Zen_de_Python).\n[/AST]\n\n[RETENIR]\nSans détailler chaque principe, on relèvera notamment la recommandation d'aérer le code et de favoriser sa lisibilité.\n[/RETENIR]\n\nL'optimisation peut également porter sur la rapidité des traitements. Il existe souvent plusieurs manières d'aboutir à un même résultat, et dans le cas de traitements lourds ou portant sur de gros volumes de données, il peut s'avérer très bénéfique de **comparer les temps d'exécution de différentes approches**.\n\nDans le même ordre d'idée, la réduction de complexité algorithmique fait partie des motifs fréquents de réécriture de code. Illustrons-le avec un exemple.\n\n[EX]\nLe code ci-après traite une liste de termes et vérifie, pour chacun d'entre eux, s'il figure parmi de nombreux termes d'une plus grande liste. Nous ferons l'analogie avec une meule de foin dans laquelle nous vérifions si plusieurs aiguilles sont ou non présentes.\n\n[BUTC]compteur = 0[/BUTC]\n\n[BUTC]liste\u0026#95;aiguilles = [1,2,3][/BUTC]  \n[BUTC]meule\u0026#95;de\u0026#95;foin = [12,13,1,4,9,10,3,5,9,17,12,23,15,9,5,17][/BUTC]\n\n[BUTC]for aiguille in liste\u0026#95;aiguilles:[/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]if aiguille in meule\u0026#95;de\u0026#95;foin:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,0,0,22,75))[BUTC]compteur = compteur +1[/BUTC]\u003e\u003e\n\n[BUTC]print(compteur)[/BUTC]\n\nÀ chaque tour de boucle l'aiguille provenant de la liste d'aiguilles appelée [BUTC]liste\u0026#95;aiguilles[/BUTC] est recherchée dans la structure de données appelée [BUTC]meule\u0026#95;de\u0026#95;foin[/BUTC]. Les listes étant très souvent utilisées comme conteneur de données par défaut, on considère que, dans ce code, [BUTC]meule\u0026#95;de\u0026#95;foin[/BUTC] est une liste.\n[/EX]\n\nLa complexité de cet algorithme est de l'ordre de $O(n^2)$, c'est-à-dire quadratique. Il imbrique en effet le test d'appartenance à la liste, de complexité $O(n)$, dans une boucle de complexité $O(n)$.\n\nCe code peut être grandement optimisé en optant pour un **set** à la place d'une liste (pour la meule de foin).\n* En effet, le test d'appartenance à un set étant de l'ordre de $O(1)$, cela ramène l'ensemble de ce code d'une complexité quadratique $O(n^2)$ à une complexité linéaire $O(n)$, avec un impact d'autant plus significatif sur les performances que les données traitées seront volumineuses.((fleche))\n\n[BUTC]compteur = 0[/BUTC]\n\n[BUTC]liste\u0026#95;aiguilles = [1,2,3][/BUTC]  \n[BUTC]meule\u0026#95;de\u0026#95;foin = [10]set[10]([12,13,1,4,9,10,3,5,9,17,12,23,15,9,5,17])[/BUTC]\n\n[BUTC]for aiguille in liste\u0026#95;aiguilles:[/BUTC]  \n\u003c\u003c((auto,-22,0,0,50))[BUTC]if aiguille in meule\u0026#95;de\u0026#95;foin:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]compteur = compteur +1[/BUTC]\u003e\u003e\n\n[BUTC]print(compteur)[/BUTC]\n\nNotons que si l'on peut optimiser le code lui-même, on peut aussi parfois optimiser la nature des données qu'il doit traiter. Cela peut répondre, par exemple, à l'objectif de limiter l'espace mémoire occupé par le programme.\n\n###Couverture de code/b.\n\nLe recours à des tests est très utile pour s'assurer que le code produit bien les résultats attendus. Les tests unitaires ont fait l'objet d'un cours spécifique en seconde.\n\nCes tests permettent à la fois de vérifier que le code produit bien le résultat attendu par rapport aux spécifications, mais aussi de s'assurer que le code continue de bien fonctionner après modification. Ceci pour éviter des régressions involontaires à la faveur d'un réusinage dont les conséquences n'auraient pas été bien mesurées.\n\nIl apparaît donc important de disposer de jeux de tests permettant de le vérifier.\n\n[DEF]\n**Couverture de code\u0026nbsp;:**\n\nLa couverture de code est une mesure (exprimée en pourcentage) indiquant la proportion de code faisant l'objet de tests.\n* Le pourcentage de couverture de code traduit le taux de code couvert par les tests.((fleche))\n[/DEF]\n\nLes outils de couverture de code peuvent utiliser différentes méthodes de calcul pour évaluer cette couverture selon différents axes, mais l'essentiel est de retenir qu'il s'agit d'une mesure quantitative.\n\nOn comprend aisément que la seule présence de tests n'est pas une garantie de qualité, mais seulement de quantité. La couverture de code n'est donc pas un indicateur absolu\u0026nbsp;: il ne permet pas de tirer de conclusion définitive sur la qualité et la pertinence des tests mis en place en regard du code.\n\n###Gestion des exigences et la certification CMMI/c.\n\nUn programme informatique est censé répondre à un certain nombre d'exigences, à l'instar d'objets plus concrets.\n\n[EX]\nL'objet qui doit être conçu devra répondre à plusieurs exigences.\n* **Exigence fonctionnelle**\u0026nbsp;: griller des tartines de pain de dimensions maximales $20\\times20\\,\\text{cm}$\n* **Exigence d’ergonomie**\u0026nbsp;: être simple d'utilisation\n* **Exigence d’apparence**\u0026nbsp;: présenter un design épuré\n* **Exigence de performance**\u0026nbsp;: prendre au maximum $10\\,\\text{s.}$ pour griller un toast\n* **Exigence de sécurité**\u0026nbsp;: l'utilisateur ne doit pas risquer de se brûler ou de s'électrocuter en le manipulant.\n[/EX]\n\nLes exigences étant de natures diverses, il importe de définir les critères qui vont permettre de vérifier que l'application développée les respecte.  \nC'est sur la base de ces exigences et de ces critères de validation qu'idéalement le jeu de tests doit être élaboré. Il est préférable de définir les tests en même temps que les exigences, sans attendre le développement. Cela permet en effet de vérifier que, d'une part, les demandes du client ont bien été comprises et que, d'autre part, elles sont testables.\n\n[RETENIR]\nLa démarche CMMi\u0026nbsp;(__Capability Maturity Model Integrated__) est un exemple de modèle méthodologique pour la gestion de projet qui prend en compte spécifiquement la gestion des exigences.\n[/RETENIR]\n\n###Développement collaboratif/d.\n\nCertains développements logiciels sont effectués de manière individuelle. D'autres sont effectués de manière collaborative, notamment dans les entreprises de services numériques où plusieurs développeur·se·s travaillent simultanément sur un même projet. C'est également le cas pour un certain nombre de projets open-source qui sont maintenus par un noyau de contributeurs réguliers.\n\nLe développement logiciel collaboratif nécessite que tous les participants s'accordent sur un certain nombre de conventions et s'organisent dans la répartition des tâches.\n\n[EX]\nDes outils dédiés, tels Git, permettent la gestion de versions successives et la fusion de modifications (appelées «\u0026nbsp;branches\u0026nbsp;») effectuées en parallèle par différentes personnes.\n[/EX]\n\nAbordons maintenant deux autres aspects importants du développement logiciel\u0026nbsp;: sa documentation et sa maintenance.\n\n##Documentation et maintenance/3\n\n###Documentation/a.\n\nParfois négligée, la **documentation du code** est pourtant un investissement rentable\u0026nbsp;: elle facilite l'exploitation des fonctionnalités par les autres développeur·se·s, et par l'auteur·e lorsqu'il·elle doit se replonger dans son propre code pour l'optimiser ou le maintenir.\n\nLes chaînes de documentation ou __doctstrings__ constituent un moyen facile et rapide de documenter la production logicielle directement au niveau du code.\n\n[AST]\nAu-delà d'une description factuelle des traitements opérés par le code, il ne faut pas hésiter à enrichir la documentation avec des exemples concrets qui correspondent à des cas d'usage simples et fréquents.\n[/AST]\n\nCette documentation intégrée au code peut également être rendue accessible indépendamment du code à l'aide d'outils dédiés.\n\n[EX]\nPydoc est un module de documentation faisant partie de la bibliothèque standard. Pydoc fournit en ligne de commande un accès équivalent à la documentation obtenue avec l'instruction [BUTC]help()[/BUTC] depuis un interpréteur Python.\n[/EX]\n\nCe module permet non seulement d'accéder à l'ensemble de la documentation et d'effectuer des recherches sur le langage et ses bibliothèques, mais aussi de générer des fichiers de documentation au format texte ou HTML, et même un serveur HTTP local pour la consultation de la documentation.\n\n[EX]\n[IMG]((100))\n![Page de documentation HTML produite par Pydoc\n](https://kronos-images.schoolmouv.fr/t-fnx-nsi-c15-img06.png) #Page de documentation HTML produite par Pydoc\n[/IMG]\n\nCette page web a été générée par Pydoc directement à partir des différentes chaînes de documentation (__docstrings__) présentes dans le code du module «\u0026nbsp;temperatures\u0026nbsp;» développé dans \u003ca target=\"_blank\" href=\"/cours/modularite-des-programmes/fiche-de-cours\"\u003ele cours précédent sur la modularité\u003c/a\u003e.\n[/EX]\n\nCette documentation au format HTML peut ensuite facilement être publiée sur le web ou sur un intranet pour proposer une ressource de documentation en ligne.\n\n[AST]\nPour des besoins de documentation plus élaborés, il existe un outil plus complet, écrit lui aussi en Python\u0026nbsp;: le générateur de documentation **Sphinx**. Cet outil peut transformer des fichiers au format de balisage reStructuredText en différents formats parmi lesquels HTML, LaTeX, Epub, PDF, etc.\n[/AST]\n\nEnfin, la documentation en ligne d'une bibliothèque logicielle ne se limite pas nécessairement à l'aide intégrée ou à des documentations sur la description technique de ses composants.  \nCertain·e·s auteur·e·s proposent également des démonstrations et des tutoriels en ligne, sous forme textuelle ou vidéo, afin de faciliter la prise en main des outils qu'il·elle·s ont développés.\n\n###Maintenance/b.\n\nLa vie d'un logiciel ne s'arrête pas à sa mise en production après validation de tous les tests. Il est nécessaire de maintenir la capacité de ce logiciel à fonctionner dans la durée.\n\n[DEF]\n**Maintenance logicielle\u0026nbsp;:**\n\nLa maintenance logicielle désigne l'ensemble des actions nécessaires au bon fonctionnement d'un logiciel après sa mise en production.\n[/DEF]\n\nLa maintenance peut porter sur différents aspects susceptibles d'affecter le bon fonctionnement d'un logiciel, et notamment\u0026nbsp;:\n* des corrections de bugs découverts après la mise en production\u0026nbsp;;((liste2))\n* des améliorations ou modifications de fonctionnalités à la demande de l'utilisateur\u0026nbsp;;((liste2))\n* l'anticipation ou la prise en compte de l'évolution de la plateforme hébergeant le logiciel ou des composants requis par le faire fonctionner\u0026nbsp;;((liste2))\n* la migration sur une autre plateforme.((liste2))\n\nLa mise à jour d'un système d'exploitation par son éditeur·rice ou d'une bibliothèque utilisée par le logiciel peuvent également entraîner des modifications du code, soit pour bénéficier d'améliorations de performance ou de sécurité, soit même pour pouvoir continuer à fonctionner en cas d'incompatibilité.\n\n[EX]\nParmi les événements importants liés à la maintenance logicielle dans l'écosystème Python, on mentionnera la fin de vie de Python\u0026nbsp;2, survenue début\u0026nbsp;2020.\n[/EX]\n\nLa version\u0026nbsp;2 de Python est apparue en\u0026nbsp;2000 et la version\u0026nbsp;3 en 2006. Les développeur·se·s du langage avaient annoncé en\u0026nbsp;2008 que la version\u0026nbsp;2 serait en fin de vie en\u0026nbsp;2015, afin de pouvoir se concentrer sur le développement de la version\u0026nbsp;3.  \nEn 2015 un report a été décidé jusqu'au 1^^er^^\u0026nbsp;janvier\u0026nbsp;2020 afin de laisser aux développeur·se·s le temps de faire évoluer leur code vers Python\u0026nbsp;3. Depuis cette date la version\u0026nbsp;2 de Python est officiellement obsolète et n'est plus supportée ni maintenue.\n* La fin de vie de la version 2 nécessite de porter le code Python\u0026nbsp;2 existant en Python\u0026nbsp;3\u0026nbsp;: on appelle cela le «\u0026nbsp;portage de code\u0026nbsp;».((fleche))\n\n[RETENIR]\nLe portage de code est un terme technique qui désigne la transposition d'un code initial dans un autre environnement ou éventuellement un nouveau langage.\n[/RETENIR]\n\n[AST]\nla différence la plus visible entre du code écrit en version\u0026nbsp;2 ou en version\u0026nbsp;3 de Python se situe au niveau des appels à [BUTC]print[/BUTC], dépourvus de parenthèses en Python\u0026nbsp;2 alors qu'elles sont obligatoirement présentes en Python\u0026nbsp;3.\n\n[BUTC]print \"hello world\" # Python 2[/BUTC]  \n[BUTC]print(\"hello world\") # Python 3[/BUTC]\n[/AST]\n\nLa documentation et la maintenance, parfois négligées, sont pourtant essentielles pour faciliter et entretenir le bon fonctionnement d'un logiciel dans la durée.\n\n[C]\nConclusion\u0026nbsp;:\n\nLe développement logiciel repose sur un ensemble de bonnes pratiques visant à produire et à maintenir un code informatique conforme aux recommandations relatives au code utilisé, optimisé, documenté et répondant aux exigences du clients. Ces bonnes pratiques passent par le respect de règles et de conventions et peuvent également être empruntées à des méthodes de gestion de projet. De plus, des outils spécialisés aident le·la développeur·se à dans sa démarche.\n[/C]\n","siblings":[{"resourceId":"5e99b06109e0a80100fe1d70","type":"Cours","sort":null},{"resourceId":"5e99b07009e0a80100fe1d72","type":"Fiche de révision","sort":null},{"resourceId":"5f3e6ae72263e30100dfa339","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7df709e0a80100fdbbe8","name":"Bonnes pratiques logicielles"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7df709e0a80100fdbbe8","label":"Cours : Bonnes pratiques logicielles","link":"https://www.schoolmouv.fr/cours/bonnes-pratiques-logicielles/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"bonnes-pratiques-logicielles","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/bonnes-pratiques-logicielles/fiche-de-cours","title":"Bonnes pratiques logicielles : Fiche de cours - Numérique et sciences informatiques | SchoolMouv","metaDescription":"Révise le cours : Bonnes pratiques logicielles de Numérique et sciences informatiques Terminale grâce à notre fiche de cours","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"bonnes-pratiques-logicielles","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

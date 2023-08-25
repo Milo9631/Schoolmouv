@@ -1,0 +1,160 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bonnes pratiques logicielles : Fiche de révision de Terminale</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Bonnes pratiques logicielles : Fiche de révision de Terminale">
+<meta name="description" content="Fiche de révision SchoolMouv ® pour apprendre facilement Bonnes pratiques logicielles (Terminale) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/bonnes-pratiques-logicielles/fiche-de-revision">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/bonnes-pratiques-logicielles/fiche-de-cours","name":"Bonnes pratiques logicielles"}},{"@type":"ListItem","position":5,"item":{"@id":"","name":"Fiche de révision : Bonnes pratiques logicielles"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb-with-ellipsis__23a_n breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><h1>Fiche de révision : Bonnes pratiques logicielles</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Bonnes pratiques logicielles</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<h2 range="1" markdown="1"><div markdown="1"><p>Conformité</p></div></h2>
+<ul>
+
+<li>Les langages informatiques ont une orthographe, une grammaire et obéissent à des règles de syntaxe.</li>
+
+<li>La manière de nommer les éléments du code a une incidence directe sur la lisibilité du code.</li>
+
+<li>L'intérêt de choisir des noms explicites s'applique également aux fonctions.</li>
+
+<li>En cas de nommage sybillin, toute personne autre que l'auteur·e aura du mal à comprendre d'emblée à quoi sert une fonction.</li>
+
+<li>Pire, l'auteur·e lui·elle-même aura peut-être des difficultés à se relire s'il·elle doit se plonger dans son propre code après plusieurs semaines ou plusieurs mois.</li>
+
+<li>La production de code Python obéit à un certain nombre de règles qui servent de bases communes à l'ensemble des développeur·se·s.</li>
+
+<li>Ces règles sont définies dans un document appelé PEP 8 (<em>Python Enhancement Proposal</em>).</li>
+
+<li>Le PEP 8 indique par exemple qu'on doit trouver une espace avant et après le signe <span class="calculator_button" markdown="1">=</span> sauf pour les paramètres nommés des fonctions.</li>
+
+<li>Le PEP 8 précise entre autres :</li>
+
+<li class="liste2">
+<div class="list_text">les conventions de nommage ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les modalités d'indentation ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la longueur des lignes ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l’espacement à appliquer entre les lignes.</div>
+</li>
+
+<li>Il existe des outils spécifiques pour aider le développeur à produire un code conforme : le linter, par exemple, qui signale les erreurs de syntaxe et le non-respect des règles stylistiques.</li>
+
+<li>Les linters peuvent être utilisés en ligne de commande ou de manière intégrée à l'IDE du·de la développeur·se.</li>
+</ul>
+<h2 range="2" markdown="1"><div markdown="1"><p>Optimisation du code</p></div></h2>
+<ul>
+
+<li>La conformité stylistique du code est d'autant plus importante que le code produit est amené à être lu pour être compris et éventuellement modifié, par l'auteur·e ou par des tiers.</li>
+
+<li>La reformulation de code est souvent désignée par le terme réusinage ou son équivalent anglais <em>refactoring</em>.</li>
+
+<li>Le code peut être modifié pour différentes raisons :</li>
+
+<li class="liste2">
+<div class="list_text">le rendre conforme aux règles de style en vigueur ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">le rendre conforme aux spécifications ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l’adapter à des besoins nouveaux ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l’optimiser (notamment la rapidité des traitements ou la réduction de la complexité algoritmique) ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l’adapter pour des raisons de compatibilité ou sécurité dues à des évolutions de l'environnement.</div>
+</li>
+
+<li>Chaque langage informatique a ses tournures et ses spécificités. Dans le cas de Python, la formule consacrée pour indiquer la conformité du code aux principes du langage consiste à le qualifier de « <b>pythonesque</b> ».</li>
+
+<li>Les principes qui sous-tendent la programmation en Python ont été résumés dans un texte intitulé le « Zen de Python ».</li>
+
+<li>Ce texte de référence peut être affiché dans l'interpréteur Python avec la commande suivante <span class="calculator_button" markdown="1">import this</span>.</li>
+
+<li>On relèvera notamment la recommandation d'aérer le code et de favoriser sa lisibilité.</li>
+
+<li>Le recours à des tests est très utile pour s'assurer que le code produit bien les résultats attendus et qu’il continue à fonctionner après modification (on parle de couverture de code).</li>
+
+<li>Un programme informatique est censé répondre à un certain nombre d'exigences, et donc de critères de validation.</li>
+</ul>
+<h2 range="3" markdown="1"><div markdown="1"><p>Documentation et maintenance</p></div></h2>
+<ul>
+
+<li>La documentation du code facilite l'exploitation des fonctionnalités par les autres développeur·se·s, et par l'auteur·e lorsqu'il·elle doit se replonger dans son propre code pour l'optimiser ou le maintenir.</li>
+
+<li>Les chaînes de documentation ou <em>doctstrings</em> constituent un moyen facile et rapide de documenter la production logicielle directement au niveau du code.</li>
+
+<li>Le module Pydoc module notamment permet  d'accéder à l'ensemble de la documentation et d'effectuer des recherches sur le langage et ses bibliothèques, mais aussi de générer des fichiers de documentation au format texte ou HTML, et même un serveur HTTP local pour la consultation de la documentation.</li>
+
+<li>Cette documentation au format HTML peut ensuite facilement être publiée sur le web ou sur un intranet pour proposer une ressource de documentation en ligne.</li>
+
+<li>Pour des besoins de documentation plus élaborés, il existe un outil plus complet, écrit lui aussi en Python : le générateur de documentation Sphinx.</li>
+
+<li>Il est nécessaire de maintenir la capacité d’un logiciel à fonctionner dans la durée : on parle de maintenance logicielle.</li>
+
+<li>La maintenance peut porter sur différents aspects susceptibles d'affecter le bon fonctionnement d'un logiciel :</li>
+
+<li class="liste2">
+<div class="list_text">corrections de bugs ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">améliorations ou modifications de fonctionnalités ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">anticipation de l'évolution de la plateforme hébergeant le logiciel ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">migration sur une autre plateforme.</div>
+</li>
+
+<li>Le portage de code est un terme technique qui désigne la transposition d'un code initial dans un autre environnement ou éventuellement un nouveau langage.</li>
+</ul>
+</div></div>
+<div id="poool-w8ari-chl6n" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5e99b07009e0a80100fe1d72","type":"Fiche de révision","title":"Bonnes pratiques logicielles","content":"##Conformité/1\n\n* Les langages informatiques ont une orthographe, une grammaire et obéissent à des règles de syntaxe.\n* La manière de nommer les éléments du code a une incidence directe sur la lisibilité du code.\n* L'intérêt de choisir des noms explicites s'applique également aux fonctions.\n* En cas de nommage sybillin, toute personne autre que l'auteur·e aura du mal à comprendre d'emblée à quoi sert une fonction.\n* Pire, l'auteur·e lui·elle-même aura peut-être des difficultés à se relire s'il·elle doit se plonger dans son propre code après plusieurs semaines ou plusieurs mois.\n* La production de code Python obéit à un certain nombre de règles qui servent de bases communes à l'ensemble des développeur·se·s.\n* Ces règles sont définies dans un document appelé PEP\u0026nbsp;8 (__Python Enhancement Proposal__).\n* Le PEP\u0026nbsp;8 indique par exemple qu'on doit trouver une espace avant et après le signe [BUTC]=[/BUTC] sauf pour les paramètres nommés des fonctions.\n* Le PEP\u0026nbsp;8 précise entre autres\u0026nbsp;:\n* les conventions de nommage\u0026nbsp;;((liste2))\n* les modalités d'indentation\u0026nbsp;;((liste2))\n* la longueur des lignes\u0026nbsp;;((liste2))\n* l’espacement à appliquer entre les lignes.((liste2))\n* Il existe des outils spécifiques pour aider le développeur à produire un code conforme\u0026nbsp;: le linter, par exemple, qui signale les erreurs de syntaxe et le non-respect des règles stylistiques.\n* Les linters peuvent être utilisés en ligne de commande ou de manière intégrée à l'IDE du·de la développeur·se.\n\n##Optimisation du code/2\n\n* La conformité stylistique du code est d'autant plus importante que le code produit est amené à être lu pour être compris et éventuellement modifié, par l'auteur·e ou par des tiers.\n* La reformulation de code est souvent désignée par le terme réusinage ou son équivalent anglais __refactoring__.\n* Le code peut être modifié pour différentes raisons\u0026nbsp;:\n* le rendre conforme aux règles de style en vigueur\u0026nbsp;;((liste2))\n* le rendre conforme aux spécifications\u0026nbsp;;((liste2))\n* l’adapter à des besoins nouveaux\u0026nbsp;;((liste2))\n* l’optimiser (notamment la rapidité des traitements ou la réduction de la complexité algoritmique)\u0026nbsp;;((liste2))\n* l’adapter pour des raisons de compatibilité ou sécurité dues à des évolutions de l'environnement.((liste2))\n* Chaque langage informatique a ses tournures et ses spécificités. Dans le cas de Python, la formule consacrée pour indiquer la conformité du code aux principes du langage consiste à le qualifier de «\u0026nbsp;**pythonesque**\u0026nbsp;».\n* Les principes qui sous-tendent la programmation en Python ont été résumés dans un texte intitulé le «\u0026nbsp;Zen de Python\u0026nbsp;».\n* Ce texte de référence peut être affiché dans l'interpréteur Python avec la commande suivante [BUTC]import this[/BUTC].\n* On relèvera notamment la recommandation d'aérer le code et de favoriser sa lisibilité.\n* Le recours à des tests est très utile pour s'assurer que le code produit bien les résultats attendus et qu’il continue à fonctionner après modification (on parle de couverture de code).\n* Un programme informatique est censé répondre à un certain nombre d'exigences, et donc de critères de validation.\n\n##Documentation et maintenance/3\n\n* La documentation du code facilite l'exploitation des fonctionnalités par les autres développeur·se·s, et par l'auteur·e lorsqu'il·elle doit se replonger dans son propre code pour l'optimiser ou le maintenir.\n* Les chaînes de documentation ou __doctstrings__ constituent un moyen facile et rapide de documenter la production logicielle directement au niveau du code.\n* Le module Pydoc module notamment permet  d'accéder à l'ensemble de la documentation et d'effectuer des recherches sur le langage et ses bibliothèques, mais aussi de générer des fichiers de documentation au format texte ou HTML, et même un serveur HTTP local pour la consultation de la documentation.\n* Cette documentation au format HTML peut ensuite facilement être publiée sur le web ou sur un intranet pour proposer une ressource de documentation en ligne.\n* Pour des besoins de documentation plus élaborés, il existe un outil plus complet, écrit lui aussi en Python\u0026nbsp;: le générateur de documentation Sphinx.\n* Il est nécessaire de maintenir la capacité d’un logiciel à fonctionner dans la durée\u0026nbsp;: on parle de maintenance logicielle.\n* La maintenance peut porter sur différents aspects susceptibles d'affecter le bon fonctionnement d'un logiciel\u0026nbsp;:\n* corrections de bugs\u0026nbsp;;((liste2))\n* améliorations ou modifications de fonctionnalités\u0026nbsp;;((liste2))\n* anticipation de l'évolution de la plateforme hébergeant le logiciel\u0026nbsp;;((liste2))\n* migration sur une autre plateforme.((liste2))\n* Le portage de code est un terme technique qui désigne la transposition d'un code initial dans un autre environnement ou éventuellement un nouveau langage.","siblings":[{"resourceId":"5e99b06109e0a80100fe1d70","type":"Cours","sort":null},{"resourceId":"5e99b07009e0a80100fe1d72","type":"Fiche de révision","sort":null},{"resourceId":"5f3e6ae72263e30100dfa339","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7df709e0a80100fdbbe8","name":"Bonnes pratiques logicielles"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7df709e0a80100fdbbe8","label":"Bonnes pratiques logicielles","link":"https://www.schoolmouv.fr/cours/bonnes-pratiques-logicielles/fiche-de-cours"},{"key":"fiche-de-revision","label":"Fiche de révision : Bonnes pratiques logicielles","link":""}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"bonnes-pratiques-logicielles","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/bonnes-pratiques-logicielles/fiche-de-revision","title":"Bonnes pratiques logicielles : Fiche de révision de Terminale","metaDescription":"Fiche de révision SchoolMouv ® pour apprendre facilement Bonnes pratiques logicielles (Terminale) ! En bonus : ✔️ vidéo ✔️ cours ✔️ exercices…","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"bonnes-pratiques-logicielles","resourceType":"fiche-de-revision"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>
