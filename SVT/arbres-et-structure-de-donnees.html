@@ -1,0 +1,731 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Arbres et structure de données : cours de Terminale - Numérique</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Arbres et structure de données : cours de Terminale - Numérique">
+<meta name="description" content="SchoolMouv ® te propose ce cours sur Arbres et structure de données (Terminale - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/arbres-et-structure-de-donnees/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/arbres-et-structure-de-donnees/fiche-de-cours","name":"Cours : Arbres et structure de données"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Arbres et structure de données</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Arbres et structure de données</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Les arbres sont des structures de données hiérarchiques. Les cas d’usage des arbres peuvent être très variés, et de nombreux utilisateur·rice·s des outils numériques interagissent avec des arbres sans nécessairement en avoir conscience.<br>
+Nous allons, dans une première partie, caractériser ces structures, en illustrer différents usages, et porter une attention plus particulière aux arbres binaires, sur lesquels nous étudierons des implémentations algorithmiques dans les parties suivantes. Nous effectuerons, en deuxième partie, des mesures et parcours sur ces arbres binaires, et nous implémenterons en troisième partie des recherches et ajouts de valeurs dans des arbres binaires de recherche.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Caractérisation des arbres</p></div></h2>
+<p>Un <b>arbre</b> est une structure de données liant entre eux des <b>nœuds</b> par l’intermédiaire d’<b>arêtes</b> formant des <b>branches</b>. Contrairement aux graphes , qui font l’objet d’un cours séparé dans ce chapitre, l’organisation des nœuds d’un arbre comporte une dimension <b>hiérarchique</b>.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Arbre :</b></p>
+<p>Un arbre est une structure de données composée de nœuds reliés entre eux par des branches, selon une organisation hiérarchique, à partir d’un nœud racine.</p>
+</div>
+</div>
+<p>Commençons par présenter les différents éléments constitutifs d’un arbre.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Éléments constitutifs d’un arbre</p></div></h3>
+<p>Un arbre est constitué d’un élément de base : son <b>nœud racine</b>.<br>
+De ce nœud racine peuvent ensuite partir des arêtes reliant d’autres nœuds, lesquels peuvent eux-mêmes relier d’autres nœuds pour former des branches.</p>
+<ul>
+
+<li>Dans le sens descendant depuis la racine, les nœuds reliés aux niveaux supérieurs sont appelés <b>nœuds enfants</b> ou <b>nœuds fils</b> du nœud dont ils dépendent.</li>
+
+<li>Inversement un nœud enfant est rattaché dans le sens ascendant à un <b>nœud père</b> ou <b>nœud parent</b>.</li>
+</ul>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Seul le nœud racine n’a pas de père.</p></div>
+</div>
+<p>Un nœud n’ayant pas de nœuds enfants est dit <b>nœud terminal</b>. Situé à l’extrémité d’une branche, il est également appelé « feuille ».</p>
+<p>Chaque nœud peut stocker une information, appelée <b>valeur</b> ou <b>clé</b> du nœud.</p>
+<p>Un <b>sous-arbre</b> est une portion d’arbre à partir d’un nœud quelconque qui constitue la racine de ce sous-arbre.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Une structure de données organisée comme un arbre est dont dite « arborescente ».</div>
+</li>
+</ul>
+<p>Sa représentation graphique évoque la forme d’un arbre végétal, à ceci près que les arbres informatiques sont généralement représentés avec la racine tout en haut du schéma, pour mieux traduire cette notion de hiérarchie descendante depuis le nœud racine.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img01.png" alt="arbre et structure de données"> 
+<span>Représentation de la structure d’un arbre
+ </span></p></div></div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Contextes d’emploi des arbres</p></div></h3>
+<p>Les structures de type arbre sont très présentes en informatique.<br>
+L’organisation du système de fichiers d’un ordinateur est arborescente. Les fichiers sont organisés de manière hiérarchique à partir d’une racine, à laquelle peuvent être rattachés des répertoires (parfois appelés dossiers) et des fichiers, les répertoires pouvant eux-mêmes de manière récursive contenir d’autres répertoires et/ou fichiers.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img02.png" alt="arbre et structure de données"> 
+<span>Organisation arborescente d’un système de fichiers
+ </span></p></div></div>
+<p>On trouve également des arbres dans le contexte du web.<br>
+Le DOM (<em>Document Object Model</em>) ou « modèle objet de document » du langage HTML représente un document web de manière structurée sous forme d’un arbre hiérarchique.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img03.png" alt="arbre et structure de données"> 
+<span>Code source et modèle objet de document (DOM) d’un même document HTML
+ </span></p></div></div>
+<h3 range="c." markdown="1"><div markdown="1"><p>Types d’arbres</p></div></h3>
+<p>Il existe différentes sortes d’arbres :</p>
+<ul>
+
+<li>les <b>arbres généraux</b> peuvent posséder un nombre variable de branches ;</li>
+
+<li>les <b>arbres binaires</b> et les <b>arbres binaires de recherche</b> sont caractérisés par des propriétés particulières.</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Arbre binaire</b></div>
+</li>
+</ul></div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Arbre binaire :</b></p>
+<p>Un arbre binaire est un arbre dont chaque nœud comporte <span class="underline">au plus</span> deux sous-arbres enfants.</p>
+</div>
+</div>
+<p>Les sous-arbres d’un arbre binaire sont conventionnellement appelés « sous-arbre gauche » et « sous-arbre droit », ou encore « branche gauche » et « branche droite ». Voire, plus simplement, <b>gauche</b> et <b>droit</b>.</p>
+<p>Chaque nœud de l’arbre binaire comporte <span class="underline">au maximum</span> deux sous-arbres.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img04.png" alt="arbre et structure de données"> 
+<span>Exemple d’arbre binaire
+ </span></p></div></div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>Certains nœuds non terminaux peuvent n’avoir qu’une seule branche.</li>
+
+
+
+<li>Les branches d’un arbre ou d’un sous-arbre binaire ne sont pas nécessairement de longueurs égales.</li>
+</ul></div>
+</div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Arbre binaire de recherche</b></div>
+</li>
+</ul></div>
+<p>Un arbre binaire de recherche est un cas particulier d’arbre binaire qui se distingue par le caractère ordonné des nœuds qui le composent.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Arbre binaire de recherche :</b></p>
+<p>Un arbre binaire de recherche est un arbre binaire dont les clés sont ordonnées.</p>
+</div>
+</div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Clé (d’un nœud) :</b></p>
+<p>La clé d'un nœud correspond à la valeur qui lui est affectée. </p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Par exemple, la clé de la racine de l'arbre binaire de recherche donné ci-dessous est $12$.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Le placement des clés est effectué de manière à toujours maintenir le caractère ordonné de l’arbre binaire de recherche :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">les valeurs situées ou ajoutées dans le sous-arbre gauche d’un arbre binaire de recherche sont nécessairement inférieures à celle de la clé du nœud considéré ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les valeurs situées ou ajoutées dans le sous-arbre droit d’un arbre binaire de recherche sont nécessairement supérieures à celle de la clé du nœud considéré.</div>
+</li>
+</ul>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img05.png" alt="arbre binaire et structure de données"> 
+<span>Exemple d’arbre binaire de recherche
+ </span></p></div></div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pour ajouter $13$, on doit nécessairement l'ajouter dans le sous-arbre droit en considérant la racine car $13&gt;12$. Dans le sous-arbre droit, $14$ étant la racine, $13$ sera alors dans le sous-sous-arbre gauche puisque $13&lt;14$. Sachant qu'il n'existe pas encore ces sous-sous-arbre gauche, $13$ en sera la racine.</p></div>
+</div>
+<h3 range="d." markdown="1"><div markdown="1"><p>Mesures sur les arbres</p></div></h3>
+<p>Les arbres peuvent comporter plus ou moins de nœuds et de branches de longueurs variables. On peut mesurer la taille et la hauteur des arbres.</p>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Taille d’un arbre :</b></p>
+<p>La taille d’un arbre est le nombre de nœuds qu’il comporte (incluant bien sûr le nœud racine).</p>
+</div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La taille de l’arbre binaire de recherche ci-avant est de 5.</p></div>
+</div>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Hauteur d’un arbre :</b></p>
+<p>La hauteur, parfois appelée « profondeur », correspond au nombre de nœuds parcourus sur le plus long chemin possible depuis la racine de l’arbre, sans revenir sur ses pas.</p>
+</div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La hauteur de l’arbre binaire de recherche ci-avant est de 3.</p></div>
+</div>
+<p>Les structures de type arbre peuvent être implémentées de différentes manières. Le paradigme de programmation orientée objet est généralement employé, avec un recours fréquent à l’approche récursive pour les méthodes.<br>
+Nos implémentations dans les parties suivantes du cours suivront ces pratiques usuelles, étant précisé qu’il est également possible d’employer le paradigme fonctionnel et des approches itératives.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Implémentations sur des arbres binaires</p></div></h2>
+<p>Cette deuxième partie est consacrée aux implémentations sur des arbres binaires.<br>
+Après avoir conçu des classes adaptées à ces implémentations, nous calculerons taille et hauteur, avant d’effectuer différents parcours des arbres binaires.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Conception des classes</p></div></h3>
+<p>Notre implémentation des arbres binaires repose sur deux classes distinctes :</p>
+<ul>
+
+<li>une classe modélisant des nœuds ;</li>
+
+<li>une classe modélisant des arbres binaires à partir des nœuds.</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Classe <span class="calculator_button" markdown="1">Noeud</span></b></div>
+</li>
+</ul></div>
+<p>La classe <span class="calculator_button" markdown="1">Noeud</span> définit des objets composés d’une valeur (la clé du nœud) et de deux branches, la gauche et la droite, identifiées par leur nœud racine .</p>
+<p><span class="calculator_button" markdown="1">class Noeud:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, cle):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.cle = cle</span><br>
+<span class="calculator_button" markdown="1">self.gauche = None</span><br>
+<span class="calculator_button" markdown="1">self.droite = None</span></p></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Les modalités de création d’un nœud sont précisées dans la définition de la méthode spéciale <span class="calculator_button" markdown="1">__init__</span> :</p>
+<ul>
+
+
+
+<li>seule la valeur de la clé doit être précisée au moment de la création d’un nœud ;</li>
+
+
+
+<li>ses sous-branches sont initialisées avec l’objet <span class="calculator_button" markdown="1">None</span>, qui exprime l’absence de valeur.</li>
+</ul>
+</div>
+</div>
+<p>La création d’un nœud s’effectue ainsi :</p>
+<p><span class="calculator_button" markdown="1">noeud = Noeud('A')</span></p>
+<p>Affichons les attributs du nœud.</p>
+<p><span class="calculator_button" markdown="1">print(noeud)</span><br>
+<span class="calculator_button" markdown="1">print(noeud.cle)</span><br>
+<span class="calculator_button" markdown="1">print(noeud.gauche)</span><br>
+<span class="calculator_button" markdown="1">print(noeud.droite)</span></p>
+<p>affiche successivement :</p>
+<p><span class="calculator_button" markdown="1">__main__.Noeud object at 0x10b215278&gt; # (adresse mémoire attribuée dynamiquement à la création de l'objet)</span><br>
+<span class="calculator_button" markdown="1">A</span><br>
+<span class="calculator_button" markdown="1">None</span><br>
+<span class="calculator_button" markdown="1">None</span></p>
+<p>Les attributs de l’objet peuvent ensuite être modifiés.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Ajout de deux nœuds enfants aux sous-branches du nœud initial.</p>
+<p><span class="calculator_button" markdown="1">noeud.gauche = Noeud('B')</span><br>
+<span class="calculator_button" markdown="1">noeud.droite = Noeud('C')</span></p>
+<p><span class="calculator_button" markdown="1">print(noeud)</span><br>
+<span class="calculator_button" markdown="1">print(noeud.cle)</span><br>
+<span class="calculator_button" markdown="1">print(noeud.gauche)</span><br>
+<span class="calculator_button" markdown="1">print(noeud.droite)</span></p>
+<p>affiche successivement:</p>
+<p><span class="calculator_button" markdown="1">&lt;__main__.Noeud object at 0x10b215278&gt;</span><br>
+<span class="calculator_button" markdown="1">A</span><br>
+<span class="calculator_button" markdown="1">&lt;__main__.Noeud object at 0x10b1ec588&gt;</span><br>
+<span class="calculator_button" markdown="1">&lt;__main__.Noeud object at 0x10b1ec630&gt;</span></p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Les nœuds B et C sont bien affectés aux deux sous-branches du nœud A.</div>
+</li>
+</ul>
+<p>Notons que pour afficher la valeur des clés gauche et droite, il suffit d'employer les commandes suivantes :</p>
+<p><span class="calculator_button" markdown="1">print(noeud.gauche.cle)</span><br>
+<span class="calculator_button" markdown="1">print(noeud.droite.cle)</span></p>
+<p>Ce qui affichera successivement<br>
+<span class="calculator_button" markdown="1">B</span><br>
+<span class="calculator_button" markdown="1">C</span></p>
+</div>
+</div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Classe <span class="calculator_button" markdown="1">ArbreBinaire</span></b></div>
+</li>
+</ul></div>
+<p>La classe <span class="calculator_button" markdown="1">ArbreBinaire</span> définit des objets composés initialement d’un nœud racine, auquel pourront être rattachés des nœuds aux différentes sous-branches.</p>
+<p><span class="calculator_button" markdown="1">class ArbreBinaire:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<p>La création d’un arbre binaire s’effectue par initialisation de l’arbre avec un nœud racine.</p>
+<p><span class="calculator_button" markdown="1">ab = ArbreBinaire('A')</span></p>
+<p>On peut ensuite ajouter des nœuds aux branches du nœud racine, puis aux nœuds qui y sont rattachés, sans limitation de profondeur.</p>
+<p><span class="calculator_button" markdown="1">ab.racine.gauche = Noeud('B')</span><br>
+<span class="calculator_button" markdown="1">ab.racine.droite = Noeud('C')</span></p>
+<p><span class="calculator_button" markdown="1">ab.racine.gauche.gauche = Noeud('D')</span><br>
+<span class="calculator_button" markdown="1">ab.racine.gauche.droite = Noeud('E')</span></p>
+<p><span class="calculator_button" markdown="1">ab.racine.droite.gauche = Noeud('F')</span><br>
+<span class="calculator_button" markdown="1">ab.racine.droite.droite = Noeud('G')</span></p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img06.png" alt="arbre et structure de données"> 
+<span>Représentation de l’arbre nommé « ab »
+ </span></p></div></div>
+<p>Une implémentation plus complète pourrait intégrer la possibilité d’ajout, de modification et de suppression de nœuds de l’arbre par des méthodes dédiées. Nous implémenterons l’ajout d’un élément sur un arbre binaire de recherche dans la troisième partie du cours.<br>
+Dans cette partie, nous nous intéressons en priorité aux mesures de taille et de profondeur, ainsi qu’aux modalités de parcours des arbres binaires.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Taille d’un arbre binaire</p></div></h3>
+<p>Déterminer la taille d’un arbre revient à compter l’ensemble des nœuds composant cet arbre. Nous effectuons ce compte à partir du nœud racine, en explorant récursivement tous les sous-arbres de chacun des nœuds.</p>
+<p><span class="calculator_button" markdown="1">class ArbreBinaire:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def taille(self, noeud='racine'):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if noeud == 'racine':</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">noeud = self.racine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if not noeud:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return 1 + self.taille(noeud.gauche) + self.taille(noeud.droite)</span></p></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>La méthode <span class="calculator_button" markdown="1">taille</span> est définie avec comme paramètres :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">
+<span class="calculator_button" markdown="1">self</span> qui désigne l’instance de la classe ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">le nœud à traiter.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>L’appel initial est effectué avec une valeur par défaut correspondant au nœud racine de l’arbre. Les appels suivants sont effectués de manière récursive sur les sous-arbres, dont le nombre de nœuds est ajouté au nœud courant. La récursion s’arrête en l’absence de nœud en sous-arbre.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Appel de la méthode sur l’arbre binaire nommé <span class="calculator_button" markdown="1">ab</span> :</p>
+<p><span class="calculator_button" markdown="1">print(ab.taille())</span><br>
+<span class="calculator_button" markdown="1"># affiche 7</span></p>
+<p>Vérifions que notre méthode de détermination de taille fonctionne également sur un arbre binaire dont toutes les branches ne sont pas pareillement développées.</p>
+<p><span class="calculator_button" markdown="1"># arbre binaire incomplet</span><br>
+<span class="calculator_button" markdown="1">abi = ArbreBinaire('A')</span><br>
+<span class="calculator_button" markdown="1">abi.racine.gauche = Noeud('B')</span><br>
+<span class="calculator_button" markdown="1">abi.racine.droite = Noeud('C')</span><br>
+<span class="calculator_button" markdown="1">abi.racine.gauche.gauche = Noeud('D')</span><br>
+<span class="calculator_button" markdown="1">abi.racine.gauche.gauche.droite = Noeud('E')</span></p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img07.png" alt="arbre et structure de données"> 
+<span>Représentation graphique de l’arbre nommé « abi »
+ </span></p></div></div>
+<p><span class="calculator_button" markdown="1">print(abi.taille())</span><br>
+<span class="calculator_button" markdown="1"># affiche 5</span></p>
+</div>
+</div>
+<p>Implémentons maintenant une méthode déterminant la hauteur d’un arbre binaire.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Hauteur d’un arbre binaire</p></div></h3>
+<p>Nous employons la même approche récursive que pour le calcul de la taille.</p>
+<p><span class="calculator_button" markdown="1">class ArbreBinaire:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def hauteur(self, noeud='racine'):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if noeud == 'racine':</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">noeud = self.racine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if not noeud:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return 0</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return 1 + max(self.hauteur(noeud.gauche), self.hauteur(noeud.droite))</span></p></div>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Comme précédemment, la méthode <span class="calculator_button" markdown="1">hauteur</span> est définie avec comme paramètres :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">
+<span class="calculator_button" markdown="1">self</span> qui désigne l’instance de la classe ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">le nœud à traiter.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Les retours des appels récursifs sur les sous-branches gauches et droites sont passés en arguments à la fonction <span class="calculator_button" markdown="1">max</span>, laquelle retourne la plus grande des valeurs fournies, de manière à pouvoir déterminer la hauteur de tout type d’arbre binaire.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Appel de la méthode <span class="calculator_button" markdown="1">hauteur</span> sur les deux arbres binaires précédents <span class="calculator_button" markdown="1">ab</span> et <span class="calculator_button" markdown="1">abi</span> :</p>
+<p><span class="calculator_button" markdown="1">print(ab.hauteur())</span><br>
+<span class="calculator_button" markdown="1"># affiche 3</span></p>
+<p><span class="calculator_button" markdown="1">print(abi.hauteur())</span><br>
+<span class="calculator_button" markdown="1"># affiche 4</span></p>
+<p>La hauteur est correctement déterminée pour les deux arbres.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L’arbre <span class="calculator_button" markdown="1">ab</span> présente la particularité que toutes ses branches sont de longueur égale.</div>
+</li>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Les sous-branches de l’arbre <span class="calculator_button" markdown="1">abi</span> sont en revanche de longueurs inégales, mais c’est bien la plus grande des branches qui est prise en compte.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Intéressons-nous maintenant aux parcours des arbres binaires.</p>
+<h3 range="d." markdown="1"><div markdown="1"><p>Parcours des arbres binaires</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Parcours d’un arbre :</b></p>
+<p>Parcourir un arbre consiste à explorer l’ensemble de ses nœuds.</p>
+</div>
+</div>
+<p>Il existe différentes méthodes pour effectuer cette exploration. Nous implémentons ici trois modes de parcours des arbres binaires :</p>
+<ul>
+
+<li>le parcours <b>préfixe</b> ;</li>
+
+<li>le parcours <b>infixe</b> ;</li>
+
+<li>le parcours <b>suffixe</b>.</li>
+</ul>
+<p>Les trois modes se distinguent par l’ordre dans lequel le parcours est effectué sur les nœuds et leurs branches. Nous l’illustrons avec l’exemple ci-après :</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Considérons l’arbre suivant :</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img08.png" alt="arbre et structure de données"> 
+<span>Arbre binaire composé de trois nœuds dont les clés sont A, B et C.
+ </span></p></div></div>
+<ul>
+
+
+
+<li><p>Le parcours préfixe consiste à parcourir d’abord le nœud racine, puis le nœud gauche, et ensuite le nœud droit. Le parcours préfixe de l’arbre s’effectue dans l’ordre A $\rightarrow$ B $\rightarrow$ C.</p></li>
+
+
+
+<li><p>Le parcours infixe consiste à parcourir d’abord le nœud gauche, puis le nœud racine, et ensuite le nœud droit. Le parcours infixe de l’arbre s’effectue dans l’ordre B $\rightarrow$ A $\rightarrow$ C.</p></li>
+</ul>
+<p>Le parcours suffixe consiste à parcourir d’abord le nœud gauche, puis, le nœud droit et ensuite le nœud racine. Le parcours suffixe de l’arbre s’effectue dans l’ordre B $\rightarrow$ C $\rightarrow$ A.</p>
+</div>
+</div>
+<p>Ces modes de parcours s’appliquent récursivement.</p>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Parcours préfixe</b></div>
+</li>
+</ul></div>
+<p>Commençons par implémenter le parcours préfixe.</p>
+<p><span class="calculator_button" markdown="1">class ArbreBinaire:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def parcours_prefixe(self, position='racine', parcours=None):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if parcours is None:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">parcours = []</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if position == 'racine':</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">position = self.racine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if position:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">parcours += position.cle</span><br>
+<span class="calculator_button" markdown="1">parcours = self.parcours_prefixe(position.gauche, parcours)</span><br>
+<span class="calculator_button" markdown="1">parcours = self.parcours_prefixe(position.droite, parcours)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return parcours</span></p></div>
+<p>Le parcours est enregistré dans une liste qui est complétée au fur à mesure des appels récursifs du parcours.<br>
+L’appel de la méthode sur le nom de l’arbre retourne la liste des nœuds dans l’ordre dans lequel ils ont été visités.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img06-2-.png" alt="Alt texte"> 
+<span>Légende
+ </span></p></div></div>
+<p><span class="calculator_button" markdown="1">print(ab.parcours_prefixe())</span><br>
+<span class="calculator_button" markdown="1"># affiche ['A', 'B', 'D', 'E', 'C', 'F', 'G']</span></p>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Parcours infixe</b></div>
+</li>
+</ul></div>
+<p>Implémentons maintenant la méthode de parcours infixe.</p>
+<p><span class="calculator_button" markdown="1">class ArbreBinaire:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def parcours_infixe(self, position='racine', parcours=None):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if parcours is None:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">parcours = []</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if position == 'racine':</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">position = self.racine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if position:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">parcours = self.parcours_infixe(position.gauche, parcours)
+[BUTC]parcours += position.cle</span><br>
+<span class="calculator_button" markdown="1">parcours = self.parcours_infixe(position.droite, parcours)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return parcours</span></p></div>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img06-3-.png" alt="Alt texte"> 
+<span>Légende
+ </span></p></div></div>
+<p><span class="calculator_button" markdown="1">print(ab.parcours_infixe())</span><br>
+<span class="calculator_button" markdown="1"># affiche ['D', 'B', 'E', 'A', 'F', 'C', 'G']</span></p>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="3"></div>
+<div class="list_text"><b>Parcours suffixe</b></div>
+</li>
+</ul></div>
+<p>Implémentons enfin la méthode de parcours suffixe.</p>
+<p><span class="calculator_button" markdown="1">class ArbreBinaire:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def parcours_suffixe(self, position='racine', parcours=None):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if parcours is None:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">parcours = []</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if position == 'racine':</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">position = self.racine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if position:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">parcours = self.parcours_suffixe(position.gauche, parcours)</span><br>
+<span class="calculator_button" markdown="1">parcours = self.parcours_suffixe(position.droite, parcours)</span><br>
+<span class="calculator_button" markdown="1">parcours += position.cle</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">return parcours</span></p></div>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img06-4-.png" alt="Alt texte"> 
+<span>Légende
+ </span></p></div></div>
+<p><span class="calculator_button" markdown="1">print(ab.parcours_suffixe())</span><br>
+<span class="calculator_button" markdown="1"># affiche ['D', 'E', 'B', 'F', 'G', 'C', 'A']</span></p>
+<p>Nous observons que les méthodes des trois parcours reposent sur la même logique d'appels récursifs des différentes branches, dans un ordre spécifique à chaque parcours.</p>
+<p>Passons maintenant à des implémentations concernant plus spécifiquement les arbres binaires de recherche.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Implémentations sur les arbres binaires de recherche</p></div></h2>
+<p>Cette troisième partie est consacrée à des implémentations sur des arbres binaires de recherche ; les clés de leurs nœuds ont la particularité d’être ordonnées. Nous allons tirer parti de cette spécificité dans notre implémentation de fonctionnalités de recherche et d’insertion.</p>
+<h3 range="a." markdown="1"><div markdown="1"><p>Conception des classes</p></div></h3>
+<p>Notre implémentation des arbres binaires de recherche repose sur deux classes distinctes :</p>
+<ul>
+
+<li>une classe modélisant des nœuds ;</li>
+
+<li>une classe modélisant des arbres binaires de recherche à partir des nœuds.</li>
+</ul>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Cette implémentation s’appuie sur la même classe de nœuds que celle utilisée en deuxième partie, et sur une classe spécifique aux arbres binaires de recherche.<br>
+Nous nous abstenons volontairement de recourir à l’héritage entre classes afin de permettre l’étude des arbres binaires et des arbres binaires de recherche de manière indépendante.</p></div>
+</div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Classe <span class="calculator_button" markdown="1">Noeud</span></b></div>
+</li>
+</ul></div>
+<p><span class="calculator_button" markdown="1">class Noeud:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, cle):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.cle = cle</span><br>
+<span class="calculator_button" markdown="1">self.gauche = None</span><br>
+<span class="calculator_button" markdown="1">self.droite = None</span></p></div>
+<p><span class="calculator_button" markdown="1">class ArbreBinaireRecherche:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<p>Nous utilisons cette base pour instancier un arbre binaire de recherche. Nous ajoutons quelques valeurs en veillant à respecter le caractère ordonné de l’arbre. Nous utiliserons cet arbre pour effectuer nos recherches, et nous implémenterons ensuite l’ajout de clé sous forme de méthode déterminant l’emplacement d’insertion.</p>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:50px;margin-right:auto;margin-bottom:-10px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Arbre binaire de recherche</b></div>
+</li>
+</ul></div>
+<p><span class="calculator_button" markdown="1">abr = ArbreBinaireRecherche(12)</span></p>
+<p><span class="calculator_button" markdown="1">abr.racine.gauche = Noeud(6)</span><br>
+<span class="calculator_button" markdown="1">abr.racine.droite = Noeud(14)</span></p>
+<p><span class="calculator_button" markdown="1">abr.racine.gauche.gauche = Noeud(5)</span><br>
+<span class="calculator_button" markdown="1">abr.racine.gauche.gauche.droite = Noeud(7)</span></p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img09.png" alt="arbre et structure de données"> 
+<span>Représentation de l’arbre nommé « abr »
+ </span></p></div></div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Recherche de clé</p></div></h3>
+<p>La recherche de clé dans un arbre binaire de recherche exploite le caractère ordonné des clés.</p>
+<p>Nous définissons une méthode de recherche qui détermine, de manière récursive à partir du nœud racine, si la clé du nœud courant correspond ou non à la valeur recherchée. Si ce n’est pas le cas, elle compare la clé à la valeur recherchée en évaluant si elle y est supérieure ou inférieure.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Les clés de l’arbre étant ordonnées, cela permet de déterminer dans quel sous-arbre la valeur se situe nécessairement, si elle est présente dans l’arbre.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">class ArbreBinaireRecherche:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__ (self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def recherche(self, valeur_recherchee, noeud=None):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if noeud is None:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">noeud = self.racine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">contenu = noeud.cle</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if contenu == valeur_recherchee:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return True</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">elif contenu &lt; valeur_recherchee:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">if not noeud.droite:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:100px;"><p><span class="calculator_button" markdown="1">return False</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return self.recherche(valeur_recherchee, noeud.droite)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">if not noeud.gauche:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:100px;"><p><span class="calculator_button" markdown="1">return False</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return self.recherche(valeur_recherchee, noeud.gauche)</span></p></div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La fonction retourne <span class="calculator_button" markdown="1">True</span> quand la valeur est trouvée, et <span class="calculator_button" markdown="1">False</span> quand elle est absente de l’arbre.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">print(abr.recherche(12))</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p><span class="calculator_button" markdown="1">print(abr.recherche(9))</span><br>
+<span class="calculator_button" markdown="1"># affiche False</span></p>
+<p>Le caractère ordonné de l’arbre permet d’éliminer un sous-arbre sur deux à chaque étape. Nous avons utilisé des nombres pour les clés des nœuds, mais notre code fonctionne également avec des caractères alphabétiques, l’ordre appliqué étant dans ce cas l’ordre lexicographique (A est inférieur à B qui est lui-même inférieur à C etc.).</p>
+<p>La complexité de cet algorithme de recherche dans un arbre binaire de recherche est d’ordre logarithmique, ce qui le rend efficace, y compris avec des volumes importants de données.</p>
+<p>Nous allons nous appuyer sur cette même logique pour l’implémentation de l’insertion d’une nouvelle valeur dans l’arbre.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Ajout de clé</p></div></h3>
+<p>L’ajout d’une clé dans un arbre binaire de recherche doit s’effectuer de manière à préserver le caractère ordonné des clés. On effectue donc une démarche similaire à celle de la recherche, pour déterminer l’emplacement auquel la nouvelle clé doit être insérée.</p>
+<p><span class="calculator_button" markdown="1">class ArbreBinaireRecherche:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def __init__(self, racine):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">self.racine = Noeud(racine)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">def ajoute(self, nouvelle_valeur, noeud=None):</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if noeud is None:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">noeud = self.racine</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">contenu = noeud.cle</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">if contenu == nouvelle_valeur:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return False</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">elif contenu &lt; nouvelle_valeur:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">if not noeud.droite:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:100px;"><p><span class="calculator_button" markdown="1">noeud.droite = Noeud(nouvelle_valeur)</span><br>
+<span class="calculator_button" markdown="1">return True</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return self.ajoute(nouvelle_valeur, noeud.droite)</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">else:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">if not noeud.gauche:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:100px;"><p><span class="calculator_button" markdown="1">noeud.gauche = Noeud(nouvelle_valeur)</span><br>
+<span class="calculator_button" markdown="1">return True</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:90px;"><p><span class="calculator_button" markdown="1">return self.ajoute(nouvelle_valeur, noeud.gauche)</span></p></div>
+<p>Notre implémentation s’assure par ailleurs que la clé qu’on cherche à ajouter ne s’y trouve pas déjà.</p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">La méthode retourne <span class="calculator_button" markdown="1">True</span> en cas d’insertion réussie, et <span class="calculator_button" markdown="1">False</span> dans le cas contraire, c'est-à-dire le cas où la valeur est déjà présente dans l'arbre.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">print(abr.ajoute(18))</span><br>
+<span class="calculator_button" markdown="1"># affiche True</span></p>
+<p><span class="calculator_button" markdown="1">print(abr.ajoute(7))</span><br>
+<span class="calculator_button" markdown="1"># affiche False</span></p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img10.png" alt="arbre structure de données"> 
+<span>Représentation de l’arbre binaire de recherche nommé « abr » après ajout de la valeur 18.
+ </span></p></div></div>
+<p>La position d’insertion de la nouvelle valeur est dictée par la propriété ordonnée de l’arbre binaire de recherche, elle n’est donc pas spécifiée par l’utilisateur·rice mais déterminée par l’algorithme. Dans le cas d’un arbre binaire ou d’un arbre général, l’emplacement serait en revanche choisi par l’utilisateur·rice.</p>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous avons caractérisé les structures de données hiérarchiques que sont les arbres, dont les cas d’usage peuvent être très variés. Nous avons porté une attention plus particulière aux arbres binaires, et parmi eux aux arbres binaires de recherche. Nous avons ensuite proposé l'implémentation de la détermination de la taille et de la hauteur d’un arbre binaire, puis des méthodes pour leurs parcours de manière préfixe, infixe et suffixe. Nous avons ensuite implémenté des fonctionnalités de recherche et d’insertion de clé dans des arbres binaires de recherche.</p>
+</div>
+</div></div>
+<div id="poool-jmzpu-uh48n" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"5f48b0911f3276010020e1c0","type":"Cours","title":"Arbres et structure de données","content":"[IN]\nIntroduction\u0026nbsp;:\n\nLes arbres sont des structures de données hiérarchiques. Les cas d’usage des arbres peuvent être très variés, et de nombreux utilisateur·rice·s des outils numériques interagissent avec des arbres sans nécessairement en avoir conscience.  \nNous allons, dans une première partie, caractériser ces structures, en illustrer différents usages, et porter une attention plus particulière aux arbres binaires, sur lesquels nous étudierons des implémentations algorithmiques dans les parties suivantes. Nous effectuerons, en deuxième partie, des mesures et parcours sur ces arbres binaires, et nous implémenterons en troisième partie des recherches et ajouts de valeurs dans des arbres binaires de recherche.\n[/IN]\n\n##Caractérisation des arbres/1\n\nUn **arbre** est une structure de données liant entre eux des **nœuds** par l’intermédiaire d’**arêtes** formant des **branches**. Contrairement aux graphes , qui font l’objet d’un cours séparé dans ce chapitre, l’organisation des nœuds d’un arbre comporte une dimension **hiérarchique**.\n\n[DEF]\n**Arbre\u0026nbsp;:**\n\nUn arbre est une structure de données composée de nœuds reliés entre eux par des branches, selon une organisation hiérarchique, à partir d’un nœud racine.\n[/DEF]\n\nCommençons par présenter les différents éléments constitutifs d’un arbre.\n\n###Éléments constitutifs d’un arbre/a.\n\nUn arbre est constitué d’un élément de base\u0026nbsp;: son **nœud\u0026nbsp;racine**.  \nDe ce nœud\u0026nbsp;racine peuvent ensuite partir des arêtes reliant d’autres nœuds, lesquels peuvent eux-mêmes relier d’autres nœuds pour former des branches.\n\n* Dans le sens descendant depuis la racine, les nœuds reliés aux niveaux supérieurs sont appelés **nœuds\u0026nbsp;enfants** ou **nœuds\u0026nbsp;fils** du nœud dont ils dépendent.\n* Inversement un nœud\u0026nbsp;enfant est rattaché dans le sens ascendant à un **nœud\u0026nbsp;père** ou **nœud\u0026nbsp;parent**.\n\n[AST]\nSeul le nœud\u0026nbsp;racine n’a pas de père.\n[/AST]\n\nUn nœud n’ayant pas de nœuds\u0026nbsp;enfants est dit **nœud\u0026nbsp;terminal**. Situé à l’extrémité d’une branche, il est également appelé «\u0026nbsp;feuille\u0026nbsp;».\n\nChaque nœud peut stocker une information, appelée **valeur** ou **clé** du nœud.\n\nUn **sous-arbre** est une portion d’arbre à partir d’un nœud quelconque qui constitue la racine de ce sous-arbre.\n* Une structure de données organisée comme un arbre est dont dite «\u0026nbsp;arborescente\u0026nbsp;».((fleche))\n\nSa représentation graphique évoque la forme d’un arbre végétal, à ceci près que les arbres informatiques sont généralement représentés avec la racine tout en haut du schéma, pour mieux traduire cette notion de hiérarchie descendante depuis le nœud racine.\n\n[IMG]((100))\n![arbre et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img01.png) #Représentation de la structure d’un arbre\n[/IMG]\n\n###Contextes d’emploi des arbres/b.\n\nLes structures de type arbre sont très présentes en informatique.  \nL’organisation du système de fichiers d’un ordinateur est arborescente. Les fichiers sont organisés de manière hiérarchique à partir d’une racine, à laquelle peuvent être rattachés des répertoires (parfois appelés dossiers) et des fichiers, les répertoires pouvant eux-mêmes de manière récursive contenir d’autres répertoires et/ou fichiers.\n\n[IMG]((100))\n![arbre et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img02.png) #Organisation arborescente d’un système de fichiers\n[/IMG]\n\nOn trouve également des arbres dans le contexte du web.  \nLe DOM (__Document Object Model__) ou «\u0026nbsp;modèle objet de document\u0026nbsp;» du langage HTML représente un document web de manière structurée sous forme d’un arbre hiérarchique.\n\n[IMG]((100))\n![arbre et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img03.png) #Code source et modèle objet de document (DOM) d’un même document HTML\n[/IMG]\n\n###Types d’arbres/c.\n\nIl existe différentes sortes d’arbres\u0026nbsp;:\n* les **arbres généraux** peuvent posséder un nombre variable de branches\u0026nbsp;;\n* les **arbres binaires** et les **arbres binaires de recherche** sont caractérisés par des propriétés particulières.\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Arbre binaire**((bulle,1))\n\u003e\u003e\n\n[DEF]\n**Arbre binaire\u0026nbsp;:**\n\nUn arbre binaire est un arbre dont chaque nœud comporte --au plus-- deux sous-arbres\u0026nbsp;enfants.\n[/DEF]\n\nLes sous-arbres d’un arbre binaire sont conventionnellement appelés «\u0026nbsp;sous-arbre\u0026nbsp;gauche\u0026nbsp;» et «\u0026nbsp;sous-arbre\u0026nbsp;droit\u0026nbsp;», ou encore «\u0026nbsp;branche gauche\u0026nbsp;» et «\u0026nbsp;branche droite\u0026nbsp;». Voire, plus simplement, **gauche** et **droit**.\n\nChaque nœud de l’arbre binaire comporte --au maximum-- deux sous-arbres.\n\n[IMG]((100))\n![arbre et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img04.png) #Exemple d’arbre binaire\n[/IMG]\n\n[AST]\n* Certains nœuds non\u0026nbsp;terminaux peuvent n’avoir qu’une seule branche.\n* Les branches d’un arbre ou d’un sous-arbre binaire ne sont pas nécessairement de longueurs égales.\n[/AST]\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Arbre binaire de recherche**((bulle,2))\n\u003e\u003e\n\nUn arbre binaire de recherche est un cas particulier d’arbre binaire qui se distingue par le caractère ordonné des nœuds qui le composent.\n\n[DEF]\n**Arbre binaire de recherche\u0026nbsp;:**\n\nUn arbre binaire de recherche est un arbre binaire dont les clés sont ordonnées.\n[/DEF]\n\n[DEF]\n**Clé (d’un nœud)\u0026nbsp;:**\n\nLa clé d'un nœud correspond à la valeur qui lui est affectée. \n* Par exemple, la clé de la racine de l'arbre binaire de recherche donné ci-dessous est $12$.((fleche))\n[/DEF]\n\nLe placement des clés est effectué de manière à toujours maintenir le caractère ordonné de l’arbre binaire de recherche\u0026nbsp;:\n* les valeurs situées ou ajoutées dans le sous-arbre gauche d’un arbre binaire de recherche sont nécessairement inférieures à celle de la clé du nœud considéré\u0026nbsp;;((liste2))\n* les valeurs situées ou ajoutées dans le sous-arbre droit d’un arbre binaire de recherche sont nécessairement supérieures à celle de la clé du nœud considéré.((liste2))\n\n[IMG]((100))\n![arbre binaire et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img05.png) #Exemple d’arbre binaire de recherche\n[/IMG]\n\n[EX]\nPour ajouter $13$, on doit nécessairement l'ajouter dans le sous-arbre droit en considérant la racine car $13\u003e12$. Dans le sous-arbre droit, $14$ étant la racine, $13$ sera alors dans le sous-sous-arbre gauche puisque $13\u003c14$. Sachant qu'il n'existe pas encore ces sous-sous-arbre gauche, $13$ en sera la racine.\n[/EX]\n\n###Mesures sur les arbres/d.\n\nLes arbres peuvent comporter plus ou moins de nœuds et de branches de longueurs variables. On peut mesurer la taille et la hauteur des arbres.\n\n[DEF]\n**Taille d’un arbre\u0026nbsp;:**\n\nLa taille d’un arbre est le nombre de nœuds qu’il comporte (incluant bien sûr le nœud\u0026nbsp;racine).\n[/DEF]\n\n[EX]\nLa taille de l’arbre binaire de recherche ci-avant est de\u0026nbsp;5.\n[/EX]\n\n[DEF]\n**Hauteur d’un arbre\u0026nbsp;:**\n\nLa hauteur, parfois appelée «\u0026nbsp;profondeur\u0026nbsp;», correspond au nombre de nœuds parcourus sur le plus long chemin possible depuis la racine de l’arbre, sans revenir sur ses pas.\n[/DEF]\n\n[EX]\nLa hauteur de l’arbre binaire de recherche ci-avant est de\u0026nbsp;3.\n[/EX]\n\nLes structures de type arbre peuvent être implémentées de différentes manières. Le paradigme de programmation orientée objet est généralement employé, avec un recours fréquent à l’approche récursive pour les méthodes.  \nNos implémentations dans les parties suivantes du cours suivront ces pratiques usuelles, étant précisé qu’il est également possible d’employer le paradigme fonctionnel et des approches itératives.\n\n##Implémentations sur des arbres binaires/2\n\nCette deuxième partie est consacrée aux implémentations sur des arbres binaires.  \nAprès avoir conçu des classes adaptées à ces implémentations, nous calculerons taille et hauteur, avant d’effectuer différents parcours des arbres binaires.\n\n###Conception des classes/a.\n\nNotre implémentation des arbres binaires repose sur deux classes distinctes\u0026nbsp;:\n* une classe modélisant des nœuds\u0026nbsp;;\n* une classe modélisant des arbres binaires à partir des nœuds.\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Classe [BUTC]Noeud[/BUTC]**((bulle,1))\n\u003e\u003e\n\nLa classe [BUTC]Noeud[/BUTC] définit des objets composés d’une valeur (la clé du nœud) et de deux branches, la gauche et la droite, identifiées par leur nœud racine .\n\n[BUTC]class Noeud:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, cle):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.cle = cle[/BUTC]  \n[BUTC]self.gauche = None[/BUTC]  \n[BUTC]self.droite = None[/BUTC]\u003e\u003e\n\n[RETENIR]\nLes modalités de création d’un nœud sont précisées dans la définition de la méthode spéciale [BUTC]\u0026#95;\u0026#95;init\u0026#95;\u0026#95;[/BUTC]\u0026nbsp;:\n* seule la valeur de la clé doit être précisée au moment de la création d’un nœud\u0026nbsp;;\n* ses sous-branches sont initialisées avec l’objet [BUTC]None[/BUTC], qui exprime l’absence de valeur.\n[/RETENIR]\n\nLa création d’un nœud s’effectue ainsi\u0026nbsp;:\n\n[BUTC]noeud = Noeud('A')[/BUTC]\n\nAffichons les attributs du nœud.\n\n[BUTC]print(noeud)[/BUTC]  \n[BUTC]print(noeud.cle)[/BUTC]  \n[BUTC]print(noeud.gauche)[/BUTC]  \n[BUTC]print(noeud.droite)[/BUTC]\n\naffiche successivement\u0026nbsp;:\n\n[BUTC]\u0026#95;\u0026#95;main\u0026#95;\u0026#95;.Noeud object at 0x10b215278\u003e # (adresse mémoire attribuée dynamiquement à la création de l'objet)[/BUTC]  \n[BUTC]A[/BUTC]  \n[BUTC]None[/BUTC]  \n[BUTC]None[/BUTC]\n\nLes attributs de l’objet peuvent ensuite être modifiés.\n\n[EX]\nAjout de deux nœuds\u0026nbsp;enfants aux sous-branches du nœud initial.\n\n[BUTC]noeud.gauche = Noeud('B')[/BUTC]  \n[BUTC]noeud.droite = Noeud('C')[/BUTC]\n\n[BUTC]print(noeud)[/BUTC]  \n[BUTC]print(noeud.cle)[/BUTC]  \n[BUTC]print(noeud.gauche)[/BUTC]  \n[BUTC]print(noeud.droite)[/BUTC]\n\naffiche successivement:\n\n[BUTC]\u003c\u0026#95;\u0026#95;main\u0026#95;\u0026#95;.Noeud object at 0x10b215278\u003e[/BUTC]  \n[BUTC]A[/BUTC]  \n[BUTC]\u003c\u0026#95;\u0026#95;main\u0026#95;\u0026#95;.Noeud object at 0x10b1ec588\u003e[/BUTC]  \n[BUTC]\u003c\u0026#95;\u0026#95;main\u0026#95;\u0026#95;.Noeud object at 0x10b1ec630\u003e[/BUTC]\n\n* Les nœuds\u0026nbsp;B et\u0026nbsp;C sont bien affectés aux deux sous-branches du nœud\u0026nbsp;A.((fleche))\n\nNotons que pour afficher la valeur des clés gauche et droite, il suffit d'employer les commandes suivantes\u0026nbsp;:\n\n[BUTC]print(noeud.gauche.cle)[/BUTC]  \n[BUTC]print(noeud.droite.cle)[/BUTC]\n\nCe qui affichera successivement  \n[BUTC]B[/BUTC]  \n[BUTC]C[/BUTC]\n\n[/EX]\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Classe [BUTC]ArbreBinaire[/BUTC]**((bulle,2))\n\u003e\u003e\n\nLa classe [BUTC]ArbreBinaire[/BUTC] définit des objets composés initialement d’un nœud\u0026nbsp;racine, auquel pourront être rattachés des nœuds aux différentes sous-branches.\n\n[BUTC]class ArbreBinaire:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\nLa création d’un arbre binaire s’effectue par initialisation de l’arbre avec un nœud\u0026nbsp;racine.\n\n[BUTC]ab = ArbreBinaire('A')[/BUTC]\n\nOn peut ensuite ajouter des nœuds aux branches du nœud\u0026nbsp;racine, puis aux nœuds qui y sont rattachés, sans limitation de profondeur.\n\n[BUTC]ab.racine.gauche = Noeud('B')[/BUTC]  \n[BUTC]ab.racine.droite = Noeud('C')[/BUTC]\n\n[BUTC]ab.racine.gauche.gauche = Noeud('D')[/BUTC]  \n[BUTC]ab.racine.gauche.droite = Noeud('E')[/BUTC]\n\n[BUTC]ab.racine.droite.gauche = Noeud('F')[/BUTC]  \n[BUTC]ab.racine.droite.droite = Noeud('G')[/BUTC]\n\n[IMG]((100))\n![arbre et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img06.png) #Représentation de l’arbre nommé «\u0026nbsp;ab\u0026nbsp;»\n[/IMG]\n\nUne implémentation plus complète pourrait intégrer la possibilité d’ajout, de modification et de suppression de nœuds de l’arbre par des méthodes dédiées. Nous implémenterons l’ajout d’un élément sur un arbre binaire de recherche dans la troisième partie du cours.  \nDans cette partie, nous nous intéressons en priorité aux mesures de taille et de profondeur, ainsi qu’aux modalités de parcours des arbres binaires.\n\n###Taille d’un arbre binaire/b.\n\nDéterminer la taille d’un arbre revient à compter l’ensemble des nœuds composant cet arbre. Nous effectuons ce compte à partir du nœud\u0026nbsp;racine, en explorant récursivement tous les sous-arbres de chacun des nœuds.\n\n[BUTC]class ArbreBinaire:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def taille(self, noeud='racine'):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if noeud == 'racine':[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]noeud = self.racine[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if not noeud:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return 0[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return 1 + self.taille(noeud.gauche) + self.taille(noeud.droite)[/BUTC]\u003e\u003e\n\n[RETENIR]\nLa méthode [BUTC]taille[/BUTC] est définie avec comme paramètres\u0026nbsp;:\n* [BUTC]self[/BUTC] qui désigne l’instance de la classe\u0026nbsp;;((liste2))\n* le nœud à traiter.((liste2))\n[/RETENIR]\n\nL’appel initial est effectué avec une valeur par défaut correspondant au nœud\u0026nbsp;racine de l’arbre. Les appels suivants sont effectués de manière récursive sur les sous-arbres, dont le nombre de nœuds est ajouté au nœud\u0026nbsp;courant. La récursion s’arrête en l’absence de nœud en sous-arbre.\n\n[EX]\nAppel de la méthode sur l’arbre binaire nommé [BUTC]ab[/BUTC]\u0026nbsp;:\n\n[BUTC]print(ab.taille())[/BUTC]  \n[BUTC]# affiche 7[/BUTC]\n\nVérifions que notre méthode de détermination de taille fonctionne également sur un arbre binaire dont toutes les branches ne sont pas pareillement développées.\n\n[BUTC]# arbre binaire incomplet[/BUTC]  \n[BUTC]abi = ArbreBinaire('A')[/BUTC]  \n[BUTC]abi.racine.gauche = Noeud('B')[/BUTC]  \n[BUTC]abi.racine.droite = Noeud('C')[/BUTC]  \n[BUTC]abi.racine.gauche.gauche = Noeud('D')[/BUTC]  \n[BUTC]abi.racine.gauche.gauche.droite = Noeud('E')[/BUTC]\n\n[IMG]((100))\n![arbre et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img07.png) #Représentation graphique de l’arbre nommé «\u0026nbsp;abi\u0026nbsp;»\n[/IMG]\n\n[BUTC]print(abi.taille())[/BUTC]  \n[BUTC]# affiche 5[/BUTC]\n[/EX]\n\nImplémentons maintenant une méthode déterminant la hauteur d’un arbre binaire.\n\n###Hauteur d’un arbre binaire/c.\n\nNous employons la même approche récursive que pour le calcul de la taille.\n\n[BUTC]class ArbreBinaire:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def hauteur(self, noeud='racine'):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if noeud == 'racine':[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]noeud = self.racine[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if not noeud:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return 0[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return 1 + max(self.hauteur(noeud.gauche), self.hauteur(noeud.droite))[/BUTC]\u003e\u003e\n\n[RETENIR]\nComme précédemment, la méthode [BUTC]hauteur[/BUTC] est définie avec comme paramètres\u0026nbsp;:\n* [BUTC]self[/BUTC] qui désigne l’instance de la classe\u0026nbsp;;((liste2))\n* le nœud à traiter.((liste2))\n[/RETENIR]\n\nLes retours des appels récursifs sur les sous-branches gauches et droites sont passés en arguments à la fonction [BUTC]max[/BUTC], laquelle retourne la plus grande des valeurs fournies, de manière à pouvoir déterminer la hauteur de tout type d’arbre binaire.\n\n[EX]\nAppel de la méthode [BUTC]hauteur[/BUTC] sur les deux arbres binaires précédents [BUTC]ab[/BUTC] et [BUTC]abi[/BUTC]\u0026nbsp;:\n\n[BUTC]print(ab.hauteur())[/BUTC]  \n[BUTC]# affiche 3[/BUTC]\n\n[BUTC]print(abi.hauteur())[/BUTC]  \n[BUTC]# affiche 4[/BUTC]\n\nLa hauteur est correctement déterminée pour les deux arbres.\n* L’arbre [BUTC]ab[/BUTC] présente la particularité que toutes ses branches sont de longueur égale.((fleche))\n* Les sous-branches de l’arbre [BUTC]abi[/BUTC] sont en revanche de longueurs inégales, mais c’est bien la plus grande des branches qui est prise en compte.((fleche))\n[/EX]\n\nIntéressons-nous maintenant aux parcours des arbres binaires.\n\n###Parcours des arbres binaires/d.\n\n[DEF]\n**Parcours d’un arbre\u0026nbsp;:**\n\nParcourir un arbre consiste à explorer l’ensemble de ses nœuds.\n[/DEF]\n\nIl existe différentes méthodes pour effectuer cette exploration. Nous implémentons ici trois modes de parcours des arbres binaires\u0026nbsp;:\n* le parcours **préfixe**\u0026nbsp;;\n* le parcours **infixe**\u0026nbsp;;\n* le parcours **suffixe**.\n\nLes trois modes se distinguent par l’ordre dans lequel le parcours est effectué sur les nœuds et leurs branches. Nous l’illustrons avec l’exemple ci-après\u0026nbsp;:\n\n[EX]\nConsidérons l’arbre suivant\u0026nbsp;:\n\n[IMG]((100))\n![arbre et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img08.png) #Arbre binaire composé de trois nœuds dont les clés sont A, B et C.\n[/IMG]\n\n* Le parcours préfixe consiste à parcourir d’abord le nœud\u0026nbsp;racine, puis le nœud\u0026nbsp;gauche, et ensuite le nœud\u0026nbsp;droit. Le parcours préfixe de l’arbre s’effectue dans l’ordre A $\\rightarrow$ B $\\rightarrow$ C.\n\n* Le parcours infixe consiste à parcourir d’abord le nœud\u0026nbsp;gauche, puis le nœud\u0026nbsp;racine, et ensuite le nœud\u0026nbsp;droit. Le parcours infixe de l’arbre s’effectue dans l’ordre B $\\rightarrow$ A $\\rightarrow$ C.\n\nLe parcours suffixe consiste à parcourir d’abord le nœud\u0026nbsp;gauche, puis, le nœud\u0026nbsp;droit et ensuite le nœud\u0026nbsp;racine. Le parcours suffixe de l’arbre s’effectue dans l’ordre B $\\rightarrow$ C $\\rightarrow$ A.\n[/EX]\n\nCes modes de parcours s’appliquent récursivement.\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Parcours préfixe**((bulle,1))\n\u003e\u003e\n\nCommençons par implémenter le parcours préfixe.\n\n[BUTC]class ArbreBinaire:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def parcours_prefixe(self, position='racine', parcours=None):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if parcours is None:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]parcours = [][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if position == 'racine':[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]position = self.racine[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]if position:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]parcours += position.cle[/BUTC]  \n[BUTC]parcours = self.parcours\u0026#95;prefixe(position.gauche, parcours)[/BUTC]  \n[BUTC]parcours = self.parcours\u0026#95;prefixe(position.droite, parcours)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return parcours[/BUTC]\u003e\u003e\n\nLe parcours est enregistré dans une liste qui est complétée au fur à mesure des appels récursifs du parcours.  \nL’appel de la méthode sur le nom de l’arbre retourne la liste des nœuds dans l’ordre dans lequel ils ont été visités.\n\n[IMG]((100))\n![Alt texte](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img06-2-.png) #Légende\n[/IMG]\n\n[BUTC]print(ab.parcours_prefixe())[/BUTC]  \n[BUTC]# affiche ['A', 'B', 'D', 'E', 'C', 'F', 'G'][/BUTC]\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Parcours infixe**((bulle,2))\n\u003e\u003e\n\nImplémentons maintenant la méthode de parcours infixe.\n\n[BUTC]class ArbreBinaire:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def parcours_infixe(self, position='racine', parcours=None):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if parcours is None:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]parcours = [][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if position == 'racine':[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]position = self.racine[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]if position:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]parcours = self.parcours\u0026#95;infixe(position.gauche, parcours)\n[BUTC]parcours += position.cle[/BUTC]  \n[BUTC]parcours = self.parcours\u0026#95;infixe(position.droite, parcours)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return parcours[/BUTC]\u003e\u003e\n\n[IMG]((100))\n![Alt texte](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img06-3-.png) #Légende\n[/IMG]\n\n[BUTC]print(ab.parcours_infixe())[/BUTC]  \n[BUTC]# affiche ['D', 'B', 'E', 'A', 'F', 'C', 'G'][/BUTC]\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Parcours suffixe**((bulle,3))\n\u003e\u003e\n\nImplémentons enfin la méthode de parcours suffixe.\n\n[BUTC]class ArbreBinaire:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def parcours_suffixe(self, position='racine', parcours=None):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if parcours is None:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]parcours = [][/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if position == 'racine':[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]position = self.racine[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]if position:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]parcours = self.parcours\u0026#95;suffixe(position.gauche, parcours)[/BUTC]  \n[BUTC]parcours = self.parcours\u0026#95;suffixe(position.droite, parcours)[/BUTC]  \n[BUTC]parcours += position.cle[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]return parcours[/BUTC]\u003e\u003e\n\n[IMG]((100))\n![Alt texte](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img06-4-.png) #Légende\n[/IMG]\n\n[BUTC]print(ab.parcours_suffixe())[/BUTC]  \n[BUTC]# affiche ['D', 'E', 'B', 'F', 'G', 'C', 'A'][/BUTC]\n\nNous observons que les méthodes des trois parcours reposent sur la même logique d'appels récursifs des différentes branches, dans un ordre spécifique à chaque parcours.\n\nPassons maintenant à des implémentations concernant plus spécifiquement les arbres binaires de recherche.\n\n##Implémentations sur les arbres binaires de recherche/3\n\nCette troisième partie est consacrée à des implémentations sur des arbres binaires de recherche\u0026nbsp;; les clés de leurs nœuds ont la particularité d’être ordonnées. Nous allons tirer parti de cette spécificité dans notre implémentation de fonctionnalités de recherche et d’insertion.\n\n###Conception des classes/a.\n\nNotre implémentation des arbres binaires de recherche repose sur deux classes distinctes\u0026nbsp;:\n* une classe modélisant des nœuds\u0026nbsp;;\n* une classe modélisant des arbres binaires de recherche à partir des nœuds.\n\n[AST]\nCette implémentation s’appuie sur la même classe de nœuds que celle utilisée en deuxième partie, et sur une classe spécifique aux arbres binaires de recherche.  \nNous nous abstenons volontairement de recourir à l’héritage entre classes afin de permettre l’étude des arbres binaires et des arbres binaires de recherche de manière indépendante.\n[/AST]\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Classe [BUTC]Noeud[/BUTC]**((bulle,1))\n\u003e\u003e\n\n\n[BUTC]class Noeud:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, cle):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.cle = cle[/BUTC]  \n[BUTC]self.gauche = None[/BUTC]  \n[BUTC]self.droite = None[/BUTC]\u003e\u003e\n\n[BUTC]class ArbreBinaireRecherche:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\nNous utilisons cette base pour instancier un arbre binaire de recherche. Nous ajoutons quelques valeurs en veillant à respecter le caractère ordonné de l’arbre. Nous utiliserons cet arbre pour effectuer nos recherches, et nous implémenterons ensuite l’ajout de clé sous forme de méthode déterminant l’emplacement d’insertion.\n\n\u003c\u003c((100,50,auto,-10,auto))\n* **Arbre binaire de recherche**((bulle,2))\n\u003e\u003e\n\n[BUTC]abr = ArbreBinaireRecherche(12)[/BUTC]\n\n[BUTC]abr.racine.gauche = Noeud(6)[/BUTC]  \n[BUTC]abr.racine.droite = Noeud(14)[/BUTC]\n\n[BUTC]abr.racine.gauche.gauche = Noeud(5)[/BUTC]  \n[BUTC]abr.racine.gauche.gauche.droite = Noeud(7)[/BUTC]\n\n[IMG]((100))\n![arbre et structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img09.png) #Représentation de l’arbre nommé «\u0026nbsp;abr\u0026nbsp;»\n[/IMG]\n\n###Recherche de clé/b.\n\nLa recherche de clé dans un arbre binaire de recherche exploite le caractère ordonné des clés.\n\nNous définissons une méthode de recherche qui détermine, de manière récursive à partir du nœud racine, si la clé du nœud courant correspond ou non à la valeur recherchée. Si ce n’est pas le cas, elle compare la clé à la valeur recherchée en évaluant si elle y est supérieure ou inférieure.\n* Les clés de l’arbre étant ordonnées, cela permet de déterminer dans quel sous-arbre la valeur se situe nécessairement, si elle est présente dans l’arbre.((fleche))\n\n[BUTC]class ArbreBinaireRecherche:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95; (self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def recherche(self, valeur_recherchee, noeud=None):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if noeud is None:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]noeud = self.racine[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]contenu = noeud.cle[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]if contenu == valeur_recherchee:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return True[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,-22,0,0,75))[BUTC]elif contenu \u003c valeur_recherchee:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]if not noeud.droite:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,100))[BUTC]return False[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return self.recherche(valeur_recherchee, noeud.droite)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]if not noeud.gauche:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,100))[BUTC]return False[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return self.recherche(valeur_recherchee, noeud.gauche)[/BUTC]\u003e\u003e\n\n* La fonction retourne [BUTC]True[/BUTC] quand la valeur est trouvée, et [BUTC]False[/BUTC] quand elle est absente de l’arbre.((fleche))\n\n[BUTC]print(abr.recherche(12))[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\n[BUTC]print(abr.recherche(9))[/BUTC]  \n[BUTC]# affiche False[/BUTC]\n\nLe caractère ordonné de l’arbre permet d’éliminer un sous-arbre sur deux à chaque étape. Nous avons utilisé des nombres pour les clés des nœuds, mais notre code fonctionne également avec des caractères alphabétiques, l’ordre appliqué étant dans ce cas l’ordre lexicographique (A est inférieur à B qui est lui-même inférieur à C etc.).\n\nLa complexité de cet algorithme de recherche dans un arbre binaire de recherche est d’ordre logarithmique, ce qui le rend efficace, y compris avec des volumes importants de données.\n\nNous allons nous appuyer sur cette même logique pour l’implémentation de l’insertion d’une nouvelle valeur dans l’arbre.\n\n###Ajout de clé/c.\n\nL’ajout d’une clé dans un arbre binaire de recherche doit s’effectuer de manière à préserver le caractère ordonné des clés. On effectue donc une démarche similaire à celle de la recherche, pour déterminer l’emplacement auquel la nouvelle clé doit être insérée.\n\n[BUTC]class ArbreBinaireRecherche:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]def \u0026#95;\u0026#95;init\u0026#95;\u0026#95;(self, racine):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]self.racine = Noeud(racine)[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,50))[BUTC]def ajoute(self, nouvelle_valeur, noeud=None):[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]if noeud is None:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]noeud = self.racine[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]contenu = noeud.cle[/BUTC]\u003e\u003e\n\n\u003c\u003c((auto,0,0,0,75))[BUTC]if contenu == nouvelle_valeur:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return False[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]elif contenu \u003c nouvelle_valeur:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]if not noeud.droite:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,100))[BUTC]noeud.droite = Noeud(nouvelle_valeur)[/BUTC]  \n[BUTC]return True[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return self.ajoute(nouvelle_valeur, noeud.droite)[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]else:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]if not noeud.gauche:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,100))[BUTC]noeud.gauche = Noeud(nouvelle_valeur)[/BUTC]  \n[BUTC]return True[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,90))[BUTC]return self.ajoute(nouvelle_valeur, noeud.gauche)[/BUTC]\u003e\u003e\n\nNotre implémentation s’assure par ailleurs que la clé qu’on cherche à ajouter ne s’y trouve pas déjà.\n* La méthode retourne [BUTC]True[/BUTC] en cas d’insertion réussie, et [BUTC]False[/BUTC] dans le cas contraire, c'est-à-dire le cas où la valeur est déjà présente dans l'arbre.((fleche))\n\n[BUTC]print(abr.ajoute(18))[/BUTC]  \n[BUTC]# affiche True[/BUTC]\n\n[BUTC]print(abr.ajoute(7))[/BUTC]  \n[BUTC]# affiche False[/BUTC]\n\n[IMG]((100))\n![arbre structure de données](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c05-img10.png) #Représentation de l’arbre binaire de recherche nommé «\u0026nbsp;abr\u0026nbsp;» après ajout de la valeur\u0026nbsp;18.\n[/IMG]\n\nLa position d’insertion de la nouvelle valeur est dictée par la propriété ordonnée de l’arbre binaire de recherche, elle n’est donc pas spécifiée par l’utilisateur·rice mais déterminée par l’algorithme. Dans le cas d’un arbre binaire ou d’un arbre général, l’emplacement serait en revanche choisi par l’utilisateur·rice.\n\n[C]\nConclusion\u0026nbsp;:\n\nNous avons caractérisé les structures de données hiérarchiques que sont les arbres, dont les cas d’usage peuvent être très variés. Nous avons porté une attention plus particulière aux arbres binaires, et parmi eux aux arbres binaires de recherche. Nous avons ensuite proposé l'implémentation de la détermination de la taille et de la hauteur d’un arbre binaire, puis des méthodes pour leurs parcours de manière préfixe, infixe et suffixe. Nous avons ensuite implémenté des fonctionnalités de recherche et d’insertion de clé dans des arbres binaires de recherche.\n[/C]\n","siblings":[{"resourceId":"5f48b0911f3276010020e1c0","type":"Cours","sort":null},{"resourceId":"5f48b2521f3276010020e1c2","type":"Fiche de révision","sort":null},{"resourceId":"5f4e1654e4d05a0100ae8464","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7daf09e0a80100fdbbe4","name":"Arbres et structure de données"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7daf09e0a80100fdbbe4","label":"Cours : Arbres et structure de données","link":"https://www.schoolmouv.fr/cours/arbres-et-structure-de-donnees/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"arbres-et-structure-de-donnees","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/arbres-et-structure-de-donnees/fiche-de-cours","title":"Arbres et structure de données : cours de Terminale - Numérique","metaDescription":"SchoolMouv ® te propose ce cours sur Arbres et structure de données (Terminale - Numérique et sciences informatiques) pour TOUT comprendre avec ✔️ vidéo ✔️ fiche de révision ✔️ exercices… ","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"arbres-et-structure-de-donnees","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>

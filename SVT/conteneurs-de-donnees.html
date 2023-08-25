@@ -1,0 +1,674 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Conteneurs de données : Fiche de cours - Numérique et sciences informatiques | SchoolMouv</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Conteneurs de données : Fiche de cours - Numérique et sciences informatiques | SchoolMouv">
+<meta name="description" content="Révise le cours : Conteneurs de données de Numérique et sciences informatiques Terminale grâce à notre fiche de cours">
+<link rel="canonical" href="https://www.schoolmouv.fr/cours/conteneurs-de-donnees/fiche-de-cours">
+<link rel="icon" href="/content/favicon.ico">
+<script id="json-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.schoolmouv.fr","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.schoolmouv.fr/terminale","name":"Tle"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques","name":"Numérique et sciences informatiques"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.schoolmouv.fr/cours/conteneurs-de-donnees/fiche-de-cours","name":"Cours : Conteneurs de données"}}]}</script><meta name="next-head-count" content="8">
+<meta name="next-font-preconnect">
+<link rel="preload" href="/content/_next/static/css/c08fcb46814d24f9.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/c08fcb46814d24f9.css" data-n-g="">
+<link rel="preload" href="/content/_next/static/css/08a7cf401873c9c5.css" as="style">
+<link rel="stylesheet" href="/content/_next/static/css/08a7cf401873c9c5.css" data-n-p="">
+<noscript data-n-css=""></noscript>
+<script defer nomodule="" src="/content/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/content/_next/static/chunks/webpack-76dd136e829fd452.js" defer></script><script src="/content/_next/static/chunks/framework-4556c45dd113b893.js" defer></script><script src="/content/_next/static/chunks/main-51dcb152610665c9.js" defer></script><script src="/content/_next/static/chunks/pages/_app-335f32e3eeadaa95.js" defer></script><script src="/content/_next/static/chunks/175675d1-35a00f33118876fa.js" defer></script><script src="/content/_next/static/chunks/583-0b1ac7b20f64a25b.js" defer></script><script src="/content/_next/static/chunks/931-d71cc6dae2d04401.js" defer></script><script src="/content/_next/static/chunks/pages/cours/%5BsheetSlug%5D/%5BresourceType%5D-5a97fb82aa7779c0.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_buildManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_ssgManifest.js" defer></script><script src="/content/_next/static/7PMSe9KUa3QZbNQBS6zJb/_middlewareManifest.js" defer></script>
+</head>
+<body>
+<div id="__next">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RGLG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="main-layout_main-layout__5glmx">
+<main id="top"><div class="main-layout-content_main-layout-content__tzGx6">
+<div><div class="sheet-template_sheet-sidebar__poLNy sidebar-module_sidebar__ruXSQ"></div></div>
+<div>
+<div class="main-layout-content_main-layout-content__breadcrumb__gn0rg breadcrumb-module_breadcrumb__r-ILp">
+<a style="height:14px" href="https://www.schoolmouv.fr"></a><img height="8" width="11" src="https://images.schoolmouv.fr/assets/icons/arrow.svg" alt="arrow"><a href="https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques" class=" link-module_xxx__aw2PQ link-module_xxx--large__UT8xp link-module_xxx--default__2faDQ link-module_xxx--global__pTt-C"> <!-- -->Numérique et sciences informatiques</a><h1>Cours : Conteneurs de données</h1>
+</div>
+<div class="sheet-template_sheet__nXEoV">
+<div><div class="luna-title_luna-title__kZRX8"><p>Conteneurs de données</p></div></div>
+<div class="sheet-template_sheet__info-banner--container__ni_Oi"></div>
+<div><div class="react-luna-container luna-content_luna-content__GPj_Y">
+<div class="introduction" markdown="1">
+<p>Introduction :</p>
+<p>Le chapitre consacré aux structures de données aborde successivement différentes structures permettant d'organiser des données pour tenter de répondre au mieux aux problématiques du monde réel. Ce cours présente les principaux conteneurs de données dont nous étudierons les méthodes.</p>
+<p>Dans une première partie nous aborderons les principaux conteneurs généralistes que sont les listes, les dictionnaires, les tuples et les sets. Dans une deuxième partie nous étudierons les structures de type piles et files. Enfin, nous verrons dans une troisième partie l’importance de choisir une structure de données adaptée à la situation à modéliser.</p>
+</div>
+<h2 range="1" markdown="1"><div markdown="1"><p>Conteneurs de données généralistes</p></div></h2>
+<p>Dans cette première partie nous présentons les principales structures de données telles qu’elles sont implémentées dans le langage Python.</p>
+<p>Chaque type de conteneur de données dispose d’un certain nombre de méthodes pour en permettre l’utilisation. Sans prétendre à l’exhaustivité, du fait du nombre parfois important de ces méthodes, on présentera dans le cadre de ce cours les plus caractéristiques d’entre elles pour chaque type de conteneur.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>La fonction native <span class="calculator_button" markdown="1">dir()</span> fournit la liste des méthodes associées à un conteneur ou à un type de conteneur.</li>
+
+
+
+<li>La fonction native <span class="calculator_button" markdown="1">help()</span> permet d’obtenir une aide intégrée sur les méthodes associées à ce conteneur ou type de conteneur.</li>
+</ul></div>
+</div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Pour connaître la liste des méthodes associées au type de conteneur de données LIST, on passera la commande Python suivante : <span class="calculator_button" markdown="1">dir(list)</span>. Pour en obtenir l'aide intégrée, on passera la commande <span class="calculator_button" markdown="1">help(list)</span>.</p></div>
+</div>
+<h3 range="a." markdown="1"><div markdown="1"><p>Listes</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Liste :</b></p>
+<p>En Python, une liste est une structure de données dont les éléments individuels sont accessibles à partir de leur position indicielle. C’est une structure très couramment employée pour de nombreux usages.</p>
+</div>
+</div>
+<p>Les listes sont <b>ordonnées</b> et <b>mutables</b>. Elles peuvent contenir toutes sortes d’objets, y compris d’autres listes imbriquées et d’autres structures de données. Elles peuvent en outre contenir des doublons.</p>
+<p>La <b>création</b> d’une liste peut s’effectuer de plusieurs façons :</p>
+<p><span class="calculator_button" markdown="1"># liste vide</span><br>
+<span class="calculator_button" markdown="1">liste = list()</span><br>
+<span class="calculator_button" markdown="1">liste = [] # notation courte</span></p>
+<p><span class="calculator_button" markdown="1"># liste non vide</span><br>
+<span class="calculator_button" markdown="1">liste = ['Ada', 'Alan', 'Alice']</span></p>
+<p>L’<b>ajout</b> d’élément(s) en fin de liste s’effectue avec la méthode <span class="calculator_button" markdown="1">append()</span> ou la notation courte équivalente :</p>
+<p><span class="calculator_button" markdown="1"># ajout d'un élément</span><br>
+<span class="calculator_button" markdown="1">liste.append('Lisa')</span><br>
+<span class="calculator_button" markdown="1">liste += ['Paul'] # notation courte</span><br>
+<span class="calculator_button" markdown="1">print(liste)</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Ada', 'Alan', 'Alice', 'Lisa', 'Paul']</span></p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">L’ajout est automatiquement effectué en fin de liste.</div>
+</li>
+</ul>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Tant qu’elle n’a pas fait l’objet d’un <b>tri</b>, une liste reflète l’ordre d’insertion des éléments qui la composent.</p></div>
+</div>
+<p>Chaque élément est accessible par sa position indicielle.</p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>La numérotation des indices commence à $0$.</p></div>
+</div>
+<p><span class="calculator_button" markdown="1">print(liste[2])</span><br>
+<span class="calculator_button" markdown="1"># affiche Alice</span></p>
+<p>Les listes étant mutables, il est possible d’en <b>modifier</b> des éléments existants.</p>
+<p><span class="calculator_button" markdown="1">liste[2] = 'Guido'</span></p>
+<p>Il est également possible d’<b>insérer</b> des éléments au sein des listes, ailleurs qu’à la fin de celle-ci, en employant la méthode <span class="calculator_button" markdown="1">insert()</span>.</p>
+<p><span class="calculator_button" markdown="1">liste.insert(2, 'Elsa') #</span></p>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Le nombre indique à quelle position indicielle de la liste effectuer l’insertion de l’élément.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">print(liste)</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Ada', 'Alan', 'Elsa', 'Guido', 'Lisa', 'Paul']</span></p>
+<p>Une liste peut être <b>étendue</b> par l’ajout d’un contenu d’une autre liste ou d’un autre itérable, avec la méthode <span class="calculator_button" markdown="1">extend()</span>.</p>
+<p><span class="calculator_button" markdown="1">rajouts = ['Juliette', 'Sylvain', 'Zoé']</span><br>
+<span class="calculator_button" markdown="1">liste.extend(rajouts)</span></p>
+<p>La notation courte équivalente est la suivante :</p>
+<p><span class="calculator_button" markdown="1">liste += rajouts</span></p>
+<p><span class="calculator_button" markdown="1">print(liste)</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Ada', 'Alan', 'Elsa', 'Guido', 'Lisa', 'Paul', 'Juliette', 'Sylvain', 'Zoé']</span></p>
+<div class="blocks attention" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/attention.svg" alt="bannière attention">
+<p>Attention</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Il ne faut pas confondre l’extension d’une liste par une autre avec l’ajout d’un élément en notation courte.</p>
+<ul>
+
+
+
+<li>Ajout d’un élément à une liste : <span class="calculator_button" markdown="1">liste += [element]</span>
+</li>
+
+
+
+<li>Extension d’une liste par une autre liste : <span class="calculator_button" markdown="1">liste += autre_liste</span>
+</li>
+</ul>
+</div>
+</div>
+<p>L’erreur classique consiste à mélanger ces deux syntaxes, comme illustré ci-après.</p>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Voici ce qui se produit quand on confond les syntaxes courtes de l’ajout et de l’extension de liste :</p>
+<p><span class="calculator_button" markdown="1">liste = ['Lisa', 'Paul']</span><br>
+<span class="calculator_button" markdown="1">liste += 'Sylvain' #</span>
+Au lieu de <span class="calculator_button" markdown="1">liste += ['Sylvain']</span>.</p>
+<p>Ceci ne produira pas le résultat escompté :</p>
+<p><span class="calculator_button" markdown="1">print(liste)</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Lisa', 'Paul', 'S', 'y', 'l', 'v', 'a', 'i', 'n']</span></p>
+</div>
+</div>
+<p>Les listes permettent d’en <b>extraire</b> des éléments. L’extrait du dernier élément est une opération courante, rendue possible par la méthode <span class="calculator_button" markdown="1">pop()</span>.</p>
+<p><span class="calculator_button" markdown="1"># extraction d'un élément</span><br>
+<span class="calculator_button" markdown="1">liste = ['Ada', 'Guido', 'Alan', 'Alice']</span><br>
+<span class="calculator_button" markdown="1">extrait = liste.pop()</span></p>
+<p><span class="calculator_button" markdown="1">print(extrait)</span><br>
+<span class="calculator_button" markdown="1"># affiche Alice</span></p>
+<p><span class="calculator_button" markdown="1">print(liste)</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Ada', 'Guido', 'Alan']</span></p>
+<p>La méthode <span class="calculator_button" markdown="1">pop()</span> extrait par défaut le dernier élément de la liste. Si on précise un numéro d’index, <span class="calculator_button" markdown="1">pop()</span> extrait l’élément situé à la position correspondante.</p>
+<p><span class="calculator_button" markdown="1">extrait = liste.pop(0) # extrait le premier élément de la liste</span></p>
+<p><span class="calculator_button" markdown="1">print(extrait)</span><br>
+<span class="calculator_button" markdown="1"># affiche Ada</span></p>
+<p><span class="calculator_button" markdown="1">print(liste)</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Guido', 'Alan']</span></p>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’appel de la méthode <span class="calculator_button" markdown="1">pop()</span> retourne un élément et le supprime de la liste.
+Il génère une erreur de type <span class="calculator_button" markdown="1">IndexError</span> si la liste est vide.</p></div>
+</div>
+<p>Les listes permettent également la <b>suppression</b> d’un élément en fonction de sa valeur, avec la méthode <span class="calculator_button" markdown="1">remove()</span>.</p>
+<p><span class="calculator_button" markdown="1">liste.remove('Alan')</span><br>
+<span class="calculator_button" markdown="1">print(liste)</span><br>
+<span class="calculator_button" markdown="1"># affiche ['Guido']</span></p>
+<p>La méthode <span class="calculator_button" markdown="1">remove()</span> retire la première occurrence rencontrée.<br>
+Si la valeur n’est pas présente, une erreur de type <span class="calculator_button" markdown="1">ValueError</span> est générée.</p>
+<p>Les listes étant ordonnées, elles peuvent être triés en place, c'est-à-dire que la liste triée remplace la liste d'origine, avec la méthode <span class="calculator_button" markdown="1">sort()</span>. L’ordre de la liste peut être facilement inversé avec la méthode <span class="calculator_button" markdown="1">reverse()</span>.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Dictionnaires</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Dictionnaire :</b></p>
+<p>En Python, les dictionnaires sont des conteneurs de données permettant de stocker des paires de clés et de valeurs associées à ces clés. Tout comme les listes, ils sont des structures de données très couramment employées.</p>
+</div>
+</div>
+<p>La notion d’ordre est inhérente aux listes que nous avons étudiées précédemment, car c’est la position de la donnée dans la liste qui permet de l’identifier et d’y accéder.<br>
+Avec les dictionnaires, c’est la <b>clé</b> qui ouvre l’accès à la donnée, l’ordre importe peu.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Remarque :</b></p>
+<p>Historiquement les dictionnaires Python n’étaient d’ailleurs <span class="underline">pas</span> ordonnés. Ils le sont devenus dans les versions récentes du langage (depuis Python 3.6).</p>
+</div>
+</div>
+<p>Les dictionnaires sont <b>mutables</b>, comme les listes, et eux aussi peuvent contenir toutes sortes d’objets et des structures de données imbriquées, notamment d’autres dictionnaires et des listes.<br>
+Ils ne peuvent, en revanche, pas contenir de doublons de clés, mais une même <b>valeur</b> peut être affectée à des clés distinctes.</p>
+<p>La <b>création</b> d’un dictionnaire peut s’effectuer de plusieurs façons :</p>
+<p><span class="calculator_button" markdown="1"># dictionnaire vide</span><br>
+<span class="calculator_button" markdown="1">meteo = dict()</span><br>
+<span class="calculator_button" markdown="1">meteo = {} # notation courte</span></p>
+<p><span class="calculator_button" markdown="1"># dictionnaire non vide</span><br>
+<span class="calculator_button" markdown="1">meteo = {'Toulouse': 15, 'Strasbourg': 16}</span></p>
+<p>L’<b>ajout</b> d’un élément s’effectue en indiquant sa clé entre crochets et en lui affectant sa valeur.</p>
+<p><span class="calculator_button" markdown="1"># ajout d'un élément</span><br>
+<span class="calculator_button" markdown="1">meteo['Cherbourg'] = 13</span></p>
+<p>L’<b>accès</b> à un élément du dictionnaire s’effectue principalement par sa clé, avec la même notation que pour l’ajout.</p>
+<p><span class="calculator_button" markdown="1"># accès à un élément</span><br>
+<span class="calculator_button" markdown="1">print(meteo['Toulouse'])</span><br>
+<span class="calculator_button" markdown="1"># affiche 15</span></p>
+<p>Il en est de même pour la <b>modification</b> d’un élément.</p>
+<p><span class="calculator_button" markdown="1"># modification d'un élément</span><br>
+<span class="calculator_button" markdown="1">meteo['Toulouse'] = 17</span></p>
+<p>Le <b>retrait</b> d’un élément s’effectue avec la méthode <span class="calculator_button" markdown="1">pop()</span>. Contrairement à son emploi sur une liste, la méthode impose pour un dictionnaire de spécifier la clé concernée.</p>
+<p><span class="calculator_button" markdown="1">resultat = meteo.pop('Cherbourg')</span><br>
+<span class="calculator_button" markdown="1">print(resultat)</span><br>
+<span class="calculator_button" markdown="1"># affiche 13</span></p>
+<p>Le retrait d'un élément inexistant se solde par une erreur de type <span class="calculator_button" markdown="1">KeyError</span>.</p>
+<p>Un dictionnaire peut être <b>complété et mis à jour</b> à partir d’un autre dictionnaire avec la méthode <span class="calculator_button" markdown="1">update()</span>, selon les modalités suivantes :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">les clés absentes du dictionnaire sont ajoutées avec les valeurs correspondantes ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les valeurs des clés déjà présentes dans le dictionnaire d’origine sont remplacées par celles du dictionnaire ajouté.</div>
+</li>
+</ul>
+<p><span class="calculator_button" markdown="1">meteo = {'Toulouse': 15, 'Strasbourg': 16, 'Cherbourg': 13}</span><br>
+<span class="calculator_button" markdown="1">ajouts = {'Paris': 13, 'Toulouse': 17}</span><br>
+<span class="calculator_button" markdown="1">meteo.update(ajouts)</span></p>
+<p><span class="calculator_button" markdown="1">print(meteo)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'Toulouse': 17, 'Strasbourg': 16, 'Cherbourg': 13, 'Paris': 13}</span></p>
+<p>Depuis la version 3.6 de Python, les dictionnaires sont nativement ordonnés : ils le sont sur la base de l’ordre d’insertion des éléments. Les dictionnaires des versions récentes du langage conservent ainsi cette trace de l’ordre d’insertion.<br>
+Les versions antérieures pouvaient déjà disposer de dictionnaires ordonnés (<span class="calculator_button" markdown="1">OrderedDict</span>) via le module <span class="calculator_button" markdown="1">collections</span> de la bibliothèque standard.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Tuples</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Tuple :</b></p>
+<p>Les tuples sont des séquences ordonnées et non mutables. Ils peuvent contenir toutes sortes d’éléments de différents types. Les tuples peuvent contenir des doublons.</p>
+</div>
+</div>
+<p>La création d’un tuple peut s’effectuer par énumération ou à partir d’un itérable.</p>
+<p><span class="calculator_button" markdown="1"># création d'un tuple</span><br>
+<span class="calculator_button" markdown="1">eleves = ('Alice', 'Alan', 'Lisa')</span><br>
+<span class="calculator_button" markdown="1">print(eleves)</span></p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><ul>
+
+
+
+<li>Les parenthèses sont optionnelles pour la déclaration des tuples.</li>
+
+
+
+<li>La déclaration par énumération d’un tuple comportant un seul élément nécessite l’ajout d’une virgule.</li>
+</ul></div>
+</div>
+<p><span class="calculator_button" markdown="1">equipement = ('ordinateur'<span class="color2">,</span>)</span><br>
+<span class="calculator_button" markdown="1">print(type(equipement))</span><br>
+<span class="calculator_button" markdown="1"># affiche <class></class></span></p>
+<p>Les tuples étant <b>immutables</b>, il n’est pas possible d’ajouter, de modifier ou de supprimer des éléments. Ceux-ci sont accessibles en lecture par la notation indicielle, comme pour les listes.</p>
+<p><span class="calculator_button" markdown="1">print(eleves)</span><br>
+<span class="calculator_button" markdown="1"># affiche ('Alice', 'Alan', 'Lisa')</span></p>
+<p><span class="calculator_button" markdown="1">print(eleves[2])</span><br>
+<span class="calculator_button" markdown="1"># affiche Lisa</span></p>
+<p>Les tuples possèdent également une méthode <span class="calculator_button" markdown="1">count()</span> permettant de compter le nombre d’occurrences d’une valeur au sein d’un tuple.</p>
+<p><span class="calculator_button" markdown="1">print(eleves.count('Alice'))</span><br>
+<span class="calculator_button" markdown="1"># affiche 1</span></p>
+<div class="blocks rappel" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/rappel.svg" alt="bannière rappel">
+<p>Rappel</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Le module collections de la bibliothèque standard de Python comporte une sous-classe <span class="calculator_button" markdown="1">namedtuples</span> de tuples dont les valeurs sont nommées.</p></div>
+</div>
+<h3 range="d." markdown="1"><div markdown="1"><p>Sets</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Set :</b></p>
+<p>Les sets, ou ensembles, sont des conteneurs de données non ordonnés dont les éléments sont uniques. Les sets sont mutables et peuvent contenir des éléments hétérogènes, mais ne peuvent pas contenir d’éléments mutables tels que listes, dictionnaires ou sets.</p>
+</div>
+</div>
+<p>La <b>création</b> d’un set s’effectue de la façon suivante :</p>
+<p><span class="calculator_button" markdown="1">villes = set() # set vide</span><br>
+<span class="calculator_button" markdown="1">villes = {'Toulouse', 'Strasbourg', 'Paris', 'Brest'}</span></p>
+<p>L’<b>ajout</b> d’éléments à un set s’effectue avec la méthode <span class="calculator_button" markdown="1">add()</span>.</p>
+<p><span class="calculator_button" markdown="1">villes.add('Cherbourg') # ajout d'un élément</span></p>
+<p><span class="calculator_button" markdown="1">print(villes)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'Strasbourg', 'Toulouse', 'Paris', 'Brest', 'Cherbourg'}</span></p>
+<p>Un set ne peut pas comporter de doublon, mais les tentatives d’ajout sont seulement infructueuses, elles ne produisent pas d’erreurs.</p>
+<p><span class="calculator_button" markdown="1">villes.add('Toulouse')</span></p>
+<p><span class="calculator_button" markdown="1">print(villes)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'Strasbourg', 'Toulouse', 'Paris', 'Brest', 'Cherbourg'}</span></p>
+<p>Un élément présent dans le set peut être <b>retiré</b> sur la base de sa valeur.</p>
+<p><span class="calculator_button" markdown="1">villes.remove('Strasbourg')</span></p>
+<p><span class="calculator_button" markdown="1">print(villes)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'Toulouse', 'Paris', 'Brest', 'Cherbourg'}</span></p>
+<p>Les sets disposent d’un jeu complet de méthodes ensemblistes spécifiques permettant d’obtenir très facilement :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">l’<b>union</b> entre deux sets avec la méthode <span class="calculator_button" markdown="1">union()</span> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">l’<b>intersection</b> entre deux sets avec la méthode <span class="calculator_button" markdown="1">intersection()</span> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la <b>différence</b> entre deux sets avec la méthode <span class="calculator_button" markdown="1">difference()</span> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">la <b>différence symétrique</b> entre deux sets avec la méthode <span class="calculator_button" markdown="1">symmetric_difference()</span>.</div>
+</li>
+</ul>
+<p>Les sets permettent aussi de déterminer :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">si un set est un sous-ensemble d’un autre set avec la méthode <span class="calculator_button" markdown="1">issubset()</span> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">si un set est un sur-ensemble d’un autre set avec la méthode <span class="calculator_button" markdown="1">issuperset()</span>.</div>
+</li>
+</ul>
+<p>Nous avons présenté les conteneurs généralistes de type liste, dictionnaire, tuple et set. Nous allons maintenant nous intéresser à des conteneurs plus spécialisés, avec les piles et les files.</p>
+<h2 range="2" markdown="1"><div markdown="1"><p>Piles et files</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Types de piles</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Pile :</b></p>
+<p>Une pile est une structure de donnée destinée à stocker des données et à les restituer en fonction de leur ordre d’ajout.</p>
+</div>
+</div>
+<p>Il existe schématiquement deux types de piles :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">celles qui restituent en premier lieu les dernières données ajoutées ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">celles qui restituent en premier lieu les données ajoutées en premier.</div>
+</li>
+</ul>
+<p>Ces deux types de piles sont appelées <b>LIFO</b> et <b>FIFO</b>, en référence aux sigles résumant leur fonctionnement.</p>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Pile LIFO :</b></div>
+</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:-15px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><p>LIFO signifie <em>Last In, First Out</em>. Le sigle est francisé en DEPS pour « Dernier Entré, Premier Sorti ». Une pile de type LIFO est parfois désignée par sa dénomination anglaise <em>stack</em>.</p></div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’exemple classique pour l’expliquer est celui de la pile d’assiettes. Lorsqu’on souhaite prendre une assiette, on prend celle située en haut de la pile. C’est la dernière à avoir été ajoutée qui est accessible. Ce sera donc la première à être retirée de la pile.</p></div>
+</div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Un algorithme d'exploration de labyrinthe s’appuie sur une pile pour mémoriser (empiler) ses déplacements. S'il se heurte à une impasse, il peut ainsi revenir sur les derniers déplacements effectués (dépiler) depuis la dernière intersection rencontrée, et explorer ensuite les autres chemins non encore empruntés.</div>
+</li>
+</ul>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Pile FIFO :</b></div>
+</li>
+</ul></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:-15px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><p>FIFO signifie <em>First In, First Out</em>. Le sigle est francisé en PEPS pour « Premier Entré, Premier Sorti ». Les piles de type FIFO sont communément appelées « files » ou « files d’attente » (<em>queues</em> en anglais).</p></div>
+<div class="blocks exemple" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/exemple.svg" alt="bannière exemple">
+<p>Exemple</p>
+</div>
+<div class="blocks-text" markdown="1"><p>L’exemple classique pour la figurer est d’ailleurs celui d’une file d’attente au guichet, pour prendre un billet de train ou d’avion. Les personnes accèdent au guichet dans leur ordre d’arrivée.</p></div>
+</div>
+<ul>
+
+<li class="arrow_list">
+<div style=""></div>
+<div class="list_text">Un serveur web ou un serveur d’impression traite les requêtes reçues de manière analogue en fonction de leur ordre d’arrivée dans une file d’attente.</div>
+</li>
+</ul>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Quand on parle uniquement de piles FIFO, on utilise de préférence le terme « file », mais quand on parle simultanément des deux types FIFO et LIFO, on parle de « piles ».</p></div>
+</div>
+<h3 range="b." markdown="1"><div markdown="1"><p>Méthodes des piles</p></div></h3>
+<div class="blocks a_retenir" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/a-retenir.svg" alt="bannière à retenir">
+<p>À retenir</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Les méthodes principales des piles sont l’<b>empilage</b> et le <b>dépilage</b>.</p>
+<ul>
+
+
+
+<li>Empiler consiste à ajouter un élément à la pile.</li>
+
+
+
+<li>Dépiler consiste à retirer un élément à la pile.</li>
+</ul>
+</div>
+</div>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p>Le vocabulaire est parfois adapté au type de pile :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">« empiler » et « dépiler » pour une pile LIFO ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">« enfiler » et « défiler » pour une pile FIFO.</div>
+</li>
+</ul>
+</div>
+</div>
+<p>Dans une pile LIFO, le point d’entrée de la pile est aussi le point de sortie.<br>
+Dans une pile FIFO, le point d’entrée et le point de sortie sont aux extrémités opposées de la pile.</p>
+<div class="image_container" style="width:100%;" markdown="1"><div class="image_zoom" markdown="1"><p><img src="https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c3-img01.png" alt="Ajouts et retraits avec des piles LIFO et FIFO"> 
+<span>Ajouts et retraits avec des piles LIFO et FIFO
+ </span></p></div></div>
+<p>Les piles et les files sont des structures de données abstraites, qu’il est possible d’implémenter de différentes manières en fonction des langages. Avec Python nous implémenterons successivement des piles avec les listes natives, puis avec un type spécialisé disponible au sein de la bibliothèque standard.</p>
+<h3 range="c." markdown="1"><div markdown="1"><p>Implémentation avec listes natives</p></div></h3>
+<p>Les listes natives de Python que nous avons étudiées en première partie nous permettent techniquement d’implémenter des piles LIFO et des piles FIFO.</p>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="1"></div>
+<div class="list_text"><b>Implémentation d’une pile LIFO</b></div>
+</li>
+</ul></div>
+<p><span class="calculator_button" markdown="1">pile = ['a', 'b', 'c']</span><br>
+<span class="calculator_button" markdown="1">print(pile)</span><br>
+<span class="calculator_button" markdown="1">print('ajout nouvel élément')</span><br>
+<span class="calculator_button" markdown="1">pile.append('d') # empilage</span><br>
+<span class="calculator_button" markdown="1">print(pile)</span></p>
+<p><span class="calculator_button" markdown="1">while pile:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print('dépilage de ', pile.pop())</span><br>
+<span class="calculator_button" markdown="1">print('pile contient maintenant', pile)</span></p></div>
+<p>Le code produit successivement les affichages suivants :</p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">['a', 'b', 'c']</span><br>
+<span class="calculator_button" markdown="1">ajout nouvel élément</span><br>
+<span class="calculator_button" markdown="1">['a', 'b', 'c', 'd']</span><br>
+<span class="calculator_button" markdown="1">dépilage de d</span><br>
+<span class="calculator_button" markdown="1">pile contient maintenant ['a', 'b', 'c']</span><br>
+<span class="calculator_button" markdown="1">dépilage de c</span><br>
+<span class="calculator_button" markdown="1">pile contient maintenant ['a', 'b']</span><br>
+<span class="calculator_button" markdown="1">dépilage de b</span><br>
+<span class="calculator_button" markdown="1">pile contient maintenant ['a']</span><br>
+<span class="calculator_button" markdown="1">dépilage de a</span><br>
+<span class="calculator_button" markdown="1">pile contient maintenant []</span></p></div>
+<div markdown="1" class="paragraph" style="width:100%; margin-top:35px;margin-right:auto;margin-bottom:0px;margin-left:auto;"><ul>
+
+<li class="bullet_list">
+<div style="" range="2"></div>
+<div class="list_text"><b>Implémentation d’une pile FIFO</b></div>
+</li>
+</ul></div>
+<p><span class="calculator_button" markdown="1">pile = ['c', 'b', 'a']</span><br>
+<span class="calculator_button" markdown="1">print(pile)</span><br>
+<span class="calculator_button" markdown="1">print('ajout nouvel élément')</span><br>
+<span class="calculator_button" markdown="1">pile.insert(0, 'd') # enfilage</span><br>
+<span class="calculator_button" markdown="1">print(pile)</span></p>
+<p><span class="calculator_button" markdown="1">while pile:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print('défilage de ', pile.pop())</span><br>
+<span class="calculator_button" markdown="1">print('pile contient maintenant', pile)</span></p></div>
+<p>Le code produit successivement les affichages suivants :</p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">['c', 'b', 'a']</span><br>
+<span class="calculator_button" markdown="1"> ['d', 'c', 'b', 'a']</span><br>
+<span class="calculator_button" markdown="1">dépilage de a</span><br>
+<span class="calculator_button" markdown="1">pile contient maintenant ['d', 'c', 'b']</span><br>
+<span class="calculator_button" markdown="1">dépilage de b</span><br>
+<span class="calculator_button" markdown="1">pile contient maintenant ['d', 'c']</span><br>
+<span class="calculator_button" markdown="1">dépilage de c</span><br>
+<span class="calculator_button" markdown="1">pile contient maintenant ['d']</span><br>
+<span class="calculator_button" markdown="1">dépilage de d</span><br>
+<span class="calculator_button" markdown="1">pile contient maintenant []</span></p></div>
+<p>Toutefois les listes natives ne sont pas optimisées pour de tels traitements. Si l’empilage et le dépilage avec <span class="calculator_button" markdown="1">pop()</span> et <span class="calculator_button" markdown="1">append()</span> sont rapides car effectuées en fin de liste, les insertions en début de liste, nécessaires pour une file, sont lentes : elles obligent à décaler chaque fois en mémoire tous les éléments suivants composant la liste.</p>
+<p>On aurait pu faire l’inverse en utilisant <span class="calculator_button" markdown="1">append()</span> pour ajouter en fin de liste à la place d’<span class="calculator_button" markdown="1">insert(0)</span> qui insérait en début de liste, mais le retrait d’une file devant s’effectuer à l’extrémité opposée, on aurait alors dû utiliser <span class="calculator_button" markdown="1">pop(0)</span> pour les sorties de file, avec le même problème de décalage en mémoire des éléments suivants, et donc de performance.</p>
+<h3 range="d." markdown="1"><div markdown="1"><p>Implémentation spécialisée</p></div></h3>
+<p>Il existe des conteneurs spécialisés pour <b>implémenter les files</b> avec le type <span class="calculator_button" markdown="1">deque</span> du module <span class="calculator_button" markdown="1">collections</span> de la bibliothèque standard. Ce type de conteneur a été conçu pour permettre l’ajout et le retrait d’éléments de manière optimisée à chaque extrémité du conteneur.</p>
+<p><span class="calculator_button" markdown="1">from collections import deque</span></p>
+<p><span class="calculator_button" markdown="1">file_attente = deque(['Alice', 'Charles'])</span><br>
+<span class="calculator_button" markdown="1">print(file_attente)</span><br>
+<span class="calculator_button" markdown="1"># affiche deque(['Alice', 'Charles'])</span></p>
+<p>Le type <span class="calculator_button" markdown="1">deque</span> de la bibliothèque <span class="calculator_button" markdown="1">collections</span> implémente, en plus des méthodes <span class="calculator_button" markdown="1">pop()</span> et <span class="calculator_button" markdown="1">append()</span> des listes natives, les méthodes <span class="calculator_button" markdown="1">appendleft()</span> et <span class="calculator_button" markdown="1">popleft()</span>.<br>
+Ces dernières permettent toutes sortes d’usage de manière optimisée.</p>
+<p>Pour l’implémentation d’une file d’attente, on peut choisir d’effectuer :</p>
+<ul>
+
+<li class="liste2">
+<div class="list_text">les entrées (enfilage) avec <span class="calculator_button" markdown="1">append()</span> ;</div>
+</li>
+
+<li class="liste2">
+<div class="list_text">les sorties (défilage) avec <span class="calculator_button" markdown="1">popleft()</span>.</div>
+</li>
+</ul>
+<p>Si l’on souhaite ajouter Paul à la file d’attente :</p>
+<p><span class="calculator_button" markdown="1">file_attente.append('Paul')</span>  </p>
+<p><span class="calculator_button" markdown="1">print(file_attente)</span><br>
+<span class="calculator_button" markdown="1"># affiche deque(['Alice', 'Charles', 'Paul'])</span></p>
+<p>La sortie de la file d’attente s’effectue de la manière suivante :</p>
+<p><span class="calculator_button" markdown="1">premier_sorti = file_attente.popleft()</span></p>
+<p><span class="calculator_button" markdown="1">print(premier_sorti)</span><br>
+<span class="calculator_button" markdown="1"># affiche Alice</span></p>
+<p>On aurait pu symétriquement réaliser notre implémentation en remplaçant <span class="calculator_button" markdown="1">append()</span> par <span class="calculator_button" markdown="1">appendleft()</span> et <span class="calculator_button" markdown="1">popleft()</span> par <span class="calculator_button" markdown="1">pop()</span>. Dans les deux cas, l’entrée et la sortie s’effectuent aux extrémités opposées de la file d’attente.</p>
+<p>Outre les piles, le module <span class="calculator_button" markdown="1">collections</span> de la bibliothèque standard contient de nombreux autres types de conteneurs spécialisés pour étendre, modifier ou compléter les caractéristiques des conteneurs natifs.</p>
+<h2 range="3" markdown="1"><div markdown="1"><p>Critères d’emploi des conteneurs de données</p></div></h2>
+<h3 range="a." markdown="1"><div markdown="1"><p>Modélisation</p></div></h3>
+<div class="blocks definition" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/definition.svg" alt="bannière definition">
+<p>Définition</p>
+</div>
+<div class="blocks-text" markdown="1">
+<p><b>Modélisation :</b></p>
+<p>La modélisation consiste à transposer un problème du monde réel en problématique traitable par un algorithme, lequel manipule des données.</p>
+</div>
+</div>
+<p>Si certaines données sont liées entre elles, il est souhaitable que leur modélisation reflète ce lien pour éviter d’entrainer des incohérences.<br>
+Illustrons-le avec l’exemple d’un groupe d’élèves dont on connaît les prénoms et les âges. On choisit dans un premier temps de stocker de manière parallèle ces informations dans deux listes distinctes.</p>
+<p><span class="calculator_button" markdown="1">prenoms = ['Ada', 'Alan', 'Alice', 'Bob']</span><br>
+<span class="calculator_button" markdown="1">ages = [17, 22, 21, 19]</span></p>
+<p><span class="calculator_button" markdown="1">for prenom, age in zip(prenoms, ages):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(prenom, 'a', age, 'ans')</span></p></div>
+<p><span class="calculator_button" markdown="1"># affiche</span><br>
+<span class="calculator_button" markdown="1">Ada a 17 ans</span><br>
+<span class="calculator_button" markdown="1">Alan a 22 ans</span><br>
+<span class="calculator_button" markdown="1">Alice a 21 ans</span><br>
+<span class="calculator_button" markdown="1">Bob a 19 ans</span></p>
+<p>Les données concernant le nom et l’âge de l’élève sont stockées dans des conteneurs différents, mais nous pouvons <b>itérer</b> en même temps sur les deux listes.</p>
+<p>Nous le faisons ici avec la fonction native <span class="calculator_button" markdown="1">zip()</span> qui itère simultanément sur les éléments individuels de chaque itérable passé en argument.</p>
+<div class="blocks astuce" markdown="1">
+<div class="blocks-icon">
+<img src="/content/images/astuce.svg" alt="bannière astuce">
+<p>Astuce</p>
+</div>
+<div class="blocks-text" markdown="1"><p>Si les listes sont de longueurs inégales, l’itération cesse une fois la fin de l’itérable le plus court atteinte.</p></div>
+</div>
+<p>La concordance entre les informations sur le prénom et l’âge d’un élève repose uniquement sur leur position dans chaque liste. La moindre erreur lors d’un ajout ou d’une suppression pourrait introduire un décalage, rendant les données incohérentes.</p>
+<p><span class="calculator_button" markdown="1">del prenoms[1] # suppression de l'entrée correspondant à Alan dans la liste des prénoms</span></p>
+<p><span class="calculator_button" markdown="1">for prenom, age in zip(prenoms, ages):</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(prenom, 'a', age, 'ans')</span></p></div>
+<p>Le code produit l’affichage suivant :</p>
+<p><span class="calculator_button" markdown="1">Ada a 17 ans</span><br>
+<span class="calculator_button" markdown="1">Alice a 22 ans</span><br>
+<span class="calculator_button" markdown="1">Bob a 21 ans</span></p>
+<p>Les âges d’Alice et Bob ne sont plus bons car l’âge d’Alan n’a pas été supprimé alors que son prénom l’a été de la liste des élèves. Les deux listes étant indépendantes, on peut techniquement modifier l’une sans modifier l’autre, alors que les données qui les composent sont liées dans le monde réel.</p>
+<p>Le recours à un dictionnaire s’avère donc plus adapté au cas présent :</p>
+<p><span class="calculator_button" markdown="1">eleves = {'Ada': 17, 'Alan': 22, 'Alice': 21, 'Bob': 19}</span></p>
+<p><span class="calculator_button" markdown="1">for prenom, age in eleves.items():</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(prenom, 'a', age, 'ans')</span></p></div>
+<p>Le code produit l’affichage suivant :</p>
+<p><span class="calculator_button" markdown="1">Ada a 17 ans</span><br>
+<span class="calculator_button" markdown="1">Alan a 22 ans</span><br>
+<span class="calculator_button" markdown="1">Alice a 21 ans</span><br>
+<span class="calculator_button" markdown="1">Bob a 19 ans</span></p>
+<p>La suppression d’un élève (clé du dictionnaire) entraîne automatiquement la suppression de son âge (valeur associée à la clé).</p>
+<p><span class="calculator_button" markdown="1">del(eleves['Alan'])</span></p>
+<p><span class="calculator_button" markdown="1">print(eleves)</span><br>
+<span class="calculator_button" markdown="1"># affiche {'Ada': 17, 'Alice': 21, 'Bob': 19}</span></p>
+<p>On pourrait éventuellement utiliser une liste de tuples à la place d’un dictionnaire :</p>
+<p><span class="calculator_button" markdown="1">eleves = [('Ada', 17),</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">('Alan', 22),</span>
+<span class="calculator_button" markdown="1">('Alice', 21),</span>
+<span class="calculator_button" markdown="1">('Bob', 19)]</span></p></div>
+<p><span class="calculator_button" markdown="1">for prenom, age in eleves:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">print(prenom, 'a', age, 'ans')</span></p></div>
+<p>Le code produit l’affichage suivant :</p>
+<p><span class="calculator_button" markdown="1">Ada a 17 ans</span><br>
+<span class="calculator_button" markdown="1">Alan a 22 ans</span><br>
+<span class="calculator_button" markdown="1">Alice a 21 ans</span><br>
+<span class="calculator_button" markdown="1">Bob a 19 ans</span></p>
+<p>Le recours à des tuples crée une association entre l’élève et son âge. La suppression d’un élément de la liste des élèves fait disparaître le tuple correspondant, contenant à la fois son prénom et son âge.</p>
+<p><span class="calculator_button" markdown="1">del(eleves[1])</span></p>
+<p><span class="calculator_button" markdown="1">print(eleves)</span><br>
+<span class="calculator_button" markdown="1"># affiche [('Ada', 17), ('Alice', 21), ('Bob', 19)]</span></p>
+<p>Toutefois le caractère immutable des tuples nous empêche de modifier l’âge d’un élève.</p>
+<p><span class="calculator_button" markdown="1">print(eleves[0][1]) </span><br>
+<span class="calculator_button" markdown="1"># affiche 17 (âge d'Alice)</span></p>
+<p><span class="calculator_button" markdown="1">eleves[0][1] = 18</span><br>
+<span class="calculator_button" markdown="1"># affiche TypeError: 'tuple' object does not support item assignment</span></p>
+<p>Avec un dictionnaire, la modification d’âge ne poserait en revanche aucun problème puisque les données sont mutables.</p>
+<h3 range="b." markdown="1"><div markdown="1"><p>Impact du conteneur sur la complexité algorithmique</p></div></h3>
+<p>La complexité d’un algorithme donné peut varier en fonction du type de conteneur de données utilisé. Considérons un algorithme très simple, composé d’une boucle parcourant séquentiellement tous les éléments pour vérifier s’ils sont ou non présents dans un conteneur.</p>
+<p><span class="calculator_button" markdown="1">for element in sequence:</span></p>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:50px;"><p><span class="calculator_button" markdown="1">if element in conteneur:</span></p></div>
+<div markdown="1" class="paragraph" style="width:auto%; margin-top:-22px;margin-right:0px;margin-bottom:0px;margin-left:75px;"><p><span class="calculator_button" markdown="1">print(element, 'trouvé dans le conteneur')</span></p></div>
+<p>Quelle est la complexité temporelle de cet algorithme ? La boucle <span class="calculator_button" markdown="1">for</span> implique une complexité au moins linéaire, notée $O(n)$ ; mais la complexité globale de l’algorithme dépend aussi des traitements effectués à l’intérieur de la boucle.</p>
+<p>Or, il est impossible de l’indiquer précisément sans connaître la nature du conteneur utilisé dans le test conditionnel. En effet, la complexité temporelle du test d’appartenance <span class="calculator_button" markdown="1">element in conteneur</span> dépend de la nature de ce conteneur.</p>
+<p>Ainsi, si le conteneur est une liste, le test d’appartenance va entraîner la comparaison de l’élément recherché avec chacun des éléments de la liste jusqu’à le trouver. Cette opération est de complexité linéaire soit $O(n)$.<br>
+En revanche ce même test d’appartenance est plus immédiat si le conteneur est un dictionnaire. La présence de la clé est évaluée en $O(1)$, la complexité du test d’appartenance est donc constante, quelle que soit la taille du dictionnaire.</p>
+<p>Cela signifie que la complexité globale de l’algorithme sera linéaire ou quadratique, et que cette différence de performance, potentiellement très importante, repose uniquement sur le type de conteneur choisi, le code restant par ailleurs strictement identique.</p>
+<div class="conclusion" markdown="1">
+<p>Conclusion :</p>
+<p>Nous avons présenté les principaux conteneurs de données que sont les listes, les dictionnaires, puis les tuples et les sets. Nous nous sommes ensuite intéressé·e·s aux conteneurs spécialisés que sont les piles et les files, dont nous avons montré différentes implémentations. Nous avons caractérisé ces conteneurs par leurs propriétés et les principales méthodes qu’ils proposent. Nous avons ensuite montré l’importance du choix d’un conteneur adapté à la problématique à traiter.</p>
+</div>
+</div></div>
+<div id="poool-esga8-lmeym" class="poool-widget"></div>
+</div>
+</div>
+<div></div>
+</div></main><footer class="footer-module_footer__YIYIL footer-module_footer__grid__C-ZCT"></footer>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sheetTemplateProps":{"resource":{"resourceId":"64428702f1526801007d6377","type":"Cours","title":"Conteneurs de données","content":"[IN]\nIntroduction\u0026nbsp;:\n\nLe chapitre consacré aux structures de données aborde successivement différentes structures permettant d'organiser des données pour tenter de répondre au mieux aux problématiques du monde réel. Ce cours présente les principaux conteneurs de données dont nous étudierons les méthodes.\n\nDans une première partie nous aborderons les principaux conteneurs généralistes que sont les listes, les dictionnaires, les tuples et les sets. Dans une deuxième partie nous étudierons les structures de type piles et files. Enfin, nous verrons dans une troisième partie l’importance de choisir une structure de données adaptée à la situation à modéliser.\n[/IN]\n\n##Conteneurs de données généralistes/1\n\nDans cette première partie nous présentons les principales structures de données telles qu’elles sont implémentées dans le langage Python.\n\nChaque type de conteneur de données dispose d’un certain nombre de méthodes pour en permettre l’utilisation. Sans prétendre à l’exhaustivité, du fait du nombre parfois important de ces méthodes, on présentera dans le cadre de ce cours les plus caractéristiques d’entre elles pour chaque type de conteneur.\n\n[RAP]\n* La fonction native [BUTC]dir()[/BUTC] fournit la liste des méthodes associées à un conteneur ou à un type de conteneur.\n* La fonction native [BUTC]help()[/BUTC] permet d’obtenir une aide intégrée sur les méthodes associées à ce conteneur ou type de conteneur.\n[/RAP]\n\n[EX]\nPour connaître la liste des méthodes associées au type de conteneur de données LIST, on passera la commande Python suivante\u0026nbsp;: [BUTC]dir(list)[/BUTC]. Pour en obtenir l'aide intégrée, on passera la commande [BUTC]help(list)[/BUTC].\n[/EX]\n\n###Listes/a.\n\n[DEF]\n**Liste\u0026nbsp;:**\n\nEn Python, une liste est une structure de données dont les éléments individuels sont accessibles à partir de leur position indicielle. C’est une structure très couramment employée pour de nombreux usages.\n[/DEF]\n\nLes listes sont **ordonnées** et **mutables**. Elles peuvent contenir toutes sortes d’objets, y compris d’autres listes imbriquées et d’autres structures de données. Elles peuvent en outre contenir des doublons.\n\nLa **création** d’une liste peut s’effectuer de plusieurs façons\u0026nbsp;:\n\n[BUTC]# liste vide[/BUTC]  \n[BUTC]liste = list()[/BUTC]  \n[BUTC]liste = [] # notation courte[/BUTC]\n\n[BUTC]# liste non vide[/BUTC]  \n[BUTC]liste = ['Ada', 'Alan', 'Alice'][/BUTC]\n\nL’**ajout** d’élément(s) en fin de liste s’effectue avec la méthode [BUTC]append()[/BUTC] ou la notation courte équivalente\u0026nbsp;:\n\n[BUTC]# ajout d'un élément[/BUTC]  \n[BUTC]liste.append('Lisa')[/BUTC]  \n[BUTC]liste += ['Paul'] # notation courte[/BUTC]  \n[BUTC]print(liste)[/BUTC]  \n[BUTC]# affiche ['Ada', 'Alan', 'Alice', 'Lisa', 'Paul'][/BUTC]\n* L’ajout est automatiquement effectué en fin de liste.((fleche))\n\n[AST]\nTant qu’elle n’a pas fait l’objet d’un **tri**, une liste reflète l’ordre d’insertion des éléments qui la composent.\n[/AST]\n\nChaque élément est accessible par sa position indicielle.\n\n[RAP]\nLa numérotation des indices commence à $0$.\n[/RAP]\n\n[BUTC]print(liste\u0026#91;2\u0026#93;)[/BUTC]  \n[BUTC]# affiche Alice[/BUTC]\n\nLes listes étant mutables, il est possible d’en **modifier** des éléments existants.\n\n[BUTC]liste[2] = 'Guido'[/BUTC]\n\nIl est également possible d’**insérer** des éléments au sein des listes, ailleurs qu’à la fin de celle-ci, en employant la méthode [BUTC]insert()[/BUTC].\n\n[BUTC]liste.insert(2, 'Elsa') #[/BUTC]\n* Le nombre indique à quelle position indicielle de la liste effectuer l’insertion de l’élément.((fleche))\n\n[BUTC]print(liste)[/BUTC]  \n[BUTC]# affiche ['Ada', 'Alan', 'Elsa', 'Guido', 'Lisa', 'Paul'][/BUTC]\n\nUne liste peut être **étendue** par l’ajout d’un contenu d’une autre liste ou d’un autre itérable, avec la méthode [BUTC]extend()[/BUTC].\n\n[BUTC]rajouts = ['Juliette', 'Sylvain', 'Zoé'][/BUTC]  \n[BUTC]liste.extend(rajouts)[/BUTC]\n\nLa notation courte équivalente est la suivante\u0026nbsp;:\n\n[BUTC]liste += rajouts[/BUTC]\n\n[BUTC]print(liste)[/BUTC]  \n[BUTC]# affiche ['Ada', 'Alan', 'Elsa', 'Guido', 'Lisa', 'Paul', 'Juliette', 'Sylvain', 'Zoé'][/BUTC]\n\n[ATT]\nIl ne faut pas confondre l’extension d’une liste par une autre avec l’ajout d’un élément en notation courte.\n* Ajout d’un élément à une liste\u0026nbsp;: [BUTC]liste += [element][/BUTC]\n* Extension d’une liste par une autre liste\u0026nbsp;: [BUTC]liste += autre_liste[/BUTC]\n[/ATT]\n\nL’erreur classique consiste à mélanger ces deux syntaxes, comme illustré ci-après.\n\n[EX]\nVoici ce qui se produit quand on confond les syntaxes courtes de l’ajout et de l’extension de liste\u0026nbsp;:\n\n[BUTC]liste = ['Lisa', 'Paul'][/BUTC]  \n[BUTC]liste += 'Sylvain' #[/BUTC]\nAu lieu de [BUTC]liste += ['Sylvain'][/BUTC].\n\nCeci ne produira pas le résultat escompté\u0026nbsp;:\n\n[BUTC]print(liste)[/BUTC]  \n[BUTC]# affiche ['Lisa', 'Paul', 'S', 'y', 'l', 'v', 'a', 'i', 'n'][/BUTC]\n[/EX]\n\nLes listes permettent d’en **extraire** des éléments. L’extrait du dernier élément est une opération courante, rendue possible par la méthode [BUTC]pop()[/BUTC].\n\n[BUTC]# extraction d'un élément[/BUTC]  \n[BUTC]liste = ['Ada', 'Guido', 'Alan', 'Alice'][/BUTC]  \n[BUTC]extrait = liste.pop()[/BUTC]\n\n[BUTC]print(extrait)[/BUTC]  \n[BUTC]# affiche Alice[/BUTC]\n\n[BUTC]print(liste)[/BUTC]  \n[BUTC]# affiche ['Ada', 'Guido', 'Alan'][/BUTC]\n\nLa méthode [BUTC]pop()[/BUTC] extrait par défaut le dernier élément de la liste. Si on précise un numéro d’index, [BUTC]pop()[/BUTC] extrait l’élément situé à la position correspondante.\n\n[BUTC]extrait = liste.pop(0) # extrait le premier élément de la liste[/BUTC]\n\n[BUTC]print(extrait)[/BUTC]  \n[BUTC]# affiche Ada[/BUTC]\n\n[BUTC]print(liste)[/BUTC]  \n[BUTC]# affiche ['Guido', 'Alan'][/BUTC]\n\n[RETENIR]\nL’appel de la méthode [BUTC]pop()[/BUTC] retourne un élément et le supprime de la liste.\nIl génère une erreur de type [BUTC]IndexError[/BUTC] si la liste est vide.\n[/RETENIR]\n\nLes listes permettent également la **suppression** d’un élément en fonction de sa valeur, avec la méthode [BUTC]remove()[/BUTC].\n\n[BUTC]liste.remove('Alan')[/BUTC]  \n[BUTC]print(liste)[/BUTC]  \n[BUTC]# affiche ['Guido'][/BUTC]\n\nLa méthode [BUTC]remove()[/BUTC] retire la première occurrence rencontrée.  \nSi la valeur n’est pas présente, une erreur de type [BUTC]ValueError[/BUTC] est générée.\n\nLes listes étant ordonnées, elles peuvent être triés en place, c'est-à-dire que la liste triée remplace la liste d'origine, avec la méthode [BUTC]sort()[/BUTC]. L’ordre de la liste peut être facilement inversé avec la méthode [BUTC]reverse()[/BUTC].\n\n###Dictionnaires/b.\n\n[DEF]\n**Dictionnaire\u0026nbsp;:**\n\nEn Python, les dictionnaires sont des conteneurs de données permettant de stocker des paires de clés et de valeurs associées à ces clés. Tout comme les listes, ils sont des structures de données très couramment employées.\n[/DEF]\n\nLa notion d’ordre est inhérente aux listes que nous avons étudiées précédemment, car c’est la position de la donnée dans la liste qui permet de l’identifier et d’y accéder.  \nAvec les dictionnaires, c’est la **clé** qui ouvre l’accès à la donnée, l’ordre importe peu.\n\n[AST]\n**Remarque\u0026nbsp;:**\n\nHistoriquement les dictionnaires Python n’étaient d’ailleurs --pas-- ordonnés. Ils le sont devenus dans les versions récentes du langage (depuis Python\u0026nbsp;3.6).\n[/AST]\n\nLes dictionnaires sont **mutables**, comme les listes, et eux aussi peuvent contenir toutes sortes d’objets et des structures de données imbriquées, notamment d’autres dictionnaires et des listes.  \nIls ne peuvent, en revanche, pas contenir de doublons de clés, mais une même **valeur** peut être affectée à des clés distinctes.\n\nLa **création** d’un dictionnaire peut s’effectuer de plusieurs façons\u0026nbsp;:\n\n[BUTC]# dictionnaire vide[/BUTC]  \n[BUTC]meteo = dict()[/BUTC]  \n[BUTC]meteo = {} # notation courte[/BUTC]\n\n[BUTC]# dictionnaire non vide[/BUTC]  \n[BUTC]meteo = {'Toulouse': 15, 'Strasbourg': 16}[/BUTC]\n\nL’**ajout** d’un élément s’effectue en indiquant sa clé entre crochets et en lui affectant sa valeur.\n\n[BUTC]# ajout d'un élément[/BUTC]  \n[BUTC]meteo['Cherbourg'] = 13[/BUTC]\n\nL’**accès** à un élément du dictionnaire s’effectue principalement par sa clé, avec la même notation que pour l’ajout.\n\n[BUTC]# accès à un élément[/BUTC]  \n[BUTC]print(meteo['Toulouse'])[/BUTC]  \n[BUTC]# affiche 15[/BUTC]\n\nIl en est de même pour la **modification** d’un élément.\n\n[BUTC]# modification d'un élément[/BUTC]  \n[BUTC]meteo['Toulouse'] = 17[/BUTC]\n\nLe **retrait** d’un élément s’effectue avec la méthode [BUTC]pop()[/BUTC]. Contrairement à son emploi sur une liste, la méthode impose pour un dictionnaire de spécifier la clé concernée.\n\n[BUTC]resultat = meteo.pop('Cherbourg')[/BUTC]  \n[BUTC]print(resultat)[/BUTC]  \n[BUTC]# affiche 13[/BUTC]\n\nLe retrait d'un élément inexistant se solde par une erreur de type [BUTC]KeyError[/BUTC].\n\nUn dictionnaire peut être **complété et mis à jour** à partir d’un autre dictionnaire avec la méthode [BUTC]update()[/BUTC], selon les modalités suivantes\u0026nbsp;:\n* les clés absentes du dictionnaire sont ajoutées avec les valeurs correspondantes\u0026nbsp;;((liste2))\n* les valeurs des clés déjà présentes dans le dictionnaire d’origine sont remplacées par celles du dictionnaire ajouté.((liste2))\n\n[BUTC]meteo = {'Toulouse': 15, 'Strasbourg': 16, 'Cherbourg': 13}[/BUTC]  \n[BUTC]ajouts = {'Paris': 13, 'Toulouse': 17}[/BUTC]  \n[BUTC]meteo.update(ajouts)[/BUTC]\n\n[BUTC]print(meteo)[/BUTC]  \n[BUTC]# affiche {'Toulouse': 17, 'Strasbourg': 16, 'Cherbourg': 13, 'Paris': 13}[/BUTC]\n\nDepuis la version 3.6 de Python, les dictionnaires sont nativement ordonnés\u0026nbsp;: ils le sont sur la base de l’ordre d’insertion des éléments. Les dictionnaires des versions récentes du langage conservent ainsi cette trace de l’ordre d’insertion.  \nLes versions antérieures pouvaient déjà disposer de dictionnaires ordonnés ([BUTC]OrderedDict[/BUTC]) via le module [BUTC]collections[/BUTC] de la bibliothèque standard.\n\n###Tuples/c.\n\n[DEF]\n**Tuple\u0026nbsp;:**\n\nLes tuples sont des séquences ordonnées et non mutables. Ils peuvent contenir toutes sortes d’éléments de différents types. Les tuples peuvent contenir des doublons.\n[/DEF]\n\nLa création d’un tuple peut s’effectuer par énumération ou à partir d’un itérable.\n\n[BUTC]# création d'un tuple[/BUTC]  \n[BUTC]eleves = ('Alice', 'Alan', 'Lisa')[/BUTC]  \n[BUTC]print(eleves)[/BUTC]\n\n[AST]\n* Les parenthèses sont optionnelles pour la déclaration des tuples.\n* La déclaration par énumération d’un tuple comportant un seul élément nécessite l’ajout d’une virgule.\n[/AST]\n\n[BUTC]equipement = ('ordinateur'[2],[2])[/BUTC]  \n[BUTC]print(type(equipement))[/BUTC]  \n[BUTC]# affiche \u003cclass 'tuple'\u003e[/BUTC]\n\nLes tuples étant **immutables**, il n’est pas possible d’ajouter, de modifier ou de supprimer des éléments. Ceux-ci sont accessibles en lecture par la notation indicielle, comme pour les listes.\n\n[BUTC]print(eleves)[/BUTC]  \n[BUTC]# affiche ('Alice', 'Alan', 'Lisa')[/BUTC]\n\n[BUTC]print(eleves[2])[/BUTC]  \n[BUTC]# affiche Lisa[/BUTC]\n\nLes tuples possèdent également une méthode [BUTC]count()[/BUTC] permettant de compter le nombre d’occurrences d’une valeur au sein d’un tuple.\n\n[BUTC]print(eleves.count('Alice'))[/BUTC]  \n[BUTC]# affiche 1[/BUTC]\n\n[RAP]\nLe module collections de la bibliothèque standard de Python comporte une sous-classe [BUTC]namedtuples[/BUTC] de tuples dont les valeurs sont nommées.\n[/RAP]\n\n###Sets/d.\n\n[DEF]\n**Set\u0026nbsp;:**\n\nLes sets, ou ensembles, sont des conteneurs de données non\u0026nbsp;ordonnés dont les éléments sont uniques. Les sets sont mutables et peuvent contenir des éléments hétérogènes, mais ne peuvent pas contenir d’éléments mutables tels que listes, dictionnaires ou sets.\n[/DEF]\n\nLa **création** d’un set s’effectue de la façon suivante\u0026nbsp;:\n\n[BUTC]villes = set() # set vide[/BUTC]  \n[BUTC]villes = {'Toulouse', 'Strasbourg', 'Paris', 'Brest'}[/BUTC]\n\nL’**ajout** d’éléments à un set s’effectue avec la méthode [BUTC]add()[/BUTC].\n\n[BUTC]villes.add('Cherbourg') # ajout d'un élément[/BUTC]\n\n[BUTC]print(villes)[/BUTC]  \n[BUTC]# affiche {'Strasbourg', 'Toulouse', 'Paris', 'Brest', 'Cherbourg'}[/BUTC]\n\nUn set ne peut pas comporter de doublon, mais les tentatives d’ajout sont seulement infructueuses, elles ne produisent pas d’erreurs.\n\n[BUTC]villes.add('Toulouse')[/BUTC]\n\n[BUTC]print(villes)[/BUTC]  \n[BUTC]# affiche {'Strasbourg', 'Toulouse', 'Paris', 'Brest', 'Cherbourg'}[/BUTC]\n\nUn élément présent dans le set peut être **retiré** sur la base de sa valeur.\n\n[BUTC]villes.remove('Strasbourg')[/BUTC]\n\n[BUTC]print(villes)[/BUTC]  \n[BUTC]# affiche {'Toulouse', 'Paris', 'Brest', 'Cherbourg'}[/BUTC]\n\nLes sets disposent d’un jeu complet de méthodes ensemblistes spécifiques permettant d’obtenir très facilement\u0026nbsp;:\n* l’**union** entre deux sets avec la méthode [BUTC]union()[/BUTC]\u0026nbsp;;((liste2))\n* l’**intersection** entre deux sets avec la méthode [BUTC]intersection()[/BUTC]\u0026nbsp;;((liste2))\n* la **différence** entre deux sets avec la méthode [BUTC]difference()[/BUTC]\u0026nbsp;;((liste2))\n* la **différence symétrique** entre deux sets avec la méthode [BUTC]symmetric_difference()[/BUTC].((liste2))\n\nLes sets permettent aussi de déterminer\u0026nbsp;:\n* si un set est un sous-ensemble d’un autre set avec la méthode [BUTC]issubset()[/BUTC]\u0026nbsp;;((liste2))\n* si un set est un sur-ensemble d’un autre set avec la méthode [BUTC]issuperset()[/BUTC].((liste2))\n\nNous avons présenté les conteneurs généralistes de type liste, dictionnaire, tuple et set. Nous allons maintenant nous intéresser à des conteneurs plus spécialisés, avec les piles et les files.\n\n##Piles et files/2\n\n###Types de piles/a.\n\n[DEF]\n**Pile\u0026nbsp;:**\n\nUne pile est une structure de donnée destinée à stocker des données et à les restituer en fonction de leur ordre d’ajout.\n[/DEF]\n\nIl existe schématiquement deux types de piles\u0026nbsp;:\n* celles qui restituent en premier lieu les dernières données ajoutées\u0026nbsp;;((liste2))\n* celles qui restituent en premier lieu les données ajoutées en premier.((liste2))\n\nCes deux types de piles sont appelées **LIFO** et **FIFO**, en référence aux sigles résumant leur fonctionnement.\n\n\u003c\u003c((100,35,auto,0,auto))* **Pile LIFO\u0026nbsp;:**((bulle,1))\u003e\u003e\n\n\u003c\u003c((100,-15,auto,0,auto))LIFO signifie __Last In, First Out__. Le sigle est francisé en DEPS pour «\u0026nbsp;Dernier Entré, Premier Sorti\u0026nbsp;». Une pile de type LIFO est parfois désignée par sa dénomination anglaise __stack__.\u003e\u003e\n\n[EX]\nL’exemple classique pour l’expliquer est celui de la pile d’assiettes. Lorsqu’on souhaite prendre une assiette, on prend celle située en haut de la pile. C’est la dernière à avoir été ajoutée qui est accessible. Ce sera donc la première à être retirée de la pile.\n[/EX]\n* Un algorithme d'exploration de labyrinthe s’appuie sur une pile pour mémoriser (empiler) ses déplacements. S'il se heurte à une impasse, il peut ainsi revenir sur les derniers déplacements effectués (dépiler) depuis la dernière intersection rencontrée, et explorer ensuite les autres chemins non encore empruntés.((fleche))\n\n\u003c\u003c((100,35,auto,0,auto))* **Pile FIFO\u0026nbsp;:**((bulle,2))\u003e\u003e\n\n\u003c\u003c((100,-15,auto,0,auto))FIFO signifie __First In, First Out__. Le sigle est francisé en PEPS pour «\u0026nbsp;Premier Entré, Premier Sorti\u0026nbsp;». Les piles de type FIFO sont communément appelées «\u0026nbsp;files\u0026nbsp;» ou «\u0026nbsp;files d’attente\u0026nbsp;» (__queues__ en anglais).\u003e\u003e\n\n[EX]\nL’exemple classique pour la figurer est d’ailleurs celui d’une file d’attente au guichet, pour prendre un billet de train ou d’avion. Les personnes accèdent au guichet dans leur ordre d’arrivée.\n[/EX]\n* Un serveur web ou un serveur d’impression traite les requêtes reçues de manière analogue en fonction de leur ordre d’arrivée dans une file d’attente.((fleche))\n\n[AST]\nQuand on parle uniquement de piles FIFO, on utilise de préférence le terme «\u0026nbsp;file\u0026nbsp;», mais quand on parle simultanément des deux types FIFO et LIFO, on parle de «\u0026nbsp;piles\u0026nbsp;».\n[/AST]\n\n###Méthodes des piles/b.\n\n[RETENIR]\nLes méthodes principales des piles sont l’**empilage** et le **dépilage**.\n* Empiler consiste à ajouter un élément à la pile.\n* Dépiler consiste à retirer un élément à la pile.\n[/RETENIR]\n\n[AST]\nLe vocabulaire est parfois adapté au type de pile\u0026nbsp;:\n* «\u0026nbsp;empiler\u0026nbsp;» et «\u0026nbsp;dépiler\u0026nbsp;» pour une pile LIFO\u0026nbsp;;((liste2))\n* «\u0026nbsp;enfiler\u0026nbsp;» et «\u0026nbsp;défiler\u0026nbsp;» pour une pile FIFO.((liste2))\n[/AST]\n\nDans une pile LIFO, le point d’entrée de la pile est aussi le point de sortie.  \nDans une pile FIFO, le point d’entrée et le point de sortie sont aux extrémités opposées de la pile.\n\n[IMG]((100))\n![Ajouts et retraits avec des piles LIFO et FIFO](https://images-schoolmouv-cours.s3.eu-west-1.amazonaws.com/t-fnx-nsi-c3-img01.png) #Ajouts et retraits avec des piles LIFO et FIFO\n[/IMG]\n\nLes piles et les files sont des structures de données abstraites, qu’il est possible d’implémenter de différentes manières en fonction des langages. Avec Python nous implémenterons successivement des piles avec les listes natives, puis avec un type spécialisé disponible au sein de la bibliothèque standard.\n\n###Implémentation avec listes natives/c.\n\nLes listes natives de Python que nous avons étudiées en première partie nous permettent techniquement d’implémenter des piles LIFO et des piles FIFO.\n\n\u003c\u003c((100,35,auto,0,auto))* **Implémentation d’une pile LIFO**((bulle,1))\u003e\u003e\n\n[BUTC]pile = ['a', 'b', 'c'][/BUTC]  \n[BUTC]print(pile)[/BUTC]  \n[BUTC]print('ajout nouvel élément')[/BUTC]  \n[BUTC]pile.append('d') # empilage[/BUTC]  \n[BUTC]print(pile)[/BUTC]\n\n[BUTC]while pile:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print('dépilage de ', pile.pop())[/BUTC]  \n[BUTC]print('pile contient maintenant', pile)[/BUTC]\u003e\u003e\n\nLe code produit successivement les affichages suivants\u0026nbsp;:\n\n\u003c\u003c((auto,-22,0,0,50))[BUTC]['a', 'b', 'c'][/BUTC]  \n[BUTC]ajout nouvel élément[/BUTC]  \n[BUTC]['a', 'b', 'c', 'd'][/BUTC]  \n[BUTC]dépilage de d[/BUTC]  \n[BUTC]pile contient maintenant ['a', 'b', 'c'][/BUTC]  \n[BUTC]dépilage de c[/BUTC]  \n[BUTC]pile contient maintenant ['a', 'b'][/BUTC]  \n[BUTC]dépilage de b[/BUTC]  \n[BUTC]pile contient maintenant ['a'][/BUTC]  \n[BUTC]dépilage de a[/BUTC]  \n[BUTC]pile contient maintenant [][/BUTC]\u003e\u003e\n\n\u003c\u003c((100,35,auto,0,auto))* **Implémentation d’une pile FIFO**((bulle,2))\u003e\u003e\n\n[BUTC]pile = ['c', 'b', 'a'][/BUTC]  \n[BUTC]print(pile)[/BUTC]  \n[BUTC]print('ajout nouvel élément')[/BUTC]  \n[BUTC]pile.insert(0, 'd') # enfilage[/BUTC]  \n[BUTC]print(pile)[/BUTC]\n\n[BUTC]while pile:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print('défilage de ', pile.pop())[/BUTC]  \n[BUTC]print('pile contient maintenant', pile)[/BUTC]\u003e\u003e\n\nLe code produit successivement les affichages suivants\u0026nbsp;:\n\n\u003c\u003c((auto,-22,0,0,50))[BUTC]['c', 'b', 'a'][/BUTC]  \n[BUTC] ['d', 'c', 'b', 'a'][/BUTC]  \n[BUTC]dépilage de a[/BUTC]  \n[BUTC]pile contient maintenant ['d', 'c', 'b'][/BUTC]  \n[BUTC]dépilage de b[/BUTC]  \n[BUTC]pile contient maintenant ['d', 'c'][/BUTC]  \n[BUTC]dépilage de c[/BUTC]  \n[BUTC]pile contient maintenant ['d'][/BUTC]  \n[BUTC]dépilage de d[/BUTC]  \n[BUTC]pile contient maintenant [][/BUTC]\u003e\u003e\n\nToutefois les listes natives ne sont pas optimisées pour de tels traitements. Si l’empilage et le dépilage avec [BUTC]pop()[/BUTC] et [BUTC]append()[/BUTC] sont rapides car effectuées en fin de liste, les insertions en début de liste, nécessaires pour une file, sont lentes\u0026nbsp;: elles obligent à décaler chaque fois en mémoire tous les éléments suivants composant la liste.\n\nOn aurait pu faire l’inverse en utilisant [BUTC]append()[/BUTC] pour ajouter en fin de liste à la place d’[BUTC]insert(0)[/BUTC] qui insérait en début de liste, mais le retrait d’une file devant s’effectuer à l’extrémité opposée, on aurait alors dû utiliser [BUTC]pop(0)[/BUTC] pour les sorties de file, avec le même problème de décalage en mémoire des éléments suivants, et donc de performance.\n\n###Implémentation spécialisée/d.\n\nIl existe des conteneurs spécialisés pour **implémenter les files** avec le type [BUTC]deque[/BUTC] du module [BUTC]collections[/BUTC] de la bibliothèque standard. Ce type de conteneur a été conçu pour permettre l’ajout et le retrait d’éléments de manière optimisée à chaque extrémité du conteneur.\n\n[BUTC]from collections import deque[/BUTC]\n\n[BUTC]file\u0026#95;attente = deque(['Alice', 'Charles'])[/BUTC]  \n[BUTC]print(file\u0026#95;attente)[/BUTC]  \n[BUTC]# affiche deque(['Alice', 'Charles'])[/BUTC]\n\nLe type [BUTC]deque[/BUTC] de la bibliothèque [BUTC]collections[/BUTC] implémente, en plus des méthodes [BUTC]pop()[/BUTC] et [BUTC]append()[/BUTC] des listes natives, les méthodes [BUTC]appendleft()[/BUTC] et [BUTC]popleft()[/BUTC].  \nCes dernières permettent toutes sortes d’usage de manière optimisée.\n\nPour l’implémentation d’une file d’attente, on peut choisir d’effectuer\u0026nbsp;:\n* les entrées (enfilage) avec [BUTC]append()[/BUTC]\u0026nbsp;;((liste2))\n* les sorties (défilage) avec [BUTC]popleft()[/BUTC].((liste2))\n\nSi l’on souhaite ajouter Paul à la file d’attente\u0026nbsp;:\n\n[BUTC]file_attente.append('Paul')[/BUTC]  \n\n[BUTC]print(file\u0026#95;attente)[/BUTC]  \n[BUTC]# affiche deque(['Alice', 'Charles', 'Paul'])[/BUTC]\n\nLa sortie de la file d’attente s’effectue de la manière suivante\u0026nbsp;:\n\n[BUTC]premier_sorti = file\u0026#95;attente.popleft()[/BUTC]\n\n[BUTC]print(premier_sorti)[/BUTC]  \n[BUTC]# affiche Alice[/BUTC]\n\nOn aurait pu symétriquement réaliser notre implémentation en remplaçant [BUTC]append()[/BUTC] par [BUTC]appendleft()[/BUTC] et [BUTC]popleft()[/BUTC] par [BUTC]pop()[/BUTC]. Dans les deux cas, l’entrée et la sortie s’effectuent aux extrémités opposées de la file d’attente.\n\nOutre les piles, le module [BUTC]collections[/BUTC] de la bibliothèque standard contient de nombreux autres types de conteneurs spécialisés pour étendre, modifier ou compléter les caractéristiques des conteneurs natifs.\n\n##Critères d’emploi des conteneurs de données/3\n\n###Modélisation/a.\n\n[DEF]\n**Modélisation\u0026nbsp;:**\n\nLa modélisation consiste à transposer un problème du monde réel en problématique traitable par un algorithme, lequel manipule des données.\n[/DEF]\n\nSi certaines données sont liées entre elles, il est souhaitable que leur modélisation reflète ce lien pour éviter d’entrainer des incohérences.  \nIllustrons-le avec l’exemple d’un groupe d’élèves dont on connaît les prénoms et les âges. On choisit dans un premier temps de stocker de manière parallèle ces informations dans deux listes distinctes.\n\n[BUTC]prenoms = ['Ada', 'Alan', 'Alice', 'Bob'][/BUTC]  \n[BUTC]ages = [17, 22, 21, 19][/BUTC]\n\n[BUTC]for prenom, age in zip(prenoms, ages):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(prenom, 'a', age, 'ans')[/BUTC]\u003e\u003e\n\n[BUTC]# affiche[/BUTC]  \n[BUTC]Ada a 17 ans[/BUTC]  \n[BUTC]Alan a 22 ans[/BUTC]  \n[BUTC]Alice a 21 ans[/BUTC]  \n[BUTC]Bob a 19 ans[/BUTC]\n\nLes données concernant le nom et l’âge de l’élève sont stockées dans des conteneurs différents, mais nous pouvons **itérer** en même temps sur les deux listes.\n\nNous le faisons ici avec la fonction native [BUTC]zip()[/BUTC] qui itère simultanément sur les éléments individuels de chaque itérable passé en argument.\n\n[AST]\nSi les listes sont de longueurs inégales, l’itération cesse une fois la fin de l’itérable le plus court atteinte.\n[/AST]\n\nLa concordance entre les informations sur le prénom et l’âge d’un élève repose uniquement sur leur position dans chaque liste. La moindre erreur lors d’un ajout ou d’une suppression pourrait introduire un décalage, rendant les données incohérentes.\n\n[BUTC]del prenoms[1] # suppression de l'entrée correspondant à Alan dans la liste des prénoms[/BUTC]\n\n[BUTC]for prenom, age in zip(prenoms, ages):[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(prenom, 'a', age, 'ans')[/BUTC]\u003e\u003e\n\nLe code produit l’affichage suivant\u0026nbsp;:\n\n[BUTC]Ada a 17 ans[/BUTC]  \n[BUTC]Alice a 22 ans[/BUTC]  \n[BUTC]Bob a 21 ans[/BUTC]\n\nLes âges d’Alice et Bob ne sont plus bons car l’âge d’Alan n’a pas été supprimé alors que son prénom l’a été de la liste des élèves. Les deux listes étant indépendantes, on peut techniquement modifier l’une sans modifier l’autre, alors que les données qui les composent sont liées dans le monde réel.\n\nLe recours à un dictionnaire s’avère donc plus adapté au cas présent\u0026nbsp;:\n\n[BUTC]eleves = {'Ada': 17, 'Alan': 22, 'Alice': 21, 'Bob': 19}[/BUTC]\n\n[BUTC]for prenom, age in eleves.items():[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(prenom, 'a', age, 'ans')[/BUTC]\u003e\u003e\n\nLe code produit l’affichage suivant\u0026nbsp;:\n\n[BUTC]Ada a 17 ans[/BUTC]  \n[BUTC]Alan a 22 ans[/BUTC]  \n[BUTC]Alice a 21 ans[/BUTC]  \n[BUTC]Bob a 19 ans[/BUTC]\n\nLa suppression d’un élève (clé du dictionnaire) entraîne automatiquement la suppression de son âge (valeur associée à la clé).\n\n[BUTC]del(eleves['Alan'])[/BUTC]\n\n[BUTC]print(eleves)[/BUTC]  \n[BUTC]# affiche {'Ada': 17, 'Alice': 21, 'Bob': 19}[/BUTC]\n\nOn pourrait éventuellement utiliser une liste de tuples à la place d’un dictionnaire\u0026nbsp;:\n\n[BUTC]eleves = [('Ada', 17),[/BUTC]\n\u003c\u003c((auto,-22,0,0,75))[BUTC]('Alan', 22),[/BUTC]\n[BUTC]('Alice', 21),[/BUTC]\n[BUTC]('Bob', 19)][/BUTC]\u003e\u003e\n\n[BUTC]for prenom, age in eleves:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]print(prenom, 'a', age, 'ans')[/BUTC]\u003e\u003e\n\nLe code produit l’affichage suivant\u0026nbsp;:\n\n[BUTC]Ada a 17 ans[/BUTC]  \n[BUTC]Alan a 22 ans[/BUTC]  \n[BUTC]Alice a 21 ans[/BUTC]  \n[BUTC]Bob a 19 ans[/BUTC]\n\nLe recours à des tuples crée une association entre l’élève et son âge. La suppression d’un élément de la liste des élèves fait disparaître le tuple correspondant, contenant à la fois son prénom et son âge.\n\n[BUTC]del(eleves[1])[/BUTC]\n\n[BUTC]print(eleves)[/BUTC]  \n[BUTC]# affiche [('Ada', 17), ('Alice', 21), ('Bob', 19)][/BUTC]\n\nToutefois le caractère immutable des tuples nous empêche de modifier l’âge d’un élève.\n\n[BUTC]print(eleves\u0026#91;0\u0026#93;\u0026#91;1\u0026#93;) [/BUTC]  \n[BUTC]# affiche 17 (âge d'Alice)[/BUTC]\n\n[BUTC]eleves\u0026#91;0\u0026#93;\u0026#91;1\u0026#93; = 18[/BUTC]  \n[BUTC]# affiche TypeError: 'tuple' object does not support item assignment[/BUTC]\n\nAvec un dictionnaire, la modification d’âge ne poserait en revanche aucun problème puisque les données sont mutables.\n\n###Impact du conteneur sur la complexité algorithmique/b.\n\nLa complexité d’un algorithme donné peut varier en fonction du type de conteneur de données utilisé. Considérons un algorithme très simple, composé d’une boucle parcourant séquentiellement tous les éléments pour vérifier s’ils sont ou non présents dans un conteneur.\n\n[BUTC]for element in sequence:[/BUTC]\n\u003c\u003c((auto,-22,0,0,50))[BUTC]if element in conteneur:[/BUTC]\u003e\u003e\n\u003c\u003c((auto,-22,0,0,75))[BUTC]print(element, 'trouvé dans le conteneur')[/BUTC]\u003e\u003e\n\nQuelle est la complexité temporelle de cet algorithme\u0026nbsp;? La boucle [BUTC]for[/BUTC] implique une complexité au moins linéaire, notée $O(n)$ ; mais la complexité globale de l’algorithme dépend aussi des traitements effectués à l’intérieur de la boucle.\n\nOr, il est impossible de l’indiquer précisément sans connaître la nature du conteneur utilisé dans le test conditionnel. En effet, la complexité temporelle du test d’appartenance [BUTC]element in conteneur[/BUTC] dépend de la nature de ce conteneur.\n\nAinsi, si le conteneur est une liste, le test d’appartenance va entraîner la comparaison de l’élément recherché avec chacun des éléments de la liste jusqu’à le trouver. Cette opération est de complexité linéaire soit $O(n)$.  \nEn revanche ce même test d’appartenance est plus immédiat si le conteneur est un dictionnaire. La présence de la clé est évaluée en $O(1)$, la complexité du test d’appartenance est donc constante, quelle que soit la taille du dictionnaire.\n\nCela signifie que la complexité globale de l’algorithme sera linéaire ou quadratique, et que cette différence de performance, potentiellement très importante, repose uniquement sur le type de conteneur choisi, le code restant par ailleurs strictement identique.\n\n[C]\nConclusion\u0026nbsp;:\n\nNous avons présenté les principaux conteneurs de données que sont les listes, les dictionnaires, puis les tuples et les sets. Nous nous sommes ensuite intéressé·e·s aux conteneurs spécialisés que sont les piles et les files, dont nous avons montré différentes implémentations. Nous avons caractérisé ces conteneurs par leurs propriétés et les principales méthodes qu’ils proposent. Nous avons ensuite montré l’importance du choix d’un conteneur adapté à la problématique à traiter.\n[/C]\n","siblings":[{"resourceId":"64428702f1526801007d6377","type":"Cours","sort":null},{"resourceId":"5f47b2601f3276010020e15c","type":"Fiche de révision","sort":null},{"resourceId":"5f4df41de4d05a0100ae8208","type":"Quiz","sort":null}],"sheetDetails":{"id":"5dcd7d9b28e637010043bf83","name":"Conteneurs de données"}},"breadcrumb":[{"key":"degree-5cd020dbafd5f7d98fa4ca93","label":"Tle","link":"https://www.schoolmouv.fr/terminale"},{"key":"subject-5cd1931a865e4a010069ac22","label":"Numérique et sciences informatiques","link":"https://www.schoolmouv.fr/terminale/numerique-et-sciences-informatiques"},{"key":"resource-5dcd7d9b28e637010043bf83","label":"Cours : Conteneurs de données","link":"https://www.schoolmouv.fr/cours/conteneurs-de-donnees/fiche-de-cours"}],"degreeSubjects":[{"degreeSubjectId":"5f4627021562320100b36eab","subjectId":"5b97cb5714bfaf0100c5c56d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Allemand Terminale","slug":"allemand-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5714bfaf0100c5c56d","name":"Allemand","slug":"allemand"}},{"degreeSubjectId":"5dc3dc2609e0a80100fdb93c","subjectId":"5b97cb6614bfaf0100c5c56f","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement moral et civique Terminale","slug":"enseignement-moral-et-civique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5b97cb6614bfaf0100c5c56f","name":"Enseignement moral et civique","slug":"enseignement-moral-et-civique"}},{"degreeSubjectId":"5dc4328b09e0a80100fdb95f","subjectId":"54eb2633ecd525756067ef5c","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SVT Terminale","slug":"svt-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb2633ecd525756067ef5c","name":"SVT","slug":"svt"}},{"degreeSubjectId":"5ffefde7bc595a0100f49b00","subjectId":"5fd729f0bc595a0100f47341","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Grand oral Terminale","slug":"grand-oral-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5fd729f0bc595a0100f47341","name":"Grand oral","slug":"grand-oral"}},{"degreeSubjectId":"5f4627411562320100b36f75","subjectId":"5b97cb5c14bfaf0100c5c56e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Espagnol Terminale","slug":"espagnol-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5b97cb5c14bfaf0100c5c56e","name":"Espagnol","slug":"espagnol"}},{"degreeSubjectId":"5dcbe35228e637010043bcc8","subjectId":"5cd1931a865e4a010069ac22","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Numérique et sciences informatiques Terminale","slug":"numerique-et-sciences-informatiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd1931a865e4a010069ac22","name":"Numérique et sciences informatiques","slug":"numerique-et-sciences-informatiques"}},{"degreeSubjectId":"5d0cdbf8655d020100fcf803","subjectId":"54eb260eecd525756067ef58","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Mathématiques Terminale","slug":"mathematiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb260eecd525756067ef58","name":"Mathématiques","slug":"mathematiques"}},{"degreeSubjectId":"5dc2f39a09e0a80100fdb84f","subjectId":"54eb2621ecd525756067ef5a","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Histoire Terminale","slug":"histoire-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2621ecd525756067ef5a","name":"Histoire","slug":"histoire"}},{"degreeSubjectId":"5d08ae6bbc3ce70100f6d50a","subjectId":"5cd19334865e4a010069ac25","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Enseignement scientifique Terminale","slug":"enseignement-scientifique-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"5cd19334865e4a010069ac25","name":"Enseignement scientifique","slug":"enseignement-scientifique"}},{"degreeSubjectId":"5dc2eaa009e0a80100fdb82c","subjectId":"5cd19320865e4a010069ac23","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Humanités Terminale","slug":"humanites-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19320865e4a010069ac23","name":"Humanités","slug":"humanites"}},{"degreeSubjectId":"5d024b33bc3ce70100f6d355","subjectId":"54eb263cecd525756067ef5d","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"SES Terminale","slug":"ses-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"54eb263cecd525756067ef5d","name":"SES","slug":"ses"}},{"degreeSubjectId":"5f4626d31562320100b36eaa","subjectId":"5af9b34ad466a501002e96bd","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Anglais Terminale","slug":"anglais-terminale","isOptional":null,"categories":["LANG"],"subjectDetails":{"id":"5af9b34ad466a501002e96bd","name":"Anglais","slug":"anglais"}},{"degreeSubjectId":"5d075b3ebc3ce70100f6d4b1","subjectId":"54eb262aecd525756067ef5b","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géographie Terminale","slug":"geographie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb262aecd525756067ef5b","name":"Géographie","slug":"geographie"}},{"degreeSubjectId":"5dcc234d09e0a80100fdbaf4","subjectId":"55df09d17fcdb8937c1d4dd2","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Physique-chimie Terminale","slug":"physique-chimie-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"55df09d17fcdb8937c1d4dd2","name":"Physique-chimie","slug":"physique-chimie"}},{"degreeSubjectId":"5d0759cf655d020100fcf01f","subjectId":"5cd19327865e4a010069ac24","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Géopolitique et sciences politiques Terminale","slug":"geopolitique-et-sciences-politiques-terminale","isOptional":true,"categories":[],"subjectDetails":{"id":"5cd19327865e4a010069ac24","name":"Géopolitique et sciences politiques","slug":"geopolitique-et-sciences-politiques"}},{"degreeSubjectId":"5e2723f228e637010043d4b4","subjectId":"54eb2646ecd525756067ef5e","degreeId":"5cd020dbafd5f7d98fa4ca93","name":"Philosophie Terminale","slug":"philosophie-terminale","isOptional":null,"categories":[],"subjectDetails":{"id":"54eb2646ecd525756067ef5e","name":"Philosophie","slug":"philosophie"}}],"degree":"Terminale","degreeName":"Terminale","degreeSlug":"terminale","subject":"Numérique et sciences informatiques","sheetSlug":"conteneurs-de-donnees","otherDegrees":["Terminale"]},"meta":{"h1":null,"url":"/cours/conteneurs-de-donnees/fiche-de-cours","title":"Conteneurs de données : Fiche de cours - Numérique et sciences informatiques | SchoolMouv","metaDescription":"Révise le cours : Conteneurs de données de Numérique et sciences informatiques Terminale grâce à notre fiche de cours","canonical":null},"error":""},"__N_SSP":true},"page":"/cours/[sheetSlug]/[resourceType]","query":{"sheetSlug":"conteneurs-de-donnees","resourceType":"fiche-de-cours"},"buildId":"7PMSe9KUa3QZbNQBS6zJb","assetPrefix":"/content","runtimeConfig":{"SCHOOLMOUV_BASE_URL":"https://www.schoolmouv.fr","SCHOOLMOUV_DOMAIN":"schoolmouv.fr","SCHOOLMOUV_OFFER_URL":"https://offres.schoolmouv.fr","SCHOOLMOUV_GTM_TAG":"GTM-55RGLG","SCHOOLMOUV_GRAPHQL_URL":"https://www.schoolmouv.fr/content/graphql","SCHOOLMOUV_GTM_ENABLE":"true","POOOL_APP_ID":"HV0P5-2T16H-JF0FQ-01JPD","POOOL_ENABLED":"true"},"isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+</html>
