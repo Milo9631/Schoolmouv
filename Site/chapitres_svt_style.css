@@ -1,0 +1,124 @@
+/* Réinitialisation des marges et des paddings */
+body, h1, h2, h3, p, ol, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background: #FAFFF7;
+    color: #FAFFF7;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background-color: #8fb339;
+    padding: 10px 0;
+    text-align: center;
+}
+h2 {
+    display: flex;
+    list-style: none;
+    color: #230c0f;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    font-size: 23px;
+    
+}
+/* Styles pour la barre de navigation */
+header ul {
+    display: flex;
+    list-style: none;
+    color: #bb8a52;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly
+    
+}
+
+header li {
+    margin-right: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s ease-in-out;
+}
+
+header a:hover {
+    color: #E57734;
+}
+
+
+/* Contenu principal */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chapters {
+    margin-bottom: 30px;
+}
+
+.chapter {
+    border: 1px solid #F8EBCF;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #c7d59f;
+    box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.1);
+}
+
+.chapter h3 {
+    color: #230c0f;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.chapter ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+.chapter li {
+    margin-bottom: 5px;
+    color: #f1faee
+
+}
+
+.content {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #F8EBCF;
+    background-color: #fff;
+}
+
+.content h3 {
+    color: #E57734;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Suppression du soulignement bleu pour les liens */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s; /* Ajoute une transition en douceur */
+}
+
+a:hover {
+    color: #bb8a52; /* Changement de couleur au survol (vert) */
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #6d9773;
+    color: #fff;
+}

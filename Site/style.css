@@ -1,0 +1,178 @@
+/* Réinitialisation des marges et des paddings */
+body, h1, h2, h3, p, ol, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    color: #FAFFF7;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background-color: #8fb339;
+    padding: 10px 0;
+    text-align: center;    
+}
+header ul {
+    display: flex;
+    list-style: none;
+    color: #bb8a52;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly
+    
+}
+
+header h1 {
+    color: #230c0f;
+    font-size: 31px;
+    margin-bottom: 10px;
+    
+}
+header p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+
+/* Contenu principal */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s ease-in-out;
+}
+
+header a:hover {
+    color: #E57734;
+}
+.chapters {
+    margin-bottom: 30px;
+}
+
+.chapter {
+    border: 1px solid #F8EBCF;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chapter h3 {
+    color: #230c0f;
+    font-size: 18px;
+    margin-bottom: 10px;
+    
+}
+
+.chapter ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+.chapter ol li {
+    margin-bottom: 5px;
+}
+
+.content {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #F8EBCF;
+    background-color: #fff;
+}
+
+.content h3 {
+    color: #230c0f;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Styles pour les cours */
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.course {
+    width: 100px; /* Divise l'espace en 2 colonnes avec un petit espace entre */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #F8EBCF;
+    background-color: #c7d59f;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* Utiliser le modèle de boîte flexible */
+    align-items: center; /* Aligner verticalement le contenu */
+    width: 297px; /* Ajuster la largeur du conteneur */
+    height: 255px; /* Ajuster la hauteur du conteneur */
+    flex-wrap: wrap;
+}
+
+.course img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px; /* Ajouter un espace entre l'image et les détails */
+
+}
+.course-details {
+    flex: 1; /* Faire en sorte que les détails prennent l'espace restant */
+    margin-left: 20%; /* Espacement de 50 pixels entre l'image et les détails */
+}
+
+
+.course h3 {
+    font-size: 31px;
+    margin-top: 10px;
+    color: #230c0f;
+    text-align: center;
+    display: flex;
+}
+
+.course p {
+    margin-top: 5px;
+    color: #f1faee;
+    height: 69px;
+    font-size: 21px;
+}
+
+.course a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #FFBA00;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.course a:hover {
+    background-color: #3E2922;
+}
+/**/
+
+/* Suppression du soulignement bleu pour les liens */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #8fb339;
+    color: #fff;
+}
