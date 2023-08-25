@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Site Pédagogique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0c8f45;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+        }
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .subject {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        .subject:hover {
+            background-color: #f2f2f2;
+        }
+        .subject-button {
+            background-color: #0c8f45;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .subject-button:hover {
+            background-color: #0c8f45;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Site Pédagogique</h1>
+        <p>Apprenez et explorez différentes matières.</p>
+    </header>
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Mathématiques</a>
+        <a href="science.html">Sciences</a>
+        <a href="#">Langues</a>
+        <!-- Ajoutez d'autres liens vers d'autres matières -->
+    </nav>
+    <main>
+        <div class="subjects">
+            <div class="subject">
+                <h2>Mathématiques</h2>
+                <p>Découvrez le monde des nombres et des formes.</p>
+                <button class="subject-button">Commencer</button>
+            </div>
+            <div class="subject">
+                <h2>Sciences</h2>
+                <p>Explorez les mystères de la nature et de l'univers.</p>
+                <button class="redirect-button" onclick="redirectToScience()">Aller vers les Sciences</button>
+            </div>
+            <div class="subject">
+                <h2>Langues</h2>
+                <p>Apprenez de nouvelles langues et explorez de nouvelles cultures.</p>
+                <button class="subject-button">Commencer</button>
+            </div>
+            <!-- Ajoutez d'autres divs pour d'autres matières -->
+        </div>
+    </main>
+
+    <script>
+        function redirectToScience() {
+            window.location.href = "science.html";
+        }
+    </script>
+</body>
+</html>

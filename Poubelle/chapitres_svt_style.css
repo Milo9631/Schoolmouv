@@ -1,0 +1,87 @@
+/* Réinitialisation des marges et des paddings */
+body, h1, h2, h3, p, ol, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background-color: #2ecc71;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Contenu principal */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chapters {
+    margin-bottom: 30px;
+}
+
+.chapter {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chapter h3 {
+    color: #2ecc71;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.chapter ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+.chapter ol li {
+    margin-bottom: 5px;
+}
+
+.content {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.content h3 {
+    color: #2ecc71;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Suppression du soulignement bleu pour les liens */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #2ecc71;
+    color: #fff;
+}
